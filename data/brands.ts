@@ -1,0 +1,395 @@
+import { Brand } from "@/types";
+
+export const brands: Brand[] = [
+  {
+    id: "tommy-hilfiger-adaptive",
+    name: "Tommy Hilfiger Adaptive",
+    tagline: "Inclusive fashion without compromise",
+    description:
+      "Tommy Hilfiger Adaptive is a line of clothing designed for people with disabilities, featuring magnetic closures, adjustable hems, and seated fits — all with the same iconic Tommy style.",
+    longDescription:
+      "Launched in 2016, Tommy Hilfiger Adaptive was one of the first major fashion labels to commit fully to inclusive design. The collection covers everything from jeans and polos to outerwear, each piece engineered so that dressing is easier — not just possible. Magnetic zipper closures replace fiddly buttons, one-handed cuffs allow independent dressing, and seated fits ensure trousers lie correctly for wheelchair users. The range is available in Tommy's flagship stores across North America and Europe as well as online, with extended sizing from XS to 3XL.",
+    logo: "TH",
+    heroColor: "#C41230",
+    adaptiveFeatures: [
+      "Magnetic button closures",
+      "One-handed zipper pulls",
+      "Velcro cuff closures",
+      "Seated fit cut",
+      "Open-back shirt options",
+      "Adjustable hems",
+      "Reinforced seams for bracing",
+      "Side-opening trousers",
+    ],
+    disabilityTypes: [
+      "Mobility impairments",
+      "Fine motor difficulties",
+      "Wheelchair users",
+      "Limb differences",
+      "Spinal cord injuries",
+      "Multiple sclerosis",
+    ],
+    clothingTypes: [
+      "Tops",
+      "Jeans",
+      "Outerwear",
+      "Dresses",
+      "Activewear",
+      "Swimwear",
+    ],
+    whoItSuits: [
+      "Wheelchair users who need seated-fit cuts",
+      "People with limited hand dexterity",
+      "One-handed dressers",
+      "Those using prosthetics or orthotics",
+      "Carers assisting someone to dress",
+    ],
+    locations: [
+      {
+        name: "Tommy Hilfiger Fifth Avenue Flagship",
+        address: "681 Fifth Avenue",
+        city: "New York, NY",
+        country: "USA",
+        phone: "+1 212-888-0100",
+        type: "flagship",
+      },
+      {
+        name: "Tommy Hilfiger Oxford Street",
+        address: "190 Oxford Street",
+        city: "London",
+        country: "UK",
+        type: "flagship",
+      },
+      {
+        name: "Tommy Hilfiger Amsterdam",
+        address: "Kalverstraat 20",
+        city: "Amsterdam",
+        country: "Netherlands",
+        type: "flagship",
+      },
+    ],
+    shipping: {
+      countries: ["USA", "Canada", "UK", "EU", "Australia"],
+      freeShippingThreshold: 100,
+      currency: "USD",
+      estimatedDays: "3–7 business days",
+      returnsPolicy:
+        "Free returns within 30 days. Items must be unworn with original tags attached.",
+    },
+    website: "https://usa.tommy.com/en/tommy-adaptive",
+    priceRange: "$$",
+    country: "USA",
+    featured: true,
+    founded: 2016,
+    certifications: ["Disability Confident (UK)", "ADA Compliant Design"],
+  },
+  {
+    id: "iz-adaptive",
+    name: "IZ Adaptive",
+    tagline: "Stylish adaptive clothing for real life",
+    description:
+      "IZ Adaptive is a Canadian brand creating sophisticated, fashion-forward clothing designed specifically for wheelchair users and people with limited mobility.",
+    longDescription:
+      "Founded in Toronto by Izzy Camilleri — a costume designer who began adapting clothes for a documentary subject with ALS — IZ Adaptive has grown into one of the most celebrated adaptive fashion labels in the world. Every piece is designed from the seated position up: back rises are higher, front rises shorter, legs don't pool around the footrest, and fastenings sit at the front for easy reach. The collections span casual to formal wear, meaning IZ customers can find looks for every occasion. The brand ships globally and has been featured in Vogue and The New York Times.",
+    logo: "IZ",
+    heroColor: "#2C2C2C",
+    adaptiveFeatures: [
+      "High back rise",
+      "Low front rise",
+      "Front-placed fastenings",
+      "No back pockets (reduces pressure sores)",
+      "Flat inner seams",
+      "Elasticated waistbands",
+      "Wider seat room",
+      "Shorter front hem",
+    ],
+    disabilityTypes: [
+      "Wheelchair users",
+      "Mobility impairments",
+      "Spinal cord injuries",
+      "ALS / motor neuron disease",
+      "Muscular dystrophy",
+      "Cerebral palsy",
+    ],
+    clothingTypes: [
+      "Tops",
+      "Trousers",
+      "Skirts",
+      "Dresses",
+      "Blazers",
+      "Outerwear",
+      "Formal wear",
+    ],
+    whoItSuits: [
+      "Full-time wheelchair users",
+      "Part-time wheelchair users",
+      "People who spend extended time seated",
+      "Those with pressure sore concerns",
+      "Anyone wanting professional / formal adaptive wear",
+    ],
+    locations: [
+      {
+        name: "IZ Adaptive Studio Toronto",
+        address: "55 Mill Street, Building 74",
+        city: "Toronto, ON",
+        country: "Canada",
+        phone: "+1 416-555-0192",
+        type: "flagship",
+      },
+    ],
+    shipping: {
+      countries: ["Canada", "USA", "UK", "EU", "Australia", "Worldwide"],
+      freeShippingThreshold: 150,
+      currency: "CAD",
+      estimatedDays: "5–10 business days international",
+      returnsPolicy:
+        "Returns accepted within 14 days. Final sale items are non-returnable.",
+    },
+    website: "https://www.izadaptive.com",
+    priceRange: "$$$",
+    country: "Canada",
+    featured: true,
+    founded: 2009,
+    certifications: ["Rick Hansen Foundation Accessibility Certified"],
+  },
+  {
+    id: "zappos-adaptive",
+    name: "Zappos Adaptive",
+    tagline: "The widest adaptive range, delivered fast",
+    description:
+      "Zappos Adaptive is Amazon-backed Zappos' dedicated section for adaptive clothing and footwear, curating hundreds of products from multiple brands with fast, free shipping.",
+    longDescription:
+      "Zappos Adaptive launched in 2017 as part of Zappos' commitment to inclusive fashion. Rather than a single brand, it's a curated marketplace bringing together adaptive products from dozens of labels — including their own private-label finds. The footwear selection is particularly strong, with easy-entry shoes, wide-fit options, and shoe-horn-free designs. The clothing range covers sensory-friendly garments, easy-on tops, adapted workwear, and more. All products ship free with next-day options, and returns are free for 365 days — a massive win for adaptive shoppers who often need to try multiple sizes.",
+    logo: "ZA",
+    heroColor: "#0064AF",
+    adaptiveFeatures: [
+      "Easy-entry footwear",
+      "Wide-fit shoes",
+      "Slip-on designs",
+      "Sensory-friendly fabrics",
+      "Tag-free garments",
+      "Flat seams",
+      "Easy pull-on waistbands",
+      "Adjustable features",
+    ],
+    disabilityTypes: [
+      "Sensory processing differences",
+      "Autism spectrum",
+      "Mobility impairments",
+      "Limb differences",
+      "Diabetes (foot care)",
+      "Elderly / age-related needs",
+      "Visual impairments",
+    ],
+    clothingTypes: [
+      "Footwear",
+      "Tops",
+      "Trousers",
+      "Underwear",
+      "Socks",
+      "Activewear",
+      "Nightwear",
+    ],
+    whoItSuits: [
+      "Sensory-sensitive individuals",
+      "People needing wide or orthopaedic footwear",
+      "Those with diabetes needing specialist footwear",
+      "Anyone needing a broad selection in one place",
+      "Shoppers who rely on easy returns",
+    ],
+    locations: [
+      {
+        name: "Zappos HQ (Las Vegas)",
+        address: "400 Stewart Avenue",
+        city: "Las Vegas, NV",
+        country: "USA",
+        type: "online-only",
+      },
+    ],
+    shipping: {
+      countries: ["USA", "Canada"],
+      freeShippingThreshold: 0,
+      currency: "USD",
+      estimatedDays: "1–2 business days (free expedited)",
+      returnsPolicy: "Free returns for 365 days. No questions asked.",
+    },
+    website: "https://www.zappos.com/e/adaptive",
+    priceRange: "$–$$$",
+    country: "USA",
+    featured: true,
+    founded: 2017,
+    certifications: ["Amazon Disability Employment Award"],
+  },
+  {
+    id: "able2wear",
+    name: "Able2Wear",
+    tagline: "UK-designed adaptive clothing with dignity at its core",
+    description:
+      "Able2Wear is a UK-based specialist in adaptive clothing for adults with physical disabilities, offering open-back garments, side-opening trousers, and discreetly adapted everyday wear.",
+    longDescription:
+      "Able2Wear was founded in the UK with a single mission: to create clothing that gives people with physical disabilities the dignity of independent dressing without looking 'medical'. Their range spans open-back tops and cardigans, side-opening trousers for easy catheter and PEG access, and fully front-opening shirts. Fabrics are chosen for comfort — soft cottons, stretch blends, and easy-care polyesters that survive hospital and care-home washing cycles. The brand works closely with occupational therapists to refine each design, and their sizing charts include seated and standing measurements. UK delivery is next-day and they ship to Europe and beyond.",
+    logo: "A2",
+    heroColor: "#4A1D96",
+    adaptiveFeatures: [
+      "Open-back garments",
+      "Side-opening trousers",
+      "Front-opening shirts",
+      "PEG access panels",
+      "Catheter-friendly designs",
+      "Soft, stretch fabrics",
+      "Easy-care machine washable",
+      "Invisible adaptations",
+    ],
+    disabilityTypes: [
+      "Stroke survivors",
+      "Parkinson's disease",
+      "Dementia",
+      "Wheelchair users",
+      "PEG / feeding tube users",
+      "Catheter users",
+      "Hemiplegia / hemiparesis",
+      "Elderly with limited mobility",
+    ],
+    clothingTypes: [
+      "Tops",
+      "Cardigans",
+      "Trousers",
+      "Skirts",
+      "Nightwear",
+      "Underwear",
+      "Footwear",
+    ],
+    whoItSuits: [
+      "Stroke survivors rebuilding independence",
+      "People with Parkinson's or tremors",
+      "Care home residents",
+      "Individuals with PEG or catheter needs",
+      "Occupational therapy patients",
+      "Carers seeking easier assisted dressing",
+    ],
+    locations: [
+      {
+        name: "Able2Wear Showroom",
+        address: "Unit 4, Parkway Business Centre",
+        city: "Manchester",
+        country: "UK",
+        phone: "+44 161 555 0234",
+        type: "flagship",
+      },
+      {
+        name: "Able2Wear London Stockist – Millfield",
+        address: "22 Millfield Lane",
+        city: "London",
+        country: "UK",
+        type: "stockist",
+      },
+    ],
+    shipping: {
+      countries: ["UK", "Ireland", "EU", "Australia", "Canada"],
+      freeShippingThreshold: 50,
+      currency: "GBP",
+      estimatedDays: "1–3 business days UK, 5–10 days international",
+      returnsPolicy:
+        "Free UK returns within 28 days. Items must be unworn. Exchange service available.",
+    },
+    website: "https://www.able2wear.co.uk",
+    priceRange: "$$",
+    country: "UK",
+    featured: true,
+    founded: 2003,
+    certifications: [
+      "Disability Confident Employer",
+      "OT-approved designs",
+      "BS 8300 Accessible Design",
+    ],
+  },
+];
+
+export const disabilityCategories = [
+  { id: "wheelchair", label: "Wheelchair Users", icon: "♿", count: 4 },
+  { id: "limb-difference", label: "Limb Differences", icon: "🦾", count: 3 },
+  { id: "sensory", label: "Sensory Processing", icon: "🌟", count: 2 },
+  { id: "fine-motor", label: "Fine Motor Difficulties", icon: "🤲", count: 3 },
+  { id: "neurological", label: "Neurological Conditions", icon: "🧠", count: 3 },
+  { id: "chronic-pain", label: "Chronic Pain", icon: "💙", count: 2 },
+  { id: "visual", label: "Visual Impairments", icon: "👁", count: 1 },
+  { id: "elderly", label: "Age-Related Needs", icon: "🏡", count: 2 },
+];
+
+export const adaptiveFeaturesList = [
+  "Magnetic closures",
+  "Velcro fastenings",
+  "Open-back garments",
+  "Side-opening",
+  "Seated fit",
+  "Sensory-friendly",
+  "Easy-on footwear",
+  "Tag-free",
+  "One-handed dressing",
+  "Catheter access",
+];
+
+export const clothingTypesList = [
+  "Tops",
+  "Trousers",
+  "Dresses",
+  "Outerwear",
+  "Footwear",
+  "Activewear",
+  "Formal wear",
+  "Nightwear",
+  "Underwear",
+];
+
+export function getBrandById(id: string): Brand | undefined {
+  return brands.find((b) => b.id === id);
+}
+
+export function searchBrands(params: {
+  query?: string;
+  disabilityType?: string;
+  clothingType?: string;
+  adaptiveFeature?: string;
+  country?: string;
+}): Brand[] {
+  let results = [...brands];
+
+  if (params.query) {
+    const q = params.query.toLowerCase();
+    results = results.filter(
+      (b) =>
+        b.name.toLowerCase().includes(q) ||
+        b.description.toLowerCase().includes(q) ||
+        b.adaptiveFeatures.some((f) => f.toLowerCase().includes(q)) ||
+        b.disabilityTypes.some((d) => d.toLowerCase().includes(q))
+    );
+  }
+
+  if (params.disabilityType) {
+    const dt = params.disabilityType.toLowerCase();
+    results = results.filter((b) =>
+      b.disabilityTypes.some((d) => d.toLowerCase().includes(dt))
+    );
+  }
+
+  if (params.clothingType) {
+    const ct = params.clothingType.toLowerCase();
+    results = results.filter((b) =>
+      b.clothingTypes.some((c) => c.toLowerCase().includes(ct))
+    );
+  }
+
+  if (params.adaptiveFeature) {
+    const af = params.adaptiveFeature.toLowerCase();
+    results = results.filter((b) =>
+      b.adaptiveFeatures.some((f) => f.toLowerCase().includes(af))
+    );
+  }
+
+  if (params.country) {
+    const co = params.country.toLowerCase();
+    results = results.filter((b) => b.country.toLowerCase().includes(co));
+  }
+
+  return results;
+}
