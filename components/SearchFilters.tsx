@@ -42,28 +42,28 @@ function CheckboxGroup({ label, paramKey, options }: CheckboxGroupProps) {
   }
 
   return (
-    <fieldset className="mb-6">
-      <legend className="text-xs font-bold text-gray-900 uppercase tracking-wider mb-3">
+    <fieldset>
+      <legend className="mb-3 text-xs font-semibold uppercase tracking-wider text-gray-400">
         {label}
       </legend>
-      <ul className="space-y-2">
+      <ul className="space-y-1">
         {options.map((opt) => {
           const checked = current.toLowerCase() === opt.toLowerCase();
           return (
             <li key={opt}>
-              <label className="flex items-center gap-2.5 cursor-pointer group">
+              <label className="group -mx-2 flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-1.5 transition-colors duration-150 hover:bg-gray-50">
                 <input
                   type="checkbox"
                   checked={checked}
                   onChange={() => toggle(opt)}
-                  className="w-4 h-4 rounded border-gray-300 text-primary-500 focus:ring-primary-400 cursor-pointer"
+                  className="h-4 w-4 cursor-pointer rounded border-gray-300 text-primary-600 transition-colors focus:ring-primary-400"
                   aria-label={`Filter by ${opt}`}
                 />
                 <span
-                  className={`text-sm transition-colors ${
+                  className={`text-sm transition-colors duration-150 ${
                     checked
-                      ? "text-primary-700 font-medium"
-                      : "text-gray-700 group-hover:text-gray-900"
+                      ? "font-medium text-primary-700"
+                      : "text-gray-600 group-hover:text-gray-900"
                   }`}
                 >
                   {opt}
@@ -92,51 +92,40 @@ export default function SearchFilters() {
   }
 
   return (
-    <aside
-      className="w-full"
-      aria-label="Search filters"
-    >
-      <div className="flex items-center justify-between mb-5">
-        <h2 className="text-sm font-bold text-gray-900 uppercase tracking-wider">
-          Filters
-        </h2>
+    <aside className="w-full" aria-label="Search filters">
+      <div className="mb-5 flex items-center justify-between">
+        <h2 className="text-sm font-semibold text-gray-900">Filters</h2>
         {hasFilters && (
           <button
             onClick={clearAll}
-            className="text-xs font-medium text-primary-600 hover:text-primary-700 transition-colors underline underline-offset-2"
+            className="text-xs font-medium text-primary-600 transition-colors duration-150 hover:text-primary-700"
           >
             Clear all
           </button>
         )}
       </div>
 
-      <div className="divide-y divide-gray-100 space-y-0">
+      <div className="divide-y divide-gray-100 [&>*+*]:pt-6 [&>*:not(:last-child)]:pb-6">
         <CheckboxGroup
           label="Disability type"
           paramKey="disability"
           options={disabilityOptions}
         />
-        <div className="pt-6">
-          <CheckboxGroup
-            label="Clothing type"
-            paramKey="clothing"
-            options={clothingTypesList}
-          />
-        </div>
-        <div className="pt-6">
-          <CheckboxGroup
-            label="Adaptive feature"
-            paramKey="feature"
-            options={adaptiveFeaturesList}
-          />
-        </div>
-        <div className="pt-6">
-          <CheckboxGroup
-            label="Ships to"
-            paramKey="location"
-            options={locationOptions}
-          />
-        </div>
+        <CheckboxGroup
+          label="Clothing type"
+          paramKey="clothing"
+          options={clothingTypesList}
+        />
+        <CheckboxGroup
+          label="Adaptive feature"
+          paramKey="feature"
+          options={adaptiveFeaturesList}
+        />
+        <CheckboxGroup
+          label="Ships to"
+          paramKey="location"
+          options={locationOptions}
+        />
       </div>
     </aside>
   );

@@ -4,36 +4,26 @@ import Link from "next/link";
 import { useState } from "react";
 import SearchBar from "./SearchBar";
 
-function XisLogo({ dark = false }: { dark?: boolean }) {
+const navLinks = [
+  { href: "/search", label: "Browse brands" },
+  { href: "/search?feature=sensory-friendly", label: "Sensory" },
+  { href: "/search?disability=wheelchair", label: "Wheelchair" },
+];
+
+export function XisLogo() {
   return (
     <Link
       href="/"
-      className="flex items-center gap-2.5 flex-shrink-0 group"
+      className="group flex flex-shrink-0 items-center gap-2"
       aria-label="Xi's home"
     >
-      <div className="relative w-9 h-9 rounded-xl bg-primary-500 flex items-center justify-center shadow-sm group-hover:bg-primary-600 transition-colors overflow-hidden">
-        <span
-          className="text-white font-black text-base italic leading-none tracking-tight select-none"
-          style={{ fontStyle: "italic", letterSpacing: "-0.03em" }}
-        >
-          Xi
+      <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-600 transition-colors duration-200 group-hover:bg-primary-700">
+        <span className="select-none text-sm font-bold leading-none text-white">
+          X
         </span>
-        <span
-          className="absolute bottom-1 right-1.5 text-white/60 font-bold text-[9px] leading-none select-none"
-          aria-hidden="true"
-        >
-          ʼs
-        </span>
-      </div>
-      <span
-        className={`text-xl font-black tracking-tight transition-colors ${
-          dark
-            ? "text-white group-hover:text-primary-200"
-            : "text-gray-900 group-hover:text-primary-600"
-        }`}
-        style={{ letterSpacing: "-0.04em" }}
-      >
-        Xi<span className="text-primary-500">&apos;s</span>
+      </span>
+      <span className="text-lg font-bold tracking-tight text-gray-900">
+        Xi<span className="text-primary-600">&apos;s</span>
       </span>
     </Link>
   );
@@ -43,46 +33,40 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 gap-4">
+    <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/80 backdrop-blur-md">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between gap-4">
           <XisLogo />
 
-          <div className="hidden md:flex flex-1 max-w-md">
+          <div className="hidden max-w-sm flex-1 md:flex">
             <SearchBar compact />
           </div>
 
-          <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
+          <nav className="hidden items-center gap-1 md:flex" aria-label="Main navigation">
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="rounded-full px-3.5 py-2 text-sm font-medium text-gray-600 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-900"
+              >
+                {link.label}
+              </Link>
+            ))}
             <Link
               href="/search"
-              className="text-sm font-medium text-gray-600 hover:text-primary-600 transition-colors"
+              className="ml-2 inline-flex items-center rounded-full bg-primary-600 px-4 py-2 text-sm font-semibold text-white transition-all duration-200 hover:bg-primary-700 active:scale-[0.98]"
             >
-              Browse Brands
-            </Link>
-            <Link
-              href="/search?feature=sensory-friendly"
-              className="text-sm font-medium text-gray-600 hover:text-primary-600 transition-colors"
-            >
-              Sensory
-            </Link>
-            <Link
-              href="/search?disability=wheelchair"
-              className="text-sm font-medium text-gray-600 hover:text-primary-600 transition-colors"
-            >
-              Wheelchair
-            </Link>
-            <Link href="/search" className="btn-primary text-sm py-2 px-4">
-              Find My Fit
+              Find my fit
             </Link>
           </nav>
 
           <button
-            className="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
+            className="rounded-full p-2 text-gray-600 transition-colors hover:bg-gray-100 md:hidden"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-expanded={menuOpen}
             aria-label="Toggle menu"
           >
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               {menuOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
@@ -93,20 +77,25 @@ export default function Navbar() {
         </div>
 
         {menuOpen && (
-          <div className="md:hidden border-t border-gray-100 py-4 space-y-3">
+          <div className="animate-fade-in space-y-4 border-t border-gray-100 py-4 md:hidden">
             <SearchBar compact />
-            <nav className="flex flex-col gap-2">
-              <Link href="/search" className="text-sm font-medium text-gray-700 py-2 hover:text-primary-600" onClick={() => setMenuOpen(false)}>
-                Browse Brands
-              </Link>
-              <Link href="/search?feature=sensory-friendly" className="text-sm font-medium text-gray-700 py-2 hover:text-primary-600" onClick={() => setMenuOpen(false)}>
-                Sensory Clothing
-              </Link>
-              <Link href="/search?disability=wheelchair" className="text-sm font-medium text-gray-700 py-2 hover:text-primary-600" onClick={() => setMenuOpen(false)}>
-                Wheelchair Clothing
-              </Link>
-              <Link href="/search" className="btn-primary text-sm text-center" onClick={() => setMenuOpen(false)}>
-                Find My Fit
+            <nav className="flex flex-col gap-1" aria-label="Mobile navigation">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="rounded-xl px-3 py-2.5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-gray-900"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <Link
+                href="/search"
+                className="btn-primary mt-2 text-center"
+                onClick={() => setMenuOpen(false)}
+              >
+                Find my fit
               </Link>
             </nav>
           </div>
