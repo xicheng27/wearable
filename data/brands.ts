@@ -321,6 +321,7 @@ export const brands: Brand[] = [
       "ABL Denim focuses on familiar everyday denim with changes that matter in a seated position, including a higher back rise, a lower front rise and easier waist access. The result is clothing that looks like mainstream fashion while reducing common fit and comfort problems for wheelchair users.",
     logo: "ABL",
     heroColor: "#24405C",
+    image: "/images/category-jeans.svg",
     adaptiveFeatures: [
       "Seated fit cut",
       "High back rise",
@@ -335,6 +336,7 @@ export const brands: Brand[] = [
       "Sensory processing differences",
     ],
     clothingTypes: ["Jeans", "Trousers"],
+    styleTags: ["Casual", "Classic", "Everyday"],
     whoItSuits: [
       "Wheelchair users seeking everyday denim",
       "People who need easier waist access",
@@ -364,6 +366,7 @@ export const brands: Brand[] = [
       "BILLY Footwear combines mainstream sneaker styling with wraparound and short-wrap zipper systems that expose more of the footbed. Many styles include removable insoles and width options, making the range useful for people who wear braces, orthotics or prosthetics.",
     logo: "BF",
     heroColor: "#E0583E",
+    image: "/images/category-shoes.svg",
     adaptiveFeatures: [
       "Wraparound zipper",
       "Wide shoe opening",
@@ -379,6 +382,7 @@ export const brands: Brand[] = [
       "Orthotic users",
     ],
     clothingTypes: ["Footwear"],
+    styleTags: ["Casual", "Sporty", "Streetwear"],
     whoItSuits: [
       "People who use AFOs or orthotics",
       "Wearers with limited reach or dexterity",
@@ -417,6 +421,7 @@ export const brands: Brand[] = [
       "MagnaReady preserves the appearance of classic menswear while replacing difficult buttons with patented magnetic closures. Its clothing is designed for people living with Parkinson's, arthritis, neuropathy, ALS, stroke-related mobility changes and other fine-motor challenges.",
     logo: "MR",
     heroColor: "#4B5D67",
+    image: "/images/category-formal.svg",
     adaptiveFeatures: [
       "Magnetic closures",
       "Easy-open cuffs",
@@ -432,6 +437,7 @@ export const brands: Brand[] = [
       "One-handed dressers",
     ],
     clothingTypes: ["Shirts", "Tops", "Trousers", "Formal wear"],
+    styleTags: ["Formal", "Professional", "Classic", "Smart casual"],
     whoItSuits: [
       "People with tremors or arthritis",
       "One-handed dressers",
@@ -461,6 +467,7 @@ export const brands: Brand[] = [
       "Slick Chicks uses patented side-fastening designs so underwear can open fully instead of being pulled over the feet and legs. The approach supports people with limited mobility or dexterity, wheelchair users, post-surgery recovery and assisted dressing.",
     logo: "SC",
     heroColor: "#A95076",
+    image: "/images/category-underwear.svg",
     adaptiveFeatures: [
       "Side fastenings",
       "Fully opening underwear",
@@ -475,6 +482,7 @@ export const brands: Brand[] = [
       "Post-surgery recovery",
     ],
     clothingTypes: ["Underwear", "Activewear"],
+    styleTags: ["Everyday", "Minimal", "Comfort"],
     whoItSuits: [
       "People dressing from a seated or lying position",
       "Wearers with limited hand dexterity",
@@ -512,6 +520,7 @@ export const brands: Brand[] = [
       "Nike FlyEase technologies are designed to make footwear quicker and easier to put on and take off. The Go FlyEase uses a bi-stable hinge and tensioner for hands-free entry, while other EasyOn styles use flexible heels, zippers or simplified closures.",
     logo: "NIKE",
     heroColor: "#111111",
+    image: "/images/category-shoes.svg",
     adaptiveFeatures: [
       "Hands-free entry",
       "Hinged heel",
@@ -526,6 +535,7 @@ export const brands: Brand[] = [
       "Limb differences",
     ],
     clothingTypes: ["Footwear"],
+    styleTags: ["Sporty", "Streetwear", "Modern"],
     whoItSuits: [
       "People with limited reach or dexterity",
       "Wearers who prefer hands-free shoe changes",
