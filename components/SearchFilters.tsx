@@ -29,7 +29,7 @@ function FilterGroup({ label, paramKey, options, defaultOpen = false }: FilterGr
     } else {
       params.set(paramKey, value);
     }
-    router.push(`/search?${params.toString()}`);
+    router.push(`/brands?${params.toString()}`);
   }
 
   return (
@@ -106,7 +106,7 @@ export default function SearchFilters() {
     const q = searchParams.get("q");
     const params = new URLSearchParams();
     if (q) params.set("q", q);
-    router.push(`/search?${params.toString()}`);
+    router.push(`/brands?${params.toString()}`);
   }
 
   return (

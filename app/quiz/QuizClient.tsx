@@ -6,10 +6,10 @@ import { useState } from "react";
 import { LogoMark } from "@/components/Logo";
 import Photo from "@/components/Photo";
 import {
-  clothingTypesList,
   disabilityOptionsList,
   shippingLocationsList,
 } from "@/data/brands";
+import { quizClothingOptions } from "@/data/categories";
 
 interface StepDef {
   id: string;
@@ -63,9 +63,9 @@ const steps: StepDef[] = [
   {
     id: "clothing",
     title: "What are you shopping for?",
-    subtitle: "Choose one or more clothing categories.",
+    subtitle: "Choose one or more clothing pieces.",
     type: "multi",
-    options: clothingTypesList,
+    options: quizClothingOptions.map((o) => o.label),
   },
   {
     id: "location",

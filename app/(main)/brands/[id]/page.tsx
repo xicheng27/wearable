@@ -45,7 +45,7 @@ export default function BrandDetailPage({ params }: PageProps) {
               </li>
               <li aria-hidden="true">/</li>
               <li>
-                <Link href="/search" className="transition-colors hover:text-gray-700">
+                <Link href="/brands" className="transition-colors hover:text-gray-700">
                   Brands
                 </Link>
               </li>
@@ -304,7 +304,7 @@ export default function BrandDetailPage({ params }: PageProps) {
               </p>
             </div>
             <Link
-              href="/search"
+              href="/brands"
               className="hidden flex-shrink-0 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700 sm:block"
             >
               Browse all →
@@ -314,7 +314,7 @@ export default function BrandDetailPage({ params }: PageProps) {
             {brand.disabilityTypes.slice(0, 3).map((dt) => (
               <Link
                 key={dt}
-                href={`/search?disability=${encodeURIComponent(dt.toLowerCase())}`}
+                href={`/brands?disability=${encodeURIComponent(dt.toLowerCase())}`}
                 className="rounded-full border border-gray-200 bg-white px-3.5 py-1.5 text-sm text-gray-600 transition-all duration-200 hover:border-primary-200 hover:bg-primary-50 hover:text-primary-700"
               >
                 More brands for {dt}

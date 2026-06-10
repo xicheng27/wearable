@@ -81,6 +81,34 @@ const glyphs = {
     { d: "M12 11.2 8.5 4.6h7z" },
     { d: "M5.4 19.6 8.5 4.6l3.5 6.6 3.5-6.6 3.1 15z" },
   ],
+  shirt: [
+    { d: "M8.4 4.4 4 7.1l1.7 2.9 2-1.1v10.7h8.6V8.9l2 1.1L20 7.1l-4.4-2.7a3.6 3.6 0 0 1-7.2 0z" },
+    { d: "M12 8.8v10.4" },
+    { circle: [12, 11.4, 0.35], fill: true },
+    { circle: [12, 14.2, 0.35], fill: true },
+    { circle: [12, 17, 0.35], fill: true },
+  ],
+  jacket: [
+    { d: "M8.4 4.4 4 7.1l1.7 2.9 2-1.1v10.7h3.4V7.8z" },
+    { d: "M15.6 4.4 20 7.1l-1.7 2.9-2-1.1v10.7h-3.4V7.8z" },
+    { d: "M8.4 4.4 12 7.8l3.6-3.4" },
+  ],
+  pants: [
+    { d: "M7.5 4.5h9l1.1 15.5h-3.9L12 12.6 10.3 20H6.4z" },
+    { d: "M7.7 7.4h8.6" },
+  ],
+  dress: [
+    { d: "M10 4.5h4l-.8 3.2c3 1.6 4.6 5.6 5 11.8H5.8c.4-6.2 2-10.2 5-11.8z" },
+    { d: "M8.4 10.6h7.2" },
+  ],
+  briefs: [
+    { d: "M5 8h14v2.6c-3.4.4-5 2.2-5.6 5.4h-2.8C10 12.8 8.4 11 5 10.6z" },
+    { d: "M5 8.2h14" },
+  ],
+  sock: [
+    { d: "M9.5 4h5.5v7.2c0 2.9-1.2 4.8-3.4 5.6-2 .7-4.1-.3-4.6-2.1-.4-1.6.7-2.8 2.5-3.5z" },
+    { d: "M9.5 6.2H15" },
+  ],
 };
 
 const tiles = [
@@ -104,6 +132,18 @@ const tiles = [
   ["brand-iz-adaptive", "#E9E9E9", "#D1D1D1", "#2C2C2C", "blazer"],
   ["brand-zappos-adaptive", "#DFEAF6", "#BDD4ED", "#0C4B7E", "sneaker"],
   ["brand-able2wear", "#EAE3F4", "#D5C7EB", "#4A1D96", "waves"],
+  ["cat-tops", "#E8F3EA", "#CEE6D5", "#2F6B43", "tshirt"],
+  ["cat-shirts", "#E2EBF5", "#C3D6EC", "#2A4E7E", "shirt"],
+  ["cat-tshirts", "#E2F1F1", "#C2E1E1", "#1F5F5F", "tshirt"],
+  ["cat-jackets", "#E9EAEE", "#D2D4DC", "#3B4150", "jacket"],
+  ["cat-pants", "#F0EAE2", "#E0D3C2", "#6B5538", "pants"],
+  ["cat-jeans", "#E3E7F3", "#C6CEE8", "#2F3D72", "pants"],
+  ["cat-dresses", "#F6E8EB", "#ECCDD4", "#8E3A4E", "dress"],
+  ["cat-shoes", "#E3EEF0", "#C6DCE1", "#2B5F6B", "sneaker"],
+  ["cat-underwear", "#ECE7F4", "#D8CEEB", "#4E3B78", "briefs"],
+  ["cat-formal", "#EBEDF2", "#D5D9E4", "#2F3A55", "tie"],
+  ["cat-sportswear", "#E3F2EF", "#C3E3DD", "#1D6157", "bolt"],
+  ["cat-accessories", "#F2EDE0", "#E3D8BE", "#6F5D2E", "sock"],
 ];
 
 function renderGlyph(name, deep) {
