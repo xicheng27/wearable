@@ -1,24 +1,12 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { adaptiveFeaturesList, clothingTypesList } from "@/data/brands";
-
-const disabilityOptions = [
-  "Wheelchair users",
-  "Mobility impairments",
-  "Limb differences",
-  "Sensory processing",
-  "Fine motor difficulties",
-  "Neurological conditions",
-  "Stroke survivors",
-  "Parkinson's disease",
-  "Autism spectrum",
-  "Visual impairments",
-  "Chronic pain",
-  "Elderly / age-related",
-];
-
-const locationOptions = ["USA", "Canada", "UK", "EU", "Australia"];
+import {
+  adaptiveFeaturesList,
+  clothingTypesList,
+  disabilityOptionsList,
+  shippingLocationsList,
+} from "@/data/brands";
 
 interface CheckboxGroupProps {
   label: string;
@@ -109,7 +97,7 @@ export default function SearchFilters() {
         <CheckboxGroup
           label="Disability type"
           paramKey="disability"
-          options={disabilityOptions}
+          options={disabilityOptionsList}
         />
         <CheckboxGroup
           label="Clothing type"
@@ -124,7 +112,7 @@ export default function SearchFilters() {
         <CheckboxGroup
           label="Ships to"
           paramKey="location"
-          options={locationOptions}
+          options={shippingLocationsList}
         />
       </div>
     </aside>

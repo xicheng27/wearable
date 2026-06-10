@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getBrandById, brands } from "@/data/brands";
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
 
 interface PageProps {
   params: { id: string };
@@ -100,6 +101,7 @@ export default function BrandDetailPage({ params }: PageProps) {
               )}
             </section>
 
+            <Reveal>
             <section className="card p-6 sm:p-8" aria-labelledby="features-heading">
               <h2 id="features-heading" className="text-lg font-semibold text-gray-900">
                 Adaptive features
@@ -123,7 +125,9 @@ export default function BrandDetailPage({ params }: PageProps) {
                 ))}
               </div>
             </section>
+            </Reveal>
 
+            <Reveal>
             <section className="card p-6 sm:p-8" aria-labelledby="who-heading">
               <h2 id="who-heading" className="text-lg font-semibold text-gray-900">
                 Who it suits
@@ -163,6 +167,7 @@ export default function BrandDetailPage({ params }: PageProps) {
                 </div>
               </div>
             </section>
+            </Reveal>
           </div>
 
           <aside className="space-y-6" aria-label="Brand details sidebar">
@@ -287,6 +292,7 @@ export default function BrandDetailPage({ params }: PageProps) {
           </aside>
         </div>
 
+        <Reveal>
         <section className="card mt-8 p-6 sm:p-8" aria-labelledby="more-brands-heading">
           <div className="flex items-center justify-between gap-4">
             <div>
@@ -316,6 +322,7 @@ export default function BrandDetailPage({ params }: PageProps) {
             ))}
           </div>
         </section>
+        </Reveal>
       </div>
     </div>
   );

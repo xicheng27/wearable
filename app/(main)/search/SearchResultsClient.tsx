@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import SearchBar from "@/components/SearchBar";
 import SearchFilters from "@/components/SearchFilters";
 import BrandCard from "@/components/BrandCard";
+import Reveal from "@/components/Reveal";
 import { searchBrands } from "@/data/brands";
 
 export default function SearchResultsClient() {
@@ -13,6 +14,7 @@ export default function SearchResultsClient() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   const q = searchParams.get("q") ?? "";
+  const fromQuiz = searchParams.get("from") === "quiz";
   const disability = searchParams.get("disability") ?? "";
   const clothing = searchParams.get("clothing") ?? "";
   const feature = searchParams.get("feature") ?? "";
@@ -57,8 +59,17 @@ export default function SearchResultsClient() {
       <div className="border-b border-gray-100 bg-white py-8">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-            {q ? `Results for “${q}”` : "Browse adaptive brands"}
+            {fromQuiz
+              ? "Your matches"
+              : q
+                ? `Results for “${q}”`
+                : "Browse adaptive brands"}
           </h1>
+          {fromQuiz && (
+            <p className="mt-1.5 text-sm text-gray-500">
+              Based on your answers. Adjust the filters anytime to refine your matches.
+            </p>
+          )}
           <div className="mt-5 max-w-xl">
             <SearchBar defaultValue={q} />
           </div>
@@ -134,13 +145,9 @@ export default function SearchResultsClient() {
             ) : (
               <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
                 {results.map((brand, i) => (
-                  <div
-                    key={brand.id}
-                    className="animate-fade-up h-full"
-                    style={{ animationDelay: `${Math.min(i * 50, 300)}ms` }}
-                  >
+                  <Reveal key={brand.id} delay={Math.min(i * 50, 300)} className="h-full">
                     <BrandCard brand={brand} />
-                  </div>
+                  </Reveal>
                 ))}
               </div>
             )}
