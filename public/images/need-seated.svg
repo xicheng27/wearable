@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-label="need seated">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#DCE9F5"/>
+      <stop offset="1" stop-color="#B9D2EB"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="520" fill="url(#bg)"/>
+  <circle cx="660" cy="80" r="190" fill="#ffffff" opacity="0.22"/>
+  <circle cx="110" cy="470" r="150" fill="#ffffff" opacity="0.16"/>
+  <circle cx="700" cy="450" r="90" fill="#1F4E79" opacity="0.05"/>
+  <g stroke="#1F4E79" stroke-width="1" opacity="0.05">
+    <line x1="0" y1="120" x2="800" y2="40"/>
+    <line x1="0" y1="300" x2="800" y2="220"/>
+    <line x1="0" y1="480" x2="800" y2="400"/>
+  </g>
+  <g transform="translate(244,104) scale(13)" fill="none" stroke="#1F4E79" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"><path d="M13.2 7.2v4.6h4.4l2.6 5.2"/><path d="M13.2 9.4h-2.4"/><circle cx="10.8" cy="16.2" r="4.4"/><circle cx="18.8" cy="19.2" r="1.5"/><circle cx="13.2" cy="4.4" r="1.7" fill="#1F4E79" stroke="none"/></g>
+</svg>

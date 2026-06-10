@@ -23,9 +23,11 @@ export interface Brand {
   longDescription: string;
   logo: string;
   heroColor: string;
+  image: string;
   adaptiveFeatures: string[];
   disabilityTypes: string[];
   clothingTypes: string[];
+  styleTags: string[];
   whoItSuits: string[];
   locations: StoreLocation[];
   shipping: ShippingInfo;

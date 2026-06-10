@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Brand } from "@/types";
+import Photo from "./Photo";
 
 interface BrandCardProps {
   brand: Brand;
@@ -9,21 +10,21 @@ export default function BrandCard({ brand }: BrandCardProps) {
   return (
     <Link href={`/brands/${brand.id}`} className="group block h-full">
       <article className="card card-hover flex h-full flex-col overflow-hidden">
-        <div
-          className="relative flex h-32 items-center justify-center"
-          style={{
-            background: `linear-gradient(135deg, ${brand.heroColor}14 0%, ${brand.heroColor}05 100%)`,
-          }}
-          aria-hidden="true"
-        >
+        <div className="relative h-32" aria-hidden="true">
+          <Photo
+            src={brand.image}
+            alt=""
+            className="h-full w-full"
+            imgClassName="transition-transform duration-500 group-hover:scale-[1.04]"
+          />
           <div
-            className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-lg font-bold shadow-sm ring-1 ring-gray-900/5 transition-transform duration-300 group-hover:scale-105"
+            className="absolute bottom-3 left-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white text-sm font-bold shadow-sm ring-1 ring-gray-900/5"
             style={{ color: brand.heroColor }}
           >
             {brand.logo}
           </div>
           {brand.featured && (
-            <span className="absolute right-4 top-4 inline-flex items-center gap-1 text-[11px] font-medium text-gray-400">
+            <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/85 px-2 py-0.5 text-[11px] font-medium text-gray-500 backdrop-blur-sm">
               <svg className="h-3 w-3 text-primary-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>

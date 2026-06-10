@@ -3,10 +3,11 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { LogoMark } from "@/components/Logo";
+import Photo from "@/components/Photo";
 import {
   clothingTypesList,
   disabilityOptionsList,
-  searchBrands,
   shippingLocationsList,
 } from "@/data/brands";
 
@@ -99,18 +100,16 @@ const steps: StepDef[] = [
   },
 ];
 
-const fasteningToFeature: Record<string, string> = {
-  "Magnetic buttons": "Magnetic closures",
-  Velcro: "Velcro fastenings",
-  "Easy zippers": "Zipper",
-  "Slip-on / no fastenings": "Slip-on",
-};
-
-const styleToClothing: Record<string, string> = {
-  Formal: "Formal wear",
-  "Old money": "Formal wear",
-  "Smart casual": "Formal wear",
-  Sporty: "Activewear",
+const styleImages: Record<string, string> = {
+  "Swedish style": "/images/style-swedish.svg",
+  "Clean / minimal": "/images/style-minimal.svg",
+  "Old money": "/images/style-oldmoney.svg",
+  Streetwear: "/images/style-streetwear.svg",
+  Formal: "/images/style-formal.svg",
+  Casual: "/images/style-casual.svg",
+  Sporty: "/images/style-sporty.svg",
+  Vintage: "/images/style-vintage.svg",
+  "Smart casual": "/images/style-smartcasual.svg",
 };
 
 function CheckIcon() {
@@ -125,21 +124,29 @@ interface OptionButtonProps {
   label: string;
   selected: boolean;
   onClick: () => void;
+  image?: string;
 }
 
-function OptionButton({ label, selected, onClick }: OptionButtonProps) {
+function OptionButton({ label, selected, onClick, image }: OptionButtonProps) {
   return (
     <button
       type="button"
       onClick={onClick}
       aria-pressed={selected}
-      className={`flex items-center justify-between gap-3 rounded-2xl border px-4 py-3.5 text-left text-sm font-medium transition-all duration-200 active:scale-[0.98] ${
+      className={`flex items-center justify-between gap-3 rounded-2xl border text-left text-sm font-medium transition-all duration-200 active:scale-[0.98] ${
+        image ? "p-2.5 pr-4" : "px-4 py-3.5"
+      } ${
         selected
           ? "border-primary-600 bg-primary-50 text-primary-700"
           : "border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50"
       }`}
     >
-      {label}
+      <span className="flex items-center gap-3">
+        {image && (
+          <Photo src={image} alt="" className="h-12 w-12 flex-shrink-0 rounded-xl" />
+        )}
+        {label}
+      </span>
       <span
         className={`flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full transition-all duration-200 ${
           selected ? "bg-primary-600 text-white" : "border border-gray-300 text-transparent"
@@ -150,57 +157,6 @@ function OptionButton({ label, selected, onClick }: OptionButtonProps) {
       </span>
     </button>
   );
-}
-
-/**
- * Builds search params from quiz answers, then relaxes the least important
- * filters until at least one brand matches — so the quiz never dead-ends
- * on an empty results page.
- */
-function buildResultParams(answers: Record<string, string[]>): URLSearchParams {
-  const needs = answers.needs ?? [];
-  const seated = answers.seated?.[0] ?? "";
-  const sensory = (answers.sensory ?? []).filter((s) => s !== "No sensory preferences");
-  const fastenings = (answers.fastenings ?? []).filter((f) => f !== "No preference");
-  const clothing = answers.clothing ?? [];
-  const location = answers.location?.[0] ?? "";
-  const styles = answers.style ?? [];
-  const budget = answers.budget?.[0] ?? "";
-
-  let feature = "";
-  if (seated.startsWith("Yes")) feature = "Seated fit";
-  else if (fastenings[0]) feature = fasteningToFeature[fastenings[0]] ?? "";
-  else if (sensory.length > 0) feature = "Sensory-friendly";
-
-  const clothingFilter =
-    clothing[0] ?? styles.map((s) => styleToClothing[s]).find(Boolean) ?? "";
-
-  const price = budget.startsWith("$") ? budget.split(" ")[0] : "";
-
-  const filters: Record<string, string> = {};
-  if (needs[0]) filters.disability = needs[0];
-  if (location) filters.location = location;
-  if (clothingFilter) filters.clothing = clothingFilter;
-  if (feature) filters.feature = feature;
-  if (price) filters.price = price;
-
-  const matches = (f: Record<string, string>) =>
-    searchBrands({
-      disabilityType: f.disability,
-      clothingType: f.clothing,
-      adaptiveFeature: f.feature,
-      country: f.location,
-      priceRange: f.price,
-    }).length;
-
-  for (const key of ["price", "feature", "clothing", "location", "disability"]) {
-    if (matches(filters) > 0) break;
-    delete filters[key];
-  }
-
-  const params = new URLSearchParams(filters);
-  params.set("from", "quiz");
-  return params;
 }
 
 export default function QuizClient() {
@@ -226,7 +182,19 @@ export default function QuizClient() {
 
   function next() {
     if (isLastStep) {
-      router.push(`/search?${buildResultParams(answers).toString()}`);
+      const params = new URLSearchParams();
+      const set = (key: string, list?: string[]) => {
+        if (list && list.length > 0) params.set(key, list.map(encodeURIComponent).join(","));
+      };
+      set("needs", answers.needs);
+      if (answers.seated?.[0]) params.set("seated", answers.seated[0]);
+      set("sensory", answers.sensory);
+      set("fastenings", answers.fastenings);
+      set("clothing", answers.clothing);
+      if (answers.location?.[0]) params.set("location", answers.location[0]);
+      set("styles", answers.style);
+      if (answers.budget?.[0]) params.set("budget", answers.budget[0]);
+      router.push(`/results?${params.toString()}`);
     } else {
       setStep(step + 1);
     }
@@ -236,9 +204,7 @@ export default function QuizClient() {
     <div className="flex min-h-screen flex-col bg-white">
       <header className="mx-auto flex w-full max-w-2xl items-center justify-between px-6 py-5">
         <Link href="/" className="flex items-center gap-2" aria-label="Xi's home">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-600">
-            <span className="select-none text-sm font-bold text-white">X</span>
-          </span>
+          <LogoMark size={32} />
         </Link>
         <p className="text-sm text-gray-400">
           {step + 1} of {steps.length}
@@ -277,6 +243,7 @@ export default function QuizClient() {
                 label={opt}
                 selected={selected.includes(opt)}
                 onClick={() => select(opt)}
+                image={current.id === "style" ? styleImages[opt] : undefined}
               />
             ))}
           </div>
