@@ -9,7 +9,10 @@ interface RevealProps {
 }
 
 /**
- * Fades and slides content in the first time it enters the viewport.
+ * Fades and slides content in when it enters the viewport.
+ * When the element scrolls back out below the viewport, the state resets
+ * so the animation replays on the next scroll down. Elements that exit
+ * above the viewport stay visible, so scrolling up never re-animates them.
  * Respects prefers-reduced-motion by showing content immediately.
  */
 export default function Reveal({ children, delay = 0, className = "" }: RevealProps) {
@@ -32,7 +35,9 @@ export default function Reveal({ children, delay = 0, className = "" }: RevealPr
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
-          observer.disconnect();
+        } else if (entry.boundingClientRect.top > 0) {
+          // Element left through the bottom edge — reset for the next pass.
+          setVisible(false);
         }
       },
       { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
@@ -45,7 +50,7 @@ export default function Reveal({ children, delay = 0, className = "" }: RevealPr
   return (
     <div
       ref={ref}
-      style={{ transitionDelay: `${delay}ms` }}
+      style={{ transitionDelay: visible ? `${delay}ms` : "0ms" }}
       className={`transition-all duration-700 ease-out will-change-transform ${
         visible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
       } ${className}`}

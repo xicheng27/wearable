@@ -53,7 +53,13 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="/search"
+              href="/signin"
+              className="rounded-full px-3.5 py-2 text-sm font-medium text-gray-600 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-900"
+            >
+              Sign in
+            </Link>
+            <Link
+              href="/quiz"
               className="ml-2 inline-flex items-center rounded-full bg-primary-600 px-4 py-2 text-sm font-semibold text-white transition-all duration-200 hover:bg-primary-700 active:scale-[0.98]"
             >
               Find my fit
@@ -91,7 +97,14 @@ export default function Navbar() {
                 </Link>
               ))}
               <Link
-                href="/search"
+                href="/signin"
+                className="rounded-xl px-3 py-2.5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-gray-900"
+                onClick={() => setMenuOpen(false)}
+              >
+                Sign in
+              </Link>
+              <Link
+                href="/quiz"
                 className="btn-primary mt-2 text-center"
                 onClick={() => setMenuOpen(false)}
               >

@@ -1,110 +1,64 @@
-import HeroSection from "@/components/HeroSection";
-import CategoryGrid from "@/components/CategoryGrid";
-import HowItWorks from "@/components/HowItWorks";
-import BrandCard from "@/components/BrandCard";
-import Reveal from "@/components/Reveal";
-import { brands } from "@/data/brands";
 import Link from "next/link";
 
-const stats = [
-  { value: "4+", label: "Adaptive brands" },
-  { value: "40+", label: "Adaptive features" },
-  { value: "8", label: "Disability categories" },
-  { value: "15+", label: "Countries covered" },
-];
-
 export default function HomePage() {
-  const featured = brands.filter((b) => b.featured);
-
   return (
-    <>
-      <HeroSection />
+    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-white px-6">
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-[60vh]"
+        style={{
+          background:
+            "radial-gradient(55% 100% at 50% 0%, rgba(29, 158, 117, 0.07) 0%, rgba(29, 158, 117, 0) 100%)",
+        }}
+        aria-hidden="true"
+      />
 
-      <section className="bg-white py-16 sm:py-20" aria-labelledby="featured-heading">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Reveal className="mb-8 flex items-end justify-between sm:mb-10">
-            <div>
-              <h2 id="featured-heading" className="section-title">
-                Featured brands
-              </h2>
-              <p className="section-subtitle">
-                Trusted adaptive fashion labels loved by the disability community.
-              </p>
-            </div>
-            <Link
-              href="/search"
-              className="hidden flex-shrink-0 items-center gap-1.5 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700 sm:inline-flex"
-            >
-              See all
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </Reveal>
+      <main className="relative flex w-full max-w-xs flex-col items-center text-center">
+        <span
+          className="animate-fade-up flex h-14 w-14 items-center justify-center rounded-2xl bg-primary-600 shadow-md shadow-primary-600/20"
+          aria-hidden="true"
+        >
+          <span className="select-none text-xl font-bold text-white">X</span>
+        </span>
 
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {featured.map((brand, i) => (
-              <Reveal key={brand.id} delay={Math.min(i * 70, 280)} className="h-full">
-                <BrandCard brand={brand} />
-              </Reveal>
-            ))}
-          </div>
+        <h1
+          className="animate-fade-up mt-6 text-4xl font-bold tracking-tight text-gray-900"
+          style={{ animationDelay: "60ms" }}
+        >
+          Xi<span className="text-primary-600">&apos;s</span>
+        </h1>
 
-          <div className="mt-8 text-center sm:hidden">
-            <Link href="/search" className="btn-secondary">
-              View all brands
-            </Link>
-          </div>
+        <p
+          className="animate-fade-up mt-3 text-base leading-relaxed text-gray-500"
+          style={{ animationDelay: "120ms" }}
+        >
+          Adaptive fashion that works for your body.
+        </p>
+
+        <div
+          className="animate-fade-up mt-10 flex w-full flex-col gap-3"
+          style={{ animationDelay: "200ms" }}
+        >
+          <Link href="/quiz" className="btn-primary w-full py-3.5">
+            Create account
+          </Link>
+          <Link href="/signin" className="btn-secondary w-full py-3.5">
+            Sign in
+          </Link>
+          <Link
+            href="/quiz"
+            className="mt-1 rounded-full py-2 text-sm font-medium text-gray-400 transition-colors duration-200 hover:text-gray-600"
+          >
+            Continue as guest
+          </Link>
         </div>
-      </section>
+      </main>
 
-      <CategoryGrid />
-
-      <section className="border-y border-gray-100 bg-white py-12 sm:py-14" aria-labelledby="stats-heading">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 id="stats-heading" className="sr-only">Xi&apos;s by the numbers</h2>
-          <div className="grid grid-cols-2 gap-8 text-center md:grid-cols-4">
-            {stats.map((stat, i) => (
-              <Reveal key={stat.label} delay={Math.min(i * 60, 240)}>
-                <p className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                  {stat.value}
-                </p>
-                <p className="mt-1 text-sm text-gray-500">{stat.label}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <HowItWorks />
-
-      <section className="bg-white pb-20 sm:pb-24" aria-labelledby="cta-heading">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <div className="rounded-3xl bg-gray-900 px-6 py-14 text-center sm:px-12 sm:py-16">
-              <h2
-                id="cta-heading"
-                className="text-2xl font-bold tracking-tight text-white sm:text-3xl"
-              >
-                Ready to find your fit?
-              </h2>
-              <p className="mx-auto mt-3 max-w-md text-base text-gray-400">
-                Browse adaptive clothing brands tailored to your specific needs
-                — no more guessing.
-              </p>
-              <Link
-                href="/search"
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-gray-900 transition-all duration-200 hover:bg-gray-100 active:scale-[0.98]"
-              >
-                Start browsing
-                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-    </>
+      <p
+        className="animate-fade-up absolute bottom-6 text-xs text-gray-300"
+        style={{ animationDelay: "300ms" }}
+      >
+        © 2025 Xi&apos;s · Made for the disability community
+      </p>
+    </div>
   );
 }

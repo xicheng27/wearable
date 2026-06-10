@@ -316,6 +316,23 @@ export const disabilityCategories = [
   { id: "elderly", label: "Age-Related Needs", icon: "🏡", count: 2 },
 ];
 
+export const disabilityOptionsList = [
+  "Wheelchair users",
+  "Mobility impairments",
+  "Limb differences",
+  "Sensory processing",
+  "Fine motor difficulties",
+  "Neurological conditions",
+  "Stroke survivors",
+  "Parkinson's disease",
+  "Autism spectrum",
+  "Visual impairments",
+  "Chronic pain",
+  "Elderly / age-related",
+];
+
+export const shippingLocationsList = ["USA", "Canada", "UK", "EU", "Australia"];
+
 export const adaptiveFeaturesList = [
   "Magnetic closures",
   "Velcro fastenings",
@@ -388,7 +405,12 @@ export function searchBrands(params: {
 
   if (params.country) {
     const co = params.country.toLowerCase();
-    results = results.filter((b) => b.country.toLowerCase().includes(co));
+    results = results.filter((b) =>
+      b.shipping.countries.some((c) => {
+        const shipped = c.toLowerCase();
+        return shipped === "worldwide" || shipped.includes(co);
+      })
+    );
   }
 
   return results;
