@@ -368,6 +368,7 @@ export function searchBrands(params: {
   clothingType?: string;
   adaptiveFeature?: string;
   country?: string;
+  priceRange?: string;
 }): Brand[] {
   let results = [...brands];
 
@@ -400,6 +401,14 @@ export function searchBrands(params: {
     const af = params.adaptiveFeature.toLowerCase();
     results = results.filter((b) =>
       b.adaptiveFeatures.some((f) => f.toLowerCase().includes(af))
+    );
+  }
+
+  if (params.priceRange) {
+    const pr = params.priceRange;
+    // A brand with a spanning range (e.g. "$–$$$") matches any budget.
+    results = results.filter(
+      (b) => b.priceRange === pr || b.priceRange.includes("–")
     );
   }
 

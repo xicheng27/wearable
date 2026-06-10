@@ -43,7 +43,7 @@
   }
 
   .card-hover {
-    @apply hover:-translate-y-1 hover:border-gray-200 hover:shadow-lg hover:shadow-gray-900/[0.06];
+    @apply hover:-translate-y-1 hover:border-gray-200/80 hover:shadow-lift;
   }
 
   .badge {

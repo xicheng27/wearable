@@ -19,6 +19,7 @@ export default function SearchResultsClient() {
   const clothing = searchParams.get("clothing") ?? "";
   const feature = searchParams.get("feature") ?? "";
   const location = searchParams.get("location") ?? "";
+  const price = searchParams.get("price") ?? "";
 
   const results = searchBrands({
     query: q || undefined,
@@ -26,6 +27,7 @@ export default function SearchResultsClient() {
     clothingType: clothing || undefined,
     adaptiveFeature: feature || undefined,
     country: location || undefined,
+    priceRange: price || undefined,
   });
 
   const activeFilters = [
@@ -33,6 +35,7 @@ export default function SearchResultsClient() {
     clothing && { key: "clothing", label: clothing },
     feature && { key: "feature", label: feature },
     location && { key: "location", label: `Ships to: ${location}` },
+    price && { key: "price", label: `Budget: ${price}` },
   ].filter(Boolean) as { key: string; label: string }[];
 
   function removeFilter(key: string) {
@@ -78,8 +81,8 @@ export default function SearchResultsClient() {
 
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="flex gap-8">
-          <aside className="hidden w-64 flex-shrink-0 lg:block">
-            <div className="card sticky top-24 p-6">
+          <aside className="hidden w-60 flex-shrink-0 lg:block">
+            <div className="sticky top-24">
               <SearchFilters />
             </div>
           </aside>
@@ -141,9 +144,25 @@ export default function SearchResultsClient() {
                 >
                   Clear all filters
                 </button>
+                <div className="mt-8 border-t border-gray-50 pt-6">
+                  <p className="text-xs font-medium uppercase tracking-wider text-gray-300">
+                    Popular searches
+                  </p>
+                  <div className="mt-3 flex flex-wrap justify-center gap-2">
+                    {["Sensory friendly", "Wheelchair", "Magnetic closures", "Footwear"].map((tag) => (
+                      <button
+                        key={tag}
+                        onClick={() => router.push(`/search?q=${encodeURIComponent(tag)}`)}
+                        className="rounded-full border border-gray-200 bg-white px-3.5 py-1.5 text-sm text-gray-600 transition-all duration-200 hover:border-primary-200 hover:bg-primary-50 hover:text-primary-700"
+                      >
+                        {tag}
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </div>
             ) : (
-              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
                 {results.map((brand, i) => (
                   <Reveal key={brand.id} delay={Math.min(i * 50, 300)} className="h-full">
                     <BrandCard brand={brand} />
