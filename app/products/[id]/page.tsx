@@ -50,7 +50,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
         <section className="overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <ProductImage
-              src={product.image}
+              src={product.imageUrl}
               alt={product.imageAlt}
               className="aspect-[4/3] min-h-[360px] lg:aspect-auto lg:min-h-[620px]"
               priority
@@ -132,8 +132,29 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                   rel="noopener noreferrer"
                   className="btn-primary block w-full text-center"
                 >
-                  View at {brand.name}
+                  {product.linkType === "exact-product"
+                    ? "Shop this exact item"
+                    : "View brand page only"}
                 </a>
+                <Link
+                  href={`/brands/${brand.id}`}
+                  className="btn-outline mt-3 block w-full text-center"
+                >
+                  View brand
+                </Link>
+                <div className="mt-3 text-center">
+                  <span
+                    className={`badge ${
+                      product.linkType === "exact-product"
+                        ? "bg-primary-50 text-primary-800"
+                        : "bg-amber-50 text-amber-800"
+                    }`}
+                  >
+                    {product.linkType === "exact-product"
+                      ? "Exact product link"
+                      : "Brand page only"}
+                  </span>
+                </div>
                 <p className="mt-3 text-center text-xs leading-relaxed text-gray-500">
                   Price and availability are indicative. Confirm current stock,
                   sizing and delivery on the official website.

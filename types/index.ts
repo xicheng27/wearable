@@ -53,7 +53,7 @@ export interface Product {
   clothingType: string;
   category: string;
   priceRange: string;
-  image: string;
+  imageUrl: string | null;
   imageAlt: string;
   description: string;
   accessibilityExplanation: string;
@@ -69,6 +69,7 @@ export interface Product {
   oneHandedDressing: boolean;
   featured: boolean;
   productUrl: string;
+  linkType: "exact-product" | "brand-page-only";
 }
 
 export interface ProductSearchParams {

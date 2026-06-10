@@ -4,10 +4,11 @@ import Image from "next/image";
 import { useState } from "react";
 
 interface ProductImageProps {
-  src: string;
+  src: string | null;
   alt: string;
   className?: string;
   priority?: boolean;
+  fallbackLabel?: string;
 }
 
 export default function ProductImage({
@@ -15,6 +16,7 @@ export default function ProductImage({
   alt,
   className = "",
   priority = false,
+  fallbackLabel = "Exact product image unavailable",
 }: ProductImageProps) {
   const [failed, setFailed] = useState(false);
 
@@ -53,8 +55,8 @@ export default function ProductImage({
               d="M4.5 15.75l4.72-4.72a1.5 1.5 0 012.12 0l2.19 2.19 1.22-1.22a1.5 1.5 0 012.12 0l2.63 2.63M14.25 8.25h.008v.008h-.008V8.25z"
             />
           </svg>
-          <span className="mt-2 text-xs font-semibold uppercase tracking-wider">
-            Product image
+          <span className="mt-2 px-6 text-center text-xs font-semibold uppercase tracking-wider">
+            {fallbackLabel}
           </span>
         </div>
       )}

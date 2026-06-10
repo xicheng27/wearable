@@ -36,6 +36,7 @@ export default function CategoryGrid() {
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {productCategories.map((category) => {
             const count = getProductsByCategory(category.slug).length;
+            if (count === 0) return null;
 
             return (
               <Link

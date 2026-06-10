@@ -14,11 +14,22 @@ export default function ProductCard({ product }: { product: Product }) {
         aria-label={`View ${product.name}`}
       >
         <ProductImage
-          src={product.image}
+          src={product.imageUrl}
           alt={product.imageAlt}
           className="aspect-[4/3] w-full"
         />
         <div className="absolute left-3 top-3 flex flex-wrap gap-2">
+          <span
+            className={`badge border border-white/70 bg-white/90 shadow-sm ${
+              product.linkType === "exact-product"
+                ? "text-primary-800"
+                : "text-amber-800"
+            }`}
+          >
+            {product.linkType === "exact-product"
+              ? "Exact product"
+              : "Brand page only"}
+          </span>
           {product.seatedFit && (
             <span className="badge border border-white/70 bg-white/90 text-gray-800 shadow-sm">
               Seated fit
@@ -90,11 +101,21 @@ export default function ProductCard({ product }: { product: Product }) {
                 ? "Available online"
                 : "In-store availability"}
           </div>
-          <Link
-            href={`/products/${product.id}`}
+          <a
+            href={product.productUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-primary block w-full px-4 py-2.5 text-center text-sm"
           >
-            View item
+            {product.linkType === "exact-product"
+              ? "View exact item"
+              : "View brand page"}
+          </a>
+          <Link
+            href={`/products/${product.id}`}
+            className="mt-3 block text-center text-xs font-bold text-gray-500 hover:text-primary-700"
+          >
+            View details
           </Link>
         </div>
       </div>
