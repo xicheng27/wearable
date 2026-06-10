@@ -3,42 +3,115 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { disabilityOptionsList, shippingLocationsList } from "@/data/brands";
+import {
+  clothingTypesList,
+  disabilityOptionsList,
+  searchBrands,
+  shippingLocationsList,
+} from "@/data/brands";
 
-const styleOptions = [
-  "Swedish style",
-  "Clean / minimal",
-  "Old money",
-  "Streetwear",
-  "Formal",
-  "Casual",
-  "Sporty",
-  "Vintage",
-  "Smart casual",
+interface StepDef {
+  id: string;
+  title: string;
+  subtitle: string;
+  type: "single" | "multi";
+  options: string[];
+}
+
+const steps: StepDef[] = [
+  {
+    id: "needs",
+    title: "Which of these best describe your needs?",
+    subtitle: "Select all that apply — this helps us match the right brands.",
+    type: "multi",
+    options: disabilityOptionsList,
+  },
+  {
+    id: "seated",
+    title: "Do you need seated-fit clothing?",
+    subtitle:
+      "Seated-fit cuts are designed for wheelchair users and anyone who spends most of the day sitting.",
+    type: "single",
+    options: ["Yes, most of the time", "Sometimes", "No"],
+  },
+  {
+    id: "sensory",
+    title: "Any sensory preferences?",
+    subtitle: "We'll prioritise fabrics and finishes that feel right.",
+    type: "multi",
+    options: [
+      "Soft, tag-free fabrics",
+      "Flat seams",
+      "Loose, non-restrictive fits",
+      "No sensory preferences",
+    ],
+  },
+  {
+    id: "fastenings",
+    title: "Which fastenings work best for you?",
+    subtitle: "Pick whatever makes dressing easier.",
+    type: "multi",
+    options: [
+      "Magnetic buttons",
+      "Velcro",
+      "Easy zippers",
+      "Slip-on / no fastenings",
+      "No preference",
+    ],
+  },
+  {
+    id: "clothing",
+    title: "What are you shopping for?",
+    subtitle: "Choose one or more clothing categories.",
+    type: "multi",
+    options: clothingTypesList,
+  },
+  {
+    id: "location",
+    title: "Where should brands ship to?",
+    subtitle: "We'll only show brands that deliver to you.",
+    type: "single",
+    options: shippingLocationsList,
+  },
+  {
+    id: "style",
+    title: "What's your style?",
+    subtitle: "Pick the looks you love. You can choose more than one.",
+    type: "multi",
+    options: [
+      "Swedish style",
+      "Clean / minimal",
+      "Old money",
+      "Streetwear",
+      "Formal",
+      "Casual",
+      "Sporty",
+      "Vintage",
+      "Smart casual",
+    ],
+  },
+  {
+    id: "budget",
+    title: "What's your budget?",
+    subtitle: "A rough range is fine — you can always change it later.",
+    type: "single",
+    options: ["$ · Budget-friendly", "$$ · Mid-range", "$$$ · Premium", "No limit"],
+  },
 ];
 
-// Styles that map onto an existing clothing-type filter.
+const fasteningToFeature: Record<string, string> = {
+  "Magnetic buttons": "Magnetic closures",
+  Velcro: "Velcro fastenings",
+  "Easy zippers": "Zipper",
+  "Slip-on / no fastenings": "Slip-on",
+};
+
 const styleToClothing: Record<string, string> = {
   Formal: "Formal wear",
   "Old money": "Formal wear",
   "Smart casual": "Formal wear",
   Sporty: "Activewear",
 };
-
-const steps = [
-  {
-    title: "What are your accessibility needs?",
-    subtitle: "Select all that apply — this helps us match the right brands.",
-  },
-  {
-    title: "Where should brands ship to?",
-    subtitle: "We'll only show brands that deliver to you.",
-  },
-  {
-    title: "What's your style?",
-    subtitle: "Pick the looks you love. You can choose more than one.",
-  },
-];
 
 function CheckIcon() {
   return (
@@ -79,34 +152,81 @@ function OptionButton({ label, selected, onClick }: OptionButtonProps) {
   );
 }
 
+/**
+ * Builds search params from quiz answers, then relaxes the least important
+ * filters until at least one brand matches — so the quiz never dead-ends
+ * on an empty results page.
+ */
+function buildResultParams(answers: Record<string, string[]>): URLSearchParams {
+  const needs = answers.needs ?? [];
+  const seated = answers.seated?.[0] ?? "";
+  const sensory = (answers.sensory ?? []).filter((s) => s !== "No sensory preferences");
+  const fastenings = (answers.fastenings ?? []).filter((f) => f !== "No preference");
+  const clothing = answers.clothing ?? [];
+  const location = answers.location?.[0] ?? "";
+  const styles = answers.style ?? [];
+  const budget = answers.budget?.[0] ?? "";
+
+  let feature = "";
+  if (seated.startsWith("Yes")) feature = "Seated fit";
+  else if (fastenings[0]) feature = fasteningToFeature[fastenings[0]] ?? "";
+  else if (sensory.length > 0) feature = "Sensory-friendly";
+
+  const clothingFilter =
+    clothing[0] ?? styles.map((s) => styleToClothing[s]).find(Boolean) ?? "";
+
+  const price = budget.startsWith("$") ? budget.split(" ")[0] : "";
+
+  const filters: Record<string, string> = {};
+  if (needs[0]) filters.disability = needs[0];
+  if (location) filters.location = location;
+  if (clothingFilter) filters.clothing = clothingFilter;
+  if (feature) filters.feature = feature;
+  if (price) filters.price = price;
+
+  const matches = (f: Record<string, string>) =>
+    searchBrands({
+      disabilityType: f.disability,
+      clothingType: f.clothing,
+      adaptiveFeature: f.feature,
+      country: f.location,
+      priceRange: f.price,
+    }).length;
+
+  for (const key of ["price", "feature", "clothing", "location", "disability"]) {
+    if (matches(filters) > 0) break;
+    delete filters[key];
+  }
+
+  const params = new URLSearchParams(filters);
+  params.set("from", "quiz");
+  return params;
+}
+
 export default function QuizClient() {
   const router = useRouter();
   const [step, setStep] = useState(0);
-  const [needs, setNeeds] = useState<string[]>([]);
-  const [location, setLocation] = useState("");
-  const [styles, setStyles] = useState<string[]>([]);
+  const [answers, setAnswers] = useState<Record<string, string[]>>({});
 
+  const current = steps[step];
+  const selected = answers[current.id] ?? [];
   const isLastStep = step === steps.length - 1;
-  const stepHasSelection =
-    step === 0 ? needs.length > 0 : step === 1 ? location !== "" : styles.length > 0;
 
-  function toggle(list: string[], value: string, set: (v: string[]) => void) {
-    set(list.includes(value) ? list.filter((v) => v !== value) : [...list, value]);
-  }
-
-  function finish() {
-    const params = new URLSearchParams();
-    if (needs[0]) params.set("disability", needs[0]);
-    if (location) params.set("location", location);
-    const clothing = styles.map((s) => styleToClothing[s]).find(Boolean);
-    if (clothing) params.set("clothing", clothing);
-    params.set("from", "quiz");
-    router.push(`/search?${params.toString()}`);
+  function select(option: string) {
+    const next =
+      current.type === "single"
+        ? selected.includes(option)
+          ? []
+          : [option]
+        : selected.includes(option)
+          ? selected.filter((v) => v !== option)
+          : [...selected, option];
+    setAnswers({ ...answers, [current.id]: next });
   }
 
   function next() {
     if (isLastStep) {
-      finish();
+      router.push(`/search?${buildResultParams(answers).toString()}`);
     } else {
       setStep(step + 1);
     }
@@ -146,49 +266,19 @@ export default function QuizClient() {
       <main className="mx-auto flex w-full max-w-2xl flex-1 flex-col px-6 py-10">
         <div key={step} className="animate-fade-up flex flex-1 flex-col">
           <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-            {steps[step].title}
+            {current.title}
           </h1>
-          <p className="mt-2 text-sm text-gray-500 sm:text-base">{steps[step].subtitle}</p>
+          <p className="mt-2 text-sm text-gray-500 sm:text-base">{current.subtitle}</p>
 
-          <div className="mt-8">
-            {step === 0 && (
-              <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-                {disabilityOptionsList.map((opt) => (
-                  <OptionButton
-                    key={opt}
-                    label={opt}
-                    selected={needs.includes(opt)}
-                    onClick={() => toggle(needs, opt, setNeeds)}
-                  />
-                ))}
-              </div>
-            )}
-
-            {step === 1 && (
-              <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-                {shippingLocationsList.map((opt) => (
-                  <OptionButton
-                    key={opt}
-                    label={opt}
-                    selected={location === opt}
-                    onClick={() => setLocation(location === opt ? "" : opt)}
-                  />
-                ))}
-              </div>
-            )}
-
-            {step === 2 && (
-              <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-                {styleOptions.map((opt) => (
-                  <OptionButton
-                    key={opt}
-                    label={opt}
-                    selected={styles.includes(opt)}
-                    onClick={() => toggle(styles, opt, setStyles)}
-                  />
-                ))}
-              </div>
-            )}
+          <div className="mt-8 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+            {current.options.map((opt) => (
+              <OptionButton
+                key={opt}
+                label={opt}
+                selected={selected.includes(opt)}
+                onClick={() => select(opt)}
+              />
+            ))}
           </div>
         </div>
 
@@ -203,11 +293,7 @@ export default function QuizClient() {
             Back
           </button>
           <button type="button" onClick={next} className="btn-primary px-8">
-            {isLastStep
-              ? "Show my matches"
-              : stepHasSelection
-                ? "Continue"
-                : "Skip"}
+            {isLastStep ? "Show my matches" : selected.length > 0 ? "Continue" : "Skip"}
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
