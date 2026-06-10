@@ -5,21 +5,22 @@ const columns = [
   {
     heading: "Explore",
     links: [
-      { href: "/search", label: "Browse all brands" },
+      { href: "/search", label: "Browse clothing" },
+      { href: "/brands", label: "Browse brands" },
       { href: "/map", label: "Stores & services map" },
       { href: "/quiz", label: "Find my fit quiz" },
-      { href: "/search?feature=sensory", label: "Sensory-friendly" },
-      { href: "/search?clothing=footwear", label: "Adaptive footwear" },
+      { href: "/brands?feature=sensory", label: "Sensory-friendly" },
+      { href: "/clothing/shoes", label: "Adaptive footwear" },
     ],
   },
   {
     heading: "Disability types",
     links: [
-      { href: "/search?disability=mobility", label: "Mobility impairments" },
-      { href: "/search?disability=limb", label: "Limb differences" },
-      { href: "/search?disability=neurological", label: "Neurological conditions" },
-      { href: "/search?disability=sensory", label: "Sensory processing" },
-      { href: "/search?disability=stroke", label: "Stroke survivors" },
+      { href: "/brands?disability=mobility", label: "Mobility impairments" },
+      { href: "/brands?disability=limb", label: "Limb differences" },
+      { href: "/brands?disability=neurological", label: "Neurological conditions" },
+      { href: "/brands?disability=sensory", label: "Sensory processing" },
+      { href: "/brands?disability=stroke", label: "Stroke survivors" },
     ],
   },
   {

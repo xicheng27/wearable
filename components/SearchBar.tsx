@@ -7,12 +7,14 @@ interface SearchBarProps {
   compact?: boolean;
   defaultValue?: string;
   placeholder?: string;
+  basePath?: string;
 }
 
 export default function SearchBar({
   compact = false,
   defaultValue = "",
-  placeholder = "Search adaptive clothing, features, disabilities…",
+  placeholder = "Search clothing, adaptive features, brands…",
+  basePath = "/search",
 }: SearchBarProps) {
   const [query, setQuery] = useState(defaultValue);
   const router = useRouter();
@@ -21,7 +23,7 @@ export default function SearchBar({
     e.preventDefault();
     const params = new URLSearchParams();
     if (query.trim()) params.set("q", query.trim());
-    router.push(`/search?${params.toString()}`);
+    router.push(`${basePath}?${params.toString()}`);
   }
 
   return (

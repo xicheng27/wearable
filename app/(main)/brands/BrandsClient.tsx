@@ -8,13 +8,12 @@ import BrandCard from "@/components/BrandCard";
 import Reveal from "@/components/Reveal";
 import { searchBrands } from "@/data/brands";
 
-export default function SearchResultsClient() {
+export default function BrandsClient() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   const q = searchParams.get("q") ?? "";
-  const fromQuiz = searchParams.get("from") === "quiz";
   const disability = searchParams.get("disability") ?? "";
   const clothing = searchParams.get("clothing") ?? "";
   const feature = searchParams.get("feature") ?? "";
@@ -41,7 +40,7 @@ export default function SearchResultsClient() {
   function removeFilter(key: string) {
     const params = new URLSearchParams(searchParams.toString());
     params.delete(key);
-    router.push(`/search?${params.toString()}`);
+    router.push(`/brands?${params.toString()}`);
   }
 
   useEffect(() => {
@@ -62,19 +61,17 @@ export default function SearchResultsClient() {
       <div className="border-b border-gray-100 bg-white py-8">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-            {fromQuiz
-              ? "Your matches"
-              : q
-                ? `Results for “${q}”`
-                : "Browse adaptive brands"}
+            {q ? `Results for “${q}”` : "Browse by brand"}
           </h1>
-          {fromQuiz && (
-            <p className="mt-1.5 text-sm text-gray-500">
-              Based on your answers. Adjust the filters anytime to refine your matches.
-            </p>
-          )}
+          <p className="mt-1.5 text-sm text-gray-500">
+            Prefer shopping by item?{" "}
+            <a href="/search" className="font-medium text-primary-600 hover:text-primary-700">
+              Browse adaptive clothing instead
+            </a>
+            .
+          </p>
           <div className="mt-5 max-w-xl">
-            <SearchBar defaultValue={q} />
+            <SearchBar defaultValue={q} basePath="/brands" />
           </div>
         </div>
       </div>
@@ -139,7 +136,7 @@ export default function SearchResultsClient() {
                   Try adjusting your search or removing some filters.
                 </p>
                 <button
-                  onClick={() => router.push("/search")}
+                  onClick={() => router.push("/brands")}
                   className="btn-primary mt-6"
                 >
                   Clear all filters
@@ -152,7 +149,7 @@ export default function SearchResultsClient() {
                     {["Sensory friendly", "Wheelchair", "Magnetic closures", "Footwear"].map((tag) => (
                       <button
                         key={tag}
-                        onClick={() => router.push(`/search?q=${encodeURIComponent(tag)}`)}
+                        onClick={() => router.push(`/brands?q=${encodeURIComponent(tag)}`)}
                         className="rounded-full border border-gray-200 bg-white px-3.5 py-1.5 text-sm text-gray-600 transition-all duration-200 hover:border-primary-200 hover:bg-primary-50 hover:text-primary-700"
                       >
                         {tag}

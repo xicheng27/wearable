@@ -1,10 +1,12 @@
 import Link from "next/link";
 import BrandCard from "@/components/BrandCard";
+import CategoryCard from "@/components/CategoryCard";
 import MapCanvas from "@/components/MapCanvas";
 import Photo from "@/components/Photo";
 import Reveal from "@/components/Reveal";
 import { brands } from "@/data/brands";
 import { mapPlaces } from "@/data/places";
+import { clothingCategories } from "@/data/categories";
 
 const steps = [
   {
@@ -23,42 +25,26 @@ const steps = [
 
 const needCards = [
   {
+    title: "Sensory-friendly clothing",
+    description: "Soft, tag-free fabrics and flat seams.",
+    image: "/images/need-sensory.svg",
+    href: "/brands?feature=Sensory-friendly",
+  },
+  {
     title: "Wheelchair seated fit",
     description: "Cuts designed from the seated position up.",
     image: "/images/need-seated.svg",
-    href: "/search?feature=Seated+fit",
-  },
-  {
-    title: "Sensory-friendly",
-    description: "Soft, tag-free fabrics and flat seams.",
-    image: "/images/need-sensory.svg",
-    href: "/search?feature=Sensory-friendly",
+    href: "/brands?feature=Seated+fit",
   },
   {
     title: "Easy fastenings",
     description: "Magnetic buttons, Velcro and easy zippers.",
     image: "/images/need-fastenings.svg",
-    href: "/search?feature=Magnetic+closures",
-  },
-  {
-    title: "Adaptive footwear",
-    description: "Easy-entry, wide-fit and slip-on shoes.",
-    image: "/images/need-footwear.svg",
-    href: "/search?clothing=Footwear",
-  },
-  {
-    title: "One-handed dressing",
-    description: "Designs that work with one hand.",
-    image: "/images/need-onehanded.svg",
-    href: "/search?feature=One-handed+dressing",
-  },
-  {
-    title: "Formal adaptive wear",
-    description: "Workwear and occasionwear that adapts.",
-    image: "/images/need-formal.svg",
-    href: "/search?clothing=Formal+wear",
+    href: "/brands?feature=Magnetic+closures",
   },
 ];
+
+const homeCategoryIds = ["tops", "pants", "shoes", "jackets", "formal"];
 
 const styleCards = [
   {
@@ -141,7 +127,7 @@ export default function HomePage() {
                 </svg>
               </Link>
               <Link href="/search" className="btn-secondary px-8 py-4 text-base">
-                Browse brands
+                Browse clothing
               </Link>
             </div>
             <p
@@ -190,31 +176,48 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Find by need */}
-      <section className="bg-white py-16 sm:py-20" aria-labelledby="need-heading">
+      {/* Find by clothing piece */}
+      <section className="bg-white py-16 sm:py-20" aria-labelledby="pieces-heading">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal className="mb-8 flex items-end justify-between sm:mb-10">
             <div>
-              <h2 id="need-heading" className="section-title">Find by need</h2>
-              <p className="section-subtitle">Start from what your body needs — we&apos;ll handle the rest.</p>
+              <h2 id="pieces-heading" className="section-title">Find by clothing piece</h2>
+              <p className="section-subtitle">Shop the piece you need — we&apos;ll show you who makes it well.</p>
             </div>
+            <Link
+              href="/search"
+              className="hidden flex-shrink-0 items-center gap-1.5 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700 sm:inline-flex"
+            >
+              All clothing
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
           </Reveal>
-          <div className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-3">
+          <div className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-5">
+            {clothingCategories
+              .filter((c) => homeCategoryIds.includes(c.id))
+              .map((cat, i) => (
+                <Reveal key={cat.id} delay={Math.min(i * 60, 300)} className="h-full">
+                  <CategoryCard category={cat} compact />
+                </Reveal>
+              ))}
+          </div>
+
+          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5">
             {needCards.map((card, i) => (
-              <Reveal key={card.title} delay={Math.min(i * 60, 300)} className="h-full">
-                <Link href={card.href} className="group card card-hover block h-full overflow-hidden">
-                  <Photo
-                    src={card.image}
-                    alt=""
-                    className="aspect-[8/5]"
-                    imgClassName="transition-transform duration-500 group-hover:scale-[1.04]"
-                  />
-                  <div className="p-5">
-                    <h3 className="text-sm font-semibold text-gray-900 transition-colors duration-200 group-hover:text-primary-700 sm:text-base">
+              <Reveal key={card.title} delay={Math.min(i * 60, 240)} className="h-full">
+                <Link
+                  href={card.href}
+                  className="group card card-hover flex h-full items-center gap-4 p-4"
+                >
+                  <Photo src={card.image} alt="" className="h-16 w-16 flex-shrink-0 rounded-xl" />
+                  <span>
+                    <span className="block text-sm font-semibold text-gray-900 transition-colors duration-200 group-hover:text-primary-700">
                       {card.title}
-                    </h3>
-                    <p className="mt-1 hidden text-sm text-gray-500 sm:block">{card.description}</p>
-                  </div>
+                    </span>
+                    <span className="mt-0.5 block text-xs text-gray-400">{card.description}</span>
+                  </span>
                 </Link>
               </Reveal>
             ))}
@@ -304,7 +307,7 @@ export default function HomePage() {
               <p className="section-subtitle">Trusted labels loved by the disability community.</p>
             </div>
             <Link
-              href="/search"
+              href="/brands"
               className="hidden flex-shrink-0 items-center gap-1.5 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700 sm:inline-flex"
             >
               See all

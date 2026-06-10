@@ -6,7 +6,8 @@ import Logo from "./Logo";
 import SearchBar from "./SearchBar";
 
 const navLinks = [
-  { href: "/search", label: "Browse brands" },
+  { href: "/search", label: "Browse clothing" },
+  { href: "/brands", label: "Brands" },
   { href: "/map", label: "Map" },
   { href: "/signin", label: "Sign in" },
 ];

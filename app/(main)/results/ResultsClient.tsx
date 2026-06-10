@@ -5,18 +5,56 @@ import { useSearchParams } from "next/navigation";
 import MapCanvas from "@/components/MapCanvas";
 import Photo from "@/components/Photo";
 import Reveal from "@/components/Reveal";
-import { matchBrands, QuizAnswers } from "@/data/brands";
+import { BrandMatch, matchBrands, QuizAnswers } from "@/data/brands";
+import {
+  brandsForCategory,
+  categoryFeaturesOfBrand,
+  clothingCategories,
+  ClothingCategory,
+  quizClothingOptions,
+} from "@/data/categories";
 import { mapPlaces } from "@/data/places";
 
 function readList(value: string | null): string[] {
   return value ? value.split(",").map(decodeURIComponent).filter(Boolean) : [];
 }
 
+/** Categories the user asked for; sensible defaults when skipped. */
+function categoriesForAnswers(clothing: string[]): ClothingCategory[] {
+  const picked = clothing
+    .map((label) => quizClothingOptions.find((o) => o.label === label)?.categoryId)
+    .map((id) => clothingCategories.find((c) => c.id === id))
+    .filter(Boolean) as ClothingCategory[];
+  if (picked.length > 0) return picked;
+  return clothingCategories.filter((c) => ["tops", "pants", "shoes"].includes(c.id));
+}
+
+/** One friendly line on why this piece type suits the user's answers. */
+function whyCategory(cat: ClothingCategory, answers: QuizAnswers): string {
+  const has = (kw: string) => cat.features.some((f) => f.keyword === kw);
+  const bits: string[] = [];
+  if (answers.seated?.startsWith("Yes") && (has("seated") || has("back rise")))
+    bits.push("seated-fit cuts");
+  if (answers.fastenings.includes("Magnetic buttons") && has("magnetic"))
+    bits.push("magnetic closures");
+  if (answers.fastenings.includes("Velcro") && has("velcro")) bits.push("Velcro fastenings");
+  if (answers.fastenings.includes("Easy zippers") && has("zipper")) bits.push("easy zippers");
+  if (answers.fastenings.includes("Slip-on / no fastenings") && has("slip-on"))
+    bits.push("slip-on designs");
+  if (
+    answers.sensory.some((s) => s !== "No sensory preferences") &&
+    cat.features.some((f) => ["tag-free", "flat", "soft", "sensory"].includes(f.keyword))
+  )
+    bits.push("tag-free, flat-seam comfort");
+  if (bits.length === 0) return cat.description;
+  return `Matched to your answers for ${bits.slice(0, 3).join(", ")}.`;
+}
+
 function MatchRing({ percent }: { percent: number }) {
   const r = 26;
   const c = 2 * Math.PI * r;
   return (
-    <div className="relative h-16 w-16 flex-shrink-0" role="img" aria-label={`${percent}% match`}>
+    <div className="relative h-14 w-14 flex-shrink-0" role="img" aria-label={`${percent}% match`}>
       <svg viewBox="0 0 64 64" className="h-full w-full -rotate-90">
         <circle cx="32" cy="32" r={r} fill="none" stroke="#F3F4F6" strokeWidth="6" />
         <circle
@@ -32,10 +70,105 @@ function MatchRing({ percent }: { percent: number }) {
           className="transition-all duration-700 ease-out"
         />
       </svg>
-      <span className="absolute inset-0 flex items-center justify-center text-sm font-bold text-gray-900">
+      <span className="absolute inset-0 flex items-center justify-center text-xs font-bold text-gray-900">
         {percent}%
       </span>
     </div>
+  );
+}
+
+function CategorySection({
+  category,
+  answers,
+  matches,
+  index,
+}: {
+  category: ClothingCategory;
+  answers: QuizAnswers;
+  matches: BrandMatch[];
+  index: number;
+}) {
+  const inCategory = new Set(brandsForCategory(category).map((b) => b.id));
+  const top = matches.filter((m) => inCategory.has(m.brand.id)).slice(0, 2);
+
+  return (
+    <Reveal delay={Math.min(index * 70, 280)}>
+      <section className="card overflow-hidden" aria-label={`Best ${category.noun} for you`}>
+        <div className="flex items-center gap-4 border-b border-gray-50 p-6">
+          <Photo src={category.image} alt="" className="h-14 w-14 flex-shrink-0 rounded-xl" />
+          <div className="min-w-0 flex-1">
+            <h2 className="text-lg font-semibold text-gray-900">
+              Best {category.noun} for you
+            </h2>
+            <p className="mt-0.5 text-sm text-gray-500">{whyCategory(category, answers)}</p>
+          </div>
+          <Link
+            href={`/clothing/${category.id}`}
+            className="hidden flex-shrink-0 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700 sm:block"
+          >
+            Explore {category.noun} →
+          </Link>
+        </div>
+
+        {top.length === 0 ? (
+          <p className="p-6 text-sm text-gray-500">
+            No brand in our catalogue makes adaptive {category.noun} yet — we&apos;re adding
+            brands all the time.
+          </p>
+        ) : (
+          <div className="grid grid-cols-1 divide-y divide-gray-50 sm:grid-cols-2 sm:divide-x sm:divide-y-0">
+            {top.map((m) => {
+              const matched = categoryFeaturesOfBrand(category, m.brand);
+              return (
+                <div key={m.brand.id} className="flex flex-col p-6">
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                      <span
+                        className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl text-sm font-bold text-white shadow-sm"
+                        style={{ backgroundColor: m.brand.heroColor }}
+                        aria-hidden="true"
+                      >
+                        {m.brand.logo}
+                      </span>
+                      <div>
+                        <h3 className="text-sm font-semibold text-gray-900">{m.brand.name}</h3>
+                        <p className="text-xs text-gray-400">
+                          {m.brand.country} · {m.brand.priceRange}
+                        </p>
+                      </div>
+                    </div>
+                    {m.percent !== null && <MatchRing percent={m.percent} />}
+                  </div>
+
+                  <div className="mt-3 flex flex-1 flex-wrap content-start gap-1.5">
+                    {(matched.length > 0 ? matched : m.brand.adaptiveFeatures)
+                      .slice(0, 3)
+                      .map((f) => (
+                        <span
+                          key={f}
+                          className="badge border border-primary-100 bg-primary-50 text-primary-700"
+                        >
+                          {f}
+                        </span>
+                      ))}
+                  </div>
+
+                  <Link
+                    href={`/brands/${m.brand.id}`}
+                    className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700"
+                  >
+                    View brand
+                    <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </section>
+    </Reveal>
   );
 }
 
@@ -64,6 +197,7 @@ export default function ResultsClient() {
     !!answers.budget;
 
   const matches = matchBrands(answers);
+  const categories = categoriesForAnswers(answers.clothing);
   const matchedBrandIds = new Set(matches.slice(0, 3).map((m) => m.brand.id));
   const nearbyPlaces = mapPlaces.filter(
     (p) => !p.brandId || matchedBrandIds.has(p.brandId)
@@ -80,15 +214,15 @@ export default function ResultsClient() {
             className="animate-fade-up mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
             style={{ animationDelay: "60ms" }}
           >
-            {answeredAnything ? "Your matches" : "Our curated brands"}
+            {answeredAnything ? "Your matches, piece by piece" : "Start with these pieces"}
           </h1>
           <p
             className="animate-fade-up mt-2 text-sm text-gray-500 sm:text-base"
             style={{ animationDelay: "120ms" }}
           >
             {answeredAnything
-              ? "Ranked by how well each brand fits your answers — with the reasons why."
-              : "You skipped the questions, so here's our full curated list — every brand is worth a look."}
+              ? "The clothing pieces that fit your needs — and the brands that make each one best."
+              : "You skipped the questions, so here are the most-loved adaptive pieces to start from."}
           </p>
           <div
             className="animate-fade-up mt-5 flex flex-wrap gap-3"
@@ -98,93 +232,78 @@ export default function ResultsClient() {
               Retake quiz
             </Link>
             <Link href="/search" className="btn-secondary px-5 py-2.5 text-sm">
-              Browse all brands
+              Browse all clothing
             </Link>
           </div>
         </div>
       </div>
 
       <div className="mx-auto max-w-4xl space-y-5 px-4 py-10 sm:px-6 lg:px-8">
-        {matches.map((m, i) => (
-          <Reveal key={m.brand.id} delay={Math.min(i * 70, 280)}>
-            <article className="card card-hover overflow-hidden">
-              <div className="flex flex-col sm:flex-row">
-                <div className="relative h-36 flex-shrink-0 sm:h-auto sm:w-48">
-                  <Photo src={m.brand.image} alt="" className="h-full w-full" />
-                  <div
-                    className="absolute bottom-3 left-3 flex h-11 w-11 items-center justify-center rounded-xl bg-white text-sm font-bold shadow-sm ring-1 ring-gray-900/5"
-                    style={{ color: m.brand.heroColor }}
-                    aria-hidden="true"
-                  >
-                    {m.brand.logo}
-                  </div>
-                  {i === 0 && m.percent !== null && (
-                    <span className="absolute left-3 top-3 rounded-full bg-primary-600 px-2.5 py-1 text-[11px] font-semibold text-white shadow-sm">
-                      Best match
-                    </span>
-                  )}
-                </div>
+        {categories.map((cat, i) => (
+          <CategorySection
+            key={cat.id}
+            category={cat}
+            answers={answers}
+            matches={matches}
+            index={i}
+          />
+        ))}
 
-                <div className="flex flex-1 flex-col p-6">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <h2 className="text-lg font-semibold text-gray-900">{m.brand.name}</h2>
-                      <p className="mt-0.5 text-sm text-gray-500">{m.brand.tagline}</p>
-                      <p className="mt-1 text-xs text-gray-400">
-                        {m.brand.country} · {m.brand.priceRange} · Est. {m.brand.founded}
+        {/* Overall brand ranking */}
+        <Reveal>
+          <section className="card p-6 sm:p-8" aria-labelledby="overall-heading">
+            <h2 id="overall-heading" className="text-lg font-semibold text-gray-900">
+              Recommended brands overall
+            </h2>
+            <p className="mt-1 text-sm text-gray-500">
+              Across every clothing piece, ranked by fit with your answers.
+            </p>
+            <div className="mt-5 space-y-4">
+              {matches.map((m) => (
+                <div
+                  key={m.brand.id}
+                  className="flex flex-col gap-3 rounded-2xl border border-gray-100 p-4 transition-colors duration-200 hover:border-gray-200 sm:flex-row sm:items-center"
+                >
+                  <div className="flex flex-1 items-center gap-3">
+                    <span
+                      className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl text-sm font-bold text-white shadow-sm"
+                      style={{ backgroundColor: m.brand.heroColor }}
+                      aria-hidden="true"
+                    >
+                      {m.brand.logo}
+                    </span>
+                    <div className="min-w-0">
+                      <h3 className="text-sm font-semibold text-gray-900">{m.brand.name}</h3>
+                      <p className="truncate text-xs text-gray-400">
+                        {m.reasons.slice(0, 2).join(" · ")}
                       </p>
                     </div>
-                    {m.percent !== null && <MatchRing percent={m.percent} />}
                   </div>
-
-                  <ul className="mt-4 space-y-1.5">
-                    {m.reasons.slice(0, 4).map((reason) => (
-                      <li key={reason} className="flex items-start gap-2 text-sm text-gray-600">
-                        <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                        </svg>
-                        {reason}
-                      </li>
-                    ))}
-                  </ul>
-
-                  {m.stylePercent !== null && (
-                    <div className="mt-4">
-                      <div className="flex items-center justify-between text-xs">
-                        <span className="font-medium text-gray-500">Style match</span>
-                        <span className="font-semibold text-gray-900">{m.stylePercent}%</span>
-                      </div>
-                      <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-gray-100">
-                        <div
-                          className="h-full rounded-full bg-primary-500 transition-all duration-700 ease-out"
-                          style={{ width: `${m.stylePercent}%` }}
-                        />
-                      </div>
-                    </div>
-                  )}
-
-                  <div className="mt-4 flex flex-wrap gap-1.5">
-                    {m.brand.adaptiveFeatures.slice(0, 3).map((f) => (
-                      <span key={f} className="badge bg-gray-50 text-gray-500">
-                        {f}
+                  <div className="flex items-center gap-4 sm:flex-shrink-0">
+                    {m.stylePercent !== null && (
+                      <span className="text-xs text-gray-400">
+                        Style {m.stylePercent}%
                       </span>
-                    ))}
-                  </div>
-
-                  <div className="mt-5">
+                    )}
+                    {m.percent !== null && (
+                      <span className="rounded-full bg-primary-50 px-2.5 py-1 text-xs font-semibold text-primary-700">
+                        {m.percent}% match
+                      </span>
+                    )}
                     <Link
                       href={`/brands/${m.brand.id}`}
-                      className="btn-primary px-6 py-2.5 text-sm"
+                      className="text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700"
                     >
-                      View brand
+                      View →
                     </Link>
                   </div>
                 </div>
-              </div>
-            </article>
-          </Reveal>
-        ))}
+              ))}
+            </div>
+          </section>
+        </Reveal>
 
+        {/* Nearby map */}
         <Reveal>
           <section className="card overflow-hidden" aria-labelledby="nearby-heading">
             <div className="flex flex-col gap-6 p-6 sm:p-8">
