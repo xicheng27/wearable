@@ -2,32 +2,14 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Logo from "./Logo";
 import SearchBar from "./SearchBar";
 
 const navLinks = [
   { href: "/search", label: "Browse brands" },
-  { href: "/search?feature=sensory-friendly", label: "Sensory" },
-  { href: "/search?disability=wheelchair", label: "Wheelchair" },
+  { href: "/map", label: "Map" },
+  { href: "/signin", label: "Sign in" },
 ];
-
-export function XisLogo() {
-  return (
-    <Link
-      href="/"
-      className="group flex flex-shrink-0 items-center gap-2"
-      aria-label="Xi's home"
-    >
-      <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-600 transition-colors duration-200 group-hover:bg-primary-700">
-        <span className="select-none text-sm font-bold leading-none text-white">
-          X
-        </span>
-      </span>
-      <span className="text-lg font-bold tracking-tight text-gray-900">
-        Xi<span className="text-primary-600">&apos;s</span>
-      </span>
-    </Link>
-  );
-}
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -36,7 +18,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/80 backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between gap-4">
-          <XisLogo />
+          <Logo />
 
           <div className="hidden max-w-sm flex-1 md:flex">
             <SearchBar compact />
@@ -52,12 +34,6 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/signin"
-              className="rounded-full px-3.5 py-2 text-sm font-medium text-gray-600 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-900"
-            >
-              Sign in
-            </Link>
             <Link
               href="/quiz"
               className="ml-2 inline-flex items-center rounded-full bg-primary-600 px-4 py-2 text-sm font-semibold text-white transition-all duration-200 hover:bg-primary-700 active:scale-[0.98]"
@@ -96,13 +72,6 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="/signin"
-                className="rounded-xl px-3 py-2.5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-gray-900"
-                onClick={() => setMenuOpen(false)}
-              >
-                Sign in
-              </Link>
               <Link
                 href="/quiz"
                 className="btn-primary mt-2 text-center"

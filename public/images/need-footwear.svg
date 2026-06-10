@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-label="need footwear">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E3EEF0"/>
+      <stop offset="1" stop-color="#C6DCE1"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="520" fill="url(#bg)"/>
+  <circle cx="660" cy="80" r="190" fill="#ffffff" opacity="0.22"/>
+  <circle cx="110" cy="470" r="150" fill="#ffffff" opacity="0.16"/>
+  <circle cx="700" cy="450" r="90" fill="#2B5F6B" opacity="0.05"/>
+  <g stroke="#2B5F6B" stroke-width="1" opacity="0.05">
+    <line x1="0" y1="120" x2="800" y2="40"/>
+    <line x1="0" y1="300" x2="800" y2="220"/>
+    <line x1="0" y1="480" x2="800" y2="400"/>
+  </g>
+  <g transform="translate(244,104) scale(13)" fill="none" stroke="#2B5F6B" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"><path d="M3 15.4c0-1.2 1-2 2.4-2.2l3.2-3.4c2 1.8 3.8 2.7 6.4 3 2.8.3 6 1.3 6 3.1v1.3a.9.9 0 0 1-.9.9H3.9a.9.9 0 0 1-.9-.9z"/><path d="M9.6 11.4l1.4 1.4"/><path d="M11.6 9.7l1.4 1.4"/><path d="M3.4 18.4h17.2"/></g>
+</svg>

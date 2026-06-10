@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { LogoMark } from "@/components/Logo";
 
 export default function SignInClient() {
   const router = useRouter();
@@ -15,9 +16,7 @@ export default function SignInClient() {
     <div className="flex min-h-screen flex-col bg-white">
       <header className="mx-auto flex w-full max-w-2xl items-center justify-between px-6 py-5">
         <Link href="/" className="flex items-center gap-2" aria-label="Xi's home">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-600">
-            <span className="select-none text-sm font-bold text-white">X</span>
-          </span>
+          <LogoMark size={32} />
         </Link>
         <Link
           href="/"

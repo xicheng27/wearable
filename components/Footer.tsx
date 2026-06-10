@@ -1,15 +1,15 @@
 import Link from "next/link";
-import { XisLogo } from "./Navbar";
+import Logo from "./Logo";
 
 const columns = [
   {
     heading: "Explore",
     links: [
       { href: "/search", label: "Browse all brands" },
-      { href: "/search?disability=wheelchair", label: "Wheelchair clothing" },
+      { href: "/map", label: "Stores & services map" },
+      { href: "/quiz", label: "Find my fit quiz" },
       { href: "/search?feature=sensory", label: "Sensory-friendly" },
       { href: "/search?clothing=footwear", label: "Adaptive footwear" },
-      { href: "/search?clothing=formal", label: "Formal wear" },
     ],
   },
   {
@@ -40,7 +40,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <XisLogo />
+            <Logo />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-gray-500">
               Helping everyone find clothing that works for their body — with
               dignity, style, and ease.
