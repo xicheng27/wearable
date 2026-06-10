@@ -2,8 +2,16 @@ import HeroSection from "@/components/HeroSection";
 import CategoryGrid from "@/components/CategoryGrid";
 import HowItWorks from "@/components/HowItWorks";
 import BrandCard from "@/components/BrandCard";
+import Reveal from "@/components/Reveal";
 import { brands } from "@/data/brands";
 import Link from "next/link";
+
+const stats = [
+  { value: "4+", label: "Adaptive brands" },
+  { value: "40+", label: "Adaptive features" },
+  { value: "8", label: "Disability categories" },
+  { value: "15+", label: "Countries covered" },
+];
 
 export default function HomePage() {
   const featured = brands.filter((b) => b.featured);
@@ -12,43 +20,39 @@ export default function HomePage() {
     <>
       <HeroSection />
 
-      <section className="py-20 bg-white" aria-labelledby="featured-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-end justify-between mb-10">
+      <section className="bg-white py-16 sm:py-20" aria-labelledby="featured-heading">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Reveal className="mb-8 flex items-end justify-between sm:mb-10">
             <div>
-              <h2
-                id="featured-heading"
-                className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-2"
-              >
+              <h2 id="featured-heading" className="section-title">
                 Featured brands
               </h2>
-              <p className="text-gray-600 text-lg">
+              <p className="section-subtitle">
                 Trusted adaptive fashion labels loved by the disability community.
               </p>
             </div>
             <Link
               href="/search"
-              className="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors"
+              className="hidden flex-shrink-0 items-center gap-1.5 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700 sm:inline-flex"
             >
               See all
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
               </svg>
             </Link>
-          </div>
+          </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featured.map((brand) => (
-              <BrandCard key={brand.id} brand={brand} />
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {featured.map((brand, i) => (
+              <Reveal key={brand.id} delay={Math.min(i * 70, 280)} className="h-full">
+                <BrandCard brand={brand} />
+              </Reveal>
             ))}
           </div>
 
-          <div className="sm:hidden mt-8 text-center">
-            <Link href="/search" className="btn-outline inline-flex items-center gap-2">
+          <div className="mt-8 text-center sm:hidden">
+            <Link href="/search" className="btn-secondary">
               View all brands
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
             </Link>
           </div>
         </div>
@@ -56,23 +60,17 @@ export default function HomePage() {
 
       <CategoryGrid />
 
-      <section
-        className="py-16 bg-primary-600 text-white"
-        aria-labelledby="stats-heading"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="border-y border-gray-100 bg-white py-12 sm:py-14" aria-labelledby="stats-heading">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 id="stats-heading" className="sr-only">Xi&apos;s by the numbers</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {[
-              { value: "4+", label: "Adaptive brands" },
-              { value: "40+", label: "Adaptive features" },
-              { value: "8", label: "Disability categories" },
-              { value: "15+", label: "Countries covered" },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <p className="text-4xl font-extrabold mb-1">{stat.value}</p>
-                <p className="text-primary-100 text-sm">{stat.label}</p>
-              </div>
+          <div className="grid grid-cols-2 gap-8 text-center md:grid-cols-4">
+            {stats.map((stat, i) => (
+              <Reveal key={stat.label} delay={Math.min(i * 60, 240)}>
+                <p className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                  {stat.value}
+                </p>
+                <p className="mt-1 text-sm text-gray-500">{stat.label}</p>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -80,26 +78,31 @@ export default function HomePage() {
 
       <HowItWorks />
 
-      <section className="py-20 bg-primary-500 text-white" aria-labelledby="cta-heading">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2
-            id="cta-heading"
-            className="text-3xl sm:text-4xl font-extrabold mb-4"
-          >
-            Ready to find your fit?
-          </h2>
-          <p className="text-primary-100 text-lg mb-8">
-            Browse adaptive clothing brands tailored to your specific needs — no more guessing.
-          </p>
-          <Link
-            href="/search"
-            className="inline-flex items-center gap-2 bg-white text-primary-600 hover:bg-primary-50 font-bold text-base px-8 py-4 rounded-2xl transition-colors shadow-lg"
-          >
-            Start browsing
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </Link>
+      <section className="bg-white pb-20 sm:pb-24" aria-labelledby="cta-heading">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="rounded-3xl bg-gray-900 px-6 py-14 text-center sm:px-12 sm:py-16">
+              <h2
+                id="cta-heading"
+                className="text-2xl font-bold tracking-tight text-white sm:text-3xl"
+              >
+                Ready to find your fit?
+              </h2>
+              <p className="mx-auto mt-3 max-w-md text-base text-gray-400">
+                Browse adaptive clothing brands tailored to your specific needs
+                — no more guessing.
+              </p>
+              <Link
+                href="/search"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-gray-900 transition-all duration-200 hover:bg-gray-100 active:scale-[0.98]"
+              >
+                Start browsing
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
     </>

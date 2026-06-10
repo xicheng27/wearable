@@ -1,60 +1,49 @@
 import Link from "next/link";
 import { disabilityCategories } from "@/data/brands";
+import Reveal from "./Reveal";
 
 export default function CategoryGrid() {
   return (
-    <section
-      className="py-20 bg-gray-50"
-      aria-labelledby="categories-heading"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2
-            id="categories-heading"
-            className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4"
-          >
+    <section className="bg-gray-50 py-16 sm:py-20" aria-labelledby="categories-heading">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <Reveal className="mb-10 text-center sm:mb-12">
+          <h2 id="categories-heading" className="section-title">
             Browse by disability type
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Select your category to find clothing brands that specifically design for your needs.
+          <p className="section-subtitle mx-auto max-w-xl">
+            Select your category to find brands that design specifically for your needs.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          {disabilityCategories.map((cat) => (
-            <Link
-              key={cat.id}
-              href={`/search?disability=${encodeURIComponent(cat.id)}`}
-              className="group card p-6 text-center hover:border-primary-200 hover:shadow-primary-100 focus-visible:ring-2 focus-visible:ring-primary-400 focus-visible:ring-offset-2 rounded-2xl transition-all duration-200"
-            >
-              <span
-                className="text-4xl mb-3 block leading-none"
-                role="img"
-                aria-hidden="true"
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
+          {disabilityCategories.map((cat, i) => (
+            <Reveal key={cat.id} delay={Math.min(i * 50, 300)}>
+              <Link
+                href={`/search?disability=${encodeURIComponent(cat.id)}`}
+                className="card card-hover group block h-full p-5 text-center sm:p-6"
               >
-                {cat.icon}
-              </span>
-              <h3 className="font-semibold text-gray-900 text-sm leading-snug group-hover:text-primary-600 transition-colors mb-1">
-                {cat.label}
-              </h3>
-              <p className="text-xs text-gray-400">
-                {cat.count} brand{cat.count !== 1 ? "s" : ""}
-              </p>
-            </Link>
+                <span className="mb-3 block text-3xl leading-none" aria-hidden="true">
+                  {cat.icon}
+                </span>
+                <h3 className="text-sm font-semibold leading-snug text-gray-900 transition-colors duration-200 group-hover:text-primary-700">
+                  {cat.label}
+                </h3>
+                <p className="mt-1 text-xs text-gray-400">
+                  {cat.count} brand{cat.count !== 1 ? "s" : ""}
+                </p>
+              </Link>
+            </Reveal>
           ))}
         </div>
 
-        <div className="text-center mt-10">
-          <Link
-            href="/search"
-            className="btn-outline inline-flex items-center gap-2"
-          >
+        <Reveal className="mt-10 text-center">
+          <Link href="/search" className="btn-secondary">
             Browse all brands
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
           </Link>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

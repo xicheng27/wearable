@@ -5,76 +5,62 @@ interface BrandCardProps {
   brand: Brand;
 }
 
-const priceColors: Record<string, string> = {
-  "$": "text-green-700 bg-green-50",
-  "$$": "text-yellow-700 bg-yellow-50",
-  "$$$": "text-orange-700 bg-orange-50",
-  "$–$$$": "text-blue-700 bg-blue-50",
-};
-
 export default function BrandCard({ brand }: BrandCardProps) {
   return (
-    <Link href={`/brands/${brand.id}`} className="group block">
-      <article className="card overflow-hidden h-full flex flex-col">
+    <Link href={`/brands/${brand.id}`} className="group block h-full">
+      <article className="card card-hover flex h-full flex-col overflow-hidden">
         <div
-          className="h-32 flex items-center justify-center relative"
-          style={{ backgroundColor: brand.heroColor + "18" }}
+          className="relative flex h-28 items-center justify-center"
+          style={{ backgroundColor: brand.heroColor + "10" }}
           aria-hidden="true"
         >
           <div
-            className="w-16 h-16 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg"
+            className="flex h-14 w-14 items-center justify-center rounded-2xl text-lg font-bold text-white shadow-md transition-transform duration-300 group-hover:scale-105"
             style={{ backgroundColor: brand.heroColor }}
           >
             {brand.logo}
           </div>
           {brand.featured && (
-            <span className="absolute top-3 right-3 badge bg-primary-50 text-primary-700 border border-primary-200 text-xs">
+            <span className="badge absolute right-3 top-3 border border-primary-100 bg-white/90 text-primary-700 backdrop-blur-sm">
               Featured
             </span>
           )}
         </div>
 
-        <div className="p-5 flex flex-col flex-1">
-          <div className="flex items-start justify-between gap-2 mb-1">
-            <h2 className="font-bold text-gray-900 text-base leading-snug group-hover:text-primary-600 transition-colors">
-              {brand.name}
-            </h2>
-            <span
-              className={`badge text-xs font-semibold flex-shrink-0 ${
-                priceColors[brand.priceRange] ?? "text-gray-600 bg-gray-100"
-              }`}
-            >
-              {brand.priceRange}
-            </span>
-          </div>
+        <div className="flex flex-1 flex-col p-5">
+          <h2 className="text-base font-semibold leading-snug text-gray-900 transition-colors duration-200 group-hover:text-primary-700">
+            {brand.name}
+          </h2>
+          <p className="mt-1 text-xs text-gray-400">
+            {brand.country} · {brand.priceRange} · Est. {brand.founded}
+          </p>
 
-          <p className="text-xs text-gray-500 mb-3">{brand.country} · Est. {brand.founded}</p>
-
-          <p className="text-sm text-gray-600 leading-relaxed flex-1 line-clamp-3 mb-4">
+          <p className="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-gray-500">
             {brand.description}
           </p>
 
-          <div className="flex flex-wrap gap-1.5">
+          <div className="mt-4 flex flex-wrap gap-1.5">
             {brand.adaptiveFeatures.slice(0, 3).map((feature) => (
-              <span
-                key={feature}
-                className="badge bg-primary-50 text-primary-700 text-xs"
-              >
+              <span key={feature} className="badge bg-gray-50 text-gray-600">
                 {feature}
               </span>
             ))}
             {brand.adaptiveFeatures.length > 3 && (
-              <span className="badge bg-gray-100 text-gray-600 text-xs">
-                +{brand.adaptiveFeatures.length - 3} more
+              <span className="badge bg-gray-50 text-gray-400">
+                +{brand.adaptiveFeatures.length - 3}
               </span>
             )}
           </div>
-        </div>
 
-        <div className="px-5 pb-4">
-          <span className="text-sm font-semibold text-primary-600 group-hover:text-primary-700 flex items-center gap-1">
+          <span className="mt-4 flex items-center gap-1 text-sm font-semibold text-primary-600">
             View brand
-            <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg
+              className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
           </span>
