@@ -38,3 +38,52 @@ export interface Brand {
   founded: number;
   certifications: string[];
 }
+
+export type ProductAvailability = {
+  online: boolean;
+  inStore: boolean;
+  countries: string[];
+  note: string;
+};
+
+export interface Product {
+  id: string;
+  name: string;
+  brandId: string;
+  clothingType: string;
+  category: string;
+  priceRange: string;
+  image: string;
+  imageAlt: string;
+  description: string;
+  accessibilityExplanation: string;
+  adaptiveFeatures: string[];
+  disabilityNeeds: string[];
+  bestFor: string[];
+  styleTags: string[];
+  availability: ProductAvailability;
+  sizes: string[];
+  genderFit: string[];
+  sensoryFriendly: boolean;
+  seatedFit: boolean;
+  oneHandedDressing: boolean;
+  featured: boolean;
+  productUrl: string;
+}
+
+export interface ProductSearchParams {
+  query?: string;
+  clothingType?: string;
+  brand?: string;
+  disabilityNeed?: string;
+  adaptiveFeature?: string;
+  style?: string;
+  budget?: string;
+  size?: string;
+  genderFit?: string;
+  availability?: string;
+  location?: string;
+  sensoryFriendly?: boolean;
+  seatedFit?: boolean;
+  oneHandedDressing?: boolean;
+}

@@ -2,50 +2,68 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import Logo from "./Logo";
-import SearchBar from "./SearchBar";
+import SearchBar from "@/components/SearchBar";
 
-const navLinks = [
-  { href: "/search", label: "Browse clothing" },
-  { href: "/brands", label: "Brands" },
-  { href: "/map", label: "Map" },
-  { href: "/signin", label: "Sign in" },
+function XisLogo() {
+  return (
+    <Link
+      href="/"
+      className="group flex flex-shrink-0 items-center gap-2.5"
+      aria-label="Xi's home"
+    >
+      <div className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-xl bg-primary-500 shadow-sm transition-colors group-hover:bg-primary-600">
+        <span className="select-none text-base font-black italic leading-none tracking-tight text-white">
+          Xi
+        </span>
+        <span
+          className="absolute bottom-1 right-1 text-[8px] font-bold leading-none text-white/70"
+          aria-hidden="true"
+        >
+          &apos;s
+        </span>
+      </div>
+      <span className="text-xl font-black tracking-tight text-gray-900 transition-colors group-hover:text-primary-700">
+        Xi<span className="text-primary-500">&apos;s</span>
+      </span>
+    </Link>
+  );
+}
+
+const navItems = [
+  { href: "/search", label: "Browse Clothing" },
+  { href: "/categories/shoes", label: "Adaptive Shoes" },
+  { href: "/search?sensory=true", label: "Sensory Picks" },
+  { href: "/search?seated=true", label: "Seated Fit" },
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-gray-100 bg-white shadow-sm">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between gap-4">
-          <Logo />
+          <XisLogo />
 
           <div className="hidden max-w-sm flex-1 md:flex">
             <SearchBar compact />
           </div>
 
-          <nav className="hidden items-center gap-1 md:flex" aria-label="Main navigation">
-            {navLinks.map((link) => (
+          <nav className="hidden items-center gap-5 lg:flex" aria-label="Main navigation">
+            {navItems.map((item) => (
               <Link
-                key={link.label}
-                href={link.href}
-                className="rounded-full px-3.5 py-2 text-sm font-medium text-gray-600 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-900"
+                key={item.href}
+                href={item.href}
+                className="text-sm font-semibold text-gray-600 transition-colors hover:text-primary-700"
               >
-                {link.label}
+                {item.label}
               </Link>
             ))}
-            <Link
-              href="/quiz"
-              className="ml-2 inline-flex items-center rounded-full bg-primary-600 px-4 py-2 text-sm font-semibold text-white transition-all duration-200 hover:bg-primary-700 active:scale-[0.98]"
-            >
-              Find my fit
-            </Link>
           </nav>
 
           <button
-            className="rounded-full p-2 text-gray-600 transition-colors hover:bg-gray-100 md:hidden"
-            onClick={() => setMenuOpen(!menuOpen)}
+            className="rounded-lg p-2 text-gray-600 hover:bg-gray-100 lg:hidden"
+            onClick={() => setMenuOpen((open) => !open)}
             aria-expanded={menuOpen}
             aria-label="Toggle menu"
           >
@@ -60,26 +78,19 @@ export default function Navbar() {
         </div>
 
         {menuOpen && (
-          <div className="animate-fade-in space-y-4 border-t border-gray-100 py-4 md:hidden">
+          <div className="space-y-3 border-t border-gray-100 py-4 lg:hidden">
             <SearchBar compact />
-            <nav className="flex flex-col gap-1" aria-label="Mobile navigation">
-              {navLinks.map((link) => (
+            <nav className="flex flex-col">
+              {navItems.map((item) => (
                 <Link
-                  key={link.label}
-                  href={link.href}
-                  className="rounded-xl px-3 py-2.5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-gray-900"
+                  key={item.href}
+                  href={item.href}
+                  className="py-2 text-sm font-semibold text-gray-700 hover:text-primary-700"
                   onClick={() => setMenuOpen(false)}
                 >
-                  {link.label}
+                  {item.label}
                 </Link>
               ))}
-              <Link
-                href="/quiz"
-                className="btn-primary mt-2 text-center"
-                onClick={() => setMenuOpen(false)}
-              >
-                Find my fit
-              </Link>
             </nav>
           </div>
         )}

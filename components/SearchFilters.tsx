@@ -1,26 +1,36 @@
 "use client";
 
-import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { brands } from "@/data/brands";
 import {
-  adaptiveFeaturesList,
-  clothingTypesList,
-  disabilityOptionsList,
-  shippingLocationsList,
-} from "@/data/brands";
+  adaptiveFeatureOptions,
+  availabilityOptions,
+  budgetOptions,
+  clothingTypeOptions,
+  disabilityNeedOptions,
+  fitOptions,
+  locationOptions,
+  products,
+  sizeOptions,
+  styleOptions,
+} from "@/data/products";
 
 interface FilterGroupProps {
   label: string;
   paramKey: string;
   options: string[];
-  defaultOpen?: boolean;
+  open?: boolean;
 }
 
-function FilterGroup({ label, paramKey, options, defaultOpen = false }: FilterGroupProps) {
+function FilterGroup({
+  label,
+  paramKey,
+  options,
+  open = false,
+}: FilterGroupProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const current = searchParams.get(paramKey) ?? "";
-  const [open, setOpen] = useState(defaultOpen || current !== "");
 
   function toggle(value: string) {
     const params = new URLSearchParams(searchParams.toString());
@@ -29,124 +39,166 @@ function FilterGroup({ label, paramKey, options, defaultOpen = false }: FilterGr
     } else {
       params.set(paramKey, value);
     }
-    router.push(`/brands?${params.toString()}`);
+    router.push(`/search?${params.toString()}`);
   }
 
   return (
-    <fieldset>
-      <legend className="w-full">
-        <button
-          type="button"
-          onClick={() => setOpen(!open)}
-          aria-expanded={open}
-          className="flex w-full items-center justify-between py-1 text-left"
-        >
-          <span className="text-sm font-medium text-gray-900">
-            {label}
-            {current && (
-              <span
-                className="ml-2 inline-block h-1.5 w-1.5 rounded-full bg-primary-500 align-middle"
-                aria-label="Filter active"
-              />
-            )}
-          </span>
-          <svg
-            className={`h-4 w-4 text-gray-400 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-            aria-hidden="true"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-      </legend>
-      {open && (
-        <ul className="animate-fade-in mt-2 space-y-0.5">
-          {options.map((opt) => {
-            const checked = current.toLowerCase() === opt.toLowerCase();
-            return (
-              <li key={opt}>
-                <label className="group -mx-2 flex cursor-pointer items-center gap-2.5 rounded-lg px-2 py-1.5 transition-colors duration-150 hover:bg-gray-50">
-                  <input
-                    type="checkbox"
-                    checked={checked}
-                    onChange={() => toggle(opt)}
-                    className="h-4 w-4 cursor-pointer rounded border-gray-300 text-primary-600 transition-colors focus:ring-primary-400"
-                    aria-label={`Filter by ${opt}`}
-                  />
-                  <span
-                    className={`text-sm transition-colors duration-150 ${
-                      checked
-                        ? "font-medium text-primary-700"
-                        : "text-gray-500 group-hover:text-gray-900"
-                    }`}
-                  >
-                    {opt}
-                  </span>
-                </label>
-              </li>
-            );
-          })}
-        </ul>
-      )}
-    </fieldset>
+    <details className="border-b border-gray-100 py-4" open={open}>
+      <summary className="flex cursor-pointer list-none items-center justify-between text-xs font-bold uppercase tracking-wider text-gray-900">
+        {label}
+        <span className="text-lg font-normal text-gray-400" aria-hidden="true">
+          +
+        </span>
+      </summary>
+      <ul className="mt-3 max-h-52 space-y-2 overflow-y-auto pr-1">
+        {options.map((option) => {
+          const checked = current.toLowerCase() === option.toLowerCase();
+          return (
+            <li key={option}>
+              <label className="group flex cursor-pointer items-center gap-2.5">
+                <input
+                  type="checkbox"
+                  checked={checked}
+                  onChange={() => toggle(option)}
+                  className="h-4 w-4 cursor-pointer rounded border-gray-300 text-primary-500 focus:ring-primary-400"
+                />
+                <span
+                  className={`text-sm ${
+                    checked
+                      ? "font-semibold text-primary-700"
+                      : "text-gray-700 group-hover:text-gray-950"
+                  }`}
+                >
+                  {option}
+                </span>
+              </label>
+            </li>
+          );
+        })}
+      </ul>
+    </details>
+  );
+}
+
+function ToggleFilter({
+  label,
+  paramKey,
+}: {
+  label: string;
+  paramKey: string;
+}) {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const checked = searchParams.get(paramKey) === "true";
+
+  function toggle() {
+    const params = new URLSearchParams(searchParams.toString());
+    if (checked) params.delete(paramKey);
+    else params.set(paramKey, "true");
+    router.push(`/search?${params.toString()}`);
+  }
+
+  return (
+    <label className="flex cursor-pointer items-center justify-between gap-4 py-2">
+      <span className="text-sm font-medium text-gray-700">{label}</span>
+      <input
+        type="checkbox"
+        checked={checked}
+        onChange={toggle}
+        className="h-4 w-4 rounded border-gray-300 text-primary-500 focus:ring-primary-400"
+      />
+    </label>
   );
 }
 
 export default function SearchFilters() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const hasFilters = ["disability", "clothing", "feature", "location", "price"].some(
-    (k) => searchParams.has(k)
-  );
+  const filterKeys = [
+    "clothing",
+    "brand",
+    "disability",
+    "feature",
+    "style",
+    "budget",
+    "size",
+    "fit",
+    "availability",
+    "location",
+    "sensory",
+    "seated",
+    "oneHanded",
+  ];
+  const hasFilters = filterKeys.some((key) => searchParams.has(key));
+  const brandOptions = brands
+    .filter((brand) => products.some((product) => product.brandId === brand.id))
+    .map((brand) => brand.name);
 
   function clearAll() {
-    const q = searchParams.get("q");
+    const query = searchParams.get("q");
     const params = new URLSearchParams();
-    if (q) params.set("q", q);
-    router.push(`/brands?${params.toString()}`);
+    if (query) params.set("q", query);
+    router.push(`/search?${params.toString()}`);
   }
 
   return (
-    <aside className="w-full" aria-label="Search filters">
-      <div className="mb-4 flex items-center justify-between">
-        <h2 className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+    <aside className="w-full" aria-label="Product filters">
+      <div className="flex items-center justify-between">
+        <h2 className="text-sm font-bold uppercase tracking-wider text-gray-900">
           Filters
         </h2>
         {hasFilters && (
           <button
             onClick={clearAll}
-            className="text-xs font-medium text-primary-600 transition-colors duration-150 hover:text-primary-700"
+            className="text-xs font-semibold text-primary-700 underline underline-offset-2"
           >
             Clear all
           </button>
         )}
       </div>
 
-      <div className="divide-y divide-gray-100 [&>*+*]:pt-4 [&>*:not(:last-child)]:pb-4">
-        <FilterGroup
-          label="Disability type"
-          paramKey="disability"
-          options={disabilityOptionsList}
-          defaultOpen
-        />
+      <div className="mt-2">
         <FilterGroup
           label="Clothing type"
           paramKey="clothing"
-          options={clothingTypesList}
+          options={clothingTypeOptions}
+          open
+        />
+        <FilterGroup label="Brand" paramKey="brand" options={brandOptions} open />
+        <FilterGroup
+          label="Accessibility need"
+          paramKey="disability"
+          options={disabilityNeedOptions}
+          open
         />
         <FilterGroup
           label="Adaptive feature"
           paramKey="feature"
-          options={adaptiveFeaturesList}
+          options={adaptiveFeatureOptions}
+        />
+        <FilterGroup label="Style" paramKey="style" options={styleOptions} />
+        <FilterGroup label="Budget" paramKey="budget" options={budgetOptions} />
+        <FilterGroup label="Size" paramKey="size" options={sizeOptions} />
+        <FilterGroup label="Gender / fit" paramKey="fit" options={fitOptions} />
+        <FilterGroup
+          label="Availability"
+          paramKey="availability"
+          options={availabilityOptions}
         />
         <FilterGroup
-          label="Ships to"
+          label="Location"
           paramKey="location"
-          options={shippingLocationsList}
+          options={locationOptions}
         />
+
+        <div className="pt-4">
+          <p className="mb-2 text-xs font-bold uppercase tracking-wider text-gray-900">
+            Quick needs
+          </p>
+          <ToggleFilter label="Sensory-friendly" paramKey="sensory" />
+          <ToggleFilter label="Wheelchair seated-fit" paramKey="seated" />
+          <ToggleFilter label="One-handed dressing" paramKey="oneHanded" />
+        </div>
       </div>
     </aside>
   );
