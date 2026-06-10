@@ -1,27 +1,26 @@
-import { notFound } from "next/navigation";
-import { clothingCategories, getCategoryById } from "@/data/categories";
-import CategoryClient from "./CategoryClient";
+import { redirect } from "next/navigation";
 
-interface PageProps {
+interface LegacyCategoryPageProps {
   params: { id: string };
 }
 
-export async function generateStaticParams() {
-  return clothingCategories.map((c) => ({ id: c.id }));
-}
+const categoryRedirects: Record<string, string> = {
+  tops: "/categories/tops",
+  shirts: "/categories/shirts",
+  tshirts: "/search?clothing=Tops",
+  pants: "/categories/pants",
+  jeans: "/categories/jeans",
+  shoes: "/categories/shoes",
+  underwear: "/categories/underwear",
+  dresses: "/categories/dresses",
+  jackets: "/categories/jackets",
+  formal: "/categories/formalwear",
+  activewear: "/search?style=Sporty",
+  nightwear: "/search?style=Comfort",
+};
 
-export async function generateMetadata({ params }: PageProps) {
-  const category = getCategoryById(params.id);
-  if (!category) return {};
-  return {
-    title: `${category.name} – Xi's`,
-    description: category.description,
-  };
-}
-
-export default function ClothingCategoryPage({ params }: PageProps) {
-  const category = getCategoryById(params.id);
-  if (!category) notFound();
-
-  return <CategoryClient categoryId={category.id} />;
+export default function LegacyCategoryPage({
+  params,
+}: LegacyCategoryPageProps) {
+  redirect(categoryRedirects[params.id] ?? "/search");
 }
