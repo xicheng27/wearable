@@ -1,22 +1,28 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
-  title: "Xi's | Adaptive Clothing Finder",
+  title: "Xi's – Adaptive Fashion Finder",
   description:
-    "Browse individual adaptive clothing items across brands by accessibility need, style, fit and adaptive feature.",
+    "Find adaptive clothing brands that work for your body. Browse by disability type, adaptive features, and more.",
   keywords: [
     "adaptive clothing",
+    "disability fashion",
     "wheelchair clothing",
-    "magnetic shirts",
-    "easy entry shoes",
-    "sensory friendly clothing",
+    "sensory clothing",
+    "accessible fashion",
   ],
   openGraph: {
-    title: "Xi's | Adaptive Clothing Finder",
-    description: "Compare individual adaptive clothing pieces across brands.",
+    title: "Xi's – Adaptive Fashion Finder",
+    description:
+      "Find adaptive clothing brands that work for your body.",
     type: "website",
   },
 };
@@ -27,12 +33,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="flex min-h-screen flex-col font-sans antialiased">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-      </body>
+    <html lang="en" className={inter.variable}>
+      <body className="flex min-h-screen flex-col font-sans">{children}</body>
     </html>
   );
 }

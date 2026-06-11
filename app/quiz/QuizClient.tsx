@@ -194,7 +194,7 @@ export default function QuizClient() {
       if (answers.location?.[0]) params.set("location", answers.location[0]);
       set("styles", answers.style);
       if (answers.budget?.[0]) params.set("budget", answers.budget[0]);
-      router.push(`/quiz/results?${params.toString()}`);
+      router.push(`/results?${params.toString()}`);
     } else {
       setStep(step + 1);
     }
