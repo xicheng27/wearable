@@ -8,7 +8,7 @@ const columns = [
       { href: "/search", label: "Browse clothing" },
       { href: "/brands", label: "Browse brands" },
       { href: "/map", label: "Stores & services map" },
-      { href: "/quiz", label: "Find my fit quiz" },
+      { href: "/quiz", label: "Find by Need quiz" },
       { href: "/brands?feature=sensory", label: "Sensory-friendly" },
       { href: "/clothing/shoes", label: "Adaptive footwear" },
     ],
@@ -26,11 +26,11 @@ const columns = [
   {
     heading: "About",
     links: [
-      { href: "/", label: "Our mission" },
+      { href: "/about", label: "About Xi's" },
       { href: "/", label: "Submit a brand" },
-      { href: "/", label: "Accessibility statement" },
+      { href: "/about", label: "Accessibility statement" },
       { href: "/", label: "Privacy policy" },
-      { href: "/", label: "Contact us" },
+      { href: "/signin", label: "Sign in" },
     ],
   },
 ];
@@ -50,7 +50,7 @@ export default function Footer() {
 
           {columns.map((col) => (
             <div key={col.heading}>
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-500">
                 {col.heading}
               </h3>
               <ul className="mt-4 space-y-2.5 text-sm">
@@ -69,7 +69,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-gray-200/70 pt-8 text-sm text-gray-400 sm:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-gray-200/70 pt-8 text-sm text-gray-500 sm:flex-row">
           <p>© 2025 Xi&apos;s. Empowering adaptive fashion for everyone.</p>
           <p>
             Made with <span className="text-primary-600">♥</span> for the

@@ -45,7 +45,7 @@ function MatchRing({ percent, size = 14 }: { percent: number; size?: number }) {
           cy="32"
           r={r}
           fill="none"
-          stroke="#1D9E75"
+          stroke="#7C3AED"
           strokeWidth="6"
           strokeLinecap="round"
           strokeDasharray={c}
@@ -76,13 +76,13 @@ function ProductMatchCard({ m, badge }: { m: ProductMatch; badge?: string }) {
       <div className="flex flex-1 flex-col p-5">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-400">
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">
               {brand.name}
             </p>
             <h3 className="mt-1 text-base font-semibold leading-snug text-gray-900">
               {m.product.name}
             </h3>
-            <p className="mt-1 text-xs text-gray-400">
+            <p className="mt-1 text-xs text-gray-500">
               {m.product.clothingType} · {m.product.price ?? m.product.priceRange}
             </p>
           </div>
@@ -277,7 +277,7 @@ export default function ResultsClient() {
                     </span>
                     <div className="min-w-0">
                       <h3 className="text-sm font-semibold text-gray-900">{m.brand.name}</h3>
-                      <p className="truncate text-xs text-gray-400">
+                      <p className="truncate text-xs text-gray-500">
                         {m.reasons.slice(0, 2).join(" · ")}
                       </p>
                     </div>

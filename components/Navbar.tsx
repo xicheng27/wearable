@@ -6,10 +6,10 @@ import Logo from "./Logo";
 import SearchBar from "./SearchBar";
 
 const navLinks = [
-  { href: "/search", label: "Browse clothing" },
+  { href: "/", label: "Home" },
+  { href: "/search", label: "Browse Clothing" },
   { href: "/brands", label: "Brands" },
-  { href: "/map", label: "Map" },
-  { href: "/signin", label: "Sign in" },
+  { href: "/about", label: "About" },
 ];
 
 export default function Navbar() {
@@ -30,16 +30,16 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="rounded-full px-3.5 py-2 text-sm font-medium text-gray-600 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-900"
+                className="rounded-full px-3.5 py-2 text-base font-medium text-gray-700 transition-colors duration-200 hover:bg-primary-50 hover:text-primary-800"
               >
                 {link.label}
               </Link>
             ))}
             <Link
               href="/quiz"
-              className="ml-2 inline-flex items-center rounded-full bg-primary-600 px-4 py-2 text-sm font-semibold text-white transition-all duration-200 hover:bg-primary-700 active:scale-[0.98]"
+              className="ml-2 inline-flex items-center rounded-full bg-primary-700 px-5 py-2.5 text-base font-semibold text-white transition-colors duration-200 hover:bg-primary-800"
             >
-              Find my fit
+              Find by Need
             </Link>
           </nav>
 
@@ -67,7 +67,7 @@ export default function Navbar() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="rounded-xl px-3 py-2.5 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 hover:text-gray-900"
+                  className="rounded-xl px-3 py-3 text-base font-medium text-gray-700 transition-colors hover:bg-primary-50 hover:text-primary-800"
                   onClick={() => setMenuOpen(false)}
                 >
                   {link.label}
@@ -78,7 +78,7 @@ export default function Navbar() {
                 className="btn-primary mt-2 text-center"
                 onClick={() => setMenuOpen(false)}
               >
-                Find my fit
+                Find by Need
               </Link>
             </nav>
           </div>

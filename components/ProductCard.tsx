@@ -26,13 +26,13 @@ export default function ProductCard({ product }: ProductCardProps) {
         </div>
 
         <div className="flex flex-1 flex-col p-5">
-          <p className="text-[11px] font-semibold uppercase tracking-wider text-gray-400">
+          <p className="text-xs font-semibold uppercase tracking-wider text-gray-600">
             {brand.name}
           </p>
-          <h3 className="mt-1 text-base font-semibold leading-snug text-gray-900 transition-colors duration-200 group-hover:text-primary-700">
+          <h3 className="mt-1 text-lg font-semibold leading-snug text-gray-900 transition-colors duration-200 group-hover:text-primary-700">
             {product.name}
           </h3>
-          <p className="mt-1 text-xs text-gray-400">
+          <p className="mt-1 text-sm text-gray-600">
             {product.clothingType} · {product.price ?? product.priceRange} ·{" "}
             {product.gender}
           </p>
@@ -49,21 +49,18 @@ export default function ProductCard({ product }: ProductCardProps) {
               </span>
             ))}
             {product.adaptiveFeatures.length > 2 && (
-              <span className="badge bg-gray-50 text-gray-400">
+              <span className="badge bg-gray-50 text-gray-500">
                 +{product.adaptiveFeatures.length - 2}
               </span>
             )}
           </div>
 
-          <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary-600">
-            View item
-            <svg
-              className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
+          <span
+            className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary-700 px-5 py-3 text-base font-semibold text-white transition-colors duration-200 group-hover:bg-primary-800"
+            aria-hidden="true"
+          >
+            View product
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
           </span>

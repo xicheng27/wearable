@@ -34,7 +34,7 @@ export default function SearchBar({
       aria-label="Search adaptive clothing"
     >
       <span
-        className={`pointer-events-none absolute text-gray-400 ${compact ? "left-3.5" : "left-5"}`}
+        className={`pointer-events-none absolute text-gray-500 ${compact ? "left-3.5" : "left-5"}`}
         aria-hidden="true"
       >
         <svg

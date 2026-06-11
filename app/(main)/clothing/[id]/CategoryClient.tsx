@@ -76,7 +76,7 @@ export default function CategoryClient({ categoryId }: { categoryId: string }) {
       <div className="border-b border-gray-100 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex items-center gap-2 text-sm text-gray-400">
+            <ol className="flex items-center gap-2 text-sm text-gray-500">
               <li><Link href="/" className="transition-colors hover:text-gray-700">Home</Link></li>
               <li aria-hidden="true">/</li>
               <li><Link href="/search" className="transition-colors hover:text-gray-700">Clothing</Link></li>
@@ -105,7 +105,7 @@ export default function CategoryClient({ categoryId }: { categoryId: string }) {
       <div className="sticky top-16 z-40 border-b border-gray-100 bg-white/90 backdrop-blur-md">
         <div className="mx-auto max-w-7xl space-y-2.5 px-4 py-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="mr-1 text-xs font-semibold uppercase tracking-wider text-gray-400">
+            <span className="mr-1 text-xs font-semibold uppercase tracking-wider text-gray-500">
               Features
             </span>
             {category.features.map((f) => (
@@ -118,7 +118,7 @@ export default function CategoryClient({ categoryId }: { categoryId: string }) {
             ))}
           </div>
           <div className="flex flex-wrap items-center gap-2">
-            <span className="mr-1 text-xs font-semibold uppercase tracking-wider text-gray-400">
+            <span className="mr-1 text-xs font-semibold uppercase tracking-wider text-gray-500">
               Budget
             </span>
             {budgetOptions.map((b) => (
@@ -129,7 +129,7 @@ export default function CategoryClient({ categoryId }: { categoryId: string }) {
                 onClick={() => toggle(activeBudgets, setActiveBudgets)(b)}
               />
             ))}
-            <span className="ml-3 mr-1 text-xs font-semibold uppercase tracking-wider text-gray-400">
+            <span className="ml-3 mr-1 text-xs font-semibold uppercase tracking-wider text-gray-500">
               Availability
             </span>
             {availabilityOptions.map((a) => (

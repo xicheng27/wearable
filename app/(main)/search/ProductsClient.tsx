@@ -178,7 +178,7 @@ export default function ProductsClient() {
 
             {results.length === 0 ? (
               <div className="card animate-fade-in px-6 py-20 text-center">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gray-50 text-gray-400">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gray-50 text-gray-500">
                   <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
                   </svg>
@@ -233,7 +233,7 @@ export default function ProductsClient() {
               <h2 className="text-lg font-semibold text-gray-900">Filters</h2>
               <button
                 onClick={() => setMobileFiltersOpen(false)}
-                className="rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600"
+                className="rounded-full p-2 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-600"
                 aria-label="Close filters"
               >
                 <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

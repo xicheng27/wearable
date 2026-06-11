@@ -40,7 +40,7 @@ export default function BrandDetailPage({ params }: PageProps) {
         />
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
           <nav aria-label="Breadcrumb" className="mb-8">
-            <ol className="flex items-center gap-2 text-sm text-gray-400">
+            <ol className="flex items-center gap-2 text-sm text-gray-500">
               <li>
                 <Link href="/" className="transition-colors hover:text-gray-700">
                   Home
@@ -169,7 +169,7 @@ export default function BrandDetailPage({ params }: PageProps) {
                 ))}
               </ul>
               <div className="mt-6 border-t border-gray-100 pt-5">
-                <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">
                   Disability types covered
                 </p>
                 <div className="mt-3 flex flex-wrap gap-2">
@@ -181,7 +181,7 @@ export default function BrandDetailPage({ params }: PageProps) {
                 </div>
               </div>
               <div className="mt-5 border-t border-gray-100 pt-5">
-                <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">
                   Clothing types
                 </p>
                 <div className="mt-3 flex flex-wrap gap-2">
@@ -198,7 +198,7 @@ export default function BrandDetailPage({ params }: PageProps) {
 
           <aside className="space-y-6" aria-label="Brand details sidebar">
             <div className="card p-6">
-              <h2 className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+              <h2 className="text-xs font-semibold uppercase tracking-wider text-gray-500">
                 Visit the brand
               </h2>
               <a
@@ -212,18 +212,18 @@ export default function BrandDetailPage({ params }: PageProps) {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
-              <p className="mt-3 text-center text-xs text-gray-400">
+              <p className="mt-3 text-center text-xs text-gray-500">
                 Price range: {brand.priceRange}
               </p>
             </div>
 
             <div className="card p-6" aria-labelledby="shipping-heading">
-              <h2 id="shipping-heading" className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+              <h2 id="shipping-heading" className="text-xs font-semibold uppercase tracking-wider text-gray-500">
                 Shipping info
               </h2>
               <dl className="mt-4 space-y-4 text-sm">
                 <div>
-                  <dt className="mb-1.5 text-xs font-medium text-gray-400">Ships to</dt>
+                  <dt className="mb-1.5 text-xs font-medium text-gray-500">Ships to</dt>
                   <dd className="flex flex-wrap gap-1.5">
                     {brand.shipping.countries.map((c) => (
                       <span key={c} className="badge bg-gray-100 text-gray-600">
@@ -233,12 +233,12 @@ export default function BrandDetailPage({ params }: PageProps) {
                   </dd>
                 </div>
                 <div>
-                  <dt className="mb-1 text-xs font-medium text-gray-400">Estimated delivery</dt>
+                  <dt className="mb-1 text-xs font-medium text-gray-500">Estimated delivery</dt>
                   <dd className="text-gray-700">{brand.shipping.estimatedDays}</dd>
                 </div>
                 {brand.shipping.freeShippingThreshold !== undefined && (
                   <div>
-                    <dt className="mb-1 text-xs font-medium text-gray-400">Free shipping</dt>
+                    <dt className="mb-1 text-xs font-medium text-gray-500">Free shipping</dt>
                     <dd className="text-gray-700">
                       {brand.shipping.freeShippingThreshold === 0
                         ? "Always free"
@@ -247,14 +247,14 @@ export default function BrandDetailPage({ params }: PageProps) {
                   </div>
                 )}
                 <div>
-                  <dt className="mb-1 text-xs font-medium text-gray-400">Returns policy</dt>
+                  <dt className="mb-1 text-xs font-medium text-gray-500">Returns policy</dt>
                   <dd className="leading-relaxed text-gray-700">{brand.shipping.returnsPolicy}</dd>
                 </div>
               </dl>
             </div>
 
             <div className="card p-6" aria-labelledby="locations-heading">
-              <h2 id="locations-heading" className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+              <h2 id="locations-heading" className="text-xs font-semibold uppercase tracking-wider text-gray-500">
                 Store locations
               </h2>
 
@@ -270,7 +270,7 @@ export default function BrandDetailPage({ params }: PageProps) {
                       </span>
                       <div>
                         <p className="font-medium text-gray-900">{loc.name}</p>
-                        <p className="mt-0.5 text-xs text-gray-400">
+                        <p className="mt-0.5 text-xs text-gray-500">
                           {loc.address}, {loc.city}, {loc.country}
                         </p>
                         {loc.phone && (
