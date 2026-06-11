@@ -136,7 +136,7 @@ function FilterGroup({
           aria-expanded={open}
           className="flex w-full items-center justify-between py-1 text-left"
         >
-          <span className="text-sm font-medium text-gray-900">
+          <span className="text-base font-semibold text-gray-900">
             {label}
             {current && (
               <span
@@ -146,7 +146,7 @@ function FilterGroup({
             )}
           </span>
           <svg
-            className={`h-4 w-4 text-gray-400 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+            className={`h-4 w-4 text-gray-500 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -168,7 +168,7 @@ function FilterGroup({
                     type="checkbox"
                     checked={checked}
                     onChange={() => toggle(opt.value)}
-                    className="h-4 w-4 cursor-pointer rounded border-gray-300 text-primary-600 transition-colors focus:ring-primary-400"
+                    className="h-5 w-5 cursor-pointer rounded border-gray-400 text-primary-700 transition-colors focus:ring-primary-400"
                     aria-label={`Filter by ${opt.label}`}
                   />
                   <span
@@ -205,7 +205,7 @@ export default function ProductFilters() {
   return (
     <aside className="w-full" aria-label="Product filters">
       <div className="mb-4 flex items-center justify-between">
-        <h2 className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+        <h2 className="text-xs font-semibold uppercase tracking-wider text-gray-500">
           Filters
         </h2>
         {hasFilters && (
@@ -225,7 +225,7 @@ export default function ProductFilters() {
             label={group.label}
             paramKey={group.paramKey}
             options={group.options}
-            defaultOpen={i === 0}
+            defaultOpen
           />
         ))}
       </div>

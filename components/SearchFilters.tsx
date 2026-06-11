@@ -51,7 +51,7 @@ function FilterGroup({ label, paramKey, options, defaultOpen = false }: FilterGr
             )}
           </span>
           <svg
-            className={`h-4 w-4 text-gray-400 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+            className={`h-4 w-4 text-gray-500 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -112,7 +112,7 @@ export default function SearchFilters() {
   return (
     <aside className="w-full" aria-label="Search filters">
       <div className="mb-4 flex items-center justify-between">
-        <h2 className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+        <h2 className="text-xs font-semibold uppercase tracking-wider text-gray-500">
           Filters
         </h2>
         {hasFilters && (

@@ -23,8 +23,8 @@ export function LogoMark({ size = 32, className = "" }: LogoMarkProps) {
     >
       <defs>
         <linearGradient id="xis-tile" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#23A87D" />
-          <stop offset="1" stopColor="#116B4E" />
+          <stop offset="0" stopColor="#8B5CF6" />
+          <stop offset="1" stopColor="#5B21B6" />
         </linearGradient>
       </defs>
       <rect width="64" height="64" rx="17" fill="url(#xis-tile)" />
@@ -41,7 +41,7 @@ export function LogoMark({ size = 32, className = "" }: LogoMarkProps) {
         strokeLinecap="round"
         opacity="0.62"
       />
-      <circle cx="47.5" cy="18.5" r="4" fill="#C5EBD9" />
+      <circle cx="47.5" cy="18.5" r="4" fill="#DDD6FE" />
     </svg>
   );
 }

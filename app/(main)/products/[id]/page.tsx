@@ -46,7 +46,7 @@ export default function ProductDetailPage({ params }: PageProps) {
       <div className="border-b border-gray-100 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <nav aria-label="Breadcrumb" className="mb-8">
-            <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-400">
+            <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
               <li><Link href="/" className="transition-colors hover:text-gray-700">Home</Link></li>
               <li aria-hidden="true">/</li>
               <li><Link href="/search" className="transition-colors hover:text-gray-700">Clothing</Link></li>
@@ -85,7 +85,7 @@ export default function ProductDetailPage({ params }: PageProps) {
               <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 {product.name}
               </h1>
-              <p className="mt-2 text-sm text-gray-400">
+              <p className="mt-2 text-sm text-gray-500">
                 {product.clothingType} · {product.price ?? product.priceRange} ·{" "}
                 {product.gender}
                 {product.sizes.length > 0 &&
@@ -94,7 +94,7 @@ export default function ProductDetailPage({ params }: PageProps) {
               <p className="mt-4 leading-relaxed text-gray-600">{product.description}</p>
 
               <div className="mt-5">
-                <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">
                   Best for
                 </p>
                 <div className="mt-2 flex flex-wrap gap-1.5">
@@ -107,7 +107,7 @@ export default function ProductDetailPage({ params }: PageProps) {
               </div>
 
               <div className="mt-4">
-                <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">
                   Style
                 </p>
                 <div className="mt-2 flex flex-wrap gap-1.5">
@@ -135,7 +135,7 @@ export default function ProductDetailPage({ params }: PageProps) {
                   View brand
                 </Link>
               </div>
-              <p className="mt-3 text-xs text-gray-400">
+              <p className="mt-3 text-xs text-gray-500">
                 {product.productUrl ? "Links to the exact product page. " : ""}
                 {singaporeAvailability(product)} ·{" "}
                 {hasStores

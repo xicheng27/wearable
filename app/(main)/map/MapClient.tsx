@@ -87,7 +87,7 @@ export default function MapClient() {
                     {categoryLabels[p.category]}
                   </p>
                   <h3 className="mt-1 text-sm font-semibold text-gray-900">{p.name}</h3>
-                  <p className="mt-0.5 text-xs text-gray-400">
+                  <p className="mt-0.5 text-xs text-gray-500">
                     {p.address} · {p.city}, {p.country}
                   </p>
                 </div>

@@ -13,7 +13,7 @@ export default function ResultsPage() {
       fallback={
         <div className="flex min-h-screen flex-col items-center justify-center gap-4 bg-gray-50">
           <LogoMark size={44} className="animate-pulse" />
-          <p className="text-sm text-gray-400">Finding your matches…</p>
+          <p className="text-sm text-gray-500">Finding your matches…</p>
         </div>
       }
     >
