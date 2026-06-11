@@ -594,7 +594,7 @@ export const brands: Brand[] = [
     description:
       "A Singapore adaptive clothing line founded by Dr Tan Jit Seng, designing fashionable adaptive clothes suited to a hot local climate.",
     longDescription:
-      "LEAF is the brainchild of Dr Tan Jit Seng, who saw how few adaptive options existed for elderly and disabled people in Singapore — and how those that did exist were made for cooler foreign markets. LEAF collaborates with a fashion designer and dressmaker, and consults occupational therapists and caregivers, to create functional, fashionable clothing suited to the local climate, with designs in progress for bed-bound patients.",
+      "LEAF is the brainchild of Dr Tan Jit Seng, who saw how few adaptive options existed for elderly and disabled people in Singapore — and how those that did exist were made for cooler foreign markets. LEAF collaborates with a fashion designer and dressmaker, and consults occupational therapists and caregivers, to create functional, fashionable clothing suited to the local climate, with designs in progress for bed-bound patients. LEAF sells via referral (phone or email) rather than an online shop, so limited product data is available.",
     logo: "LF",
     heroColor: "#4A6B2E",
     image: "/images/brand-leaf-adaptive.svg",

@@ -8,6 +8,7 @@ import {
   getProductById,
   products,
   similarProducts,
+  singaporeAvailability,
 } from "@/data/products";
 import { getCategoryById } from "@/data/categories";
 
@@ -85,8 +86,10 @@ export default function ProductDetailPage({ params }: PageProps) {
                 {product.name}
               </h1>
               <p className="mt-2 text-sm text-gray-400">
-                {product.clothingType} · {product.priceRange} · {product.gender} ·
-                Sizes {product.sizes[0]}–{product.sizes[product.sizes.length - 1]}
+                {product.clothingType} · {product.price ?? product.priceRange} ·{" "}
+                {product.gender}
+                {product.sizes.length > 0 &&
+                  ` · Sizes ${product.sizes[0]}–${product.sizes[product.sizes.length - 1]}`}
               </p>
               <p className="mt-4 leading-relaxed text-gray-600">{product.description}</p>
 
@@ -134,6 +137,7 @@ export default function ProductDetailPage({ params }: PageProps) {
               </div>
               <p className="mt-3 text-xs text-gray-400">
                 {product.productUrl ? "Links to the exact product page. " : ""}
+                {singaporeAvailability(product)} ·{" "}
                 {hasStores
                   ? "Available online and in stores — see brand page for locations."
                   : `Online only · ships ${
