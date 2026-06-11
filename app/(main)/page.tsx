@@ -7,6 +7,8 @@ import Reveal from "@/components/Reveal";
 import { brands } from "@/data/brands";
 import { mapPlaces } from "@/data/places";
 import { clothingCategories } from "@/data/categories";
+import ProductCard from "@/components/ProductCard";
+import { products } from "@/data/products";
 
 const steps = [
   {
@@ -15,7 +17,7 @@ const steps = [
   },
   {
     title: "Get matched",
-    description: "We rank adaptive brands by how well they genuinely fit you, with honest reasons why.",
+    description: "We rank individual adaptive pieces and brands by how well they fit you, with honest reasons why.",
   },
   {
     title: "Shop with confidence",
@@ -45,6 +47,14 @@ const needCards = [
 ];
 
 const homeCategoryIds = ["tops", "pants", "shoes", "jackets", "formal"];
+
+const shopEdits = [
+  { label: "Best adaptive shoes", href: "/search?category=shoes" },
+  { label: "Best seated-fit pants", href: "/search?category=pants&feature=seated" },
+  { label: "Best magnetic shirts", href: "/search?category=shirts&feature=magnetic" },
+  { label: "Sensory-friendly picks", href: "/search?feature=sensory" },
+  { label: "Formal adaptive wear", href: "/search?category=formal" },
+];
 
 const styleCards = [
   {
@@ -222,6 +232,48 @@ export default function HomePage() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Popular adaptive pieces */}
+      <section className="border-y border-gray-100 bg-gray-50/60 py-16 sm:py-20" aria-labelledby="popular-heading">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Reveal className="mb-8 flex items-end justify-between sm:mb-10">
+            <div>
+              <h2 id="popular-heading" className="section-title">Popular adaptive pieces</h2>
+              <p className="section-subtitle">Individual items the community loves — from every brand, in one grid.</p>
+            </div>
+            <Link
+              href="/search"
+              className="hidden flex-shrink-0 items-center gap-1.5 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700 sm:inline-flex"
+            >
+              Shop all items
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </Reveal>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {products
+              .filter((p) => p.featured)
+              .slice(0, 8)
+              .map((product, i) => (
+                <Reveal key={product.id} delay={Math.min(i * 50, 300)} className="h-full">
+                  <ProductCard product={product} />
+                </Reveal>
+              ))}
+          </div>
+          <Reveal className="mt-8 flex flex-wrap justify-center gap-2">
+            {shopEdits.map((edit) => (
+              <Link
+                key={edit.label}
+                href={edit.href}
+                className="rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-600 transition-all duration-200 hover:border-primary-200 hover:bg-primary-50 hover:text-primary-700"
+              >
+                {edit.label}
+              </Link>
+            ))}
+          </Reveal>
         </div>
       </section>
 

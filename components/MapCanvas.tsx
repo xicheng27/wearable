@@ -10,7 +10,7 @@ import Link from "next/link";
  * (places, selectedId, onSelect) and swap the canvas internals.
  */
 
-const BOUNDS = { minLng: -128, maxLng: 12, minLat: 30, maxLat: 60 };
+const BOUNDS = { minLng: -130, maxLng: 120, minLat: -8, maxLat: 62 };
 const W = 1000;
 const H = 560;
 

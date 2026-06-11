@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import { getBrandById, brands } from "@/data/brands";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import ProductCard from "@/components/ProductCard";
+import { productsOfBrand } from "@/data/products";
 
 interface PageProps {
   params: { id: string };
@@ -24,6 +26,7 @@ export default function BrandDetailPage({ params }: PageProps) {
   const brand = getBrandById(params.id);
   if (!brand) notFound();
 
+  const brandProducts = productsOfBrand(brand.id);
   const storeLocations = brand.locations.filter((l) => l.type !== "online-only");
   const onlineOnly = brand.locations.filter((l) => l.type === "online-only");
 
@@ -100,6 +103,29 @@ export default function BrandDetailPage({ params }: PageProps) {
                 </div>
               )}
             </section>
+
+            {brandProducts.length > 0 && (
+              <Reveal>
+                <section aria-labelledby="products-heading">
+                  <div className="mb-4 flex items-end justify-between">
+                    <h2 id="products-heading" className="text-lg font-semibold text-gray-900">
+                      Adaptive pieces from {brand.name}
+                    </h2>
+                    <Link
+                      href={`/search?brand=${brand.id}`}
+                      className="text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700"
+                    >
+                      See all →
+                    </Link>
+                  </div>
+                  <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                    {brandProducts.slice(0, 4).map((product) => (
+                      <ProductCard key={product.id} product={product} />
+                    ))}
+                  </div>
+                </section>
+              </Reveal>
+            )}
 
             <Reveal>
             <section className="card p-6 sm:p-8" aria-labelledby="features-heading">
