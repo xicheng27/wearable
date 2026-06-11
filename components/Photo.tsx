@@ -7,20 +7,32 @@ interface PhotoProps {
   alt: string;
   className?: string;
   imgClassName?: string;
+  /** Shown if src fails (e.g. remote listing photo offline). */
+  fallbackSrc?: string;
 }
 
 /**
- * Image with a graceful fallback: if the source fails to load, a quiet
- * gradient placeholder with a hanger glyph is shown instead. Sources live
- * in /public/images and can be swapped for real photography (same path)
- * without touching components.
+ * Image with a graceful fallback chain: src -> fallbackSrc -> placeholder.
+ * Lets product cards try the brand's real listing photo and quietly fall
+ * back to the local illustration tile when it can't load.
  */
-export default function Photo({ src, alt, className = "", imgClassName = "" }: PhotoProps) {
-  const [failed, setFailed] = useState(false);
+export default function Photo({
+  src,
+  alt,
+  className = "",
+  imgClassName = "",
+  fallbackSrc,
+}: PhotoProps) {
+  const [stage, setStage] = useState<0 | 1 | 2>(0);
+  const current = stage === 0 ? src : stage === 1 && fallbackSrc ? fallbackSrc : null;
+
+  function handleError() {
+    setStage((prev) => (prev === 0 && fallbackSrc ? 1 : 2));
+  }
 
   return (
     <div className={`relative overflow-hidden ${className}`}>
-      {failed ? (
+      {current === null ? (
         <div
           className="flex h-full w-full items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100"
           role="img"
@@ -34,10 +46,11 @@ export default function Photo({ src, alt, className = "", imgClassName = "" }: P
       ) : (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={src}
+          key={current}
+          src={current}
           alt={alt}
           loading="lazy"
-          onError={() => setFailed(true)}
+          onError={handleError}
           className={`h-full w-full object-cover ${imgClassName}`}
         />
       )}

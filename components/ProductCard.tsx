@@ -14,9 +14,10 @@ export default function ProductCard({ product }: ProductCardProps) {
       <article className="card card-hover flex h-full flex-col overflow-hidden">
         <div className="relative">
           <Photo
-            src={product.image}
+            src={product.imageUrl ?? product.image}
+            fallbackSrc={product.image}
             alt=""
-            className="aspect-[4/3]"
+            className="aspect-[4/3] bg-gray-50"
             imgClassName="transition-transform duration-500 group-hover:scale-[1.05]"
           />
           <span className="absolute right-3 top-3 rounded-full bg-white/85 px-2.5 py-1 text-[11px] font-medium text-gray-500 backdrop-blur-sm">

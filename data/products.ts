@@ -11,7 +11,12 @@ export interface Product {
   /** Clothing category id (data/categories.ts). */
   categoryId: string;
   priceRange: string;
+  /** Local illustration tile (always present; also the fallback). */
   image: string;
+  /** Verified remote listing photo from the brand, when available. */
+  imageUrl?: string;
+  /** Verified link to the exact product page, when available. */
+  productUrl?: string;
   description: string;
   /** Plain-language accessibility explanation for the detail page. */
   accessibilityNote: string;
@@ -36,6 +41,10 @@ export const products: Product[] = [
     categoryId: "shirts",
     priceRange: "$$",
     image: "/images/prod-tommy-magnetic-polo.svg",
+    imageUrl:
+      "https://shoptommy.scene7.com/is/image/ShopTommy/78J9182_XLG_FNT",
+    productUrl:
+      "https://usa.tommy.com/en/tommy-adaptive/mens-adaptive/tops/classic-stretch-polo/78J9182-XLG.html",
     description:
       "The iconic Tommy polo with hidden magnets behind the placket — it looks buttoned, but closes itself in seconds.",
     accessibilityNote:
@@ -56,6 +65,10 @@ export const products: Product[] = [
     categoryId: "pants",
     priceRange: "$$",
     image: "/images/prod-tommy-seated-chinos.svg",
+    imageUrl:
+      "https://shoptommy.scene7.com/is/image/ShopTommy/7T00417_615_main",
+    productUrl:
+      "https://usa.tommy.com/en/tommy-adaptive/mens-adaptive/bottoms/seated-fit-classic-chino/78D1836-SPN.html",
     description:
       "Classic chinos re-cut for sitting: higher back rise, lower front rise and a velcro-adjustable waist.",
     accessibilityNote:
@@ -114,6 +127,10 @@ export const products: Product[] = [
     categoryId: "jeans",
     priceRange: "$$$",
     image: "/images/prod-iz-seated-jeans.svg",
+    imageUrl:
+      "https://izadaptive.com/cdn/shop/files/MPT035_GC_jeans_Black__0342_0046.jpg?v=1769662388",
+    productUrl:
+      "https://izadaptive.com/products/game-changer-seamless-back-jeans-for-men",
     description:
       "IZ's signature jeans, patterned entirely from the seated position — the gold standard of wheelchair denim.",
     accessibilityNote:
@@ -192,6 +209,10 @@ export const products: Product[] = [
     categoryId: "shoes",
     priceRange: "$$",
     image: "/images/prod-zappos-nike-flyease.svg",
+    imageUrl:
+      "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8ec2a797-0b0c-4b29-b1b8-9204b901a803/NIKE+GO+FLYEASE.png",
+    productUrl:
+      "https://www.nike.com/t/go-flyease-womens-easy-on-off-shoes-LGmqKx",
     description:
       "Nike's hands-free FlyEase system: step in, the heel folds closed behind you. No hands, no laces.",
     accessibilityNote:
@@ -212,6 +233,10 @@ export const products: Product[] = [
     categoryId: "shoes",
     priceRange: "$",
     image: "/images/prod-zappos-slipon-sneakers.svg",
+    imageUrl:
+      "https://m.media-amazon.com/images/I/714J8RVCV8L._SX700_.jpg",
+    productUrl:
+      "https://www.zappos.com/p/womens-skechers-performance-go-walk-flex-dacey-hands-free-slip-ins/product/9930275",
     description:
       "Stretchy slip-on sneakers in wide and extra-wide fits — kind to orthotics, swelling and AFOs.",
     accessibilityNote:
@@ -341,17 +366,19 @@ export const products: Product[] = [
   },
   {
     id: "able2wear-nightdress",
-    name: "Front-Opening Nightdress",
+    name: "Iona Open-Back Nightie",
     brandId: "able2wear",
     clothingType: "Nightwear",
     categoryId: "underwear",
     priceRange: "$$",
     image: "/images/prod-able2wear-nightdress.svg",
+    productUrl:
+      "https://able2wear.co.uk/product/iona-nightie-full-back-and-shoulder-opening/",
     description:
-      "A full-length nightdress that opens completely at the front — comfort and dignity through the night.",
+      "Able2Wear's Iona nightie with full back and shoulder openings — comfort and dignity through the night.",
     accessibilityNote:
-      "The full front opening means dressing happens flat or seated with no overhead pulling, and night-time care doesn't require undressing.",
-    adaptiveFeatures: ["Front-opening", "Soft brushed fabric", "Easy-care"],
+      "Full back and shoulder openings mean dressing happens flat or seated with no overhead pulling, and night-time care doesn't require undressing.",
+    adaptiveFeatures: ["Open-back", "Shoulder openings", "Soft brushed fabric"],
     bestFor: ["Care home residents", "Post-surgery recovery", "Carer-assisted dressing"],
     styleTags: ["Clean / minimal"],
     gender: "Women",
@@ -366,6 +393,10 @@ export const products: Product[] = [
     categoryId: "shirts",
     priceRange: "$$",
     image: "/images/prod-magnaready-dress-shirt.svg",
+    imageUrl:
+      "https://magnaready.com/cdn/shop/files/long-sleeve-white-ryan-dress-shirt-magnetic-closures-adaptive-clothing-comfort-style_3.jpg?v=1756660643&width=2048",
+    productUrl:
+      "https://magnaready.com/products/long-sleeve-white-ryan-dress-shirt-with-magnetic-closures",
     description:
       "The original magnetically infused dress shirt — boardroom crisp, fastened in five seconds flat.",
     accessibilityNote:
@@ -405,6 +436,10 @@ export const products: Product[] = [
     categoryId: "shoes",
     priceRange: "$$",
     image: "/images/prod-billy-zip-hightops.svg",
+    imageUrl:
+      "https://billyfootwear.com/cdn/shop/files/BK23300-004_side_2048x2048_bddd2f5a-fcb6-4236-bc9f-75f6d682a446.jpg?v=1756110917",
+    productUrl:
+      "https://billyfootwear.com/products/black-white-billy-classic-lace-high-tops",
     description:
       "The cult-favourite high top that unzips all the way around — the whole shoe folds open flat.",
     accessibilityNote:
@@ -483,6 +518,10 @@ export const products: Product[] = [
     categoryId: "underwear",
     priceRange: "$",
     image: "/images/prod-slick-chicks-underwear.svg",
+    imageUrl:
+      "https://slickchicksonline.com/cdn/shop/files/12.8.19_Ecomm_Shoot0118_1200x630.jpg?v=1735914880",
+    productUrl:
+      "https://slickchicksonline.com/products/brief",
     description:
       "Patented briefs that fasten at the hips — on and off without standing, lifting or balancing.",
     accessibilityNote:
