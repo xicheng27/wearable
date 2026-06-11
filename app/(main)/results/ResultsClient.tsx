@@ -83,7 +83,7 @@ function ProductMatchCard({ m, badge }: { m: ProductMatch; badge?: string }) {
               {m.product.name}
             </h3>
             <p className="mt-1 text-xs text-gray-400">
-              {m.product.clothingType} · {m.product.priceRange}
+              {m.product.clothingType} · {m.product.price ?? m.product.priceRange}
             </p>
           </div>
           {m.percent !== null && <MatchRing percent={m.percent} />}

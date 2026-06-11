@@ -1,6 +1,7 @@
 import { Brand } from "@/types";
 import { brands, QuizAnswers } from "./brands";
 import { clothingCategories, quizClothingOptions } from "./categories";
+import { adaptiveProducts } from "./adaptiveProducts";
 
 export interface Product {
   id: string;
@@ -17,6 +18,10 @@ export interface Product {
   imageUrl?: string;
   /** Verified link to the exact product page, when available. */
   productUrl?: string;
+  /** Exact price as shown on the official listing, when available. */
+  price?: string;
+  /** Currency of the official listing, when known. */
+  currency?: string;
   description: string;
   /** Plain-language accessibility explanation for the detail page. */
   accessibilityNote: string;
@@ -32,7 +37,7 @@ export interface Product {
 
 const S = ["XS", "S", "M", "L", "XL", "2XL", "3XL"];
 
-export const products: Product[] = [
+const baseProducts: Product[] = [
   {
     id: "tommy-magnetic-polo",
     name: "Magnetic Button Polo Shirt",
@@ -131,6 +136,8 @@ export const products: Product[] = [
       "https://izadaptive.com/cdn/shop/files/MPT035_GC_jeans_Black__0342_0046.jpg?v=1769662388",
     productUrl:
       "https://izadaptive.com/products/game-changer-seamless-back-jeans-for-men",
+    price: "$74.00",
+    currency: "USD",
     description:
       "IZ's signature jeans, patterned entirely from the seated position — the gold standard of wheelchair denim.",
     accessibilityNote:
@@ -536,42 +543,26 @@ export const products: Product[] = [
   },
   {
     id: "will-well-magnetic-shirt",
-    name: "Magnetic Closure Shirt",
+    name: "Slim-Fit Short Sleeve Shirt",
     brandId: "will-well",
     clothingType: "Shirt",
     categoryId: "shirts",
     priceRange: "$$",
     image: "/images/prod-will-well-magnetic-shirt.svg",
+    productUrl: "https://willandwell.com/products/slim-fit-short-sleeve-shirt",
+    price: "S$74.90",
+    currency: "SGD",
     description:
-      "Will & Well's breathable everyday shirt with hidden magnetic closures — designed in and for Singapore's climate.",
+      "Will & Well's slim-fit short sleeve shirt with MagSnap magnetic buttons — designed in and for Singapore's climate.",
     accessibilityNote:
       "Magnets replace every button, the fabric is lightweight and breathable for tropical heat, and adjustable straps fine-tune the fit without re-dressing.",
-    adaptiveFeatures: ["Magnetic closures", "Breathable fabric", "Adjustable straps"],
+    adaptiveFeatures: ["MagSnap magnetic buttons", "One-handed dressing", "Breathable fabric"],
     bestFor: ["Limited dexterity", "One-handed dressing", "Hot-climate comfort"],
     styleTags: ["Clean / minimal", "Casual", "Smart casual"],
     gender: "Unisex",
     sizes: S,
     availability: ["Online", "In stores"],
     featured: true,
-  },
-  {
-    id: "leaf-breathable-top",
-    name: "Breathable Easy-Dressing Top",
-    brandId: "leaf-adaptive",
-    clothingType: "Top",
-    categoryId: "tops",
-    priceRange: "$",
-    image: "/images/prod-leaf-breathable-top.svg",
-    description:
-      "LEAF's airy adaptive top, co-designed with occupational therapists for elderly dressers in the tropics.",
-    accessibilityNote:
-      "Wide openings and an assisted-dressing cut make this easy to put on with or without help, in fabric chosen for hot, humid days.",
-    adaptiveFeatures: ["Easy-dressing design", "Breathable fabric", "Assisted dressing"],
-    bestFor: ["Elderly dressers", "Carer-assisted dressing", "Hot-climate comfort"],
-    styleTags: ["Casual", "Clean / minimal"],
-    gender: "Unisex",
-    sizes: S,
-    availability: ["Online", "In stores"],
   },
   {
     id: "werable-buckle-dress",
@@ -581,6 +572,7 @@ export const products: Product[] = [
     categoryId: "dresses",
     priceRange: "$$$",
     image: "/images/prod-werable-buckle-dress.svg",
+    price: "$280.00",
     description:
       "Werable's signature wrap shirt dress, fastened with an easy-grip buckle and designed for one-handed dressing.",
     accessibilityNote:
@@ -601,6 +593,8 @@ export const products: Product[] = [
     categoryId: "shirts",
     priceRange: "$",
     image: "/images/prod-dawn-magnetic-polo.svg",
+    productUrl: "https://dawnadaptive.com/products/magneticshirt-adaptiveclothing-polo-tee-unisex",
+    currency: "MYR",
     description:
       "Dawn Adaptive's affordable magnetic polo — easy independent dressing without the premium price tag.",
     accessibilityNote:
@@ -639,6 +633,8 @@ export const products: Product[] = [
     categoryId: "pants",
     priceRange: "$$",
     image: "/images/prod-joe-bella-carezips.svg",
+    productUrl: "https://joeandbella.com/products/carezips-adaptive-pants-for-men",
+    currency: "USD",
     description:
       "Joe & Bella's patented CareZips® pants with three strategic zippers for fast, dignified dressing and care.",
     accessibilityNote:
@@ -672,6 +668,8 @@ export const products: Product[] = [
   },
 ];
 
+export const products: Product[] = [...baseProducts, ...adaptiveProducts];
+
 export function getProductById(id: string): Product | undefined {
   return products.find((p) => p.id === id);
 }
@@ -688,6 +686,22 @@ export function productsInCategory(categoryId: string): Product[] {
   return products.filter((p) => p.categoryId === categoryId);
 }
 
+export type SingaporeAvailability =
+  | "Local Singapore brand"
+  | "Ships to Singapore"
+  | "International shipping";
+
+/** How easily a Singapore shopper can get this item, derived from the brand. */
+export function singaporeAvailability(product: Product): SingaporeAvailability {
+  const brand = getBrandOfProduct(product);
+  if (brand.country === "Singapore") return "Local Singapore brand";
+  const ships = brand.shipping.countries.some((c) => {
+    const v = c.toLowerCase();
+    return v === "worldwide" || v.includes("singapore");
+  });
+  return ships ? "Ships to Singapore" : "International shipping";
+}
+
 export interface ProductFilterParams {
   query?: string;
   category?: string;
@@ -700,6 +714,7 @@ export interface ProductFilterParams {
   gender?: string;
   availability?: string;
   location?: string;
+  sg?: string;
 }
 
 const norm = (s: string) => s.toLowerCase();
@@ -769,6 +784,14 @@ export function searchProducts(params: ProductFilterParams): Product[] {
       p.availability.includes(params.availability as "Online" | "In stores")
     );
   }
+  if (params.sg) {
+    results = results.filter((p) => {
+      const avail = singaporeAvailability(p);
+      if (params.sg === "local") return avail === "Local Singapore brand";
+      return avail !== "International shipping";
+    });
+  }
+
   if (params.location) {
     const co = norm(params.location);
     results = results.filter((p) =>

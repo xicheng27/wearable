@@ -41,6 +41,7 @@ export default function ProductsClient() {
     gender: searchParams.get("gender") ?? undefined,
     availability: searchParams.get("availability") ?? undefined,
     location: searchParams.get("location") ?? undefined,
+    sg: searchParams.get("sg") ?? undefined,
   });
 
   function setParam(key: string, value: string | null) {

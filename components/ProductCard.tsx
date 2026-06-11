@@ -33,7 +33,8 @@ export default function ProductCard({ product }: ProductCardProps) {
             {product.name}
           </h3>
           <p className="mt-1 text-xs text-gray-400">
-            {product.clothingType} · {product.priceRange} · {product.gender}
+            {product.clothingType} · {product.price ?? product.priceRange} ·{" "}
+            {product.gender}
           </p>
 
           <p className="mt-2.5 line-clamp-1 text-xs text-gray-500">

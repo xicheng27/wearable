@@ -82,6 +82,14 @@ export const productFilterGroups: {
     paramKey: "availability",
     options: toOptions(["Online", "In stores"]),
   },
+  {
+    label: "Singapore availability",
+    paramKey: "sg",
+    options: [
+      { label: "Local Singapore brand", value: "local" },
+      { label: "Ships to Singapore", value: "ships" },
+    ],
+  },
   { label: "Ships to", paramKey: "location", options: toOptions(shippingLocationsList) },
 ];
 
