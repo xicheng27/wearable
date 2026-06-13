@@ -10,6 +10,8 @@ const originalProducts: Product[] = [
     clothingType: "Tops",
     category: "shirts",
     priceRange: "$50-$100",
+    price: "35.70",
+    currency: "USD",
     imageUrl:
       "https://shoptommy.scene7.com/is/image/ShopTommy/78J9182_XLG_FNT",
     imageAlt: "Tommy Hilfiger Classic Stretch Polo in navy",
@@ -34,7 +36,7 @@ const originalProducts: Product[] = [
     oneHandedDressing: true,
     featured: true,
     productUrl:
-      "https://usa.tommy.com/en/tommy-adaptive/mens-adaptive/tops/classic-stretch-polo/78J9182-XLG.html",
+      "https://usa.tommy.com/en/classic-stretch-polo/78J9182.html",
     linkType: "exact-product",
   },
   {
@@ -44,6 +46,8 @@ const originalProducts: Product[] = [
     clothingType: "Pants",
     category: "pants",
     priceRange: "$75-$125",
+    price: "53.70",
+    currency: "USD",
     imageUrl:
       "https://shoptommy.scene7.com/is/image/ShopTommy/7T00417_615_main",
     imageAlt: "Tommy Hilfiger Seated Fit Classic Chino in red",
@@ -68,16 +72,18 @@ const originalProducts: Product[] = [
     oneHandedDressing: true,
     featured: true,
     productUrl:
-      "https://usa.tommy.com/en/tommy-adaptive/mens-adaptive/bottoms/seated-fit-classic-chino/78D1836-SPN.html",
+      "https://usa.tommy.com/en/seated-fit-classic-chino/78D1836.html",
     linkType: "exact-product",
   },
   {
     id: "tommy-adaptive-sensory-tee",
-    name: "Sensory-Friendly Logo T-Shirt",
+    name: "Sensory Tommy Jeans T-Shirt",
     brandId: "tommy-hilfiger-adaptive",
     clothingType: "Tops",
     category: "tops",
     priceRange: "$25-$50",
+    price: "24.75",
+    currency: "USD",
     imageUrl: null,
     imageAlt: "Exact Tommy Hilfiger Sensory Friendly Adaptive T-Shirt image unavailable",
     description:
@@ -101,7 +107,7 @@ const originalProducts: Product[] = [
     oneHandedDressing: false,
     featured: false,
     productUrl:
-      "https://usa.tommy.com/en/tommy-adaptive/mens-adaptive/tops/sensory-friendly-adaptive-t-shirt/78J1172-P8F.html",
+      "https://usa.tommy.com/en/tommy-adaptive/mens-adaptive/tops/sensory-tommy-jeans-t-shirt/7T00417-615.html",
     linkType: "exact-product",
   },
   {
@@ -111,6 +117,8 @@ const originalProducts: Product[] = [
     clothingType: "Jeans",
     category: "jeans",
     priceRange: "$75-$125",
+    price: "99.00",
+    currency: "CAD",
     imageUrl:
       "https://izadaptive.com/cdn/shop/files/MPT035_GC_jeans_Black__0342_0046.jpg?v=1769662388",
     imageAlt: "IZ Adaptive Men's Game Changer Seamless Back Jeans",
@@ -145,6 +153,8 @@ const originalProducts: Product[] = [
     clothingType: "Pants",
     category: "pants",
     priceRange: "$100-$150",
+    price: "89.00",
+    currency: "CAD",
     imageUrl:
       "https://izadaptive.com/cdn/shop/files/IZ_Adaptive_Game_Changer_Chinos_for_men_tan_front.jpg?v=1769663723",
     imageAlt: "IZ Adaptive Men's Game Changer Seamless Back Chinos in tan",
@@ -179,6 +189,8 @@ const originalProducts: Product[] = [
     clothingType: "Shoes",
     category: "shoes",
     priceRange: "$50-$100",
+    price: "69.30",
+    currency: "USD",
     imageUrl:
       "https://m.media-amazon.com/images/I/714J8RVCV8L._SX700_.jpg",
     imageAlt: "SKECHERS Go Walk Flex Dacey Hands Free Slip-Ins",
@@ -213,6 +225,8 @@ const originalProducts: Product[] = [
     clothingType: "Shoes",
     category: "shoes",
     priceRange: "$50-$100",
+    price: "49.99",
+    currency: "USD",
     imageUrl:
       "https://m.media-amazon.com/images/I/71YDq8YloCL._SX700_.jpg",
     imageAlt: "See Kai Run Dean Adapt II adaptive children's shoes",
@@ -247,6 +261,8 @@ const originalProducts: Product[] = [
     clothingType: "Jeans",
     category: "jeans",
     priceRange: "$75-$125",
+    price: "92.00",
+    currency: "USD",
     imageUrl: null,
     imageAlt: "Exact ABL Denim product image unavailable",
     description:
@@ -258,10 +274,10 @@ const originalProducts: Product[] = [
     bestFor: ["Wheelchair users", "Comfortable everyday denim"],
     styleTags: ["Denim", "Casual", "Classic"],
     availability: {
-      online: true,
+      online: false,
       inStore: false,
       countries: ["USA"],
-      note: "Check current stock through ABL Denim retailers",
+      note: "ABL Denim has closed; this is its archived official price.",
     },
     sizes: ["S", "M", "L", "XL", "2XL"],
     genderFit: ["Women", "Men"],
@@ -269,7 +285,7 @@ const originalProducts: Product[] = [
     seatedFit: true,
     oneHandedDressing: true,
     featured: true,
-    productUrl: "https://www.foundla.org/new/abl-denim/",
+    productUrl: "https://abldenim.com/",
     linkType: "brand-page-only",
   },
   {
@@ -279,6 +295,8 @@ const originalProducts: Product[] = [
     clothingType: "Shoes",
     category: "shoes",
     priceRange: "$50-$100",
+    price: "55.00",
+    currency: "USD",
     imageUrl:
       "https://billyfootwear.com/cdn/shop/files/BK23300-004_side_2048x2048_bddd2f5a-fcb6-4236-bc9f-75f6d682a446.jpg?v=1756110917",
     imageAlt: "Black and white BILLY Classic Lace High shoes",
@@ -313,6 +331,8 @@ const originalProducts: Product[] = [
     clothingType: "Shoes",
     category: "shoes",
     priceRange: "$75-$125",
+    price: "150.00",
+    currency: "USD",
     imageUrl:
       "https://billyfootwear.com/cdn/shop/files/BM23157-021_Side_2048x2048_ad776ea7-4ecc-4992-a51d-31f00ac9440f.jpg?v=1748458556",
     imageAlt: "Men's Charcoal BILLY Goat AFO-friendly shoes",
@@ -347,6 +367,8 @@ const originalProducts: Product[] = [
     clothingType: "Shirts",
     category: "formalwear",
     priceRange: "$50-$100",
+    price: "74.99",
+    currency: "USD",
     imageUrl:
       "https://magnaready.com/cdn/shop/files/long-sleeve-white-ryan-dress-shirt-magnetic-closures-adaptive-clothing-comfort-style_3.jpg?v=1756660643&width=2048",
     imageAlt: "MagnaReady Long Sleeve White Ryan Dress Shirt",
@@ -381,6 +403,8 @@ const originalProducts: Product[] = [
     clothingType: "Shirts",
     category: "formalwear",
     priceRange: "$50-$100",
+    price: "34.99",
+    currency: "USD",
     imageUrl:
       "https://magnaready.com/cdn/shop/files/short-sleeve-burgundy-micro-check-ryan-spread-collar-cotton-shirt-magnetic-closures-adaptive-clothing_1.jpg?v=1756661145&width=2048",
     imageAlt: "MagnaReady Burgundy Ryan Spread Collar Shirt",
@@ -415,6 +439,8 @@ const originalProducts: Product[] = [
     clothingType: "Underwear",
     category: "underwear",
     priceRange: "$25-$50",
+    price: "26.00",
+    currency: "USD",
     imageUrl:
       "https://slickchicksonline.com/cdn/shop/files/12.8.19_Ecomm_Shoot0118_1200x630.jpg?v=1735914880",
     imageAlt: "Slick Chicks Brief Panty with side fasteners",
@@ -448,6 +474,8 @@ const originalProducts: Product[] = [
     clothingType: "Underwear",
     category: "underwear",
     priceRange: "$25-$50",
+    price: "39.00",
+    currency: "USD",
     imageUrl:
       "https://slickchicksonline.com/cdn/shop/files/7H1A3994_1200x630.jpg?v=1735916603",
     imageAlt: "Slick Chicks Leakproof Underwear",
@@ -481,6 +509,8 @@ const originalProducts: Product[] = [
     clothingType: "Shoes",
     category: "shoes",
     priceRange: "$100-$150",
+    price: "94.97",
+    currency: "USD",
     imageUrl:
       "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8ec2a797-0b0c-4b29-b1b8-9204b901a803/NIKE+GO+FLYEASE.png",
     imageAlt: "Nike Go FlyEase Women's Easy On/Off Shoes",
@@ -515,6 +545,8 @@ const originalProducts: Product[] = [
     clothingType: "Nightwear",
     category: "nightwear",
     priceRange: "$50-$100",
+    price: "39.96",
+    currency: "GBP",
     imageUrl: null,
     imageAlt: "Exact Able2Wear Iona Nightie product image unavailable",
     description:
@@ -548,6 +580,8 @@ const originalProducts: Product[] = [
     clothingType: "Pants",
     category: "pants",
     priceRange: "$50-$100",
+    price: "57.00",
+    currency: "GBP",
     imageUrl: null,
     imageAlt: "Exact Able2Wear Drop Front Jersey Wheelchair Trousers image unavailable",
     description:
@@ -581,6 +615,8 @@ const originalProducts: Product[] = [
     clothingType: "Dresses",
     category: "dresses",
     priceRange: "$100-$150",
+    price: "59.70",
+    currency: "USD",
     imageUrl:
       "https://shoptommy.scene7.com/is/image/ShopTommy/WW45817_ZF0_main",
     imageAlt: "Tommy Hilfiger Slim Fit Classic 1985 Polo Dress",

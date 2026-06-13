@@ -1,4 +1,5 @@
 import { AdaptiveProduct } from "@/data/adaptiveBrands";
+import PriceDisplay from "@/components/PriceDisplay";
 
 function sourceLevel(product: AdaptiveProduct) {
   const source = product.sourceNotes.toLowerCase();
@@ -84,9 +85,10 @@ export default function AdaptiveProductCard({
           <div>
             <dt className="font-bold text-ink/45">Price</dt>
             <dd className="mt-0.5 font-semibold text-ink">
-              {product.price
-                ? `${product.currency ? `${product.currency} ` : ""}${product.price}`
-                : "Not listed"}
+              <PriceDisplay
+                price={product.price}
+                sourceCurrency={product.currency}
+              />
             </dd>
           </div>
           <div>

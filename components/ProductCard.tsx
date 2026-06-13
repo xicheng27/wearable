@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Product } from "@/types";
 import { getBrandName } from "@/data/products";
 import ProductImage from "@/components/ProductImage";
+import PriceDisplay from "@/components/PriceDisplay";
 
 export default function ProductCard({ product }: { product: Product }) {
   const brandName = getBrandName(product.brandId);
@@ -64,9 +65,11 @@ export default function ProductCard({ product }: { product: Product }) {
         </h3>
 
         <p className="mt-3 text-sm font-extrabold text-ink">
-          {product.price && product.currency
-            ? `${product.currency} ${product.price}`
-            : product.priceRange}
+          <PriceDisplay
+            price={product.price}
+            sourceCurrency={product.currency}
+            fallback={product.priceRange}
+          />
         </p>
 
         <div className="mt-4">

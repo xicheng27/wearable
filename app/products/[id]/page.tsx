@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
 import ProductImage from "@/components/ProductImage";
+import PriceDisplay from "@/components/PriceDisplay";
 import { getBrandById } from "@/data/brands";
 import {
   getProductById,
@@ -67,9 +68,12 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                 {product.name}
               </h1>
               <p className="mt-4 text-2xl font-extrabold text-gray-950">
-                {product.price && product.currency
-                  ? `${product.currency} ${product.price}`
-                  : product.priceRange}
+                <PriceDisplay
+                  price={product.price}
+                  sourceCurrency={product.currency}
+                  fallback={product.priceRange}
+                  prominent
+                />
               </p>
               <p className="mt-5 text-lg leading-relaxed text-gray-600">
                 {product.description}
@@ -158,7 +162,8 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                   </span>
                 </div>
                 <p className="mt-3 text-center text-xs leading-relaxed text-gray-500">
-                  Price and availability are indicative. Confirm current stock,
+                  The source price is exact at the time checked. Currency
+                  conversions are estimates; confirm current stock, price,
                   sizing and delivery on the official website.
                 </p>
                 {product.sourceVerifiedAt && (
