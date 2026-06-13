@@ -2,7 +2,7 @@ import Link from "next/link";
 import Logo from "@/components/Logo";
 
 const groups = [
-  ["Browse", [["All clothing", "/search"], ["Adaptive shoes", "/categories/shoes"], ["Seated-fit pants", "/search?seated=true"], ["Formal wear", "/categories/formalwear"]]],
+  ["Browse", [["All clothing", "/search"], ["Global map", "/map"], ["Adaptive shoes", "/categories/shoes"], ["Seated-fit pants", "/search?seated=true"]]],
   ["Find by need", [["One-handed dressing", "/search?oneHanded=true"], ["Sensory-friendly", "/search?sensory=true"], ["Orthotics and AFOs", "/search?disability=Orthotics"], ["Find my match", "/quiz"]]],
   ["Xi's", [["Our approach", "/"], ["Accessibility", "/"], ["Submit an item", "/"], ["Contact", "/"]]],
 ];
