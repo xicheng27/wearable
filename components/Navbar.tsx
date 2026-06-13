@@ -7,6 +7,7 @@ import Logo from "@/components/Logo";
 
 const navItems = [
   { href: "/search", label: "Browse Clothing" },
+  { href: "/map", label: "Global Map" },
   { href: "/categories/shoes", label: "Adaptive Shoes" },
   { href: "/search?sensory=true", label: "Sensory Picks" },
   { href: "/search?seated=true", label: "Seated Fit" },
