@@ -41,7 +41,8 @@ export default function BrandCard({ brand }: BrandCardProps) {
             {brand.tagline}
           </p>
           <p className="mt-3 text-xs text-gray-400">
-            {brand.country} · {brand.priceRange} · Est. {brand.founded}
+            {brand.country} · {brand.priceRange}
+            {brand.founded ? ` · Est. ${brand.founded}` : ""}
           </p>
 
           <div className="mt-4 flex flex-1 flex-wrap content-start gap-1.5">

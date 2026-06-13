@@ -67,7 +67,9 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                 {product.name}
               </h1>
               <p className="mt-4 text-2xl font-extrabold text-gray-950">
-                {product.priceRange}
+                {product.price && product.currency
+                  ? `${product.currency} ${product.price}`
+                  : product.priceRange}
               </p>
               <p className="mt-5 text-lg leading-relaxed text-gray-600">
                 {product.description}
@@ -159,6 +161,11 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                   Price and availability are indicative. Confirm current stock,
                   sizing and delivery on the official website.
                 </p>
+                {product.sourceVerifiedAt && (
+                  <p className="mt-2 text-center text-xs font-semibold text-gray-500">
+                    Official product data checked {product.sourceVerifiedAt}.
+                  </p>
+                )}
               </div>
             </div>
           </div>

@@ -64,7 +64,9 @@ export default function ProductCard({ product }: { product: Product }) {
         </h3>
 
         <p className="mt-3 text-sm font-extrabold text-ink">
-          {product.priceRange}
+          {product.price && product.currency
+            ? `${product.currency} ${product.price}`
+            : product.priceRange}
         </p>
 
         <div className="mt-4">

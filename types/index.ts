@@ -35,7 +35,7 @@ export interface Brand {
   priceRange: string;
   country: string;
   featured: boolean;
-  founded: number;
+  founded?: number;
   certifications: string[];
 }
 
@@ -53,6 +53,8 @@ export interface Product {
   clothingType: string;
   category: string;
   priceRange: string;
+  price?: string;
+  currency?: string;
   imageUrl: string | null;
   imageAlt: string;
   description: string;
@@ -70,6 +72,7 @@ export interface Product {
   featured: boolean;
   productUrl: string;
   linkType: "exact-product" | "brand-page-only";
+  sourceVerifiedAt?: string;
 }
 
 export interface ProductSearchParams {
