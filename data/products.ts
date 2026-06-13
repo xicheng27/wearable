@@ -1,7 +1,8 @@
 import { Product, ProductSearchParams } from "@/types";
 import { brands } from "@/data/brands";
+import { verifiedProducts } from "@/data/verifiedProducts";
 
-export const products: Product[] = [
+const originalProducts: Product[] = [
   {
     id: "tommy-adaptive-magnetic-polo",
     name: "Classic Stretch Magnetic Polo",
@@ -608,6 +609,31 @@ export const products: Product[] = [
     linkType: "exact-product",
   },
 ];
+
+const originalUrls = new Set(originalProducts.map((product) => product.productUrl));
+
+const combinedProducts: Product[] = [
+  ...originalProducts,
+  ...verifiedProducts.filter((product) => !originalUrls.has(product.productUrl)),
+];
+
+function mixProductsByBrand(items: Product[]) {
+  const grouped = brands.map((brand) =>
+    items.filter((product) => product.brandId === brand.id)
+  );
+  const mixed: Product[] = [];
+  const longest = Math.max(...grouped.map((group) => group.length));
+
+  for (let index = 0; index < longest; index += 1) {
+    grouped.forEach((group) => {
+      if (group[index]) mixed.push(group[index]);
+    });
+  }
+
+  return mixed;
+}
+
+export const products = mixProductsByBrand(combinedProducts);
 
 export const clothingTypeOptions = [
   "Tops",
