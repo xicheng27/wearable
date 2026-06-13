@@ -2,50 +2,47 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import Logo from "./Logo";
-import SearchBar from "./SearchBar";
+import SearchBar from "@/components/SearchBar";
+import Logo from "@/components/Logo";
 
-const navLinks = [
-  { href: "/", label: "Home" },
+const navItems = [
   { href: "/search", label: "Browse Clothing" },
-  { href: "/brands", label: "Brands" },
-  { href: "/about", label: "About" },
+  { href: "/categories/shoes", label: "Adaptive Shoes" },
+  { href: "/search?sensory=true", label: "Sensory Picks" },
+  { href: "/search?seated=true", label: "Seated Fit" },
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-white/70 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-ink/10 bg-ivory/95 shadow-[0_5px_20px_rgba(41,36,31,.05)] backdrop-blur-lg">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between gap-4">
-          <Logo />
+          <Logo size={38} />
 
           <div className="hidden max-w-sm flex-1 md:flex">
             <SearchBar compact />
           </div>
 
-          <nav className="hidden items-center gap-1 md:flex" aria-label="Main navigation">
-            {navLinks.map((link) => (
+          <nav className="hidden items-center gap-5 lg:flex" aria-label="Main navigation">
+            {navItems.map((item) => (
               <Link
-                key={link.label}
-                href={link.href}
-                className="rounded-full px-3.5 py-2 text-base font-medium text-gray-700 transition-colors duration-200 hover:bg-primary-50 hover:text-primary-800"
+                key={item.href}
+                href={item.href}
+                className="link-underline text-sm text-ink/70"
               >
-                {link.label}
+                {item.label}
               </Link>
             ))}
-            <Link
-              href="/quiz"
-              className="ml-2 inline-flex items-center rounded-full bg-primary-700 px-5 py-2.5 text-base font-semibold text-white transition-colors duration-200 hover:bg-primary-800"
-            >
-              Find by Need
-            </Link>
           </nav>
+          <Link href="/quiz" className="btn-primary hidden whitespace-nowrap px-4 py-2 text-xs xl:inline-flex">
+            Find by need
+          </Link>
 
           <button
-            className="rounded-full p-2 text-gray-600 transition-colors hover:bg-gray-100 md:hidden"
-            onClick={() => setMenuOpen(!menuOpen)}
+            className="rounded-lg border border-ink/10 bg-paper p-2 text-ink hover:bg-sand/50 lg:hidden"
+            onClick={() => setMenuOpen((open) => !open)}
             aria-expanded={menuOpen}
             aria-label="Toggle menu"
           >
@@ -60,26 +57,19 @@ export default function Navbar() {
         </div>
 
         {menuOpen && (
-          <div className="animate-fade-in space-y-4 border-t border-gray-100 py-4 md:hidden">
+          <div className="space-y-3 border-t border-ink/10 py-4 lg:hidden">
             <SearchBar compact />
-            <nav className="flex flex-col gap-1" aria-label="Mobile navigation">
-              {navLinks.map((link) => (
+            <nav className="flex flex-col">
+              {navItems.map((item) => (
                 <Link
-                  key={link.label}
-                  href={link.href}
-                  className="rounded-xl px-3 py-3 text-base font-medium text-gray-700 transition-colors hover:bg-primary-50 hover:text-primary-800"
+                  key={item.href}
+                  href={item.href}
+                  className="py-2 text-sm font-semibold text-ink/75 hover:text-primary-700"
                   onClick={() => setMenuOpen(false)}
                 >
-                  {link.label}
+                  {item.label}
                 </Link>
               ))}
-              <Link
-                href="/quiz"
-                className="btn-primary mt-2 text-center"
-                onClick={() => setMenuOpen(false)}
-              >
-                Find by Need
-              </Link>
             </nav>
           </div>
         )}

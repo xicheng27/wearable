@@ -87,7 +87,7 @@ export default function MapClient() {
                     {categoryLabels[p.category]}
                   </p>
                   <h3 className="mt-1 text-sm font-semibold text-gray-900">{p.name}</h3>
-                  <p className="mt-0.5 text-xs text-gray-500">
+                  <p className="mt-0.5 text-xs text-gray-400">
                     {p.address} · {p.city}, {p.country}
                   </p>
                 </div>
@@ -126,7 +126,7 @@ export default function MapClient() {
   );
 
   return (
-    <div className="min-h-screen bg-surface">
+    <div className="min-h-screen bg-gray-50">
       <div className="border-b border-gray-100 bg-white py-8">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-end justify-between gap-4">

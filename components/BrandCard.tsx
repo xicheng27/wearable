@@ -40,7 +40,7 @@ export default function BrandCard({ brand }: BrandCardProps) {
           <p className="mt-1.5 text-sm leading-relaxed text-gray-500">
             {brand.tagline}
           </p>
-          <p className="mt-3 text-xs text-gray-500">
+          <p className="mt-3 text-xs text-gray-400">
             {brand.country} · {brand.priceRange} · Est. {brand.founded}
           </p>
 
@@ -51,7 +51,7 @@ export default function BrandCard({ brand }: BrandCardProps) {
               </span>
             ))}
             {brand.adaptiveFeatures.length > 2 && (
-              <span className="badge bg-gray-50 text-gray-500">
+              <span className="badge bg-gray-50 text-gray-400">
                 +{brand.adaptiveFeatures.length - 2} features
               </span>
             )}
@@ -63,7 +63,7 @@ export default function BrandCard({ brand }: BrandCardProps) {
             View brand
           </span>
           <span
-            className="flex h-7 w-7 items-center justify-center rounded-full bg-gray-50 text-gray-500 transition-all duration-200 group-hover:bg-primary-50 group-hover:text-primary-600"
+            className="flex h-7 w-7 items-center justify-center rounded-full bg-gray-50 text-gray-400 transition-all duration-200 group-hover:bg-primary-50 group-hover:text-primary-600"
             aria-hidden="true"
           >
             <svg className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
