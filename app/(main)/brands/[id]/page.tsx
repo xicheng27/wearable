@@ -2,8 +2,11 @@ import { notFound } from "next/navigation";
 import { getBrandById, brands } from "@/data/brands";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import Photo from "@/components/Photo";
 import ProductCard from "@/components/ProductCard";
+import MapCanvas from "@/components/MapCanvas";
 import { productsOfBrand } from "@/data/products";
+import { mapPlaces } from "@/data/places";
 
 interface PageProps {
   params: { id: string };
@@ -27,17 +30,23 @@ export default function BrandDetailPage({ params }: PageProps) {
   if (!brand) notFound();
 
   const brandProducts = productsOfBrand(brand.id);
+  const brandPlaces = mapPlaces.filter((pl) => pl.brandId === brand.id);
   const storeLocations = brand.locations.filter((l) => l.type !== "online-only");
   const onlineOnly = brand.locations.filter((l) => l.type === "online-only");
 
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="border-b border-gray-100 bg-white">
-        <div
-          className="h-1.5 w-full"
-          style={{ backgroundColor: brand.heroColor }}
-          aria-hidden="true"
-        />
+        <div className="relative h-36 w-full overflow-hidden sm:h-52">
+          <Photo src={brand.image} alt={`${brand.name} adaptive fashion`} className="h-full w-full" />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: `linear-gradient(180deg, ${brand.heroColor}22 0%, rgba(255,255,255,0.85) 100%)`,
+            }}
+            aria-hidden="true"
+          />
+        </div>
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center gap-2 text-sm text-gray-500">
@@ -257,6 +266,16 @@ export default function BrandDetailPage({ params }: PageProps) {
               <h2 id="locations-heading" className="text-xs font-semibold uppercase tracking-wider text-gray-500">
                 Store locations
               </h2>
+
+              {brandPlaces.length > 0 && (
+                <Link href="/map" aria-label="Open the full map" className="mt-4 block">
+                  <MapCanvas
+                    places={brandPlaces}
+                    interactive={false}
+                    className="pointer-events-none aspect-[4/3]"
+                  />
+                </Link>
+              )}
 
               {storeLocations.length > 0 && (
                 <ul className="mt-4 space-y-4">

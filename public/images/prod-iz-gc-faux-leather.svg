@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-label="prod iz gc faux leather">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E9EAEE"/>
+      <stop offset="1" stop-color="#D2D4DC"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="520" fill="url(#bg)"/>
+  <circle cx="660" cy="80" r="190" fill="#ffffff" opacity="0.22"/>
+  <circle cx="110" cy="470" r="150" fill="#ffffff" opacity="0.16"/>
+  <circle cx="700" cy="450" r="90" fill="#3B4150" opacity="0.05"/>
+  <g stroke="#3B4150" stroke-width="1" opacity="0.05">
+    <line x1="0" y1="120" x2="800" y2="40"/>
+    <line x1="0" y1="300" x2="800" y2="220"/>
+    <line x1="0" y1="480" x2="800" y2="400"/>
+  </g>
+  <g transform="translate(244,104) scale(13)" fill="none" stroke="#3B4150" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"><path d="M7.5 4.5h9l1.1 15.5h-3.9L12 12.6 10.3 20H6.4z"/><path d="M7.7 7.4h8.6"/></g>
+</svg>

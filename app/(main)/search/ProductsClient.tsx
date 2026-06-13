@@ -19,6 +19,18 @@ const quickNeeds = [
   { label: "One-handed dressing", key: "feature", value: "one-handed" },
 ];
 
+const fashionStyles = [
+  "Clean / minimal",
+  "Smart casual",
+  "Old money",
+  "Streetwear",
+  "Formal",
+  "Casual",
+  "Sporty",
+  "Vintage",
+  "Swedish style",
+];
+
 export default function ProductsClient() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -96,16 +108,41 @@ export default function ProductsClient() {
                   key={n.label}
                   onClick={() => setParam(n.key, n.value)}
                   aria-pressed={active}
-                  className={`rounded-full border px-3.5 py-1.5 text-sm font-medium transition-all duration-200 active:scale-[0.97] ${
+                  className={`rounded-full border px-4 py-2 text-base font-medium transition-colors duration-200 ${
                     active
-                      ? "border-primary-600 bg-primary-600 text-white"
-                      : "border-gray-200 bg-white text-gray-600 hover:border-gray-300 hover:bg-gray-50"
+                      ? "border-primary-700 bg-primary-700 text-white"
+                      : "border-gray-300 bg-white text-gray-700 hover:border-primary-400 hover:bg-primary-50"
                   }`}
                 >
                   {n.label}
                 </button>
               );
             })}
+          </div>
+
+          <div className="mt-5">
+            <p className="text-sm font-semibold uppercase tracking-wider text-gray-600">
+              Shop by style
+            </p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {fashionStyles.map((style) => {
+                const active = searchParams.get("style") === style;
+                return (
+                  <button
+                    key={style}
+                    onClick={() => setParam("style", style)}
+                    aria-pressed={active}
+                    className={`rounded-full border px-4 py-2 text-base font-medium transition-colors duration-200 ${
+                      active
+                        ? "border-primary-700 bg-primary-700 text-white"
+                        : "border-gray-300 bg-white text-gray-700 hover:border-primary-400 hover:bg-primary-50"
+                    }`}
+                  >
+                    {style}
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

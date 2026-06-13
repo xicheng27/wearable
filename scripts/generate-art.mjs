@@ -209,6 +209,49 @@ for (let i = 0; i < products.length; i++) {
   tiles.push([`prod-${id}`, c1, c2, deep, glyph]);
 }
 
+// Researched products (data/adaptiveProducts.ts) — one distinct tile each.
+const adaptiveProductTiles = [
+  ["will-well-tropical-shirt", "shirt"],
+  ["will-well-cropped-ls-shirt", "shirt"],
+  ["will-well-adjustable-shorts", "pants"],
+  ["will-well-drawstring-pants", "pants"],
+  ["werable-transformable-bolero", "jacket"],
+  ["werable-off-shoulder-top", "tshirt"],
+  ["werable-hakama-pants", "pants"],
+  ["werable-wishbone-bag", "hanger"],
+  ["dawn-side-zipper-pants", "pants"],
+  ["dawn-isaiah-wrap-dress", "dress"],
+  ["able-label-jan-nightdress", "dress"],
+  ["able-label-janet-nightdress", "dress"],
+  ["able-label-cosy-bundle", "dress"],
+  ["able-label-2pack-trousers", "pants"],
+  ["able-label-aubrey-trousers", "pants"],
+  ["able-label-lyla-trousers", "pants"],
+  ["able-label-freya-trousers", "pants"],
+  ["iz-gc-jeans-women", "pants"],
+  ["iz-gc-sweats-men", "bolt"],
+  ["iz-gc-camo-cargo", "pants"],
+  ["iz-gc-faux-leather", "pants"],
+  ["iz-gc-chinos-men", "pants"],
+  ["iz-seated-rain-coat", "jacket"],
+  ["joe-bella-carezips-women", "pants"],
+  ["joe-bella-hoodease", "jacket"],
+  ["joe-bella-magnetic-buttondown", "shirt"],
+  ["silverts-magnetic-fly-pants", "pants"],
+  ["silverts-henley-nightgown", "dress"],
+  ["silverts-stretch-knit-pant", "pants"],
+  ["silverts-ribbed-pants", "pants"],
+  ["silverts-velvet-dress", "dress"],
+  ["silverts-fleece-wheelchair-pants", "pants"],
+];
+
+for (let i = 0; i < adaptiveProductTiles.length; i++) {
+  const [id, glyph] = adaptiveProductTiles[i];
+  // Offset the palette so neighbouring cards in a brand group differ.
+  const [c1, c2, deep] = productPalette[(i + 3) % productPalette.length];
+  tiles.push([`prod-${id}`, c1, c2, deep, glyph]);
+}
+
 function renderGlyph(name, deep) {
   const parts = glyphs[name]
     .map((g) => {
