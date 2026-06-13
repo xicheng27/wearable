@@ -50,14 +50,9 @@ export default function Reveal({ children, delay = 0, className = "" }: RevealPr
   return (
     <div
       ref={ref}
-      style={{
-        transitionDelay: visible ? `${delay}ms` : "0ms",
-        transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)",
-      }}
-      className={`transition-all duration-[600ms] will-change-[transform,filter] motion-reduce:!translate-y-0 motion-reduce:!blur-0 ${
-        visible
-          ? "translate-y-0 opacity-100 blur-0"
-          : "translate-y-3 opacity-0 blur-[6px]"
+      style={{ transitionDelay: visible ? `${delay}ms` : "0ms" }}
+      className={`transition-all duration-700 ease-out will-change-transform ${
+        visible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
       } ${className}`}
     >
       {children}

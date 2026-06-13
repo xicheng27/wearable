@@ -194,7 +194,7 @@ export default function QuizClient() {
       if (answers.location?.[0]) params.set("location", answers.location[0]);
       set("styles", answers.style);
       if (answers.budget?.[0]) params.set("budget", answers.budget[0]);
-      router.push(`/results?${params.toString()}`);
+      router.push(`/quiz/results?${params.toString()}`);
     } else {
       setStep(step + 1);
     }
@@ -206,12 +206,12 @@ export default function QuizClient() {
         <Link href="/" className="flex items-center gap-2" aria-label="Xi's home">
           <LogoMark size={32} />
         </Link>
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-gray-400">
           {step + 1} of {steps.length}
         </p>
         <Link
           href="/"
-          className="rounded-full p-2 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-600"
+          className="rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600"
           aria-label="Exit quiz"
         >
           <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

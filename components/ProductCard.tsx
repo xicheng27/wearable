@@ -1,71 +1,124 @@
 import Link from "next/link";
-import Photo from "./Photo";
-import { getBrandOfProduct, Product } from "@/data/products";
+import { Product } from "@/types";
+import { getBrandName } from "@/data/products";
+import ProductImage from "@/components/ProductImage";
 
-interface ProductCardProps {
-  product: Product;
-}
-
-export default function ProductCard({ product }: ProductCardProps) {
-  const brand = getBrandOfProduct(product);
+export default function ProductCard({ product }: { product: Product }) {
+  const brandName = getBrandName(product.brandId);
 
   return (
-    <Link href={`/products/${product.id}`} className="group block h-full">
-      <article className="card card-hover flex h-full flex-col overflow-hidden">
-        <div className="relative">
-          <Photo
-            src={product.imageUrl ?? product.image}
-            fallbackSrc={product.image}
-            alt=""
-            className="aspect-[4/3] bg-gray-50"
-            imgClassName="transition-transform duration-500 group-hover:scale-[1.05]"
-          />
-          <span className="absolute right-3 top-3 rounded-full bg-white/85 px-2.5 py-1 text-[11px] font-medium text-gray-500 backdrop-blur-sm">
-            {product.availability.includes("In stores") ? "Online · In stores" : "Online"}
+    <article className="group card card-hover flex h-full flex-col overflow-hidden rounded-[1.7rem_.7rem_1.7rem_1.7rem]">
+      <Link
+        href={`/products/${product.id}`}
+        className="relative block"
+        aria-label={`View ${product.name}`}
+      >
+        <ProductImage
+          src={product.imageUrl}
+          alt={product.imageAlt}
+          className="aspect-[4/5] w-full"
+        />
+        <div className="absolute left-3 top-3 flex flex-wrap gap-2">
+          <span
+            className={`sticker border-paper/70 shadow-sm ${
+              product.linkType === "exact-product"
+                ? "text-primary-800"
+                : "text-amber-800"
+            }`}
+          >
+            {product.linkType === "exact-product"
+              ? "Exact product"
+              : "Brand page only"}
           </span>
+          {product.seatedFit && (
+            <span className="sticker rotate-[1deg] bg-sage/25 text-ink shadow-sm">
+              Seated fit
+            </span>
+          )}
+          {product.sensoryFriendly && (
+            <span className="sticker rotate-[1deg] bg-lavender/70 text-ink shadow-sm">
+              Sensory-friendly
+            </span>
+          )}
+        </div>
+      </Link>
+
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
+        <div className="mb-2 flex items-center justify-between gap-3 text-xs">
+          <Link
+            href={`/brands/${product.brandId}`}
+            className="link-underline text-xs tracking-wide"
+          >
+            {brandName}
+          </Link>
+          <span className="font-hand text-ink/55">{product.clothingType}</span>
         </div>
 
-        <div className="flex flex-1 flex-col p-5">
-          <p className="text-xs font-semibold uppercase tracking-wider text-gray-600">
-            {brand.name}
-          </p>
-          <h3 className="mt-1 text-lg font-semibold leading-snug text-gray-900 transition-colors duration-200 group-hover:text-primary-700">
+        <h3 className="font-display text-[1.35rem] font-semibold leading-tight text-ink">
+          <Link
+            href={`/products/${product.id}`}
+            className="transition-colors hover:text-primary-700"
+          >
             {product.name}
-          </h3>
-          <p className="mt-1 text-sm text-gray-600">
-            {product.clothingType} · {product.price ?? product.priceRange} ·{" "}
-            {product.gender}
-          </p>
+          </Link>
+        </h3>
 
-          <p className="mt-2.5 line-clamp-1 text-xs text-gray-500">
-            <span className="font-medium text-gray-700">Best for:</span>{" "}
+        <p className="mt-3 text-sm font-extrabold text-ink">
+          {product.priceRange}
+        </p>
+
+        <div className="mt-4">
+          <p className="text-xs font-bold tracking-wide text-ink/45">
+            Best for
+          </p>
+          <p className="mt-1 text-sm leading-relaxed text-ink/75">
             {product.bestFor.slice(0, 2).join(", ")}
           </p>
-
-          <div className="mt-3 flex flex-1 flex-wrap content-start gap-1.5">
-            {product.adaptiveFeatures.slice(0, 2).map((f) => (
-              <span key={f} className="badge bg-gray-50 text-gray-500">
-                {f}
-              </span>
-            ))}
-            {product.adaptiveFeatures.length > 2 && (
-              <span className="badge bg-gray-50 text-gray-500">
-                +{product.adaptiveFeatures.length - 2}
-              </span>
-            )}
-          </div>
-
-          <span
-            className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary-700 px-5 py-3 text-base font-semibold text-white transition-colors duration-200 group-hover:bg-primary-800"
-            aria-hidden="true"
-          >
-            View product
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </span>
         </div>
-      </article>
-    </Link>
+
+        <div className="mt-4 flex flex-wrap gap-1.5">
+          {product.adaptiveFeatures.slice(0, 3).map((feature) => (
+            <span
+              key={feature}
+              className="sticker odd:rotate-[1deg] even:rotate-[-1deg]"
+            >
+              {feature}
+            </span>
+          ))}
+        </div>
+
+        <div className="mt-auto pt-5">
+          <div className="mb-3 flex items-center gap-2 text-xs text-ink/55">
+            <span
+              className={`h-2 w-2 rounded-full ${
+                product.availability.online ? "bg-sage" : "bg-ink/20"
+              }`}
+              aria-hidden="true"
+            />
+            {product.availability.online && product.availability.inStore
+              ? "Online and in store"
+              : product.availability.online
+                ? "Available online"
+                : "In-store availability"}
+          </div>
+          <a
+            href={product.productUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary flex w-full px-4 py-2.5 text-center text-sm"
+          >
+            {product.linkType === "exact-product"
+              ? "View exact item"
+              : "View brand page"}
+          </a>
+          <Link
+            href={`/products/${product.id}`}
+            className="link-underline mx-auto mt-4 block w-fit text-center text-xs"
+          >
+            View details
+          </Link>
+        </div>
+      </div>
+    </article>
   );
 }

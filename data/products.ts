@@ -1,940 +1,884 @@
-import { Brand } from "@/types";
-import { brands, QuizAnswers } from "./brands";
-import { clothingCategories, quizClothingOptions } from "./categories";
-import { adaptiveProducts } from "./adaptiveProducts";
+import { Product, ProductSearchParams } from "@/types";
+import { brands } from "@/data/brands";
 
-export interface Product {
-  id: string;
-  name: string;
-  brandId: string;
-  /** Display clothing type, e.g. "Polo shirt". */
-  clothingType: string;
-  /** Clothing category id (data/categories.ts). */
-  categoryId: string;
-  priceRange: string;
-  /** Local illustration tile (always present; also the fallback). */
-  image: string;
-  /** Verified remote listing photo from the brand, when available. */
-  imageUrl?: string;
-  /** Verified link to the exact product page, when available. */
-  productUrl?: string;
-  /** Exact price as shown on the official listing, when available. */
-  price?: string;
-  /** Currency of the official listing, when known. */
-  currency?: string;
-  description: string;
-  /** Plain-language accessibility explanation for the detail page. */
-  accessibilityNote: string;
-  adaptiveFeatures: string[];
-  /** Disability / accessibility needs this item serves. */
-  bestFor: string[];
-  styleTags: string[];
-  gender: "Men" | "Women" | "Unisex";
-  sizes: string[];
-  availability: ("Online" | "In stores")[];
-  featured?: boolean;
-}
-
-const S = ["XS", "S", "M", "L", "XL", "2XL", "3XL"];
-
-const baseProducts: Product[] = [
+export const products: Product[] = [
   {
-    id: "tommy-magnetic-polo",
-    name: "Magnetic Button Polo Shirt",
+    id: "tommy-adaptive-magnetic-polo",
+    name: "Classic Stretch Magnetic Polo",
     brandId: "tommy-hilfiger-adaptive",
-    clothingType: "Polo shirt",
-    categoryId: "shirts",
-    priceRange: "$$",
-    image: "/images/prod-tommy-magnetic-polo.svg",
+    clothingType: "Tops",
+    category: "shirts",
+    priceRange: "$50-$100",
     imageUrl:
       "https://shoptommy.scene7.com/is/image/ShopTommy/78J9182_XLG_FNT",
+    imageAlt: "Tommy Hilfiger Classic Stretch Polo in navy",
+    description:
+      "A classic polo with a traditional look and concealed magnetic front closures.",
+    accessibilityExplanation:
+      "The magnetic placket reduces the fine-motor work required to align and fasten small buttons while keeping a familiar polo silhouette.",
+    adaptiveFeatures: ["Magnetic closures", "Easy-open neckline", "Soft stretch fabric"],
+    disabilityNeeds: ["Limited dexterity", "One-handed dressing", "Arthritis"],
+    bestFor: ["One-handed dressing", "Limited hand dexterity"],
+    styleTags: ["Classic", "Everyday", "Smart casual"],
+    availability: {
+      online: true,
+      inStore: true,
+      countries: ["USA", "Canada", "UK", "EU"],
+      note: "Online and selected Tommy Hilfiger stores",
+    },
+    sizes: ["XS", "S", "M", "L", "XL", "2XL", "3XL"],
+    genderFit: ["Men", "Unisex"],
+    sensoryFriendly: false,
+    seatedFit: false,
+    oneHandedDressing: true,
+    featured: true,
     productUrl:
       "https://usa.tommy.com/en/tommy-adaptive/mens-adaptive/tops/classic-stretch-polo/78J9182-XLG.html",
-    description:
-      "The iconic Tommy polo with hidden magnets behind the placket — it looks buttoned, but closes itself in seconds.",
-    accessibilityNote:
-      "Magnets are sewn behind classic buttons, so the polo fastens with a single press — no pinching, twisting or fine grip needed. The placket lies flat and stays put all day.",
-    adaptiveFeatures: ["Magnetic closures", "One-handed dressing", "Easy-care cotton"],
-    bestFor: ["One-handed dressing", "Limited dexterity", "Arthritis"],
-    styleTags: ["Casual", "Smart casual", "Clean / minimal"],
-    gender: "Unisex",
-    sizes: S,
-    availability: ["Online", "In stores"],
-    featured: true,
+    linkType: "exact-product",
   },
   {
-    id: "tommy-seated-chinos",
-    name: "Seated-Fit Chino Pants",
+    id: "tommy-adaptive-seated-chinos",
+    name: "Adaptive Seated-Fit Chinos",
     brandId: "tommy-hilfiger-adaptive",
-    clothingType: "Chinos",
-    categoryId: "pants",
-    priceRange: "$$",
-    image: "/images/prod-tommy-seated-chinos.svg",
+    clothingType: "Pants",
+    category: "pants",
+    priceRange: "$75-$125",
     imageUrl:
       "https://shoptommy.scene7.com/is/image/ShopTommy/7T00417_615_main",
+    imageAlt: "Tommy Hilfiger Seated Fit Classic Chino in red",
+    description:
+      "Polished chinos shaped for seated comfort with an adjustable waist and easier access.",
+    accessibilityExplanation:
+      "The seated cut adds coverage at the back and reduces excess fabric at the front, helping the trousers sit cleanly while using a wheelchair.",
+    adaptiveFeatures: ["Seated fit", "Adjustable waist", "Easy-access closure"],
+    disabilityNeeds: ["Wheelchair users", "Limited mobility", "Spinal cord injury"],
+    bestFor: ["All-day seated comfort", "Wheelchair users"],
+    styleTags: ["Smart casual", "Workwear", "Classic"],
+    availability: {
+      online: true,
+      inStore: true,
+      countries: ["USA", "Canada", "UK", "EU"],
+      note: "Online and selected Tommy Hilfiger stores",
+    },
+    sizes: ["S", "M", "L", "XL", "2XL"],
+    genderFit: ["Men"],
+    sensoryFriendly: false,
+    seatedFit: true,
+    oneHandedDressing: true,
+    featured: true,
     productUrl:
       "https://usa.tommy.com/en/tommy-adaptive/mens-adaptive/bottoms/seated-fit-classic-chino/78D1836-SPN.html",
-    description:
-      "Classic chinos re-cut for sitting: higher back rise, lower front rise and a velcro-adjustable waist.",
-    accessibilityNote:
-      "The seated cut keeps the waistband level when you're sitting — no gap at the back, no pressure at the front — and side velcro tabs adjust the fit without a belt.",
-    adaptiveFeatures: ["Seated fit", "Velcro waist tabs", "Side-opening"],
-    bestFor: ["Wheelchair users", "Seated comfort"],
-    styleTags: ["Smart casual", "Clean / minimal", "Old money"],
-    gender: "Men",
-    sizes: S,
-    availability: ["Online", "In stores"],
-    featured: true,
+    linkType: "exact-product",
   },
   {
-    id: "tommy-magnetic-jacket",
-    name: "Magnetic Zip Hooded Jacket",
+    id: "tommy-adaptive-sensory-tee",
+    name: "Sensory-Friendly Logo T-Shirt",
     brandId: "tommy-hilfiger-adaptive",
-    clothingType: "Jacket",
-    categoryId: "jackets",
-    priceRange: "$$",
-    image: "/images/prod-tommy-magnetic-jacket.svg",
+    clothingType: "Tops",
+    category: "tops",
+    priceRange: "$25-$50",
+    imageUrl: null,
+    imageAlt: "Exact Tommy Hilfiger Sensory Friendly Adaptive T-Shirt image unavailable",
     description:
-      "A water-repellent hooded jacket whose zipper self-aligns with magnets — start it one-handed, every time.",
-    accessibilityNote:
-      "The magnetic zipper base snaps into alignment on its own, removing the hardest part of zipping a jacket. An extended pull works with a closed fist or weak grip.",
-    adaptiveFeatures: ["Magnetic zipper", "One-handed dressing", "Extended pulls"],
-    bestFor: ["One-handed dressing", "Fine motor difficulties", "Stroke survivors"],
-    styleTags: ["Casual", "Sporty", "Streetwear"],
-    gender: "Unisex",
-    sizes: S,
-    availability: ["Online", "In stores"],
+      "A soft everyday tee with flat seams and a heat-transferred label to reduce irritation.",
+    accessibilityExplanation:
+      "Flat seams, soft fabric and a label-free neckline reduce common friction and scratching triggers for sensory-sensitive wearers.",
+    adaptiveFeatures: ["Tag-free", "Flat seams", "Soft fabric"],
+    disabilityNeeds: ["Sensory processing", "Autism", "Skin sensitivity"],
+    bestFor: ["Sensory-sensitive wearers", "Low-irritation layering"],
+    styleTags: ["Casual", "Minimal", "Everyday"],
+    availability: {
+      online: true,
+      inStore: true,
+      countries: ["USA", "Canada", "UK", "EU"],
+      note: "Online and selected Tommy Hilfiger stores",
+    },
+    sizes: ["XS", "S", "M", "L", "XL", "2XL"],
+    genderFit: ["Women", "Men", "Unisex"],
+    sensoryFriendly: true,
+    seatedFit: false,
+    oneHandedDressing: false,
+    featured: false,
+    productUrl:
+      "https://usa.tommy.com/en/tommy-adaptive/mens-adaptive/tops/sensory-friendly-adaptive-t-shirt/78J1172-P8F.html",
+    linkType: "exact-product",
   },
   {
-    id: "tommy-wrap-dress",
-    name: "Magnetic Wrap Dress",
-    brandId: "tommy-hilfiger-adaptive",
-    clothingType: "Dress",
-    categoryId: "dresses",
-    priceRange: "$$",
-    image: "/images/prod-tommy-wrap-dress.svg",
-    description:
-      "A jersey wrap dress that fastens with concealed magnets and skips the fiddly ties.",
-    accessibilityNote:
-      "The wrap silhouette opens fully flat for easy dressing — seated or assisted — and magnets replace ties and hooks entirely.",
-    adaptiveFeatures: ["Magnetic closures", "Opens fully flat", "Soft jersey"],
-    bestFor: ["Limited dexterity", "Seated dressing", "Carer-assisted dressing"],
-    styleTags: ["Clean / minimal", "Smart casual"],
-    gender: "Women",
-    sizes: S,
-    availability: ["Online", "In stores"],
-  },
-  {
-    id: "iz-seated-jeans",
-    name: "Seated-Fit Jeans",
+    id: "iz-game-changer-seamless-jeans",
+    name: "Game Changer Seamless Back Jeans",
     brandId: "iz-adaptive",
     clothingType: "Jeans",
-    categoryId: "jeans",
-    priceRange: "$$$",
-    image: "/images/prod-iz-seated-jeans.svg",
+    category: "jeans",
+    priceRange: "$75-$125",
     imageUrl:
       "https://izadaptive.com/cdn/shop/files/MPT035_GC_jeans_Black__0342_0046.jpg?v=1769662388",
+    imageAlt: "IZ Adaptive Men's Game Changer Seamless Back Jeans",
+    description:
+      "Wheelchair jeans designed from the seated position with a seamless back and accessible pockets.",
+    accessibilityExplanation:
+      "Removing bulky back seams and pockets helps reduce pressure points, while the higher back rise maintains coverage in a seated posture.",
+    adaptiveFeatures: ["Seamless back", "High back rise", "Accessible front pockets"],
+    disabilityNeeds: ["Wheelchair users", "Pressure care", "Limited mobility"],
+    bestFor: ["Full-time wheelchair users", "Pressure-sensitive skin"],
+    styleTags: ["Denim", "Everyday", "Modern"],
+    availability: {
+      online: true,
+      inStore: false,
+      countries: ["Canada", "USA", "UK", "EU", "Australia"],
+      note: "Available online from IZ Adaptive",
+    },
+    sizes: ["XS", "S", "M", "L", "XL", "2XL"],
+    genderFit: ["Women", "Men"],
+    sensoryFriendly: false,
+    seatedFit: true,
+    oneHandedDressing: false,
+    featured: true,
     productUrl:
       "https://izadaptive.com/products/game-changer-seamless-back-jeans-for-men",
-    price: "$74.00",
-    currency: "USD",
-    description:
-      "IZ's signature jeans, patterned entirely from the seated position — the gold standard of wheelchair denim.",
-    accessibilityNote:
-      "A high back rise and low front rise keep coverage and comfort while seated, with no back pockets to cause pressure sores and flat inner seams that never dig in.",
-    adaptiveFeatures: ["Seated fit", "High back rise", "No back pockets", "Flat seams"],
-    bestFor: ["Wheelchair users", "Pressure-sore prevention", "Spinal cord injuries"],
-    styleTags: ["Casual", "Clean / minimal", "Vintage"],
-    gender: "Unisex",
-    sizes: S,
-    availability: ["Online", "In stores"],
-    featured: true,
+    linkType: "exact-product",
   },
   {
-    id: "iz-seated-blazer",
-    name: "Seated-Fit Blazer",
+    id: "iz-game-changer-seamless-back-chinos",
+    name: "Game Changer Seamless Back Chinos",
     brandId: "iz-adaptive",
-    clothingType: "Blazer",
-    categoryId: "formal",
-    priceRange: "$$$",
-    image: "/images/prod-iz-seated-blazer.svg",
-    description:
-      "A tailored blazer cropped at the back and cut for arm reach — boardroom-sharp from a seated position.",
-    accessibilityNote:
-      "The back is shortened so fabric doesn't bunch against the chair, shoulders are cut for pushing wheels, and the front buttons sit where seated arms can actually reach.",
-    adaptiveFeatures: ["Seated-fit tailoring", "Shortened back", "Reach-friendly buttons"],
-    bestFor: ["Wheelchair users", "Professional wear", "Seated comfort"],
-    styleTags: ["Formal", "Old money", "Smart casual"],
-    gender: "Unisex",
-    sizes: S,
-    availability: ["Online", "In stores"],
-    featured: true,
-  },
-  {
-    id: "iz-wrap-skirt",
-    name: "Easy Wrap Skirt",
-    brandId: "iz-adaptive",
-    clothingType: "Skirt",
-    categoryId: "dresses",
-    priceRange: "$$$",
-    image: "/images/prod-iz-wrap-skirt.svg",
-    description:
-      "A polished wrap skirt that lays completely flat, then fastens at the front with easy-reach closures.",
-    accessibilityNote:
-      "Because the skirt opens fully flat, it can be dressed seated or lying down without lifting hips; the closure sits at the front where it's visible and reachable.",
-    adaptiveFeatures: ["Opens fully flat", "Front-placed fastenings", "Seated length"],
-    bestFor: ["Wheelchair users", "Seated dressing", "Carer-assisted dressing"],
-    styleTags: ["Formal", "Old money", "Clean / minimal"],
-    gender: "Women",
-    sizes: S,
-    availability: ["Online"],
-  },
-  {
-    id: "iz-dress-pants",
-    name: "Front-Fastening Dress Pants",
-    brandId: "iz-adaptive",
-    clothingType: "Dress pants",
-    categoryId: "pants",
-    priceRange: "$$$",
-    image: "/images/prod-iz-dress-pants.svg",
-    description:
-      "Sharp dress pants with a seated cut and fastenings moved to the front where you can reach them.",
-    accessibilityNote:
-      "All closures sit front and centre — no reaching behind — with an elasticated back waist and a cut that keeps the crease straight while seated.",
-    adaptiveFeatures: ["Seated fit", "Front-placed fastenings", "Elasticated waistband"],
-    bestFor: ["Wheelchair users", "Professional wear", "Limited reach"],
-    styleTags: ["Formal", "Smart casual", "Old money"],
-    gender: "Unisex",
-    sizes: S,
-    availability: ["Online", "In stores"],
-  },
-  {
-    id: "zappos-nike-flyease",
-    name: "Nike FlyEase Easy-Entry Sneakers",
-    brandId: "zappos-adaptive",
-    clothingType: "Sneakers",
-    categoryId: "shoes",
-    priceRange: "$$",
-    image: "/images/prod-zappos-nike-flyease.svg",
+    clothingType: "Pants",
+    category: "pants",
+    priceRange: "$100-$150",
     imageUrl:
-      "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8ec2a797-0b0c-4b29-b1b8-9204b901a803/NIKE+GO+FLYEASE.png",
-    productUrl:
-      "https://www.nike.com/t/go-flyease-womens-easy-on-off-shoes-LGmqKx",
+      "https://izadaptive.com/cdn/shop/files/IZ_Adaptive_Game_Changer_Chinos_for_men_tan_front.jpg?v=1769663723",
+    imageAlt: "IZ Adaptive Men's Game Changer Seamless Back Chinos in tan",
     description:
-      "Nike's hands-free FlyEase system: step in, the heel folds closed behind you. No hands, no laces.",
-    accessibilityNote:
-      "The collapsible heel lets you step in standing or seated and the shoe snaps itself shut — genuinely hands-free entry, with Nike performance underneath.",
-    adaptiveFeatures: ["Hands-free entry", "Easy-entry", "No-tie design"],
-    bestFor: ["One-handed dressing", "Limited dexterity", "Limited reach"],
-    styleTags: ["Sporty", "Streetwear", "Casual"],
-    gender: "Unisex",
-    sizes: ["S", "M", "L", "XL"],
-    availability: ["Online"],
+      "Seated-fit chinos with a seamless back, longer leg and accessible front pockets.",
+    accessibilityExplanation:
+      "The seamless back reduces pressure points while the seated rise and longer leg are shaped for wheelchair posture.",
+    adaptiveFeatures: ["Seamless back", "Seated fit", "Accessible front pockets"],
+    disabilityNeeds: ["Wheelchair users", "Pressure care", "Limited mobility"],
+    bestFor: ["Professional seated wear", "Pressure-sensitive skin"],
+    styleTags: ["Smart casual", "Professional", "Classic"],
+    availability: {
+      online: true,
+      inStore: false,
+      countries: ["Canada", "USA", "UK", "EU", "Australia"],
+      note: "Available online from IZ Adaptive",
+    },
+    sizes: ["S", "M", "L", "XL", "2XL"],
+    genderFit: ["Women", "Men"],
+    sensoryFriendly: false,
+    seatedFit: true,
+    oneHandedDressing: true,
     featured: true,
+    productUrl:
+      "https://izadaptive.com/products/game-changer-seamless-back-chinos-for-men",
+    linkType: "exact-product",
   },
   {
-    id: "zappos-slipon-sneakers",
-    name: "Wide-Fit Slip-On Sneakers",
+    id: "zappos-adaptive-easy-entry-sneakers",
+    name: "SKECHERS Go Walk Flex Dacey Hands Free Slip-Ins",
     brandId: "zappos-adaptive",
-    clothingType: "Sneakers",
-    categoryId: "shoes",
-    priceRange: "$",
-    image: "/images/prod-zappos-slipon-sneakers.svg",
+    clothingType: "Shoes",
+    category: "shoes",
+    priceRange: "$50-$100",
     imageUrl:
       "https://m.media-amazon.com/images/I/714J8RVCV8L._SX700_.jpg",
+    imageAlt: "SKECHERS Go Walk Flex Dacey Hands Free Slip-Ins",
+    description:
+      "A hands-free walking shoe with a molded heel panel and cushioned slip-in construction.",
+    accessibilityExplanation:
+      "The hands-free heel lets many wearers step into the shoe without bending down or using their hands.",
+    adaptiveFeatures: ["Hands-free entry", "Molded heel panel", "Cushioned insole"],
+    disabilityNeeds: ["Limited mobility", "Limited dexterity", "One-handed dressing"],
+    bestFor: ["Hands-free shoe changes", "Limited reach or dexterity"],
+    styleTags: ["Sporty", "Casual", "Everyday"],
+    availability: {
+      online: true,
+      inStore: false,
+      countries: ["USA"],
+      note: "Online marketplace availability varies by style",
+    },
+    sizes: ["5", "6", "7", "8", "9", "10", "11", "12", "13"],
+    genderFit: ["Women"],
+    sensoryFriendly: false,
+    seatedFit: false,
+    oneHandedDressing: true,
+    featured: true,
     productUrl:
       "https://www.zappos.com/p/womens-skechers-performance-go-walk-flex-dacey-hands-free-slip-ins/product/9930275",
-    description:
-      "Stretchy slip-on sneakers in wide and extra-wide fits — kind to orthotics, swelling and AFOs.",
-    accessibilityNote:
-      "A wide stretch opening and removable insole make room for orthotics and swelling, and there are no fastenings to manage at all.",
-    adaptiveFeatures: ["Slip-on", "Wide fit", "Removable insole"],
-    bestFor: ["Diabetes foot care", "Orthotic users", "Elderly dressers"],
-    styleTags: ["Casual", "Sporty"],
-    gender: "Unisex",
-    sizes: ["S", "M", "L", "XL", "2XL"],
-    availability: ["Online"],
+    linkType: "exact-product",
   },
   {
-    id: "zappos-sensory-tee",
-    name: "Sensory-Friendly Crew T-shirt",
+    id: "zappos-see-kai-run-dean-adapt-ii",
+    name: "See Kai Run Dean Adapt II",
     brandId: "zappos-adaptive",
-    clothingType: "T-shirt",
-    categoryId: "tshirts",
-    priceRange: "$",
-    image: "/images/prod-zappos-sensory-tee.svg",
-    description:
-      "A buttery-soft crew tee with printed labels, flat seams and nothing that scratches, rubs or rustles.",
-    accessibilityNote:
-      "Labels are printed, not sewn; seams are flat-locked and shoulder seams are smooth — designed with and for sensory-sensitive wearers.",
-    adaptiveFeatures: ["Tag-free", "Flat seams", "Sensory-friendly fabric"],
-    bestFor: ["Sensory sensitivity", "Autism spectrum", "Everyday comfort"],
-    styleTags: ["Casual", "Clean / minimal", "Sporty"],
-    gender: "Unisex",
-    sizes: S,
-    availability: ["Online"],
-    featured: true,
-  },
-  {
-    id: "zappos-seamless-socks",
-    name: "Seamless Diabetic Socks",
-    brandId: "zappos-adaptive",
-    clothingType: "Socks",
-    categoryId: "accessories",
-    priceRange: "$",
-    image: "/images/prod-zappos-seamless-socks.svg",
-    description:
-      "Non-binding, truly seamless socks that protect sensitive and diabetic feet without sliding down.",
-    accessibilityNote:
-      "A linked toe removes the seam entirely and the non-binding cuff keeps circulation free — essential for diabetic and neuropathic feet.",
-    adaptiveFeatures: ["Seamless toe", "Non-binding cuff", "Sensory-friendly"],
-    bestFor: ["Diabetes foot care", "Sensory sensitivity", "Neuropathy"],
-    styleTags: ["Casual", "Clean / minimal"],
-    gender: "Unisex",
-    sizes: ["S", "M", "L", "XL"],
-    availability: ["Online"],
-  },
-  {
-    id: "zappos-pullon-joggers",
-    name: "Easy Pull-On Joggers",
-    brandId: "zappos-adaptive",
-    clothingType: "Joggers",
-    categoryId: "sportswear",
-    priceRange: "$",
-    image: "/images/prod-zappos-pullon-joggers.svg",
-    description:
-      "Soft fleece joggers with a wide elastic waist and grab-friendly loops — on in one motion.",
-    accessibilityNote:
-      "The wide waistband stretches over hips without a fastener in sight, and discreet loops give weak grips something to pull against.",
-    adaptiveFeatures: ["Easy pull-on", "Elastic waistband", "Pull loops"],
-    bestFor: ["Limited dexterity", "Elderly dressers", "Everyday comfort"],
-    styleTags: ["Sporty", "Casual", "Streetwear"],
-    gender: "Unisex",
-    sizes: S,
-    availability: ["Online"],
-  },
-  {
-    id: "able2wear-openback-top",
-    name: "Open-Back Jersey Top",
-    brandId: "able2wear",
-    clothingType: "Top",
-    categoryId: "tops",
-    priceRange: "$$",
-    image: "/images/prod-able2wear-openback-top.svg",
-    description:
-      "A soft jersey top that overlaps at the back — dignified assisted dressing without lifting arms overhead.",
-    accessibilityNote:
-      "The back panels overlap generously so the top goes on from the front without raising arms — invisible from the front, invaluable for carers.",
-    adaptiveFeatures: ["Open-back", "Assisted dressing", "Soft jersey"],
-    bestFor: ["Carer-assisted dressing", "Stroke survivors", "Limited arm mobility"],
-    styleTags: ["Casual", "Clean / minimal"],
-    gender: "Women",
-    sizes: S,
-    availability: ["Online", "In stores"],
-    featured: true,
-  },
-  {
-    id: "able2wear-side-trousers",
-    name: "Side-Opening Trousers",
-    brandId: "able2wear",
-    clothingType: "Trousers",
-    categoryId: "pants",
-    priceRange: "$$",
-    image: "/images/prod-able2wear-side-trousers.svg",
-    description:
-      "Smart everyday trousers that open fully down each side for catheter access and seated dressing.",
-    accessibilityNote:
-      "Full-length side zips mean the trousers can be fitted without standing, and give discreet access for catheter and PEG care.",
-    adaptiveFeatures: ["Side-opening", "Catheter access", "Elasticated waistband"],
-    bestFor: ["Catheter users", "Wheelchair users", "Carer-assisted dressing"],
-    styleTags: ["Casual", "Clean / minimal"],
-    gender: "Unisex",
-    sizes: S,
-    availability: ["Online", "In stores"],
-  },
-  {
-    id: "able2wear-openback-cardigan",
-    name: "Open-Back Cardigan",
-    brandId: "able2wear",
-    clothingType: "Cardigan",
-    categoryId: "tops",
-    priceRange: "$$",
-    image: "/images/prod-able2wear-openback-cardigan.svg",
-    description:
-      "A warm, classic cardigan with a discreet open back — easy warmth for wheelchair users and care settings.",
-    accessibilityNote:
-      "Goes on from the front like a jacket and overlaps behind, so there's no wrestling sleeves behind the back — while looking like any other cardigan.",
-    adaptiveFeatures: ["Open-back", "Front-opening", "Machine washable"],
-    bestFor: ["Care home residents", "Limited arm mobility", "Carer-assisted dressing"],
-    styleTags: ["Casual", "Vintage", "Clean / minimal"],
-    gender: "Unisex",
-    sizes: S,
-    availability: ["Online", "In stores"],
-  },
-  {
-    id: "able2wear-nightdress",
-    name: "Iona Open-Back Nightie",
-    brandId: "able2wear",
-    clothingType: "Nightwear",
-    categoryId: "underwear",
-    priceRange: "$$",
-    image: "/images/prod-able2wear-nightdress.svg",
-    productUrl:
-      "https://able2wear.co.uk/product/iona-nightie-full-back-and-shoulder-opening/",
-    description:
-      "Able2Wear's Iona nightie with full back and shoulder openings — comfort and dignity through the night.",
-    accessibilityNote:
-      "Full back and shoulder openings mean dressing happens flat or seated with no overhead pulling, and night-time care doesn't require undressing.",
-    adaptiveFeatures: ["Open-back", "Shoulder openings", "Soft brushed fabric"],
-    bestFor: ["Care home residents", "Post-surgery recovery", "Carer-assisted dressing"],
-    styleTags: ["Clean / minimal"],
-    gender: "Women",
-    sizes: S,
-    availability: ["Online"],
-  },
-  {
-    id: "magnaready-dress-shirt",
-    name: "Magnetic Dress Shirt",
-    brandId: "magnaready",
-    clothingType: "Dress shirt",
-    categoryId: "shirts",
-    priceRange: "$$",
-    image: "/images/prod-magnaready-dress-shirt.svg",
+    clothingType: "Shoes",
+    category: "shoes",
+    priceRange: "$50-$100",
     imageUrl:
-      "https://magnaready.com/cdn/shop/files/long-sleeve-white-ryan-dress-shirt-magnetic-closures-adaptive-clothing-comfort-style_3.jpg?v=1756660643&width=2048",
+      "https://m.media-amazon.com/images/I/71YDq8YloCL._SX700_.jpg",
+    imageAlt: "See Kai Run Dean Adapt II adaptive children's shoes",
+    description:
+      "An adaptive children's sneaker with a wide opening and removable sockliner.",
+    accessibilityExplanation:
+      "The extra-wide opening and adjustable straps make it easier to fit orthotics and reduce the dexterity needed for shoe changes.",
+    adaptiveFeatures: ["Wide opening", "Adjustable straps", "Removable sockliner"],
+    disabilityNeeds: ["Orthotics", "Limited dexterity", "Limited mobility"],
+    bestFor: ["Children using orthotics", "Easier assisted dressing"],
+    styleTags: ["Casual", "Sporty", "Everyday"],
+    availability: {
+      online: true,
+      inStore: false,
+      countries: ["USA"],
+      note: "Online marketplace availability varies by style",
+    },
+    sizes: ["8", "9", "10", "11", "12", "13"],
+    genderFit: ["Kids"],
+    sensoryFriendly: false,
+    seatedFit: false,
+    oneHandedDressing: true,
+    featured: false,
     productUrl:
-      "https://magnaready.com/products/long-sleeve-white-ryan-dress-shirt-with-magnetic-closures",
+      "https://www.zappos.com/p/see-kai-run-dean-adapt-ii-toddler-little-kid/product/9954985",
+    linkType: "exact-product",
+  },
+  {
+    id: "abl-denim-wheelchair-jeans",
+    name: "ABL Denim Wheelchair Jeans",
+    brandId: "abl-denim",
+    clothingType: "Jeans",
+    category: "jeans",
+    priceRange: "$75-$125",
+    imageUrl: null,
+    imageAlt: "Exact ABL Denim product image unavailable",
     description:
-      "The original magnetically infused dress shirt — boardroom crisp, fastened in five seconds flat.",
-    accessibilityNote:
-      "Every button is backed by a hidden magnet, so the shirt closes with a press of the placket. Cuffs close the same way — no helper, no struggle, no compromise on looks.",
-    adaptiveFeatures: ["Magnetic closures", "One-handed dressing", "Stay-flat placket"],
-    bestFor: ["Parkinson's", "Arthritis", "One-handed dressing", "Professional wear"],
-    styleTags: ["Formal", "Smart casual", "Old money", "Clean / minimal"],
-    gender: "Men",
-    sizes: S,
-    availability: ["Online"],
+      "Adaptive denim cut higher in the back and lower in the front for a comfortable seated profile.",
+    accessibilityExplanation:
+      "The wheelchair-specific rise helps prevent the waistband from digging in or slipping down while seated, with easier dressing details at the waist.",
+    adaptiveFeatures: ["Seated fit", "High back rise", "Easy dressing waistband"],
+    disabilityNeeds: ["Wheelchair users", "Limited mobility", "Sensory sensitivity"],
+    bestFor: ["Wheelchair users", "Comfortable everyday denim"],
+    styleTags: ["Denim", "Casual", "Classic"],
+    availability: {
+      online: true,
+      inStore: false,
+      countries: ["USA"],
+      note: "Check current stock through ABL Denim retailers",
+    },
+    sizes: ["S", "M", "L", "XL", "2XL"],
+    genderFit: ["Women", "Men"],
+    sensoryFriendly: false,
+    seatedFit: true,
+    oneHandedDressing: true,
     featured: true,
+    productUrl: "https://www.foundla.org/new/abl-denim/",
+    linkType: "brand-page-only",
   },
   {
-    id: "magnaready-stretch-blouse",
-    name: "Magnetic Stretch Blouse",
-    brandId: "magnaready",
-    clothingType: "Blouse",
-    categoryId: "tops",
-    priceRange: "$$",
-    image: "/images/prod-magnaready-stretch-blouse.svg",
-    description:
-      "A polished stretch blouse with magnetic closures and easy-care fabric that shrugs off wrinkles.",
-    accessibilityNote:
-      "Magnets do the buttoning while four-way stretch makes sleeves and shoulders forgiving for stiff or painful joints.",
-    adaptiveFeatures: ["Magnetic closures", "Stretch fit", "Easy-care fabric"],
-    bestFor: ["Arthritis", "Limited dexterity", "Professional wear"],
-    styleTags: ["Smart casual", "Formal", "Clean / minimal"],
-    gender: "Women",
-    sizes: S,
-    availability: ["Online"],
-  },
-  {
-    id: "billy-zip-hightops",
-    name: "Zip-Around High Top Sneakers",
+    id: "billy-classic-lace-high-tops",
+    name: "Black/White BILLY Classic Lace High",
     brandId: "billy-footwear",
-    clothingType: "Sneakers",
-    categoryId: "shoes",
-    priceRange: "$$",
-    image: "/images/prod-billy-zip-hightops.svg",
+    clothingType: "Shoes",
+    category: "shoes",
+    priceRange: "$50-$100",
     imageUrl:
       "https://billyfootwear.com/cdn/shop/files/BK23300-004_side_2048x2048_bddd2f5a-fcb6-4236-bc9f-75f6d682a446.jpg?v=1756110917",
+    imageAlt: "Black and white BILLY Classic Lace High shoes",
+    description:
+      "Fashion high tops with a wraparound zipper that opens the upper and exposes the footbed.",
+    accessibilityExplanation:
+      "The zipper lets the shoe open much wider than a conventional sneaker, reducing the balance, reach and dexterity needed to put it on.",
+    adaptiveFeatures: ["Wraparound zipper", "Wide opening", "Removable insoles"],
+    disabilityNeeds: ["AFO users", "Limited dexterity", "Limited mobility"],
+    bestFor: ["AFO wearers", "Independent shoe changes"],
+    styleTags: ["Streetwear", "Casual", "Sporty"],
+    availability: {
+      online: true,
+      inStore: true,
+      countries: ["USA", "Canada", "UK"],
+      note: "Online and selected footwear stockists",
+    },
+    sizes: ["5", "6", "7", "8", "9", "10", "11", "12", "13"],
+    genderFit: ["Women", "Men", "Unisex", "Kids"],
+    sensoryFriendly: false,
+    seatedFit: false,
+    oneHandedDressing: true,
+    featured: true,
     productUrl:
       "https://billyfootwear.com/products/black-white-billy-classic-lace-high-tops",
-    description:
-      "The cult-favourite high top that unzips all the way around — the whole shoe folds open flat.",
-    accessibilityNote:
-      "One zipper runs from heel to toe, so the upper folds completely open and your foot drops in — no forcing, perfect with AFOs. Zip back and you're done; laces are just for looks.",
-    adaptiveFeatures: ["Zip-around entry", "Lay-open design", "AFO-friendly"],
-    bestFor: ["AFO / orthotic users", "Wheelchair users", "One-handed dressing"],
-    styleTags: ["Streetwear", "Casual", "Sporty"],
-    gender: "Unisex",
-    sizes: ["S", "M", "L", "XL", "2XL"],
-    availability: ["Online"],
-    featured: true,
+    linkType: "exact-product",
   },
   {
-    id: "billy-zip-lowtops",
-    name: "Classic Zip Low Top Sneakers",
+    id: "billy-goat-afo-shoes",
+    name: "BILLY Goat AFO-Friendly Shoes",
     brandId: "billy-footwear",
-    clothingType: "Sneakers",
-    categoryId: "shoes",
-    priceRange: "$$",
-    image: "/images/prod-billy-zip-lowtops.svg",
+    clothingType: "Shoes",
+    category: "shoes",
+    priceRange: "$75-$125",
+    imageUrl:
+      "https://billyfootwear.com/cdn/shop/files/BM23157-021_Side_2048x2048_ad776ea7-4ecc-4992-a51d-31f00ac9440f.jpg?v=1748458556",
+    imageAlt: "Men's Charcoal BILLY Goat AFO-friendly shoes",
     description:
-      "Everyday low tops with the same fold-flat zip entry, in wide fits and clean colourways.",
-    accessibilityNote:
-      "The zip-around upper opens the whole shoe for easy foot placement, and wide-fit options leave room for orthotics and swelling.",
-    adaptiveFeatures: ["Zip-around entry", "Wide fit", "One-handed zipper pull"],
-    bestFor: ["Orthotic users", "Limited dexterity", "Everyday comfort"],
-    styleTags: ["Casual", "Streetwear", "Clean / minimal"],
-    gender: "Unisex",
-    sizes: ["S", "M", "L", "XL", "2XL"],
-    availability: ["Online"],
+      "Supportive shoes developed for braces, orthotics and prosthetics with extra width options.",
+    accessibilityExplanation:
+      "The short-wrap zipper and removable insoles create more usable internal space for AFOs while keeping the shoe secure.",
+    adaptiveFeatures: ["Short-wrap zipper", "AFO friendly", "Extra-wide options"],
+    disabilityNeeds: ["Orthotics", "Limb differences", "Cerebral palsy"],
+    bestFor: ["AFO and brace users", "Extra-wide footwear needs"],
+    styleTags: ["Sporty", "Outdoor", "Everyday"],
+    availability: {
+      online: true,
+      inStore: true,
+      countries: ["USA", "Canada", "UK"],
+      note: "Online and selected footwear stockists",
+    },
+    sizes: ["6", "7", "8", "9", "10", "11", "12", "13", "14"],
+    genderFit: ["Men", "Unisex"],
+    sensoryFriendly: false,
+    seatedFit: false,
+    oneHandedDressing: true,
+    featured: false,
+    productUrl:
+      "https://billyfootwear.com/products/mens-charcoal-billy-goat-afo-friendly-shoes",
+    linkType: "exact-product",
   },
   {
-    id: "abl-wheelchair-jeans",
-    name: "Wheelchair Jeans",
-    brandId: "abl-denim",
-    clothingType: "Jeans",
-    categoryId: "jeans",
-    priceRange: "$$",
-    image: "/images/prod-abl-wheelchair-jeans.svg",
+    id: "magnaready-ryan-dress-shirt",
+    name: "Long Sleeve White Ryan Dress Shirt",
+    brandId: "magnaready",
+    clothingType: "Shirts",
+    category: "formalwear",
+    priceRange: "$50-$100",
+    imageUrl:
+      "https://magnaready.com/cdn/shop/files/long-sleeve-white-ryan-dress-shirt-magnetic-closures-adaptive-clothing-comfort-style_3.jpg?v=1756660643&width=2048",
+    imageAlt: "MagnaReady Long Sleeve White Ryan Dress Shirt",
     description:
-      "LA-made premium denim with a seated cut and long side zippers for genuinely easy dressing.",
-    accessibilityNote:
-      "Extra-long side zippers open the waist wide for seated dressing and catheter access, while the high back rise keeps you covered at the push rim.",
-    adaptiveFeatures: ["Seated fit", "High back rise", "Side-opening zippers"],
-    bestFor: ["Wheelchair users", "Catheter users", "Seated comfort"],
-    styleTags: ["Casual", "Streetwear", "Vintage"],
-    gender: "Unisex",
-    sizes: S,
-    availability: ["Online"],
+      "A traditional spread-collar shirt with hidden magnetic closures behind the button placket.",
+    accessibilityExplanation:
+      "Self-aligning magnets replace the repeated pinch-and-thread motion of buttons, making formal dressing more manageable with one hand or tremors.",
+    adaptiveFeatures: ["Magnetic closures", "Wrinkle resistant", "Easy-open cuffs"],
+    disabilityNeeds: ["Parkinson's", "Arthritis", "Limited dexterity"],
+    bestFor: ["One-handed formal dressing", "Tremors and arthritis"],
+    styleTags: ["Formal", "Professional", "Classic"],
+    availability: {
+      online: true,
+      inStore: false,
+      countries: ["USA", "Canada"],
+      note: "Available online from MagnaReady",
+    },
+    sizes: ["S", "M", "L", "XL", "2XL", "3XL"],
+    genderFit: ["Men"],
+    sensoryFriendly: false,
+    seatedFit: false,
+    oneHandedDressing: true,
     featured: true,
+    productUrl:
+      "https://magnaready.com/products/long-sleeve-white-ryan-dress-shirt-with-magnetic-closures",
+    linkType: "exact-product",
   },
   {
-    id: "abl-soft-jeans",
-    name: "Soft Sensory Jeans",
-    brandId: "abl-denim",
-    clothingType: "Jeans",
-    categoryId: "jeans",
-    priceRange: "$$",
-    image: "/images/prod-abl-soft-jeans.svg",
+    id: "magnaready-burgundy-ryan-shirt",
+    name: "Short Sleeve Burgundy Ryan Spread Collar Shirt",
+    brandId: "magnaready",
+    clothingType: "Shirts",
+    category: "formalwear",
+    priceRange: "$50-$100",
+    imageUrl:
+      "https://magnaready.com/cdn/shop/files/short-sleeve-burgundy-micro-check-ryan-spread-collar-cotton-shirt-magnetic-closures-adaptive-clothing_1.jpg?v=1756661145&width=2048",
+    imageAlt: "MagnaReady Burgundy Ryan Spread Collar Shirt",
     description:
-      "Real-look denim in an ultra-soft knit, developed with OTs for people who can't stand stiff jeans.",
-    accessibilityNote:
-      "The fabric is a brushed stretch knit that looks like rigid denim but feels like sweatpants — tag-free waistband, flat seams, zero break-in.",
-    adaptiveFeatures: ["Soft sensory denim", "Tag-free waistband", "Flat seams"],
-    bestFor: ["Sensory sensitivity", "Autism spectrum", "Everyday comfort"],
-    styleTags: ["Casual", "Streetwear", "Vintage"],
-    gender: "Unisex",
-    sizes: S,
-    availability: ["Online"],
+      "A short-sleeve micro-check cotton shirt with concealed magnetic closures.",
+    accessibilityExplanation:
+      "Concealed magnetic closures replace small buttons while preserving the look of a conventional spread-collar shirt.",
+    adaptiveFeatures: ["Magnetic closures", "Spread collar", "Short sleeves"],
+    disabilityNeeds: ["Limited dexterity", "Parkinson's", "One-handed dressing"],
+    bestFor: ["Smart-casual dressing", "Independent dressing"],
+    styleTags: ["Smart casual", "Classic", "Professional"],
+    availability: {
+      online: true,
+      inStore: false,
+      countries: ["USA", "Canada"],
+      note: "Available online from MagnaReady",
+    },
+    sizes: ["S", "M", "L", "XL", "2XL", "3XL"],
+    genderFit: ["Men"],
+    sensoryFriendly: false,
+    seatedFit: false,
+    oneHandedDressing: true,
+    featured: false,
+    productUrl:
+      "https://magnaready.com/products/burgundy-ryan-spread-collar-shirt",
+    linkType: "exact-product",
   },
   {
-    id: "slick-chicks-underwear",
-    name: "Side-Fastening Adaptive Underwear",
+    id: "slick-chicks-adaptive-brief",
+    name: "Slick Chicks Brief Panty",
     brandId: "slick-chicks",
     clothingType: "Underwear",
-    categoryId: "underwear",
-    priceRange: "$",
-    image: "/images/prod-slick-chicks-underwear.svg",
+    category: "underwear",
+    priceRange: "$25-$50",
     imageUrl:
       "https://slickchicksonline.com/cdn/shop/files/12.8.19_Ecomm_Shoot0118_1200x630.jpg?v=1735914880",
+    imageAlt: "Slick Chicks Brief Panty with side fasteners",
+    description:
+      "Soft adaptive underwear with side fasteners for seated, standing or assisted dressing.",
+    accessibilityExplanation:
+      "Both sides open fully, so the brief can be positioned without stepping through leg openings and can support independent or assisted dressing.",
+    adaptiveFeatures: ["Side fastenings", "Fully opening design", "Soft stretch fabric"],
+    disabilityNeeds: ["Limited mobility", "Wheelchair users", "Post-surgery"],
+    bestFor: ["Seated dressing", "Assisted dressing"],
+    styleTags: ["Minimal", "Everyday", "Comfort"],
+    availability: {
+      online: true,
+      inStore: true,
+      countries: ["USA", "Canada"],
+      note: "Online and selected retail partners",
+    },
+    sizes: ["XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL"],
+    genderFit: ["Women"],
+    sensoryFriendly: true,
+    seatedFit: true,
+    oneHandedDressing: true,
+    featured: true,
+    productUrl: "https://slickchicksonline.com/products/brief",
+    linkType: "exact-product",
+  },
+  {
+    id: "slick-chicks-leakproof-underwear",
+    name: "Adaptive Leakproof Underwear",
+    brandId: "slick-chicks",
+    clothingType: "Underwear",
+    category: "underwear",
+    priceRange: "$25-$50",
+    imageUrl:
+      "https://slickchicksonline.com/cdn/shop/files/7H1A3994_1200x630.jpg?v=1735916603",
+    imageAlt: "Slick Chicks Leakproof Underwear",
+    description:
+      "Reusable leakproof underwear with side-fastening strips for easier changes.",
+    accessibilityExplanation:
+      "The fully opening sides support changes from a seated or lying position, while the absorbent layer adds discreet incontinence support.",
+    adaptiveFeatures: ["Side fastenings", "Leakproof layer", "Seated dressing"],
+    disabilityNeeds: ["Incontinence", "Limited dexterity", "Wheelchair users"],
+    bestFor: ["Seated changes", "Dexterity challenges"],
+    styleTags: ["Minimal", "Everyday", "Comfort"],
+    availability: {
+      online: true,
+      inStore: false,
+      countries: ["USA", "Canada"],
+      note: "Available online from Slick Chicks",
+    },
+    sizes: ["XS", "S", "M", "L", "XL", "2XL", "3XL"],
+    genderFit: ["Women"],
+    sensoryFriendly: true,
+    seatedFit: true,
+    oneHandedDressing: true,
+    featured: false,
+    productUrl: "https://slickchicksonline.com/products/ui-underwear",
+    linkType: "exact-product",
+  },
+  {
+    id: "nike-go-flyease",
+    name: "Nike Go FlyEase Women's Easy On/Off Shoes",
+    brandId: "nike-flyease",
+    clothingType: "Shoes",
+    category: "shoes",
+    priceRange: "$100-$150",
+    imageUrl:
+      "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8ec2a797-0b0c-4b29-b1b8-9204b901a803/NIKE+GO+FLYEASE.png",
+    imageAlt: "Nike Go FlyEase Women's Easy On/Off Shoes",
+    description:
+      "A hands-free sneaker with a hinged heel that opens for step-in entry and closes underfoot.",
+    accessibilityExplanation:
+      "The bi-stable hinge allows many wearers to put the shoe on and take it off without using their hands, bending deeply or tying laces.",
+    adaptiveFeatures: ["Hands-free entry", "Hinged heel", "No laces"],
+    disabilityNeeds: ["Limited mobility", "Limited dexterity", "One-handed dressing"],
+    bestFor: ["Hands-free shoe changes", "Limited reach or dexterity"],
+    styleTags: ["Sporty", "Streetwear", "Modern"],
+    availability: {
+      online: true,
+      inStore: true,
+      countries: ["USA", "Canada", "UK", "EU", "Australia"],
+      note: "Online and selected Nike stores; stock varies",
+    },
+    sizes: ["5", "6", "7", "8", "9", "10", "11", "12", "13"],
+    genderFit: ["Women"],
+    sensoryFriendly: false,
+    seatedFit: false,
+    oneHandedDressing: true,
+    featured: true,
     productUrl:
-      "https://slickchicksonline.com/products/brief",
-    description:
-      "Patented briefs that fasten at the hips — on and off without standing, lifting or balancing.",
-    accessibilityNote:
-      "Hook-and-eye side panels open completely, so underwear changes happen seated or lying down, independently or with care — a small design change that restores real dignity.",
-    adaptiveFeatures: ["Side-fastening", "One-handed dressing", "Tag-free"],
-    bestFor: ["Wheelchair users", "Post-surgery recovery", "Catheter users"],
-    styleTags: ["Casual", "Clean / minimal"],
-    gender: "Women",
-    sizes: S,
-    availability: ["Online"],
-    featured: true,
+      "https://www.nike.com/t/go-flyease-womens-easy-on-off-shoes-LGmqKx",
+    linkType: "exact-product",
   },
   {
-    id: "will-well-magnetic-shirt",
-    name: "Slim-Fit Short Sleeve Shirt",
-    brandId: "will-well",
-    clothingType: "Shirt",
-    categoryId: "shirts",
-    priceRange: "$$",
-    image: "/images/prod-will-well-magnetic-shirt.svg",
-    productUrl: "https://willandwell.com/products/slim-fit-short-sleeve-shirt",
-    price: "S$74.90",
-    currency: "SGD",
+    id: "able2wear-iona-nightie",
+    name: "Iona Nightie with Full Back and Shoulder Opening",
+    brandId: "able2wear",
+    clothingType: "Nightwear",
+    category: "nightwear",
+    priceRange: "$50-$100",
+    imageUrl: null,
+    imageAlt: "Exact Able2Wear Iona Nightie product image unavailable",
     description:
-      "Will & Well's slim-fit short sleeve shirt with MagSnap magnetic buttons — designed in and for Singapore's climate.",
-    accessibilityNote:
-      "Magnets replace every button, the fabric is lightweight and breathable for tropical heat, and adjustable straps fine-tune the fit without re-dressing.",
-    adaptiveFeatures: ["MagSnap magnetic buttons", "One-handed dressing", "Breathable fabric"],
-    bestFor: ["Limited dexterity", "One-handed dressing", "Hot-climate comfort"],
-    styleTags: ["Clean / minimal", "Casual", "Smart casual"],
-    gender: "Unisex",
-    sizes: S,
-    availability: ["Online", "In stores"],
-    featured: true,
+      "A nightie with full back and shoulder openings for easier assisted dressing.",
+    accessibilityExplanation:
+      "The full back and shoulder opening reduces lifting and twisting during assisted dressing while maintaining front coverage.",
+    adaptiveFeatures: ["Full back opening", "Shoulder opening", "Assisted dressing"],
+    disabilityNeeds: ["Limited mobility", "Stroke recovery", "Care support"],
+    bestFor: ["Assisted night-time dressing", "Reduced shoulder movement"],
+    styleTags: ["Nightwear", "Classic", "Comfort"],
+    availability: {
+      online: true,
+      inStore: false,
+      countries: ["UK", "Ireland", "EU"],
+      note: "Available online from Able2Wear",
+    },
+    sizes: ["S", "M", "L", "XL", "2XL", "3XL"],
+    genderFit: ["Women"],
+    sensoryFriendly: false,
+    seatedFit: true,
+    oneHandedDressing: false,
+    featured: false,
+    productUrl:
+      "https://able2wear.co.uk/product/iona-nightie-full-back-and-shoulder-opening/",
+    linkType: "exact-product",
   },
   {
-    id: "werable-buckle-dress",
-    name: "Easy-Grip Buckle Wrap Shirt Dress",
-    brandId: "werable",
-    clothingType: "Shirt dress",
-    categoryId: "dresses",
-    priceRange: "$$$",
-    image: "/images/prod-werable-buckle-dress.svg",
-    price: "$280.00",
-    description:
-      "Werable's signature wrap shirt dress, fastened with an easy-grip buckle and designed for one-handed dressing.",
-    accessibilityNote:
-      "The wrap construction lays open flat and closes with a single easy-grip buckle, so the entire dress can be put on and fastened with one hand — designer fashion with the adaptation built invisibly in.",
-    adaptiveFeatures: ["Easy-grip buckle", "One-handed dressing", "Opens fully flat"],
-    bestFor: ["One-handed dressing", "Limb differences", "Stroke survivors"],
-    styleTags: ["Clean / minimal", "Formal", "Smart casual", "Swedish style"],
-    gender: "Women",
-    sizes: S,
-    availability: ["Online", "In stores"],
-    featured: true,
-  },
-  {
-    id: "dawn-magnetic-polo",
-    name: "Magnetic Polo Tee",
-    brandId: "dawn-adaptive",
-    clothingType: "Polo shirt",
-    categoryId: "shirts",
-    priceRange: "$",
-    image: "/images/prod-dawn-magnetic-polo.svg",
-    productUrl: "https://dawnadaptive.com/products/magneticshirt-adaptiveclothing-polo-tee-unisex",
-    currency: "MYR",
-    description:
-      "Dawn Adaptive's affordable magnetic polo — easy independent dressing without the premium price tag.",
-    accessibilityNote:
-      "Magnetic closures make the placket self-fastening, at a social-enterprise price point that keeps adaptive dressing accessible.",
-    adaptiveFeatures: ["Magnetic closures", "Easy independent dressing", "Lightweight fabric"],
-    bestFor: ["Limited dexterity", "Budget shoppers", "Independent dressing"],
-    styleTags: ["Casual", "Clean / minimal"],
-    gender: "Unisex",
-    sizes: S,
-    availability: ["Online"],
-  },
-  {
-    id: "able-label-velcro-shirt",
-    name: "Velcro-Fastening Shirt",
-    brandId: "the-able-label",
-    clothingType: "Shirt",
-    categoryId: "shirts",
-    priceRange: "$$",
-    image: "/images/prod-able-label-velcro-shirt.svg",
-    description:
-      "The Able Label's quality British shirt with discreet touch-close Velcro® behind classic buttons.",
-    accessibilityNote:
-      "Touch-close Velcro® hides behind sewn-on buttons, so the shirt looks completely classic but closes in one smooth press — made for restricted movement and limited finger dexterity.",
-    adaptiveFeatures: ["Velcro fastenings", "Discreet adaptive design", "One-handed dressing"],
-    bestFor: ["Arthritis", "Limited dexterity", "Stroke survivors"],
-    styleTags: ["Casual", "Smart casual", "Vintage"],
-    gender: "Unisex",
-    sizes: S,
-    availability: ["Online"],
-  },
-  {
-    id: "joe-bella-carezips",
-    name: "CareZips Side-Zip Pants",
-    brandId: "joe-bella",
+    id: "able2wear-drop-front-jersey-trousers",
+    name: "Drop Front Jersey Wheelchair Trousers",
+    brandId: "able2wear",
     clothingType: "Pants",
-    categoryId: "pants",
-    priceRange: "$$",
-    image: "/images/prod-joe-bella-carezips.svg",
-    productUrl: "https://joeandbella.com/products/carezips-adaptive-pants-for-men",
-    currency: "USD",
+    category: "pants",
+    priceRange: "$50-$100",
+    imageUrl: null,
+    imageAlt: "Exact Able2Wear Drop Front Jersey Wheelchair Trousers image unavailable",
     description:
-      "Joe & Bella's patented CareZips® pants with three strategic zippers for fast, dignified dressing and care.",
-    accessibilityNote:
-      "Three zippers — two side, one front — open the pants almost completely, making dressing, toileting and care dramatically easier while looking like everyday chinos.",
-    adaptiveFeatures: ["Side-zipper access", "Easy dressing", "Carer-friendly design"],
-    bestFor: ["Carer-assisted dressing", "Elderly dressers", "Wheelchair users"],
-    styleTags: ["Casual", "Smart casual", "Clean / minimal"],
-    gender: "Unisex",
-    sizes: S,
-    availability: ["Online"],
-    featured: true,
+      "Jersey wheelchair trousers with a drop-front opening for dressing and personal care access.",
+    accessibilityExplanation:
+      "The drop-front construction opens the waist more fully, reducing the need to lift and pull fabric during seated or assisted dressing.",
+    adaptiveFeatures: ["Drop-front opening", "Wheelchair fit", "Easy-care jersey"],
+    disabilityNeeds: ["Catheter users", "Limited mobility", "Assisted dressing"],
+    bestFor: ["Wheelchair dressing", "Personal care access"],
+    styleTags: ["Classic", "Everyday", "Care-ready"],
+    availability: {
+      online: true,
+      inStore: false,
+      countries: ["UK", "Ireland", "EU"],
+      note: "Available online from Able2Wear",
+    },
+    sizes: ["S", "M", "L", "XL", "2XL", "3XL"],
+    genderFit: ["Women", "Men"],
+    sensoryFriendly: false,
+    seatedFit: true,
+    oneHandedDressing: false,
+    featured: false,
+    productUrl:
+      "https://able2wear.co.uk/product/drop-front-jersey-wheelchair-trousers/",
+    linkType: "exact-product",
   },
   {
-    id: "silverts-openback-dress",
-    name: "Open-Back Adaptive Dress",
-    brandId: "silverts",
-    clothingType: "Dress",
-    categoryId: "dresses",
-    priceRange: "$",
-    image: "/images/prod-silverts-openback-dress.svg",
+    id: "tommy-adaptive-zip-front-dress",
+    name: "Slim Fit Classic 1985 Polo Dress",
+    brandId: "tommy-hilfiger-adaptive",
+    clothingType: "Dresses",
+    category: "dresses",
+    priceRange: "$100-$150",
+    imageUrl:
+      "https://shoptommy.scene7.com/is/image/ShopTommy/WW45817_ZF0_main",
+    imageAlt: "Tommy Hilfiger Slim Fit Classic 1985 Polo Dress",
     description:
-      "Silverts' classic open-back dress for assisted dressing — a care-setting staple since the brand's earliest days.",
-    accessibilityNote:
-      "The back overlap opens fully for dressing without standing or lifting arms, while the front stays a complete, classic dress — the original assisted-dressing design.",
-    adaptiveFeatures: ["Open-back", "Assisted dressing", "Easy-care fabric"],
-    bestFor: ["Care home residents", "Carer-assisted dressing", "Elderly dressers"],
-    styleTags: ["Casual", "Vintage"],
-    gender: "Women",
-    sizes: S,
-    availability: ["Online"],
+      "A classic polo dress with an adaptive magnetic front placket.",
+    accessibilityExplanation:
+      "The magnetic placket reduces the fine-motor work needed to fasten the polo neckline while preserving a classic silhouette.",
+    adaptiveFeatures: ["Magnetic front placket", "Easy neckline", "Stretch fabric"],
+    disabilityNeeds: ["Limited dexterity", "Limited mobility", "One-handed dressing"],
+    bestFor: ["Easier dress changes", "Smart everyday occasions"],
+    styleTags: ["Smart casual", "Classic", "Formal"],
+    availability: {
+      online: true,
+      inStore: true,
+      countries: ["USA", "Canada", "UK", "EU"],
+      note: "Online and selected Tommy Hilfiger stores",
+    },
+    sizes: ["XS", "S", "M", "L", "XL", "2XL"],
+    genderFit: ["Women"],
+    sensoryFriendly: false,
+    seatedFit: false,
+    oneHandedDressing: true,
+    featured: false,
+    productUrl:
+      "https://usa.tommy.com/en/tommy-adaptive/womens-adaptive/dresses-skirts/slim-fit-classic-1985-polo-dress/WW45817-ZF0.html",
+    linkType: "exact-product",
   },
 ];
 
-export const products: Product[] = [...baseProducts, ...adaptiveProducts];
+export const clothingTypeOptions = [
+  "Tops",
+  "Shirts",
+  "Pants",
+  "Jeans",
+  "Shoes",
+  "Underwear",
+  "Dresses",
+  "Jackets",
+  "Formalwear",
+];
+
+export const disabilityNeedOptions = [
+  "Wheelchair users",
+  "Limited mobility",
+  "Limited dexterity",
+  "One-handed dressing",
+  "Sensory processing",
+  "Autism",
+  "Arthritis",
+  "Parkinson's",
+  "Orthotics",
+  "Post-surgery",
+];
+
+export const adaptiveFeatureOptions = [
+  "Magnetic closures",
+  "Seated fit",
+  "Easy entry",
+  "Open back",
+  "Side fastenings",
+  "Tag-free",
+  "Flat seams",
+  "AFO friendly",
+  "Hands-free entry",
+  "Wide opening",
+];
+
+export const styleOptions = [
+  "Everyday",
+  "Casual",
+  "Smart casual",
+  "Professional",
+  "Formal",
+  "Sporty",
+  "Streetwear",
+  "Classic",
+];
+
+export const sizeOptions = [
+  "XS",
+  "S",
+  "M",
+  "L",
+  "XL",
+  "2XL",
+  "3XL",
+  "5",
+  "7",
+  "9",
+  "11",
+  "13",
+];
+
+export const fitOptions = ["Women", "Men", "Unisex", "Kids"];
+export const budgetOptions = ["Under $50", "$50-$100", "$100-$150", "$150+"];
+export const availabilityOptions = ["Online", "In store"];
+export const locationOptions = ["USA", "Canada", "UK", "EU", "Australia"];
+
+export const productCategories = [
+  { slug: "tops", label: "Adaptive Tops", description: "Soft, easy-on layers and sensory-friendly essentials." },
+  { slug: "shirts", label: "Adaptive Shirts", description: "Magnetic, open-back and easy-fastening shirts." },
+  { slug: "pants", label: "Adaptive Pants", description: "Side-opening and seated-comfort trousers." },
+  { slug: "jeans", label: "Wheelchair Jeans", description: "Denim designed around a seated body position." },
+  { slug: "shoes", label: "Easy-Entry Shoes", description: "Hands-free, zip and AFO-friendly footwear." },
+  { slug: "underwear", label: "Adaptive Underwear", description: "Side-opening foundations for easier dressing." },
+  { slug: "dresses", label: "Adaptive Dresses", description: "Front-opening and easier-fastening dresses." },
+  { slug: "jackets", label: "Adaptive Jackets", description: "Outer layers shaped for reach, comfort and movement." },
+  { slug: "formalwear", label: "Formal Adaptive Wear", description: "Polished pieces for work and special occasions." },
+];
 
 export function getProductById(id: string): Product | undefined {
-  return products.find((p) => p.id === id);
+  return products.find((product) => product.id === id);
 }
 
-export function getBrandOfProduct(product: Product): Brand {
-  return brands.find((b) => b.id === product.brandId)!;
+export function getProductsByBrand(brandId: string): Product[] {
+  return products.filter((product) => product.brandId === brandId);
 }
 
-export function productsOfBrand(brandId: string): Product[] {
-  return products.filter((p) => p.brandId === brandId);
-}
-
-export function productsInCategory(categoryId: string): Product[] {
-  return products.filter((p) => p.categoryId === categoryId);
-}
-
-export type SingaporeAvailability =
-  | "Local Singapore brand"
-  | "Ships to Singapore"
-  | "International shipping";
-
-/** How easily a Singapore shopper can get this item, derived from the brand. */
-export function singaporeAvailability(product: Product): SingaporeAvailability {
-  const brand = getBrandOfProduct(product);
-  if (brand.country === "Singapore") return "Local Singapore brand";
-  const ships = brand.shipping.countries.some((c) => {
-    const v = c.toLowerCase();
-    return v === "worldwide" || v.includes("singapore");
-  });
-  return ships ? "Ships to Singapore" : "International shipping";
-}
-
-export interface ProductFilterParams {
-  query?: string;
-  category?: string;
-  brand?: string;
-  need?: string;
-  feature?: string;
-  style?: string;
-  budget?: string;
-  size?: string;
-  gender?: string;
-  availability?: string;
-  location?: string;
-  sg?: string;
-}
-
-const norm = (s: string) => s.toLowerCase();
-
-export function searchProducts(params: ProductFilterParams): Product[] {
-  let results = [...products];
-
-  if (params.query) {
-    const q = norm(params.query);
-    const words = q.split(/\s+/).filter(Boolean);
-    results = results.filter((p) => {
-      const brand = getBrandOfProduct(p);
-      const category = clothingCategories.find((c) => c.id === p.categoryId);
-      const haystack = norm(
-        [
-          p.name,
-          brand.name,
-          p.clothingType,
-          category?.name ?? "",
-          category?.noun ?? "",
-          ...p.adaptiveFeatures,
-          ...p.bestFor,
-          ...p.styleTags,
-        ].join(" ")
-      );
-      return words.every((w) => haystack.includes(w));
-    });
-  }
-
-  if (params.category) {
-    results = results.filter((p) => p.categoryId === params.category);
-  }
-  if (params.brand) {
-    results = results.filter((p) => p.brandId === params.brand);
-  }
-  if (params.need) {
-    const n = norm(params.need).split(" ")[0];
-    results = results.filter(
-      (p) =>
-        p.bestFor.some((b) => norm(b).includes(n)) ||
-        getBrandOfProduct(p).disabilityTypes.some((d) => norm(d).includes(n))
-    );
-  }
-  if (params.feature) {
-    const f = norm(params.feature);
-    results = results.filter((p) =>
-      p.adaptiveFeatures.some((a) => norm(a).includes(f))
-    );
-  }
-  if (params.style) {
-    const st = norm(params.style);
-    results = results.filter((p) => p.styleTags.some((s) => norm(s).includes(st)));
-  }
-  if (params.budget) {
-    results = results.filter((p) => p.priceRange === params.budget);
-  }
-  if (params.size) {
-    results = results.filter((p) => p.sizes.includes(params.size!));
-  }
-  if (params.gender) {
-    results = results.filter(
-      (p) => p.gender === params.gender || p.gender === "Unisex"
-    );
-  }
-  if (params.availability) {
-    results = results.filter((p) =>
-      p.availability.includes(params.availability as "Online" | "In stores")
-    );
-  }
-  if (params.sg) {
-    results = results.filter((p) => {
-      const avail = singaporeAvailability(p);
-      if (params.sg === "local") return avail === "Local Singapore brand";
-      return avail !== "International shipping";
-    });
-  }
-
-  if (params.location) {
-    const co = norm(params.location);
-    results = results.filter((p) =>
-      getBrandOfProduct(p).shipping.countries.some((c) => {
-        const shipped = norm(c);
-        return shipped === "worldwide" || shipped.includes(co);
-      })
-    );
-  }
-
-  return results;
-}
-
-export interface ProductMatch {
-  product: Product;
-  percent: number | null;
-  stylePercent: number | null;
-  reasons: string[];
-}
-
-const fasteningKeywords: Record<string, { keyword: string; reason: string }> = {
-  "Magnetic buttons": { keyword: "magnetic", reason: "Magnetic closures" },
-  Velcro: { keyword: "velcro", reason: "Velcro fastenings" },
-  "Easy zippers": { keyword: "zip", reason: "Easy zip entry" },
-  "Slip-on / no fastenings": { keyword: "slip-on", reason: "Slip-on design" },
-};
-
-/**
- * Scores one product against quiz answers. Mirrors the brand scorer but acts
- * on product-level fields; skipped questions are excluded from the denominator.
- */
-export function scoreProduct(product: Product, answers: QuizAnswers): ProductMatch {
-  const brand = getBrandOfProduct(product);
-  const reasons: string[] = [];
-  let weightTotal = 0;
-  let weightedScore = 0;
-
-  const component = (weight: number, fraction: number) => {
-    weightTotal += weight;
-    weightedScore += weight * fraction;
-  };
-  const hasFeature = (kw: string) =>
-    product.adaptiveFeatures.some((f) => norm(f).includes(kw));
-
-  if (answers.needs.length > 0) {
-    const matched = answers.needs.filter((n) => {
-      const key = norm(n).split(" ")[0];
+export function getProductsByCategory(slug: string): Product[] {
+  return products.filter((product) => {
+    if (slug === "formalwear") {
       return (
-        product.bestFor.some((b) => norm(b).includes(key)) ||
-        brand.disabilityTypes.some((d) => norm(d).includes(key))
+        product.category === "formalwear" ||
+        product.styleTags.includes("Formal") ||
+        product.styleTags.includes("Professional")
       );
-    });
-    component(30, matched.length / answers.needs.length);
-    if (matched.length > 0) reasons.push(`Made for ${norm(matched[0])}`);
-  }
-
-  if (answers.seated && answers.seated.startsWith("Yes")) {
-    const has = hasFeature("seated") || hasFeature("back rise");
-    component(10, has ? 1 : 0);
-    if (has) reasons.push("Seated-fit cut");
-  }
-
-  const sensory = answers.sensory.filter((s) => s !== "No sensory preferences");
-  if (sensory.length > 0) {
-    const has =
-      hasFeature("sensory") || hasFeature("tag-free") || hasFeature("flat") || hasFeature("soft");
-    component(10, has ? 1 : 0);
-    if (has) reasons.push("Sensory-friendly finish");
-  }
-
-  const fastenings = answers.fastenings.filter((f) => f !== "No preference");
-  if (fastenings.length > 0) {
-    const matched = fastenings.filter((f) => {
-      const def = fasteningKeywords[f];
-      return def ? hasFeature(def.keyword) : false;
-    });
-    component(15, matched.length / fastenings.length);
-    matched.slice(0, 2).forEach((f) => reasons.push(fasteningKeywords[f].reason));
-  }
-
-  if (answers.clothing.length > 0) {
-    const wantedCategories = answers.clothing
-      .map((label) => quizClothingOptions.find((o) => o.label === label)?.categoryId)
-      .filter(Boolean) as string[];
-    const inWanted = wantedCategories.includes(product.categoryId);
-    component(10, inWanted ? 1 : 0);
-    if (inWanted) reasons.push(`${product.clothingType} — what you're shopping for`);
-  }
-
-  if (answers.location) {
-    const ships = brand.shipping.countries.some(
-      (c) => norm(c) === "worldwide" || norm(c).includes(norm(answers.location!))
+    }
+    return (
+      product.category === slug ||
+      product.clothingType.toLowerCase() === slug
     );
-    component(15, ships ? 1 : 0);
-    if (ships) reasons.push(`Ships to ${answers.location}`);
-  }
-
-  if (answers.budget && answers.budget !== "No limit") {
-    const sym = answers.budget.split(" ")[0];
-    const fits = product.priceRange === sym;
-    component(5, fits ? 1 : 0);
-    if (fits) reasons.push("Within your budget");
-  }
-
-  let stylePercent: number | null = null;
-  if (answers.styles.length > 0) {
-    const matched = answers.styles.filter((s) => product.styleTags.includes(s));
-    stylePercent = Math.round((matched.length / answers.styles.length) * 100);
-    component(15, matched.length / answers.styles.length);
-    if (matched.length > 0) reasons.push(`Matches your ${norm(matched[0])} style`);
-  }
-
-  const percent =
-    weightTotal === 0 ? null : Math.round((weightedScore / weightTotal) * 100);
-
-  if (reasons.length === 0) {
-    reasons.push(`${brand.name} community favourite`);
-  }
-
-  return { product, percent, stylePercent, reasons };
+  });
 }
 
-/** Ranks the whole catalogue for quiz answers, best first. */
-export function matchProducts(answers: QuizAnswers): ProductMatch[] {
-  return products
-    .map((p) => scoreProduct(p, answers))
-    .sort((a, b) => (b.percent ?? 0) - (a.percent ?? 0));
+export function getBrandName(brandId: string): string {
+  return brands.find((brand) => brand.id === brandId)?.name ?? brandId;
 }
 
-/** Similar items: same category first, then shared features — other brands preferred. */
-export function similarProducts(product: Product, count = 3): Product[] {
+function matches(value: string, candidate: string) {
+  return value.toLowerCase().includes(candidate.toLowerCase());
+}
+
+function budgetMatches(priceRange: string, budget: string) {
+  if (budget === "Under $50") return priceRange === "$25-$50";
+  if (budget === "$50-$100") return ["$25-$50", "$50-$100"].includes(priceRange);
+  if (budget === "$100-$150") return ["$75-$125", "$100-$150"].includes(priceRange);
+  if (budget === "$150+") return priceRange === "$150+";
+  return true;
+}
+
+export function searchProducts(params: ProductSearchParams): Product[] {
+  return products.filter((product) => {
+    const brand = getBrandName(product.brandId);
+    const searchable = [
+      product.name,
+      brand,
+      product.clothingType,
+      product.category,
+      product.description,
+      product.accessibilityExplanation,
+      ...product.adaptiveFeatures,
+      ...product.disabilityNeeds,
+      ...product.bestFor,
+      ...product.styleTags,
+    ]
+      .join(" ")
+      .toLowerCase();
+
+    if (params.query) {
+      const terms = params.query.toLowerCase().split(/\s+/).filter(Boolean);
+      if (!terms.every((term) => searchable.includes(term))) return false;
+    }
+    if (
+      params.clothingType &&
+      !matches(product.clothingType, params.clothingType) &&
+      !matches(product.category, params.clothingType) &&
+      !(
+        params.clothingType.toLowerCase().includes("formal") &&
+        (product.styleTags.includes("Formal") ||
+          product.styleTags.includes("Professional"))
+      )
+    ) {
+      return false;
+    }
+    if (params.brand && !matches(brand, params.brand)) return false;
+    if (
+      params.disabilityNeed &&
+      !product.disabilityNeeds.some((need) => matches(need, params.disabilityNeed!)) &&
+      !product.bestFor.some((need) => matches(need, params.disabilityNeed!))
+    ) {
+      return false;
+    }
+    if (
+      params.adaptiveFeature &&
+      !product.adaptiveFeatures.some((feature) =>
+        matches(feature, params.adaptiveFeature!)
+      )
+    ) {
+      return false;
+    }
+    if (
+      params.style &&
+      !product.styleTags.some((style) => matches(style, params.style!))
+    ) {
+      return false;
+    }
+    if (params.budget && !budgetMatches(product.priceRange, params.budget)) return false;
+    if (params.size && !product.sizes.includes(params.size)) return false;
+    if (params.genderFit && !product.genderFit.includes(params.genderFit)) return false;
+    if (params.availability === "Online" && !product.availability.online) return false;
+    if (params.availability === "In store" && !product.availability.inStore) return false;
+    if (
+      params.location &&
+      !product.availability.countries.some((country) =>
+        matches(country, params.location!)
+      )
+    ) {
+      return false;
+    }
+    if (params.sensoryFriendly && !product.sensoryFriendly) return false;
+    if (params.seatedFit && !product.seatedFit) return false;
+    if (params.oneHandedDressing && !product.oneHandedDressing) return false;
+    return true;
+  }).sort(
+    (a, b) =>
+      Number(b.linkType === "exact-product") -
+      Number(a.linkType === "exact-product")
+  );
+}
+
+export function getSimilarProducts(product: Product, limit = 4): Product[] {
   return products
-    .filter((p) => p.id !== product.id)
-    .map((p) => {
+    .filter(
+      (candidate) =>
+        candidate.id !== product.id && candidate.brandId !== product.brandId
+    )
+    .map((candidate) => {
       let score = 0;
-      if (p.categoryId === product.categoryId) score += 4;
-      if (p.brandId !== product.brandId) score += 2;
-      score += p.adaptiveFeatures.filter((f) =>
-        product.adaptiveFeatures.some((pf) => norm(pf) === norm(f))
+      if (candidate.category === product.category) score += 4;
+      if (candidate.clothingType === product.clothingType) score += 3;
+      score += candidate.adaptiveFeatures.filter((feature) =>
+        product.adaptiveFeatures.includes(feature)
+      ).length * 2;
+      score += candidate.disabilityNeeds.filter((need) =>
+        product.disabilityNeeds.includes(need)
       ).length;
-      return { p, score };
+      score += candidate.styleTags.filter((style) =>
+        product.styleTags.includes(style)
+      ).length;
+      return { candidate, score };
     })
-    .sort((a, b) => b.score - a.score)
-    .slice(0, count)
-    .map(({ p }) => p);
+    .sort(
+      (a, b) =>
+        b.score - a.score ||
+        Number(b.candidate.linkType === "exact-product") -
+          Number(a.candidate.linkType === "exact-product")
+    )
+    .slice(0, limit)
+    .map(({ candidate }) => candidate);
+}
+
+export function recommendProducts(params: {
+  needs?: string[];
+  styles?: string[];
+  budget?: string;
+  limit?: number;
+}) {
+  return products
+    .map((product) => {
+      const reasons: string[] = [];
+      const needs = params.needs ?? [];
+      const styles = params.styles ?? [];
+
+      needs.forEach((need) => {
+        if (
+          product.disabilityNeeds.some((item) => matches(item, need)) ||
+          product.bestFor.some((item) => matches(item, need)) ||
+          product.adaptiveFeatures.some((item) => matches(item, need))
+        ) {
+          reasons.push(`Supports ${need.toLowerCase()}`);
+        }
+      });
+      styles.forEach((style) => {
+        if (product.styleTags.some((item) => matches(item, style))) {
+          reasons.push(`Matches a ${style.toLowerCase()} style`);
+        }
+      });
+      if (params.budget && budgetMatches(product.priceRange, params.budget)) {
+        reasons.push(`Fits the ${params.budget.toLowerCase()} budget`);
+      }
+
+      return { product, reasons, score: reasons.length };
+    })
+    .filter((result) => result.score > 0 || (!params.needs?.length && !params.styles?.length))
+    .sort(
+      (a, b) =>
+        b.score - a.score ||
+        Number(b.product.linkType === "exact-product") -
+          Number(a.product.linkType === "exact-product")
+    )
+    .slice(0, params.limit ?? 6);
 }

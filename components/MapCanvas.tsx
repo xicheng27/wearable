@@ -10,7 +10,7 @@ import Link from "next/link";
  * (places, selectedId, onSelect) and swap the canvas internals.
  */
 
-const BOUNDS = { minLng: -130, maxLng: 120, minLat: -8, maxLat: 62 };
+const BOUNDS = { minLng: -128, maxLng: 12, minLat: 30, maxLat: 60 };
 const W = 1000;
 const H = 560;
 
@@ -40,7 +40,7 @@ export default function MapCanvas({
 
   return (
     <div
-      className={`relative overflow-hidden rounded-3xl border border-gray-100 bg-[#F5F4F9] ${className}`}
+      className={`paper-texture relative overflow-hidden rounded-[2rem_.8rem_2rem_2rem] border border-ink/15 bg-[#E9E0CE] shadow-paper ${className}`}
     >
       <svg
         viewBox={`0 0 ${W} ${H}`}
@@ -50,13 +50,13 @@ export default function MapCanvas({
         onClick={() => interactive && onSelect?.(null)}
       >
         {/* Abstract coastline shapes — decorative only */}
-        <g fill="#EAE7F2">
+        <g fill="#CFD4C5">
           <path d="M40 110 C140 60 230 100 290 150 C350 200 330 290 270 340 C210 390 130 380 80 320 C30 260 -20 160 40 110 Z" />
           <path d="M610 90 C700 50 800 70 870 120 C940 170 960 250 900 300 C840 350 760 330 700 290 C640 250 540 130 610 90 Z" />
           <path d="M180 420 C250 390 330 410 360 460 C390 510 340 560 270 555 C200 550 110 460 180 420 Z" />
         </g>
         {/* Grid */}
-        <g stroke="#DFDBEB" strokeWidth="1">
+        <g stroke="#9C917F" strokeWidth="1" opacity=".25" strokeDasharray="4 5">
           {Array.from({ length: 9 }).map((_, i) => (
             <line key={`v${i}`} x1={(i + 1) * 100} y1="0" x2={(i + 1) * 100} y2={H} />
           ))}
@@ -81,19 +81,15 @@ export default function MapCanvas({
               role={interactive ? "button" : undefined}
               aria-label={`${p.name}, ${p.city}`}
             >
-              <circle r="16" fill="#7C3AED" opacity={isSelected ? 0.25 : 0.12}>
-                {isSelected && (
-                  <animate attributeName="r" values="14;20;14" dur="1.6s" repeatCount="indefinite" />
-                )}
-              </circle>
+              <circle r={isSelected ? 20 : 16} fill="#76536E" opacity={isSelected ? 0.23 : 0.12} />
               <path
                 d="M0 8 C-7 0 -9 -4 -9 -9 a9 9 0 1 1 18 0 c0 5 -2 9 -9 17 Z"
                 transform="translate(0,-6)"
-                fill={isSelected ? "#5B21B6" : "#7C3AED"}
-                stroke="white"
+                fill={isSelected ? "#52364C" : "#B97861"}
+                stroke="#FCF9F2"
                 strokeWidth="2.5"
               />
-              <circle cy="-15" r="3.4" fill="white" />
+              <circle cy="-15" r="3.4" fill="#FCF9F2" />
             </g>
           );
         })}
@@ -102,7 +98,7 @@ export default function MapCanvas({
       {/* Selected place popup */}
       {selected && selectedPos && (
         <div
-          className="animate-fade-up absolute z-10 w-60 -translate-x-1/2 rounded-2xl border border-gray-100 bg-white p-4 shadow-lift"
+          className="animate-fade-up paper-panel absolute z-10 w-60 -translate-x-1/2 rounded-[1.2rem_.5rem_1.2rem_1.2rem] p-4 shadow-lift"
           style={{
             left: `${(selectedPos.x / W) * 100}%`,
             top: `${(selectedPos.y / H) * 100}%`,
@@ -113,7 +109,7 @@ export default function MapCanvas({
             {categoryLabels[selected.category]}
           </p>
           <p className="mt-1 text-sm font-semibold text-gray-900">{selected.name}</p>
-          <p className="mt-0.5 text-xs text-gray-500">
+          <p className="mt-0.5 text-xs text-gray-400">
             {selected.address} · {selected.city}
           </p>
           {selected.brandId && (
@@ -130,7 +126,7 @@ export default function MapCanvas({
         </div>
       )}
 
-      <span className="absolute bottom-3 right-4 rounded-full bg-white/80 px-2.5 py-1 text-[10px] font-medium text-gray-500 backdrop-blur-sm">
+      <span className="absolute bottom-3 right-4 rounded-full bg-white/80 px-2.5 py-1 text-[10px] font-medium text-gray-400 backdrop-blur-sm">
         Preview map · live map coming soon
       </span>
     </div>

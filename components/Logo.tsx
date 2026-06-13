@@ -6,9 +6,7 @@ interface LogoMarkProps {
 }
 
 /**
- * Xi's brand mark: a thread-like monogram "X" with the apostrophe dot,
- * on a deep-green gradient tile. Reused for navbar, favicon (app/icon.svg),
- * loading screens, and app icons.
+ * Xi's brand mark: a stitched X monogram inside a garment-label shape.
  */
 export function LogoMark({ size = 32, className = "" }: LogoMarkProps) {
   return (
@@ -23,25 +21,26 @@ export function LogoMark({ size = 32, className = "" }: LogoMarkProps) {
     >
       <defs>
         <linearGradient id="xis-tile" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#8B5CF6" />
-          <stop offset="1" stopColor="#5B21B6" />
+          <stop offset="0" stopColor="#8E6986" />
+          <stop offset="1" stopColor="#52364C" />
         </linearGradient>
       </defs>
-      <rect width="64" height="64" rx="17" fill="url(#xis-tile)" />
+      <path d="M10 8h38l6 8v40H10z" fill="url(#xis-tile)" />
+      <path d="M15 13h30l4 5v32H15z" stroke="#F7F2E8" strokeDasharray="2 3" opacity=".55" />
       <path
-        d="M21 21 L43 43"
-        stroke="white"
-        strokeWidth="7"
+        d="M21 22 L42 43"
+        stroke="#FCF9F2"
+        strokeWidth="6"
         strokeLinecap="round"
       />
       <path
-        d="M43 21 L21 43"
-        stroke="white"
-        strokeWidth="7"
+        d="M42 22 L21 43"
+        stroke="#FCF9F2"
+        strokeWidth="6"
         strokeLinecap="round"
-        opacity="0.62"
+        opacity="0.68"
       />
-      <circle cx="47.5" cy="18.5" r="4" fill="#DDD6FE" />
+      <circle cx="47.5" cy="17.5" r="3.5" fill="#E7DAC4" />
     </svg>
   );
 }
@@ -73,12 +72,12 @@ export default function Logo({
       />
       {withWordmark && (
         <span
-          className={`text-lg font-bold tracking-tight ${
-            dark ? "text-white" : "text-gray-900"
+          className={`font-display text-2xl font-semibold tracking-[-0.04em] ${
+            dark ? "text-paper" : "text-ink"
           }`}
         >
           Xi
-          <span className={dark ? "text-primary-300" : "text-primary-600"}>
+          <span className={dark ? "text-lavender" : "text-primary-700"}>
             &apos;s
           </span>
         </span>
