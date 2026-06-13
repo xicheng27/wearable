@@ -69,23 +69,27 @@ export default function HomePage() {
         />
         <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-2 lg:px-8">
           <div className="max-w-xl">
+            <p className="animate-fade-up eyebrow">Adaptive fashion directory</p>
             <h1
               id="hero-heading"
-              className="animate-fade-up text-4xl font-bold leading-[1.15] tracking-tight text-gray-900 sm:text-5xl"
+              className="animate-fade-up mt-4 text-4xl font-bold leading-[1.08] tracking-[-0.03em] text-gray-900 sm:text-5xl md:text-6xl"
+              style={{ animationDelay: "60ms" }}
             >
-              Find adaptive clothing that fits your needs.
+              Clothing that fits your{" "}
+              <span className="text-primary-700">needs</span>, not the other way
+              round.
             </h1>
             <p
               className="animate-fade-up mt-6 text-lg leading-relaxed text-gray-600 sm:text-xl"
-              style={{ animationDelay: "80ms" }}
+              style={{ animationDelay: "120ms" }}
             >
-              Browse real adaptive clothing items by brand, category, adaptive
-              feature, or the need they solve — from magnetic shirts to
-              seated-fit pants, all in one trusted place.
+              Browse real adaptive clothing — magnetic shirts, seated-fit pants,
+              easy-entry shoes — by brand, category, feature, or the need it
+              solves. One calm, trusted place.
             </p>
             <div
               className="animate-fade-up mt-10 flex flex-col gap-4 sm:flex-row"
-              style={{ animationDelay: "160ms" }}
+              style={{ animationDelay: "180ms" }}
             >
               <Link href="/search" className="btn-primary px-9 py-4 text-lg">
                 Browse Clothing
@@ -94,19 +98,36 @@ export default function HomePage() {
                 Find by Need
               </Link>
             </div>
+            <dl
+              className="animate-fade-up mt-10 flex gap-8 border-t border-line pt-6"
+              style={{ animationDelay: "240ms" }}
+            >
+              <div>
+                <dt className="text-2xl font-bold tracking-tight text-gray-900">60+</dt>
+                <dd className="text-sm text-gray-600">Adaptive pieces</dd>
+              </div>
+              <div>
+                <dt className="text-2xl font-bold tracking-tight text-gray-900">15</dt>
+                <dd className="text-sm text-gray-600">Trusted brands</dd>
+              </div>
+              <div>
+                <dt className="text-2xl font-bold tracking-tight text-gray-900">9</dt>
+                <dd className="text-sm text-gray-600">Style directions</dd>
+              </div>
+            </dl>
           </div>
           <div className="animate-fade-up hidden lg:block" style={{ animationDelay: "200ms" }}>
             <Photo
               src="/images/hero.svg"
               alt="Illustration of a clothes hanger representing adaptive fashion"
-              className="aspect-[4/3] rounded-3xl shadow-soft"
+              className="aspect-[4/3] rounded-4xl shadow-soft ring-1 ring-line"
             />
           </div>
         </div>
       </section>
 
       {/* How it works */}
-      <section className="border-y border-gray-100 bg-gray-50/60 py-16 sm:py-20" aria-labelledby="how-heading">
+      <section className="border-y border-gray-100 bg-surface py-16 sm:py-20" aria-labelledby="how-heading">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal className="mb-10 text-center sm:mb-14">
             <h2 id="how-heading" className="section-title">How Xi&apos;s works</h2>
@@ -178,7 +199,7 @@ export default function HomePage() {
       </section>
 
       {/* Popular adaptive pieces */}
-      <section className="border-y border-gray-100 bg-gray-50/60 py-16 sm:py-20" aria-labelledby="popular-heading">
+      <section className="border-y border-gray-100 bg-surface py-16 sm:py-20" aria-labelledby="popular-heading">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal className="mb-8 flex items-end justify-between sm:mb-10">
             <div>

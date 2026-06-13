@@ -35,7 +35,7 @@ export default function BrandDetailPage({ params }: PageProps) {
   const onlineOnly = brand.locations.filter((l) => l.type === "online-only");
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-surface">
       <div className="border-b border-gray-100 bg-white">
         <div className="relative h-36 w-full overflow-hidden sm:h-52">
           <Photo src={brand.image} alt={`${brand.name} adaptive fashion`} className="h-full w-full" />

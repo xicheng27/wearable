@@ -22,13 +22,20 @@ const config: Config = {
           800: "#5B21B6",
           900: "#4C1D95",
         },
+        // Warm-cool "paper" surface tinted toward the iris accent —
+        // calmer than stark grey, distinct from a clinical white.
+        surface: "#F4F3F8",
+        line: "#EAE7F2",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
       },
+      borderRadius: {
+        "4xl": "2rem",
+      },
       boxShadow: {
-        soft: "0 1px 2px rgba(16, 24, 40, 0.04), 0 8px 24px rgba(16, 24, 40, 0.06)",
-        lift: "0 4px 8px rgba(16, 24, 40, 0.05), 0 16px 40px rgba(16, 24, 40, 0.09)",
+        soft: "0 1px 2px rgba(20, 18, 40, 0.04), 0 10px 30px rgba(20, 18, 40, 0.06)",
+        lift: "0 2px 6px rgba(20, 18, 40, 0.06), 0 18px 44px rgba(20, 18, 40, 0.10)",
       },
     },
   },

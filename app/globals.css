@@ -33,27 +33,32 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary-700 px-7 py-3.5 text-base font-semibold text-white shadow-sm transition-colors duration-200 hover:bg-primary-800 active:bg-primary-900;
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary-700 px-7 py-3.5 text-base font-semibold text-white shadow-[0_1px_2px_rgba(20,18,40,0.12)] transition duration-200 ease-out hover:-translate-y-px hover:bg-primary-800 active:translate-y-0 active:bg-primary-900 motion-reduce:transform-none;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-gray-300 bg-white px-7 py-3.5 text-base font-semibold text-gray-900 transition-colors duration-200 hover:border-primary-400 hover:bg-primary-50;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-gray-300 bg-white px-7 py-3.5 text-base font-semibold text-gray-900 transition duration-200 ease-out hover:-translate-y-px hover:border-primary-300 hover:bg-primary-50 active:translate-y-0 motion-reduce:transform-none;
   }
 
   .card {
-    @apply rounded-2xl border border-gray-200 bg-white transition-shadow duration-300 ease-out;
+    @apply rounded-3xl border border-line bg-white transition duration-300 ease-out;
   }
 
   .card-hover {
-    @apply focus-within:shadow-lift hover:shadow-lift;
+    @apply hover:-translate-y-0.5 hover:shadow-lift focus-within:shadow-lift motion-reduce:hover:translate-y-0;
   }
 
   .badge {
     @apply inline-flex items-center rounded-full px-3 py-1 text-sm font-medium;
   }
 
+  /* Small-caps signpost above section titles. */
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-primary-700;
+  }
+
   .section-title {
-    @apply text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl;
+    @apply text-2xl font-bold tracking-[-0.02em] text-gray-900 sm:text-3xl;
   }
 
   .section-subtitle {
@@ -63,7 +68,7 @@
 
 @layer utilities {
   .animate-fade-up {
-    animation: fade-up 0.45s ease-out both;
+    animation: fade-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
   .animate-fade-in {
@@ -86,11 +91,13 @@
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(12px);
+    filter: blur(6px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+    filter: blur(0);
   }
 }
 
