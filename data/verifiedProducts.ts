@@ -202,8 +202,8 @@ export const verifiedProducts: Product[] = [
     "id": "june-adaptive-womens-lace-night-dress-with-back-overlap",
     "name": "Women’s Adaptive Open-Back Denim Dress",
     "brandId": "june-adaptive",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$50-$100",
     "price": "72.99",
     "currency": "CAD",
@@ -232,8 +232,7 @@ export const verifiedProducts: Product[] = [
     ],
     "styleTags": [
       "Denim",
-      "Casual",
-      "Smart casual"
+      "Casual"
     ],
     "availability": {
       "online": true,
@@ -520,7 +519,7 @@ export const verifiedProducts: Product[] = [
     "id": "june-adaptive-unisex-diabetic-wide-socks-2-pak",
     "name": "Unisex Extra Wide Edema Socks with Ultra-Stretch Fit",
     "brandId": "june-adaptive",
-    "clothingType": "Socks",
+    "clothingType": "Shoes",
     "category": "shoes",
     "priceRange": "$25-$50",
     "price": "19.98",
@@ -544,7 +543,8 @@ export const verifiedProducts: Product[] = [
       "Sensory processing",
       "Skin sensitivity",
       "Edema",
-      "Swollen feet"
+      "Swollen feet",
+      "Autism"
     ],
     "bestFor": [
       "Wheelchair users",
@@ -583,7 +583,7 @@ export const verifiedProducts: Product[] = [
     "id": "june-adaptive-unisex-diabetic-everyday-crew-socks",
     "name": "Unisex Diabetic Socks with Seamless Toe & Non-Binding Cuff",
     "brandId": "june-adaptive",
-    "clothingType": "Socks",
+    "clothingType": "Shoes",
     "category": "shoes",
     "priceRange": "$25-$50",
     "price": "19.98",
@@ -595,7 +595,8 @@ export const verifiedProducts: Product[] = [
     "adaptiveFeatures": [
       "Seated fit",
       "Easy dressing",
-      "Seamless construction"
+      "Seamless construction",
+      "Orthotic-friendly fit"
     ],
     "disabilityNeeds": [
       "Wheelchair users",
@@ -604,6 +605,9 @@ export const verifiedProducts: Product[] = [
       "Assisted dressing",
       "Sensory processing",
       "Skin sensitivity",
+      "Limb differences",
+      "Prosthetic users",
+      "Orthotics and AFOs",
       "Arthritis",
       "Parkinson's disease"
     ],
@@ -709,8 +713,8 @@ export const verifiedProducts: Product[] = [
     "id": "june-adaptive-womens-active-top-with-back-overlap",
     "name": "Women's Easy-Access Open-Back Snap Closure Shirt for Assisted Dressing",
     "brandId": "june-adaptive",
-    "clothingType": "Shirts",
-    "category": "shirts",
+    "clothingType": "Shorts",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "CAD",
@@ -738,8 +742,7 @@ export const verifiedProducts: Product[] = [
     ],
     "styleTags": [
       "Comfort",
-      "Everyday",
-      "Smart casual"
+      "Everyday"
     ],
     "availability": {
       "online": true,
@@ -773,8 +776,8 @@ export const verifiedProducts: Product[] = [
     "id": "june-adaptive-womens-strappy-top-with-back-overlap",
     "name": "Easy-Access Open-Back Snap Closure Shirt for Assisted Dressing",
     "brandId": "june-adaptive",
-    "clothingType": "Shirts",
-    "category": "shirts",
+    "clothingType": "Shorts",
+    "category": "pants",
     "priceRange": "$50-$100",
     "price": "52.99",
     "currency": "CAD",
@@ -802,8 +805,7 @@ export const verifiedProducts: Product[] = [
     ],
     "styleTags": [
       "Comfort",
-      "Everyday",
-      "Smart casual"
+      "Everyday"
     ],
     "availability": {
       "online": true,
@@ -837,8 +839,8 @@ export const verifiedProducts: Product[] = [
     "id": "june-adaptive-womens-notched-top-with-back-overlap",
     "name": "Women's Easy-Access Open-Back Floral Snap Top",
     "brandId": "june-adaptive",
-    "clothingType": "Tops",
-    "category": "tops",
+    "clothingType": "Shorts",
+    "category": "pants",
     "priceRange": "$50-$100",
     "price": "54.99",
     "currency": "CAD",
@@ -1227,6 +1229,7 @@ export const verifiedProducts: Product[] = [
       "Limited mobility",
       "Limited dexterity",
       "Assisted dressing",
+      "One-handed dressing",
       "Arthritis",
       "Parkinson's disease"
     ],
@@ -2551,7 +2554,8 @@ export const verifiedProducts: Product[] = [
     "adaptiveFeatures": [
       "Seated fit",
       "Easy dressing",
-      "Pull-on waist"
+      "Pull-on waist",
+      "Raised back waist"
     ],
     "disabilityNeeds": [
       "Wheelchair users",
@@ -3254,16 +3258,21 @@ export const verifiedProducts: Product[] = [
     "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/sv15100_svdrb_0_5_3f407ec2-5e0c-426e-9b11-18793568e8ff.jpg?v=1771356454",
     "imageAlt": "Women’s Adjustable Fit Easy-Closure Slippers by IZ Adaptive",
     "description": "IZ approved Silverts style for easy, comfortable dressing. Men’s Extra-Extra Wide Easy Closure Slippers Cozy, adjustable slippers with a customizable fit designed for all-day comfort...",
-    "accessibilityExplanation": "The official listing identifies easy dressing, extra-wide fit as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "accessibilityExplanation": "The official listing identifies easy dressing, extra-wide fit, orthotic-friendly fit as part of this item's adaptive design. Check the product page for complete fit and care details.",
     "adaptiveFeatures": [
       "Easy dressing",
-      "Extra-wide fit"
+      "Extra-wide fit",
+      "Orthotic-friendly fit",
+      "Removable insoles"
     ],
     "disabilityNeeds": [
       "Limited dexterity",
       "Assisted dressing",
       "Edema",
-      "Swollen feet"
+      "Swollen feet",
+      "Limb differences",
+      "Prosthetic users",
+      "Orthotics and AFOs"
     ],
     "bestFor": [
       "Limited dexterity",
@@ -3311,8 +3320,8 @@ export const verifiedProducts: Product[] = [
     "id": "iz-adaptive-3-pack-mens-adaptive-sleeveless-undershirt",
     "name": "Men's Open Back Undershirts - 3 Pack",
     "brandId": "iz-adaptive",
-    "clothingType": "Tops",
-    "category": "tops",
+    "clothingType": "Shirts",
+    "category": "shirts",
     "priceRange": "$50-$100",
     "price": "52.00",
     "currency": "CAD",
@@ -3334,7 +3343,8 @@ export const verifiedProducts: Product[] = [
     ],
     "styleTags": [
       "Comfort",
-      "Everyday"
+      "Everyday",
+      "Smart casual"
     ],
     "availability": {
       "online": true,
@@ -3433,7 +3443,7 @@ export const verifiedProducts: Product[] = [
     "id": "iz-adaptive-mens-womens-non-skid-hospital-socks-6-pack-slipper-socks",
     "name": "Non Gender Slip Resistant Fuzzy Socks - 6 Pack",
     "brandId": "iz-adaptive",
-    "clothingType": "Socks",
+    "clothingType": "Shoes",
     "category": "shoes",
     "priceRange": "$25-$50",
     "price": "33.00",
@@ -4362,16 +4372,21 @@ export const verifiedProducts: Product[] = [
     "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/sv55105_svcab_0_r1lqbb7efhielbkd_2b3e0c1c-fc8f-429f-ace2-861fcd0d33b2.jpg?v=1771054480",
     "imageAlt": "Men’s Adjustable Fit Easy-Closure Slippers - Sherpa Edition by IZ Adaptive",
     "description": "IZ approved Silverts style for easy, comfortable dressing. Men’s Extra-Extra Wide Easy Closure Slippers Cozy, adjustable slippers with a customizable fit designed for all-day comfort...",
-    "accessibilityExplanation": "The official listing identifies easy dressing, extra-wide fit as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "accessibilityExplanation": "The official listing identifies easy dressing, extra-wide fit, orthotic-friendly fit as part of this item's adaptive design. Check the product page for complete fit and care details.",
     "adaptiveFeatures": [
       "Easy dressing",
-      "Extra-wide fit"
+      "Extra-wide fit",
+      "Orthotic-friendly fit",
+      "Removable insoles"
     ],
     "disabilityNeeds": [
       "Limited dexterity",
       "Assisted dressing",
       "Edema",
-      "Swollen feet"
+      "Swollen feet",
+      "Limb differences",
+      "Prosthetic users",
+      "Orthotics and AFOs"
     ],
     "bestFor": [
       "Limited dexterity",
@@ -4428,16 +4443,21 @@ export const verifiedProducts: Product[] = [
     "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/sv55430_svbgr_0_vpgse3bgolkir8zk_484b25d4-f831-42d5-afe3-b5d413e3fd9d.jpg?v=1771055383",
     "imageAlt": "Men’s Adjustable Width Comfort Shoes by IZ Adaptive",
     "description": "IZ approved Silverts style for easy, comfortable dressing. Men’s Adjustable Width Comfort Shoes Slip-on style with customizable width for all-day comfort and support, designed to fit from D...",
-    "accessibilityExplanation": "The official listing identifies easy dressing, extra-wide fit as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "accessibilityExplanation": "The official listing identifies easy dressing, extra-wide fit, orthotic-friendly fit as part of this item's adaptive design. Check the product page for complete fit and care details.",
     "adaptiveFeatures": [
       "Easy dressing",
-      "Extra-wide fit"
+      "Extra-wide fit",
+      "Orthotic-friendly fit",
+      "Removable insoles"
     ],
     "disabilityNeeds": [
       "Limited dexterity",
       "Assisted dressing",
       "Edema",
-      "Swollen feet"
+      "Swollen feet",
+      "Limb differences",
+      "Prosthetic users",
+      "Orthotics and AFOs"
     ],
     "bestFor": [
       "Limited dexterity",
@@ -4499,16 +4519,21 @@ export const verifiedProducts: Product[] = [
     "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/sv15440_svwdb_0_6cb6c415-3dab-49e3-b9fe-92e96667766c.jpg?v=1771055362",
     "imageAlt": "Women’s Adjustable Width Slip-On Sneakers by IZ Adaptive",
     "description": "IZ approved Silverts style for easy, comfortable dressing. Women’s Adjustable Width Comfort Shoes Slip-on comfort with a customizable fit—designed to adjust from regular to extra-wide...",
-    "accessibilityExplanation": "The official listing identifies easy dressing, extra-wide fit as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "accessibilityExplanation": "The official listing identifies easy dressing, extra-wide fit, orthotic-friendly fit as part of this item's adaptive design. Check the product page for complete fit and care details.",
     "adaptiveFeatures": [
       "Easy dressing",
-      "Extra-wide fit"
+      "Extra-wide fit",
+      "Orthotic-friendly fit",
+      "Removable insoles"
     ],
     "disabilityNeeds": [
       "Limited dexterity",
       "Assisted dressing",
       "Edema",
-      "Swollen feet"
+      "Swollen feet",
+      "Limb differences",
+      "Prosthetic users",
+      "Orthotics and AFOs"
     ],
     "bestFor": [
       "Limited dexterity",
@@ -4570,17 +4595,23 @@ export const verifiedProducts: Product[] = [
     "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/sv15430_svmbn_0_8ce0a5c1-fd9a-47c1-8d0c-b9bc17727a4e.jpg?v=1771055340",
     "imageAlt": "Women’s Adjustable Width Comfort Shoes by IZ Adaptive",
     "description": "IZ approved Silverts style for easy, comfortable dressing. Women’s True Fit Adjustable Comfort Shoes Slip-on comfort with customizable fit—designed to adjust from regular to extra-wide...",
-    "accessibilityExplanation": "The official listing identifies easy dressing as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "accessibilityExplanation": "The official listing identifies easy dressing, orthotic-friendly fit, removable insoles as part of this item's adaptive design. Check the product page for complete fit and care details.",
     "adaptiveFeatures": [
-      "Easy dressing"
+      "Easy dressing",
+      "Orthotic-friendly fit",
+      "Removable insoles"
     ],
     "disabilityNeeds": [
       "Limited dexterity",
-      "Assisted dressing"
+      "Assisted dressing",
+      "Limb differences",
+      "Prosthetic users",
+      "Orthotics and AFOs"
     ],
     "bestFor": [
       "Limited dexterity",
-      "Assisted dressing"
+      "Assisted dressing",
+      "Limb differences"
     ],
     "styleTags": [
       "Comfort",
@@ -4629,8 +4660,8 @@ export const verifiedProducts: Product[] = [
     "id": "iz-adaptive-men-s-open-back-magnetic-fly-pants",
     "name": "Men's Open Back Pants with Magnetic Fly",
     "brandId": "iz-adaptive",
-    "clothingType": "Pants",
-    "category": "pants",
+    "clothingType": "Jeans",
+    "category": "jeans",
     "priceRange": "$50-$100",
     "price": "66.00",
     "currency": "CAD",
@@ -4717,7 +4748,8 @@ export const verifiedProducts: Product[] = [
       "Wheelchair users",
       "Limited mobility",
       "Limb differences",
-      "Prosthetic users"
+      "Prosthetic users",
+      "Orthotics and AFOs"
     ],
     "bestFor": [
       "Wheelchair users",
@@ -4887,13 +4919,15 @@ export const verifiedProducts: Product[] = [
       "Magnetic closures",
       "Side access",
       "Prosthetic access",
-      "Touch-and-close fastening"
+      "Touch-and-close fastening",
+      "Orthotic-friendly fit"
     ],
     "disabilityNeeds": [
       "Limited dexterity",
       "Assisted dressing",
       "Limb differences",
-      "Prosthetic users"
+      "Prosthetic users",
+      "Orthotics and AFOs"
     ],
     "bestFor": [
       "Limited dexterity",
@@ -6063,16 +6097,18 @@ export const verifiedProducts: Product[] = [
     "imageUrl": "https://cdn.shopify.com/s/files/1/1910/0663/files/Screenshot2025-08-20at6.50.54PM.jpg?v=1757107656",
     "imageAlt": "Cropped 3/4 Sleeve Blouse by Will & Well",
     "description": "Inspired by our sold-out Launch Collection favourite, the Cropped Cape , this reimagined 3/4 sleeve blouse brings that same beloved silhouette to your everyday wardrobe. Our signature...",
-    "accessibilityExplanation": "The official listing identifies magnetic closures, seated fit as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, seated fit, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
     "adaptiveFeatures": [
       "Magnetic closures",
-      "Seated fit"
+      "Seated fit",
+      "Limited-dexterity design"
     ],
     "disabilityNeeds": [
       "Wheelchair users",
       "Limited mobility",
       "Limited dexterity",
       "Assisted dressing",
+      "One-handed dressing",
       "Arthritis",
       "Parkinson's disease"
     ],
@@ -6120,20 +6156,22 @@ export const verifiedProducts: Product[] = [
     "imageUrl": "https://cdn.shopify.com/s/files/1/1910/0663/files/Screenshot2025-08-20at6.54.21PM.jpg?v=1757105406",
     "imageAlt": "Oversized 3/4 Sleeve Shirt by Will & Well",
     "description": "Meet your new go-to: this oversized 3/4 sleeve shirt that's lightweight, comfortable, and destined to become a wardrobe favourite. Our signature MagSnap buttons make getting dressed a...",
-    "accessibilityExplanation": "The official listing identifies magnetic closures as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
     "adaptiveFeatures": [
-      "Magnetic closures"
+      "Magnetic closures",
+      "Limited-dexterity design"
     ],
     "disabilityNeeds": [
       "Limited dexterity",
       "Assisted dressing",
+      "One-handed dressing",
       "Arthritis",
       "Parkinson's disease"
     ],
     "bestFor": [
       "Limited dexterity",
       "Assisted dressing",
-      "Arthritis"
+      "One-handed dressing"
     ],
     "styleTags": [
       "Comfort",
@@ -6174,20 +6212,22 @@ export const verifiedProducts: Product[] = [
     "imageUrl": "https://cdn.shopify.com/s/files/1/1910/0663/files/IMG_1021copy-2.jpg?v=1734195485",
     "imageAlt": "Cropped Long Sleeve Shirt by Will & Well",
     "description": "This Cropped Long Sleeve Shirt has its origins in our Launch Collection, with the Men's Slim Fit Long Sleeve Shirt r edesigned to provide the same ease and comfort for women. The magnetic...",
-    "accessibilityExplanation": "The official listing identifies magnetic closures as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
     "adaptiveFeatures": [
-      "Magnetic closures"
+      "Magnetic closures",
+      "Limited-dexterity design"
     ],
     "disabilityNeeds": [
       "Limited dexterity",
       "Assisted dressing",
+      "One-handed dressing",
       "Arthritis",
       "Parkinson's disease"
     ],
     "bestFor": [
       "Limited dexterity",
       "Assisted dressing",
-      "Arthritis"
+      "One-handed dressing"
     ],
     "styleTags": [
       "Smart casual"
@@ -6559,20 +6599,22 @@ export const verifiedProducts: Product[] = [
     "imageUrl": "https://cdn.shopify.com/s/files/1/1910/0663/products/DSCF1104-2.jpg?v=1608543650",
     "imageAlt": "Tropical Short Sleeve Shirt by Will & Well",
     "description": "Blend in with the flora or stand out in the urban jungle. This tropical shirt comes with MagSnap buttons that magnetically snap right into place. Snap on and take a walk on the wild side....",
-    "accessibilityExplanation": "The official listing identifies magnetic closures as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
     "adaptiveFeatures": [
-      "Magnetic closures"
+      "Magnetic closures",
+      "Limited-dexterity design"
     ],
     "disabilityNeeds": [
       "Limited dexterity",
       "Assisted dressing",
+      "One-handed dressing",
       "Arthritis",
       "Parkinson's disease"
     ],
     "bestFor": [
       "Limited dexterity",
       "Assisted dressing",
-      "Arthritis"
+      "One-handed dressing"
     ],
     "styleTags": [
       "Everyday",
@@ -6673,20 +6715,22 @@ export const verifiedProducts: Product[] = [
     "imageUrl": "https://cdn.shopify.com/s/files/1/1910/0663/products/GHXL6209_plain_copy.png?v=1581926128",
     "imageAlt": "Slim-Fit Short Sleeve Shirt by Will & Well",
     "description": "Put on the slim-fit short sleeve shirt and the magnetic shirt buttons snap right into place, no buttoning ever required. Snap on and get out of the door. Wear the difference. Adaptive...",
-    "accessibilityExplanation": "The official listing identifies magnetic closures as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
     "adaptiveFeatures": [
-      "Magnetic closures"
+      "Magnetic closures",
+      "Limited-dexterity design"
     ],
     "disabilityNeeds": [
       "Limited dexterity",
       "Assisted dressing",
+      "One-handed dressing",
       "Arthritis",
       "Parkinson's disease"
     ],
     "bestFor": [
       "Limited dexterity",
       "Assisted dressing",
-      "Arthritis"
+      "One-handed dressing"
     ],
     "styleTags": [
       "Everyday",
@@ -6786,20 +6830,22 @@ export const verifiedProducts: Product[] = [
     "imageUrl": "https://cdn.shopify.com/s/files/1/1910/0663/products/GHXL6681.png?v=1578232309",
     "imageAlt": "Leave UV: Slim-Fit Short Sleeve Shirt by Will & Well",
     "description": "[shortdesc]Put on the UV Slim Fit Short Sleeve Shirt and magnetic buttons snap right into place – no buttoning required, ever. Snap-on and get out of the door. Then maybe into the shelter...",
-    "accessibilityExplanation": "The official listing identifies magnetic closures as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
     "adaptiveFeatures": [
-      "Magnetic closures"
+      "Magnetic closures",
+      "Limited-dexterity design"
     ],
     "disabilityNeeds": [
       "Limited dexterity",
       "Assisted dressing",
+      "One-handed dressing",
       "Arthritis",
       "Parkinson's disease"
     ],
     "bestFor": [
       "Limited dexterity",
       "Assisted dressing",
-      "Arthritis"
+      "One-handed dressing"
     ],
     "styleTags": [
       "Sporty",
@@ -6841,20 +6887,22 @@ export const verifiedProducts: Product[] = [
     "imageUrl": "https://cdn.shopify.com/s/files/1/1910/0663/products/image_a7392eba-de4c-49e7-90c1-def8480c848e.jpg?v=1548035572",
     "imageAlt": "Cropped Cape by Will & Well",
     "description": "The Cropped Cape is the perfect companion to complete your outfit on a cool day. Throw it on and magnetic buttons breezily snap into place. Easily access your essentials with the front...",
-    "accessibilityExplanation": "The official listing identifies magnetic closures as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
     "adaptiveFeatures": [
-      "Magnetic closures"
+      "Magnetic closures",
+      "Limited-dexterity design"
     ],
     "disabilityNeeds": [
       "Limited dexterity",
       "Assisted dressing",
+      "One-handed dressing",
       "Arthritis",
       "Parkinson's disease"
     ],
     "bestFor": [
       "Limited dexterity",
       "Assisted dressing",
-      "Arthritis"
+      "One-handed dressing"
     ],
     "styleTags": [
       "Smart casual"
@@ -6893,20 +6941,22 @@ export const verifiedProducts: Product[] = [
     "imageUrl": "https://cdn.shopify.com/s/files/1/1910/0663/products/GHXL6179.png?v=1578232373",
     "imageAlt": "Slim-Fit Long Sleeve Shirt by Will & Well",
     "description": "Put on the slim-fit long sleeve shirt and the magnetic shirt buttons snap right into place, no buttoning ever required. Snap on and get out of the door. Wear the difference. Adaptive...",
-    "accessibilityExplanation": "The official listing identifies magnetic closures as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
     "adaptiveFeatures": [
-      "Magnetic closures"
+      "Magnetic closures",
+      "Limited-dexterity design"
     ],
     "disabilityNeeds": [
       "Limited dexterity",
       "Assisted dressing",
+      "One-handed dressing",
       "Arthritis",
       "Parkinson's disease"
     ],
     "bestFor": [
       "Limited dexterity",
       "Assisted dressing",
-      "Arthritis"
+      "One-handed dressing"
     ],
     "styleTags": [
       "Smart casual"
@@ -6932,6 +6982,9624 @@ export const verifiedProducts: Product[] = [
     "oneHandedDressing": true,
     "featured": false,
     "productUrl": "https://willandwell.com/products/slim-fit-long-sleeve-shirt",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-green-and-navy-grid-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
+    "name": "Green and Navy Grid Long Sleeve Button Down Collar Shirt with Magnetic Closures",
+    "brandId": "magnaready",
+    "clothingType": "Shirts",
+    "category": "shirts",
+    "priceRange": "$50-$100",
+    "price": "74.95",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/2_1c635223-ec7d-43f8-bbe2-65f447f538ba.jpg?v=1779305747",
+    "imageAlt": "Green and Navy Grid Long Sleeve Button Down Collar Shirt with Magnetic Closures by MagnaReady",
+    "description": "Engineered with MagnaReady®'s patented magnetic closure technology , this shirt is thoughtfully designed for individuals living with disabilities, limited mobility, Parkinson’s, ALS,...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, medical-device access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Medical-device access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday",
+      "Smart casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large",
+      "3XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/green-and-navy-grid-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-new-blue-and-orange-plaid-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
+    "name": "Blue and Orange Plaid Long Sleeve Button Down Collar Shirt with Magnetic Closures",
+    "brandId": "magnaready",
+    "clothingType": "Shirts",
+    "category": "shirts",
+    "priceRange": "$50-$100",
+    "price": "74.95",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/5_219a7e82-bc37-426a-b93b-003fb884e986.jpg?v=1779304901",
+    "imageAlt": "Blue and Orange Plaid Long Sleeve Button Down Collar Shirt with Magnetic Closures by MagnaReady",
+    "description": "Engineered with MagnaReady®'s patented magnetic closure technology , this shirt is thoughtfully designed for individuals living with disabilities, limited mobility, Parkinson’s, ALS,...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, medical-device access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Medical-device access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday",
+      "Smart casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large",
+      "3XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/new-blue-and-orange-plaid-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-light-blue-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
+    "name": "Light Blue Long Sleeve Button Down Collar Shirt with Magnetic Closures",
+    "brandId": "magnaready",
+    "clothingType": "Shirts",
+    "category": "shirts",
+    "priceRange": "$50-$100",
+    "price": "74.95",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/2_2bf49939-c21f-4670-838f-575c789a537a.jpg?v=1779302703",
+    "imageAlt": "Light Blue Long Sleeve Button Down Collar Shirt with Magnetic Closures by MagnaReady",
+    "description": "Engineered with MagnaReady®'s patented magnetic closure technology , this shirt is thoughtfully designed for individuals living with disabilities, limited mobility, Parkinson’s, ALS,...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, medical-device access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Medical-device access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday",
+      "Smart casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large",
+      "3XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/light-blue-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-blue-and-yellow-short-sleeve-shirt-with-magnetic-closures",
+    "name": "Blue and Yellow Short Sleeve Shirt with Magnetic Closures",
+    "brandId": "magnaready",
+    "clothingType": "Shorts",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "69.95",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/2_5541987d-ece5-43ab-b528-7bdb530345c2.jpg?v=1779301239",
+    "imageAlt": "Blue and Yellow Short Sleeve Shirt with Magnetic Closures by MagnaReady",
+    "description": "MagnaReady® Adaptive Short Sleeve Traditional Fit Shirt – 100% Cotton, Button-Down Collar Please consult your physician before use if you have a pacemaker, defibrillator, stent, or other...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, medical-device access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Medical-device access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large",
+      "3XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/blue-and-yellow-short-sleeve-shirt-with-magnetic-closures",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-flat-front-adaptive-stretch-tech-pant-with-magnetic-closures-stone",
+    "name": "Flat Front Adaptive Stretch Lightweight Pant with Magnetic Closures - Stone",
+    "brandId": "magnaready",
+    "clothingType": "Pants",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "74.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/flat-front-adaptive-stretch-tech-pant-magnetic-closures-stone-performance-magnaready.png?v=1779133306",
+    "imageAlt": "Flat Front Adaptive Stretch Lightweight Pant with Magnetic Closures - Stone by MagnaReady",
+    "description": "Please Seek Physician Approval for any Implantable Device, Stent, Pacemaker, or Defibrillator. MagnaReady® Tech Stretch Pant Everyday Performance. Adaptive by Design. The MagnaReady® Tech...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, touch-and-close fastening, leak-resistant construction as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Touch-and-close fastening",
+      "Leak-resistant construction"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "30x30",
+      "30x32",
+      "32x30",
+      "32x32",
+      "34x30",
+      "34x32",
+      "34x34",
+      "36x30",
+      "36x32",
+      "36x34",
+      "38x30",
+      "38x32",
+      "40x30",
+      "40x32",
+      "42x30",
+      "42x32",
+      "44x30",
+      "44x32"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/flat-front-adaptive-stretch-tech-pant-with-magnetic-closures-stone",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-flat-front-adaptive-stretch-tech-pant-with-magnetic-closures-black",
+    "name": "Flat Front Adaptive Stretch Everyday Pant with Magnetic Closures - Black",
+    "brandId": "magnaready",
+    "clothingType": "Pants",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "74.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/flat-front-adaptive-stretch-tech-pant-black-magnetic-closures-pre-order.png?v=1779133282",
+    "imageAlt": "Flat Front Adaptive Stretch Everyday Pant with Magnetic Closures - Black by MagnaReady",
+    "description": "Please Seek Physician Approval for any Implantable Device, Stent, Pacemaker, or Defibrillator. MagnaReady® Tech Stretch Pant Everyday Performance. Adaptive by Design. The MagnaReady® Tech...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, touch-and-close fastening, leak-resistant construction as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Touch-and-close fastening",
+      "Leak-resistant construction"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "30x30",
+      "30x32",
+      "32x30",
+      "32x32",
+      "34x30",
+      "34x32",
+      "34x34",
+      "36x30",
+      "36x32",
+      "38x30",
+      "38x32",
+      "40x30",
+      "40x32",
+      "42x30",
+      "42x32",
+      "44x30",
+      "44x32"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/flat-front-adaptive-stretch-tech-pant-with-magnetic-closures-black",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-flat-front-adaptive-stretch-tech-pant-with-magnetic-closures-brown",
+    "name": "Flat Front Adaptive Stretch Lightweight Pant with Magnetic Closures - Brown",
+    "brandId": "magnaready",
+    "clothingType": "Pants",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "74.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/flat-front-adaptive-stretch-tech-pant-brown-magnetic-closures-pre-order-magnaready.jpg?v=1779133264",
+    "imageAlt": "Flat Front Adaptive Stretch Lightweight Pant with Magnetic Closures - Brown by MagnaReady",
+    "description": "Please Seek Physician Approval for any Implantable Device, Stent, Pacemaker, or Defibrillator. MagnaReady® Tech Stretch Pant Everyday Performance. Adaptive by Design. The MagnaReady® Tech...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, touch-and-close fastening, leak-resistant construction as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Touch-and-close fastening",
+      "Leak-resistant construction"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "30x30",
+      "30x32",
+      "32x30",
+      "32x32",
+      "34x30",
+      "34x32",
+      "34x34",
+      "36x30",
+      "36x32",
+      "38x30",
+      "38x32",
+      "40x30",
+      "40x32",
+      "42x30",
+      "42x32",
+      "44x30",
+      "44x32"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/flat-front-adaptive-stretch-tech-pant-with-magnetic-closures-brown",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-brooks-brothers-x-magnaready-stretch-long-sleeve-blue-plaid-button-down-collar-with-magnetic-closures",
+    "name": "Brooks Brothers  X MagnaReady Stretch Long Sleeve Blue Plaid Button-Down Collar with Magnetic Closures",
+    "brandId": "magnaready",
+    "clothingType": "Dresses",
+    "category": "dresses",
+    "priceRange": "$100-$150",
+    "price": "119.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/brooks-brothers-magnaready-stretch-long-sleeve-blue-plaid-button-down-shirt-magnetic-closures.jpg?v=1779135381",
+    "imageAlt": "Brooks Brothers  X MagnaReady Stretch Long Sleeve Blue Plaid Button-Down Collar with Magnetic Closures by MagnaReady",
+    "description": "Brooks Brothers x MagnaReady®: Celebrating 125 Years of Innovation – Now with Adaptive Technology Adaptive Magnetic Oxford Shirt - The original Oxford. Now easier to wear. For 125 years,...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Limited-dexterity design"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "styleTags": [
+      "Formal",
+      "Professional",
+      "Smart casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/brooks-brothers-x-magnaready-stretch-long-sleeve-blue-plaid-button-down-collar-with-magnetic-closures",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-brooks-brothers-x-magnaready-stretch-long-sleeve-pink-plaid-button-down-collar-with-magnetic-closures",
+    "name": "Brooks Brothers  X MagnaReady Stretch Long Sleeve Pink Plaid Button-Down Collar with Magnetic Closures",
+    "brandId": "magnaready",
+    "clothingType": "Dresses",
+    "category": "dresses",
+    "priceRange": "$100-$150",
+    "price": "119.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/brooks-brothers-magnaready-pink-plaid-button-down-shirt-magnetic-closures-adaptive-technology.jpg?v=1779135400",
+    "imageAlt": "Brooks Brothers  X MagnaReady Stretch Long Sleeve Pink Plaid Button-Down Collar with Magnetic Closures by MagnaReady",
+    "description": "Brooks Brothers x MagnaReady®: Celebrating 125 Years of Innovation – Now with Adaptive Technology Adaptive Magnetic Oxford Shirt - The original Oxford. Now easier to wear. For 125 years,...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Limited-dexterity design"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "styleTags": [
+      "Formal",
+      "Professional",
+      "Smart casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/brooks-brothers-x-magnaready-stretch-long-sleeve-pink-plaid-button-down-collar-with-magnetic-closures",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-new-adaptive-cargo-twill-short-with-magnetic-closures-stone",
+    "name": "Adaptive Cargo Twill Short with Magnetic Closures - Stone",
+    "brandId": "magnaready",
+    "clothingType": "Shorts",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "64.50",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/adaptive-cargo-twill-shorts-magnetic-closures-stone-men-2023.jpg?v=1779135333",
+    "imageAlt": "Adaptive Cargo Twill Short with Magnetic Closures - Stone by MagnaReady",
+    "description": "Please Seek Physician Approval for any Implantable Device, Stent, Pacemaker, or Defibrillator. Classic Shorts, Made for Effortless Dressing Our Adaptive Chino Short by MagnaReady® offers...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, seated fit, easy dressing as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Seated fit",
+      "Easy dressing",
+      "Zip access",
+      "Touch-and-close fastening"
+    ],
+    "disabilityNeeds": [
+      "Wheelchair users",
+      "Limited mobility",
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Wheelchair users",
+      "Limited mobility",
+      "Limited dexterity"
+    ],
+    "styleTags": [
+      "Formal",
+      "Professional",
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "30",
+      "32",
+      "34",
+      "36",
+      "38",
+      "40",
+      "42",
+      "44"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": true,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/new-adaptive-cargo-twill-short-with-magnetic-closures-stone",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-adaptive-cargo-short-with-magnetic-closures-olive",
+    "name": "Adaptive Cargo Twill Short with Magnetic Closures - Olive",
+    "brandId": "magnaready",
+    "clothingType": "Shorts",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "64.50",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/adaptive-cargo-twill-short-magnetic-closures-olive-classic-comfort-limited-mobility.jpg?v=1779135358",
+    "imageAlt": "Adaptive Cargo Twill Short with Magnetic Closures - Olive by MagnaReady",
+    "description": "Please Seek Physician Approval for any Implantable Device, Stent, Pacemaker, or Defibrillator. Classic Shorts, Made for Effortless Dressing Our Adaptive Chino Short by MagnaReady® offers...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, seated fit, easy dressing as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Seated fit",
+      "Easy dressing",
+      "Zip access",
+      "Touch-and-close fastening"
+    ],
+    "disabilityNeeds": [
+      "Wheelchair users",
+      "Limited mobility",
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Wheelchair users",
+      "Limited mobility",
+      "Limited dexterity"
+    ],
+    "styleTags": [
+      "Formal",
+      "Professional",
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "30",
+      "32",
+      "34",
+      "36",
+      "38",
+      "40",
+      "42",
+      "44"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": true,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/adaptive-cargo-short-with-magnetic-closures-olive",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-adaptive-cooling-magnetic-front-short-sleeve-shirt-in-navy-window-pane",
+    "name": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in Navy Windowpane",
+    "brandId": "magnaready",
+    "clothingType": "Shorts",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "64.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/adaptive-cooling-magnetic-front-short-sleeve-shirt-navy-windowpane-limited-mobility-comfort.jpg?v=1780499428",
+    "imageAlt": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in Navy Windowpane by MagnaReady",
+    "description": "Adaptive Magnetic Cooling Shirt – Ideal for Parkinson’s, Stroke Recovery, Arthritis & Limited Mobility Please seek physician approval before use if you have a pacemaker, defibrillator, or...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, easy dressing, medical-device access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Easy dressing",
+      "Medical-device access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large",
+      "3XL",
+      "4XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/adaptive-cooling-magnetic-front-short-sleeve-shirt-in-navy-window-pane",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-adaptive-cooling-magnetic-front-short-sleeve-shirt-in-navy-diamond",
+    "name": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in Navy Diamond",
+    "brandId": "magnaready",
+    "clothingType": "Shorts",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "64.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/adaptive-cooling-magnetic-front-short-sleeve-shirt-navy-diamond-limited-mobility-arthritis-recovery.jpg?v=1780499441",
+    "imageAlt": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in Navy Diamond by MagnaReady",
+    "description": "Adaptive Magnetic Cooling Shirt – Ideal for Parkinson’s, Stroke Recovery, Arthritis & Limited Mobility Please seek physician approval before use if you have a pacemaker, defibrillator, or...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, easy dressing, medical-device access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Easy dressing",
+      "Medical-device access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large",
+      "3XL",
+      "4XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/adaptive-cooling-magnetic-front-short-sleeve-shirt-in-navy-diamond",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-adaptive-cooling-magnetic-front-short-sleeve-shirt-in-pink-blue-stripe",
+    "name": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in Pink and Blue Stripe",
+    "brandId": "magnaready",
+    "clothingType": "Shorts",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "64.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/adaptive-cooling-magnetic-front-short-sleeve-shirt-pink-blue-stripe-limited-mobility-comfort_1.jpg?v=1780499443",
+    "imageAlt": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in Pink and Blue Stripe by MagnaReady",
+    "description": "Adaptive Magnetic Cooling Shirt – Ideal for Parkinson’s, Stroke Recovery, Arthritis & Limited Mobility Please seek physician approval before use if you have a pacemaker, defibrillator, or...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, easy dressing, medical-device access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Easy dressing",
+      "Medical-device access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large",
+      "3XL",
+      "4XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/adaptive-cooling-magnetic-front-short-sleeve-shirt-in-pink-blue-stripe",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-adaptive-cooling-magnetic-front-short-sleeve-shirt-in-white-windowpane",
+    "name": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in White Windowpane",
+    "brandId": "magnaready",
+    "clothingType": "Shorts",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "64.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/adaptive-cooling-magnetic-short-sleeve-shirt-white-windowpane-for-limited-mobility-comfort.jpg?v=1780499447",
+    "imageAlt": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in White Windowpane by MagnaReady",
+    "description": "Adaptive Magnetic Cooling Shirt – Ideal for Parkinson’s, Stroke Recovery, Arthritis & Limited Mobility Please seek physician approval before use if you have a pacemaker, defibrillator, or...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, easy dressing, medical-device access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Easy dressing",
+      "Medical-device access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large",
+      "3XL",
+      "4XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/adaptive-cooling-magnetic-front-short-sleeve-shirt-in-white-windowpane",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-adaptive-cooling-magnetic-front-short-sleeve-shirt-in-blue-grey-palm",
+    "name": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in Blue Grey Palm",
+    "brandId": "magnaready",
+    "clothingType": "Shorts",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "64.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/adaptive-cooling-magnetic-short-sleeve-shirt-blue-grey-palm-limited-mobility-comfort_1.jpg?v=1779135239",
+    "imageAlt": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in Blue Grey Palm by MagnaReady",
+    "description": "Adaptive Magnetic Cooling Shirt – Ideal for Parkinson’s, Stroke Recovery, Arthritis & Limited Mobility Please seek physician approval before use if you have a pacemaker, defibrillator, or...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, easy dressing, medical-device access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Easy dressing",
+      "Medical-device access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large",
+      "3XL",
+      "4XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/adaptive-cooling-magnetic-front-short-sleeve-shirt-in-blue-grey-palm",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-adaptive-cooling-magnetic-front-short-sleeve-shirt-in-green-stripe",
+    "name": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in Green Stripe",
+    "brandId": "magnaready",
+    "clothingType": "Shorts",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "64.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/adaptive-cooling-magnetic-short-sleeve-shirt-green-stripe-limited-mobility-comfort-performance.jpg?v=1779135256",
+    "imageAlt": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in Green Stripe by MagnaReady",
+    "description": "Adaptive Magnetic Cooling Shirt – Ideal for Parkinson’s, Stroke Recovery, Arthritis & Limited Mobility Please seek physician approval before use if you have a pacemaker, defibrillator, or...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, easy dressing, medical-device access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Easy dressing",
+      "Medical-device access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large",
+      "3XL",
+      "4XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/adaptive-cooling-magnetic-front-short-sleeve-shirt-in-green-stripe",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-adaptive-cooling-magnetic-front-short-sleeve-shirt-in-blue-stripe",
+    "name": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in Blue Stripe",
+    "brandId": "magnaready",
+    "clothingType": "Shorts",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "64.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/adaptive-cooling-magnetic-short-sleeve-shirt-blue-stripe-support-limited-mobility.jpg?v=1779135276",
+    "imageAlt": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in Blue Stripe by MagnaReady",
+    "description": "Adaptive Magnetic Cooling Shirt – Ideal for Parkinson’s, Stroke Recovery, Arthritis & Limited Mobility Please seek physician approval before use if you have a pacemaker, defibrillator, or...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, easy dressing, medical-device access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Easy dressing",
+      "Medical-device access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large",
+      "3XL",
+      "4XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/adaptive-cooling-magnetic-front-short-sleeve-shirt-in-blue-stripe",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-adaptive-cooling-magnetic-front-short-sleeve-shirt-in-blue-palm",
+    "name": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in Blue Palm",
+    "brandId": "magnaready",
+    "clothingType": "Shorts",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "64.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/adaptive-cooling-magnetic-short-sleeve-shirt-blue-palm-arthritis-limited-mobility-comfort.jpg?v=1779135296",
+    "imageAlt": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in Blue Palm by MagnaReady",
+    "description": "Adaptive Magnetic Cooling Shirt – Ideal for Parkinson’s, Stroke Recovery, Arthritis & Limited Mobility Please seek physician approval before use if you have a pacemaker, defibrillator, or...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, easy dressing, medical-device access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Easy dressing",
+      "Medical-device access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large",
+      "3XL",
+      "4XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/adaptive-cooling-magnetic-front-short-sleeve-shirt-in-blue-palm",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-adaptive-cooling-magnetic-front-short-sleeve-shirt-in-coral",
+    "name": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in Coral Stripe",
+    "brandId": "magnaready",
+    "clothingType": "Shorts",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "64.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/adaptive-cooling-magnetic-front-short-sleeve-shirt-coral-stripe-limited-mobility-comfort.jpg?v=1779135315",
+    "imageAlt": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in Coral Stripe by MagnaReady",
+    "description": "Adaptive Magnetic Cooling Shirt – Ideal for Parkinson’s, Stroke Recovery, Arthritis & Limited Mobility Please seek physician approval before use if you have a pacemaker, defibrillator, or...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, easy dressing, medical-device access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Easy dressing",
+      "Medical-device access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large",
+      "3XL",
+      "4XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/adaptive-cooling-magnetic-front-short-sleeve-shirt-in-coral",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-green-blue-check-short-sleeve-shirt-with-magnetic-closures",
+    "name": "Green and Blue Check Short Sleeve Shirt with Magnetic Closures",
+    "brandId": "magnaready",
+    "clothingType": "Shorts",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "69.95",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/green-blue-check-short-sleeve-shirt-magnetic-closures-adaptive-fit-cotton-mens-clothing.jpg?v=1779133360",
+    "imageAlt": "Green and Blue Check Short Sleeve Shirt with Magnetic Closures by MagnaReady",
+    "description": "MagnaReady® Adaptive Short Sleeve Traditional Fit Shirt – 100% Cotton, Button-Down Collar Please consult your physician before use if you have a pacemaker, defibrillator, stent, or other...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, medical-device access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Medical-device access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/green-blue-check-short-sleeve-shirt-with-magnetic-closures",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-brown-and-white-long-sleeve-heights-button-down-collar-shirt-with-magnetic-closures",
+    "name": "Blue and Pink Grid Long Sleeve Button Down Collar Shirt with Magnetic Closures",
+    "brandId": "magnaready",
+    "clothingType": "Shirts",
+    "category": "shirts",
+    "priceRange": "$50-$100",
+    "price": "74.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/2_c8bde749-a7eb-42c5-bc92-486e12835d0c.jpg?v=1776891741",
+    "imageAlt": "Blue and Pink Grid Long Sleeve Button Down Collar Shirt with Magnetic Closures by MagnaReady",
+    "description": "MagnaReady® Adaptive Traditional Fit Shirt – 100% Cotton, Button-Down Collar Please consult your physician before use if you have a pacemaker, defibrillator, stent, or any implantable...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, easy dressing, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Easy dressing",
+      "Limited-dexterity design"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "styleTags": [
+      "Smart casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/brown-and-white-long-sleeve-heights-button-down-collar-shirt-with-magnetic-closures",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-blue-white-tattersall-short-sleeve-button-down-collar-shirt-with-magnetic-closures",
+    "name": "Blue and White Tattersall Short Sleeve Shirt with Magnetic Closures",
+    "brandId": "magnaready",
+    "clothingType": "Shorts",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "69.95",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/MagnaReady_Model_Appearance_Replication_2026-03-19_13-57_1.png?v=1773943170",
+    "imageAlt": "Blue and White Tattersall Short Sleeve Shirt with Magnetic Closures by MagnaReady",
+    "description": "MagnaReady® Adaptive Short Sleeve Traditional Fit Shirt – 100% Cotton, Button-Down Collar Please consult your physician before use if you have a pacemaker, defibrillator, stent, or other...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, medical-device access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Medical-device access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/blue-white-tattersall-short-sleeve-button-down-collar-shirt-with-magnetic-closures",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-blue-plaid-short-sleeve-shirt-with-magnetic-closures",
+    "name": "Blue Plaid Short Sleeve Shirt with Magnetic Closures",
+    "brandId": "magnaready",
+    "clothingType": "Shorts",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "69.95",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/blue-plaid-short-sleeve-shirt-magnetic-closures-adaptive-mens-wear-100-cotton.jpg?v=1779133333",
+    "imageAlt": "Blue Plaid Short Sleeve Shirt with Magnetic Closures by MagnaReady",
+    "description": "MagnaReady® Adaptive Short Sleeve Traditional Fit Shirt – 100% Cotton, Button-Down Collar Please consult your physician before use if you have a pacemaker, defibrillator, stent, or other...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, medical-device access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Medical-device access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/blue-plaid-short-sleeve-shirt-with-magnetic-closures",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-short-sleeve-untucked-aqua-casual-shirt-with-magnetic-closures",
+    "name": "Short Sleeve Untucked Aqua Casual Shirt with Magnetic Closures",
+    "brandId": "magnaready",
+    "clothingType": "Shorts",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "74.50",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/7_3e1e27b1-e0bc-4e93-bc88-5d783832ee31.jpg?v=1776890236",
+    "imageAlt": "Short Sleeve Untucked Aqua Casual Shirt with Magnetic Closures by MagnaReady",
+    "description": "Please seek physician approval if you have an implantable pacemaker, defibrillator, or medical device. Men's Adaptive Camp Collar Shirt – Magnetic Button-Down, Untucked Comfort Upgrade your...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, medical-device access, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Medical-device access",
+      "Limited-dexterity design"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large",
+      "3XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/short-sleeve-untucked-aqua-casual-shirt-with-magnetic-closures",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-short-sleeve-untucked-black-casual-shirt-with-magnetic-closures",
+    "name": "Short Sleeve Untucked Black Casual Shirt with Magnetic Closures",
+    "brandId": "magnaready",
+    "clothingType": "Shorts",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "74.50",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/2_7b49cf2f-daad-4932-bd06-ca4855a0a8a7.jpg?v=1772810741",
+    "imageAlt": "Short Sleeve Untucked Black Casual Shirt with Magnetic Closures by MagnaReady",
+    "description": "Please seek physician approval if you have an implantable pacemaker, defibrillator, or medical device. Men's Adaptive Camp Collar Shirt – Magnetic Button-Down, Untucked Comfort Upgrade your...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, medical-device access, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Medical-device access",
+      "Limited-dexterity design"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large",
+      "3XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/short-sleeve-untucked-black-casual-shirt-with-magnetic-closures",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-weatherproof-x-magnaready-magnetic-front-water-resistant-puffer-jacket-in-navy",
+    "name": "Weatherproof x MagnaReady Magnetic Front Water-Resistant Puffer Jacket in Navy",
+    "brandId": "magnaready",
+    "clothingType": "Jackets",
+    "category": "jackets",
+    "priceRange": "$50-$100",
+    "price": "99.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/weatherproof-magnaready-magnetic-front-water-resistant-puffer-jacket-navy-model-portrait.jpg?v=1750640126",
+    "imageAlt": "Weatherproof x MagnaReady Magnetic Front Water-Resistant Puffer Jacket in Navy by MagnaReady",
+    "description": "Please Seek Physician Approval for Any Implantable Device, Stent, Pacemaker, or Defibrillator. MagnaReady x Weatherproof: Adaptive Men’s Magnetic Puffer Coat 🧲 Best-Selling Adaptive...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, easy dressing, zip access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Easy dressing",
+      "Zip access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large",
+      "3XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/weatherproof-x-magnaready-magnetic-front-water-resistant-puffer-jacket-in-navy",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-brooks-brothers-x-magnaready-stretch-long-sleeve-plaid-polo-button-down-collar-with-magnetic-closures",
+    "name": "Brooks Brothers  X MagnaReady Stretch Long Sleeve Green and Blue Plaid Button-Down Collar with Magnetic Closures",
+    "brandId": "magnaready",
+    "clothingType": "Dresses",
+    "category": "dresses",
+    "priceRange": "$100-$150",
+    "price": "119.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/brooks-brothers-magnaready-green-blue-plaid-button-down-shirt-magnetic-closures.jpg?v=1774306795",
+    "imageAlt": "Brooks Brothers  X MagnaReady Stretch Long Sleeve Green and Blue Plaid Button-Down Collar with Magnetic Closures by MagnaReady",
+    "description": "Please Seek Physician Approval for any Implantable Device, Stent, Pacemaker, or Defibrillator. A Collaborative Marvel: Joining forces with the iconic Brooks Brothers x MagnaReady® brings...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, easy dressing as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Easy dressing"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Formal",
+      "Professional",
+      "Smart casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/brooks-brothers-x-magnaready-stretch-long-sleeve-plaid-polo-button-down-collar-with-magnetic-closures",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-adaptive-white-magnetic-front-long-sleeve-cooling-adaptive-polo-with-pocket",
+    "name": "Adaptive White Magnetic Front Long Sleeve Cooling Adaptive Shirt with Pocket",
+    "brandId": "magnaready",
+    "clothingType": "Shorts",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "69.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/magnaready_adaptive_coolingshirt_white2.png?v=1774653771",
+    "imageAlt": "Adaptive White Magnetic Front Long Sleeve Cooling Adaptive Shirt with Pocket by MagnaReady",
+    "description": "Please Seek Physician Approval If You Have an Implantable Pacemaker or Defibrillator. A refined, adaptive essential designed for individuals living with limited mobility, dexterity...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large",
+      "3XL",
+      "4XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/adaptive-white-magnetic-front-long-sleeve-cooling-adaptive-polo-with-pocket",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-brown-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
+    "name": "Brown Stripe Long Sleeve Button Down Collar Shirt with Magnetic Closures",
+    "brandId": "magnaready",
+    "clothingType": "Shirts",
+    "category": "shirts",
+    "priceRange": "$50-$100",
+    "price": "74.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/brown-stripe-long-sleeve-button-down-collar-shirt-magnetic-closures-adaptive-clothing_4.jpg?v=1779135422",
+    "imageAlt": "Brown Stripe Long Sleeve Button Down Collar Shirt with Magnetic Closures by MagnaReady",
+    "description": "Adaptive Clothing Designed for Dignity, Independence, and Ease of Dressing Looking for a classic shirt that works with you—not against you? The MagnaReady® Traditional Fit Adaptive Shirt is...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, medical-device access, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Medical-device access",
+      "Limited-dexterity design"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday",
+      "Smart casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large",
+      "3XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/brown-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-new-sweater-adaptive-with-magnetic-closures-and-pocket",
+    "name": "Classic Blue Adaptive Sweater with Magnetic Front Closure with Pocket",
+    "brandId": "magnaready",
+    "clothingType": "Jackets",
+    "category": "jackets",
+    "priceRange": "$50-$100",
+    "price": "89.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/classic-blue-adaptive-sweater-magnetic-front-closure-pocket-magna-ready.jpg?v=1772073699",
+    "imageAlt": "Classic Blue Adaptive Sweater with Magnetic Front Closure with Pocket by MagnaReady",
+    "description": "Please seek physician approval if you have any implantable device, stent, pacemaker, or defibrillator. Introducing the MagnaReady Classic Magnetic Sweater with Pocket , designed...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, zip access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Zip access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/new-sweater-adaptive-with-magnetic-closures-and-pocket",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-weatherproof-x-magnaready-navy-puffer-magnetic-front-vest-adaptive-comfort",
+    "name": "Weatherproof® X MagnaReady® Puffer Magnetic Front Navy Vest",
+    "brandId": "magnaready",
+    "clothingType": "Jackets",
+    "category": "jackets",
+    "priceRange": "$50-$100",
+    "price": "79.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/2_11e75724-7344-4f52-85b4-f11ada10aab0.jpg?v=1776889053",
+    "imageAlt": "Weatherproof® X MagnaReady® Puffer Magnetic Front Navy Vest by MagnaReady",
+    "description": "Please Seek Physician Approval for any Implantable Device, Stent, Pacemaker, or Defibrillator. Our Collab with Weatherproof Continues! Introducing the MagnaReady x Weatherproof...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, zip access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Zip access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Smart casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/weatherproof-x-magnaready®-navy-puffer-magnetic-front-vest-adaptive-comfort",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-weatherproof-x-magnaready-puffer-magnetic-front-vest-effortless-style-adaptive-comfort",
+    "name": "Weatherproof® X MagnaReady® Puffer Magnetic Front Black Vest",
+    "brandId": "magnaready",
+    "clothingType": "Jackets",
+    "category": "jackets",
+    "priceRange": "$50-$100",
+    "price": "79.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/weatherproof-x-magnaready-puffer-black-vest-magnetic-closure-adaptive-fashion.png?v=1772074694",
+    "imageAlt": "Weatherproof® X MagnaReady® Puffer Magnetic Front Black Vest by MagnaReady",
+    "description": "Please Seek Physician Approval for any Implantable Device, Stent, Pacemaker, or Defibrillator. Our Collab with Weatherproof Continues! Introducing the MagnaReady® x Weatherproof®...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, zip access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Zip access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Smart casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/weatherproof®-x-magnaready®-puffer-magnetic-front-vest-effortless-style-adaptive-comfort",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-blue-grey-flannel-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
+    "name": "Blue Grey Brushed Flannel Long Sleeve Button Down Collar Shirt with Magnetic Closures",
+    "brandId": "magnaready",
+    "clothingType": "Shirts",
+    "category": "shirts",
+    "priceRange": "$50-$100",
+    "price": "59.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/blue-grey-brushed-flannel-long-sleeve-button-down-shirt-magnetic-closures_1.jpg?v=1772074721",
+    "imageAlt": "Blue Grey Brushed Flannel Long Sleeve Button Down Collar Shirt with Magnetic Closures by MagnaReady",
+    "description": "Engineered with MagnaReady®'s patented magnetic closure technology , this shirt is thoughtfully designed for individuals living with disabilities, limited mobility, Parkinson's, ALS,...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, medical-device access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Medical-device access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday",
+      "Smart casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large",
+      "3XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/blue-grey-flannel-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-new-brown-magnaready-adaptive-magnetic-sweater-with-pocket",
+    "name": "Classic Adaptive Sweater with Magnetic Front Closure and Pocket",
+    "brandId": "magnaready",
+    "clothingType": "Jackets",
+    "category": "jackets",
+    "priceRange": "$50-$100",
+    "price": "89.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/5_e6c29e83-7069-47c2-b243-0a9b041074bf.jpg?v=1776890928",
+    "imageAlt": "Classic Adaptive Sweater with Magnetic Front Closure and Pocket by MagnaReady",
+    "description": "Please seek physician approval if you have any implantable device, stent, pacemaker, or defibrillator. Introducing the MagnaReady Classic Magnetic Sweater with Pocket , designed...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, zip access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Zip access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/new-brown-magnaready-adaptive-magnetic-sweater-with-pocket",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-new-red-adaptive-sweater-with-magnetic-front-closure-and-pocket",
+    "name": "Classic Adaptive Sweater with Magnetic Front Closure and Pocket",
+    "brandId": "magnaready",
+    "clothingType": "Jackets",
+    "category": "jackets",
+    "priceRange": "$50-$100",
+    "price": "89.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/classic-adaptive-sweater-magnetic-closure-pocket-parkinsons-limited-mobility.jpg?v=1772073622",
+    "imageAlt": "Classic Adaptive Sweater with Magnetic Front Closure and Pocket by MagnaReady",
+    "description": "Please seek physician approval if you have any implantable device, stent, pacemaker, or defibrillator. Introducing the MagnaReady Classic Magnetic Sweater with Pocket , designed...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, zip access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Zip access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/new-red-adaptive-sweater-with-magnetic-front-closure-and-pocket",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-grey-brushed-flannel-long-sleeve-pajama-top-with-magnetic-closures",
+    "name": "Long Sleeve Grey Pajama Top with Magnetic Closures",
+    "brandId": "magnaready",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
+    "priceRange": "$25-$50",
+    "price": "49.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/long-sleeve-grey-pajama-top-magnetic-closures-magnaready-technology-comfort-recovery.jpg?v=1772074766",
+    "imageAlt": "Long Sleeve Grey Pajama Top with Magnetic Closures by MagnaReady",
+    "description": "Please Seek Physician Approval If You Have an Implantable Pacemaker or Defibrillator. Effortless Nighttime Comfort with MagnaReady® Technology No more nighttime dressing struggles! Embrace...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, easy dressing, zip access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Easy dressing",
+      "Zip access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large",
+      "3XL",
+      "4XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/grey-brushed-flannel-long-sleeve-pajama-top-with-magnetic-closures",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-new-long-sleeve-blue-pajama-top-with-magnetic-closures",
+    "name": "Long Sleeve Blue Brushed Flannel Pajama Top with Magnetic Closures",
+    "brandId": "magnaready",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
+    "priceRange": "$25-$50",
+    "price": "49.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/long-sleeve-blue-brushed-flannel-pajama-top-magnetic-closures-adaptive-comfortable-nightwear.jpg?v=1772074761",
+    "imageAlt": "Long Sleeve Blue Brushed Flannel Pajama Top with Magnetic Closures by MagnaReady",
+    "description": "MagnaReady® Adaptive Pajama Top – Accessible Nightwear for Independence & Comfort Please Seek Physician Approval If You Have an Implantable Pacemaker or Defibrillator. Sleep without stress...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, limited-dexterity design, leak-resistant construction as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Limited-dexterity design",
+      "Leak-resistant construction"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL",
+      "3XL",
+      "4XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/new-long-sleeve-blue-pajama-top-with-magnetic-closures",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-grey-pajama-pant-with-magnetic-closures",
+    "name": "Grey Brushed Flannel Pajama Pant with Magnetic Fly",
+    "brandId": "magnaready",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
+    "priceRange": "$25-$50",
+    "price": "49.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/grey-brushed-flannel-pajama-pant-magnetic-fly-adaptive-sleepwear-comfort-independence_1.jpg?v=1772073305",
+    "imageAlt": "Grey Brushed Flannel Pajama Pant with Magnetic Fly by MagnaReady",
+    "description": "MagnaReady® Adaptive Pajama Pant – Accessible Sleepwear for Independence and Comfort Please Seek Physician Approval If You Have an Implantable Pacemaker or Defibrillator. Sleep easier and...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, zip access, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Zip access",
+      "Limited-dexterity design",
+      "Leak-resistant construction"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/grey-pajama-pant-with-magnetic-closures",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-blue-brushed-flannel-pajama-pant-with-magnetic-fly",
+    "name": "Blue Brushed Flannel Pajama Pant with Magnetic Fly",
+    "brandId": "magnaready",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
+    "priceRange": "$25-$50",
+    "price": "49.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/blue-brushed-flannel-pajama-pant-magnetic-fly-adaptive-sleepwear-comfort-independence.jpg?v=1772073297",
+    "imageAlt": "Blue Brushed Flannel Pajama Pant with Magnetic Fly by MagnaReady",
+    "description": "MagnaReady® Adaptive Pajama Pant – Accessible Sleepwear for Independence and Comfort Please Seek Physician Approval If You Have an Implantable Pacemaker or Defibrillator. Sleep easier and...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, zip access, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Zip access",
+      "Limited-dexterity design",
+      "Leak-resistant construction"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/blue-brushed-flannel-pajama-pant-with-magnetic-fly",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-new-adaptive-red-and-orange-plaid-flannel-shirt-combo-layering-piece-with-magnetic-closures",
+    "name": "Adaptive Red Plaid Flannel Shirt with Magnetic Closures",
+    "brandId": "magnaready",
+    "clothingType": "Dresses",
+    "category": "dresses",
+    "priceRange": "$25-$50",
+    "price": "39.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/adaptive-red-plaid-flannel-shirt-magnetic-closures-comfort-for-men-with-dexterity-issues.jpg?v=1772074793",
+    "imageAlt": "Adaptive Red Plaid Flannel Shirt with Magnetic Closures by MagnaReady",
+    "description": "Men’s Adaptive Magnetic Flannel Shirt Jacket – Designed for Easy Dressing Please consult your physician before wearing if you have a pacemaker, defibrillator, stent, or any implantable...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, easy dressing, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Easy dressing",
+      "Limited-dexterity design"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "styleTags": [
+      "Formal",
+      "Professional",
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "X-Large",
+      "XX-Large",
+      "3XL",
+      "4XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/new-adaptive-red-and-orange-plaid-flannel-shirt-combo-layering-piece-with-magnetic-closures",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-new-adaptive-violet-plaid-flannel-shirt-combo-layering-piece-with-magnetic-closures",
+    "name": "Adaptive Orchid Plaid Flannel Shirt with Magnetic Closures",
+    "brandId": "magnaready",
+    "clothingType": "Dresses",
+    "category": "dresses",
+    "priceRange": "$25-$50",
+    "price": "39.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/adaptive-orchid-plaid-flannel-shirt-magnetic-closures-mens-adaptive-shirt-jacket-comfort-warmth.jpg?v=1772074808",
+    "imageAlt": "Adaptive Orchid Plaid Flannel Shirt with Magnetic Closures by MagnaReady",
+    "description": "Men’s Adaptive Magnetic Flannel Shirt Jacket – Designed for Easy Dressing Please consult your physician before wearing if you have a pacemaker, defibrillator, stent, or any implantable...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, easy dressing, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Easy dressing",
+      "Limited-dexterity design"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "styleTags": [
+      "Formal",
+      "Professional",
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL",
+      "3XL",
+      "4XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/new-adaptive-violet-plaid-flannel-shirt-combo-layering-piece-with-magnetic-closures",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-adaptive-olive-plaid-flannel-shirt-combo-layering-piece-with-magnetic-closures",
+    "name": "Adaptive Olive Plaid Flannel Shirt with Magnetic Closures",
+    "brandId": "magnaready",
+    "clothingType": "Dresses",
+    "category": "dresses",
+    "priceRange": "$25-$50",
+    "price": "39.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/adaptive-olive-plaid-flannel-shirt-magnetic-closures-mens-jacket-easy-dressing-comfort-warmth.jpg?v=1772074828",
+    "imageAlt": "Adaptive Olive Plaid Flannel Shirt with Magnetic Closures by MagnaReady",
+    "description": "Men’s Adaptive Magnetic Flannel Shirt Jacket – Designed for Easy Dressing Please consult your physician before wearing if you have a pacemaker, defibrillator, stent, or any implantable...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, easy dressing, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Easy dressing",
+      "Limited-dexterity design"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "styleTags": [
+      "Formal",
+      "Professional",
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL",
+      "3XL",
+      "4XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/adaptive-olive-plaid-flannel-shirt-combo-layering-piece-with-magnetic-closures",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-adaptive-blue-and-red-flannel-shirt-combo-layering-piece-with-magnetic-closures",
+    "name": "Adaptive Blue and Red Plaid Flannel Shirt with Magnetic Closures",
+    "brandId": "magnaready",
+    "clothingType": "Dresses",
+    "category": "dresses",
+    "priceRange": "$25-$50",
+    "price": "39.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/adaptive-blue-red-plaid-flannel-shirt-magnetic-closure-mens-comfortable-easy-dressing.jpg?v=1772074846",
+    "imageAlt": "Adaptive Blue and Red Plaid Flannel Shirt with Magnetic Closures by MagnaReady",
+    "description": "Men’s Adaptive Magnetic Flannel Shirt Jacket – Designed for Easy Dressing Please consult your physician before wearing if you have a pacemaker, defibrillator, stent, or any implantable...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, easy dressing, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Easy dressing",
+      "Limited-dexterity design"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "styleTags": [
+      "Formal",
+      "Professional",
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL",
+      "3XL",
+      "4XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/adaptive-blue-and-red-flannel-shirt-combo-layering-piece-with-magnetic-closures",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-adaptive-blue-and-orange-flannel-shirt-combo-layering-piece-with-magnetic-closures",
+    "name": "Adaptive Blue and Orange Flannel Shirt with Magnetic Closures",
+    "brandId": "magnaready",
+    "clothingType": "Dresses",
+    "category": "dresses",
+    "priceRange": "$25-$50",
+    "price": "39.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/adaptive-blue-orange-flannel-shirt-magnetic-closures-mens-comfort-warmth.jpg?v=1772074867",
+    "imageAlt": "Adaptive Blue and Orange Flannel Shirt with Magnetic Closures by MagnaReady",
+    "description": "Introducing the Ultimate Men's Flannel Shirt/Jacket Combo: Your New Style Companion Please consult your physician before wearing if you have a pacemaker, defibrillator, stent, or any...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Limited-dexterity design"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "styleTags": [
+      "Formal",
+      "Professional",
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL",
+      "3XL",
+      "4XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/adaptive-blue-and-orange-flannel-shirt-combo-layering-piece-with-magnetic-closures",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-adaptive-teal-flannel-shirt-combo-layering-piece-with-magnetic-closures",
+    "name": "Adaptive Teal Plaid Flannel Shirt with Magnetic Closures",
+    "brandId": "magnaready",
+    "clothingType": "Dresses",
+    "category": "dresses",
+    "priceRange": "$25-$50",
+    "price": "39.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/adaptive-teal-plaid-flannel-shirt-jacket-magnetic-closures-for-men.jpg?v=1772074879",
+    "imageAlt": "Adaptive Teal Plaid Flannel Shirt with Magnetic Closures by MagnaReady",
+    "description": "Men’s Adaptive Magnetic Flannel Shirt Jacket – Designed for Easy Dressing Please consult your physician before wearing if you have a pacemaker, defibrillator, stent, or any implantable...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, easy dressing, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Easy dressing",
+      "Limited-dexterity design"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "styleTags": [
+      "Formal",
+      "Professional",
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL",
+      "3XL",
+      "4XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/adaptive-teal-flannel-shirt-combo-layering-piece-with-magnetic-closures",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-adaptive-blackened-pearl-corduroy-shirt-with-magnetic-closures-and-pockets",
+    "name": "Adaptive Blackened Pearl Everyday Corduroy Shirt with Magnetic Closures and Pockets",
+    "brandId": "magnaready",
+    "clothingType": "Dresses",
+    "category": "dresses",
+    "priceRange": "$50-$100",
+    "price": "59.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/adaptive-blackened-pearl-corduroy-shirt-magnetic-closures-pockets-mens-stretch-jacket_1.jpg?v=1772075009",
+    "imageAlt": "Adaptive Blackened Pearl Everyday Corduroy Shirt with Magnetic Closures and Pockets by MagnaReady",
+    "description": "NEW! The Ultimate Men's Stretch Corduroy Shirt Jacket – Adaptive, Stylish, and Effortless Please Seek Physician Approval for Any Implantable Device, Stent, Pacemaker, or Defibrillator....",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, easy dressing, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Easy dressing",
+      "Limited-dexterity design"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "styleTags": [
+      "Formal",
+      "Professional",
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL",
+      "3XL",
+      "4XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/adaptive-blackened-pearl-corduroy-shirt-with-magnetic-closures-and-pockets",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-adaptive-vintage-violet-corduroy-shirt-with-magnetic-closures-and-pockets",
+    "name": "Adaptive Vintage Violet Everyday Corduroy Shirt with Magnetic Closures and Pockets",
+    "brandId": "magnaready",
+    "clothingType": "Dresses",
+    "category": "dresses",
+    "priceRange": "$50-$100",
+    "price": "59.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/adaptive-vintage-violet-corduroy-shirt-magnetic-closures-mens-fashion.jpg?v=1772074987",
+    "imageAlt": "Adaptive Vintage Violet Everyday Corduroy Shirt with Magnetic Closures and Pockets by MagnaReady",
+    "description": "NEW! The Ultimate Men's Stretch Corduroy Shirt Jacket – Adaptive, Stylish, and Effortless Please Seek Physician Approval for Any Implantable Device, Stent, Pacemaker, or Defibrillator....",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, easy dressing, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Easy dressing",
+      "Limited-dexterity design"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "styleTags": [
+      "Formal",
+      "Professional",
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL",
+      "3XL",
+      "4XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/adaptive-vintage-violet-corduroy-shirt-with-magnetic-closures-and-pockets",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-adaptive-classic-red-corduroy-shirt-with-magnetic-closures-and-pockets",
+    "name": "Adaptive Classic Red Everyday Corduroy Shirt with Magnetic Closures and Pockets",
+    "brandId": "magnaready",
+    "clothingType": "Dresses",
+    "category": "dresses",
+    "priceRange": "$50-$100",
+    "price": "59.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/MR_Products_3_9_94ecd28c-3be9-44dc-9b98-a091a5b2ee71.jpg?v=1772074963",
+    "imageAlt": "Adaptive Classic Red Everyday Corduroy Shirt with Magnetic Closures and Pockets by MagnaReady",
+    "description": "NEW! The Ultimate Men's Stretch Corduroy Shirt Jacket – Adaptive, Stylish, and Effortless Please Seek Physician Approval for Any Implantable Device, Stent, Pacemaker, or Defibrillator. 🍁...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, easy dressing, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Easy dressing",
+      "Limited-dexterity design"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "styleTags": [
+      "Formal",
+      "Professional",
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL",
+      "3XL",
+      "4XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/adaptive-classic-red-corduroy-shirt-with-magnetic-closures-and-pockets",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "magnaready-denim-mvp-black-five-pocket-jean-with-magnetic-closures",
+    "name": "Denim Black Wash Five Pocket Jean with Magnetic Fly",
+    "brandId": "magnaready",
+    "clothingType": "Jeans",
+    "category": "jeans",
+    "priceRange": "$50-$100",
+    "price": "74.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/denim-black-wash-five-pocket-jean-magnetic-fly-adaptive-jeans-for-limited-mobility.jpg?v=1756746102",
+    "imageAlt": "Denim Black Wash Five Pocket Jean with Magnetic Fly by MagnaReady",
+    "description": "MVP Magnetic Fly Adaptive Jeans – Light Wash Best-Selling, Caregiver-Approved Jeans for Parkinson’s, Stroke, ALS, Arthritis The MVP Five Pocket Jean is back—and now in a versatile black...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, zip access, medical-device access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Zip access",
+      "Medical-device access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Denim",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada"
+      ],
+      "note": "Available online from the official MagnaReady store."
+    },
+    "sizes": [
+      "30 29",
+      "30 30",
+      "30 32",
+      "32 30",
+      "32 32",
+      "34 30",
+      "34 32",
+      "36 30",
+      "36 32",
+      "36 34",
+      "38 30",
+      "38 32",
+      "40 30",
+      "40 32",
+      "42 30",
+      "42 32",
+      "44 30",
+      "44 32"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://magnaready.com/products/denim-mvp-black-five-pocket-jean-with-magnetic-closures",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-rhinestone-rainbow-billy-goat-afo-friendly-athletic-shoes",
+    "name": "Rhinestone Rainbow BILLY Goat",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$50-$100",
+    "price": "80.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK23157-530-W_side_2048x2048_722d1b2e-03c1-4d7c-91e3-1810627595fd.jpg?v=1780615799",
+    "imageAlt": "Rhinestone Rainbow BILLY Goat by BILLY Footwear",
+    "description": "Created in collaboration with certified orthotists for use with braces, orthotics, and prosthetics, the Rhinestone Rainbow BILLY Goat is the perfect blend of style and functionality....",
+    "accessibilityExplanation": "The official listing identifies easy dressing, zip access, extra-wide fit as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Easy dressing",
+      "Zip access",
+      "Extra-wide fit",
+      "Prosthetic access",
+      "Wrap opening"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema",
+      "Swollen feet",
+      "Limb differences",
+      "Prosthetic users",
+      "Orthotics and AFOs"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "5 US Toddler",
+      "6 US Toddler",
+      "7 US Toddler",
+      "8 US Toddler",
+      "9 US Toddler",
+      "10 US Toddler",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid",
+      "5 US Big Kid",
+      "6 US Big Kid",
+      "7 US Big Kid"
+    ],
+    "genderFit": [
+      "Kids"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/rhinestone-rainbow-billy-goat-afo-friendly-athletic-shoes",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-womens-cognac-billy-cuffs",
+    "name": "SALE - Women's Cognac BILLY Cuff",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$50-$100",
+    "price": "59.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BW22341-210_side_2048x2048_61399657-36d8-41a9-9920-0f6f057bceef.jpg?v=1748458957",
+    "imageAlt": "SALE - Women's Cognac BILLY Cuff by BILLY Footwear",
+    "description": "A trendy look to the Classic High Top, the Women's Cognac BILLY Cuff high tops are sure to receive compliments. Combining fashion with function, Step In! unobstructed in seconds. These...",
+    "accessibilityExplanation": "The official listing identifies zip access, wrap opening as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Wrap opening"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "6 US Women",
+      "6.5 US Women",
+      "7 US Women",
+      "7.5 US Women",
+      "8 US Women",
+      "8.5 US Women",
+      "9 US Women",
+      "9.5 US Women",
+      "10 US Women",
+      "11 US Women"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/womens-cognac-billy-cuffs",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-fuchsia-billy-retro-jogger-zipper-shoes",
+    "name": "Fuchsia BILLY Retro Jogger",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$50-$100",
+    "price": "55.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK25165-670_side_2048x2048_5bbf9c61-4231-4242-9416-79b67d5d78e3.jpg?v=1748458309",
+    "imageAlt": "Fuchsia BILLY Retro Jogger by BILLY Footwear",
+    "description": "With its retro-inspired design, the Fuchsia BILLY Retro Jogger shoes add a touch of nostalgic style to any casual outfit. Perfect for those who love classic details with a fresh, modern...",
+    "accessibilityExplanation": "The official listing identifies zip access, wrap opening, wraparound zipper as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Wrap opening",
+      "Wraparound zipper"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "5 US Toddler",
+      "6 US Toddler",
+      "7 US Toddler",
+      "8 US Toddler",
+      "9 US Toddler",
+      "10 US Toddler",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/fuchsia-billy-retro-jogger-zipper-shoes",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-womens-comfort-knit",
+    "name": "Women's Comfort Knit",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$100-$150",
+    "price": "110.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BW26187-020_side_2048x2048_5429a5c8-eea0-4a28-a74d-9e3fa02f5e55.jpg?v=1762134487",
+    "imageAlt": "Women's Comfort Knit by BILLY Footwear",
+    "description": "Looking for a stylish, easy-on easy-off breathable shoe loaded with comfort characteristics? Well, look no further than the Women's BILLY Comfort Knit. You're going to love them. And with...",
+    "accessibilityExplanation": "The official listing identifies easy dressing, zip access, extra-wide fit as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Easy dressing",
+      "Zip access",
+      "Extra-wide fit"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema",
+      "Swollen feet"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "6 US Women",
+      "6.5 US Women",
+      "7 US Women",
+      "7.5 US Women",
+      "8 US Women",
+      "8.5 US Women",
+      "9 US Women",
+      "9.5 US Women",
+      "10 US Women",
+      "11 US Women"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/womens-comfort-knit",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-womens-blush-billy-comfort-knit",
+    "name": "Women's Blush BILLY Comfort Knit",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$100-$150",
+    "price": "110.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BW26187-680_side_2048x2048_625c5b89-a2c7-44d6-a934-6b6e155cee29.jpg?v=1762134037",
+    "imageAlt": "Women's Blush BILLY Comfort Knit by BILLY Footwear",
+    "description": "Looking for a stylish, easy-on easy-off breathable shoe loaded with comfort characteristics? Well, look no further than the Women's Blush BILLY Comfort Knit. You're going to love them. And...",
+    "accessibilityExplanation": "The official listing identifies easy dressing, zip access, extra-wide fit as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Easy dressing",
+      "Zip access",
+      "Extra-wide fit"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema",
+      "Swollen feet"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "6 US Women",
+      "6.5 US Women",
+      "7 US Women",
+      "7.5 US Women",
+      "8 US Women",
+      "8.5 US Women",
+      "9 US Women",
+      "9.5 US Women",
+      "10 US Women",
+      "11 US Women"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/womens-blush-billy-comfort-knit",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-womens-grey-billy-comfort-knit",
+    "name": "Women's Grey BILLY Comfort Knit",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$100-$150",
+    "price": "110.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BW26187-020_side_2048x2048_5429a5c8-eea0-4a28-a74d-9e3fa02f5e55.jpg?v=1762134487",
+    "imageAlt": "Women's Grey BILLY Comfort Knit by BILLY Footwear",
+    "description": "Looking for a stylish, easy-on easy-off breathable shoe loaded with comfort characteristics? Well, look no further than the Women's Grey BILLY Comfort Knit. You're going to love them. And...",
+    "accessibilityExplanation": "The official listing identifies easy dressing, zip access, extra-wide fit as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Easy dressing",
+      "Zip access",
+      "Extra-wide fit"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema",
+      "Swollen feet"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "6 US Women",
+      "6.5 US Women",
+      "7 US Women",
+      "7.5 US Women",
+      "8 US Women",
+      "8.5 US Women",
+      "9 US Women",
+      "9.5 US Women",
+      "10 US Women",
+      "11 US Women"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/womens-grey-billy-comfort-knit",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-kids-toddler-retro-jogger",
+    "name": "Kids'/Toddler Retro Jogger",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$50-$100",
+    "price": "55.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK25165-002_side_2048x2048_7673e9f7-d10e-49c2-9ae5-4d414abdc44b.jpg?v=1762135091",
+    "imageAlt": "Kids'/Toddler Retro Jogger by BILLY Footwear",
+    "description": "With its retro-inspired design, the Kids'/Toddler BILLY Retro Jogger shoes add a touch of nostalgic style to any casual outfit. Perfect for those who love classic details with a fresh,...",
+    "accessibilityExplanation": "The official listing identifies zip access, wrap opening, wraparound zipper as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Wrap opening",
+      "Wraparound zipper"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "5 US Toddler",
+      "6 US Toddler",
+      "7 US Toddler",
+      "8 US Toddler",
+      "9 US Toddler",
+      "10 US Toddler",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid"
+    ],
+    "genderFit": [
+      "Kids"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/kids-toddler-retro-jogger",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-mens-navy-suede-billy-comfort-plush",
+    "name": "Men's Navy Suede BILLY Comfort Plush",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$100-$150",
+    "price": "150.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BM25380-410_side_2048x2048_4bbc4ed4-84a1-4270-9a72-56ede8564ac3.jpg?v=1764718985",
+    "imageAlt": "Men's Navy Suede BILLY Comfort Plush by BILLY Footwear",
+    "description": "You cannot go wrong with casual men’s fashion. These stylish Men's Navy Suede BILLY Comfort Plush shoes tout a wraparound zipper making donning and doffing simple. No more stuffing your...",
+    "accessibilityExplanation": "The official listing identifies zip access, sensory-friendly, extra-wide fit as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Sensory-friendly",
+      "Extra-wide fit",
+      "Wrap opening",
+      "Wraparound zipper"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Sensory processing",
+      "Skin sensitivity",
+      "Edema",
+      "Swollen feet"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Sensory processing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "7 US Men",
+      "7.5 US Men",
+      "8 US Men",
+      "8.5 US Men",
+      "9 US Men",
+      "9.5 US Men",
+      "10 US Men",
+      "10.5 US Men",
+      "11 US Men",
+      "11.5 US Men",
+      "12 US Men",
+      "13 US Men",
+      "14 US Men"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/mens-navy-suede-billy-comfort-plush",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-wavy-rainbow-billy-classic-lace-high",
+    "name": "Wavy Rainbow BILLY Classic Lace High",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$50-$100",
+    "price": "60.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK26100-140_side_2048x2048_e0664603-1969-4cd8-9679-bd78863af6de.jpg?v=1762289839",
+    "imageAlt": "Wavy Rainbow BILLY Classic Lace High by BILLY Footwear",
+    "description": "Smashing function with fashion, the Wavy Rainbow BILLY Classic Lace High Tops are sure to impress. Built around the BILLY Classic High Top silhouette, these kicks come with functional laces...",
+    "accessibilityExplanation": "The official listing identifies zip access, wrap opening, wraparound zipper as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Wrap opening",
+      "Wraparound zipper",
+      "Removable insoles"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "5 US Toddler",
+      "6 US Toddler",
+      "7 US Toddler",
+      "8 US Toddler",
+      "9 US Toddler",
+      "10 US Toddler",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid",
+      "5 US Big Kid",
+      "6 US Big Kid",
+      "7 US Big Kid"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/wavy-rainbow-billy-classic-lace-high",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-lilac-billy-retro-jogger",
+    "name": "Lilac BILLY Retro Jogger",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$50-$100",
+    "price": "55.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK25165-500_side_2048x2048_f079ec3f-b296-4ecb-b9af-b5e6af1c1be5.jpg?v=1764111370",
+    "imageAlt": "Lilac BILLY Retro Jogger by BILLY Footwear",
+    "description": "With its retro-inspired design, the Lilac BILLY Retro Jogger shoes add a touch of nostalgic style to any casual outfit. Perfect for those who love classic details with a fresh, modern...",
+    "accessibilityExplanation": "The official listing identifies zip access, wrap opening, wraparound zipper as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Wrap opening",
+      "Wraparound zipper"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "5 US Toddler",
+      "6 US Toddler",
+      "7 US Toddler",
+      "8 US Toddler",
+      "9 US Toddler",
+      "10 US Toddler",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/lilac-billy-retro-jogger",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-black-billy-retro-jogger",
+    "name": "Black BILLY Retro Jogger",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$50-$100",
+    "price": "55.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK25165-002_side_2048x2048_7673e9f7-d10e-49c2-9ae5-4d414abdc44b.jpg?v=1762135091",
+    "imageAlt": "Black BILLY Retro Jogger by BILLY Footwear",
+    "description": "With its retro-inspired design, the Black BILLY Retro Jogger shoes add a touch of nostalgic style to any casual outfit. Perfect for those who love classic details with a fresh, modern...",
+    "accessibilityExplanation": "The official listing identifies zip access, wrap opening, wraparound zipper as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Wrap opening",
+      "Wraparound zipper"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "5 US Toddler",
+      "6 US Toddler",
+      "7 US Toddler",
+      "8 US Toddler",
+      "9 US Toddler",
+      "10 US Toddler",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/black-billy-retro-jogger",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-mens-white-navy-billy-comfort-court",
+    "name": "Men's White/Navy BILLY Comfort Court",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$100-$150",
+    "price": "125.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BM26186-100_side_2048x2048_3be33b2b-962f-4134-a78d-ebefff835327.jpg?v=1764716380",
+    "imageAlt": "Men's White/Navy BILLY Comfort Court by BILLY Footwear",
+    "description": "You cannot go wrong with casual men’s fashion. These stylish Men's White/Navy BILLY Comfort Court shoes tout zippers on both the medial and lateral sides making donning and doffing simple....",
+    "accessibilityExplanation": "The official listing identifies zip access, sensory-friendly, extra-wide fit as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Sensory-friendly",
+      "Extra-wide fit"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Sensory processing",
+      "Skin sensitivity",
+      "Edema",
+      "Swollen feet"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Sensory processing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "7 US Men",
+      "7.5 US Men",
+      "8 US Men",
+      "8.5 US Men",
+      "9 US Men",
+      "9.5 US Men",
+      "10 US Men",
+      "10.5 US Men",
+      "11 US Men",
+      "11.5 US Men",
+      "12 US Men",
+      "13 US Men",
+      "14 US Men"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/mens-white-navy-billy-comfort-court",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-mens-white-navy-billy-limitless-253-shoes",
+    "name": "Men's White/Navy BILLY Limitless 253",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$100-$150",
+    "price": "140.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BM26185-100_side_2048x2048_079f69b0-49cc-4988-bfa3-3fd866671b15.jpg?v=1760651270",
+    "imageAlt": "Men's White/Navy BILLY Limitless 253 by BILLY Footwear",
+    "description": "The BILLY Limitless 253 was Designed in Partnership with the Center for Discovery, Innovation and Development to provide a sensory friendly solution with additional depth adjustability...",
+    "accessibilityExplanation": "The official listing identifies easy dressing, zip access, sensory-friendly as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Easy dressing",
+      "Zip access",
+      "Sensory-friendly",
+      "Extra-wide fit"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Sensory processing",
+      "Skin sensitivity",
+      "Edema",
+      "Swollen feet"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Sensory processing"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "7 US Men",
+      "7.5 US Men",
+      "8 US Men",
+      "8.5 US Men",
+      "9 US Men",
+      "9.5 US Men",
+      "10 US Men",
+      "10.5 US Men",
+      "11 US Men",
+      "11.5 US Men",
+      "12 US Men",
+      "13 US Men",
+      "14 US Men",
+      "15 US Men"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/mens-white-navy-billy-limitless-253-shoes",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-womens-white-navy-billy-limitless-253-shoes",
+    "name": "Women's White/Navy BILLY Limitless 253",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$100-$150",
+    "price": "140.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BW26185-100_side_2048x2048_85399f7f-9a0a-49ee-9ad0-41e6f2ae0684.jpg?v=1763159788",
+    "imageAlt": "Women's White/Navy BILLY Limitless 253 by BILLY Footwear",
+    "description": "The BILLY Limitless 253 was Designed in Partnership with the Center for Discovery, Innovation and Development to provide a sensory friendly solution with additional depth adjustability...",
+    "accessibilityExplanation": "The official listing identifies easy dressing, zip access, sensory-friendly as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Easy dressing",
+      "Zip access",
+      "Sensory-friendly",
+      "Extra-wide fit"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Sensory processing",
+      "Skin sensitivity",
+      "Edema",
+      "Swollen feet"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Sensory processing"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "6 US Women",
+      "6.5 US Women",
+      "7 US Women",
+      "7.5 US Women",
+      "8 US Women",
+      "8.5 US Women",
+      "9 US Women",
+      "9.5 US Women",
+      "10 US Women",
+      "11 US Women",
+      "12 US Women"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/womens-white-navy-billy-limitless-253-shoes",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-womens-sport-inclusion-dz1",
+    "name": "Women's Sport Inclusion DZ1",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$100-$150",
+    "price": "135.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BW26184-689_side_2048x2048_eb8d3776-b26d-4ea9-9b5e-fce0a3b3ab82.jpg?v=1762826666",
+    "imageAlt": "Women's Sport Inclusion DZ1 by BILLY Footwear",
+    "description": "No matter how you get around, you will be moving with style in these Women's Sport Inclusion DZ1 athletic sneakers. These shoes have a padded collar, comfortable insole, and incorporate our...",
+    "accessibilityExplanation": "The official listing identifies zip access, extra-wide fit as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Extra-wide fit"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema",
+      "Swollen feet"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "6 US Women",
+      "6.5 US Women",
+      "7 US Women",
+      "7.5 US Women",
+      "8 US Women",
+      "8.5 US Women",
+      "9 US Women",
+      "9.5 US Women",
+      "10 US Women",
+      "11 US Women"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/womens-sport-inclusion-dz1",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-kids-sport-inclusion-dz1",
+    "name": "Kids' Sport Inclusion DZ1",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$50-$100",
+    "price": "100.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK26184-680_side_2048x2048_ace0bc99-fafb-4779-ae87-62e7636d2ab5.jpg?v=1762290511",
+    "imageAlt": "Kids' Sport Inclusion DZ1 by BILLY Footwear",
+    "description": "No matter how you get around, you will be moving with style in these Kids' Sport Inclusion DZ1 athletic sneakers. These shoes have a padded collar, comfortable insole, and incorporate our...",
+    "accessibilityExplanation": "The official listing identifies zip access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "10 US Little Kid",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid",
+      "5 US Big Kid",
+      "6 US Big Kid",
+      "7 US Big Kid"
+    ],
+    "genderFit": [
+      "Kids"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/kids-sport-inclusion-dz1",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-black-black-gum-billy-sport-inclusion-dz1-zipper-shoes",
+    "name": "Black/Black/Gum BILLY Sport Inclusion DZ1",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$50-$100",
+    "price": "100.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK26184-003_side_2048x2048_9f2a313b-37d0-4ac4-b111-1ba0feabc2af.jpg?v=1762290197",
+    "imageAlt": "Black/Black/Gum BILLY Sport Inclusion DZ1 by BILLY Footwear",
+    "description": "No matter how you get around, you will be moving with style in these Black/Black/Gum BILLY Sport Inclusion DZ1 athletic sneakers. These shoes have a padded collar, comfortable insole, and...",
+    "accessibilityExplanation": "The official listing identifies zip access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "10 US Little Kid",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid",
+      "5 US Big Kid",
+      "6 US Big Kid",
+      "7 US Big Kid"
+    ],
+    "genderFit": [
+      "Kids"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/black-black-gum-billy-sport-inclusion-dz1-zipper-shoes",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-pink-confetti-billy-sport-inclusion-dz1-zipper-shoes",
+    "name": "Pink Confetti BILLY Sport Inclusion DZ1",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$50-$100",
+    "price": "100.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK26184-680_side_2048x2048_ace0bc99-fafb-4779-ae87-62e7636d2ab5.jpg?v=1762290511",
+    "imageAlt": "Pink Confetti BILLY Sport Inclusion DZ1 by BILLY Footwear",
+    "description": "No matter how you get around, you will be moving with style in these Pink Confetti BILLY Sport Inclusion DZ1 athletic sneakers. These shoes have a padded collar, comfortable insole, and...",
+    "accessibilityExplanation": "The official listing identifies zip access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "10 US Little Kid",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid",
+      "5 US Big Kid",
+      "6 US Big Kid",
+      "7 US Big Kid"
+    ],
+    "genderFit": [
+      "Kids"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/pink-confetti-billy-sport-inclusion-dz1-zipper-shoes",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-mens-black-black-gum-billy-sport-inclusion-dz1-zipper-shoes",
+    "name": "Men's Black/Black/Gum BILLY Sport Inclusion DZ1",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$100-$150",
+    "price": "140.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BM26184-003_side_2048x2048_64d91f9c-5b33-4bf7-8a5e-f403bb0c0a12.jpg?v=1762827532",
+    "imageAlt": "Men's Black/Black/Gum BILLY Sport Inclusion DZ1 by BILLY Footwear",
+    "description": "No matter how you get around, you will be moving with style in these Men's Black/Black/Gum BILLY Sport Inclusion DZ1 athletic sneakers. These shoes have a padded collar, comfortable insole,...",
+    "accessibilityExplanation": "The official listing identifies zip access, extra-wide fit as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Extra-wide fit"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema",
+      "Swollen feet"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "7 US Men",
+      "7.5 US Men",
+      "8 US Men",
+      "8.5 US Men",
+      "9 US Men",
+      "9.5 US Men",
+      "10 US Men",
+      "10.5 US Men",
+      "11 US Men",
+      "11.5 US Men",
+      "12 US Men",
+      "13 US Men",
+      "14 US Men"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/mens-black-black-gum-billy-sport-inclusion-dz1-zipper-shoes",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-womens-black-white-gum-billy-sport-inclusion-dz1-zipper-shoes",
+    "name": "Women's Black/White/Gum BILLY Sport Inclusion DZ1",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$100-$150",
+    "price": "135.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BW26184-003_side_2048x2048_b19d8e40-ce2b-46dc-82a3-4a826e955041.jpg?v=1764713490",
+    "imageAlt": "Women's Black/White/Gum BILLY Sport Inclusion DZ1 by BILLY Footwear",
+    "description": "No matter how you get around, you will be moving with style in these Women's Black/White/Gum BILLY Sport Inclusion DZ1 athletic sneakers. These shoes have a padded collar, comfortable...",
+    "accessibilityExplanation": "The official listing identifies zip access, extra-wide fit as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Extra-wide fit"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema",
+      "Swollen feet"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "6 US Women",
+      "6.5 US Women",
+      "7 US Women",
+      "7.5 US Women",
+      "8 US Women",
+      "8.5 US Women",
+      "9 US Women",
+      "9.5 US Women",
+      "10 US Women",
+      "11 US Women"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/womens-black-white-gum-billy-sport-inclusion-dz1-zipper-shoes",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-womens-mauve-white-plum-billy-sport-inclusion-dz1-zipper-shoes",
+    "name": "Women's Mauve/White/Plum BILLY Sport Inclusion DZ1",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$100-$150",
+    "price": "135.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BW26184-689_side_2048x2048_eb8d3776-b26d-4ea9-9b5e-fce0a3b3ab82.jpg?v=1762826666",
+    "imageAlt": "Women's Mauve/White/Plum BILLY Sport Inclusion DZ1 by BILLY Footwear",
+    "description": "No matter how you get around, you will be moving with style in these Women's Mauve/White/Plum BILLY Sport Inclusion DZ1 athletic sneakers. These shoes have a padded collar, comfortable...",
+    "accessibilityExplanation": "The official listing identifies zip access, extra-wide fit as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Extra-wide fit"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema",
+      "Swollen feet"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "6 US Women",
+      "6.5 US Women",
+      "7 US Women",
+      "7.5 US Women",
+      "8 US Women",
+      "8.5 US Women",
+      "9 US Women",
+      "9.5 US Women",
+      "10 US Women",
+      "11 US Women"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/womens-mauve-white-plum-billy-sport-inclusion-dz1-zipper-shoes",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-womens-cs-low",
+    "name": "Women's CS Low",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$50-$100",
+    "price": "85.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BM26182-002-N_side_2048x2048_6f27fbc7-b820-4269-bf9b-1a72e381689e.jpg?v=1764791180",
+    "imageAlt": "Women's CS Low by BILLY Footwear",
+    "description": "Inspired by a core-skate look, the Women's BILLY CS Low is sure to deliver. These trending kicks embrace nostalgia, yet remain true to current style. Step In! Available in Women's and Men's...",
+    "accessibilityExplanation": "The official listing identifies zip access, sensory-friendly as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Sensory-friendly"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Sensory processing",
+      "Skin sensitivity"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Sensory processing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "6 US Women",
+      "6.5 US Women",
+      "7 US Women",
+      "7.5 US Women",
+      "8 US Women",
+      "8.5 US Women",
+      "9 US Women",
+      "9.5 US Women",
+      "10 US Women",
+      "11 US Women",
+      "10.5 US Women",
+      "11.5 US Women",
+      "12 US Women",
+      "12.5 US Women",
+      "13 US Women",
+      "13.5 US Women",
+      "14 US Women",
+      "15 US Women",
+      "16 US Women"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/womens-cs-low",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-mens-cs-low",
+    "name": "Men's CS Low",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$50-$100",
+    "price": "85.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BM26182-100_side_2048x2048_a533ae3b-375a-48af-b34b-c61aab72e847.jpg?v=1763169299",
+    "imageAlt": "Men's CS Low by BILLY Footwear",
+    "description": "Inspired by a core-skate look, the Men's BILLY CS Low is sure to deliver. These trending kicks embrace nostalgia, yet remain true to current style. Step In! Available in Men's and Women's...",
+    "accessibilityExplanation": "The official listing identifies zip access, sensory-friendly as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Sensory-friendly"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Sensory processing",
+      "Skin sensitivity"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Sensory processing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "4 US Men",
+      "4.5 US Men",
+      "5 US Men",
+      "5.5 US Men",
+      "6 US Men",
+      "6.5 US Men",
+      "7 US Men",
+      "7.5 US Men",
+      "8 US Men",
+      "9 US Men",
+      "8.5 US Men",
+      "9.5 US Men",
+      "10 US Men",
+      "10.5 US Men",
+      "11 US Men",
+      "11.5 US Men",
+      "12 US Men",
+      "13 US Men",
+      "14 US Men"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/mens-cs-low",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-womens-goat-classic-high",
+    "name": "Women's Goat Classic High",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$100-$150",
+    "price": "150.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BM24167-001-N_side_2048x2048_d5ad1242-d4fa-49bb-a758-cd5a4fe3a8ee.jpg?v=1764790528",
+    "imageAlt": "Women's Goat Classic High by BILLY Footwear",
+    "description": "Designed in collaboration with certified orthotists for use with braces, orthotics, and prosthetics, the Women's BILLY Goat Classic High is sure to help provide the outcome you are looking...",
+    "accessibilityExplanation": "The official listing identifies zip access, prosthetic access, wrap opening as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Prosthetic access",
+      "Wrap opening",
+      "Orthotic-friendly fit",
+      "Wraparound zipper"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Limb differences",
+      "Prosthetic users",
+      "Orthotics and AFOs"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Limb differences"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "6 US Women",
+      "6.5 US Women",
+      "7 US Women",
+      "7.5 US Women",
+      "8 US Women",
+      "8.5 US Women",
+      "9 US Women",
+      "9.5 US Women",
+      "10 US Women",
+      "11 US Women",
+      "10.5 US Women",
+      "11.5 US Women",
+      "12 US Women",
+      "12.5 US Women",
+      "13 US Women",
+      "13.5 US Women",
+      "14 US Women",
+      "15 US Women",
+      "16 US Women"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/womens-goat-classic-high",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-mens-grey-jersey-billy-goat-classic-high",
+    "name": "Men's Grey Jersey BILLY Goat Classic High",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$100-$150",
+    "price": "150.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BM24167-050_side_2048x2048_1658a3e5-9251-4053-a2a4-5f5514a312fc.jpg?v=1762538087",
+    "imageAlt": "Men's Grey Jersey BILLY Goat Classic High by BILLY Footwear",
+    "description": "Designed in collaboration with certified orthotists for use with braces, orthotics, and prosthetics, the Men's Grey Jersey BILLY Goat Classic High is sure to help provide the outcome you...",
+    "accessibilityExplanation": "The official listing identifies zip access, extra-wide fit, prosthetic access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Extra-wide fit",
+      "Prosthetic access",
+      "Wrap opening",
+      "Orthotic-friendly fit"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema",
+      "Swollen feet",
+      "Limb differences",
+      "Prosthetic users",
+      "Orthotics and AFOs"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "4 US Men",
+      "4.5 US Men",
+      "5 US Men",
+      "5.5 US Men",
+      "6 US Men",
+      "6.5 US Men",
+      "7 US Men",
+      "7.5 US Men",
+      "8 US Men",
+      "9 US Men",
+      "8.5 US Men",
+      "9.5 US Men",
+      "10 US Men",
+      "10.5 US Men",
+      "11 US Men",
+      "11.5 US Men",
+      "12 US Men",
+      "13 US Men",
+      "14 US Men"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/mens-grey-jersey-billy-goat-classic-high",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-womens-grey-jersey-billy-goat-classic-high",
+    "name": "Women's Grey Jersey BILLY Goat Classic High",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$100-$150",
+    "price": "150.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BM24167-050-N_side_2048x2048_f00d0eec-4596-45cf-bf37-2b97f8b5ff72.jpg?v=1764790914",
+    "imageAlt": "Women's Grey Jersey BILLY Goat Classic High by BILLY Footwear",
+    "description": "Designed in collaboration with certified orthotists for use with braces, orthotics, and prosthetics, the Women's Grey Jersey BILLY Goat Classic High is sure to help provide the outcome you...",
+    "accessibilityExplanation": "The official listing identifies zip access, extra-wide fit, prosthetic access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Extra-wide fit",
+      "Prosthetic access",
+      "Wrap opening",
+      "Orthotic-friendly fit"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema",
+      "Swollen feet",
+      "Limb differences",
+      "Prosthetic users",
+      "Orthotics and AFOs"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "6 US Women",
+      "6.5 US Women",
+      "7 US Women",
+      "7.5 US Women",
+      "8 US Women",
+      "8.5 US Women",
+      "9 US Women",
+      "9.5 US Women",
+      "10 US Women",
+      "11 US Women",
+      "10.5 US Women",
+      "11.5 US Women",
+      "12 US Women",
+      "12.5 US Women",
+      "13 US Women",
+      "13.5 US Women",
+      "14 US Women",
+      "15 US Women",
+      "16 US Women"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/womens-grey-jersey-billy-goat-classic-high",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-womens-black-white-billy-cs-low-top",
+    "name": "Women's Black/White BILLY CS Low",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$50-$100",
+    "price": "85.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BM26182-002-N_side_2048x2048_6f27fbc7-b820-4269-bf9b-1a72e381689e.jpg?v=1764791180",
+    "imageAlt": "Women's Black/White BILLY CS Low by BILLY Footwear",
+    "description": "Inspired by a core-skate look, the Women's Black/White BILLY CS Low is sure to deliver. These trending kicks embrace nostalgia, yet remain true to current style. Step In! Available in...",
+    "accessibilityExplanation": "The official listing identifies zip access, sensory-friendly, extra-wide fit as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Sensory-friendly",
+      "Extra-wide fit"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Sensory processing",
+      "Skin sensitivity",
+      "Edema",
+      "Swollen feet"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Sensory processing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "6 US Women",
+      "6.5 US Women",
+      "7 US Women",
+      "7.5 US Women",
+      "8 US Women",
+      "8.5 US Women",
+      "9 US Women",
+      "9.5 US Women",
+      "10 US Women",
+      "11 US Women",
+      "10.5 US Women",
+      "11.5 US Women",
+      "12 US Women",
+      "12.5 US Women",
+      "13 US Women",
+      "13.5 US Women",
+      "14 US Women",
+      "15 US Women",
+      "16 US Women"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/womens-black-white-billy-cs-low-top",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-womens-white-black-billy-cs-low-top",
+    "name": "Women's White/Black BILLY CS Low",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$50-$100",
+    "price": "85.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BM26182-100-N_side_2048x2048_28128dd0-698f-4e64-bd2c-2453a2f160d4.jpg?v=1764791360",
+    "imageAlt": "Women's White/Black BILLY CS Low by BILLY Footwear",
+    "description": "Inspired by a core-skate look, the Women's White/Black BILLY CS Low is sure to deliver. These trending kicks embrace nostalgia, yet remain true to current style. Step In! Available in...",
+    "accessibilityExplanation": "The official listing identifies zip access, sensory-friendly, extra-wide fit as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Sensory-friendly",
+      "Extra-wide fit"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Sensory processing",
+      "Skin sensitivity",
+      "Edema",
+      "Swollen feet"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Sensory processing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "6 US Women",
+      "6.5 US Women",
+      "7 US Women",
+      "7.5 US Women",
+      "8 US Women",
+      "8.5 US Women",
+      "9 US Women",
+      "9.5 US Women",
+      "10 US Women",
+      "11 US Women",
+      "10.5 US Women",
+      "11.5 US Women",
+      "12 US Women",
+      "12.5 US Women",
+      "13 US Women",
+      "13.5 US Women",
+      "14 US Women",
+      "15 US Women",
+      "16 US Women"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/womens-white-black-billy-cs-low-top",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-womens-black-white-billy-goat-classic-high",
+    "name": "Women's Black/White BILLY Goat Classic High",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$100-$150",
+    "price": "150.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BM24167-001-N_side_2048x2048_d5ad1242-d4fa-49bb-a758-cd5a4fe3a8ee.jpg?v=1764790528",
+    "imageAlt": "Women's Black/White BILLY Goat Classic High by BILLY Footwear",
+    "description": "Designed in collaboration with certified orthotists for use with braces, orthotics, and prosthetics, the Women's Black/White BILLY Goat Classic High is sure to help provide the outcome you...",
+    "accessibilityExplanation": "The official listing identifies zip access, extra-wide fit, prosthetic access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Extra-wide fit",
+      "Prosthetic access",
+      "Wrap opening",
+      "Orthotic-friendly fit"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema",
+      "Swollen feet",
+      "Limb differences",
+      "Prosthetic users",
+      "Orthotics and AFOs"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "6 US Women",
+      "6.5 US Women",
+      "7 US Women",
+      "7.5 US Women",
+      "8 US Women",
+      "8.5 US Women",
+      "9 US Women",
+      "9.5 US Women",
+      "10 US Women",
+      "11 US Women",
+      "10.5 US Women",
+      "11.5 US Women",
+      "12 US Women",
+      "12.5 US Women",
+      "13 US Women",
+      "13.5 US Women",
+      "14 US Women",
+      "15 US Women",
+      "16 US Women"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/womens-black-white-billy-goat-classic-high",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-mens-black-white-billy-cs-low-top",
+    "name": "Men's Black/White BILLY CS Low",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$50-$100",
+    "price": "85.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BM26182-002_side_2048x2048_0338d18c-c102-4273-8ba4-45dfae4878af.jpg?v=1762998524",
+    "imageAlt": "Men's Black/White BILLY CS Low by BILLY Footwear",
+    "description": "Inspired by a core-skate look, the Men's Black/White BILLY CS Low is sure to deliver. These trending kicks embrace nostalgia, yet remain true to current style. Step In! Available in Men's...",
+    "accessibilityExplanation": "The official listing identifies zip access, sensory-friendly as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Sensory-friendly"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Sensory processing",
+      "Skin sensitivity"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Sensory processing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "4 US Men",
+      "4.5 US Men",
+      "5 US Men",
+      "5.5 US Men",
+      "6 US Men",
+      "6.5 US Men",
+      "7 US Men",
+      "7.5 US Men",
+      "8 US Men",
+      "9 US Men",
+      "8.5 US Men",
+      "9.5 US Men",
+      "10 US Men",
+      "10.5 US Men",
+      "11 US Men",
+      "11.5 US Men",
+      "12 US Men",
+      "13 US Men",
+      "14 US Men"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/mens-black-white-billy-cs-low-top",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-mens-white-black-billy-cs-low-top",
+    "name": "Men's White/Black BILLY CS Low",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$50-$100",
+    "price": "85.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BM26182-100_side_2048x2048_a533ae3b-375a-48af-b34b-c61aab72e847.jpg?v=1763169299",
+    "imageAlt": "Men's White/Black BILLY CS Low by BILLY Footwear",
+    "description": "Inspired by a core-skate look, the Men's White/Black BILLY CS Low is sure to deliver. These trending kicks embrace nostalgia, yet remain true to current style. Step In! Available in Men's...",
+    "accessibilityExplanation": "The official listing identifies zip access, sensory-friendly as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Sensory-friendly"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Sensory processing",
+      "Skin sensitivity"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Sensory processing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "4 US Men",
+      "4.5 US Men",
+      "5 US Men",
+      "5.5 US Men",
+      "6 US Men",
+      "6.5 US Men",
+      "7 US Men",
+      "7.5 US Men",
+      "8 US Men",
+      "9 US Men",
+      "8.5 US Men",
+      "9.5 US Men",
+      "10 US Men",
+      "10.5 US Men",
+      "11 US Men",
+      "11.5 US Men",
+      "12 US Men",
+      "13 US Men",
+      "14 US Men"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/mens-white-black-billy-cs-low-top",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-turquoise-white-billy-cs-high-top-zipper-shoes",
+    "name": "Turquoise/White BILLY CS High",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$50-$100",
+    "price": "60.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK24170-440_side_2048x2048_a65d6444-ce33-4587-b208-62f5c1d391bd.jpg?v=1762135617",
+    "imageAlt": "Turquoise/White BILLY CS High by BILLY Footwear",
+    "description": "Inspired by a core-skate look, the Turquoise/White BILLY CS High Tops are sure to deliver. These trending kicks embrace nostalgia, yet remain true to current style. Step In! Available in...",
+    "accessibilityExplanation": "The official listing identifies zip access, wrap opening, wraparound zipper as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Wrap opening",
+      "Wraparound zipper",
+      "Removable insoles"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "5 US Toddler",
+      "6 US Toddler",
+      "7 US Toddler",
+      "8 US Toddler",
+      "9 US Toddler",
+      "10 US Toddler",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid",
+      "5 US Big Kid",
+      "6 US Big Kid",
+      "7 US Big Kid"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/turquoise-white-billy-cs-high-top-zipper-shoes",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-navy-billy-d-r-ii-short-wrap-low-tops",
+    "name": "SALE - Navy BILLY D",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$25-$50",
+    "price": "36.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK23156-410-W_side_2048x2048_ffa45b9f-2b29-4abe-b51f-e0977b5d5f33.jpg?v=1748458782",
+    "imageAlt": "SALE - Navy BILLY D by BILLY Footwear",
+    "description": "Built around a custom shape to better accommodate braces, orthotics, and prosthetics, the Navy BILLY D|R II Short Wrap Low is one of our most AFO-friendly designs. Coupled with removable...",
+    "accessibilityExplanation": "The official listing identifies zip access, extra-wide fit, prosthetic access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Extra-wide fit",
+      "Prosthetic access",
+      "Wrap opening",
+      "Orthotic-friendly fit"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema",
+      "Swollen feet",
+      "Limb differences",
+      "Prosthetic users",
+      "Orthotics and AFOs"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "5 US Toddler",
+      "6 US Toddler",
+      "7 US Toddler",
+      "8 US Toddler",
+      "9 US Toddler",
+      "10 US Toddler",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid",
+      "5 US Big Kid",
+      "6 US Big Kid",
+      "7 US Big Kid"
+    ],
+    "genderFit": [
+      "Kids"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/navy-billy-d-r-ii-short-wrap-low-tops",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-blue-watercolor-billy-cs-high-tops",
+    "name": "SALE - Blue Watercolor BILLY CS High",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$25-$50",
+    "price": "39.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK24170-450_Side_2048x2048_5acd0ebe-d2b5-4fa1-b8bb-cd10760b3e79.jpg?v=1748458574",
+    "imageAlt": "SALE - Blue Watercolor BILLY CS High by BILLY Footwear",
+    "description": "Inspired by a core-skate look, the Blue Watercolor BILLY CS High Tops are sure to deliver. These trending kicks embrace nostalgia, yet remain true to current style. Step In! Available in...",
+    "accessibilityExplanation": "The official listing identifies zip access, wrap opening, wraparound zipper as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Wrap opening",
+      "Wraparound zipper",
+      "Removable insoles"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "5 US Toddler",
+      "6 US Toddler",
+      "7 US Toddler",
+      "8 US Toddler",
+      "9 US Toddler",
+      "10 US Toddler",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid",
+      "5 US Big Kid",
+      "6 US Big Kid",
+      "7 US Big Kid"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/blue-watercolor-billy-cs-high-tops",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-black-black-billy-ice-winter-boots",
+    "name": "FINAL SALE - Black/Black BILLY Ice II",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$25-$50",
+    "price": "39.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK22327-001_Side_2048x2048_d66c33d7-c13f-4618-9261-cdb1a26962c3.jpg?v=1748458698",
+    "imageAlt": "FINAL SALE - Black/Black BILLY Ice II by BILLY Footwear",
+    "description": "What better way to navigate the winter months than with a pair of Black/Black BILLY Ice II Winter Boots! The insulated boots are rated to -40 so are sure to keep the feet warm. Touting a...",
+    "accessibilityExplanation": "The official listing identifies zip access, wrap opening, wraparound zipper as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Wrap opening",
+      "Wraparound zipper"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "5 US Toddler",
+      "6 US Toddler",
+      "7 US Toddler",
+      "8 US Toddler",
+      "9 US Toddler",
+      "10 US Toddler",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid",
+      "5 US Big Kid",
+      "6 US Big Kid",
+      "7 US Big Kid",
+      "8 US Big Kid",
+      "9 US Big Kid"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/black-black-billy-ice-winter-boots",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-night-sk8ter-billy-classic-d-r-ii-high-top-afo-friendly-shoes",
+    "name": "Night Sk8ter BILLY Classic D",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$50-$100",
+    "price": "65.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK23153-960-W_side_2048x2048_866c2f58-ef55-43ae-8fe1-6f648f3fe5f5.jpg?v=1749244011",
+    "imageAlt": "Night Sk8ter BILLY Classic D by BILLY Footwear",
+    "description": "Built around a custom shape to better accommodate braces, orthotics, and prosthetics, the Night Sk8ter BILLY Classic D|R II High is one of our most AFO-friendly designs. Coupled with...",
+    "accessibilityExplanation": "The official listing identifies zip access, extra-wide fit, prosthetic access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Extra-wide fit",
+      "Prosthetic access",
+      "Wrap opening",
+      "Orthotic-friendly fit"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema",
+      "Swollen feet",
+      "Limb differences",
+      "Prosthetic users",
+      "Orthotics and AFOs"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "5 US Toddler",
+      "6 US Toddler",
+      "7 US Toddler",
+      "8 US Toddler",
+      "9 US Toddler",
+      "10 US Toddler",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid",
+      "5 US Big Kid",
+      "6 US Big Kid",
+      "7 US Big Kid"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/night-sk8ter-billy-classic-d-r-ii-high-top-afo-friendly-shoes",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-black-pink-billy-ice-winter-boots",
+    "name": "FINAL SALE - Black/Pink BILLY Ice II",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$25-$50",
+    "price": "39.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK22327-650_Side_2048x2048_9e893455-9d67-4ab3-bb0e-39fc1d39df99.jpg?v=1748458919",
+    "imageAlt": "FINAL SALE - Black/Pink BILLY Ice II by BILLY Footwear",
+    "description": "What better way to navigate the winter months than with a pair of Black/Pink BILLY Ice II Winter Boots! The insulated boots are rated to -40 so are sure to keep the feet warm. Touting a...",
+    "accessibilityExplanation": "The official listing identifies zip access, wrap opening, wraparound zipper as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Wrap opening",
+      "Wraparound zipper"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "5 US Toddler",
+      "6 US Toddler",
+      "7 US Toddler",
+      "8 US Toddler",
+      "9 US Toddler",
+      "10 US Toddler",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid",
+      "5 US Big Kid",
+      "6 US Big Kid",
+      "7 US Big Kid",
+      "8 US Big Kid",
+      "9 US Big Kid"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/black-pink-billy-ice-winter-boots",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-kids-toddler-classic-lace-high-final-sale",
+    "name": "Kids'/Toddler Classic Lace High (Sale)",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$25-$50",
+    "price": "34.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK19011-140_SIDE_2048x2048_eb39d662-2a6f-4b51-af84-0a6f02cdd736.jpg?v=1766904464",
+    "imageAlt": "Kids'/Toddler Classic Lace High (Sale) by BILLY Footwear",
+    "description": "Smashing function with fashion, the Kids'/Toddler BILLY Classic Lace High Tops are sure to impress. Built around the BILLY Classic High Top silhouette, these kicks come with functional...",
+    "accessibilityExplanation": "The official listing identifies zip access, wrap opening, wraparound zipper as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Wrap opening",
+      "Wraparound zipper",
+      "Removable insoles"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "5 US Toddler",
+      "6 US Toddler",
+      "7 US Toddler",
+      "8 US Toddler",
+      "9 US Toddler",
+      "10 US Toddler",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid",
+      "5 US Big Kid",
+      "6 US Big Kid",
+      "7 US Big Kid"
+    ],
+    "genderFit": [
+      "Kids"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/kids-toddler-classic-lace-high-final-sale",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-mens-goat-classic-high",
+    "name": "Men's Goat Classic High",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$100-$150",
+    "price": "150.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BM24167-001-W_side_2048x2048_e646abe9-6c66-4002-a7df-eccae072339f.jpg?v=1748458350",
+    "imageAlt": "Men's Goat Classic High by BILLY Footwear",
+    "description": "Designed in collaboration with certified orthotists for use with braces, orthotics, and prosthetics, the Men's BILLY Goat Classic High is sure to help provide the outcome you are looking...",
+    "accessibilityExplanation": "The official listing identifies zip access, prosthetic access, wrap opening as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Prosthetic access",
+      "Wrap opening",
+      "Orthotic-friendly fit",
+      "Wraparound zipper"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Limb differences",
+      "Prosthetic users",
+      "Orthotics and AFOs"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Limb differences"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "4 US Men",
+      "4.5 US Men",
+      "5 US Men",
+      "5.5 US Men",
+      "6 US Men",
+      "6.5 US Men",
+      "7 US Men",
+      "7.5 US Men",
+      "8 US Men",
+      "9 US Men",
+      "8.5 US Men",
+      "9.5 US Men",
+      "10 US Men",
+      "10.5 US Men",
+      "11 US Men",
+      "11.5 US Men",
+      "12 US Men",
+      "13 US Men",
+      "14 US Men"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/mens-goat-classic-high",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-black-grey-billy-ice-winter-boots",
+    "name": "FINAL SALE - Black/Grey BILLY Ice II",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$25-$50",
+    "price": "39.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK22327-020_Side_2048x2048_e4119c02-9aad-438f-b632-4d851446e381.jpg?v=1748458700",
+    "imageAlt": "FINAL SALE - Black/Grey BILLY Ice II by BILLY Footwear",
+    "description": "What better way to navigate the winter months than with a pair of Black/Grey BILLY Ice II Winter Boots! The insulated boots are rated to -40 so are sure to keep the feet warm. Touting a...",
+    "accessibilityExplanation": "The official listing identifies zip access, wrap opening, wraparound zipper as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Wrap opening",
+      "Wraparound zipper"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "5 US Toddler",
+      "6 US Toddler",
+      "7 US Toddler",
+      "8 US Toddler",
+      "9 US Toddler",
+      "10 US Toddler",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid",
+      "5 US Big Kid",
+      "6 US Big Kid",
+      "7 US Big Kid",
+      "8 US Big Kid",
+      "9 US Big Kid"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/black-grey-billy-ice-winter-boots",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-black-purple-billy-ice-winter-boots",
+    "name": "FINAL SALE - Black/Purple BILLY Ice II",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$25-$50",
+    "price": "39.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK22327-500_Side_2048x2048_ada371fa-1dd4-4108-8a08-cc9a5583599e.jpg?v=1748458701",
+    "imageAlt": "FINAL SALE - Black/Purple BILLY Ice II by BILLY Footwear",
+    "description": "What better way to navigate the winter months than with a pair of Black/Purple BILLY Ice II Winter Boots! The insulated boots are rated to -40 so are sure to keep the feet warm. Touting a...",
+    "accessibilityExplanation": "The official listing identifies zip access, wrap opening, wraparound zipper as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Wrap opening",
+      "Wraparound zipper"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "5 US Toddler",
+      "6 US Toddler",
+      "7 US Toddler",
+      "8 US Toddler",
+      "9 US Toddler",
+      "10 US Toddler",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid",
+      "5 US Big Kid",
+      "6 US Big Kid",
+      "7 US Big Kid",
+      "8 US Big Kid",
+      "9 US Big Kid"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/black-purple-billy-ice-winter-boots",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-dark-grey-billy-classic-d-r-high-tops",
+    "name": "FINAL SALE - Dark Grey BILLY Classic D",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$25-$50",
+    "price": "26.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK20317-030_side_2048x2048_6b5d8bb9-f2e9-4591-9ba0-93fd6cb8a133.jpg?v=1748459295",
+    "imageAlt": "FINAL SALE - Dark Grey BILLY Classic D by BILLY Footwear",
+    "description": "Built around a custom shape to better accommodate braces, orthotics, and prosthetics, the Dark Grey BILLY Classic D|R High is one of our most AFO-friendly designs. Coupled with removable...",
+    "accessibilityExplanation": "The official listing identifies zip access, extra-wide fit, prosthetic access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Extra-wide fit",
+      "Prosthetic access",
+      "Wrap opening",
+      "Orthotic-friendly fit"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema",
+      "Swollen feet",
+      "Limb differences",
+      "Prosthetic users",
+      "Orthotics and AFOs"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "5 US Toddler",
+      "6 US Toddler",
+      "7 US Toddler",
+      "8 US Toddler",
+      "9 US Toddler",
+      "10 US Toddler",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid",
+      "5 US Big Kid",
+      "6 US Big Kid",
+      "7 US Big Kid",
+      "8 US Big Kid",
+      "9 US Big Kid"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/dark-grey-billy-classic-d-r-high-tops",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-navy-billy-classic-d-r-high-tops",
+    "name": "FINAL SALE - Navy BILLY Classic D",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$25-$50",
+    "price": "24.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK20317-410_side_2048x2048_5001b58f-a6e2-4bce-911c-b3be55103182.jpg?v=1748459217",
+    "imageAlt": "FINAL SALE - Navy BILLY Classic D by BILLY Footwear",
+    "description": "Built around a custom shape to better accommodate braces, orthotics, and prosthetics, the Navy BILLY Classic D|R High is one of our most AFO-friendly designs. Coupled with removable insoles...",
+    "accessibilityExplanation": "The official listing identifies zip access, extra-wide fit, prosthetic access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Extra-wide fit",
+      "Prosthetic access",
+      "Wrap opening",
+      "Orthotic-friendly fit"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema",
+      "Swollen feet",
+      "Limb differences",
+      "Prosthetic users",
+      "Orthotics and AFOs"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "5 US Toddler",
+      "6 US Toddler",
+      "7 US Toddler",
+      "8 US Toddler",
+      "9 US Toddler",
+      "10 US Toddler",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid",
+      "5 US Big Kid",
+      "6 US Big Kid",
+      "7 US Big Kid",
+      "8 US Big Kid",
+      "9 US Big Kid"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/navy-billy-classic-d-r-high-tops",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-pink-billy-classic-d-r-high-tops",
+    "name": "FINAL SALE - Pink BILLY Classic D",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$25-$50",
+    "price": "26.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK20317-660_side_2048x2048_71bb7036-cb7b-410a-a58a-f2a6d32b065d.jpg?v=1748459291",
+    "imageAlt": "FINAL SALE - Pink BILLY Classic D by BILLY Footwear",
+    "description": "Built around a custom shape to better accommodate braces, orthotics, and prosthetics, the Pink BILLY Classic D|R High is one of our most AFO-friendly designs. Coupled with removable insoles...",
+    "accessibilityExplanation": "The official listing identifies zip access, extra-wide fit, prosthetic access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Extra-wide fit",
+      "Prosthetic access",
+      "Wrap opening",
+      "Orthotic-friendly fit"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema",
+      "Swollen feet",
+      "Limb differences",
+      "Prosthetic users",
+      "Orthotics and AFOs"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "5 US Toddler",
+      "6 US Toddler",
+      "7 US Toddler",
+      "8 US Toddler",
+      "9 US Toddler",
+      "10 US Toddler",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid",
+      "5 US Big Kid",
+      "6 US Big Kid",
+      "7 US Big Kid",
+      "8 US Big Kid",
+      "9 US Big Kid"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/pink-billy-classic-d-r-high-tops",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-pink-print-billy-classic-d-r-high-tops",
+    "name": "FINAL SALE - Pink Print BILLY Classic D",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$25-$50",
+    "price": "26.99",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK22317-670_side_2048x2048_bb82fc9c-7d43-4cf9-bf2f-6e25621ee82f.jpg?v=1748459085",
+    "imageAlt": "FINAL SALE - Pink Print BILLY Classic D by BILLY Footwear",
+    "description": "Built around a custom shape to better accommodate braces, orthotics, and prosthetics, the Pink Print BILLY Classic D|R High is one of our most AFO-friendly designs. Coupled with removable...",
+    "accessibilityExplanation": "The official listing identifies zip access, extra-wide fit, prosthetic access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Extra-wide fit",
+      "Prosthetic access",
+      "Wrap opening",
+      "Orthotic-friendly fit"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema",
+      "Swollen feet",
+      "Limb differences",
+      "Prosthetic users",
+      "Orthotics and AFOs"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "5 US Toddler",
+      "6 US Toddler",
+      "7 US Toddler",
+      "8 US Toddler",
+      "9 US Toddler",
+      "10 US Toddler",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid",
+      "5 US Big Kid",
+      "6 US Big Kid",
+      "7 US Big Kid",
+      "8 US Big Kid",
+      "9 US Big Kid"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/pink-print-billy-classic-d-r-high-tops",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-kids-toddler-billy-goat-dz-high",
+    "name": "Kids'/Toddler BILLY Goat DZ High",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$50-$100",
+    "price": "85.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK25166-002-W_side_2048x2048_63a2559f-84df-4b42-ba03-1fc66b75914c.jpg?v=1760466532",
+    "imageAlt": "Kids'/Toddler BILLY Goat DZ High by BILLY Footwear",
+    "description": "Created in collaboration with certified orthotists for use with braces, orthotics, and prosthetics, the Kids'/Toddler BILLY Goat DZ High is the perfect blend of style and functionality....",
+    "accessibilityExplanation": "The official listing identifies easy dressing, zip access, extra-wide fit as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Easy dressing",
+      "Zip access",
+      "Extra-wide fit",
+      "Prosthetic access",
+      "Wrap opening"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema",
+      "Swollen feet",
+      "Limb differences",
+      "Prosthetic users",
+      "Orthotics and AFOs"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "5 US Toddler",
+      "6 US Toddler",
+      "7 US Toddler",
+      "8 US Toddler",
+      "9 US Toddler",
+      "10 US Toddler",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid",
+      "5 US Big Kid",
+      "6 US Big Kid",
+      "7 US Big Kid"
+    ],
+    "genderFit": [
+      "Kids"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/kids-toddler-billy-goat-dz-high",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-black-billy-ice-boot-winter-boots",
+    "name": "Black BILLY Ice Boot",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$100-$150",
+    "price": "105.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK25383-001-W_side_2048x2048_74a66477-8a35-4f9b-9afa-721ffc85a437.jpg?v=1757363156",
+    "imageAlt": "Black BILLY Ice Boot by BILLY Footwear",
+    "description": "What better way to navigate the winter months than with a pair of Black BILLY Ice Winter Boots! The insulated boots are rated to -20 so you are sure to keep the feet warm. Touting a short...",
+    "accessibilityExplanation": "The official listing identifies zip access, wrap opening, wraparound zipper as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Wrap opening",
+      "Wraparound zipper"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "7 US Toddler",
+      "8 US Toddler",
+      "9 US Toddler",
+      "10 US Toddler",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid",
+      "5 US Big Kid",
+      "6 US Big Kid",
+      "7 US Big Kid"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/black-billy-ice-boot-winter-boots",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-kids-toddler-glitz-cs-high",
+    "name": "Kids'/Toddler Glitz CS High",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$50-$100",
+    "price": "65.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK24170-007_Side_2048x2048_8db115cc-bc80-495f-b192-e60351afb06c.jpg?v=1748458387",
+    "imageAlt": "Kids'/Toddler Glitz CS High by BILLY Footwear",
+    "description": "Inspired by a core-skate look, the BILLY Glitz CS High Tops are sure to deliver. These trending kicks embrace nostalgia, yet remain true to current style. Step In! Available in Kids' and...",
+    "accessibilityExplanation": "The official listing identifies zip access, wrap opening, wraparound zipper as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Wrap opening",
+      "Wraparound zipper",
+      "Removable insoles"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "5 US Toddler",
+      "6 US Toddler",
+      "7 US Toddler",
+      "8 US Toddler",
+      "9 US Toddler",
+      "10 US Toddler",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid",
+      "5 US Big Kid",
+      "6 US Big Kid",
+      "7 US Big Kid"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/kids-toddler-glitz-cs-high",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-silver-glitz-billy-cs-high-tops",
+    "name": "Silver Glitz BILLY CS High",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$50-$100",
+    "price": "65.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK24170-040_Side_2048x2048_e644f249-0175-429c-a421-1a229eab49c8.jpg?v=1748458392",
+    "imageAlt": "Silver Glitz BILLY CS High by BILLY Footwear",
+    "description": "Inspired by a core-skate look, the Silver Glitz BILLY CS High Tops are sure to deliver. These trending kicks embrace nostalgia, yet remain true to current style. Step In! Available in Kids'...",
+    "accessibilityExplanation": "The official listing identifies zip access, wrap opening, wraparound zipper as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Wrap opening",
+      "Wraparound zipper",
+      "Removable insoles"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "5 US Toddler",
+      "6 US Toddler",
+      "7 US Toddler",
+      "8 US Toddler",
+      "9 US Toddler",
+      "10 US Toddler",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid",
+      "5 US Big Kid",
+      "6 US Big Kid",
+      "7 US Big Kid"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/silver-glitz-billy-cs-high-tops",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "billy-footwear-wicked-black-glitz-billy-cs-high-tops",
+    "name": "Wicked Black Glitz BILLY CS High",
+    "brandId": "billy-footwear",
+    "clothingType": "Shoes",
+    "category": "shoes",
+    "priceRange": "$50-$100",
+    "price": "65.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/1145/5784/files/BK24170-004_side_2048x2048_a94dc63a-fd4b-4773-baaa-61fe34aa63bc.jpg?v=1757364537",
+    "imageAlt": "Wicked Black Glitz BILLY CS High by BILLY Footwear",
+    "description": "Inspired by a core-skate look, the Wicked Black Glitz BILLY CS High Tops are sure to deliver. These trending kicks embrace nostalgia, yet remain true to current style. Step In! Available in...",
+    "accessibilityExplanation": "The official listing identifies zip access, wrap opening, wraparound zipper as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Wrap opening",
+      "Wraparound zipper",
+      "Removable insoles"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Australia"
+      ],
+      "note": "Available online from the official BILLY Footwear store."
+    },
+    "sizes": [
+      "5 US Toddler",
+      "6 US Toddler",
+      "7 US Toddler",
+      "8 US Toddler",
+      "9 US Toddler",
+      "10 US Toddler",
+      "11 US Little Kid",
+      "12 US Little Kid",
+      "13 US Little Kid",
+      "1 US Little Kid",
+      "2 US Little Kid",
+      "3 US Little Kid",
+      "4 US Big Kid",
+      "5 US Big Kid",
+      "6 US Big Kid",
+      "7 US Big Kid"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://billyfootwear.com/products/wicked-black-glitz-billy-cs-high-tops",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-womens-adaptive-unlimbited-pant",
+    "name": "Women's Adaptive Unlimbited Pant",
+    "brandId": "no-limbits",
+    "clothingType": "Pants",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "92.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/products/20220108_NoLimbits_0366-Edit.jpg?v=1765823767",
+    "imageAlt": "Women's Adaptive Unlimbited Pant by No Limbits",
+    "description": "These pants are designed for anyone with a lower limb difference that makes traditional pants hard to wear or uncomfortable. That includes people with: Prosthetics Leg braces Knee braces...",
+    "accessibilityExplanation": "The official listing identifies easy dressing, zip access, extra-wide fit as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Easy dressing",
+      "Zip access",
+      "Extra-wide fit",
+      "Prosthetic access",
+      "Orthotic-friendly fit"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema",
+      "Swollen feet",
+      "Limb differences",
+      "Prosthetic users",
+      "Orthotics and AFOs"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema"
+    ],
+    "styleTags": [
+      "Denim",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "0 Regular",
+      "2 Regular",
+      "2 Long",
+      "4 Regular",
+      "4 Long",
+      "6 Regular",
+      "6 Long",
+      "8 Regular",
+      "8 Long",
+      "10 Regular",
+      "10 Long",
+      "12 Regular",
+      "12 Long",
+      "14 Regular",
+      "14 Long",
+      "16 Regular",
+      "16 Long",
+      "18 Regular",
+      "18 Long",
+      "20 Regular",
+      "22 Long"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/womens-adaptive-unlimbited-pant",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-mens-adaptive-unlimbited-pant",
+    "name": "Men's Adaptive Unlimbited Pant",
+    "brandId": "no-limbits",
+    "clothingType": "Pants",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "92.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/products/20220108_NoLimbits_0230-Edit.jpg?v=1677093093",
+    "imageAlt": "Men's Adaptive Unlimbited Pant by No Limbits",
+    "description": "These pants are designed for anyone with a lower limb difference that makes traditional pants hard to wear or uncomfortable. That includes people with: Prosthetics Leg braces Knee braces...",
+    "accessibilityExplanation": "The official listing identifies easy dressing, zip access, extra-wide fit as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Easy dressing",
+      "Zip access",
+      "Extra-wide fit",
+      "Prosthetic access",
+      "Orthotic-friendly fit"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema",
+      "Swollen feet",
+      "Limb differences",
+      "Prosthetic users",
+      "Orthotics and AFOs"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Edema"
+    ],
+    "styleTags": [
+      "Everyday",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "30x30",
+      "30x32",
+      "32x30",
+      "32x32",
+      "34x30",
+      "34x32",
+      "34x34",
+      "36x30",
+      "36x32",
+      "38x30",
+      "38x32",
+      "38x34",
+      "40x32",
+      "40x34",
+      "42x32",
+      "42x34",
+      "44x32",
+      "44x34",
+      "46x32",
+      "46x34",
+      "48x30",
+      "48x32",
+      "48x34",
+      "50x32",
+      "50x34",
+      "52x32",
+      "52x34"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/mens-adaptive-unlimbited-pant",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-mens-fidget-hoodie",
+    "name": "Men's Fidget Hoodie",
+    "brandId": "no-limbits",
+    "clothingType": "Tops",
+    "category": "tops",
+    "priceRange": "$50-$100",
+    "price": "59.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/files/00810121464410_SWAV2_2.jpg?v=1765818876",
+    "imageAlt": "Men's Fidget Hoodie by No Limbits",
+    "description": "Discover the ultimate comfort and relaxation with our Men’s Fidget Hoodie, designed to cater to your sensory needs. This hoodie features flatlock seams to prevent irritation and ensure a...",
+    "accessibilityExplanation": "The official listing identifies sensory-friendly, flat seams, built-in sensory tools as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Sensory-friendly",
+      "Flat seams",
+      "Built-in sensory tools"
+    ],
+    "disabilityNeeds": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "bestFor": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "Extra Small",
+      "Small",
+      "Medium",
+      "Large",
+      "Extra Large",
+      "XXL",
+      "XXXL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/mens-fidget-hoodie",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-womens-fidget-hoodie",
+    "name": "Women's Fidget Hoodie",
+    "brandId": "no-limbits",
+    "clothingType": "Tops",
+    "category": "tops",
+    "priceRange": "$50-$100",
+    "price": "59.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/files/00810121463734_SW.jpg?v=1732040178",
+    "imageAlt": "Women's Fidget Hoodie by No Limbits",
+    "description": "Discover the ultimate comfort and relaxation with our Women’s Fidget Hoodie, designed to cater to sensory needs. This hoodie features flatlock seams to prevent irritation and ensure a...",
+    "accessibilityExplanation": "The official listing identifies sensory-friendly, flat seams, built-in sensory tools as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Sensory-friendly",
+      "Flat seams",
+      "Built-in sensory tools"
+    ],
+    "disabilityNeeds": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "bestFor": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "Extra Small",
+      "Small",
+      "Medium",
+      "Large",
+      "Extra Large",
+      "XXL"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/womens-fidget-hoodie",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-mens-sensory-everyday-pant",
+    "name": "Men's Sensory Everyday Pant",
+    "brandId": "no-limbits",
+    "clothingType": "Pants",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "59.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/files/TetherNL0203-Edit.jpg?v=1765814941",
+    "imageAlt": "Men's Sensory Everyday Pant by No Limbits",
+    "description": "Step into unparalleled comfort with our Men’s Sensory Friendly Pant, thoughtfully designed to cater to your sensory and practical needs. Whether you’re lounging at home or on the go, these...",
+    "accessibilityExplanation": "The official listing identifies sensory-friendly as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Sensory-friendly"
+    ],
+    "disabilityNeeds": [
+      "Sensory processing",
+      "Skin sensitivity"
+    ],
+    "bestFor": [
+      "Sensory processing",
+      "Skin sensitivity"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "Extra-small",
+      "Small",
+      "Medium",
+      "Large",
+      "Extra-large",
+      "XXL",
+      "XXXL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/mens-sensory-everyday-pant",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-womens-sensory-everyday-pant",
+    "name": "Women's Sensory Everyday Pant",
+    "brandId": "no-limbits",
+    "clothingType": "Pants",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "59.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/files/IMG_6128-Edit.jpg?v=1723232940",
+    "imageAlt": "Women's Sensory Everyday Pant by No Limbits",
+    "description": "Step into unparalleled comfort with our Women’s Sensory Friendly Pant, thoughtfully designed to cater to your sensory and practical needs. Whether you’re lounging at home or on the go,...",
+    "accessibilityExplanation": "The official listing identifies sensory-friendly as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Sensory-friendly"
+    ],
+    "disabilityNeeds": [
+      "Sensory processing",
+      "Skin sensitivity"
+    ],
+    "bestFor": [
+      "Sensory processing",
+      "Skin sensitivity"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "Extra-small",
+      "Small",
+      "Medium",
+      "Large",
+      "Extra-large",
+      "XXL",
+      "XXXL"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/womens-sensory-everyday-pant",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-womens-adaptive-sensory-blouse",
+    "name": "Women's Adaptive Sensory Blouse",
+    "brandId": "no-limbits",
+    "clothingType": "Shirts",
+    "category": "shirts",
+    "priceRange": "$50-$100",
+    "price": "59.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/products/20230325_NoLimbits_Lifestyle_IMG_7516.jpg?v=1765806942",
+    "imageAlt": "Women's Adaptive Sensory Blouse by No Limbits",
+    "description": "All your favorite sensory-friendly features packed into a cute work fit or date night top! Comfortable does not often equal fashionable but eureka we’ve done it. And we’ve done it so good,...",
+    "accessibilityExplanation": "The official listing identifies sensory-friendly as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Sensory-friendly"
+    ],
+    "disabilityNeeds": [
+      "Sensory processing",
+      "Skin sensitivity"
+    ],
+    "bestFor": [
+      "Sensory processing",
+      "Skin sensitivity"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday",
+      "Smart casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "Extra-small/Small",
+      "Small/Medium",
+      "Large/Extra-large",
+      "XX-Large/XXX-Large"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/womens-adaptive-sensory-blouse",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-womens-adaptive-limited-dexterity-legging",
+    "name": "Women's Adaptive Limited Dexterity Legging",
+    "brandId": "no-limbits",
+    "clothingType": "Pants",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "92.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/files/20230662_NoLimbits_Sensory_IMG_9548-Edit.jpg?v=1765805218",
+    "imageAlt": "Women's Adaptive Limited Dexterity Legging by No Limbits",
+    "description": "Our Limited Dexterity Legging was created for individuals with limited use of one or more hands. These adaptive leggings are as easy to get on as they are cute. Key features of the Limited...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, seated fit, easy dressing as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Seated fit",
+      "Easy dressing",
+      "Limited-dexterity design"
+    ],
+    "disabilityNeeds": [
+      "Wheelchair users",
+      "Limited mobility",
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "bestFor": [
+      "Wheelchair users",
+      "Limited mobility",
+      "Limited dexterity"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "Extra-Small",
+      "Small",
+      "Medium",
+      "Large",
+      "Extra-Large",
+      "XX-Large",
+      "XXX-Large"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": true,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/womens-adaptive-limited-dexterity-legging",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-mens-adaptive-sensory-compression-tank",
+    "name": "Men's Adaptive Sensory Compression Tank",
+    "brandId": "no-limbits",
+    "clothingType": "Tops",
+    "category": "tops",
+    "priceRange": "$25-$50",
+    "price": "42.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/files/20230662_NoLimbits_Sensory_IMG_9353-Edit.jpg?v=1765803326",
+    "imageAlt": "Men's Adaptive Sensory Compression Tank by No Limbits",
+    "description": "Our Sensory Tank is a seamless knit compression tank designed to provide ultimate comfort and support for individuals with sensory processing disorder or anyone seeking a supremely...",
+    "accessibilityExplanation": "The official listing identifies sensory-friendly, gentle compression as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Sensory-friendly",
+      "Gentle compression"
+    ],
+    "disabilityNeeds": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "bestFor": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "Extra-Large",
+      "XX-Large"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/mens-adaptive-sensory-compression-tank",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-womens-adaptive-sensory-compression-tank",
+    "name": "Women's Adaptive Sensory Compression Tank",
+    "brandId": "no-limbits",
+    "clothingType": "Tops",
+    "category": "tops",
+    "priceRange": "$25-$50",
+    "price": "42.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/files/20230662_NoLimbits_Sensory_IMG_9237-Edit.jpg?v=1686772291",
+    "imageAlt": "Women's Adaptive Sensory Compression Tank by No Limbits",
+    "description": "Our Sensory Tank is a seamless knit compression tank designed to provide ultimate comfort and support for individuals with sensory processing disorder or anyone seeking a supremely...",
+    "accessibilityExplanation": "The official listing identifies sensory-friendly, gentle compression as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Sensory-friendly",
+      "Gentle compression"
+    ],
+    "disabilityNeeds": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "bestFor": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "Extra-Small",
+      "Small",
+      "Medium",
+      "Large",
+      "Extra-Large",
+      "XX-Large"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/womens-adaptive-sensory-compression-tank",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-girls-adaptive-sensory-tee",
+    "name": "Girls Adaptive Sensory Tee",
+    "brandId": "no-limbits",
+    "clothingType": "Tops",
+    "category": "tops",
+    "priceRange": "$25-$50",
+    "price": "40.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/products/20230327_NoLimbits_Layflats_IMG_7898-Edit.jpg?v=1680150237",
+    "imageAlt": "Girls Adaptive Sensory Tee by No Limbits",
+    "description": "Our Sensory Tee was thoughtfully designed for individuals with sensory processing disorders and anyone seeking ultimate comfort! So comfortable I don’t want to take it off to wash it. But...",
+    "accessibilityExplanation": "The official listing identifies sensory-friendly, flat seams as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Sensory-friendly",
+      "Flat seams"
+    ],
+    "disabilityNeeds": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "bestFor": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "4/5",
+      "6/6X",
+      "7/8",
+      "10/12",
+      "14/16"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/girls-adaptive-sensory-tee",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-boys-adaptive-sensory-tee",
+    "name": "Boys Adaptive Sensory Tee",
+    "brandId": "no-limbits",
+    "clothingType": "Tops",
+    "category": "tops",
+    "priceRange": "$25-$50",
+    "price": "40.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/products/20230327_NoLimbits_Layflats_IMG_7887.jpg?v=1765801698",
+    "imageAlt": "Boys Adaptive Sensory Tee by No Limbits",
+    "description": "Our Sensory Tee was thoughtfully designed for individuals with sensory processing disorders and anyone seeking ultimate comfort! So comfortable I don’t want to take it off to wash it. But...",
+    "accessibilityExplanation": "The official listing identifies sensory-friendly, flat seams as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Sensory-friendly",
+      "Flat seams"
+    ],
+    "disabilityNeeds": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "bestFor": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "4/5",
+      "6/7",
+      "8/10",
+      "12/14",
+      "16"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/boys-adaptive-sensory-tee",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-womens-adaptive-sensory-tee",
+    "name": "Women's Adaptive Sensory Tee",
+    "brandId": "no-limbits",
+    "clothingType": "Tops",
+    "category": "tops",
+    "priceRange": "$25-$50",
+    "price": "40.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/files/20230662_NoLimbits_Sensory_IMG_8923-Edit.jpg?v=1765568798",
+    "imageAlt": "Women's Adaptive Sensory Tee by No Limbits",
+    "description": "Our Sensory Tee was thoughtfully designed for individuals with sensory processing disorders and anyone seeking ultimate comfort! So comfortable I don’t want to take it off to wash it. But...",
+    "accessibilityExplanation": "The official listing identifies sensory-friendly, flat seams as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Sensory-friendly",
+      "Flat seams"
+    ],
+    "disabilityNeeds": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "bestFor": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "Extra-Small",
+      "Small",
+      "Medium",
+      "Large",
+      "Extra-Large",
+      "XX-Large",
+      "XXX-Large"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/womens-adaptive-sensory-tee",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-mens-adaptive-sensory-tee",
+    "name": "Men's Adaptive Sensory Tee",
+    "brandId": "no-limbits",
+    "clothingType": "Tops",
+    "category": "tops",
+    "priceRange": "$25-$50",
+    "price": "40.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/files/20230662_NoLimbits_Sensory_IMG_9099-Edit.jpg?v=1686770354",
+    "imageAlt": "Men's Adaptive Sensory Tee by No Limbits",
+    "description": "Our Sensory Tee was thoughtfully designed for individuals with sensory processing disorders and anyone seeking ultimate comfort! So comfortable I don’t want to take it off to wash it. But...",
+    "accessibilityExplanation": "The official listing identifies sensory-friendly, flat seams as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Sensory-friendly",
+      "Flat seams"
+    ],
+    "disabilityNeeds": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "bestFor": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "Extra-Large",
+      "XX-Large",
+      "XXX-Large"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/mens-adaptive-sensory-tee",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-womens-adaptive-wheelchair-pant",
+    "name": "Women's Adaptive Wheelchair Pant",
+    "brandId": "no-limbits",
+    "clothingType": "Pants",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "98.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/products/20230401_NoLimbits_WheelchairPant_0950-Edit.jpg?v=1681272861",
+    "imageAlt": "Women's Adaptive Wheelchair Pant by No Limbits",
+    "description": "These pants are for the rock and rollers of the world! Every detail has been specifically designed for the seated body with comfort and functionality rivaled only by how amazing they look....",
+    "accessibilityExplanation": "The official listing identifies seated fit, easy dressing, zip access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Seated fit",
+      "Easy dressing",
+      "Zip access",
+      "Medical-device access"
+    ],
+    "disabilityNeeds": [
+      "Wheelchair users",
+      "Limited mobility",
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Wheelchair users",
+      "Limited mobility",
+      "Limited dexterity"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "0 Regular",
+      "2 Regular",
+      "2 Long",
+      "4 Regular",
+      "4 Long",
+      "6 Regular",
+      "6 Long",
+      "8 Regular",
+      "8 Long",
+      "10 Regular",
+      "10 Long",
+      "12 Regular",
+      "12 Long",
+      "14 Regular",
+      "14 Long",
+      "16 Regular",
+      "16 Long",
+      "18 Regular",
+      "18 Long",
+      "20 Regular",
+      "22 Long"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": true,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/womens-adaptive-wheelchair-pant",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-mens-adaptive-wheelchair-pant",
+    "name": "Men's Adaptive Wheelchair Pant",
+    "brandId": "no-limbits",
+    "clothingType": "Pants",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "98.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/products/20230401_NoLimbits_WheelchairPant_0981-Edit.jpg?v=1681272734",
+    "imageAlt": "Men's Adaptive Wheelchair Pant by No Limbits",
+    "description": "These pants are for the rock and rollers of the world! Every detail has been specifically designed for the seated body with comfort and functionality rivaled only by how amazing they look....",
+    "accessibilityExplanation": "The official listing identifies seated fit, easy dressing, zip access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Seated fit",
+      "Easy dressing",
+      "Zip access",
+      "Medical-device access"
+    ],
+    "disabilityNeeds": [
+      "Wheelchair users",
+      "Limited mobility",
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Wheelchair users",
+      "Limited mobility",
+      "Limited dexterity"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "30x30",
+      "30x32",
+      "32x30",
+      "32x32",
+      "34x30",
+      "34x32",
+      "36x30",
+      "36x32",
+      "38x32",
+      "38x34",
+      "40x32",
+      "40x34",
+      "42x32",
+      "42x34",
+      "44x32",
+      "44x34",
+      "46x32",
+      "46x34",
+      "48x32",
+      "48x34",
+      "50x32",
+      "50x34",
+      "52x32",
+      "52x34"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": true,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/mens-adaptive-wheelchair-pant",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-mens-adaptive-amp-pant",
+    "name": "Men's Adaptive Amp Pant",
+    "brandId": "no-limbits",
+    "clothingType": "Pants",
+    "category": "pants",
+    "priceRange": "$25-$50",
+    "price": "40.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/products/menslightwashamppantonbody.jpg?v=1658432552",
+    "imageAlt": "Men's Adaptive Amp Pant by No Limbits",
+    "description": "Please note : This is a discontinued product. All sales are final, no returns or exchanges will be accepted. These classic jeans were designed specifically with amputees in mind. Hidden...",
+    "accessibilityExplanation": "The official listing identifies zip access, prosthetic access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Prosthetic access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Limb differences",
+      "Prosthetic users",
+      "Orthotics and AFOs"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Limb differences"
+    ],
+    "styleTags": [
+      "Denim",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "28x30",
+      "30x30",
+      "30x32",
+      "32x30",
+      "32x32",
+      "34x30",
+      "34x32",
+      "34x34",
+      "36x30",
+      "36x32",
+      "38x32",
+      "40x32",
+      "42x32"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/mens-adaptive-amp-pant",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-womens-adaptive-amp-pant",
+    "name": "Women's Adaptive Amp Pant",
+    "brandId": "no-limbits",
+    "clothingType": "Pants",
+    "category": "pants",
+    "priceRange": "$25-$50",
+    "price": "40.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/products/womenslightblueamppantside.jpg?v=1765550483",
+    "imageAlt": "Women's Adaptive Amp Pant by No Limbits",
+    "description": "Please note : This is a discontinued product. All sales are final, no returns or exchanges will be accepted. These classic jeans were designed specifically with amputees in mind. Hidden...",
+    "accessibilityExplanation": "The official listing identifies zip access, prosthetic access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Zip access",
+      "Prosthetic access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Limb differences",
+      "Prosthetic users",
+      "Orthotics and AFOs"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Limb differences"
+    ],
+    "styleTags": [
+      "Denim",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "0 Regular",
+      "2 Regular",
+      "2 Long",
+      "4 Regular",
+      "4 Long",
+      "6 Regular",
+      "6 Long",
+      "8 Regular",
+      "8 Long",
+      "10 Regular",
+      "10 Long",
+      "12 Regular",
+      "12 Long",
+      "14 Regular",
+      "14 Long",
+      "16 Regular",
+      "16 Long",
+      "18 Regular",
+      "18 Long",
+      "20 Regular",
+      "22 Regular"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/womens-adaptive-amp-pant",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-girls-fidget-hoodie",
+    "name": "Girls Tropical Blossom Fidget Hoodie",
+    "brandId": "no-limbits",
+    "clothingType": "Tops",
+    "category": "tops",
+    "priceRange": "$50-$100",
+    "price": "59.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/files/00810121465653_SWAV2.jpg?v=1745522766",
+    "imageAlt": "Girls Tropical Blossom Fidget Hoodie by No Limbits",
+    "description": "Discover the ultimate comfort and relaxation with our Girls Fidget Hoodie, designed to cater to sensory needs. This hoodie features flatlock seams to prevent irritation and ensure a smooth,...",
+    "accessibilityExplanation": "The official listing identifies sensory-friendly, flat seams, built-in sensory tools as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Sensory-friendly",
+      "Flat seams",
+      "Built-in sensory tools"
+    ],
+    "disabilityNeeds": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "bestFor": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "4/5",
+      "6/7",
+      "8",
+      "10/12",
+      "14/16",
+      "18"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/girls-fidget-hoodie",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-boys-fidget-hoodie",
+    "name": "Boys Teal Rain Fidget Hoodie",
+    "brandId": "no-limbits",
+    "clothingType": "Tops",
+    "category": "tops",
+    "priceRange": "$50-$100",
+    "price": "59.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/files/00810121465011_SWAV2.jpg?v=1732038071",
+    "imageAlt": "Boys Teal Rain Fidget Hoodie by No Limbits",
+    "description": "Discover the ultimate comfort and relaxation with our Boys Fidget Hoodie, designed to cater to sensory needs. This hoodie features flatlock seams to prevent irritation and ensure a smooth,...",
+    "accessibilityExplanation": "The official listing identifies sensory-friendly, flat seams, built-in sensory tools as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Sensory-friendly",
+      "Flat seams",
+      "Built-in sensory tools"
+    ],
+    "disabilityNeeds": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "bestFor": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "4/5",
+      "6/7",
+      "8",
+      "10/12",
+      "14/16",
+      "18"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/boys-fidget-hoodie",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-girls-sensory-tee",
+    "name": "Girls Sensory Tee",
+    "brandId": "no-limbits",
+    "clothingType": "Tops",
+    "category": "tops",
+    "priceRange": "$25-$50",
+    "price": "40.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/files/00810121465271_SW.jpg?v=1732038397",
+    "imageAlt": "Girls Sensory Tee by No Limbits",
+    "description": "Experience unmatched comfort with our Girl’s Sensory Friendly Tee, meticulously designed to meet your sensory needs. This tee features flatlock seams made with soft thread, ensuring a...",
+    "accessibilityExplanation": "The official listing identifies sensory-friendly, flat seams as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Sensory-friendly",
+      "Flat seams"
+    ],
+    "disabilityNeeds": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "bestFor": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "4/5",
+      "6/6x",
+      "7/8",
+      "10/12",
+      "14/16",
+      "18"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/girls-sensory-tee",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-boys-sensory-tee",
+    "name": "Boys Black Sensory Tee",
+    "brandId": "no-limbits",
+    "clothingType": "Tops",
+    "category": "tops",
+    "priceRange": "$25-$50",
+    "price": "40.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/files/00810121464724_SW.jpg?v=1732037330",
+    "imageAlt": "Boys Black Sensory Tee by No Limbits",
+    "description": "Experience unmatched comfort with our Boys Sensory Friendly Tee, meticulously designed to meet sensory needs. This tee features flatlock seams made with soft thread, ensuring a smooth and...",
+    "accessibilityExplanation": "The official listing identifies sensory-friendly, flat seams as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Sensory-friendly",
+      "Flat seams"
+    ],
+    "disabilityNeeds": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "bestFor": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "4/5",
+      "6/7",
+      "8",
+      "10/12",
+      "14/16",
+      "18"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/boys-sensory-tee",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-mens-sensory-tee",
+    "name": "Men's Black Sensory Tee",
+    "brandId": "no-limbits",
+    "clothingType": "Tops",
+    "category": "tops",
+    "priceRange": "$25-$50",
+    "price": "40.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/files/00810121464113_SWAV2_1.jpg?v=1732039067",
+    "imageAlt": "Men's Black Sensory Tee by No Limbits",
+    "description": "Experience unmatched comfort with our Men’s Sensory Friendly Tee, meticulously designed to meet your sensory needs. This tee features flatlock seams made with soft thread, ensuring a smooth...",
+    "accessibilityExplanation": "The official listing identifies sensory-friendly, flat seams as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Sensory-friendly",
+      "Flat seams"
+    ],
+    "disabilityNeeds": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "bestFor": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "Extra Small",
+      "Small",
+      "Medium",
+      "Large",
+      "Extra Large",
+      "XXL",
+      "XXXL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/mens-sensory-tee",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-womens-sensory-tee",
+    "name": "Women's Black Sensory Tee",
+    "brandId": "no-limbits",
+    "clothingType": "Tops",
+    "category": "tops",
+    "priceRange": "$25-$50",
+    "price": "40.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/files/00810121463512_SWAV2.jpg?v=1732040284",
+    "imageAlt": "Women's Black Sensory Tee by No Limbits",
+    "description": "Experience unmatched comfort with our Women’s Sensory Friendly Tee, meticulously designed to meet your sensory needs. This tee features flatlock seams made with soft thread, ensuring a...",
+    "accessibilityExplanation": "The official listing identifies sensory-friendly, flat seams as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Sensory-friendly",
+      "Flat seams"
+    ],
+    "disabilityNeeds": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "bestFor": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "Extra Small",
+      "Small",
+      "Medium",
+      "Large",
+      "Extra Large",
+      "XXL"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/womens-sensory-tee",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-unisex-fidget-friendly-hoodie",
+    "name": "Unisex Fidget Friendly Hoodie",
+    "brandId": "no-limbits",
+    "clothingType": "Tops",
+    "category": "tops",
+    "priceRange": "$50-$100",
+    "price": "59.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/files/IMG_5444.jpg?v=1714583104",
+    "imageAlt": "Unisex Fidget Friendly Hoodie by No Limbits",
+    "description": "Everyone has a comfort hoodie - and this is guaranteed to beat your current go-to. A textured panel is hidden in the kangaroo pocket. Trace the waves, pick at the finger rests, run your...",
+    "accessibilityExplanation": "The official listing identifies sensory-friendly, flat seams, built-in sensory tools as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Sensory-friendly",
+      "Flat seams",
+      "Built-in sensory tools"
+    ],
+    "disabilityNeeds": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "bestFor": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "Extra Small",
+      "Small",
+      "Medium",
+      "Large",
+      "Extra Large",
+      "XXL",
+      "XXXL"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/unisex-fidget-friendly-hoodie",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-kids-sensory-hoodie",
+    "name": "Kids Charcoal Gray Sensory Hoodie",
+    "brandId": "no-limbits",
+    "clothingType": "Tops",
+    "category": "tops",
+    "priceRange": "$50-$100",
+    "price": "53.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/files/KidsCharcoalHoodie_Model.jpg?v=1732219621",
+    "imageAlt": "Kids Charcoal Gray Sensory Hoodie by No Limbits",
+    "description": "Everyone has a comfort hoodie - and this is guaranteed to beat your current go-to. A textured panel is hidden in the kangaroo pocket. Trace the waves, pick at the finger rests, run your...",
+    "accessibilityExplanation": "The official listing identifies sensory-friendly, flat seams, built-in sensory tools as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Sensory-friendly",
+      "Flat seams",
+      "Built-in sensory tools"
+    ],
+    "disabilityNeeds": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "bestFor": [
+      "Sensory processing",
+      "Skin sensitivity",
+      "Autism"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "6/7",
+      "8/10",
+      "12/14"
+    ],
+    "genderFit": [
+      "Kids"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/kids-sensory-hoodie",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-womens-limited-dexterity-jacket",
+    "name": "Women's Limited Dexterity Jacket",
+    "brandId": "no-limbits",
+    "clothingType": "Jackets",
+    "category": "jackets",
+    "priceRange": "$150+",
+    "price": "325.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/files/20230811_NoLimbits_Parka_IMG_6415-Edit_1.jpg?v=1709068172",
+    "imageAlt": "Women's Limited Dexterity Jacket by No Limbits",
+    "description": "With a self-aligning zipper and magnetic placket for hands-free dressing, this is a lightweight, packable, warm, soft, work of art. We started with a unique self-aligning zipper. The base...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, zip access, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Zip access",
+      "Limited-dexterity design"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday",
+      "Smart casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "Extra Small",
+      "Small",
+      "Medium",
+      "Large",
+      "Extra Large",
+      "XXL",
+      "XXXL"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/womens-limited-dexterity-jacket",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "no-limbits-mens-limited-dexterity-jacket",
+    "name": "Men's Limited Dexterity Jacket",
+    "brandId": "no-limbits",
+    "clothingType": "Jackets",
+    "category": "jackets",
+    "priceRange": "$150+",
+    "price": "325.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/files/20230811_NoLimbits_Parka_IMG_6604-Edit.jpg?v=1708978482",
+    "imageAlt": "Men's Limited Dexterity Jacket by No Limbits",
+    "description": "With a self-aligning zipper and magnetic placket for hands-free dressing, this is a lightweight, packable, warm, soft, work of art. We started with a unique self-aligning zipper. The base...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, zip access, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Zip access",
+      "Limited-dexterity design"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday",
+      "Smart casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA"
+      ],
+      "note": "Available online from the official No Limbits store."
+    },
+    "sizes": [
+      "Extra Small",
+      "Small",
+      "Medium",
+      "Large",
+      "Extra Large",
+      "XXL",
+      "XXXL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://no-limbits.com/products/mens-limited-dexterity-jacket",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "slick-chicks-athletic-tank",
+    "name": "Athletic Tank Top",
+    "brandId": "slick-chicks",
+    "clothingType": "Tops",
+    "category": "tops",
+    "priceRange": "$50-$100",
+    "price": "63.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0226/5885/files/slickchicks_athleisuretank_bikertight_121376.jpg?v=1726149244",
+    "imageAlt": "Athletic Tank Top by Slick Chicks",
+    "description": "Designed for both comfort and performance, our Adaptive Athletic Tank Top features detachable and adjustable straps to ensure the perfect, customizable fit . With its high-low neckline and...",
+    "accessibilityExplanation": "The official listing identifies detachable components as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Detachable components"
+    ],
+    "disabilityNeeds": [
+      "Adaptive dressing",
+      "Limited mobility"
+    ],
+    "bestFor": [
+      "Adaptive dressing",
+      "Limited mobility"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Worldwide"
+      ],
+      "note": "Available online from the official Slick Chicks store."
+    },
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://slickchicksonline.com/products/athletic-tank",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "slick-chicks-pull-on-boyshort",
+    "name": "Pull-On Boyshort",
+    "brandId": "slick-chicks",
+    "clothingType": "Underwear",
+    "category": "underwear",
+    "priceRange": "$25-$50",
+    "price": "23.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0226/5885/files/slickchicks_pullon_boyshorts2.jpg?v=1726083227",
+    "imageAlt": "Pull-On Boyshort by Slick Chicks",
+    "description": "Introducing the Pull-On Boyshort , designed for effortless comfort and ease of wear, especially for those with limited hand dexterity . Featuring accessible side straps , this boyshort...",
+    "accessibilityExplanation": "The official listing identifies easy dressing, pull-on waist, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Easy dressing",
+      "Pull-on waist",
+      "Limited-dexterity design"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Worldwide"
+      ],
+      "note": "Available online from the official Slick Chicks store."
+    },
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "genderFit": [
+      "Kids"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://slickchicksonline.com/products/pull-on-boyshort",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "slick-chicks-accessible-crew-neck-sweatshirt",
+    "name": "Accessible Crewneck Sweatshirt",
+    "brandId": "slick-chicks",
+    "clothingType": "Tops",
+    "category": "tops",
+    "priceRange": "$50-$100",
+    "price": "59.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0226/5885/files/7H1A7040_1.jpg?v=1735577778",
+    "imageAlt": "Accessible Crewneck Sweatshirt by Slick Chicks",
+    "description": "The classic, form-fitting crewneck style with a functional twist, our Accessible Crewneck Sweatshir t caters to comfort and versatility. This unique garment features two fully detachable...",
+    "accessibilityExplanation": "The official listing identifies touch-and-close fastening, detachable components as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Touch-and-close fastening",
+      "Detachable components"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Worldwide"
+      ],
+      "note": "Available online from the official Slick Chicks store."
+    },
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://slickchicksonline.com/products/accessible-crew-neck-sweatshirt",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "slick-chicks-accessible-v-neck-crop-top",
+    "name": "Accessible \"V\" Neck Crop Top",
+    "brandId": "slick-chicks",
+    "clothingType": "Tops",
+    "category": "tops",
+    "priceRange": "$25-$50",
+    "price": "42.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0226/5885/files/7H1A6946_1.jpg?v=1735917120",
+    "imageAlt": "Accessible \"V\" Neck Crop Top by Slick Chicks",
+    "description": "Introducing our Accessible “V” Neck Crop Top , expertly designed to be your go-to choice for transitional weather. This stylish piece combines fashion and functionality, ensuring you look...",
+    "accessibilityExplanation": "The official listing identifies pull-on waist as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Pull-on waist"
+    ],
+    "disabilityNeeds": [
+      "Adaptive dressing",
+      "Limited mobility"
+    ],
+    "bestFor": [
+      "Adaptive dressing",
+      "Limited mobility"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Worldwide"
+      ],
+      "note": "Available online from the official Slick Chicks store."
+    },
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://slickchicksonline.com/products/accessible-v-neck-crop-top",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "slick-chicks-accessible-hoodie",
+    "name": "Accessible Hoodie",
+    "brandId": "slick-chicks",
+    "clothingType": "Tops",
+    "category": "tops",
+    "priceRange": "$50-$100",
+    "price": "72.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0226/5885/files/SlickChicks_AccessibleHoodie_7H1A7292_1_greyBG.jpg?v=1726506149",
+    "imageAlt": "Accessible Hoodie by Slick Chicks",
+    "description": "Experience the perfect blend of style and comfort with our oversized, relaxed-fit Accessible Hoodie , designed for optimal functionality. One of the standout features of this hoodie is its...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, zip access, limited-dexterity design as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Zip access",
+      "Limited-dexterity design"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "One-handed dressing"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Worldwide"
+      ],
+      "note": "Available online from the official Slick Chicks store."
+    },
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL",
+      "3XL",
+      "4XL",
+      "5XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://slickchicksonline.com/products/accessible-hoodie",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "slick-chicks-accessible-relaxed-lounge-pant",
+    "name": "Accessible Side Zipper Joggers",
+    "brandId": "slick-chicks",
+    "clothingType": "Pants",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "66.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0226/5885/files/7H1A6783_2.jpg?v=1735917189",
+    "imageAlt": "Accessible Side Zipper Joggers by Slick Chicks",
+    "description": "Elevate your activewear collection with our Accessible Side Zipper Joggers , expertly designed to enhance your mobility while simplifying the self or assisted dressing process. Whether...",
+    "accessibilityExplanation": "The official listing identifies seated fit, zip access, raised back waist as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Seated fit",
+      "Zip access",
+      "Raised back waist",
+      "Lower front rise"
+    ],
+    "disabilityNeeds": [
+      "Wheelchair users",
+      "Limited mobility",
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Wheelchair users",
+      "Limited mobility",
+      "Limited dexterity"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Worldwide"
+      ],
+      "note": "Available online from the official Slick Chicks store."
+    },
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ],
+    "genderFit": [
+      "Unisex"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": true,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://slickchicksonline.com/products/accessible-relaxed-lounge-pant",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "slick-chicks-accessible-fitted-lounge-pants",
+    "name": "Accessible Fitted Lounge Joggers",
+    "brandId": "slick-chicks",
+    "clothingType": "Pants",
+    "category": "pants",
+    "priceRange": "$50-$100",
+    "price": "60.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0226/5885/files/7H1A6833_1.jpg?v=1735578041",
+    "imageAlt": "Accessible Fitted Lounge Joggers by Slick Chicks",
+    "description": "Designed specifically with wheelchair dressing in mind, the Accessible Fitted Lounge Joggers feature a thoughtfully constructed raised back waist that provides essential coverage while...",
+    "accessibilityExplanation": "The official listing identifies seated fit, raised back waist, lower front rise as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Seated fit",
+      "Raised back waist",
+      "Lower front rise"
+    ],
+    "disabilityNeeds": [
+      "Wheelchair users",
+      "Limited mobility"
+    ],
+    "bestFor": [
+      "Wheelchair users",
+      "Limited mobility"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Worldwide"
+      ],
+      "note": "Available online from the official Slick Chicks store."
+    },
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": true,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://slickchicksonline.com/products/accessible-fitted-lounge-pants",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "slick-chicks-accessible-long-sleeve-lounge-shirt",
+    "name": "Accessible Long Sleeve Lounge Shirt",
+    "brandId": "slick-chicks",
+    "clothingType": "Shirts",
+    "category": "shirts",
+    "priceRange": "$50-$100",
+    "price": "53.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0226/5885/files/7H1A7180_1.jpg?v=1735584889",
+    "imageAlt": "Accessible Long Sleeve Lounge Shirt by Slick Chicks",
+    "description": "Throw on the perfect blend of style and function with our Accessible Long Sleeve Lounge Shirt , thoughtfully designed to cater to your comfort and versatility. This unique garment features...",
+    "accessibilityExplanation": "The official listing identifies touch-and-close fastening, detachable components as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Touch-and-close fastening",
+      "Detachable components"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday",
+      "Smart casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Worldwide"
+      ],
+      "note": "Available online from the official Slick Chicks store."
+    },
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://slickchicksonline.com/products/accessible-long-sleeve-lounge-shirt",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "slick-chicks-adaptive-lounge-short",
+    "name": "Adaptive Lounge Short",
+    "brandId": "slick-chicks",
+    "clothingType": "Shorts",
+    "category": "pants",
+    "priceRange": "$25-$50",
+    "price": "46.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0226/5885/files/7H1A3921.jpg?v=1735916728",
+    "imageAlt": "Adaptive Lounge Short by Slick Chicks",
+    "description": "Introducing our Adaptive Lounge Shorts , meticulously designed for ultimate comfort while never compromising on style. Whether you’re dashing out to run errands or relaxing on the sofa,...",
+    "accessibilityExplanation": "The official listing identifies touch-and-close fastening as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Touch-and-close fastening"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Worldwide"
+      ],
+      "note": "Available online from the official Slick Chicks store."
+    },
+    "sizes": [
+      "xs",
+      "s",
+      "m",
+      "l",
+      "xl",
+      "2xl"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://slickchicksonline.com/products/adaptive-lounge-short",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "slick-chicks-front-zip-cami",
+    "name": "Front Zip Cami",
+    "brandId": "slick-chicks",
+    "clothingType": "Tops",
+    "category": "tops",
+    "priceRange": "$25-$50",
+    "price": "38.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0226/5885/files/7H1A3752.jpg?v=1735585619",
+    "imageAlt": "Front Zip Cami by Slick Chicks",
+    "description": "Discover our Accessible Front Zip Cami , thoughtfully designed to offer both style and adaptability. This versatile piece features magnetic, detachable straps that allow you to customize...",
+    "accessibilityExplanation": "The official listing identifies magnetic closures, zip access, detachable components as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Magnetic closures",
+      "Zip access",
+      "Detachable components"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Worldwide"
+      ],
+      "note": "Available online from the official Slick Chicks store."
+    },
+    "sizes": [
+      "xs",
+      "s",
+      "m",
+      "l",
+      "xl",
+      "2xl",
+      "3xl",
+      "4xl",
+      "5xl"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://slickchicksonline.com/products/front-zip-cami",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "slick-chicks-ui-underwear",
+    "name": "Leakproof Underwear",
+    "brandId": "slick-chicks",
+    "clothingType": "Underwear",
+    "category": "underwear",
+    "priceRange": "$50-$100",
+    "price": "51.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0226/5885/files/7H1A3994.jpg?v=1735916603",
+    "imageAlt": "Leakproof Underwear by Slick Chicks",
+    "description": "Take control of stress and urge incontinence with our thoughtfully designed Leakproof Underwear featuring VELCRO® Brand Fasteners . This accessible panty combines practicality and comfort,...",
+    "accessibilityExplanation": "The official listing identifies seated fit, easy dressing, sensory-friendly as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Seated fit",
+      "Easy dressing",
+      "Sensory-friendly",
+      "Touch-and-close fastening",
+      "Limited-dexterity design"
+    ],
+    "disabilityNeeds": [
+      "Wheelchair users",
+      "Limited mobility",
+      "Limited dexterity",
+      "Assisted dressing",
+      "Sensory processing",
+      "Skin sensitivity",
+      "One-handed dressing"
+    ],
+    "bestFor": [
+      "Wheelchair users",
+      "Limited mobility",
+      "Limited dexterity"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Worldwide"
+      ],
+      "note": "Available online from the official Slick Chicks store."
+    },
+    "sizes": [
+      "xs",
+      "s",
+      "m",
+      "l",
+      "xl",
+      "xxl",
+      "3xl",
+      "4xl",
+      "5xl"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": true,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://slickchicksonline.com/products/ui-underwear",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "slick-chicks-highwaist-velcro-underwear",
+    "name": "Highwaist Panty with VELCRO® Brand Fasteners",
+    "brandId": "slick-chicks",
+    "clothingType": "Underwear",
+    "category": "underwear",
+    "priceRange": "$25-$50",
+    "price": "38.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0226/5885/files/7H1A3664.jpg?v=1735915354",
+    "imageAlt": "Highwaist Panty with VELCRO® Brand Fasteners by Slick Chicks",
+    "description": "Discover the comfort and support of our Adaptive Highwaist Panty , designed with VELCRO® Brand Fasteners for increased accessibility. Designed with a flattering low-leg, high-rise fit,...",
+    "accessibilityExplanation": "The official listing identifies seated fit, easy dressing, sensory-friendly as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Seated fit",
+      "Easy dressing",
+      "Sensory-friendly",
+      "Touch-and-close fastening",
+      "Limited-dexterity design"
+    ],
+    "disabilityNeeds": [
+      "Wheelchair users",
+      "Limited mobility",
+      "Limited dexterity",
+      "Assisted dressing",
+      "Sensory processing",
+      "Skin sensitivity",
+      "One-handed dressing"
+    ],
+    "bestFor": [
+      "Wheelchair users",
+      "Limited mobility",
+      "Limited dexterity"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Worldwide"
+      ],
+      "note": "Available online from the official Slick Chicks store."
+    },
+    "sizes": [
+      "xs",
+      "s",
+      "m",
+      "l",
+      "xl",
+      "xxl",
+      "3xl",
+      "4xl",
+      "5xl"
+    ],
+    "genderFit": [
+      "Unisex"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": true,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://slickchicksonline.com/products/highwaist-velcro-underwear",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "slick-chicks-velcro-front-closure-bra",
+    "name": "Front Fastening Bra with VELCRO® Brand Fasteners",
+    "brandId": "slick-chicks",
+    "clothingType": "Underwear",
+    "category": "underwear",
+    "priceRange": "$50-$100",
+    "price": "66.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0226/5885/files/4.18.21_SlickChicks_Ecomm_Bra_Tealbackground_Velcro_Beige_Full_0687.jpg?v=1735915103",
+    "imageAlt": "Front Fastening Bra with VELCRO® Brand Fasteners by Slick Chicks",
+    "description": "Designed for both lounging and on-the-go wear, the Front Fastening Bra with VELCRO® Brand Fasteners combines style and practicality with overlapping front panels secured by VELCRO® Brand...",
+    "accessibilityExplanation": "The official listing identifies easy dressing, touch-and-close fastening as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Easy dressing",
+      "Touch-and-close fastening"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Worldwide"
+      ],
+      "note": "Available online from the official Slick Chicks store."
+    },
+    "sizes": [
+      "xs",
+      "s",
+      "m",
+      "l",
+      "xl",
+      "1x",
+      "2x",
+      "3x",
+      "4x"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://slickchicksonline.com/products/velcro-front-closure-bra",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "slick-chicks-wireless-zip-front-bra",
+    "name": "Wireless Zip Front Bra",
+    "brandId": "slick-chicks",
+    "clothingType": "Underwear",
+    "category": "underwear",
+    "priceRange": "$50-$100",
+    "price": "66.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0226/5885/files/4.18.21_SlickChicks_Ecomm_Bra_Beigebackground_Zipper_Black_Front_1243.jpg?v=1735915453",
+    "imageAlt": "Wireless Zip Front Bra by Slick Chicks",
+    "description": "Introducing our Accessible Wireless Zip Front Bra , designed for effortless wear and exceptional support when you need it most. This bra combines convenience with functionality, making it...",
+    "accessibilityExplanation": "The official listing identifies easy dressing, zip access as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Easy dressing",
+      "Zip access"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Worldwide"
+      ],
+      "note": "Available online from the official Slick Chicks store."
+    },
+    "sizes": [
+      "xs",
+      "s",
+      "m",
+      "l",
+      "xl",
+      "1x",
+      "2x",
+      "3x",
+      "4x"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://slickchicksonline.com/products/wireless-zip-front-bra",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "slick-chicks-tanga",
+    "name": "Tanga Panty",
+    "brandId": "slick-chicks",
+    "clothingType": "Underwear",
+    "category": "underwear",
+    "priceRange": "$25-$50",
+    "price": "29.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0226/5885/files/12.8.19_Ecomm_Shoot0248.jpg?v=1735916495",
+    "imageAlt": "Tanga Panty by Slick Chicks",
+    "description": "Enjoy the modern take on a classic with our Accessible Tanga Panty , designed to provide just the right amount of coverage for that perfect cheeky look. To enhance comfort, the brief...",
+    "accessibilityExplanation": "The official listing identifies seated fit, sensory-friendly as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Seated fit",
+      "Sensory-friendly"
+    ],
+    "disabilityNeeds": [
+      "Wheelchair users",
+      "Limited mobility",
+      "Sensory processing",
+      "Skin sensitivity"
+    ],
+    "bestFor": [
+      "Wheelchair users",
+      "Limited mobility",
+      "Sensory processing"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Worldwide"
+      ],
+      "note": "Available online from the official Slick Chicks store."
+    },
+    "sizes": [
+      "xs",
+      "s",
+      "m",
+      "l",
+      "xl",
+      "xxl",
+      "3xl",
+      "4xl",
+      "5xl"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": true,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://slickchicksonline.com/products/tanga",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "slick-chicks-hipster",
+    "name": "Hipster Panty",
+    "brandId": "slick-chicks",
+    "clothingType": "Underwear",
+    "category": "underwear",
+    "priceRange": "$25-$50",
+    "price": "37.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0226/5885/files/12.8.19_Ecomm_Shoot0178.jpg?v=1735916047",
+    "imageAlt": "Hipster Panty by Slick Chicks",
+    "description": "The perfect blend of comfort and functionality wrapped in a stylish sporty silhouette. Designed to rest slightly below the hips, the Adaptive Hipster Panty ensures a secure fit that stays...",
+    "accessibilityExplanation": "The official listing identifies sensory-friendly, wrap opening as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Sensory-friendly",
+      "Wrap opening"
+    ],
+    "disabilityNeeds": [
+      "Sensory processing",
+      "Skin sensitivity"
+    ],
+    "bestFor": [
+      "Sensory processing",
+      "Skin sensitivity"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Worldwide"
+      ],
+      "note": "Available online from the official Slick Chicks store."
+    },
+    "sizes": [
+      "xs",
+      "s",
+      "m",
+      "l",
+      "xl",
+      "xxl",
+      "3xl",
+      "4xl",
+      "5xl"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": false,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://slickchicksonline.com/products/hipster",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "slick-chicks-high-waist-brief",
+    "name": "High Waist Brief",
+    "brandId": "slick-chicks",
+    "clothingType": "Underwear",
+    "category": "underwear",
+    "priceRange": "$25-$50",
+    "price": "37.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0226/5885/files/12.8.19_Ecomm_Shoot0338_2e5755a5-9f2e-485d-96f2-53342d7485ef.jpg?v=1735917062",
+    "imageAlt": "High Waist Brief by Slick Chicks",
+    "description": "Discover the ultimate in comfort and coverage with our Accessible High Waist Briefs . Designed with a modern, flattering fit, these briefs provide the extra support you need, especially for...",
+    "accessibilityExplanation": "The official listing identifies seated fit, sensory-friendly as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Seated fit",
+      "Sensory-friendly"
+    ],
+    "disabilityNeeds": [
+      "Wheelchair users",
+      "Limited mobility",
+      "Sensory processing",
+      "Skin sensitivity"
+    ],
+    "bestFor": [
+      "Wheelchair users",
+      "Limited mobility",
+      "Sensory processing"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Worldwide"
+      ],
+      "note": "Available online from the official Slick Chicks store."
+    },
+    "sizes": [
+      "xs",
+      "s",
+      "m",
+      "l",
+      "xl",
+      "xxl",
+      "3xl",
+      "4xl",
+      "5xl"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": true,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://slickchicksonline.com/products/high-waist-brief",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "slick-chicks-brief",
+    "name": "Brief Panty",
+    "brandId": "slick-chicks",
+    "clothingType": "Underwear",
+    "category": "underwear",
+    "priceRange": "$25-$50",
+    "price": "34.00",
+    "currency": "USD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0226/5885/files/12.8.19_Ecomm_Shoot0118.jpg?v=1735914880",
+    "imageAlt": "Brief Panty by Slick Chicks",
+    "description": "Experience the perfect blend of comfort, convenience, and timeless style with our Signature Accessible Bikini Briefs , thoughtfully designed to meet your needs at every stage of life....",
+    "accessibilityExplanation": "The official listing identifies seated fit, sensory-friendly as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Seated fit",
+      "Sensory-friendly"
+    ],
+    "disabilityNeeds": [
+      "Wheelchair users",
+      "Limited mobility",
+      "Sensory processing",
+      "Skin sensitivity"
+    ],
+    "bestFor": [
+      "Wheelchair users",
+      "Limited mobility",
+      "Sensory processing"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "USA",
+        "Canada",
+        "Worldwide"
+      ],
+      "note": "Available online from the official Slick Chicks store."
+    },
+    "sizes": [
+      "xs",
+      "s",
+      "m",
+      "l",
+      "xl",
+      "xxl",
+      "3xl",
+      "4xl",
+      "5xl"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": true,
+    "seatedFit": true,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://slickchicksonline.com/products/brief",
     "linkType": "exact-product",
     "sourceVerifiedAt": "2026-06-14"
   }

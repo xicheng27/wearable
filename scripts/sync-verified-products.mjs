@@ -43,6 +43,47 @@ const feeds = [
     availability: "Available from Singapore-based Will & Well.",
     quota: 20,
   },
+  {
+    brandId: "magnaready",
+    brandName: "MagnaReady",
+    baseUrl: "https://magnaready.com",
+    feedUrl: "https://magnaready.com/products.json?limit=250",
+    currency: "USD",
+    countries: ["USA", "Canada"],
+    availability: "Available online from the official MagnaReady store.",
+    quota: 50,
+  },
+  {
+    brandId: "billy-footwear",
+    brandName: "BILLY Footwear",
+    baseUrl: "https://billyfootwear.com",
+    feedUrl: "https://billyfootwear.com/products.json?limit=250",
+    currency: "USD",
+    countries: ["USA", "Canada", "Australia"],
+    availability: "Available online from the official BILLY Footwear store.",
+    excludedTags: ["zero_inventory"],
+    quota: 50,
+  },
+  {
+    brandId: "no-limbits",
+    brandName: "No Limbits",
+    baseUrl: "https://no-limbits.com",
+    feedUrl: "https://no-limbits.com/products.json?limit=250",
+    currency: "USD",
+    countries: ["USA"],
+    availability: "Available online from the official No Limbits store.",
+    quota: 28,
+  },
+  {
+    brandId: "slick-chicks",
+    brandName: "Slick Chicks",
+    baseUrl: "https://slickchicksonline.com",
+    feedUrl: "https://slickchicksonline.com/products.json?limit=250",
+    currency: "USD",
+    countries: ["USA", "Canada", "Worldwide"],
+    availability: "Available online from the official Slick Chicks store.",
+    quota: 19,
+  },
 ];
 
 const excludedTerms = [
@@ -62,6 +103,10 @@ const excludedTerms = [
   "bag",
   "alteration",
   "tailoring service",
+  "sticker",
+  "trucker cap",
+  "bucket hat",
+  "beanie",
 ];
 
 const excludedTypes = [
@@ -76,6 +121,8 @@ const excludedTypes = [
   "bag",
   "embroidery",
   "aids & accessories",
+  "accessories",
+  "hats",
 ];
 
 const featureRules = [
@@ -97,10 +144,21 @@ const featureRules = [
   [/touch[- ]and[- ]close|velcro|hook and loop/i, "Touch-and-close fastening"],
   [/wrap/i, "Wrap opening"],
   [/drawstring/i, "Drawstring adjustment"],
+  [/afo|orthotic|leg brace|knee brace/i, "Orthotic-friendly fit"],
+  [/wrap zipper|full wrap|short wrap|zip-around|zip around/i, "Wraparound zipper"],
+  [/removable insole|removable sockliner/i, "Removable insoles"],
+  [/limited dexterity|one or more hands|hand dexterity/i, "Limited-dexterity design"],
+  [/flatlock/i, "Flat seams"],
+  [/fidget/i, "Built-in sensory tools"],
+  [/detachable sleeve|detachable strap|removable sleeve|removable strap/i, "Detachable components"],
+  [/raised back waist|higher back|high back/i, "Raised back waist"],
+  [/lowered front|low front/i, "Lower front rise"],
+  [/leakproof|incontinence/i, "Leak-resistant construction"],
+  [/compression/i, "Gentle compression"],
 ];
 
 function cleanText(html = "") {
-  return html
+  return (html ?? "")
     .replace(/<script[\s\S]*?<\/script>/gi, " ")
     .replace(/<style[\s\S]*?<\/style>/gi, " ")
     .replace(/<[^>]+>/g, " ")
@@ -123,20 +181,20 @@ function slug(value) {
     .replace(/^-|-$/g, "");
 }
 
-function classify(title, productType) {
+function classify(title, productType, tags = "") {
   const type = productType.toLowerCase();
-  const value = title.toLowerCase();
+  const value = `${title} ${tags}`.toLowerCase();
   if (/\bshoes?\b|\bboots?\b|\bslippers?\b|\bsneakers?\b|\bfootwear\b/.test(value)) return ["Shoes", "shoes"];
   if (/\bsocks?\b|\bleg warmers?\b/.test(value)) return ["Socks", "shoes"];
   if (/\bunderwear\b|\bbriefs?\b|\bboxers?\b|\bbra\b/.test(value)) return ["Underwear", "underwear"];
   if (/\bnightgown\b|\bpajamas?\b|\bsleepwear\b/.test(value)) return ["Nightwear", "nightwear"];
-  if (/\bdress\b|\bskirt\b|\bjumpsuit\b|\boveralls?\b/.test(value)) return ["Dresses", "dresses"];
+  if (/\bdress\b(?!\s+shirt)|\bskirt\b|\bjumpsuit\b|\boveralls?\b/.test(value)) return ["Dresses", "dresses"];
   if (/\bjeans?\b|\bdenim pants?\b/.test(value)) return ["Jeans", "jeans"];
   if (/\bshorts?\b/.test(value)) return ["Shorts", "pants"];
-  if (/\bpants?\b|\btrousers?\b|\bleggings?\b|\bsweatpants?\b|\bbottoms?\b/.test(value)) return ["Pants", "pants"];
+  if (/\bpants?\b|\btrousers?\b|\bleggings?\b|\bsweatpants?\b|\bbottoms?\b|\bjoggers?\b/.test(value)) return ["Pants", "pants"];
   if (/\bjacket\b|\bcoat\b|\bbomber\b|\bouterwear\b|\bcape\b/.test(value)) return ["Jackets", "jackets"];
   if (/\bshirt\b|\bblouse\b|\bpolo\b/.test(value)) return ["Shirts", "shirts"];
-  if (/\btop\b|\btee\b|\bt-shirt\b|\bundershirts?\b|\brash guard\b|\bswim tank\b|\bsweater\b|\bhoodie\b|\bjumper\b|\bpullover\b|\bsweatshirt\b/.test(value)) return ["Tops", "tops"];
+  if (/\btop\b|\btee\b|\bt-shirt\b|\bundershirts?\b|\brash guard\b|\bswim tank\b|\btank top\b|\bcami\b|\bsweater\b|\bhoodie\b|\bjumper\b|\bpullover\b|\bsweatshirt\b/.test(value)) return ["Tops", "tops"];
 
   if (/footwear|shoe|boot|slipper/.test(type)) return ["Shoes", "shoes"];
   if (/sock/.test(type)) return ["Socks", "shoes"];
@@ -205,7 +263,22 @@ function adaptiveNeeds(features, text) {
   }
   if (features.includes("Extra-wide fit")) needs.push("Edema", "Swollen feet");
   if (features.includes("Anti-slip grip")) needs.push("Fall prevention", "Limited mobility");
-  if (features.includes("Prosthetic access")) needs.push("Limb differences", "Prosthetic users");
+  if (
+    features.includes("Prosthetic access") ||
+    features.includes("Orthotic-friendly fit")
+  ) {
+    needs.push("Limb differences", "Prosthetic users", "Orthotics and AFOs");
+  }
+  if (features.includes("Limited-dexterity design")) {
+    needs.push("Limited dexterity", "One-handed dressing");
+  }
+  if (
+    features.includes("Built-in sensory tools") ||
+    features.includes("Gentle compression") ||
+    features.includes("Flat seams")
+  ) {
+    needs.push("Sensory processing", "Autism");
+  }
   if (/arthritis|parkinson/i.test(text)) needs.push("Arthritis", "Parkinson's disease");
   return [...new Set(needs.length ? needs : ["Adaptive dressing", "Limited mobility"])];
 }
@@ -219,7 +292,15 @@ function productRecord(product, feed) {
     .map(([, feature]) => feature);
   if (features.length === 0) return null;
 
-  const [clothingType, category] = classify(product.title, product.product_type ?? "");
+  let [clothingType, category] = classify(
+    product.title,
+    product.product_type ?? "",
+    tags
+  );
+  if (feed.brandId === "billy-footwear") {
+    clothingType = "Shoes";
+    category = "shoes";
+  }
   const price = product.variants?.[0]?.price;
   const description = body
     ? `${body.slice(0, 190).replace(/\s+\S*$/, "")}...`
@@ -286,7 +367,10 @@ async function main() {
           product.handle &&
           product.images?.[0]?.src &&
           !excludedTerms.some((term) => title.includes(term)) &&
-          !excludedTypes.includes(type)
+          !excludedTypes.includes(type) &&
+          !(feed.excludedTags ?? []).some((tag) =>
+            product.tags?.includes(tag)
+          )
         );
       })
       .map((product) => productRecord(product, feed))
@@ -311,7 +395,7 @@ async function main() {
         (candidate) => candidate.productUrl === product.productUrl
       ) !== index
   );
-  if (allProducts.length < 100 || duplicateIds.length || duplicateUrls.length) {
+  if (allProducts.length < 225 || duplicateIds.length || duplicateUrls.length) {
     throw new Error(
       `Catalogue validation failed: ${allProducts.length} products, ` +
         `${duplicateIds.length} duplicate IDs, ${duplicateUrls.length} duplicate URLs`
