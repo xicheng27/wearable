@@ -741,6 +741,63 @@ export const brands: Brand[] = [
     founded: 2017,
     certifications: [],
   },
+  {
+    id: "no-limbits",
+    name: "No Limbits",
+    tagline: "Adaptive apparel built around limb differences",
+    description:
+      "No Limbits creates adaptive pants, sensory clothing and limited-dexterity garments informed by disabled wearers.",
+    longDescription:
+      "No Limbits develops individual garments for people with limb differences, prosthetics, orthotics, sensory needs and limited hand dexterity. Its range includes pants with lower-limb access, wheelchair-fit trousers, sensory tops, compression tanks and jackets designed to reduce the work of dressing.",
+    logo: "NL",
+    heroColor: "#314C57",
+    image: "",
+    adaptiveFeatures: [
+      "Prosthetic access",
+      "Orthotic-friendly openings",
+      "Wheelchair fit",
+      "Sensory-friendly fabrics",
+      "Flat seams",
+      "Limited-dexterity design",
+      "Built-in fidget tools",
+    ],
+    disabilityTypes: [
+      "Limb differences",
+      "Prosthetic users",
+      "Wheelchair users",
+      "Sensory processing differences",
+      "Autism spectrum",
+      "Fine motor difficulties",
+    ],
+    clothingTypes: ["Tops", "Pants", "Leggings", "Jackets", "Activewear"],
+    styleTags: ["Casual", "Sporty", "Streetwear", "Everyday"],
+    whoItSuits: [
+      "People who wear prosthetics or leg braces",
+      "Wheelchair users",
+      "People with sensory processing needs",
+      "People with limited hand dexterity",
+    ],
+    locations: [
+      {
+        name: "No Limbits online store",
+        address: "Official online store",
+        city: "Online",
+        country: "USA",
+        type: "online-only",
+      },
+    ],
+    shipping: {
+      countries: ["USA"],
+      currency: "USD",
+      estimatedDays: "See checkout for current delivery estimates",
+      returnsPolicy: "See No Limbits for current return terms.",
+    },
+    website: "https://no-limbits.com",
+    priceRange: "$-$$",
+    country: "USA",
+    featured: true,
+    certifications: [],
+  },
 ];
 
 export const disabilityCategories = [

@@ -26,6 +26,7 @@ const filterLabels: Record<string, string> = {
 export default function SearchResultsClient() {
   const searchParams = useSearchParams();
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(48);
 
   const query = searchParams.get("q") ?? "";
   const results = searchProducts({
@@ -54,6 +55,7 @@ export default function SearchResultsClient() {
           ? filterLabels[key]
           : `${filterLabels[key]}: ${searchParams.get(key)}`,
     }));
+  const visibleResults = results.slice(0, visibleCount);
 
   function removeFilter(key: string) {
     const params = new URLSearchParams(searchParams.toString());
@@ -137,9 +139,23 @@ export default function SearchResultsClient() {
               </div>
             ) : (
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
-                {results.map((product) => (
+                {visibleResults.map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}
+              </div>
+            )}
+            {visibleCount < results.length && (
+              <div className="mt-10 flex flex-col items-center gap-3">
+                <button
+                  type="button"
+                  className="btn-primary min-w-48"
+                  onClick={() => setVisibleCount((count) => count + 48)}
+                >
+                  Load more clothing
+                </button>
+                <p className="text-sm text-gray-500">
+                  Showing {visibleResults.length} of {results.length} items
+                </p>
               </div>
             )}
           </main>
