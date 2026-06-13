@@ -3,6 +3,9 @@ import Link from "next/link";
 import Photo from "@/components/Photo";
 import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
+import Reviews from "@/components/Reviews";
+import MapCanvas from "@/components/MapCanvas";
+import { mapPlaces } from "@/data/places";
 import {
   getBrandOfProduct,
   getProductById,
@@ -37,6 +40,7 @@ export default function ProductDetailPage({ params }: PageProps) {
   const brand = getBrandOfProduct(product);
   const category = getCategoryById(product.categoryId);
   const similar = similarProducts(product, 3);
+  const brandPlaces = mapPlaces.filter((pl) => pl.brandId === brand.id);
   const hasStores =
     product.availability.includes("In stores") &&
     brand.locations.some((l) => l.type !== "online-only");
@@ -198,6 +202,42 @@ export default function ProductDetailPage({ params }: PageProps) {
               Brand page
             </Link>
           </section>
+        </Reveal>
+
+        {brandPlaces.length > 0 && (
+          <Reveal>
+            <section className="card overflow-hidden" aria-labelledby="where-heading">
+              <div className="flex flex-col gap-6 p-6 sm:p-8">
+                <div className="flex items-end justify-between gap-4">
+                  <div>
+                    <h2 id="where-heading" className="text-lg font-semibold text-gray-900">
+                      Where to find it
+                    </h2>
+                    <p className="mt-1 text-sm text-gray-600">
+                      {brand.name} locations and stockists you can visit in person.
+                    </p>
+                  </div>
+                  <Link
+                    href="/map"
+                    className="flex-shrink-0 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700"
+                  >
+                    Open map →
+                  </Link>
+                </div>
+                <Link href="/map" aria-label="Open the full map">
+                  <MapCanvas
+                    places={brandPlaces}
+                    interactive={false}
+                    className="pointer-events-none aspect-[16/9]"
+                  />
+                </Link>
+              </div>
+            </section>
+          </Reveal>
+        )}
+
+        <Reveal>
+          <Reviews productId={product.id} />
         </Reveal>
 
         {similar.length > 0 && (

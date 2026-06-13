@@ -25,7 +25,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Shirt",
     categoryId: "shirts",
     priceRange: "$$",
-    image: "/images/cat-shirts.svg",
+    image: "/images/prod-will-well-tropical-shirt.svg",
     productUrl: "https://willandwell.com/products/tropical-short-sleeve-shirt",
     currency: "SGD",
     description:
@@ -46,7 +46,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Shirt",
     categoryId: "shirts",
     priceRange: "$$",
-    image: "/images/cat-shirts.svg",
+    image: "/images/prod-will-well-cropped-ls-shirt.svg",
     productUrl: "https://willandwell.com/products/cropped-long-sleeve-shirt",
     currency: "SGD",
     description:
@@ -67,7 +67,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Shorts",
     categoryId: "pants",
     priceRange: "$$",
-    image: "/images/cat-pants.svg",
+    image: "/images/prod-will-well-adjustable-shorts.svg",
     productUrl: "https://willandwell.com/products/adjustable-shorts",
     currency: "SGD",
     description:
@@ -88,7 +88,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Pants",
     categoryId: "pants",
     priceRange: "$$",
-    image: "/images/cat-pants.svg",
+    image: "/images/prod-will-well-drawstring-pants.svg",
     productUrl: "https://willandwell.com/products/drawstring-pants",
     currency: "SGD",
     description:
@@ -111,7 +111,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Bolero",
     categoryId: "jackets",
     priceRange: "$$$",
-    image: "/images/cat-jackets.svg",
+    image: "/images/prod-werable-transformable-bolero.svg",
     productUrl: "https://werable.co/products/transformable-bolero",
     price: "$150.00",
     description:
@@ -132,7 +132,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Top",
     categoryId: "tops",
     priceRange: "$$$",
-    image: "/images/cat-tops.svg",
+    image: "/images/prod-werable-off-shoulder-top.svg",
     productUrl: "https://werable.co/products/off-shoulder-top",
     description:
       "A designer off-shoulder top engineered so it can be put on with a single hand.",
@@ -152,7 +152,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Pants",
     categoryId: "pants",
     priceRange: "$$$",
-    image: "/images/cat-pants.svg",
+    image: "/images/prod-werable-hakama-pants.svg",
     productUrl: "https://werable.co/products/wide-legged-pants",
     price: "$400.00",
     description:
@@ -173,7 +173,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Bag",
     categoryId: "accessories",
     priceRange: "$$$",
-    image: "/images/cat-accessories.svg",
+    image: "/images/prod-werable-wishbone-bag.svg",
     productUrl: "https://werable.co/products/wishbone-bag",
     description:
       "An accessible, high-performance bag that adapts to your manner of walking or wheeling.",
@@ -195,7 +195,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Pants",
     categoryId: "pants",
     priceRange: "$",
-    image: "/images/cat-pants.svg",
+    image: "/images/prod-dawn-side-zipper-pants.svg",
     productUrl: "https://dawnadaptive.com/products/side-zipper-pants",
     currency: "MYR",
     description:
@@ -216,7 +216,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Dress",
     categoryId: "dresses",
     priceRange: "$",
-    image: "/images/cat-dresses.svg",
+    image: "/images/prod-dawn-isaiah-wrap-dress.svg",
     productUrl: "https://dawnadaptive.com/products/isaiah-floral-wrap-dress",
     price: "RM189.00",
     currency: "MYR",
@@ -240,7 +240,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Nightdress",
     categoryId: "underwear",
     priceRange: "$$",
-    image: "/images/cat-underwear.svg",
+    image: "/images/prod-able-label-jan-nightdress.svg",
     productUrl:
       "https://www.theablelabel.com/en-us/products/jan-jersey-velcro-brand-fastening-nightdress",
     currency: "GBP",
@@ -262,7 +262,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Nightdress",
     categoryId: "underwear",
     priceRange: "$$",
-    image: "/images/cat-underwear.svg",
+    image: "/images/prod-able-label-janet-nightdress.svg",
     productUrl:
       "https://www.theablelabel.com/en-us/products/janet-cotton-jersey-velcro-brand-fastening-nightdress-1",
     currency: "GBP",
@@ -284,7 +284,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Nightwear set",
     categoryId: "underwear",
     priceRange: "$$",
-    image: "/images/cat-underwear.svg",
+    image: "/images/prod-able-label-cosy-bundle.svg",
     productUrl:
       "https://www.theablelabel.com/en-us/products/cosy-velcro-nightdress-bundle-pastel-blue",
     currency: "GBP",
@@ -306,7 +306,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Trousers",
     categoryId: "pants",
     priceRange: "$$",
-    image: "/images/cat-pants.svg",
+    image: "/images/prod-able-label-2pack-trousers.svg",
     productUrl:
       "https://www.theablelabel.com/en-us/products/2-pack-mens-elastic-waist-pull-on-trousers-navy-sand",
     currency: "GBP",
@@ -328,7 +328,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Trousers",
     categoryId: "pants",
     priceRange: "$$",
-    image: "/images/cat-pants.svg",
+    image: "/images/prod-able-label-aubrey-trousers.svg",
     productUrl:
       "https://www.theablelabel.com/en-us/products/aubrey-straight-fit-elastic-waist-pull-on-trousers-navy",
     currency: "GBP",
@@ -350,7 +350,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Trousers",
     categoryId: "pants",
     priceRange: "$$",
-    image: "/images/cat-pants.svg",
+    image: "/images/prod-able-label-lyla-trousers.svg",
     productUrl:
       "https://www.theablelabel.com/en-us/products/lyla-linen-relaxed-elastic-waist-pull-on-trousers",
     currency: "GBP",
@@ -372,7 +372,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Trousers",
     categoryId: "pants",
     priceRange: "$$",
-    image: "/images/cat-pants.svg",
+    image: "/images/prod-able-label-freya-trousers.svg",
     productUrl:
       "https://www.theablelabel.com/en-us/products/freya-straight-leg-corduroy-pull-on-trousers",
     currency: "GBP",
@@ -396,7 +396,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Jeans",
     categoryId: "jeans",
     priceRange: "$$",
-    image: "/images/cat-jeans.svg",
+    image: "/images/prod-iz-gc-jeans-women.svg",
     productUrl: "https://izadaptive.com/products/game-changer-seamless-back-jeans-for-women",
     currency: "USD",
     description:
@@ -417,7 +417,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Sweatpants",
     categoryId: "sportswear",
     priceRange: "$$",
-    image: "/images/cat-sportswear.svg",
+    image: "/images/prod-iz-gc-sweats-men.svg",
     productUrl: "https://izadaptive.com/products/game-changer-seamless-back-sweats-for-men",
     price: "$84.00",
     currency: "USD",
@@ -439,7 +439,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Cargo pants",
     categoryId: "pants",
     priceRange: "$$",
-    image: "/images/cat-pants.svg",
+    image: "/images/prod-iz-gc-camo-cargo.svg",
     productUrl: "https://izadaptive.com/products/mens-game-changer-camo-cargo-pant",
     currency: "USD",
     description:
@@ -460,7 +460,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Pants",
     categoryId: "pants",
     priceRange: "$$$",
-    image: "/images/cat-pants.svg",
+    image: "/images/prod-iz-gc-faux-leather.svg",
     productUrl: "https://izadaptive.com/products/mens-gc-seamless-back-faux-leather-pant",
     price: "$217.00",
     currency: "USD",
@@ -482,7 +482,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Chinos",
     categoryId: "pants",
     priceRange: "$$",
-    image: "/images/cat-pants.svg",
+    image: "/images/prod-iz-gc-chinos-men.svg",
     productUrl: "https://izadaptive.com/products/game-changer-seamless-back-chinos-for-men",
     currency: "USD",
     description:
@@ -503,7 +503,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Rain coat",
     categoryId: "jackets",
     priceRange: "$$$",
-    image: "/images/cat-jackets.svg",
+    image: "/images/prod-iz-seated-rain-coat.svg",
     productUrl: "https://izadaptive.com/products/seated-rain-coat-3",
     price: "$180.00",
     currency: "USD",
@@ -527,7 +527,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Pants",
     categoryId: "pants",
     priceRange: "$$",
-    image: "/images/cat-pants.svg",
+    image: "/images/prod-joe-bella-carezips-women.svg",
     productUrl: "https://joeandbella.com/products/carezips-classic-womens-adaptive-pants",
     currency: "USD",
     description:
@@ -548,7 +548,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Hoodie",
     categoryId: "jackets",
     priceRange: "$$",
-    image: "/images/cat-jackets.svg",
+    image: "/images/prod-joe-bella-hoodease.svg",
     productUrl: "https://joeandbella.com/products/mens-magnetic-zipper-adaptive-hoodie-with-pockets",
     currency: "USD",
     description:
@@ -569,7 +569,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Shirt",
     categoryId: "shirts",
     priceRange: "$$",
-    image: "/images/cat-shirts.svg",
+    image: "/images/prod-joe-bella-magnetic-buttondown.svg",
     productUrl: "https://joeandbella.com/products/everyday-magnetic-button-down-for-men",
     currency: "USD",
     description:
@@ -592,7 +592,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Pants",
     categoryId: "pants",
     priceRange: "$",
-    image: "/images/cat-pants.svg",
+    image: "/images/prod-silverts-magnetic-fly-pants.svg",
     productUrl: "https://www.silverts.com/products/men-s-open-back-magnetic-fly-pants",
     currency: "USD",
     description:
@@ -613,7 +613,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Nightgown",
     categoryId: "underwear",
     priceRange: "$",
-    image: "/images/cat-underwear.svg",
+    image: "/images/prod-silverts-henley-nightgown.svg",
     productUrl: "https://silverts.com/womens-open-back-henley-nightgown",
     currency: "USD",
     description:
@@ -634,7 +634,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Pants",
     categoryId: "pants",
     priceRange: "$",
-    image: "/images/cat-pants.svg",
+    image: "/images/prod-silverts-stretch-knit-pant.svg",
     productUrl: "https://www.silverts.com/products/women-s-open-back-stretch-knit-pant",
     currency: "USD",
     description:
@@ -655,7 +655,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Pants",
     categoryId: "pants",
     priceRange: "$",
-    image: "/images/cat-pants.svg",
+    image: "/images/prod-silverts-ribbed-pants.svg",
     productUrl: "https://www.silverts.com/products/womens-open-back-ribbed-pants",
     currency: "USD",
     description:
@@ -676,7 +676,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Dress",
     categoryId: "dresses",
     priceRange: "$",
-    image: "/images/cat-dresses.svg",
+    image: "/images/prod-silverts-velvet-dress.svg",
     productUrl: "https://silverts.com/womens-open-back-velvet-dress",
     currency: "USD",
     description:
@@ -697,7 +697,7 @@ export const adaptiveProducts: Product[] = [
     clothingType: "Pants",
     categoryId: "pants",
     priceRange: "$",
-    image: "/images/cat-pants.svg",
+    image: "/images/prod-silverts-fleece-wheelchair-pants.svg",
     productUrl:
       "https://www.silverts.com/show.php/product/51820-mens-adaptive-open-back-polar-fleece-wheelchair-pants-back-snap-pants",
     currency: "USD",
