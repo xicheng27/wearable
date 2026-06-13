@@ -27,6 +27,10 @@ export type AdaptiveProduct = {
   bestFor: string[];
   closureType?: string;
   sourceNotes: string;
+  sizes?: string[];
+  colours?: string[];
+  stockStatus?: string;
+  countryAvailability?: string[];
 };
 
 export const adaptiveBrands: AdaptiveBrand[] = [
