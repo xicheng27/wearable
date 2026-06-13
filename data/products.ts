@@ -845,13 +845,27 @@ export function recommendProducts(params: {
   needs?: string[];
   styles?: string[];
   budget?: string;
+  openEndedNeed?: string;
   limit?: number;
 }) {
+  const ignoredWords = new Set([
+    "about", "after", "also", "and", "because", "clothes", "clothing",
+    "could", "easy", "for", "from", "have", "into", "need", "that",
+    "the", "their", "them", "this", "want", "while", "with", "would",
+  ]);
+  const openEndedTerms =
+    (params.openEndedNeed ?? "")
+      .toLowerCase()
+      .match(/[a-z0-9'-]+/g)
+      ?.filter((term) => term.length > 2 && !ignoredWords.has(term))
+      .slice(0, 20) ?? [];
+
   return products
     .map((product) => {
       const reasons: string[] = [];
       const needs = params.needs ?? [];
       const styles = params.styles ?? [];
+      let score = 0;
 
       needs.forEach((need) => {
         if (
@@ -860,20 +874,55 @@ export function recommendProducts(params: {
           product.adaptiveFeatures.some((item) => matches(item, need))
         ) {
           reasons.push(`Supports ${need.toLowerCase()}`);
+          score += 2;
         }
       });
       styles.forEach((style) => {
         if (product.styleTags.some((item) => matches(item, style))) {
           reasons.push(`Matches a ${style.toLowerCase()} style`);
+          score += 1;
         }
       });
       if (params.budget && budgetMatches(product.priceRange, params.budget)) {
         reasons.push(`Fits the ${params.budget.toLowerCase()} budget`);
+        score += 1;
       }
 
-      return { product, reasons, score: reasons.length };
+      if (openEndedTerms.length > 0) {
+        const searchable = [
+          product.name,
+          product.clothingType,
+          product.category,
+          product.description,
+          product.accessibilityExplanation,
+          ...product.adaptiveFeatures,
+          ...product.disabilityNeeds,
+          ...product.bestFor,
+          ...product.styleTags,
+        ]
+          .join(" ")
+          .toLowerCase();
+        const matchedTerms = openEndedTerms.filter((term) =>
+          searchable.includes(term)
+        );
+
+        if (matchedTerms.length > 0) {
+          score += matchedTerms.length * 2;
+          reasons.push(
+            `Reflects what you shared about ${matchedTerms.slice(0, 3).join(", ")}`
+          );
+        }
+      }
+
+      return { product, reasons, score };
     })
-    .filter((result) => result.score > 0 || (!params.needs?.length && !params.styles?.length))
+    .filter(
+      (result) =>
+        result.score > 0 ||
+        (!params.needs?.length &&
+          !params.styles?.length &&
+          openEndedTerms.length === 0)
+    )
     .sort(
       (a, b) =>
         b.score - a.score ||

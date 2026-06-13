@@ -15,8 +15,9 @@ interface StepDef {
   id: string;
   title: string;
   subtitle: string;
-  type: "single" | "multi";
-  options: string[];
+  type: "single" | "multi" | "text";
+  options?: string[];
+  placeholder?: string;
 }
 
 const steps: StepDef[] = [
@@ -26,6 +27,15 @@ const steps: StepDef[] = [
     subtitle: "Select all that apply — this helps us match the right brands.",
     type: "multi",
     options: disabilityOptionsList,
+  },
+  {
+    id: "otherNeeds",
+    title: "Is there anything else clothing needs to do for you?",
+    subtitle:
+      "Describe anything we have not covered, in your own words. This is optional.",
+    type: "text",
+    placeholder:
+      "For example: I need trousers that work with a feeding tube, or tops that are easy to change while lying down.",
   },
   {
     id: "seated",
@@ -163,6 +173,7 @@ export default function QuizClient() {
   const router = useRouter();
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string[]>>({});
+  const [otherNeeds, setOtherNeeds] = useState("");
 
   const current = steps[step];
   const selected = answers[current.id] ?? [];
@@ -194,6 +205,7 @@ export default function QuizClient() {
       if (answers.location?.[0]) params.set("location", answers.location[0]);
       set("styles", answers.style);
       if (answers.budget?.[0]) params.set("budget", answers.budget[0]);
+      if (otherNeeds.trim()) params.set("otherNeeds", otherNeeds.trim());
       router.push(`/quiz/results?${params.toString()}`);
     } else {
       setStep(step + 1);
@@ -237,15 +249,35 @@ export default function QuizClient() {
           <p className="mt-2 text-sm text-gray-500 sm:text-base">{current.subtitle}</p>
 
           <div className="mt-8 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-            {current.options.map((opt) => (
-              <OptionButton
-                key={opt}
-                label={opt}
-                selected={selected.includes(opt)}
-                onClick={() => select(opt)}
-                image={current.id === "style" ? styleImages[opt] : undefined}
-              />
-            ))}
+            {current.type === "text" ? (
+              <div className="sm:col-span-2">
+                <label htmlFor="other-needs" className="sr-only">
+                  Other clothing or accessibility needs
+                </label>
+                <textarea
+                  id="other-needs"
+                  value={otherNeeds}
+                  onChange={(event) => setOtherNeeds(event.target.value.slice(0, 500))}
+                  placeholder={current.placeholder}
+                  rows={7}
+                  className="paper-panel w-full resize-y rounded-[1.4rem_.6rem_1.4rem_1.4rem] border-ink/15 px-5 py-4 text-base leading-7 text-ink placeholder:text-ink/40 focus:border-primary-400 focus:ring-primary-300"
+                />
+                <div className="mt-2 flex items-center justify-between gap-4 text-xs text-ink/50">
+                  <p>Use everyday language. A short sentence is enough.</p>
+                  <p aria-live="polite">{otherNeeds.length}/500</p>
+                </div>
+              </div>
+            ) : (
+              current.options?.map((opt) => (
+                <OptionButton
+                  key={opt}
+                  label={opt}
+                  selected={selected.includes(opt)}
+                  onClick={() => select(opt)}
+                  image={current.id === "style" ? styleImages[opt] : undefined}
+                />
+              ))
+            )}
           </div>
         </div>
 
@@ -260,7 +292,15 @@ export default function QuizClient() {
             Back
           </button>
           <button type="button" onClick={next} className="btn-primary px-8">
-            {isLastStep ? "Show my matches" : selected.length > 0 ? "Continue" : "Skip"}
+            {isLastStep
+              ? "Show my matches"
+              : current.type === "text"
+                ? otherNeeds.trim()
+                  ? "Continue"
+                  : "Skip"
+                : selected.length > 0
+                  ? "Continue"
+                  : "Skip"}
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
