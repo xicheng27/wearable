@@ -75,11 +75,13 @@ export default function QuizResultsPage({
   ];
   const budget = normalizeBudget(searchParams.budget);
   const clothing = readList(searchParams.clothing);
+  const otherNeeds = readList(searchParams.otherNeeds).join(", ").slice(0, 500);
 
   const recommendations = recommendProducts({
     needs,
     styles,
     budget,
+    openEndedNeed: otherNeeds,
     limit: 9,
   }).filter(({ product }) => {
     if (clothing.length === 0) return true;
@@ -96,7 +98,12 @@ export default function QuizResultsPage({
   const visibleRecommendations =
     recommendations.length > 0
       ? recommendations
-      : recommendProducts({ needs, styles, budget, limit: 9 });
+      : recommendProducts({
+          needs,
+          styles,
+          budget,
+          limit: 9,
+        });
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -122,6 +129,14 @@ export default function QuizResultsPage({
                 </span>
               ))}
           </div>
+          {otherNeeds && (
+            <div className="paper-panel mt-6 max-w-3xl rounded-[1.2rem_.5rem_1.2rem_1.2rem] px-5 py-4">
+              <p className="font-hand text-xs font-semibold text-primary-700">
+                What you added
+              </p>
+              <p className="mt-1 text-sm leading-6 text-ink/70">{otherNeeds}</p>
+            </div>
+          )}
         </div>
       </header>
 
