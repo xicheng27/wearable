@@ -7,6 +7,7 @@ import Logo from "@/components/Logo";
 
 const navItems = [
   { href: "/search", label: "Browse Clothing" },
+  { href: "/singapore", label: "Singapore Guide" },
   { href: "/map", label: "Global Map" },
   { href: "/categories/shoes", label: "Adaptive Shoes" },
   { href: "/search?sensory=true", label: "Sensory Picks" },
@@ -26,7 +27,7 @@ export default function Navbar() {
             <SearchBar compact />
           </div>
 
-          <nav className="hidden items-center gap-5 lg:flex" aria-label="Main navigation">
+          <nav className="hidden items-center gap-5 xl:flex" aria-label="Main navigation">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -37,12 +38,12 @@ export default function Navbar() {
               </Link>
             ))}
           </nav>
-          <Link href="/quiz" className="btn-primary hidden whitespace-nowrap px-4 py-2 text-xs xl:inline-flex">
+          <Link href="/quiz" className="btn-primary hidden whitespace-nowrap px-4 py-2 text-xs 2xl:inline-flex">
             Find by need
           </Link>
 
           <button
-            className="rounded-lg border border-ink/10 bg-paper p-2 text-ink hover:bg-sand/50 lg:hidden"
+            className="rounded-lg border border-ink/10 bg-paper p-2 text-ink hover:bg-sand/50 xl:hidden"
             onClick={() => setMenuOpen((open) => !open)}
             aria-expanded={menuOpen}
             aria-label="Toggle menu"
@@ -58,7 +59,7 @@ export default function Navbar() {
         </div>
 
         {menuOpen && (
-          <div className="space-y-3 border-t border-ink/10 py-4 lg:hidden">
+          <div className="space-y-3 border-t border-ink/10 py-4 xl:hidden">
             <SearchBar compact />
             <nav className="flex flex-col">
               {navItems.map((item) => (
