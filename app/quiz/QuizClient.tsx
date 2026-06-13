@@ -213,7 +213,7 @@ export default function QuizClient() {
   }
 
   return (
-    <div className="flex h-dvh min-h-[36rem] flex-col overflow-hidden bg-paper">
+    <div className="flex h-full min-h-0 flex-col overflow-hidden bg-paper">
       <header className="mx-auto flex w-full max-w-3xl shrink-0 items-center justify-between px-5 py-3 sm:px-6">
         <Link href="/" className="flex items-center gap-2" aria-label="Xi's home">
           <LogoMark size={32} />
@@ -284,7 +284,7 @@ export default function QuizClient() {
           </div>
         </div>
 
-        <div className="z-10 flex shrink-0 items-center justify-between gap-4 border-t border-ink/10 bg-paper/95 py-3 backdrop-blur">
+        <div className="z-10 flex shrink-0 items-center justify-between gap-4 border-t border-ink/10 bg-paper/95 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur">
           <button
             type="button"
             onClick={() => setStep(step - 1)}
