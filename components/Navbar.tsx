@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import SearchBar from "@/components/SearchBar";
 import Logo from "@/components/Logo";
+import CurrencySelector from "@/components/CurrencySelector";
 
 const navItems = [
   { href: "/search", label: "Browse Clothing" },
@@ -41,6 +42,7 @@ export default function Navbar() {
           <Link href="/quiz" className="btn-primary hidden whitespace-nowrap px-4 py-2 text-xs 2xl:inline-flex">
             Find by need
           </Link>
+          <CurrencySelector className="hidden xl:flex" compact />
 
           <button
             className="rounded-lg border border-ink/10 bg-paper p-2 text-ink hover:bg-sand/50 xl:hidden"
@@ -61,6 +63,7 @@ export default function Navbar() {
         {menuOpen && (
           <div className="space-y-3 border-t border-ink/10 py-4 xl:hidden">
             <SearchBar compact />
+            <CurrencySelector className="justify-between rounded-xl border border-ink/10 bg-paper px-3 py-2" />
             <nav className="flex flex-col">
               {navItems.map((item) => (
                 <Link

@@ -315,7 +315,7 @@ function productRecord(product, feed) {
     clothingType,
     category,
     priceRange: priceRange(price),
-    price: price ? String(price) : undefined,
+    price: price ? String(price) : "",
     currency: feed.currency,
     imageUrl: product.images?.[0]?.src ?? null,
     imageAlt: `${exactName} by ${feed.brandName}`,
@@ -395,10 +395,19 @@ async function main() {
         (candidate) => candidate.productUrl === product.productUrl
       ) !== index
   );
-  if (allProducts.length < 225 || duplicateIds.length || duplicateUrls.length) {
+  const missingPrices = allProducts.filter(
+    (product) => !product.price || !product.currency
+  );
+  if (
+    allProducts.length < 225 ||
+    duplicateIds.length ||
+    duplicateUrls.length ||
+    missingPrices.length
+  ) {
     throw new Error(
       `Catalogue validation failed: ${allProducts.length} products, ` +
-        `${duplicateIds.length} duplicate IDs, ${duplicateUrls.length} duplicate URLs`
+        `${duplicateIds.length} duplicate IDs, ${duplicateUrls.length} duplicate URLs, ` +
+        `${missingPrices.length} missing exact prices`
     );
   }
 

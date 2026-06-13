@@ -53,8 +53,8 @@ export interface Product {
   clothingType: string;
   category: string;
   priceRange: string;
-  price?: string;
-  currency?: string;
+  price: string;
+  currency: string;
   imageUrl: string | null;
   imageAlt: string;
   description: string;
