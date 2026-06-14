@@ -30,8 +30,9 @@ export default function ProductImage({
           alt={alt}
           fill
           priority={priority}
+          quality={90}
           sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
-          className="object-cover transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.045]"
+          className="object-contain p-3 transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.035] sm:p-4"
           onError={() => setFailed(true)}
         />
       ) : (

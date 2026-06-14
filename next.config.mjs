@@ -30,6 +30,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "static.nike.com",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.shopify.com",
+      },
     ],
   },
 };

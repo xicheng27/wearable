@@ -13,7 +13,7 @@ const originalProducts: Product[] = [
     price: "35.70",
     currency: "USD",
     imageUrl:
-      "https://shoptommy.scene7.com/is/image/ShopTommy/78J9182_XLG_FNT",
+      "https://shoptommy.scene7.com/is/image/ShopTommy/78J9182_XLG_FNT?wid=1200&hei=1600&fit=fit,1",
     imageAlt: "Tommy Hilfiger Classic Stretch Polo in navy",
     description:
       "A classic polo with a traditional look and concealed magnetic front closures.",
@@ -49,8 +49,8 @@ const originalProducts: Product[] = [
     price: "53.70",
     currency: "USD",
     imageUrl:
-      "https://shoptommy.scene7.com/is/image/ShopTommy/7T00417_615_main",
-    imageAlt: "Tommy Hilfiger Seated Fit Classic Chino in red",
+      "https://shoptommy.scene7.com/is/image/ShopTommy/78D1836_SPN_FNT?wid=1200&hei=1600&fit=fit,1",
+    imageAlt: "Tommy Hilfiger Seated Fit Classic Chino in beige",
     description:
       "Polished chinos shaped for seated comfort with an adjustable waist and easier access.",
     accessibilityExplanation:
@@ -84,8 +84,9 @@ const originalProducts: Product[] = [
     priceRange: "$25-$50",
     price: "24.75",
     currency: "USD",
-    imageUrl: null,
-    imageAlt: "Exact Tommy Hilfiger Sensory Friendly Adaptive T-Shirt image unavailable",
+    imageUrl:
+      "https://shoptommy.scene7.com/is/image/ShopTommy/7T00417_615_FNT?wid=1200&hei=1600&fit=fit,1",
+    imageAlt: "Tommy Hilfiger Sensory Tommy Jeans T-Shirt in red",
     description:
       "A soft everyday tee with flat seams and a heat-transferred label to reduce irritation.",
     accessibilityExplanation:
@@ -192,7 +193,7 @@ const originalProducts: Product[] = [
     price: "69.30",
     currency: "USD",
     imageUrl:
-      "https://m.media-amazon.com/images/I/714J8RVCV8L._SX700_.jpg",
+      "https://m.media-amazon.com/images/I/714J8RVCV8L._SL1500_.jpg",
     imageAlt: "SKECHERS Go Walk Flex Dacey Hands Free Slip-Ins",
     description:
       "A hands-free walking shoe with a molded heel panel and cushioned slip-in construction.",
@@ -228,7 +229,7 @@ const originalProducts: Product[] = [
     price: "49.99",
     currency: "USD",
     imageUrl:
-      "https://m.media-amazon.com/images/I/71YDq8YloCL._SX700_.jpg",
+      "https://m.media-amazon.com/images/I/71YDq8YloCL._SL1500_.jpg",
     imageAlt: "See Kai Run Dean Adapt II adaptive children's shoes",
     description:
       "An adaptive children's sneaker with a wide opening and removable sockliner.",
@@ -263,8 +264,9 @@ const originalProducts: Product[] = [
     priceRange: "$75-$125",
     price: "92.00",
     currency: "USD",
-    imageUrl: null,
-    imageAlt: "Exact ABL Denim product image unavailable",
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0603/0401/products/ABL1608_R1_2048x2048_ed990c3a-95dd-40b5-a68f-dd7f28c8c6ac.jpg?v=1462167254",
+    imageAlt: "ABL Denim WCH wheelchair jeans in bright rinse denim",
     description:
       "Adaptive denim cut higher in the back and lower in the front for a comfortable seated profile.",
     accessibilityExplanation:
@@ -370,7 +372,7 @@ const originalProducts: Product[] = [
     price: "74.99",
     currency: "USD",
     imageUrl:
-      "https://magnaready.com/cdn/shop/files/long-sleeve-white-ryan-dress-shirt-magnetic-closures-adaptive-clothing-comfort-style_3.jpg?v=1756660643&width=2048",
+      "https://cdn.shopify.com/s/files/1/2807/1462/files/long-sleeve-white-ryan-dress-shirt-magnetic-closures-magnaready-adaptive-clothing-100-cotton-poplin.jpg?v=1750642502",
     imageAlt: "MagnaReady Long Sleeve White Ryan Dress Shirt",
     description:
       "A traditional spread-collar shirt with hidden magnetic closures behind the button placket.",
@@ -406,7 +408,7 @@ const originalProducts: Product[] = [
     price: "34.99",
     currency: "USD",
     imageUrl:
-      "https://magnaready.com/cdn/shop/files/short-sleeve-burgundy-micro-check-ryan-spread-collar-cotton-shirt-magnetic-closures-adaptive-clothing_1.jpg?v=1756661145&width=2048",
+      "https://cdn.shopify.com/s/files/1/2807/1462/files/short-sleeve-burgundy-micro-check-ryan-spread-collar-cotton-shirt-magnetic-closures-adaptive-clothing_1.jpg?v=1756661145",
     imageAlt: "MagnaReady Burgundy Ryan Spread Collar Shirt",
     description:
       "A short-sleeve micro-check cotton shirt with concealed magnetic closures.",
@@ -442,7 +444,7 @@ const originalProducts: Product[] = [
     price: "26.00",
     currency: "USD",
     imageUrl:
-      "https://slickchicksonline.com/cdn/shop/files/12.8.19_Ecomm_Shoot0118_1200x630.jpg?v=1735914880",
+      "https://cdn.shopify.com/s/files/1/0226/5885/files/12.8.19_Ecomm_Shoot0118.jpg?v=1735914880",
     imageAlt: "Slick Chicks Brief Panty with side fasteners",
     description:
       "Soft adaptive underwear with side fasteners for seated, standing or assisted dressing.",
@@ -477,7 +479,7 @@ const originalProducts: Product[] = [
     price: "39.00",
     currency: "USD",
     imageUrl:
-      "https://slickchicksonline.com/cdn/shop/files/7H1A3994_1200x630.jpg?v=1735916603",
+      "https://cdn.shopify.com/s/files/1/0226/5885/files/7H1A3994.jpg?v=1735916603",
     imageAlt: "Slick Chicks Leakproof Underwear",
     description:
       "Reusable leakproof underwear with side-fastening strips for easier changes.",
@@ -512,7 +514,7 @@ const originalProducts: Product[] = [
     price: "94.97",
     currency: "USD",
     imageUrl:
-      "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8ec2a797-0b0c-4b29-b1b8-9204b901a803/NIKE+GO+FLYEASE.png",
+      "https://static.nike.com/a/images/t_PDP_1728_v1/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8ec2a797-0b0c-4b29-b1b8-9204b901a803/NIKE+GO+FLYEASE.png",
     imageAlt: "Nike Go FlyEase Women's Easy On/Off Shoes",
     description:
       "A hands-free sneaker with a hinged heel that opens for step-in entry and closes underfoot.",
@@ -547,8 +549,8 @@ const originalProducts: Product[] = [
     priceRange: "$50-$100",
     price: "39.96",
     currency: "GBP",
-    imageUrl: null,
-    imageAlt: "Exact Able2Wear Iona Nightie product image unavailable",
+    imageUrl: "/images/products/able2wear-iona-nightie.webp",
+    imageAlt: "Able2Wear Iona Nightie with full back and shoulder opening in blue",
     description:
       "A nightie with full back and shoulder openings for easier assisted dressing.",
     accessibilityExplanation:
@@ -582,8 +584,8 @@ const originalProducts: Product[] = [
     priceRange: "$50-$100",
     price: "57.00",
     currency: "GBP",
-    imageUrl: null,
-    imageAlt: "Exact Able2Wear Drop Front Jersey Wheelchair Trousers image unavailable",
+    imageUrl: "/images/products/able2wear-drop-front-jersey-trousers.jpg",
+    imageAlt: "Able2Wear Drop Front Jersey Wheelchair Trousers in navy",
     description:
       "Jersey wheelchair trousers with a drop-front opening for dressing and personal care access.",
     accessibilityExplanation:
@@ -618,7 +620,7 @@ const originalProducts: Product[] = [
     price: "59.70",
     currency: "USD",
     imageUrl:
-      "https://shoptommy.scene7.com/is/image/ShopTommy/WW45817_ZF0_main",
+      "https://shoptommy.scene7.com/is/image/ShopTommy/WW45817_ZF0_FNT?wid=1200&hei=1600&fit=fit,1",
     imageAlt: "Tommy Hilfiger Slim Fit Classic 1985 Polo Dress",
     description:
       "A classic polo dress with an adaptive magnetic front placket.",

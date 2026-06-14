@@ -55,7 +55,7 @@ export interface Product {
   priceRange: string;
   price: string;
   currency: string;
-  imageUrl: string | null;
+  imageUrl: string;
   imageAlt: string;
   description: string;
   accessibilityExplanation: string;

@@ -1,5 +1,6 @@
 import { AdaptiveProduct } from "@/data/adaptiveBrands";
 import PriceDisplay from "@/components/PriceDisplay";
+import ProductImage from "@/components/ProductImage";
 
 function sourceLevel(product: AdaptiveProduct) {
   const source = product.sourceNotes.toLowerCase();
@@ -37,17 +38,12 @@ export default function AdaptiveProductCard({
 
   return (
     <article className="paper-panel group flex h-full flex-col overflow-hidden rounded-[1.5rem_.6rem_1.5rem_1.5rem]">
-      <div className="fabric-texture relative flex min-h-48 items-center justify-center border-b border-ink/10 bg-gradient-to-br from-sand/70 via-paper to-lavender/45 p-6">
-        <div className="max-w-[15rem] rotate-[-1deg] border border-ink/10 bg-paper/90 px-5 py-4 text-center shadow-paper">
-          <p className="font-display text-xl font-semibold text-primary-800">
-            {product.brandName}
-          </p>
-          <p className="mt-1 text-sm font-bold text-ink/65">{product.productType}</p>
-          <p className="mt-4 font-hand text-xs text-ink/50">
-            Image pending verification
-          </p>
-        </div>
-      </div>
+      <ProductImage
+        src={product.imageUrl ?? null}
+        alt={`${product.name} by ${product.brandName}`}
+        className="min-h-56 border-b border-ink/10"
+        fallbackLabel={`${product.brandName} - ${product.productType} - Image pending verification`}
+      />
 
       <div className="flex flex-1 flex-col p-5 sm:p-6">
         <div className="flex flex-wrap gap-2">
