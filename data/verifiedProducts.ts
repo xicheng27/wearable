@@ -516,135 +516,6 @@ export const verifiedProducts: Product[] = [
     "sourceVerifiedAt": "2026-06-14"
   },
   {
-    "id": "june-adaptive-unisex-diabetic-wide-socks-2-pak",
-    "name": "Unisex Extra Wide Edema Socks with Ultra-Stretch Fit",
-    "brandId": "june-adaptive",
-    "clothingType": "Shoes",
-    "category": "shoes",
-    "priceRange": "$25-$50",
-    "price": "19.98",
-    "currency": "CAD",
-    "imageUrl": "https://cdn.shopify.com/s/files/1/0596/9392/4523/files/edema.jpg?v=1774032765",
-    "imageAlt": "Unisex Extra Wide Edema Socks with Ultra-Stretch Fit by June Adaptive",
-    "description": "Engineered to accommodate significant fluctuations in swelling, these ultra-stretch socks conform gently to the foot without compression. They provide a smooth fit that helps eliminate...",
-    "accessibilityExplanation": "The official listing identifies seated fit, easy dressing, seamless construction as part of this item's adaptive design. Check the product page for complete fit and care details.",
-    "adaptiveFeatures": [
-      "Seated fit",
-      "Easy dressing",
-      "Seamless construction",
-      "Extra-wide fit",
-      "Medical-device access"
-    ],
-    "disabilityNeeds": [
-      "Wheelchair users",
-      "Limited mobility",
-      "Limited dexterity",
-      "Assisted dressing",
-      "Sensory processing",
-      "Skin sensitivity",
-      "Edema",
-      "Swollen feet",
-      "Autism"
-    ],
-    "bestFor": [
-      "Wheelchair users",
-      "Limited mobility",
-      "Limited dexterity"
-    ],
-    "styleTags": [
-      "Comfort",
-      "Everyday"
-    ],
-    "availability": {
-      "online": true,
-      "inStore": false,
-      "countries": [
-        "Canada",
-        "USA"
-      ],
-      "note": "Official June Adaptive product page. Contact the brand for international delivery."
-    },
-    "sizes": [
-      "S/M",
-      "L/XL"
-    ],
-    "genderFit": [
-      "Women"
-    ],
-    "sensoryFriendly": true,
-    "seatedFit": true,
-    "oneHandedDressing": false,
-    "featured": false,
-    "productUrl": "https://www.juneadaptive.com/products/unisex-diabetic-wide-socks-2-pak",
-    "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-14"
-  },
-  {
-    "id": "june-adaptive-unisex-diabetic-everyday-crew-socks",
-    "name": "Unisex Diabetic Socks with Seamless Toe & Non-Binding Cuff",
-    "brandId": "june-adaptive",
-    "clothingType": "Shoes",
-    "category": "shoes",
-    "priceRange": "$25-$50",
-    "price": "19.98",
-    "currency": "CAD",
-    "imageUrl": "https://cdn.shopify.com/s/files/1/0596/9392/4523/files/Screenshot2026-03-20at10.06.42AM.png?v=1774026460",
-    "imageAlt": "Unisex Diabetic Socks with Seamless Toe & Non-Binding Cuff by June Adaptive",
-    "description": "Designed to protect sensitive feet without constriction, these unisex socks feature a non-binding cuff and a completely seamless interior. Crafted to eliminate pressure points, they are...",
-    "accessibilityExplanation": "The official listing identifies seated fit, easy dressing, seamless construction as part of this item's adaptive design. Check the product page for complete fit and care details.",
-    "adaptiveFeatures": [
-      "Seated fit",
-      "Easy dressing",
-      "Seamless construction",
-      "Orthotic-friendly fit"
-    ],
-    "disabilityNeeds": [
-      "Wheelchair users",
-      "Limited mobility",
-      "Limited dexterity",
-      "Assisted dressing",
-      "Sensory processing",
-      "Skin sensitivity",
-      "Limb differences",
-      "Prosthetic users",
-      "Orthotics and AFOs",
-      "Arthritis",
-      "Parkinson's disease"
-    ],
-    "bestFor": [
-      "Wheelchair users",
-      "Limited mobility",
-      "Limited dexterity"
-    ],
-    "styleTags": [
-      "Comfort",
-      "Everyday"
-    ],
-    "availability": {
-      "online": true,
-      "inStore": false,
-      "countries": [
-        "Canada",
-        "USA"
-      ],
-      "note": "Official June Adaptive product page. Contact the brand for international delivery."
-    },
-    "sizes": [
-      "S/M",
-      "L/XL"
-    ],
-    "genderFit": [
-      "Women"
-    ],
-    "sensoryFriendly": true,
-    "seatedFit": true,
-    "oneHandedDressing": false,
-    "featured": false,
-    "productUrl": "https://www.juneadaptive.com/products/unisex-diabetic-everyday-crew-socks",
-    "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-14"
-  },
-  {
     "id": "june-adaptive-womens-denim-shirt-with-back-overlap",
     "name": "Women's Open-Back Snap Closure Shirt for Assisted Dressing",
     "brandId": "june-adaptive",
@@ -2474,6 +2345,125 @@ export const verifiedProducts: Product[] = [
     "sourceVerifiedAt": "2026-06-14"
   },
   {
+    "id": "june-adaptive-mens-open-back-zip-polo-shirt",
+    "name": "Men’s Adaptive Long Sleeve Back-Opening Jacquard Polo Shirt",
+    "brandId": "june-adaptive",
+    "clothingType": "Shirts",
+    "category": "shirts",
+    "priceRange": "$50-$100",
+    "price": "69.99",
+    "currency": "CAD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0596/9392/4523/files/JuneAdaptiveMen_sAdaptiveLongSleeveBack-OpeningJacquardPoloShirtEasy-DressSnapClosureTopBackOpen.jpg?v=1771882927",
+    "imageAlt": "Men’s Adaptive Long Sleeve Back-Opening Jacquard Polo Shirt by June Adaptive",
+    "description": "Experience dignified, pain-free dressing with our Men’s Adaptive Long Sleeve Back-Opening Jacquard Polo Shirt. Designed for comfort and functionality, this Assisted Dressing A daptive Polo...",
+    "accessibilityExplanation": "The official listing identifies open-back design, easy dressing, snap closures as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Open-back design",
+      "Easy dressing",
+      "Snap closures"
+    ],
+    "disabilityNeeds": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis",
+      "Parkinson's disease"
+    ],
+    "bestFor": [
+      "Limited dexterity",
+      "Assisted dressing",
+      "Arthritis"
+    ],
+    "styleTags": [
+      "Comfort",
+      "Everyday",
+      "Smart casual"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "Canada",
+        "USA"
+      ],
+      "note": "Official June Adaptive product page. Contact the brand for international delivery."
+    },
+    "sizes": [
+      "M",
+      "L",
+      "XL",
+      "2XL",
+      "3XL"
+    ],
+    "genderFit": [
+      "Men"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": true,
+    "featured": false,
+    "productUrl": "https://www.juneadaptive.com/products/mens-open-back-zip-polo-shirt",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
+    "id": "june-adaptive-womens-cotton-underwear-tank-top-3-pack-copy",
+    "name": "Women’s Adaptive Stretch Knit Camisole",
+    "brandId": "june-adaptive",
+    "clothingType": "Underwear",
+    "category": "underwear",
+    "priceRange": "$25-$50",
+    "price": "19.99",
+    "currency": "CAD",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/0596/9392/4523/files/cami-white-back-juneadaptive.webp?v=1769721626",
+    "imageAlt": "Women’s Adaptive Stretch Knit Camisole by June Adaptive",
+    "description": "Enjoy all-day comfort and effortless layering with our W omen’s Adaptive Stretch Knit Camisole. Designed as a soft foundation piece, this lightweight camisole provides gentle comfort...",
+    "accessibilityExplanation": "The official listing identifies pull-on waist as part of this item's adaptive design. Check the product page for complete fit and care details.",
+    "adaptiveFeatures": [
+      "Pull-on waist"
+    ],
+    "disabilityNeeds": [
+      "Adaptive dressing",
+      "Limited mobility"
+    ],
+    "bestFor": [
+      "Adaptive dressing",
+      "Limited mobility"
+    ],
+    "styleTags": [
+      "Sporty",
+      "Casual",
+      "Comfort",
+      "Everyday"
+    ],
+    "availability": {
+      "online": true,
+      "inStore": false,
+      "countries": [
+        "Canada",
+        "USA"
+      ],
+      "note": "Official June Adaptive product page. Contact the brand for international delivery."
+    },
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ],
+    "genderFit": [
+      "Women"
+    ],
+    "sensoryFriendly": false,
+    "seatedFit": false,
+    "oneHandedDressing": false,
+    "featured": false,
+    "productUrl": "https://www.juneadaptive.com/products/womens-cotton-underwear-tank-top-3-pack-copy",
+    "linkType": "exact-product",
+    "sourceVerifiedAt": "2026-06-14"
+  },
+  {
     "id": "iz-adaptive-biker-jacket-1",
     "name": "The Iconic Biker Jacket for Women",
     "brandId": "iz-adaptive",
@@ -3124,7 +3114,7 @@ export const verifiedProducts: Product[] = [
     "priceRange": "$50-$100",
     "price": "57.00",
     "currency": "CAD",
-    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/IzadaptiveXSilverts_Joon-46.jpg?v=1771362982",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/IzadaptiveXSilverts_Joon-47_1.jpg?v=1771362982",
     "imageAlt": "Women's Open Back Cozy Ribbed Top by IZ Adaptive",
     "description": "IZ approved Silverts style for easy, comfortable dressing. Women’s Ribbed Open Back Top Soft, stretchy ribbed knit top designed with open-back panels and shoulder snap closures for easy...",
     "accessibilityExplanation": "The official listing identifies open-back design, seated fit, snap closures as part of this item's adaptive design. Check the product page for complete fit and care details.",
@@ -3325,7 +3315,7 @@ export const verifiedProducts: Product[] = [
     "priceRange": "$50-$100",
     "price": "52.00",
     "currency": "CAD",
-    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/sv28045-wht-115-022-v1_copy_1_35796cf5-0444-43ec-9736-bf054536dd03.jpg?v=1771355602",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/sv28040_wht_0_853a06d7-41ed-4188-802c-050eb61c14df.jpg?v=1771493901",
     "imageAlt": "Men's Open Back Undershirts - 3 Pack by IZ Adaptive",
     "description": "IZ approved Silverts style for easy, comfortable dressing. Men’s 3-Pack Open-Back Undershirts Soft, breathable undershirts designed for easy, stress-free changing and all-day comfort. The...",
     "accessibilityExplanation": "The official listing identifies open-back design, easy dressing as part of this item's adaptive design. Check the product page for complete fit and care details.",
@@ -3387,7 +3377,7 @@ export const verifiedProducts: Product[] = [
     "priceRange": "$50-$100",
     "price": "52.00",
     "currency": "CAD",
-    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/sv28040-wht-113-028_v2_copy_1_fbeaaed5-243a-468f-a1f9-015b86697b5b.jpg?v=1771355275",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/sv28045_wht_0.jpg?v=1771494637",
     "imageAlt": "Women's Open Back Undershirts - 3 Pack by IZ Adaptive",
     "description": "IZ Approved Silverts style for easy, comfortable dressing. Women’s 3-Pack Open Back Undershirts Soft, breathable undershirts with easy snap closures at the shoulders for effortless assisted...",
     "accessibilityExplanation": "The official listing identifies open-back design, snap closures as part of this item's adaptive design. Check the product page for complete fit and care details.",
@@ -3696,7 +3686,7 @@ export const verifiedProducts: Product[] = [
     "priceRange": "$50-$100",
     "price": "57.00",
     "currency": "CAD",
-    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/SV523_SV2_FIG_0_87177-v1.jpg?v=1771337284",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/SV523_SV2_FIG_2_87199-v1.jpg?v=1771337284",
     "imageAlt": "Men's Adaptive Easy-On Swim Shorts by IZ Adaptive",
     "description": "IZ approved Silverts style for easy, comfortable dressing. Men’s Adaptive Easy-On Swim Shorts Lightweight, quick-drying swim shorts designed for easier dressing, added independence, and...",
     "accessibilityExplanation": "The official listing identifies easy dressing, zip access as part of this item's adaptive design. Check the product page for complete fit and care details.",
@@ -3818,7 +3808,7 @@ export const verifiedProducts: Product[] = [
     "priceRange": "$50-$100",
     "price": "57.00",
     "currency": "CAD",
-    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/SV520_SV2_FIG_0_79378-v1.jpg?v=1771278985",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/SV520_SV2_FIG_3_79400-v1.jpg?v=1771278985",
     "imageAlt": "Women’s Quick-On Adaptive Swim Skirt by IZ Adaptive",
     "description": "IZ approved Silverts style for easy, comfortable dressing. Women’s Adaptive Easy-Pull Swim Skirt An adaptive swim skirt designed for effortless dressing, increased independence, and all-day...",
     "accessibilityExplanation": "The official listing identifies easy dressing as part of this item's adaptive design. Check the product page for complete fit and care details.",
@@ -3937,7 +3927,7 @@ export const verifiedProducts: Product[] = [
     "priceRange": "$25-$50",
     "price": "29.00",
     "currency": "CAD",
-    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/Screenshot_2026-02-16_at_11.56.45_AM.png?v=1771261809",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/SV414_SV2_0.jpg?v=1771261821",
     "imageAlt": "Women’s Quick-Access Adaptive Briefs by IZ Adaptive",
     "description": "IZ approved Silverts style for easy, comfortable dressing. Women’s Adaptive Front-Opening Underwear Lightweight, ultra-soft adaptive underwear designed for easy access during dressing,...",
     "accessibilityExplanation": "The official listing identifies pull-on waist, wrap opening as part of this item's adaptive design. Check the product page for complete fit and care details.",
@@ -3998,7 +3988,7 @@ export const verifiedProducts: Product[] = [
     "priceRange": "$25-$50",
     "price": "29.00",
     "currency": "CAD",
-    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/Screenshot_2026-02-16_at_11.45.53_AM.png?v=1771260481",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/SV415_SV2_1_46500e70-2ed4-4f3d-99cb-764f821847ca.jpg?v=1771260392",
     "imageAlt": "Men’s Open-Front Everyday Briefs by IZ Adaptive",
     "description": "IZ approved Silverts style for easy, comfortable dressing. Men’s Adaptive Front-Opening Underwear Lightweight, ultra-soft adaptive underwear designed for easy access during dressing,...",
     "accessibilityExplanation": "The official listing identifies pull-on waist, wrap opening as part of this item's adaptive design. Check the product page for complete fit and care details.",
@@ -4059,7 +4049,7 @@ export const verifiedProducts: Product[] = [
     "priceRange": "$50-$100",
     "price": "57.00",
     "currency": "CAD",
-    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/IzadaptiveXSilverts_Grace-48.jpg?v=1771052006",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/IzadaptiveXSilverts_Grace-3.jpg?v=1771052006",
     "imageAlt": "Men's Classic Open Back Nightgown by IZ Adaptive",
     "description": "IZ Approved Silverts style for easy, comfortable dressing. Men’s Classic Open Back Nightgown Soft, breathable cotton blend nightgown with a no-peek overlapping back and easy shoulder snaps...",
     "accessibilityExplanation": "The official listing identifies open-back design, seated fit, easy dressing as part of this item's adaptive design. Check the product page for complete fit and care details.",
@@ -4124,7 +4114,7 @@ export const verifiedProducts: Product[] = [
     "priceRange": "$25-$50",
     "price": "19.00",
     "currency": "CAD",
-    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/sv30020_sv3_0_2m6ye2rmidmkfbjy_6f6f5688-a624-4bfd-b688-21f51fafec84.jpg?v=1771052932",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/sv30020_sv3_2_nckvsjntc6u4kdc4_2afdab25-bc53-4c09-a0c8-ee730a2f0af5.jpg?v=1771052949",
     "imageAlt": "Non Gender Knit Leg Warmers & Protectors by IZ Adaptive",
     "description": "IZ Approved Silverts style for easy, comfortable dressing. Leg Warmers Soft, stretchy knit sleeves designed to protect skin and keep legs warm from ankle to knee, while allowing full...",
     "accessibilityExplanation": "The official listing identifies easy dressing as part of this item's adaptive design. Check the product page for complete fit and care details.",
@@ -4179,7 +4169,7 @@ export const verifiedProducts: Product[] = [
     "priceRange": "$50-$100",
     "price": "52.00",
     "currency": "CAD",
-    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/IzadaptiveXSilverts_Grace-51.jpg?v=1771048468",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/IzadaptiveXSilverts_Grace-4.jpg?v=1771048468",
     "imageAlt": "Women's Easy Pull-On Denim Midi Skirt by IZ Adaptive",
     "description": "IZ Approved Silverts style for easy, comfortable dressing. Women’s Pull-On Denim Skirt Soft, stretchy denim with easy pull-on design for effortless self or assisted dressing. Why You’ll...",
     "accessibilityExplanation": "The official listing identifies easy dressing, pull-on waist as part of this item's adaptive design. Check the product page for complete fit and care details.",
@@ -4242,7 +4232,7 @@ export const verifiedProducts: Product[] = [
     "priceRange": "$25-$50",
     "price": "47.00",
     "currency": "CAD",
-    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/IzadaptiveXSilverts_Grace-54_4.jpg?v=1771046394",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/sv23010_sv2485_0.jpg?v=1771489337",
     "imageAlt": "Women's Easy Wrap Skirt by IZ Adaptive",
     "description": "IZ approved Silverts style for easy, comfortable dressing. Women’s Adaptive Wrap Skirt Comfortable, flattering, and easy to put on while seated, with a wrap-around hook & loop waistband for...",
     "accessibilityExplanation": "The official listing identifies seated fit, easy dressing, wrap opening as part of this item's adaptive design. Check the product page for complete fit and care details.",
@@ -4308,7 +4298,7 @@ export const verifiedProducts: Product[] = [
     "priceRange": "$50-$100",
     "price": "75.00",
     "currency": "CAD",
-    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/IzadaptiveXSilverts_Joon-15.jpg?v=1771045481",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/sv40100_sv2512_0.jpg?v=1771488970",
     "imageAlt": "Men's Magnetic Button Poplin Shirt by IZ Adaptive",
     "description": "IZ approved Silverts style for easy, comfortable dressing. Men’s Magnetic Button Front Shirt Smooth, classic shirting with hidden magnetic buttons for effortless, front-facing dressing. Why...",
     "accessibilityExplanation": "The official listing identifies magnetic closures, easy dressing, medical-device access as part of this item's adaptive design. Check the product page for complete fit and care details.",
@@ -4516,7 +4506,7 @@ export const verifiedProducts: Product[] = [
     "priceRange": "$100-$150",
     "price": "122.00",
     "currency": "CAD",
-    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/sv15440_svwdb_0_6cb6c415-3dab-49e3-b9fe-92e96667766c.jpg?v=1771055362",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/sv15440_svwdb_2_3e686a48-fac8-4553-9f40-d40f5d1ffafb.jpg?v=1771487963",
     "imageAlt": "Women’s Adjustable Width Slip-On Sneakers by IZ Adaptive",
     "description": "IZ approved Silverts style for easy, comfortable dressing. Women’s Adjustable Width Comfort Shoes Slip-on comfort with a customizable fit—designed to adjust from regular to extra-wide...",
     "accessibilityExplanation": "The official listing identifies easy dressing, extra-wide fit, orthotic-friendly fit as part of this item's adaptive design. Check the product page for complete fit and care details.",
@@ -4592,7 +4582,7 @@ export const verifiedProducts: Product[] = [
     "priceRange": "$100-$150",
     "price": "132.00",
     "currency": "CAD",
-    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/sv15430_svmbn_0_8ce0a5c1-fd9a-47c1-8d0c-b9bc17727a4e.jpg?v=1771055340",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/sv15430_svmbn_3_8774cdc6-95b2-44f8-9e6b-d16f08d3852f.jpg?v=1771488414",
     "imageAlt": "Women’s Adjustable Width Comfort Shoes by IZ Adaptive",
     "description": "IZ approved Silverts style for easy, comfortable dressing. Women’s True Fit Adjustable Comfort Shoes Slip-on comfort with customizable fit—designed to adjust from regular to extra-wide...",
     "accessibilityExplanation": "The official listing identifies easy dressing, orthotic-friendly fit, removable insoles as part of this item's adaptive design. Check the product page for complete fit and care details.",
@@ -8397,7 +8387,7 @@ export const verifiedProducts: Product[] = [
     "priceRange": "$50-$100",
     "price": "69.95",
     "currency": "USD",
-    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/MagnaReady_Model_Appearance_Replication_2026-03-19_13-57_1.png?v=1773943170",
+    "imageUrl": "https://cdn.shopify.com/s/files/1/2807/1462/files/blue-white-tattersall-short-sleeve-shirt-magnetic-closures-adaptive-fit-100-cotton.jpg?v=1779133385",
     "imageAlt": "Blue and White Tattersall Short Sleeve Shirt with Magnetic Closures by MagnaReady",
     "description": "MagnaReady® Adaptive Short Sleeve Traditional Fit Shirt – 100% Cotton, Button-Down Collar Please consult your physician before use if you have a pacemaker, defibrillator, stent, or other...",
     "accessibilityExplanation": "The official listing identifies magnetic closures, medical-device access as part of this item's adaptive design. Check the product page for complete fit and care details.",

@@ -125,6 +125,21 @@ const excludedTypes = [
   "hats",
 ];
 
+const MIN_IMAGE_EDGE = 800;
+
+function selectProductImage(product) {
+  const images = (product.images ?? []).filter(
+    (image) =>
+      image?.src &&
+      Number(image.width) >= MIN_IMAGE_EDGE &&
+      Number(image.height) >= MIN_IMAGE_EDGE
+  );
+
+  // Preserve the official featured image when it is large enough. Otherwise,
+  // use the first full-resolution image from the same product listing.
+  return images[0] ?? null;
+}
+
 const featureRules = [
   [/magnetic|magsnap/i, "Magnetic closures"],
   [/open[- ]back|back overlap|back-overlap/i, "Open-back design"],
@@ -307,6 +322,8 @@ function productRecord(product, feed) {
     : `An individual adaptive ${clothingType.toLowerCase()} item from ${feed.brandName}.`;
   const needs = adaptiveNeeds(features, fullText);
   const exactName = compactName(product.title);
+  const productImage = selectProductImage(product);
+  if (!productImage) return null;
 
   return {
     id: `${feed.brandId}-${slug(product.handle)}`,
@@ -317,7 +334,7 @@ function productRecord(product, feed) {
     priceRange: priceRange(price),
     price: price ? String(price) : "",
     currency: feed.currency,
-    imageUrl: product.images?.[0]?.src ?? null,
+    imageUrl: productImage.src,
     imageAlt: `${exactName} by ${feed.brandName}`,
     description,
     accessibilityExplanation: `The official listing identifies ${features
@@ -365,7 +382,7 @@ async function main() {
         const type = String(product.product_type ?? "").toLowerCase();
         return (
           product.handle &&
-          product.images?.[0]?.src &&
+          selectProductImage(product) &&
           !excludedTerms.some((term) => title.includes(term)) &&
           !excludedTypes.includes(type) &&
           !(feed.excludedTags ?? []).some((tag) =>
@@ -398,16 +415,19 @@ async function main() {
   const missingPrices = allProducts.filter(
     (product) => !product.price || !product.currency
   );
+  const missingImages = allProducts.filter((product) => !product.imageUrl);
   if (
     allProducts.length < 225 ||
     duplicateIds.length ||
     duplicateUrls.length ||
-    missingPrices.length
+    missingPrices.length ||
+    missingImages.length
   ) {
     throw new Error(
       `Catalogue validation failed: ${allProducts.length} products, ` +
         `${duplicateIds.length} duplicate IDs, ${duplicateUrls.length} duplicate URLs, ` +
-        `${missingPrices.length} missing exact prices`
+        `${missingPrices.length} missing exact prices, ` +
+        `${missingImages.length} missing verified images`
     );
   }
 
