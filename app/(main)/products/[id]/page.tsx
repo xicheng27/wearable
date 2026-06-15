@@ -9,6 +9,7 @@ import { mapPlaces } from "@/data/places";
 import {
   getBrandOfProduct,
   getProductById,
+  productImage,
   products,
   similarProducts,
   singaporeAvailability,
@@ -41,6 +42,7 @@ export default function ProductDetailPage({ params }: PageProps) {
   const category = getCategoryById(product.categoryId);
   const similar = similarProducts(product, 3);
   const brandPlaces = mapPlaces.filter((pl) => pl.brandId === brand.id);
+  const img = productImage(product);
   const hasStores =
     product.availability.includes("In stores") &&
     brand.locations.some((l) => l.type !== "online-only");
@@ -72,11 +74,14 @@ export default function ProductDetailPage({ params }: PageProps) {
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
             <div className="animate-fade-up">
               <Photo
-                src={product.imageUrl ?? product.image}
+                src={img.src}
                 fallbackSrc={product.image}
-                alt={`${product.name} by ${brand.name}`}
+                alt={img.alt}
                 className="aspect-[4/3] rounded-3xl bg-gray-50 shadow-soft"
               />
+              {img.attribution && (
+                <p className="mt-2 text-xs text-gray-500">{img.attribution}</p>
+              )}
             </div>
 
             <div className="animate-fade-up" style={{ animationDelay: "80ms" }}>

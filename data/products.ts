@@ -1,6 +1,7 @@
 import { Brand } from "@/types";
 import { brands, QuizAnswers } from "./brands";
 import { clothingCategories, quizClothingOptions } from "./categories";
+import { clearedImage, ImageMeta } from "./imageMeta";
 import { adaptiveProducts } from "./adaptiveProducts";
 
 export interface Product {
@@ -14,8 +15,10 @@ export interface Product {
   priceRange: string;
   /** Local illustration tile (always present; also the fallback). */
   image: string;
-  /** Verified remote listing photo from the brand, when available. */
+  /** @deprecated Use imageMeta. Kept only for back-compat; not displayed directly. */
   imageUrl?: string;
+  /** Copyright-gated image metadata. Only shown when permissionStatus === "approved". */
+  imageMeta?: ImageMeta;
   /** Verified link to the exact product page, when available. */
   productUrl?: string;
   /** Exact price as shown on the official listing, when available. */
@@ -46,10 +49,19 @@ const baseProducts: Product[] = [
     categoryId: "shirts",
     priceRange: "$$",
     image: "/images/prod-tommy-magnetic-polo.svg",
-    imageUrl:
-      "https://shoptommy.scene7.com/is/image/ShopTommy/78J9182_XLG_FNT",
     productUrl:
       "https://usa.tommy.com/en/tommy-adaptive/mens-adaptive/tops/classic-stretch-polo/78J9182-XLG.html",
+    // Brand product photo — NOT cleared for display. Needs written permission/licence.
+    imageMeta: {
+      imageUrl: "https://shoptommy.scene7.com/is/image/ShopTommy/78J9182_XLG_FNT",
+      imageAlt: "Product photo from Tommy Hilfiger",
+      imageSource: "Tommy Hilfiger",
+      imageLicenseType: "brand-permission",
+      attributionText: "Image courtesy of Tommy Hilfiger",
+      permissionStatus: "needs-review",
+      sourcePageUrl: "https://usa.tommy.com/en/tommy-adaptive/mens-adaptive/tops/classic-stretch-polo/78J9182-XLG.html",
+      lastVerifiedDate: "2026-06-15",
+    },
     description:
       "The iconic Tommy polo with hidden magnets behind the placket — it looks buttoned, but closes itself in seconds.",
     accessibilityNote:
@@ -70,10 +82,19 @@ const baseProducts: Product[] = [
     categoryId: "pants",
     priceRange: "$$",
     image: "/images/prod-tommy-seated-chinos.svg",
-    imageUrl:
-      "https://shoptommy.scene7.com/is/image/ShopTommy/7T00417_615_main",
     productUrl:
       "https://usa.tommy.com/en/tommy-adaptive/mens-adaptive/bottoms/seated-fit-classic-chino/78D1836-SPN.html",
+    // Brand product photo — NOT cleared for display. Needs written permission/licence.
+    imageMeta: {
+      imageUrl: "https://shoptommy.scene7.com/is/image/ShopTommy/7T00417_615_main",
+      imageAlt: "Product photo from Tommy Hilfiger",
+      imageSource: "Tommy Hilfiger",
+      imageLicenseType: "brand-permission",
+      attributionText: "Image courtesy of Tommy Hilfiger",
+      permissionStatus: "needs-review",
+      sourcePageUrl: "https://usa.tommy.com/en/tommy-adaptive/mens-adaptive/bottoms/seated-fit-classic-chino/78D1836-SPN.html",
+      lastVerifiedDate: "2026-06-15",
+    },
     description:
       "Classic chinos re-cut for sitting: higher back rise, lower front rise and a velcro-adjustable waist.",
     accessibilityNote:
@@ -132,10 +153,19 @@ const baseProducts: Product[] = [
     categoryId: "jeans",
     priceRange: "$$$",
     image: "/images/prod-iz-seated-jeans.svg",
-    imageUrl:
-      "https://izadaptive.com/cdn/shop/files/MPT035_GC_jeans_Black__0342_0046.jpg?v=1769662388",
     productUrl:
       "https://izadaptive.com/products/game-changer-seamless-back-jeans-for-men",
+    // Brand product photo — NOT cleared for display. Needs written permission/licence.
+    imageMeta: {
+      imageUrl: "https://izadaptive.com/cdn/shop/files/MPT035_GC_jeans_Black__0342_0046.jpg?v=1769662388",
+      imageAlt: "Product photo from IZ Adaptive",
+      imageSource: "IZ Adaptive",
+      imageLicenseType: "brand-permission",
+      attributionText: "Image courtesy of IZ Adaptive",
+      permissionStatus: "needs-review",
+      sourcePageUrl: "https://izadaptive.com/products/game-changer-seamless-back-jeans-for-men",
+      lastVerifiedDate: "2026-06-15",
+    },
     price: "$74.00",
     currency: "USD",
     description:
@@ -216,10 +246,19 @@ const baseProducts: Product[] = [
     categoryId: "shoes",
     priceRange: "$$",
     image: "/images/prod-zappos-nike-flyease.svg",
-    imageUrl:
-      "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8ec2a797-0b0c-4b29-b1b8-9204b901a803/NIKE+GO+FLYEASE.png",
     productUrl:
       "https://www.nike.com/t/go-flyease-womens-easy-on-off-shoes-LGmqKx",
+    // Brand product photo — NOT cleared for display. Needs written permission/licence.
+    imageMeta: {
+      imageUrl: "https://static.nike.com/a/images/t_default/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8ec2a797-0b0c-4b29-b1b8-9204b901a803/NIKE+GO+FLYEASE.png",
+      imageAlt: "Product photo from Nike",
+      imageSource: "Nike",
+      imageLicenseType: "brand-permission",
+      attributionText: "Image courtesy of Nike",
+      permissionStatus: "needs-review",
+      sourcePageUrl: "https://www.nike.com/t/go-flyease-womens-easy-on-off-shoes-LGmqKx",
+      lastVerifiedDate: "2026-06-15",
+    },
     description:
       "Nike's hands-free FlyEase system: step in, the heel folds closed behind you. No hands, no laces.",
     accessibilityNote:
@@ -240,10 +279,19 @@ const baseProducts: Product[] = [
     categoryId: "shoes",
     priceRange: "$",
     image: "/images/prod-zappos-slipon-sneakers.svg",
-    imageUrl:
-      "https://m.media-amazon.com/images/I/714J8RVCV8L._SX700_.jpg",
     productUrl:
       "https://www.zappos.com/p/womens-skechers-performance-go-walk-flex-dacey-hands-free-slip-ins/product/9930275",
+    // Brand product photo — NOT cleared for display. Needs written permission/licence.
+    imageMeta: {
+      imageUrl: "https://m.media-amazon.com/images/I/714J8RVCV8L._SX700_.jpg",
+      imageAlt: "Product photo from Zappos / Amazon",
+      imageSource: "Zappos / Amazon",
+      imageLicenseType: "brand-permission",
+      attributionText: "Image courtesy of Zappos",
+      permissionStatus: "needs-review",
+      sourcePageUrl: "https://www.zappos.com/p/womens-skechers-performance-go-walk-flex-dacey-hands-free-slip-ins/product/9930275",
+      lastVerifiedDate: "2026-06-15",
+    },
     description:
       "Stretchy slip-on sneakers in wide and extra-wide fits — kind to orthotics, swelling and AFOs.",
     accessibilityNote:
@@ -400,10 +448,19 @@ const baseProducts: Product[] = [
     categoryId: "shirts",
     priceRange: "$$",
     image: "/images/prod-magnaready-dress-shirt.svg",
-    imageUrl:
-      "https://magnaready.com/cdn/shop/files/long-sleeve-white-ryan-dress-shirt-magnetic-closures-adaptive-clothing-comfort-style_3.jpg?v=1756660643&width=2048",
     productUrl:
       "https://magnaready.com/products/long-sleeve-white-ryan-dress-shirt-with-magnetic-closures",
+    // Brand product photo — NOT cleared for display. Needs written permission/licence.
+    imageMeta: {
+      imageUrl: "https://magnaready.com/cdn/shop/files/long-sleeve-white-ryan-dress-shirt-magnetic-closures-adaptive-clothing-comfort-style_3.jpg?v=1756660643&width=2048",
+      imageAlt: "Product photo from MagnaReady",
+      imageSource: "MagnaReady",
+      imageLicenseType: "brand-permission",
+      attributionText: "Image courtesy of MagnaReady",
+      permissionStatus: "needs-review",
+      sourcePageUrl: "https://magnaready.com/products/long-sleeve-white-ryan-dress-shirt-with-magnetic-closures",
+      lastVerifiedDate: "2026-06-15",
+    },
     description:
       "The original magnetically infused dress shirt — boardroom crisp, fastened in five seconds flat.",
     accessibilityNote:
@@ -443,10 +500,19 @@ const baseProducts: Product[] = [
     categoryId: "shoes",
     priceRange: "$$",
     image: "/images/prod-billy-zip-hightops.svg",
-    imageUrl:
-      "https://billyfootwear.com/cdn/shop/files/BK23300-004_side_2048x2048_bddd2f5a-fcb6-4236-bc9f-75f6d682a446.jpg?v=1756110917",
     productUrl:
       "https://billyfootwear.com/products/black-white-billy-classic-lace-high-tops",
+    // Brand product photo — NOT cleared for display. Needs written permission/licence.
+    imageMeta: {
+      imageUrl: "https://billyfootwear.com/cdn/shop/files/BK23300-004_side_2048x2048_bddd2f5a-fcb6-4236-bc9f-75f6d682a446.jpg?v=1756110917",
+      imageAlt: "Product photo from Billy Footwear",
+      imageSource: "Billy Footwear",
+      imageLicenseType: "brand-permission",
+      attributionText: "Image courtesy of Billy Footwear",
+      permissionStatus: "needs-review",
+      sourcePageUrl: "https://billyfootwear.com/products/black-white-billy-classic-lace-high-tops",
+      lastVerifiedDate: "2026-06-15",
+    },
     description:
       "The cult-favourite high top that unzips all the way around — the whole shoe folds open flat.",
     accessibilityNote:
@@ -525,10 +591,19 @@ const baseProducts: Product[] = [
     categoryId: "underwear",
     priceRange: "$",
     image: "/images/prod-slick-chicks-underwear.svg",
-    imageUrl:
-      "https://slickchicksonline.com/cdn/shop/files/12.8.19_Ecomm_Shoot0118_1200x630.jpg?v=1735914880",
     productUrl:
       "https://slickchicksonline.com/products/brief",
+    // Brand product photo — NOT cleared for display. Needs written permission/licence.
+    imageMeta: {
+      imageUrl: "https://slickchicksonline.com/cdn/shop/files/12.8.19_Ecomm_Shoot0118_1200x630.jpg?v=1735914880",
+      imageAlt: "Product photo from Slick Chicks",
+      imageSource: "Slick Chicks",
+      imageLicenseType: "brand-permission",
+      attributionText: "Image courtesy of Slick Chicks",
+      permissionStatus: "needs-review",
+      sourcePageUrl: "https://slickchicksonline.com/products/brief",
+      lastVerifiedDate: "2026-06-15",
+    },
     description:
       "Patented briefs that fasten at the hips — on and off without standing, lifting or balancing.",
     accessibilityNote:
@@ -669,6 +744,21 @@ const baseProducts: Product[] = [
 ];
 
 export const products: Product[] = [...baseProducts, ...adaptiveProducts];
+
+/**
+ * Resolves the image to display for a product, respecting permission status.
+ * Returns the brand photo only when its permission is "approved"; otherwise
+ * the first-party illustration tile (always safe to show).
+ */
+export function productImage(p: Product): {
+  src: string;
+  alt: string;
+  attribution?: string;
+} {
+  const ok = clearedImage(p.imageMeta);
+  if (ok) return { src: ok.imageUrl, alt: ok.imageAlt, attribution: ok.attributionText };
+  return { src: p.image, alt: `${p.name} — illustration`, attribution: undefined };
+}
 
 export function getProductById(id: string): Product | undefined {
   return products.find((p) => p.id === id);

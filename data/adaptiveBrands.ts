@@ -16,6 +16,8 @@
  * stock status to each entry, and flip `listingType` to "product".
  */
 
+import type { ImageMeta } from "./imageMeta";
+
 export type ListingType = "product" | "category" | "service" | "initiative";
 
 export interface AdaptiveBrand {
@@ -44,6 +46,12 @@ export interface AdaptiveProduct {
   currency?: string;
   productUrl: string;
   imageUrl?: string | null;
+  /**
+   * Copyright-gated image metadata. All current entries are placeholder-only
+   * (imageUrl null) — populate this and set permissionStatus "approved" once a
+   * brand grants permission or a licence/feed is in place. See data/imageMeta.ts.
+   */
+  imageMeta?: ImageMeta;
   singaporeAvailability: string;
   adaptiveFeatures: string[];
   bestFor: string[];

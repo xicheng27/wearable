@@ -11,7 +11,7 @@ import {
   ClothingCategory,
   quizClothingOptions,
 } from "@/data/categories";
-import { getBrandOfProduct, matchProducts, ProductMatch } from "@/data/products";
+import { getBrandOfProduct, matchProducts, productImage, ProductMatch } from "@/data/products";
 import { mapPlaces } from "@/data/places";
 
 function readList(value: string | null): string[] {
@@ -66,7 +66,7 @@ function ProductMatchCard({ m, badge }: { m: ProductMatch; badge?: string }) {
   return (
     <article className="card card-hover flex h-full flex-col overflow-hidden">
       <div className="relative">
-        <Photo src={m.product.imageUrl ?? m.product.image} fallbackSrc={m.product.image} alt="" className="aspect-[16/9] bg-gray-50" />
+        <Photo src={productImage(m.product).src} fallbackSrc={m.product.image} alt={productImage(m.product).alt} className="aspect-[16/9] bg-gray-50" />
         {badge && (
           <span className="absolute left-3 top-3 rounded-full bg-primary-600 px-2.5 py-1 text-[11px] font-semibold text-white shadow-sm">
             {badge}
