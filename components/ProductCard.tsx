@@ -17,6 +17,8 @@ export default function ProductCard({ product }: { product: Product }) {
         <ProductImage
           src={product.imageUrl}
           alt={product.imageAlt}
+          permissionStatus={product.permissionStatus}
+          attribution={product.attributionText}
           className="aspect-[4/5] w-full"
         />
         <div className="absolute left-3 top-3 flex flex-wrap gap-2">

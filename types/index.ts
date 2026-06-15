@@ -57,6 +57,20 @@ export interface Product {
   currency: string;
   imageUrl: string;
   imageAlt: string;
+  // Copyright-safe image metadata. imageUrl is only displayed when
+  // permissionStatus === "approved" (see components/ProductImage.tsx).
+  imageSource?: string;
+  imageLicenseType?:
+    | "brand-permission"
+    | "affiliate-feed"
+    | "press-kit"
+    | "own-photo"
+    | "licensed-stock"
+    | "placeholder";
+  attributionText?: string;
+  permissionStatus?: "approved" | "pending" | "needs-review";
+  sourcePageUrl?: string;
+  lastVerifiedDate?: string;
   description: string;
   accessibilityExplanation: string;
   adaptiveFeatures: string[];

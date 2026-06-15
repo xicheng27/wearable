@@ -43,16 +43,16 @@ export default function HeroSection() {
 
         <div className="relative mx-auto h-[550px] w-full max-w-[570px]" aria-label="Featured adaptive clothing pieces">
           <div className="absolute left-[7%] top-[5%] h-[70%] w-[56%] rotate-[-3deg] overflow-hidden rounded-[2rem_2rem_.8rem_2rem] border-[10px] border-paper bg-sand shadow-lift">
-            {featured[0] && <ProductImage src={featured[0].imageUrl} alt={featured[0].imageAlt} priority className="h-full w-full" />}
+            {featured[0] && <ProductImage src={featured[0].imageUrl} alt={featured[0].imageAlt} permissionStatus={featured[0].permissionStatus} attribution={featured[0].attributionText} priority className="h-full w-full" />}
             <span className="absolute bottom-3 left-3 right-3 bg-paper/90 px-3 py-2 text-xs font-bold text-ink backdrop-blur">
               {featured[0]?.name}
             </span>
           </div>
           <div className="absolute right-[2%] top-[2%] h-[42%] w-[41%] rotate-[4deg] overflow-hidden rounded-[.8rem_2rem_2rem_2rem] border-[8px] border-paper bg-lavender shadow-paper">
-            {featured[1] && <ProductImage src={featured[1].imageUrl} alt={featured[1].imageAlt} priority className="h-full w-full" />}
+            {featured[1] && <ProductImage src={featured[1].imageUrl} alt={featured[1].imageAlt} permissionStatus={featured[1].permissionStatus} attribution={featured[1].attributionText} priority className="h-full w-full" />}
           </div>
           <div className="absolute bottom-[2%] right-[4%] h-[43%] w-[48%] rotate-[2deg] overflow-hidden rounded-[2rem_.8rem_2rem_2rem] border-[8px] border-paper bg-sage/30 shadow-lift">
-            {featured[2] && <ProductImage src={featured[2].imageUrl} alt={featured[2].imageAlt} className="h-full w-full" />}
+            {featured[2] && <ProductImage src={featured[2].imageUrl} alt={featured[2].imageAlt} permissionStatus={featured[2].permissionStatus} attribution={featured[2].attributionText} className="h-full w-full" />}
           </div>
           <div className="absolute right-[4%] top-[43%] rotate-[5deg] rounded-sm bg-[#F2E5CA] px-4 py-3 font-hand text-sm font-semibold text-ink shadow-paper">
             style + access
