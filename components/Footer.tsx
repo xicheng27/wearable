@@ -1,80 +1,40 @@
 import Link from "next/link";
-import Logo from "./Logo";
+import Logo from "@/components/Logo";
 
-const columns = [
-  {
-    heading: "Explore",
-    links: [
-      { href: "/search", label: "Browse clothing" },
-      { href: "/brands", label: "Browse brands" },
-      { href: "/map", label: "Stores & services map" },
-      { href: "/quiz", label: "Find by Need quiz" },
-      { href: "/brands?feature=sensory", label: "Sensory-friendly" },
-      { href: "/clothing/shoes", label: "Adaptive footwear" },
-    ],
-  },
-  {
-    heading: "Disability types",
-    links: [
-      { href: "/brands?disability=mobility", label: "Mobility impairments" },
-      { href: "/brands?disability=limb", label: "Limb differences" },
-      { href: "/brands?disability=neurological", label: "Neurological conditions" },
-      { href: "/brands?disability=sensory", label: "Sensory processing" },
-      { href: "/brands?disability=stroke", label: "Stroke survivors" },
-    ],
-  },
-  {
-    heading: "About",
-    links: [
-      { href: "/about", label: "About Xi's" },
-      { href: "/", label: "Submit a brand" },
-      { href: "/about", label: "Accessibility statement" },
-      { href: "/", label: "Privacy policy" },
-      { href: "/signin", label: "Sign in" },
-    ],
-  },
+const groups = [
+  ["Browse", [["All clothing", "/search"], ["Singapore guide", "/singapore"], ["Global map", "/map"], ["Adaptive shoes", "/categories/shoes"]]],
+  ["Find by need", [["One-handed dressing", "/search?oneHanded=true"], ["Sensory-friendly", "/search?sensory=true"], ["Orthotics and AFOs", "/search?disability=Orthotics"], ["Find my match", "/quiz"]]],
+  ["Xi's", [["Our approach", "/"], ["Accessibility", "/"], ["Submit an item", "/"], ["Contact", "/"]]],
 ];
 
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-100 bg-gray-50">
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+    <footer className="paper-texture border-t border-paper/10 bg-[#29241F] text-paper">
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="grid gap-12 lg:grid-cols-[1.25fr_2fr]">
           <div>
-            <Logo />
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-gray-500">
-              Helping everyone find clothing that works for their body — with
-              dignity, style, and ease.
+            <Logo dark size={44} />
+            <p className="mt-5 max-w-sm font-display text-2xl leading-snug text-paper/90">
+              Better clothing discovery, shaped around real bodies and real lives.
             </p>
+            <p className="mt-5 font-hand text-xs text-sand">Made with care, checked with curiosity.</p>
           </div>
-
-          {columns.map((col) => (
-            <div key={col.heading}>
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-500">
-                {col.heading}
-              </h3>
-              <ul className="mt-4 space-y-2.5 text-sm">
-                {col.links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-gray-600 transition-colors duration-200 hover:text-primary-700"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
+            {groups.map(([title, links]) => (
+              <div key={title as string}>
+                <h2 className="font-display text-lg font-semibold text-sand">{title as string}</h2>
+                <ul className="mt-4 space-y-3 text-sm text-paper/65">
+                  {(links as string[][]).map(([label, href]) => (
+                    <li key={label}><Link href={href} className="transition-colors hover:text-paper hover:underline hover:underline-offset-4">{label}</Link></li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
-
-        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-gray-200/70 pt-8 text-sm text-gray-500 sm:flex-row">
-          <p>© 2025 Xi&apos;s. Empowering adaptive fashion for everyone.</p>
-          <p>
-            Made with <span className="text-primary-600">♥</span> for the
-            disability community
-          </p>
+        <div className="mt-14 flex flex-col gap-3 border-t border-paper/15 pt-7 text-xs text-paper/45 sm:flex-row sm:justify-between">
+          <p>&copy; 2026 Xi&apos;s. Adaptive fashion discovery.</p>
+          <p>Comfort, dignity, independence, style.</p>
         </div>
       </div>
     </footer>

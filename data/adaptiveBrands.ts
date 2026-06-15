@@ -1,26 +1,4 @@
-/**
- * Singapore adaptive-clothing seed directory.
- *
- * This is a separate, source-tracked dataset (distinct from the verified
- * product catalogue in data/products.ts). Entries are a mix of exact
- * products, brand/category-level listings, services, and local initiatives —
- * `listingType` records which, so the UI can label them honestly.
- *
- * Rules followed:
- * - No invented products, prices, images, or URLs.
- * - Where an exact product URL/image is unknown, `productUrl` falls back to
- *   the brand site and `imageUrl` is null (the card shows a clean placeholder).
- * - Prices/currency appear only where a real listing showed them.
- *
- * To expand later: add exact product URLs, imageUrl, sizes, colours and
- * stock status to each entry, and flip `listingType` to "product".
- */
-
-import type { ImageMeta } from "./imageMeta";
-
-export type ListingType = "product" | "category" | "service" | "initiative";
-
-export interface AdaptiveBrand {
+export type AdaptiveBrand = {
   id: string;
   name: string;
   country: string;
@@ -30,11 +8,9 @@ export interface AdaptiveBrand {
   categories: string[];
   adaptiveFocus: string[];
   notes: string;
-  /** Accent colour for placeholder cards (presentation only). */
-  accent: string;
-}
+};
 
-export interface AdaptiveProduct {
+export type AdaptiveProduct = {
   id: string;
   brandId: string;
   brandName: string;
@@ -46,29 +22,25 @@ export interface AdaptiveProduct {
   currency?: string;
   productUrl: string;
   imageUrl?: string | null;
-  /**
-   * Copyright-gated image metadata. All current entries are placeholder-only
-   * (imageUrl null) — populate this and set permissionStatus "approved" once a
-   * brand grants permission or a licence/feed is in place. See data/imageMeta.ts.
-   */
-  imageMeta?: ImageMeta;
   singaporeAvailability: string;
   adaptiveFeatures: string[];
   bestFor: string[];
   closureType?: string;
   sourceNotes: string;
-  /** Whether this is an exact SKU, a category listing, a service, or an initiative. */
-  listingType: ListingType;
-}
+  sizes?: string[];
+  colours?: string[];
+  stockStatus?: string;
+  countryAvailability?: string[];
+};
 
 export const adaptiveBrands: AdaptiveBrand[] = [
   {
     id: "will-and-well",
     name: "Will & Well",
     country: "Singapore",
-    website: "https://willandwell.com",
+    website: "https://willandwell.com/",
     singaporeAvailability: "Local Singapore brand",
-    shippingNotes: "Free local delivery for minimum spend SGD 150.",
+    shippingNotes: "Free local delivery for minimum spend SGD150",
     categories: [
       "Men",
       "Women",
@@ -93,16 +65,15 @@ export const adaptiveBrands: AdaptiveBrand[] = [
     ],
     notes:
       "Singapore inclusive fashion label. Suitable for users who want local adaptive clothing, alterations, workshops, and stylish functional garments.",
-    accent: "#1E6B52",
   },
   {
     id: "the-able-label",
     name: "The Able Label",
     country: "United Kingdom",
-    website: "https://www.theablelabel.com",
+    website: "https://www.theablelabel.com/",
     singaporeAvailability: "Ships to Singapore",
     shippingNotes:
-      "Singapore delivery around 8–9 working days; shipping from about S$8, free shipping from about S$80.",
+      "Singapore delivery listed as around 8-9 working days; shipping from about S$8 and free shipping from about S$80",
     categories: [
       "Coats & Jackets",
       "Shirts & Blouses",
@@ -126,7 +97,7 @@ export const adaptiveBrands: AdaptiveBrand[] = [
     adaptiveFocus: [
       "touch-and-close fastenings",
       "pull-on clothing",
-      "sleeveless / easy-dressing designs",
+      "sleeveless/easy-dressing designs",
       "arthritis-friendly clothing",
       "Parkinson's",
       "stroke",
@@ -135,16 +106,15 @@ export const adaptiveBrands: AdaptiveBrand[] = [
     ],
     notes:
       "Good for older adults, carers, and users who need discreet adaptive designs.",
-    accent: "#3A4E8C",
   },
   {
     id: "june-adaptive",
     name: "June Adaptive",
     country: "Canada",
-    website: "https://www.juneadaptive.com",
-    singaporeAvailability: "Contact for international order",
+    website: "https://www.juneadaptive.com/",
+    singaporeAvailability: "Contact brand for international orders",
     shippingNotes:
-      "Standard shipping is US and Canada; international customers should contact the company.",
+      "Website states standard shipping is US and Canada; international customers should contact the company",
     categories: [
       "Women's Adaptive Tops",
       "Women's Adaptive Pants & Jeans",
@@ -169,17 +139,16 @@ export const adaptiveBrands: AdaptiveBrand[] = [
       "Alzheimer's",
     ],
     notes:
-      "Useful brand to display, but Singapore availability is contact-for-international-order, not direct shipping.",
-    accent: "#8E3A4E",
+      "Useful brand to display but mark Singapore availability as \"contact for international order,\" not direct shipping.",
   },
   {
     id: "jam-the-label",
     name: "JAM the Label",
     country: "Australia",
-    website: "https://jamthelabel.com",
+    website: "https://jamthelabel.com/",
     singaporeAvailability: "Singapore SGD store available",
     shippingNotes:
-      "Singapore currency/store option shown; free shipping on orders over SGD 150.",
+      "Singapore currency/store option shown; free shipping on orders over SGD150",
     categories: [
       "Tops",
       "Bottoms",
@@ -196,26 +165,25 @@ export const adaptiveBrands: AdaptiveBrand[] = [
       "sensory friendly",
       "seated position",
       "easy closures",
-      "prosthetic / medical device access",
+      "prosthetic/medical device access",
       "assisted dressing",
       "energy conservation",
     ],
     notes:
-      "Strong brand for younger, stylish adaptive fashion. Good for product-level cards.",
-    accent: "#2A4E7E",
+      "Strong brand for younger/stylish adaptive fashion. Good for product-level cards.",
   },
   {
     id: "lotus-eldercare-leaf",
-    name: "Lotus Eldercare Adaptive Fashion (LEAF)",
+    name: "Lotus Eldercare Adaptive Fashion / LEAF",
     country: "Singapore",
     website: "https://www.lotuseldercare.com.sg/index.php/l-e-a-f",
     singaporeAvailability: "Singapore-based initiative",
-    shippingNotes: "Not a normal ecommerce store; contact for availability.",
+    shippingNotes: "Not a normal ecommerce store; contact for availability",
     categories: [
       "Adaptive basics",
       "Elderly clothing",
       "Disabled-friendly clothing",
-      "Bed-bound patient clothing (in development)",
+      "Bed-bound patient clothing in development",
     ],
     adaptiveFocus: [
       "elderly dressing",
@@ -225,172 +193,137 @@ export const adaptiveBrands: AdaptiveBrand[] = [
       "bed-bound users",
     ],
     notes:
-      "Add as a local initiative / resource card rather than an ecommerce product listing.",
-    accent: "#6B5B2E",
+      "Add as a local initiative/resource card rather than ecommerce product listing.",
   },
 ];
 
-export const adaptiveCatalog: AdaptiveProduct[] = [
-  // ─── Will & Well ───────────────────────────────────────────────
+export const adaptiveProducts: AdaptiveProduct[] = [
   {
-    id: "ww-midi-front-zip-dress",
+    id: "will-and-well-midi-sleeveless-front-zip-dress",
     brandId: "will-and-well",
     brandName: "Will & Well",
     name: "Midi Sleeveless Dress with Front Zip",
     productType: "Dress",
     gender: "Women",
     category: "Dresses",
-    productUrl: "https://willandwell.com",
-    imageUrl: null,
-    singaporeAvailability: "Local Singapore brand",
-    adaptiveFeatures: [
-      "Front zipper from collar to hip",
-      "Easier dressing",
-      "Discreet accessibility",
-    ],
-    bestFor: ["Limited arm mobility", "Assisted dressing", "Stylish accessible dresses"],
+    productUrl: "https://willandwell.com/products/midi-sleeveless-dress",
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/1910/0663/products/image.jpg?v=1548034818",
+    singaporeAvailability: "Local SG",
+    adaptiveFeatures: ["Front zip", "Easier dressing", "Assisted dressing"],
+    bestFor: ["People who need easier dressing", "Assisted dressing"],
     closureType: "Front zip",
-    sourceNotes:
-      "Known Will & Well product; brand site used as the link. A third-party listing (The Golden Concepts) showed SGD 87 — not confirmed on the brand site, so price is left unset.",
-    listingType: "product",
+    sourceNotes: "Known product.",
   },
   {
-    id: "ww-inclusive-collection",
+    id: "will-and-well-adaptive-inclusive-clothing-collection",
     brandId: "will-and-well",
     brandName: "Will & Well",
     name: "Adaptive / Inclusive Clothing Collection",
     productType: "Collection",
     gender: "Unisex",
-    category: "Adaptive clothing",
-    productUrl: "https://willandwell.com",
+    category: "Adaptive Clothing",
+    productUrl: "https://willandwell.com/",
     imageUrl: null,
-    singaporeAvailability: "Local Singapore brand",
-    adaptiveFeatures: [
-      "Adaptive tailoring",
-      "Accessible closures",
-      "Functional garment adjustments",
-    ],
-    bestFor: [
-      "Wheelchair users",
-      "Elderly users",
-      "Disabled users",
-      "People with dressing difficulties",
-    ],
-    sourceNotes: "Category-level listing; not a single SKU.",
-    listingType: "category",
+    singaporeAvailability: "Local SG",
+    adaptiveFeatures: ["Adaptive tailoring", "Accessible closures"],
+    bestFor: ["People seeking inclusive clothing", "People who need easier dressing"],
+    sourceNotes: "Category-level listing.",
   },
   {
-    id: "ww-bespoke-tailoring",
+    id: "will-and-well-bespoke-tailoring-alterations",
     brandId: "will-and-well",
     brandName: "Will & Well",
     name: "Bespoke Tailoring & Alterations",
     productType: "Service",
     gender: "Unisex",
-    category: "Tailoring / Alterations",
-    productUrl: "https://willandwell.com",
+    category: "Tailoring",
+    productUrl: "https://willandwell.com/",
     imageUrl: null,
-    singaporeAvailability: "Local Singapore service",
-    adaptiveFeatures: [
-      "Personalised garment modification",
-      "Adaptive fit",
-      "Custom accessibility changes",
-    ],
-    bestFor: ["Users who cannot find ready-made adaptive clothing"],
-    sourceNotes: "Service listing, not a normal product.",
-    listingType: "service",
+    singaporeAvailability: "Local SG",
+    adaptiveFeatures: ["Garment modifications", "Adaptive fit"],
+    bestFor: ["People needing garment modifications", "People seeking an adaptive fit"],
+    sourceNotes: "Service listing.",
   },
-
-  // ─── The Able Label ────────────────────────────────────────────
   {
-    id: "tal-touch-close-tops",
+    id: "the-able-label-touch-close-tops-shirts",
     brandId: "the-able-label",
     brandName: "The Able Label",
-    name: "Touch & Close Tops / Shirts",
+    name: "Touch & Close Tops/Shirts",
     productType: "Tops",
-    gender: "Women / Men",
-    category: "Shirts & Tops",
-    productUrl: "https://www.theablelabel.com",
+    gender: "Men/Women",
+    category: "Tops & Shirts",
+    productUrl: "https://www.theablelabel.com/",
     imageUrl: null,
-    singaporeAvailability: "Ships to Singapore",
-    adaptiveFeatures: [
-      "Touch-and-close fastening",
-      "Easier self-dressing",
-      "Easier assisted dressing",
-    ],
-    bestFor: ["Arthritis", "Reduced dexterity", "Parkinson's", "Stroke recovery"],
-    closureType: "Touch and close",
-    sourceNotes: "Category-level product listing.",
-    listingType: "category",
+    singaporeAvailability: "Ships to SG",
+    adaptiveFeatures: ["Touch-and-close fastening", "Easy dressing"],
+    bestFor: ["People with arthritis", "People with Parkinson's"],
+    closureType: "Touch-and-close fastening",
+    sourceNotes: "Category-level listing.",
   },
   {
-    id: "tal-pull-on-trousers",
+    id: "the-able-label-pull-on-trousers",
     brandId: "the-able-label",
     brandName: "The Able Label",
     name: "Pull-On Trousers",
     productType: "Trousers",
-    gender: "Women / Men",
+    gender: "Men/Women",
     category: "Trousers",
-    productUrl: "https://www.theablelabel.com",
+    productUrl: "https://www.theablelabel.com/",
     imageUrl: null,
-    singaporeAvailability: "Ships to Singapore",
-    adaptiveFeatures: ["Pull-on waist", "No fiddly buttons", "Comfort fit"],
-    bestFor: ["Elderly users", "Arthritis", "Reduced hand strength", "Assisted dressing"],
-    closureType: "Pull-on",
+    singaporeAvailability: "Ships to SG",
+    adaptiveFeatures: ["Pull-on waist", "Reduced fastening demands"],
+    bestFor: ["People with reduced dexterity", "People who need easier dressing"],
+    closureType: "Pull-on waist",
     sourceNotes: "Category-level listing.",
-    listingType: "category",
   },
   {
-    id: "tal-nightwear-loungewear",
+    id: "the-able-label-adaptive-nightwear-loungewear",
     brandId: "the-able-label",
     brandName: "The Able Label",
     name: "Adaptive Nightwear & Loungewear",
     productType: "Nightwear",
-    gender: "Women / Men",
+    gender: "Men/Women",
     category: "Nightwear & Loungewear",
-    productUrl: "https://www.theablelabel.com",
+    productUrl: "https://www.theablelabel.com/",
     imageUrl: null,
-    singaporeAvailability: "Ships to Singapore",
-    adaptiveFeatures: ["Soft fabrics", "Easy-dressing cuts", "Comfort-first design"],
-    bestFor: ["Elderly users", "Carers", "Post-surgery", "Care-home use"],
+    singaporeAvailability: "Ships to SG",
+    adaptiveFeatures: ["Easy dressing"],
+    bestFor: ["People who need easier dressing", "Assisted dressing"],
     sourceNotes: "Category-level listing.",
-    listingType: "category",
   },
   {
-    id: "tal-underwear",
+    id: "the-able-label-adaptive-underwear",
     brandId: "the-able-label",
     brandName: "The Able Label",
     name: "Adaptive Underwear",
     productType: "Underwear",
-    gender: "Women / Men",
+    gender: "Men/Women",
     category: "Underwear",
-    productUrl: "https://www.theablelabel.com",
+    productUrl: "https://www.theablelabel.com/",
     imageUrl: null,
-    singaporeAvailability: "Ships to Singapore",
-    adaptiveFeatures: ["Easier changing", "Comfort-focused design"],
-    bestFor: ["Assisted dressing", "Elderly users", "Limited mobility"],
+    singaporeAvailability: "Ships to SG",
+    adaptiveFeatures: ["Easier changing"],
+    bestFor: ["People who need easier changing", "Assisted dressing"],
     sourceNotes: "Category-level listing.",
-    listingType: "category",
   },
   {
-    id: "tal-socks-slippers",
+    id: "the-able-label-adaptive-socks-slippers",
     brandId: "the-able-label",
     brandName: "The Able Label",
     name: "Adaptive Socks & Slippers",
-    productType: "Socks / Slippers",
+    productType: "Socks & Slippers",
     gender: "Unisex",
-    category: "Footwear & Socks",
-    productUrl: "https://www.theablelabel.com",
+    category: "Socks & Slippers",
+    productUrl: "https://www.theablelabel.com/",
     imageUrl: null,
-    singaporeAvailability: "Ships to Singapore",
-    adaptiveFeatures: ["Easier foot access", "Comfort", "Safer daily wear"],
-    bestFor: ["Elderly users", "Reduced mobility", "Fall-risk users"],
+    singaporeAvailability: "Ships to SG",
+    adaptiveFeatures: ["Comfort", "Safer wear"],
+    bestFor: ["People seeking comfortable footwear", "People seeking safer wear"],
     sourceNotes: "Category-level listing.",
-    listingType: "category",
   },
-
-  // ─── June Adaptive ─────────────────────────────────────────────
   {
-    id: "june-mens-side-opening-jeans",
+    id: "june-adaptive-mens-side-opening-jeans",
     brandId: "june-adaptive",
     brandName: "June Adaptive",
     name: "Men's Easy-On Side-Opening Jeans",
@@ -399,17 +332,18 @@ export const adaptiveCatalog: AdaptiveProduct[] = [
     category: "Pants & Jeans",
     price: "54.99",
     currency: "CAD",
-    productUrl: "https://www.juneadaptive.com",
-    imageUrl: null,
+    productUrl:
+      "https://www.juneadaptive.com/products/mens-side-zipper-pants",
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0596/9392/4523/files/JuneAdaptiveMen_sEasy-OnSide-OpeningJeans_Easy-OnDenimwithVelcroAdjustableWaist3.jpg?v=1771289987",
     singaporeAvailability: "Contact for international order",
-    adaptiveFeatures: ["Side opening", "Adjustable waist", "Easy-on design"],
-    bestFor: ["Wheelchair users", "Assisted dressing", "Limited mobility"],
-    closureType: "Side opening / Velcro adjustable waist",
-    sourceNotes: "Listed as a customer favourite on June Adaptive.",
-    listingType: "product",
+    adaptiveFeatures: ["Side opening", "Easy-on design"],
+    bestFor: ["Wheelchair users", "People who need easier dressing"],
+    closureType: "Side opening",
+    sourceNotes: "Customer favourite.",
   },
   {
-    id: "june-mens-back-opening-polo",
+    id: "june-adaptive-mens-back-opening-knit-polo",
     brandId: "june-adaptive",
     brandName: "June Adaptive",
     name: "Men's Adaptive Back-Opening Knit Polo Shirt",
@@ -418,17 +352,18 @@ export const adaptiveCatalog: AdaptiveProduct[] = [
     category: "Tops",
     price: "54.99",
     currency: "CAD",
-    productUrl: "https://www.juneadaptive.com",
-    imageUrl: null,
+    productUrl:
+      "https://www.juneadaptive.com/products/mens-crew-neck-t-shirt-with-back-overlap",
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0596/9392/4523/files/JuneAdaptiveMen_sAdaptiveBack-OpeningKnitPoloShirtEasy-DressSnapClosureComfortTopCopperVelcro2.jpg?v=1771872831",
     singaporeAvailability: "Contact for international order",
-    adaptiveFeatures: ["Back opening", "Snap closure", "Assisted dressing"],
-    bestFor: ["Carers", "Elderly users", "Limited arm mobility"],
+    adaptiveFeatures: ["Back opening", "Snap closure"],
+    bestFor: ["Assisted dressing", "People with limited mobility"],
     closureType: "Back-opening snap closure",
-    sourceNotes: "Listed as a customer favourite on June Adaptive.",
-    listingType: "product",
+    sourceNotes: "Customer favourite.",
   },
   {
-    id: "june-womens-open-back-shirt",
+    id: "june-adaptive-womens-open-back-snap-shirt",
     brandId: "june-adaptive",
     brandName: "June Adaptive",
     name: "Women's Easy-Access Open-Back Snap Closure Shirt",
@@ -437,55 +372,38 @@ export const adaptiveCatalog: AdaptiveProduct[] = [
     category: "Tops",
     price: "From 39.99",
     currency: "CAD",
-    productUrl: "https://www.juneadaptive.com",
-    imageUrl: null,
+    productUrl:
+      "https://www.juneadaptive.com/products/womens-active-top-with-back-overlap",
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0596/9392/4523/files/image_1773797631844.jpg?v=1773798264",
     singaporeAvailability: "Contact for international order",
-    adaptiveFeatures: ["Open back", "Snap closure", "Easy assisted dressing"],
-    bestFor: ["Carers", "Elderly users", "Reduced shoulder/arm mobility"],
+    adaptiveFeatures: ["Open back", "Snap closure", "Easy access"],
+    bestFor: ["Assisted dressing", "People with limited mobility"],
     closureType: "Open-back snap closure",
-    sourceNotes: "Listed as a customer favourite on June Adaptive.",
-    listingType: "product",
+    sourceNotes: "Customer favourite.",
   },
   {
-    id: "june-womens-back-overlap-pants",
+    id: "june-adaptive-womens-back-overlap-knit-pants",
     brandId: "june-adaptive",
     brandName: "June Adaptive",
-    name: "Women's Back-Overlap Assisted Dressing Adaptive Knit Pants",
+    name: "Women's Back-Overlap Adaptive Knit Pants",
     productType: "Pants",
     gender: "Women",
-    category: "Pants",
+    category: "Pants & Jeans",
     price: "53.00",
     currency: "CAD",
-    productUrl: "https://www.juneadaptive.com",
-    imageUrl: null,
+    productUrl:
+      "https://www.juneadaptive.com/products/womens-knit-pants-with-back-overlap",
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0596/9392/4523/files/JuneAdapativeWomen_sEasyAccessBack-OverlapAdaptiveKnitPantsBlueBack.jpg?v=1771367221",
     singaporeAvailability: "Contact for international order",
-    adaptiveFeatures: ["Back-overlap design", "Assisted dressing", "Easy dressing"],
-    bestFor: ["Wheelchair users", "Carers", "Limited mobility"],
-    closureType: "Back-overlap",
-    sourceNotes: "Listed as a customer favourite on June Adaptive.",
-    listingType: "product",
+    adaptiveFeatures: ["Back-overlap design", "Adaptive knit fabric"],
+    bestFor: ["Assisted dressing", "People with limited mobility"],
+    closureType: "Back-overlap design",
+    sourceNotes: "Customer favourite.",
   },
   {
-    id: "june-mens-ls-back-opening-polo",
-    brandId: "june-adaptive",
-    brandName: "June Adaptive",
-    name: "Men's Adaptive Long Sleeve Back-Opening Polo Shirt",
-    productType: "Long Sleeve Polo",
-    gender: "Men",
-    category: "Tops",
-    price: "64.99",
-    currency: "CAD",
-    productUrl: "https://www.juneadaptive.com",
-    imageUrl: null,
-    singaporeAvailability: "Contact for international order",
-    adaptiveFeatures: ["Long sleeve", "Back opening", "Snap closure"],
-    bestFor: ["Assisted dressing", "Carers", "Elderly users"],
-    closureType: "Back-opening snap closure",
-    sourceNotes: "Listed as a customer favourite on June Adaptive.",
-    listingType: "product",
-  },
-  {
-    id: "june-anti-slip-socks",
+    id: "june-adaptive-anti-slip-socks",
     brandId: "june-adaptive",
     brandName: "June Adaptive",
     name: "Anti-Slip Socks",
@@ -494,134 +412,126 @@ export const adaptiveCatalog: AdaptiveProduct[] = [
     category: "Footwear & Socks",
     price: "40.00",
     currency: "CAD",
-    productUrl: "https://www.juneadaptive.com",
-    imageUrl: null,
+    productUrl:
+      "https://www.juneadaptive.com/products/everyday-crew-anti-slip-socks-3-pack",
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0596/9392/4523/products/june-adaptive-Everyday-Crew-Anti-Slip-Socks-3-pack-dress-multi.jpg?v=1701829419",
     singaporeAvailability: "Contact for international order",
-    adaptiveFeatures: ["Anti-slip grip", "Safer walking", "Easy daily use"],
-    bestFor: ["Elderly users", "Fall-risk users", "Hospital or home use"],
-    sourceNotes: "Listed as a customer-favourite item on June Adaptive.",
-    listingType: "product",
+    adaptiveFeatures: ["Anti-slip grip"],
+    bestFor: ["People seeking safer indoor wear", "People needing additional grip"],
+    sourceNotes: "Customer favourite.",
   },
-
-  // ─── JAM the Label ─────────────────────────────────────────────
   {
-    id: "jam-side-access-cargo",
+    id: "jam-the-label-side-access-cargo-pants",
     brandId: "jam-the-label",
     brandName: "JAM the Label",
     name: "Side Access Cargo Pants",
     productType: "Cargo Pants",
     gender: "Unisex",
     category: "Bottoms",
-    price: "101.00",
+    price: "101",
     currency: "SGD",
-    productUrl: "https://jamthelabel.com",
-    imageUrl: null,
+    productUrl: "https://jamthelabel.com/products/side-access-cargo-pants-sand",
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0161/2257/6996/files/IMG_6706.png?v=1756272761",
     singaporeAvailability: "Singapore SGD store available",
-    adaptiveFeatures: [
-      "Side access",
-      "Seated-friendly",
-      "Easier access to prosthetics or medical devices",
-    ],
-    bestFor: ["Wheelchair users", "Seated users", "Prosthetic users", "Side access"],
+    adaptiveFeatures: ["Side access"],
+    bestFor: ["Wheelchair users", "Prosthetic users"],
     closureType: "Side access",
-    sourceNotes: "Highlighted product on JAM the Label.",
-    listingType: "product",
+    sourceNotes: "Known product.",
   },
   {
-    id: "jam-zip-access-jumper",
+    id: "jam-the-label-zip-access-jumper",
     brandId: "jam-the-label",
     brandName: "JAM the Label",
     name: "Zip Access Jumper",
     productType: "Jumper",
     gender: "Unisex",
     category: "Tops",
-    price: "110.00",
+    price: "110",
     currency: "SGD",
-    productUrl: "https://jamthelabel.com",
-    imageUrl: null,
+    productUrl: "https://jamthelabel.com/products/zip-access-jumper",
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0161/2257/6996/files/IMG_7933.png?v=1751853747",
     singaporeAvailability: "Singapore SGD store available",
-    adaptiveFeatures: ["Zip access", "Easier dressing", "Medical / prosthetic access"],
-    bestFor: ["Assisted dressing", "Energy conservation", "Reduced mobility"],
+    adaptiveFeatures: ["Zip access", "Easier dressing"],
+    bestFor: ["People who need easier dressing", "Assisted dressing"],
     closureType: "Zip access",
-    sourceNotes: "Highlighted product on JAM the Label.",
-    listingType: "product",
+    sourceNotes: "Known product.",
   },
   {
-    id: "jam-high-waisted-pant",
+    id: "jam-the-label-high-waisted-pant-2",
     brandId: "jam-the-label",
     brandName: "JAM the Label",
     name: "High Waisted Pant 2.0",
     productType: "Pants",
-    gender: "Unisex / Women",
+    gender: "Unisex/Women",
     category: "Bottoms",
-    price: "97.00",
+    price: "97",
     currency: "SGD",
-    productUrl: "https://jamthelabel.com",
-    imageUrl: null,
+    productUrl: "https://jamthelabel.com/products/updated-high-waisted-pant",
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0161/2257/6996/files/3_2.png?v=1707350114",
     singaporeAvailability: "Singapore SGD store available",
-    adaptiveFeatures: ["High waist", "Seated comfort", "Soft fit"],
-    bestFor: ["Seated users", "Wheelchair users", "Sensory comfort"],
-    sourceNotes: "Highlighted product on JAM the Label.",
-    listingType: "product",
+    adaptiveFeatures: ["High waist", "Seated comfort"],
+    bestFor: ["People seeking seated comfort", "Wheelchair users"],
+    sourceNotes: "Known product.",
   },
   {
-    id: "jam-femme-linen-shirt",
+    id: "jam-the-label-femme-linen-shirt",
     brandId: "jam-the-label",
     brandName: "JAM the Label",
     name: "Femme Linen Shirt",
-    productType: "Linen Shirt",
+    productType: "Shirt",
     gender: "Femme",
     category: "Tops",
-    price: "From 83.00",
+    price: "92",
     currency: "SGD",
-    productUrl: "https://jamthelabel.com",
-    imageUrl: null,
+    productUrl: "https://jamthelabel.com/products/femme-linen-shirt",
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0161/2257/6996/products/tamseatedshirt2.jpg?v=1606445620",
     singaporeAvailability: "Singapore SGD store available",
-    adaptiveFeatures: ["Easy-wear shirt", "Soft fabric", "Adaptive everyday styling"],
-    bestFor: ["Sensory-friendly dressing", "Everyday adaptive fashion"],
-    sourceNotes: "Highlighted product on JAM the Label.",
-    listingType: "product",
+    adaptiveFeatures: ["Sensory-friendly", "Linen fabric"],
+    bestFor: ["Sensory-sensitive wearers", "People seeking breathable clothing"],
+    sourceNotes: "Known product.",
   },
   {
-    id: "jam-masc-linen-shirt",
+    id: "jam-the-label-masc-linen-shirt",
     brandId: "jam-the-label",
     brandName: "JAM the Label",
     name: "Masc. Linen Shirt",
-    productType: "Linen Shirt",
+    productType: "Shirt",
     gender: "Masc",
     category: "Tops",
-    price: "92.00",
+    price: "92",
     currency: "SGD",
-    productUrl: "https://jamthelabel.com",
-    imageUrl: null,
+    productUrl: "https://jamthelabel.com/products/masc-linen-shirt",
+    imageUrl:
+      "https://cdn.shopify.com/s/files/1/0161/2257/6996/files/jasonshirt2_e6791e26-ca25-49a9-9f70-0d110887ac40.jpg?v=1700533331",
     singaporeAvailability: "Singapore SGD store available",
-    adaptiveFeatures: ["Easy-wear shirt", "Soft fabric", "Adaptive everyday styling"],
-    bestFor: ["Sensory-friendly dressing", "Everyday adaptive fashion"],
-    sourceNotes: "Highlighted product on JAM the Label.",
-    listingType: "product",
+    adaptiveFeatures: ["Sensory-friendly", "Linen fabric"],
+    bestFor: ["Sensory-sensitive wearers", "People seeking breathable clothing"],
+    sourceNotes: "Known product.",
   },
   {
-    id: "jam-yama-sensory-socks",
+    id: "jam-the-label-yama-sensory-socks",
     brandId: "jam-the-label",
     brandName: "JAM the Label",
     name: "Yama Sensory Socks",
     productType: "Socks",
     gender: "Unisex",
-    category: "Accessories / Socks",
-    productUrl: "https://jamthelabel.com",
+    category: "Accessories",
+    productUrl: "https://jamthelabel.com/",
     imageUrl: null,
     singaporeAvailability: "Singapore SGD store available",
-    adaptiveFeatures: ["Sensory-friendly", "Soft feel", "Reduced irritation"],
-    bestFor: ["Sensory sensitivity", "Neurodivergent users", "Daily comfort"],
-    sourceNotes: "Listed as a JAM category / collection.",
-    listingType: "category",
+    adaptiveFeatures: ["Sensory-friendly socks"],
+    bestFor: ["Sensory-sensitive wearers"],
+    sourceNotes: "Category/collection listing.",
   },
-
-  // ─── Lotus Eldercare (LEAF) ────────────────────────────────────
   {
-    id: "leaf-adaptive-basics",
+    id: "lotus-eldercare-leaf-adaptive-basics",
     brandId: "lotus-eldercare-leaf",
-    brandName: "Lotus Eldercare Adaptive Fashion (LEAF)",
+    brandName: "Lotus Eldercare Adaptive Fashion / LEAF",
     name: "Adaptive Basics for Elderly or Disabled Users",
     productType: "Adaptive Basics",
     gender: "Unisex",
@@ -629,57 +539,23 @@ export const adaptiveCatalog: AdaptiveProduct[] = [
     productUrl: "https://www.lotuseldercare.com.sg/index.php/l-e-a-f",
     imageUrl: null,
     singaporeAvailability: "Singapore-based initiative",
-    adaptiveFeatures: ["Local climate suitability", "Easier dressing", "Functional design"],
+    adaptiveFeatures: ["Easier dressing"],
     bestFor: ["Elderly users", "Disabled users", "Carers"],
-    sourceNotes:
-      "Initiative-level listing. Not shown as an ecommerce SKU — contact the initiative for availability.",
-    listingType: "initiative",
+    sourceNotes: "Initiative-level listing.",
   },
   {
-    id: "leaf-bed-bound-clothing",
+    id: "lotus-eldercare-leaf-bed-bound-patient-clothing",
     brandId: "lotus-eldercare-leaf",
-    brandName: "Lotus Eldercare Adaptive Fashion (LEAF)",
+    brandName: "Lotus Eldercare Adaptive Fashion / LEAF",
     name: "Bed-Bound Patient Clothing",
-    productType: "Bed-Bound Clothing",
+    productType: "Care Clothing",
     gender: "Unisex",
     category: "Care Clothing",
     productUrl: "https://www.lotuseldercare.com.sg/index.php/l-e-a-f",
     imageUrl: null,
-    singaporeAvailability: "Singapore-based initiative / in development",
-    adaptiveFeatures: ["Easier changing in bed", "Carer-friendly", "Patient comfort"],
-    bestFor: ["Bed-bound patients", "Carers", "Home care", "Eldercare"],
-    sourceNotes: "Mentioned as a planned / developing clothing direction.",
-    listingType: "initiative",
+    singaporeAvailability: "Singapore-based initiative",
+    adaptiveFeatures: ["Easier changing in bed"],
+    bestFor: ["Bed-bound users", "Carers"],
+    sourceNotes: "Planned/developing clothing direction.",
   },
-];
-
-/** Brand lookup by id. */
-export function getAdaptiveBrand(id: string): AdaptiveBrand | undefined {
-  return adaptiveBrands.find((b) => b.id === id);
-}
-
-/** Coarse clothing-type bucket for filtering (derived from product/category). */
-export function clothingBucket(p: AdaptiveProduct): string {
-  const t = `${p.productType} ${p.category}`.toLowerCase();
-  if (/dress|skirt/.test(t)) return "Dresses & skirts";
-  if (/sock|slipper|footwear|shoe/.test(t)) return "Socks & footwear";
-  if (/nightwear|loungewear|sleep/.test(t)) return "Nightwear";
-  if (/underwear/.test(t)) return "Underwear";
-  if (/coat|jacket|jumper|knit/.test(t)) return "Outerwear & knitwear";
-  if (/trouser|pant|jean|cargo|short|bottom/.test(t)) return "Trousers & bottoms";
-  if (/top|shirt|polo|tee|blouse/.test(t)) return "Tops & shirts";
-  if (/service|tailor|alter/.test(t)) return "Services";
-  return "Collections & care";
-}
-
-const haystack = (p: AdaptiveProduct) =>
-  `${p.adaptiveFeatures.join(" ")} ${p.bestFor.join(" ")} ${p.category} ${p.productType}`.toLowerCase();
-
-export const adaptiveNeedMatchers: { label: string; test: (p: AdaptiveProduct) => boolean }[] = [
-  { label: "Seated / wheelchair friendly", test: (p) => /wheelchair|seated/.test(haystack(p)) },
-  { label: "Assisted dressing", test: (p) => /assisted dressing|carer/.test(haystack(p)) },
-  { label: "Sensory-friendly", test: (p) => /sensory/.test(haystack(p)) },
-  { label: "Arthritis / low dexterity", test: (p) => /arthritis|dexterity|hand strength/.test(haystack(p)) },
-  { label: "Elderly", test: (p) => /elderly/.test(haystack(p)) },
-  { label: "Limited mobility", test: (p) => /limited mobility|reduced mobility|paralysis/.test(haystack(p)) },
 ];

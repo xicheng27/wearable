@@ -7,38 +7,26 @@ interface PhotoProps {
   alt: string;
   className?: string;
   imgClassName?: string;
-  /** Shown if src fails (e.g. remote listing photo offline). */
-  fallbackSrc?: string;
 }
 
 /**
- * Image with a graceful fallback chain: src -> fallbackSrc -> placeholder.
- * Lets product cards try the brand's real listing photo and quietly fall
- * back to the local illustration tile when it can't load.
+ * Image with a graceful fallback: if the source fails to load, a quiet
+ * gradient placeholder with a hanger glyph is shown instead. Sources live
+ * in /public/images and can be swapped for real photography (same path)
+ * without touching components.
  */
-export default function Photo({
-  src,
-  alt,
-  className = "",
-  imgClassName = "",
-  fallbackSrc,
-}: PhotoProps) {
-  const [stage, setStage] = useState<0 | 1 | 2>(0);
-  const current = stage === 0 ? src : stage === 1 && fallbackSrc ? fallbackSrc : null;
-
-  function handleError() {
-    setStage((prev) => (prev === 0 && fallbackSrc ? 1 : 2));
-  }
+export default function Photo({ src, alt, className = "", imgClassName = "" }: PhotoProps) {
+  const [failed, setFailed] = useState(false);
 
   return (
     <div className={`relative overflow-hidden ${className}`}>
-      {current === null ? (
+      {failed ? (
         <div
           className="flex h-full w-full items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100"
           role="img"
           aria-label={alt}
         >
-          <svg className="h-10 w-10 text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <svg className="h-10 w-10 text-gray-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M12 7a2.2 2.2 0 1 1 2.2-2.2" />
             <path d="M12 7 4.6 12.4a1.9 1.9 0 0 0 1.1 3.4h12.6a1.9 1.9 0 0 0 1.1-3.4L12 7z" />
           </svg>
@@ -46,11 +34,10 @@ export default function Photo({
       ) : (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          key={current}
-          src={current}
+          src={src}
           alt={alt}
           loading="lazy"
-          onError={handleError}
+          onError={() => setFailed(true)}
           className={`h-full w-full object-cover ${imgClassName}`}
         />
       )}

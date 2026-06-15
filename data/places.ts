@@ -13,6 +13,36 @@ export interface MapPlace {
   tags: string[];
 }
 
+export type MapRegionId = "global" | "north-america" | "europe";
+
+export interface MapRegion {
+  id: MapRegionId;
+  label: string;
+  shortLabel: string;
+  description: string;
+}
+
+export const mapRegions: MapRegion[] = [
+  {
+    id: "global",
+    label: "Global view",
+    shortLabel: "Global",
+    description: "See every location currently listed in the directory.",
+  },
+  {
+    id: "north-america",
+    label: "North America",
+    shortLabel: "North America",
+    description: "Stores, studios and online services across the USA and Canada.",
+  },
+  {
+    id: "europe",
+    label: "Europe",
+    shortLabel: "Europe",
+    description: "Adaptive fashion locations currently listed across the UK and Europe.",
+  },
+];
+
 export const categoryLabels: Record<PlaceCategory, string> = {
   flagship: "Flagship store",
   stockist: "Stockist",
@@ -128,54 +158,6 @@ export const mapPlaces: MapPlace[] = [
     tags: ["Wheelchair-friendly", "Magnetic closures"],
   },
   {
-    id: "will-well-sg",
-    name: "Will & Well Studio",
-    category: "flagship",
-    brandId: "will-well",
-    address: "Orchard Road area",
-    city: "Singapore",
-    country: "Singapore",
-    lat: 1.3048,
-    lng: 103.8318,
-    tags: ["Wheelchair-friendly", "Magnetic closures"],
-  },
-  {
-    id: "leaf-sg",
-    name: "LEAF at Lotus Eldercare",
-    category: "flagship",
-    brandId: "leaf-adaptive",
-    address: "Toa Payoh",
-    city: "Singapore",
-    country: "Singapore",
-    lat: 1.3343,
-    lng: 103.8563,
-    tags: ["Wheelchair-friendly", "Sensory-friendly"],
-  },
-  {
-    id: "werable-sg",
-    name: "Werable Studio",
-    category: "flagship",
-    brandId: "werable",
-    address: "Tanjong Pagar",
-    city: "Singapore",
-    country: "Singapore",
-    lat: 1.2765,
-    lng: 103.8456,
-    tags: ["Wheelchair-friendly", "Magnetic closures"],
-  },
-  {
-    id: "dawn-kl",
-    name: "Dawn Adaptive",
-    category: "online",
-    brandId: "dawn-adaptive",
-    address: "Ships from Kuala Lumpur",
-    city: "Kuala Lumpur",
-    country: "Malaysia",
-    lat: 3.139,
-    lng: 101.6869,
-    tags: ["Magnetic closures", "Online-only"],
-  },
-  {
     id: "alter-london",
     name: "SewAble Tailoring",
     category: "alterations",
@@ -197,6 +179,30 @@ export function filterPlaces(places: MapPlace[], active: string[]): MapPlace[] {
       return p.tags.includes(f);
     })
   );
+}
+
+export function regionForPlace(place: MapPlace): Exclude<MapRegionId, "global"> {
+  return ["USA", "Canada", "Mexico"].includes(place.country)
+    ? "north-america"
+    : "europe";
+}
+
+export function filterPlacesByRegion(
+  places: MapPlace[],
+  region: MapRegionId
+): MapPlace[] {
+  if (region === "global") return places;
+  return places.filter((place) => regionForPlace(place) === region);
+}
+
+export function regionForCoordinates({ lat, lng }: { lat: number; lng: number }): MapRegionId {
+  if (lng >= -170 && lng <= -45 && lat >= 5 && lat <= 85) {
+    return "north-america";
+  }
+  if (lng >= -25 && lng <= 45 && lat >= 30 && lat <= 72) {
+    return "europe";
+  }
+  return "global";
 }
 
 /** Great-circle distance in kilometres. */

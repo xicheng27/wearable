@@ -1,9 +1,9 @@
 import MapClient from "./MapClient";
 
 export const metadata = {
-  title: "Map – Xi's",
+  title: "Global Adaptive Fashion Map | Xi's",
   description:
-    "Browse adaptive clothing stores, stockists and alteration services near you on the map.",
+    "Explore adaptive clothing stores, stockists, online services and alteration specialists by global region.",
 };
 
 export default function MapPage() {

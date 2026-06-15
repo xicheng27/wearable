@@ -35,6 +35,73 @@ export interface Brand {
   priceRange: string;
   country: string;
   featured: boolean;
-  founded: number;
+  founded?: number;
   certifications: string[];
+}
+
+export type ProductAvailability = {
+  online: boolean;
+  inStore: boolean;
+  countries: string[];
+  note: string;
+};
+
+export interface Product {
+  id: string;
+  name: string;
+  brandId: string;
+  clothingType: string;
+  category: string;
+  priceRange: string;
+  price: string;
+  currency: string;
+  imageUrl: string;
+  imageAlt: string;
+  // Copyright-safe image metadata. imageUrl is only displayed when
+  // permissionStatus === "approved" (see components/ProductImage.tsx).
+  imageSource?: string;
+  imageLicenseType?:
+    | "brand-permission"
+    | "affiliate-feed"
+    | "press-kit"
+    | "own-photo"
+    | "licensed-stock"
+    | "placeholder";
+  attributionText?: string;
+  permissionStatus?: "approved" | "pending" | "needs-review";
+  sourcePageUrl?: string;
+  lastVerifiedDate?: string;
+  description: string;
+  accessibilityExplanation: string;
+  adaptiveFeatures: string[];
+  disabilityNeeds: string[];
+  bestFor: string[];
+  styleTags: string[];
+  availability: ProductAvailability;
+  sizes: string[];
+  genderFit: string[];
+  sensoryFriendly: boolean;
+  seatedFit: boolean;
+  oneHandedDressing: boolean;
+  featured: boolean;
+  productUrl: string;
+  linkType: "exact-product" | "brand-page-only";
+  sourceVerifiedAt?: string;
+}
+
+export interface ProductSearchParams {
+  query?: string;
+  clothingType?: string;
+  brand?: string;
+  disabilityNeed?: string;
+  adaptiveFeature?: string;
+  style?: string;
+  budget?: string;
+  size?: string;
+  genderFit?: string;
+  availability?: string;
+  location?: string;
+  sensoryFriendly?: boolean;
+  seatedFit?: boolean;
+  oneHandedDressing?: boolean;
 }
