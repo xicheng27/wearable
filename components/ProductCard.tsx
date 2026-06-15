@@ -1,11 +1,16 @@
+"use client";
+
 import Link from "next/link";
 import { Product } from "@/types";
 import { getBrandName } from "@/data/products";
 import ProductImage from "@/components/ProductImage";
 import PriceDisplay from "@/components/PriceDisplay";
+import { useShoppingLocation } from "@/components/LocationProvider";
+import { productShippingLabel } from "@/lib/shipping";
 
 export default function ProductCard({ product }: { product: Product }) {
   const brandName = getBrandName(product.brandId);
+  const { selectedCountry } = useShoppingLocation();
 
   return (
     <article className="group card card-hover flex h-full flex-col overflow-hidden rounded-[1.7rem_.7rem_1.7rem_1.7rem]">
@@ -95,6 +100,9 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
 
         <div className="mt-auto pt-5">
+          <p className="mb-3 w-fit rounded-md bg-primary-50 px-2.5 py-1 text-xs font-semibold text-primary-800">
+            {productShippingLabel(product, selectedCountry)}
+          </p>
           <div className="mb-3 flex items-center gap-2 text-xs text-ink/55">
             <span
               className={`h-2 w-2 rounded-full ${

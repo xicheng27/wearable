@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import SiteChrome from "@/components/SiteChrome";
 import CurrencyProvider from "@/components/CurrencyProvider";
+import LocationProvider from "@/components/LocationProvider";
 
 export const metadata: Metadata = {
   title: "Xi's | Adaptive Clothing Finder",
@@ -30,7 +31,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex min-h-screen flex-col font-sans antialiased">
         <CurrencyProvider>
-          <SiteChrome>{children}</SiteChrome>
+          <LocationProvider>
+            <SiteChrome>{children}</SiteChrome>
+          </LocationProvider>
         </CurrencyProvider>
       </body>
     </html>

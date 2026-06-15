@@ -78,6 +78,7 @@ export interface Product {
   bestFor: string[];
   styleTags: string[];
   availability: ProductAvailability;
+  shipsTo?: string[];
   sizes: string[];
   genderFit: string[];
   sensoryFriendly: boolean;

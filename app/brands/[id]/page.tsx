@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import ProductCard from "@/components/ProductCard";
+import LocationAwareProductGrid from "@/components/LocationAwareProductGrid";
 import { brands, getBrandById } from "@/data/brands";
 import { getProductsByBrand } from "@/data/products";
 
@@ -125,11 +125,7 @@ export default function BrandDetailPage({ params }: BrandPageProps) {
           </div>
 
           {brandProducts.length > 0 ? (
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {brandProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
+            <LocationAwareProductGrid products={brandProducts} showCount />
           ) : (
             <div className="rounded-2xl border border-gray-100 bg-white p-8 text-gray-600">
               Product listings for this brand are being added.

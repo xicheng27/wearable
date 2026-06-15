@@ -6,6 +6,9 @@ import SearchBar from "@/components/SearchBar";
 import SearchFilters from "@/components/SearchFilters";
 import ProductCard from "@/components/ProductCard";
 import { searchProducts } from "@/data/products";
+import { useShoppingLocation } from "@/components/LocationProvider";
+import { filterProductsForCountry } from "@/lib/shipping";
+import LocationEmptyState from "@/components/LocationEmptyState";
 
 const filterLabels: Record<string, string> = {
   clothing: "Clothing",
@@ -17,7 +20,6 @@ const filterLabels: Record<string, string> = {
   size: "Size",
   fit: "Fit",
   availability: "Availability",
-  location: "Location",
   sensory: "Sensory-friendly",
   seated: "Seated fit",
   oneHanded: "One-handed dressing",
@@ -27,9 +29,10 @@ export default function SearchResultsClient() {
   const searchParams = useSearchParams();
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [visibleCount, setVisibleCount] = useState(48);
+  const { selectedCountry, ready } = useShoppingLocation();
 
   const query = searchParams.get("q") ?? "";
-  const results = searchProducts({
+  const unfilteredResults = searchProducts({
     query: query || undefined,
     clothingType: searchParams.get("clothing") || undefined,
     brand: searchParams.get("brand") || undefined,
@@ -40,11 +43,13 @@ export default function SearchResultsClient() {
     size: searchParams.get("size") || undefined,
     genderFit: searchParams.get("fit") || undefined,
     availability: searchParams.get("availability") || undefined,
-    location: searchParams.get("location") || undefined,
     sensoryFriendly: searchParams.get("sensory") === "true",
     seatedFit: searchParams.get("seated") === "true",
     oneHandedDressing: searchParams.get("oneHanded") === "true",
   });
+  const results = ready
+    ? filterProductsForCountry(unfilteredResults, selectedCountry)
+    : [];
 
   const activeFilters = Object.keys(filterLabels)
     .filter((key) => searchParams.has(key))
@@ -127,16 +132,14 @@ export default function SearchResultsClient() {
               </button>
             </div>
 
-            {results.length === 0 ? (
-              <div className="rounded-2xl border border-gray-100 bg-white px-6 py-20 text-center">
-                <h2 className="text-xl font-bold text-gray-900">No clothing items found</h2>
-                <p className="mt-2 text-gray-500">
-                  Try a broader phrase or remove one of the filters.
-                </p>
-                <a href="/search" className="btn-primary mt-6 inline-block">
-                  Clear all filters
-                </a>
-              </div>
+            {!ready ? (
+              <div className="h-64 animate-pulse rounded-2xl bg-white" />
+            ) : results.length === 0 ? (
+              unfilteredResults.length > 0 ? (
+                <LocationEmptyState />
+              ) : (
+                <LocationEmptyState generic />
+              )
             ) : (
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
                 {visibleResults.map((product) => (

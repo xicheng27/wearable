@@ -1,8 +1,9 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import ProductCard from "@/components/ProductCard";
 import ProductImage from "@/components/ProductImage";
 import PriceDisplay from "@/components/PriceDisplay";
+import LocationAwareProductGrid from "@/components/LocationAwareProductGrid";
+import ProductLocationGate from "@/components/ProductLocationGate";
 import { getBrandById } from "@/data/brands";
 import {
   getProductById,
@@ -38,7 +39,8 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
   const similarItems = getSimilarProducts(product);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <ProductLocationGate product={product}>
+      <div className="min-h-screen bg-gray-50">
       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <nav className="mb-8 text-sm text-gray-500" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-primary-700">Home</Link>
@@ -253,14 +255,14 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                 Browse all &rarr;
               </Link>
             </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {similarItems.map((item) => (
-                <ProductCard key={item.id} product={item} />
-              ))}
-            </div>
+            <LocationAwareProductGrid
+              products={similarItems}
+              className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
+            />
           </section>
         )}
       </main>
-    </div>
+      </div>
+    </ProductLocationGate>
   );
 }

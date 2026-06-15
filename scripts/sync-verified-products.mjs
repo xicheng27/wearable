@@ -351,6 +351,7 @@ function productRecord(product, feed) {
       countries: feed.countries,
       note: feed.availability,
     },
+    shipsTo: feed.countries,
     sizes: sizesFor(product),
     genderFit: genderFit(fullText),
     sensoryFriendly:

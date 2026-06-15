@@ -1,5 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { getProductsByCategory, productCategories } from "@/data/products";
+import { useShoppingLocation } from "@/components/LocationProvider";
+import { filterProductsForCountry } from "@/lib/shipping";
 
 function GarmentSketch({ type }: { type: string }) {
   const common = "stroke-current";
@@ -24,6 +28,8 @@ function GarmentSketch({ type }: { type: string }) {
 const tones = ["bg-[#EBDDC4]", "bg-lavender/65", "bg-sage/30", "bg-clay/20"];
 
 export default function CategoryGrid() {
+  const { selectedCountry, ready } = useShoppingLocation();
+
   return (
     <section className="paper-texture border-y border-ink/10 bg-[#EEE5D5] py-24" aria-labelledby="categories-heading">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -40,7 +46,10 @@ export default function CategoryGrid() {
 
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
           {productCategories.map((category, index) => {
-            const count = getProductsByCategory(category.slug).length;
+            const categoryProducts = getProductsByCategory(category.slug);
+            const count = ready
+              ? filterProductsForCountry(categoryProducts, selectedCountry).length
+              : categoryProducts.length;
             if (count === 0) return null;
             return (
               <Link

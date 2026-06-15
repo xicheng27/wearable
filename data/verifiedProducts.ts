@@ -48,6 +48,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -113,6 +117,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -179,6 +187,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -243,6 +255,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -302,6 +318,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -368,6 +388,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "M",
       "L",
@@ -431,6 +455,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "S",
       "M",
@@ -496,6 +524,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "S",
       "M",
@@ -561,6 +593,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -624,6 +660,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -687,6 +727,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -749,6 +793,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -808,6 +856,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -870,6 +922,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -932,6 +988,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -994,6 +1054,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -1056,6 +1120,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -1124,6 +1192,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -1189,6 +1261,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -1254,6 +1330,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -1315,6 +1395,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -1373,6 +1457,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -1436,6 +1524,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -1497,6 +1589,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "S",
       "M",
@@ -1557,6 +1653,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "M",
       "L",
@@ -1617,6 +1717,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "S",
       "M",
@@ -1675,6 +1779,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -1732,6 +1840,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "S",
       "M",
@@ -1787,6 +1899,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -1843,6 +1959,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "S",
       "M",
@@ -1902,6 +2022,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "S (Men's) / Fits a M (Womens)",
       "M (Men's) / Fits a L (Womens)",
@@ -1961,6 +2085,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "S (Men's) / Fits a M (Womens)",
       "M (Men's) / Fits a L (Womens)",
@@ -2020,6 +2148,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "S (Men's) / Fits a M (Womens)",
       "M (Men's) / Fits a L (Womens)",
@@ -2080,6 +2212,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS (Men's) / Fits a S (Womens)",
       "S (Men's) / Fits a M (Womens)",
@@ -2143,6 +2279,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -2205,6 +2345,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -2263,6 +2407,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -2326,6 +2474,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "S",
       "M",
@@ -2387,6 +2539,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "M",
       "L",
@@ -2444,6 +2600,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official June Adaptive product page. Contact the brand for international delivery."
     },
+    "shipsTo": [
+      "Canada",
+      "USA"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -2470,7 +2630,7 @@ export const verifiedProducts: Product[] = [
     "clothingType": "Jackets",
     "category": "jackets",
     "priceRange": "$150+",
-    "price": "839.00",
+    "price": "838.00",
     "currency": "CAD",
     "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/products/1.png?v=1680100214",
     "imageAlt": "The Iconic Biker Jacket for Women by IZ Adaptive",
@@ -2509,6 +2669,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -2575,6 +2743,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -2641,6 +2817,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -2707,6 +2891,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -2733,7 +2925,7 @@ export const verifiedProducts: Product[] = [
     "clothingType": "Jackets",
     "category": "jackets",
     "priceRange": "$150+",
-    "price": "839.00",
+    "price": "838.00",
     "currency": "CAD",
     "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/products/6.png?v=1680893928",
     "imageAlt": "The Iconic Biker Jacket for Men by IZ Adaptive",
@@ -2773,6 +2965,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "S",
       "M",
@@ -2799,7 +2999,7 @@ export const verifiedProducts: Product[] = [
     "clothingType": "Tops",
     "category": "tops",
     "priceRange": "$100-$150",
-    "price": "104.00",
+    "price": "103.00",
     "currency": "CAD",
     "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/wpt001.leop.brn2.jpg?v=1739460672",
     "imageAlt": "Leopard Print Dolman Sleeve Top by IZ Adaptive",
@@ -2833,6 +3033,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -2900,6 +3108,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -2962,6 +3178,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "S",
       "M",
@@ -3024,6 +3248,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "S",
       "M",
@@ -3086,6 +3318,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "S",
       "M",
@@ -3151,6 +3391,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "S",
       "M",
@@ -3217,6 +3465,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "S",
       "M",
@@ -3286,6 +3542,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "6",
       "7",
@@ -3349,6 +3613,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "S",
       "M",
@@ -3410,6 +3682,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "S",
       "M",
@@ -3470,6 +3750,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "S/M",
       "L/XL"
@@ -3532,6 +3820,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "S",
       "M",
@@ -3593,6 +3889,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "S",
       "M",
@@ -3658,6 +3962,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "S",
       "M",
@@ -3719,6 +4031,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "S",
       "M",
@@ -3780,6 +4100,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "S",
       "M",
@@ -3839,6 +4167,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "S",
       "M",
@@ -3899,6 +4235,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "S",
       "M",
@@ -3960,6 +4304,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "S",
       "M",
@@ -4021,6 +4373,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "S",
       "M",
@@ -4086,6 +4446,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "S",
       "M",
@@ -4146,6 +4514,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "OS"
     ],
@@ -4204,6 +4580,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "S",
       "M",
@@ -4270,6 +4654,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "S",
       "M",
@@ -4331,6 +4723,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "S",
       "M",
@@ -4400,6 +4800,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "7",
       "8",
@@ -4428,7 +4836,7 @@ export const verifiedProducts: Product[] = [
     "clothingType": "Shoes",
     "category": "shoes",
     "priceRange": "$100-$150",
-    "price": "132.00",
+    "price": "131.00",
     "currency": "CAD",
     "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/sv55430_svbgr_0_vpgse3bgolkir8zk_484b25d4-f831-42d5-afe3-b5d413e3fd9d.jpg?v=1771055383",
     "imageAlt": "Men’s Adjustable Width Comfort Shoes by IZ Adaptive",
@@ -4471,6 +4879,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "7",
       "7H",
@@ -4547,6 +4963,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "6",
       "6H",
@@ -4580,7 +5004,7 @@ export const verifiedProducts: Product[] = [
     "clothingType": "Shoes",
     "category": "shoes",
     "priceRange": "$100-$150",
-    "price": "132.00",
+    "price": "131.00",
     "currency": "CAD",
     "imageUrl": "https://cdn.shopify.com/s/files/1/2498/9530/files/sv15430_svmbn_3_8774cdc6-95b2-44f8-9e6b-d16f08d3852f.jpg?v=1771488414",
     "imageAlt": "Women’s Adjustable Width Comfort Shoes by IZ Adaptive",
@@ -4620,6 +5044,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "6",
       "6H",
@@ -4696,6 +5128,14 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from IZ Adaptive with international shipping."
     },
+    "shipsTo": [
+      "Canada",
+      "USA",
+      "UK",
+      "EU",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "S",
       "M",
@@ -4760,6 +5200,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official JAM the Label product page. Singapore SGD storefront available."
     },
+    "shipsTo": [
+      "Singapore",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "28",
       "30",
@@ -4821,6 +5266,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official JAM the Label product page. Singapore SGD storefront available."
     },
+    "shipsTo": [
+      "Singapore",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -4880,6 +5330,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official JAM the Label product page. Singapore SGD storefront available."
     },
+    "shipsTo": [
+      "Singapore",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [],
     "genderFit": [
       "Women"
@@ -4899,7 +5354,7 @@ export const verifiedProducts: Product[] = [
     "clothingType": "Pants",
     "category": "pants",
     "priceRange": "$50-$100",
-    "price": "97.00",
+    "price": "98.00",
     "currency": "SGD",
     "imageUrl": "https://cdn.shopify.com/s/files/1/0161/2257/6996/files/3_2.png?v=1707350114",
     "imageAlt": "High Waisted Pant 2.0 by JAM the Label",
@@ -4938,6 +5393,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official JAM the Label product page. Singapore SGD storefront available."
     },
+    "shipsTo": [
+      "Singapore",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "6",
       "8",
@@ -4996,6 +5456,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official JAM the Label product page. Singapore SGD storefront available."
     },
+    "shipsTo": [
+      "Singapore",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -5024,7 +5489,7 @@ export const verifiedProducts: Product[] = [
     "clothingType": "Shorts",
     "category": "pants",
     "priceRange": "$50-$100",
-    "price": "73.00",
+    "price": "74.00",
     "currency": "SGD",
     "imageUrl": "https://cdn.shopify.com/s/files/1/0161/2257/6996/products/standingfrontopen_8fda9772-c97e-4d10-be7b-eb95d1a5611e.jpg?v=1682313542",
     "imageAlt": "Magnetic Short Sleeve Shirt - Cobalt by JAM the Label",
@@ -5055,6 +5520,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official JAM the Label product page. Singapore SGD storefront available."
     },
+    "shipsTo": [
+      "Singapore",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -5113,6 +5583,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official JAM the Label product page. Singapore SGD storefront available."
     },
+    "shipsTo": [
+      "Singapore",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -5171,6 +5646,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official JAM the Label product page. Singapore SGD storefront available."
     },
+    "shipsTo": [
+      "Singapore",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -5231,6 +5711,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official JAM the Label product page. Singapore SGD storefront available."
     },
+    "shipsTo": [
+      "Singapore",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "6",
       "8",
@@ -5294,6 +5779,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official JAM the Label product page. Singapore SGD storefront available."
     },
+    "shipsTo": [
+      "Singapore",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "6",
       "8",
@@ -5354,6 +5844,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official JAM the Label product page. Singapore SGD storefront available."
     },
+    "shipsTo": [
+      "Singapore",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "28",
       "30",
@@ -5382,7 +5877,7 @@ export const verifiedProducts: Product[] = [
     "clothingType": "Tops",
     "category": "tops",
     "priceRange": "$50-$100",
-    "price": "73.00",
+    "price": "74.00",
     "currency": "SGD",
     "imageUrl": "https://cdn.shopify.com/s/files/1/0161/2257/6996/files/standingfront_6f094f06-bbee-4642-9690-fb98572bcecc.jpg?v=1686717391",
     "imageAlt": "Cropped Neoprene Zip Pullover by JAM the Label",
@@ -5413,6 +5908,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official JAM the Label product page. Singapore SGD storefront available."
     },
+    "shipsTo": [
+      "Singapore",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -5478,6 +5978,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official JAM the Label product page. Singapore SGD storefront available."
     },
+    "shipsTo": [
+      "Singapore",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -5540,6 +6045,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official JAM the Label product page. Singapore SGD storefront available."
     },
+    "shipsTo": [
+      "Singapore",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -5600,6 +6110,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official JAM the Label product page. Singapore SGD storefront available."
     },
+    "shipsTo": [
+      "Singapore",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -5659,6 +6174,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official JAM the Label product page. Singapore SGD storefront available."
     },
+    "shipsTo": [
+      "Singapore",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "6",
       "8",
@@ -5717,6 +6237,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official JAM the Label product page. Singapore SGD storefront available."
     },
+    "shipsTo": [
+      "Singapore",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -5775,6 +6300,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official JAM the Label product page. Singapore SGD storefront available."
     },
+    "shipsTo": [
+      "Singapore",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -5830,6 +6360,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Official JAM the Label product page. Singapore SGD storefront available."
     },
+    "shipsTo": [
+      "Singapore",
+      "Australia",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -5893,6 +6428,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available from Singapore-based Will & Well."
     },
+    "shipsTo": [
+      "Singapore"
+    ],
     "sizes": [
       "S",
       "M",
@@ -5956,6 +6494,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available from Singapore-based Will & Well."
     },
+    "shipsTo": [
+      "Singapore"
+    ],
     "sizes": [
       "1 (S)",
       "2 (M)",
@@ -6010,6 +6551,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available from Singapore-based Will & Well."
     },
+    "shipsTo": [
+      "Singapore"
+    ],
     "sizes": [
       "Free Size"
     ],
@@ -6061,6 +6605,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available from Singapore-based Will & Well."
     },
+    "shipsTo": [
+      "Singapore"
+    ],
     "sizes": [
       "Free Size"
     ],
@@ -6120,6 +6667,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available from Singapore-based Will & Well."
     },
+    "shipsTo": [
+      "Singapore"
+    ],
     "sizes": [
       "Free Size"
     ],
@@ -6176,6 +6726,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available from Singapore-based Will & Well."
     },
+    "shipsTo": [
+      "Singapore"
+    ],
     "sizes": [
       "Free Size"
     ],
@@ -6230,6 +6783,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available from Singapore-based Will & Well."
     },
+    "shipsTo": [
+      "Singapore"
+    ],
     "sizes": [
       "S",
       "M",
@@ -6284,6 +6840,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available from Singapore-based Will & Well."
     },
+    "shipsTo": [
+      "Singapore"
+    ],
     "sizes": [
       "S",
       "M",
@@ -6336,6 +6895,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available from Singapore-based Will & Well."
     },
+    "shipsTo": [
+      "Singapore"
+    ],
     "sizes": [
       "XS",
       "S/M",
@@ -6391,6 +6953,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available from Singapore-based Will & Well."
     },
+    "shipsTo": [
+      "Singapore"
+    ],
     "sizes": [
       "S/M",
       "M/L",
@@ -6450,6 +7015,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available from Singapore-based Will & Well."
     },
+    "shipsTo": [
+      "Singapore"
+    ],
     "sizes": [
       "S",
       "M",
@@ -6505,6 +7073,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available from Singapore-based Will & Well."
     },
+    "shipsTo": [
+      "Singapore"
+    ],
     "sizes": [
       "S/M",
       "M/L",
@@ -6560,6 +7131,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available from Singapore-based Will & Well."
     },
+    "shipsTo": [
+      "Singapore"
+    ],
     "sizes": [
       "XS",
       "S/M",
@@ -6618,6 +7192,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available from Singapore-based Will & Well."
     },
+    "shipsTo": [
+      "Singapore"
+    ],
     "sizes": [
       "M",
       "L",
@@ -6676,6 +7253,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available from Singapore-based Will & Well."
     },
+    "shipsTo": [
+      "Singapore"
+    ],
     "sizes": [
       "S",
       "M",
@@ -6734,6 +7314,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available from Singapore-based Will & Well."
     },
+    "shipsTo": [
+      "Singapore"
+    ],
     "sizes": [
       "S",
       "M",
@@ -6794,6 +7377,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available from Singapore-based Will & Well."
     },
+    "shipsTo": [
+      "Singapore"
+    ],
     "sizes": [
       "Free Size"
     ],
@@ -6849,6 +7435,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available from Singapore-based Will & Well."
     },
+    "shipsTo": [
+      "Singapore"
+    ],
     "sizes": [
       "S",
       "M",
@@ -6905,6 +7494,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available from Singapore-based Will & Well."
     },
+    "shipsTo": [
+      "Singapore"
+    ],
     "sizes": [
       "Free Size"
     ],
@@ -6959,6 +7551,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available from Singapore-based Will & Well."
     },
+    "shipsTo": [
+      "Singapore"
+    ],
     "sizes": [
       "S",
       "M",
@@ -7017,6 +7612,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -7078,6 +7677,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -7139,6 +7742,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -7199,6 +7806,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -7262,6 +7873,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "30x30",
       "30x32",
@@ -7337,6 +7952,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "30x30",
       "30x32",
@@ -7411,6 +8030,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "30x30",
       "30x32",
@@ -7484,6 +8107,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -7545,6 +8172,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -7611,6 +8242,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "30",
       "32",
@@ -7680,6 +8315,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "30",
       "32",
@@ -7743,6 +8382,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -7805,6 +8448,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -7867,6 +8514,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -7929,6 +8580,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -7991,6 +8646,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -8053,6 +8712,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -8115,6 +8778,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -8177,6 +8844,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -8239,6 +8910,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -8300,6 +8975,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -8360,6 +9039,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -8419,6 +9102,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -8478,6 +9165,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -8539,6 +9230,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -8601,6 +9296,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -8664,6 +9363,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -8725,6 +9428,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -8785,6 +9492,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -8849,6 +9560,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -8911,6 +9626,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -8968,6 +9687,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -9023,6 +9746,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -9083,6 +9810,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -9145,6 +9876,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -9206,6 +9941,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -9266,6 +10005,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -9329,6 +10072,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "S",
       "M",
@@ -9393,6 +10140,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -9455,6 +10206,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -9518,6 +10273,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -9583,6 +10342,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "S",
       "M",
@@ -9648,6 +10411,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "S",
       "M",
@@ -9713,6 +10480,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "S",
       "M",
@@ -9777,6 +10548,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "S",
       "M",
@@ -9842,6 +10617,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "S",
       "M",
@@ -9907,6 +10686,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "S",
       "M",
@@ -9972,6 +10755,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "S",
       "M",
@@ -10037,6 +10824,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "S",
       "M",
@@ -10101,6 +10892,10 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official MagnaReady store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada"
+    ],
     "sizes": [
       "30 29",
       "30 30",
@@ -10180,6 +10975,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "5 US Toddler",
       "6 US Toddler",
@@ -10248,6 +11048,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "6 US Women",
       "6.5 US Women",
@@ -10311,6 +11116,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "5 US Toddler",
       "6 US Toddler",
@@ -10380,6 +11190,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "6 US Women",
       "6.5 US Women",
@@ -10446,6 +11261,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "6 US Women",
       "6.5 US Women",
@@ -10512,6 +11332,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "6 US Women",
       "6.5 US Women",
@@ -10575,6 +11400,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "5 US Toddler",
       "6 US Toddler",
@@ -10648,6 +11478,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "7 US Men",
       "7.5 US Men",
@@ -10715,6 +11550,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "5 US Toddler",
       "6 US Toddler",
@@ -10784,6 +11624,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "5 US Toddler",
       "6 US Toddler",
@@ -10850,6 +11695,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "5 US Toddler",
       "6 US Toddler",
@@ -10921,6 +11771,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "7 US Men",
       "7.5 US Men",
@@ -10993,6 +11848,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "7 US Men",
       "7.5 US Men",
@@ -11066,6 +11926,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "6 US Women",
       "6.5 US Women",
@@ -11132,6 +11997,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "6 US Women",
       "6.5 US Women",
@@ -11193,6 +12063,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "10 US Little Kid",
       "11 US Little Kid",
@@ -11255,6 +12130,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "10 US Little Kid",
       "11 US Little Kid",
@@ -11317,6 +12197,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "10 US Little Kid",
       "11 US Little Kid",
@@ -11383,6 +12268,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "7 US Men",
       "7.5 US Men",
@@ -11451,6 +12341,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "6 US Women",
       "6.5 US Women",
@@ -11516,6 +12411,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "6 US Women",
       "6.5 US Women",
@@ -11581,6 +12481,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "6 US Women",
       "6.5 US Women",
@@ -11655,6 +12560,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "4 US Men",
       "4.5 US Men",
@@ -11733,6 +12643,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "6 US Women",
       "6.5 US Women",
@@ -11813,6 +12728,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "4 US Men",
       "4.5 US Men",
@@ -11893,6 +12813,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "6 US Women",
       "6.5 US Women",
@@ -11970,6 +12895,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "6 US Women",
       "6.5 US Women",
@@ -12047,6 +12977,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "6 US Women",
       "6.5 US Women",
@@ -12127,6 +13062,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "6 US Women",
       "6.5 US Women",
@@ -12201,6 +13141,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "4 US Men",
       "4.5 US Men",
@@ -12275,6 +13220,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "4 US Men",
       "4.5 US Men",
@@ -12348,6 +13298,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "5 US Toddler",
       "6 US Toddler",
@@ -12425,6 +13380,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "5 US Toddler",
       "6 US Toddler",
@@ -12495,6 +13455,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "5 US Toddler",
       "6 US Toddler",
@@ -12564,6 +13529,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "5 US Toddler",
       "6 US Toddler",
@@ -12643,6 +13613,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "5 US Toddler",
       "6 US Toddler",
@@ -12712,6 +13687,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "5 US Toddler",
       "6 US Toddler",
@@ -12784,6 +13764,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "5 US Toddler",
       "6 US Toddler",
@@ -12859,6 +13844,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "4 US Men",
       "4.5 US Men",
@@ -12931,6 +13921,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "5 US Toddler",
       "6 US Toddler",
@@ -13002,6 +13997,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "5 US Toddler",
       "6 US Toddler",
@@ -13081,6 +14081,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "5 US Toddler",
       "6 US Toddler",
@@ -13160,6 +14165,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "5 US Toddler",
       "6 US Toddler",
@@ -13239,6 +14249,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "5 US Toddler",
       "6 US Toddler",
@@ -13318,6 +14333,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "5 US Toddler",
       "6 US Toddler",
@@ -13397,6 +14417,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "5 US Toddler",
       "6 US Toddler",
@@ -13466,6 +14491,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "7 US Toddler",
       "8 US Toddler",
@@ -13534,6 +14564,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "5 US Toddler",
       "6 US Toddler",
@@ -13604,6 +14639,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "5 US Toddler",
       "6 US Toddler",
@@ -13674,6 +14714,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official BILLY Footwear store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Australia"
+    ],
     "sizes": [
       "5 US Toddler",
       "6 US Toddler",
@@ -13749,6 +14794,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "0 Regular",
       "2 Regular",
@@ -13829,6 +14877,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "30x30",
       "30x32",
@@ -13911,6 +14962,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "Extra Small",
       "Small",
@@ -13973,6 +15027,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "Extra Small",
       "Small",
@@ -14028,6 +15085,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "Extra-small",
       "Small",
@@ -14084,6 +15144,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "Extra-small",
       "Small",
@@ -14141,6 +15204,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "Extra-small/Small",
       "Small/Medium",
@@ -14201,6 +15267,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "Extra-Small",
       "Small",
@@ -14260,6 +15329,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -14317,6 +15389,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "Extra-Small",
       "Small",
@@ -14375,6 +15450,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "4/5",
       "6/6X",
@@ -14432,6 +15510,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "4/5",
       "6/7",
@@ -14489,6 +15570,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "Extra-Small",
       "Small",
@@ -14548,6 +15632,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "Small",
       "Medium",
@@ -14609,6 +15696,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "0 Regular",
       "2 Regular",
@@ -14685,6 +15775,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "30x30",
       "30x32",
@@ -14763,6 +15856,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "28x30",
       "30x30",
@@ -14830,6 +15926,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "0 Regular",
       "2 Regular",
@@ -14906,6 +16005,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "4/5",
       "6/7",
@@ -14967,6 +16069,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "4/5",
       "6/7",
@@ -15027,6 +16132,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "4/5",
       "6/6x",
@@ -15087,6 +16195,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "4/5",
       "6/7",
@@ -15147,6 +16258,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "Extra Small",
       "Small",
@@ -15208,6 +16322,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "Extra Small",
       "Small",
@@ -15267,6 +16384,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "Extra Small",
       "Small",
@@ -15327,6 +16447,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "6/7",
       "8/10",
@@ -15350,7 +16473,7 @@ export const verifiedProducts: Product[] = [
     "clothingType": "Jackets",
     "category": "jackets",
     "priceRange": "$150+",
-    "price": "325.00",
+    "price": "324.00",
     "currency": "USD",
     "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/files/20230811_NoLimbits_Parka_IMG_6415-Edit_1.jpg?v=1709068172",
     "imageAlt": "Women's Limited Dexterity Jacket by No Limbits",
@@ -15384,6 +16507,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "Extra Small",
       "Small",
@@ -15411,7 +16537,7 @@ export const verifiedProducts: Product[] = [
     "clothingType": "Jackets",
     "category": "jackets",
     "priceRange": "$150+",
-    "price": "325.00",
+    "price": "324.00",
     "currency": "USD",
     "imageUrl": "https://cdn.shopify.com/s/files/1/0601/5156/2432/files/20230811_NoLimbits_Parka_IMG_6604-Edit.jpg?v=1708978482",
     "imageAlt": "Men's Limited Dexterity Jacket by No Limbits",
@@ -15445,6 +16571,9 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official No Limbits store."
     },
+    "shipsTo": [
+      "USA"
+    ],
     "sizes": [
       "Extra Small",
       "Small",
@@ -15505,6 +16634,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official Slick Chicks store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -15568,6 +16702,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official Slick Chicks store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -15628,6 +16767,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official Slick Chicks store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -15654,7 +16798,7 @@ export const verifiedProducts: Product[] = [
     "clothingType": "Tops",
     "category": "tops",
     "priceRange": "$25-$50",
-    "price": "42.00",
+    "price": "41.00",
     "currency": "USD",
     "imageUrl": "https://cdn.shopify.com/s/files/1/0226/5885/files/7H1A6946_1.jpg?v=1735917120",
     "imageAlt": "Accessible \"V\" Neck Crop Top by Slick Chicks",
@@ -15685,6 +16829,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official Slick Chicks store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -15748,6 +16897,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official Slick Chicks store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -15816,6 +16970,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official Slick Chicks store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -15875,6 +17034,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official Slick Chicks store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -15934,6 +17098,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official Slick Chicks store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Worldwide"
+    ],
     "sizes": [
       "XS",
       "S",
@@ -15991,6 +17160,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official Slick Chicks store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Worldwide"
+    ],
     "sizes": [
       "xs",
       "s",
@@ -16050,6 +17224,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official Slick Chicks store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Worldwide"
+    ],
     "sizes": [
       "xs",
       "s",
@@ -16120,6 +17299,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official Slick Chicks store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Worldwide"
+    ],
     "sizes": [
       "xs",
       "s",
@@ -16190,6 +17374,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official Slick Chicks store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Worldwide"
+    ],
     "sizes": [
       "xs",
       "s",
@@ -16219,7 +17408,7 @@ export const verifiedProducts: Product[] = [
     "clothingType": "Underwear",
     "category": "underwear",
     "priceRange": "$50-$100",
-    "price": "66.00",
+    "price": "65.00",
     "currency": "USD",
     "imageUrl": "https://cdn.shopify.com/s/files/1/0226/5885/files/4.18.21_SlickChicks_Ecomm_Bra_Tealbackground_Velcro_Beige_Full_0687.jpg?v=1735915103",
     "imageAlt": "Front Fastening Bra with VELCRO® Brand Fasteners by Slick Chicks",
@@ -16253,6 +17442,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official Slick Chicks store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Worldwide"
+    ],
     "sizes": [
       "xs",
       "s",
@@ -16282,7 +17476,7 @@ export const verifiedProducts: Product[] = [
     "clothingType": "Underwear",
     "category": "underwear",
     "priceRange": "$50-$100",
-    "price": "66.00",
+    "price": "65.00",
     "currency": "USD",
     "imageUrl": "https://cdn.shopify.com/s/files/1/0226/5885/files/4.18.21_SlickChicks_Ecomm_Bra_Beigebackground_Zipper_Black_Front_1243.jpg?v=1735915453",
     "imageAlt": "Wireless Zip Front Bra by Slick Chicks",
@@ -16316,6 +17510,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official Slick Chicks store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Worldwide"
+    ],
     "sizes": [
       "xs",
       "s",
@@ -16380,6 +17579,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official Slick Chicks store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Worldwide"
+    ],
     "sizes": [
       "xs",
       "s",
@@ -16443,6 +17647,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official Slick Chicks store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Worldwide"
+    ],
     "sizes": [
       "xs",
       "s",
@@ -16507,6 +17716,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official Slick Chicks store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Worldwide"
+    ],
     "sizes": [
       "xs",
       "s",
@@ -16571,6 +17785,11 @@ export const verifiedProducts: Product[] = [
       ],
       "note": "Available online from the official Slick Chicks store."
     },
+    "shipsTo": [
+      "USA",
+      "Canada",
+      "Worldwide"
+    ],
     "sizes": [
       "xs",
       "s",

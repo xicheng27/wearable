@@ -5,6 +5,7 @@ import { useState } from "react";
 import SearchBar from "@/components/SearchBar";
 import Logo from "@/components/Logo";
 import CurrencySelector from "@/components/CurrencySelector";
+import LocationButton from "@/components/LocationButton";
 
 const navItems = [
   { href: "/search", label: "Browse Clothing" },
@@ -43,6 +44,7 @@ export default function Navbar() {
             Find by need
           </Link>
           <CurrencySelector className="hidden xl:flex" compact />
+          <LocationButton className="hidden xl:inline-flex" compact />
 
           <button
             className="rounded-lg border border-ink/10 bg-paper p-2 text-ink hover:bg-sand/50 xl:hidden"
@@ -64,6 +66,7 @@ export default function Navbar() {
           <div className="space-y-3 border-t border-ink/10 py-4 xl:hidden">
             <SearchBar compact />
             <CurrencySelector className="justify-between rounded-xl border border-ink/10 bg-paper px-3 py-2" />
+            <LocationButton className="w-full justify-between" />
             <nav className="flex flex-col">
               {navItems.map((item) => (
                 <Link

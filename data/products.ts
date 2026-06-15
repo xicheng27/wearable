@@ -671,7 +671,17 @@ function mixProductsByBrand(items: Product[]) {
   return mixed;
 }
 
-export const products = mixProductsByBrand(combinedProducts);
+export const products = mixProductsByBrand(
+  combinedProducts.map((product) => ({
+    ...product,
+    shipsTo:
+      product.shipsTo?.length
+        ? product.shipsTo
+        : product.availability.countries?.length
+          ? product.availability.countries
+          : ["Global"],
+  }))
+);
 
 export const clothingTypeOptions = [
   "Tops",
@@ -740,8 +750,6 @@ export const sizeOptions = [
 export const fitOptions = ["Women", "Men", "Unisex", "Kids"];
 export const budgetOptions = ["Under $50", "$50-$100", "$100-$150", "$150+"];
 export const availabilityOptions = ["Online", "In store"];
-export const locationOptions = ["USA", "Canada", "UK", "EU", "Australia"];
-
 export const productCategories = [
   { slug: "tops", label: "Adaptive Tops", description: "Soft, easy-on layers and sensory-friendly essentials." },
   { slug: "shirts", label: "Adaptive Shirts", description: "Magnetic, open-back and easy-fastening shirts." },

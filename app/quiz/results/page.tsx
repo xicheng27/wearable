@@ -1,5 +1,4 @@
-import Link from "next/link";
-import ProductCard from "@/components/ProductCard";
+import LocationAwareRecommendations from "@/components/LocationAwareRecommendations";
 import { recommendProducts } from "@/data/products";
 
 interface QuizResultsPageProps {
@@ -141,32 +140,7 @@ export default function QuizResultsPage({
       </header>
 
       <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {visibleRecommendations.map(({ product, reasons }) => (
-            <div key={product.id} className="flex flex-col">
-              <ProductCard product={product} />
-              <div className="-mt-3 rounded-b-2xl border border-t-0 border-primary-100 bg-primary-50 px-5 pb-5 pt-6">
-                <p className="text-xs font-bold uppercase tracking-wider text-primary-800">
-                  Why it matches
-                </p>
-                <p className="mt-1 text-sm text-primary-950">
-                  {reasons.length > 0
-                    ? reasons.join(". ")
-                    : `${product.adaptiveFeatures.slice(0, 2).join(" and ")} with a ${product.styleTags[0].toLowerCase()} style.`}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-10 flex flex-wrap justify-center gap-3">
-          <Link href="/quiz" className="btn-outline">
-            Retake quiz
-          </Link>
-          <Link href="/search" className="btn-primary">
-            Browse all clothing
-          </Link>
-        </div>
+        <LocationAwareRecommendations recommendations={visibleRecommendations} />
       </main>
     </div>
   );
