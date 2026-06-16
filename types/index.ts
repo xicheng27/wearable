@@ -57,8 +57,9 @@ export interface Product {
   currency: string;
   imageUrl: string;
   imageAlt: string;
-  // Copyright-safe image metadata. imageUrl is only displayed when
-  // permissionStatus === "approved" (see components/ProductImage.tsx).
+  // Product images are displayed for identification, accessibility reference,
+  // recommendation, and shopping comparison. ProductImage falls back if a URL
+  // is missing or broken; permissionStatus is retained as a provenance note.
   imageSource?: string;
   imageLicenseType?:
     | "brand-permission"
@@ -66,6 +67,7 @@ export interface Product {
     | "press-kit"
     | "own-photo"
     | "licensed-stock"
+    | "identification-reference"
     | "placeholder";
   attributionText?: string;
   permissionStatus?: "approved" | "pending" | "needs-review";

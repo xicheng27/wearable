@@ -17,10 +17,20 @@ interface PhotoProps {
  */
 export default function Photo({ src, alt, className = "", imgClassName = "" }: PhotoProps) {
   const [failed, setFailed] = useState(false);
+  const hasImage = !!src && !failed;
 
   return (
     <div className={`relative overflow-hidden ${className}`}>
-      {failed ? (
+      {hasImage ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          onError={() => setFailed(true)}
+          className={`h-full w-full object-cover ${imgClassName}`}
+        />
+      ) : (
         <div
           className="flex h-full w-full items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100"
           role="img"
@@ -31,15 +41,6 @@ export default function Photo({ src, alt, className = "", imgClassName = "" }: P
             <path d="M12 7 4.6 12.4a1.9 1.9 0 0 0 1.1 3.4h12.6a1.9 1.9 0 0 0 1.1-3.4L12 7z" />
           </svg>
         </div>
-      ) : (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={src}
-          alt={alt}
-          loading="lazy"
-          onError={() => setFailed(true)}
-          className={`h-full w-full object-cover ${imgClassName}`}
-        />
       )}
     </div>
   );

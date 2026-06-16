@@ -1,10 +1,11 @@
 import Link from "next/link";
 import Logo from "@/components/Logo";
+import DisclaimerNotice from "@/components/DisclaimerNotice";
 
 const groups = [
   ["Browse", [["All clothing", "/search"], ["Singapore guide", "/singapore"], ["Global map", "/map"], ["Adaptive shoes", "/categories/shoes"]]],
   ["Find by need", [["One-handed dressing", "/search?oneHanded=true"], ["Sensory-friendly", "/search?sensory=true"], ["Orthotics and AFOs", "/search?disability=Orthotics"], ["Find my match", "/quiz"]]],
-  ["Xi's", [["Our approach", "/"], ["Accessibility", "/"], ["Submit an item", "/"], ["Contact", "/"]]],
+  ["Xi's", [["Our approach", "/"], ["Accessibility", "/"], ["Disclaimer", "/disclaimer"], ["Submit an item", "/"], ["Contact", "/"]]],
 ];
 
 export default function Footer() {
@@ -36,6 +37,7 @@ export default function Footer() {
           <p>&copy; 2026 Xi&apos;s. Adaptive fashion discovery.</p>
           <p>Comfort, dignity, independence, style.</p>
         </div>
+        <DisclaimerNotice />
       </div>
     </footer>
   );

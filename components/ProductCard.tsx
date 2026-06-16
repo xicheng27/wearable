@@ -7,6 +7,7 @@ import ProductImage from "@/components/ProductImage";
 import PriceDisplay from "@/components/PriceDisplay";
 import { useShoppingLocation } from "@/components/LocationProvider";
 import { productShippingLabel } from "@/lib/shipping";
+import OfficialProductLink from "@/components/OfficialProductLink";
 
 export default function ProductCard({ product }: { product: Product }) {
   const brandName = getBrandName(product.brandId);
@@ -116,22 +117,21 @@ export default function ProductCard({ product }: { product: Product }) {
                 ? "Available online"
                 : "In-store availability"}
           </div>
-          <a
-            href={product.productUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary flex w-full px-4 py-2.5 text-center text-sm"
-          >
-            {product.linkType === "exact-product"
-              ? "View exact item"
-              : "View brand page"}
-          </a>
           <Link
             href={`/products/${product.id}`}
-            className="link-underline mx-auto mt-4 block w-fit text-center text-xs"
+            className="btn-primary flex w-full px-4 py-2.5 text-center text-sm"
           >
             View details
           </Link>
+          <OfficialProductLink
+            href={product.productUrl}
+            exact={product.linkType === "exact-product"}
+            className="link-underline mx-auto mt-4 block w-fit text-center text-xs font-semibold text-ink/60"
+          >
+            {product.linkType === "exact-product"
+              ? "View official product \u2192"
+              : "View official source \u2192"}
+          </OfficialProductLink>
         </div>
       </div>
     </article>

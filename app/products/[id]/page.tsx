@@ -3,6 +3,7 @@ import Link from "next/link";
 import ProductImage from "@/components/ProductImage";
 import PriceDisplay from "@/components/PriceDisplay";
 import LocationAwareProductGrid from "@/components/LocationAwareProductGrid";
+import OfficialProductLink from "@/components/OfficialProductLink";
 import ProductLocationGate from "@/components/ProductLocationGate";
 import { getBrandById } from "@/data/brands";
 import {
@@ -136,16 +137,15 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
               </div>
 
               <div className="mt-auto pt-8">
-                <a
+                <OfficialProductLink
                   href={product.productUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  exact={product.linkType === "exact-product"}
                   className="btn-primary block w-full text-center"
                 >
                   {product.linkType === "exact-product"
-                    ? "Shop this exact item"
-                    : "View brand page only"}
-                </a>
+                    ? "View official product"
+                    : "View official source"}
+                </OfficialProductLink>
                 <Link
                   href={`/brands/${brand.id}`}
                   className="btn-outline mt-3 block w-full text-center"

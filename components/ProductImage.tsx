@@ -5,27 +5,21 @@ import { useState } from "react";
 import type { PermissionStatus } from "@/data/imageMeta";
 
 /**
- * COPYRIGHT-SAFE IMAGE GATE
- * -------------------------
- * Product/brand photos are copyrighted. This component only renders a remote
- * image when `permissionStatus === "approved"` (i.e. we have written brand
- * permission, an affiliate/press licence, our own photo, or a stock licence).
- * Anything pending / needs-review / unset shows a clean first-party
- * placeholder instead — never a hot-linked brand image.
+ * Product image with graceful fallback.
  *
- * To display a real image: record the licence on the product and set
- * permissionStatus to "approved" with attributionText. See data/imageMeta.ts.
+ * Xi's displays product/brand images from the catalogue for identification,
+ * accessibility reference, and shopping comparison. If a URL is unavailable or
+ * fails to load, the component falls back to a quiet first-party placeholder.
  */
-
 interface ProductImageProps {
   src: string | null;
   alt: string;
   className?: string;
   priority?: boolean;
   fallbackLabel?: string;
-  /** Defaults to needs-review: nothing is shown until explicitly approved. */
+  /** Optional provenance status for data review/admin notes. */
   permissionStatus?: PermissionStatus;
-  /** Shown subtly over the image when an approved image is displayed. */
+  /** Shown subtly over the image only when an approved attribution is supplied. */
   attribution?: string;
 }
 
@@ -34,18 +28,18 @@ export default function ProductImage({
   alt,
   className = "",
   priority = false,
-  fallbackLabel = "Image pending permission",
+  fallbackLabel = "Image pending verification",
   permissionStatus = "needs-review",
   attribution,
 }: ProductImageProps) {
   const [failed, setFailed] = useState(false);
-  const cleared = permissionStatus === "approved" && !!src && !failed;
+  const hasImage = !!src && !failed;
 
   return (
     <div
       className={`fabric-texture relative overflow-hidden bg-gradient-to-br from-[#EEE4D3] via-paper to-lavender/60 ${className}`}
     >
-      {cleared ? (
+      {hasImage ? (
         <>
           <Image
             src={src as string}
@@ -56,8 +50,9 @@ export default function ProductImage({
             sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
             className="object-contain p-3 transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.035] sm:p-4"
             onError={() => setFailed(true)}
+            unoptimized={src?.startsWith("http://")}
           />
-          {attribution && (
+          {attribution && permissionStatus === "approved" && (
             <span className="absolute inset-x-0 bottom-0 bg-ink/55 px-2 py-1 text-center text-[11px] font-medium text-paper">
               {attribution}
             </span>

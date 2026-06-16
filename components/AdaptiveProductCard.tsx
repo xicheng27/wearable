@@ -1,6 +1,7 @@
 import { AdaptiveProduct } from "@/data/adaptiveBrands";
 import PriceDisplay from "@/components/PriceDisplay";
 import ProductImage from "@/components/ProductImage";
+import OfficialProductLink from "@/components/OfficialProductLink";
 
 function sourceLevel(product: AdaptiveProduct) {
   const source = product.sourceNotes.toLowerCase();
@@ -125,14 +126,15 @@ export default function AdaptiveProductCard({
           </p>
         </div>
 
-        <a
+        <OfficialProductLink
           href={product.productUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-primary mt-5 w-full"
+          exact={level === "Product-level"}
+          className="link-underline mt-5 w-fit text-sm font-semibold text-primary-800"
         >
-          Open official source <span aria-hidden="true">&nearr;</span>
-        </a>
+          {level === "Product-level"
+            ? "View official product \u2192"
+            : "View official source \u2192"}
+        </OfficialProductLink>
       </div>
     </article>
   );

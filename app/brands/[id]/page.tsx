@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import LocationAwareProductGrid from "@/components/LocationAwareProductGrid";
+import Photo from "@/components/Photo";
 import { brands, getBrandById } from "@/data/brands";
 import { getProductsByBrand } from "@/data/products";
 
@@ -25,6 +26,10 @@ export default function BrandDetailPage({ params }: BrandPageProps) {
   const brand = getBrandById(params.id);
   if (!brand) notFound();
   const brandProducts = getProductsByBrand(brand.id);
+  const brandImage =
+    brand.image ||
+    brandProducts.find((product) => product.imageUrl)?.imageUrl ||
+    "";
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -43,19 +48,27 @@ export default function BrandDetailPage({ params }: BrandPageProps) {
             <span className="text-white">{brand.name}</span>
           </nav>
 
-          <div className="mt-8 flex items-start gap-5">
-            <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-2xl border border-white/30 bg-white/15 text-xl font-black shadow-lg">
-              {brand.logo}
+          <div className="mt-8 grid items-center gap-8 lg:grid-cols-[1fr_20rem]">
+            <div className="flex items-start gap-5">
+              <div className="flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-2xl border border-white/30 bg-white/15 text-xl font-black shadow-lg">
+                {brand.logo}
+              </div>
+              <div>
+                <p className="text-sm font-bold uppercase tracking-[0.16em] text-white/70">
+                  Adaptive brand
+                </p>
+                <h1 className="mt-2 text-4xl font-extrabold tracking-tight">
+                  {brand.name}
+                </h1>
+                <p className="mt-3 max-w-2xl text-lg text-white/90">{brand.tagline}</p>
+              </div>
             </div>
-            <div>
-              <p className="text-sm font-bold uppercase tracking-[0.16em] text-white/70">
-                Adaptive brand
-              </p>
-              <h1 className="mt-2 text-4xl font-extrabold tracking-tight">
-                {brand.name}
-              </h1>
-              <p className="mt-3 max-w-2xl text-lg text-white/90">{brand.tagline}</p>
-            </div>
+            <Photo
+              src={brandImage}
+              alt={`${brand.name} product reference image`}
+              className="hidden aspect-[4/3] rounded-[1.5rem_.6rem_1.5rem_1.5rem] border-8 border-white/20 bg-white/10 shadow-lift lg:block"
+              imgClassName="object-contain bg-paper p-4"
+            />
           </div>
         </div>
       </header>
