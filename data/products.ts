@@ -1,6 +1,7 @@
 import { Product, ProductSearchParams } from "@/types";
 import { brands } from "@/data/brands";
 import { verifiedProducts } from "@/data/verifiedProducts";
+import { GLOBAL, expandShippingRegions } from "@/lib/countries";
 
 const originalProducts: Product[] = [
   {
@@ -780,6 +781,34 @@ export function getProductsByCategory(slug: string): Product[] {
 
 export function getBrandName(brandId: string): string {
   return brands.find((brand) => brand.id === brandId)?.name ?? brandId;
+}
+
+// Countries a product ships to, derived from its availability data (with legacy
+// region labels like "EU" expanded into real countries) plus the home country of
+// Singapore-based brands, who can fulfil locally. Products with no shipping data
+// default to Global so nothing is hidden by missing data.
+export function getProductShipsTo(product: Product): string[] {
+  const declared = product.availability?.countries ?? [];
+  const expanded = expandShippingRegions(declared);
+  const brandCountry = brands.find((brand) => brand.id === product.brandId)?.country;
+  if (brandCountry === "Singapore" && !expanded.includes("Singapore")) {
+    expanded.push("Singapore");
+  }
+  return expanded.length > 0 ? expanded : [GLOBAL];
+}
+
+export function productShipsToCountry(product: Product, country: string): boolean {
+  if (!country || country === GLOBAL) return true;
+  const shipsTo = getProductShipsTo(product);
+  return shipsTo.includes(GLOBAL) || shipsTo.includes(country);
+}
+
+export function filterProductsByCountry(
+  productList: Product[],
+  country: string | null
+): Product[] {
+  if (!country || country === GLOBAL) return productList;
+  return productList.filter((product) => productShipsToCountry(product, country));
 }
 
 function matches(value: string, candidate: string) {

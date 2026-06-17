@@ -35,6 +35,9 @@ export default function Footer() {
         <div className="mt-14 flex flex-col gap-3 border-t border-paper/15 pt-7 text-xs text-paper/45 sm:flex-row sm:justify-between">
           <p>&copy; 2026 Xi&apos;s. Adaptive fashion discovery.</p>
           <p>Comfort, dignity, independence, style.</p>
+          <Link href="/disclaimer" className="underline-offset-2 hover:text-paper hover:underline">
+            Disclaimer
+          </Link>
         </div>
       </div>
     </footer>

@@ -5,16 +5,16 @@ import { useState } from "react";
 import type { PermissionStatus } from "@/data/imageMeta";
 
 /**
- * COPYRIGHT-SAFE IMAGE GATE
- * -------------------------
- * Product/brand photos are copyrighted. This component only renders a remote
- * image when `permissionStatus === "approved"` (i.e. we have written brand
- * permission, an affiliate/press licence, our own photo, or a stock licence).
- * Anything pending / needs-review / unset shows a clean first-party
- * placeholder instead — never a hot-linked brand image.
+ * PRODUCT/BRAND IMAGE
+ * -------------------
+ * Renders the product/brand photo whenever an image URL is available, falling
+ * back to a clean first-party placeholder only when there is no usable image
+ * (missing URL or the image fails to load). Brand and product names and images
+ * are used for identification purposes only — see /disclaimer.
  *
- * To display a real image: record the licence on the product and set
- * permissionStatus to "approved" with attributionText. See data/imageMeta.ts.
+ * The optional `permissionStatus`/`attribution` props are kept so licence
+ * metadata can still be recorded per product (see data/imageMeta.ts); they no
+ * longer suppress display.
  */
 
 interface ProductImageProps {
@@ -23,9 +23,8 @@ interface ProductImageProps {
   className?: string;
   priority?: boolean;
   fallbackLabel?: string;
-  /** Defaults to needs-review: nothing is shown until explicitly approved. */
   permissionStatus?: PermissionStatus;
-  /** Shown subtly over the image when an approved image is displayed. */
+  /** Shown subtly over the image, e.g. a source/credit line. */
   attribution?: string;
 }
 
@@ -34,12 +33,11 @@ export default function ProductImage({
   alt,
   className = "",
   priority = false,
-  fallbackLabel = "Image pending permission",
-  permissionStatus = "needs-review",
+  fallbackLabel = "Image coming soon",
   attribution,
 }: ProductImageProps) {
   const [failed, setFailed] = useState(false);
-  const cleared = permissionStatus === "approved" && !!src && !failed;
+  const cleared = !!src && !failed;
 
   return (
     <div

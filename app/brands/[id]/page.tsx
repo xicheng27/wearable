@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import ProductCard from "@/components/ProductCard";
+import ProductGrid from "@/components/ProductGrid";
 import { brands, getBrandById } from "@/data/brands";
 import { getProductsByBrand } from "@/data/products";
 
@@ -124,17 +124,10 @@ export default function BrandDetailPage({ params }: BrandPageProps) {
             </p>
           </div>
 
-          {brandProducts.length > 0 ? (
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {brandProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
-          ) : (
-            <div className="rounded-2xl border border-gray-100 bg-white p-8 text-gray-600">
-              Product listings for this brand are being added.
-            </div>
-          )}
+          <ProductGrid
+            products={brandProducts}
+            emptyMessage="Product listings for this brand are being added."
+          />
         </section>
 
         <section className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">

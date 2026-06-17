@@ -5,7 +5,9 @@ import { useSearchParams } from "next/navigation";
 import SearchBar from "@/components/SearchBar";
 import SearchFilters from "@/components/SearchFilters";
 import ProductCard from "@/components/ProductCard";
-import { searchProducts } from "@/data/products";
+import { searchProducts, filterProductsByCountry } from "@/data/products";
+import { useCountry } from "@/components/CountryProvider";
+import { GLOBAL } from "@/lib/countries";
 
 const filterLabels: Record<string, string> = {
   clothing: "Clothing",
@@ -25,11 +27,12 @@ const filterLabels: Record<string, string> = {
 
 export default function SearchResultsClient() {
   const searchParams = useSearchParams();
+  const { country, setCountry } = useCountry();
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [visibleCount, setVisibleCount] = useState(48);
 
   const query = searchParams.get("q") ?? "";
-  const results = searchProducts({
+  const matchedFilters = searchProducts({
     query: query || undefined,
     clothingType: searchParams.get("clothing") || undefined,
     brand: searchParams.get("brand") || undefined,
@@ -45,6 +48,9 @@ export default function SearchResultsClient() {
     seatedFit: searchParams.get("seated") === "true",
     oneHandedDressing: searchParams.get("oneHanded") === "true",
   });
+  const results = filterProductsByCountry(matchedFilters, country);
+  const hiddenByLocation =
+    results.length === 0 && matchedFilters.length > 0 && !!country && country !== GLOBAL;
 
   const activeFilters = Object.keys(filterLabels)
     .filter((key) => searchParams.has(key))
@@ -127,7 +133,23 @@ export default function SearchResultsClient() {
               </button>
             </div>
 
-            {results.length === 0 ? (
+            {results.length === 0 && hiddenByLocation ? (
+              <div className="rounded-2xl border border-gray-100 bg-white px-6 py-20 text-center">
+                <h2 className="text-xl font-bold text-gray-900">
+                  No products currently available for your location.
+                </h2>
+                <p className="mt-2 text-gray-500">
+                  These items don&apos;t list shipping to {country} yet.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setCountry(GLOBAL)}
+                  className="btn-primary mt-6 inline-block"
+                >
+                  View globally available items
+                </button>
+              </div>
+            ) : results.length === 0 ? (
               <div className="rounded-2xl border border-gray-100 bg-white px-6 py-20 text-center">
                 <h2 className="text-xl font-bold text-gray-900">No clothing items found</h2>
                 <p className="mt-2 text-gray-500">

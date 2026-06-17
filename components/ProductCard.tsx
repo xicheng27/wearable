@@ -1,11 +1,23 @@
+"use client";
+
 import Link from "next/link";
 import { Product } from "@/types";
-import { getBrandName } from "@/data/products";
+import { getBrandName, getProductShipsTo } from "@/data/products";
 import ProductImage from "@/components/ProductImage";
 import PriceDisplay from "@/components/PriceDisplay";
+import { useCountry } from "@/components/CountryProvider";
+import { GLOBAL } from "@/lib/countries";
 
 export default function ProductCard({ product }: { product: Product }) {
   const brandName = getBrandName(product.brandId);
+  const { country } = useCountry();
+  const shipsTo = getProductShipsTo(product);
+  const shipsGlobally = shipsTo.includes(GLOBAL);
+  const shippingLabel = shipsGlobally
+    ? "Available globally"
+    : country && country !== GLOBAL && shipsTo.includes(country)
+      ? `Ships to ${country}`
+      : `Ships to ${shipsTo[0]}`;
 
   return (
     <article className="group card card-hover flex h-full flex-col overflow-hidden rounded-[1.7rem_.7rem_1.7rem_1.7rem]">
@@ -95,7 +107,7 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
 
         <div className="mt-auto pt-5">
-          <div className="mb-3 flex items-center gap-2 text-xs text-ink/55">
+          <div className="mb-2 flex items-center gap-2 text-xs text-ink/55">
             <span
               className={`h-2 w-2 rounded-full ${
                 product.availability.online ? "bg-sage" : "bg-ink/20"
@@ -108,16 +120,19 @@ export default function ProductCard({ product }: { product: Product }) {
                 ? "Available online"
                 : "In-store availability"}
           </div>
-          <a
-            href={product.productUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary flex w-full px-4 py-2.5 text-center text-sm"
-          >
-            {product.linkType === "exact-product"
-              ? "View exact item"
-              : "View brand page"}
-          </a>
+          <p className="mb-3 text-xs font-semibold text-ink/45">{shippingLabel}</p>
+          {product.productUrl && (
+            <a
+              href={product.productUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary flex w-full px-4 py-2.5 text-center text-sm"
+            >
+              {product.linkType === "exact-product"
+                ? "View exact item"
+                : "View brand page"}
+            </a>
+          )}
           <Link
             href={`/products/${product.id}`}
             className="link-underline mx-auto mt-4 block w-fit text-center text-xs"

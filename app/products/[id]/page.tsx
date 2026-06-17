@@ -134,16 +134,18 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
               </div>
 
               <div className="mt-auto pt-8">
-                <a
-                  href={product.productUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary block w-full text-center"
-                >
-                  {product.linkType === "exact-product"
-                    ? "Shop this exact item"
-                    : "View brand page only"}
-                </a>
+                {product.productUrl && (
+                  <a
+                    href={product.productUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary block w-full text-center"
+                  >
+                    {product.linkType === "exact-product"
+                      ? "Shop this exact item"
+                      : "View brand page only"}
+                  </a>
+                )}
                 <Link
                   href={`/brands/${brand.id}`}
                   className="btn-outline mt-3 block w-full text-center"
