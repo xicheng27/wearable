@@ -689,10 +689,13 @@ export const clothingTypeOptions = [
   "Pants",
   "Jeans",
   "Shoes",
+  "Socks",
   "Underwear",
   "Dresses",
   "Jackets",
   "Formalwear",
+  "Nightwear",
+  "Shorts",
 ];
 
 export const disabilityNeedOptions = [
@@ -756,10 +759,13 @@ export const productCategories = [
   { slug: "pants", label: "Adaptive Pants", description: "Side-opening and seated-comfort trousers." },
   { slug: "jeans", label: "Wheelchair Jeans", description: "Denim designed around a seated body position." },
   { slug: "shoes", label: "Easy-Entry Shoes", description: "Hands-free, zip and AFO-friendly footwear." },
+  { slug: "socks", label: "Adaptive Socks", description: "Grip, seamless and sensory-conscious socks." },
   { slug: "underwear", label: "Adaptive Underwear", description: "Side-opening foundations for easier dressing." },
   { slug: "dresses", label: "Adaptive Dresses", description: "Front-opening and easier-fastening dresses." },
   { slug: "jackets", label: "Adaptive Jackets", description: "Outer layers shaped for reach, comfort and movement." },
   { slug: "formalwear", label: "Formal Adaptive Wear", description: "Polished pieces for work and special occasions." },
+  { slug: "nightwear", label: "Adaptive Nightwear", description: "Open-back and easy-dressing sleepwear." },
+  { slug: "shorts", label: "Adaptive Shorts", description: "Easy-on warm-weather pieces and seated-friendly shorts." },
 ];
 
 export function getProductById(id: string): Product | undefined {
