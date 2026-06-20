@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Brand } from "@/types";
+import { getProductsByBrand } from "@/data/products";
 import Photo from "./Photo";
 
 interface BrandCardProps {
@@ -7,12 +8,17 @@ interface BrandCardProps {
 }
 
 export default function BrandCard({ brand }: BrandCardProps) {
+  const brandImage =
+    brand.image ||
+    getProductsByBrand(brand.id).find((product) => product.imageUrl)?.imageUrl ||
+    "";
+
   return (
     <Link href={`/brands/${brand.id}`} className="group block h-full">
       <article className="card card-hover flex h-full flex-col overflow-hidden">
         <div className="relative h-32" aria-hidden="true">
           <Photo
-            src={brand.image}
+            src={brandImage}
             alt=""
             className="h-full w-full"
             imgClassName="transition-transform duration-500 group-hover:scale-[1.04]"

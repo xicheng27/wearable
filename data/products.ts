@@ -672,7 +672,17 @@ function mixProductsByBrand(items: Product[]) {
   return mixed;
 }
 
-export const products = mixProductsByBrand(combinedProducts);
+export const products = mixProductsByBrand(
+  combinedProducts.map((product) => ({
+    ...product,
+    shipsTo:
+      product.shipsTo?.length
+        ? product.shipsTo
+        : product.availability.countries?.length
+          ? product.availability.countries
+          : ["Global"],
+  }))
+);
 
 // Deterministic PRNG so a given seed always yields the same order. This keeps
 // server and client render output identical (no hydration mismatch) while still
@@ -768,10 +778,13 @@ export const clothingTypeOptions = [
   "Pants",
   "Jeans",
   "Shoes",
+  "Socks",
   "Underwear",
   "Dresses",
   "Jackets",
   "Formalwear",
+  "Nightwear",
+  "Shorts",
 ];
 
 export const disabilityNeedOptions = [
@@ -829,18 +842,19 @@ export const sizeOptions = [
 export const fitOptions = ["Women", "Men", "Unisex", "Kids"];
 export const budgetOptions = ["Under $50", "$50-$100", "$100-$150", "$150+"];
 export const availabilityOptions = ["Online", "In store"];
-export const locationOptions = ["USA", "Canada", "UK", "EU", "Australia"];
-
 export const productCategories = [
   { slug: "tops", label: "Adaptive Tops", description: "Soft, easy-on layers and sensory-friendly essentials." },
   { slug: "shirts", label: "Adaptive Shirts", description: "Magnetic, open-back and easy-fastening shirts." },
   { slug: "pants", label: "Adaptive Pants", description: "Side-opening and seated-comfort trousers." },
   { slug: "jeans", label: "Wheelchair Jeans", description: "Denim designed around a seated body position." },
   { slug: "shoes", label: "Easy-Entry Shoes", description: "Hands-free, zip and AFO-friendly footwear." },
+  { slug: "socks", label: "Adaptive Socks", description: "Grip, seamless and sensory-conscious socks." },
   { slug: "underwear", label: "Adaptive Underwear", description: "Side-opening foundations for easier dressing." },
   { slug: "dresses", label: "Adaptive Dresses", description: "Front-opening and easier-fastening dresses." },
   { slug: "jackets", label: "Adaptive Jackets", description: "Outer layers shaped for reach, comfort and movement." },
   { slug: "formalwear", label: "Formal Adaptive Wear", description: "Polished pieces for work and special occasions." },
+  { slug: "nightwear", label: "Adaptive Nightwear", description: "Open-back and easy-dressing sleepwear." },
+  { slug: "shorts", label: "Adaptive Shorts", description: "Easy-on warm-weather pieces and seated-friendly shorts." },
 ];
 
 export function getProductById(id: string): Product | undefined {

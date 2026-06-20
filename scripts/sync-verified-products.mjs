@@ -10,7 +10,6 @@ const feeds = [
     countries: ["Canada", "USA"],
     availability:
       "Official June Adaptive product page. Contact the brand for international delivery.",
-    quota: 40,
   },
   {
     brandId: "iz-adaptive",
@@ -20,7 +19,6 @@ const feeds = [
     currency: "CAD",
     countries: ["Canada", "USA", "UK", "EU", "Australia", "Worldwide"],
     availability: "Available online from IZ Adaptive with international shipping.",
-    quota: 35,
   },
   {
     brandId: "jam-the-label",
@@ -31,7 +29,6 @@ const feeds = [
     countries: ["Singapore", "Australia", "Worldwide"],
     availability:
       "Official JAM the Label product page. Singapore SGD storefront available.",
-    quota: 20,
   },
   {
     brandId: "will-and-well",
@@ -41,7 +38,6 @@ const feeds = [
     currency: "SGD",
     countries: ["Singapore"],
     availability: "Available from Singapore-based Will & Well.",
-    quota: 20,
   },
   {
     brandId: "magnaready",
@@ -51,7 +47,6 @@ const feeds = [
     currency: "USD",
     countries: ["USA", "Canada"],
     availability: "Available online from the official MagnaReady store.",
-    quota: 50,
   },
   {
     brandId: "billy-footwear",
@@ -62,7 +57,6 @@ const feeds = [
     countries: ["USA", "Canada", "Australia"],
     availability: "Available online from the official BILLY Footwear store.",
     excludedTags: ["zero_inventory"],
-    quota: 50,
   },
   {
     brandId: "no-limbits",
@@ -72,7 +66,6 @@ const feeds = [
     currency: "USD",
     countries: ["USA"],
     availability: "Available online from the official No Limbits store.",
-    quota: 28,
   },
   {
     brandId: "slick-chicks",
@@ -82,7 +75,42 @@ const feeds = [
     currency: "USD",
     countries: ["USA", "Canada", "Worldwide"],
     availability: "Available online from the official Slick Chicks store.",
-    quota: 19,
+  },
+  {
+    brandId: "silverts",
+    brandName: "Silvert's",
+    baseUrl: "https://www.silverts.com",
+    feedUrl: "https://www.silverts.com/products.json?limit=250",
+    currency: "USD",
+    countries: ["USA", "Canada", "Worldwide"],
+    availability: "Available online from the official Silvert's store.",
+  },
+  {
+    brandId: "joe-and-bella",
+    brandName: "Joe & Bella",
+    baseUrl: "https://joeandbella.com",
+    feedUrl: "https://joeandbella.com/products.json?limit=250",
+    currency: "USD",
+    countries: ["USA"],
+    availability: "Available online from the official Joe & Bella store.",
+  },
+  {
+    brandId: "the-able-label",
+    brandName: "The Able Label",
+    baseUrl: "https://www.theablelabel.com",
+    feedUrl: "https://www.theablelabel.com/products.json?limit=250",
+    currency: "GBP",
+    countries: ["UK", "EU", "Singapore", "Worldwide"],
+    availability: "Available online from the official The Able Label store.",
+  },
+  {
+    brandId: "buck-and-buck",
+    brandName: "Buck & Buck",
+    baseUrl: "https://www.buckandbuck.com",
+    feedUrl: "https://www.buckandbuck.com/products.json?limit=250",
+    currency: "USD",
+    countries: ["USA", "Canada"],
+    availability: "Available online from the official Buck & Buck store.",
   },
 ];
 
@@ -107,6 +135,14 @@ const excludedTerms = [
   "trucker cap",
   "bucket hat",
   "beanie",
+  "bundle",
+  "cover",
+  "protector",
+  "keyring",
+  "key ring",
+  "scarf",
+  "permit",
+  "blue badge",
 ];
 
 const excludedTypes = [
@@ -123,9 +159,25 @@ const excludedTypes = [
   "aids & accessories",
   "accessories",
   "hats",
+  "wellbeing",
+  "daily living aids",
+  "homeware",
 ];
 
 const MIN_IMAGE_EDGE = 800;
+
+function isWearableFashionProduct(product) {
+  const title = String(product.title ?? "").toLowerCase();
+  const type = String(product.product_type ?? "").toLowerCase();
+  const tags = Array.isArray(product.tags)
+    ? product.tags.join(" ").toLowerCase()
+    : String(product.tags ?? "").toLowerCase();
+  const value = `${title} ${type} ${tags}`;
+
+  return /\b(shoes?|boots?|slippers?|sneakers?|footwear|socks?|stockings?|underwear|briefs?|boxers?|pant(y|ies)|bras?|nightgown|pajamas?|pyjamas?|sleepwear|nightshirt|robe|dress(es)?|skirt|jumpsuit|overalls?|jeans?|denim|shorts?|pants?|trousers?|leggings?|sweatpants?|bottoms?|joggers?|jackets?|coats?|bomber|outerwear|cape|poncho|raincoat|shirts?|blouses?|polos?|tops?|tees?|t-shirts?|undershirts?|rash guard|swim|tankini|tank top|camisoles?|cami|sweaters?|hoodies?|jumpers?|pullovers?|sweatshirts?|cardigans?|shawl|muu muu|kaftan|gown|slip|sandal)\b/.test(
+    value
+  );
+}
 
 function selectProductImage(product) {
   const images = (product.images ?? []).filter(
@@ -146,6 +198,7 @@ const featureRules = [
   [/side access|side[- ]opening/i, "Side access"],
   [/seated|wheelchair|game changer|seamless back/i, "Seated fit"],
   [/easy[- ]on|easy[- ]dress|easy dressing|effortless dressing|self-dressing/i, "Easy dressing"],
+  [/adaptive|accessible clothing|assisted dressing/i, "Adaptive dressing"],
   [/snap closure|snap fasten/i, "Snap closures"],
   [/zip access|easy[- ]zip|front zip|zipper/i, "Zip access"],
   [/pull[- ]on|elastic waist|elasticated waist/i, "Pull-on waist"],
@@ -170,6 +223,8 @@ const featureRules = [
   [/lowered front|low front/i, "Lower front rise"],
   [/leakproof|incontinence/i, "Leak-resistant construction"],
   [/compression/i, "Gentle compression"],
+  [/easy touch|easytouch/i, "Easy-touch closure"],
+  [/assisted/i, "Assisted dressing design"],
 ];
 
 function cleanText(html = "") {
@@ -351,6 +406,7 @@ function productRecord(product, feed) {
       countries: feed.countries,
       note: feed.availability,
     },
+    shipsTo: feed.countries,
     sizes: sizesFor(product),
     genderFit: genderFit(fullText),
     sensoryFriendly:
@@ -363,26 +419,39 @@ function productRecord(product, feed) {
     featured: false,
     productUrl: `${feed.baseUrl}/products/${product.handle}`,
     linkType: "exact-product",
-    sourceVerifiedAt: "2026-06-14",
+    sourceVerifiedAt: "2026-06-18",
   };
+}
+
+async function fetchFeedProducts(feed) {
+  const products = [];
+  const pageSeparator = feed.feedUrl.includes("?") ? "&" : "?";
+  for (let page = 1; page <= 20; page += 1) {
+    const response = await fetch(`${feed.feedUrl}${pageSeparator}page=${page}`);
+    if (!response.ok) {
+      throw new Error(`${feed.brandName} feed failed: ${response.status}`);
+    }
+    const payload = await response.json();
+    const pageProducts = payload.products ?? [];
+    if (pageProducts.length === 0) break;
+    products.push(...pageProducts);
+  }
+  return products;
 }
 
 async function main() {
   const allProducts = [];
 
   for (const feed of feeds) {
-    const response = await fetch(feed.feedUrl);
-    if (!response.ok) {
-      throw new Error(`${feed.brandName} feed failed: ${response.status}`);
-    }
-    const payload = await response.json();
-    const candidates = payload.products
+    const feedProducts = await fetchFeedProducts(feed);
+    const candidates = feedProducts
       .filter((product) => {
         const title = product.title.toLowerCase();
         const type = String(product.product_type ?? "").toLowerCase();
         return (
           product.handle &&
           selectProductImage(product) &&
+          isWearableFashionProduct(product) &&
           !excludedTerms.some((term) => title.includes(term)) &&
           !excludedTypes.includes(type) &&
           !(feed.excludedTags ?? []).some((tag) =>
@@ -391,14 +460,11 @@ async function main() {
         );
       })
       .map((product) => productRecord(product, feed))
-      .filter(Boolean)
-      .slice(0, feed.quota);
+      .filter(Boolean);
 
-    if (candidates.length < feed.quota) {
-      console.warn(
-        `${feed.brandName}: requested ${feed.quota}, found ${candidates.length}`
-      );
-    }
+    console.log(
+      `${feed.brandName}: ${candidates.length} individual adaptive products from ${feedProducts.length} feed records`
+    );
     allProducts.push(...candidates);
   }
 
@@ -417,7 +483,7 @@ async function main() {
   );
   const missingImages = allProducts.filter((product) => !product.imageUrl);
   if (
-    allProducts.length < 225 ||
+    allProducts.length < 700 ||
     duplicateIds.length ||
     duplicateUrls.length ||
     missingPrices.length ||
@@ -433,7 +499,7 @@ async function main() {
 
   const output = `import { Product } from "@/types";
 
-// Generated from official brand product feeds on 2026-06-14.
+// Generated from official brand product feeds on 2026-06-18.
 // Run \`node scripts/sync-verified-products.mjs\` to refresh verified URLs,
 // images, prices and product availability.
 export const verifiedProducts: Product[] = ${JSON.stringify(allProducts, null, 2)};

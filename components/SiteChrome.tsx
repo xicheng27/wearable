@@ -13,7 +13,11 @@ export default function SiteChrome({
   const isQuiz = pathname === "/quiz";
 
   if (isQuiz) {
-    return <main className="h-dvh min-h-0 overflow-hidden">{children}</main>;
+    return (
+      <main className="h-[calc(100dvh-2.25rem)] min-h-0 overflow-hidden">
+        {children}
+      </main>
+    );
   }
 
   return (

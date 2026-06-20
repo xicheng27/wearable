@@ -2,11 +2,14 @@
 
 import { useMemo, useState } from "react";
 import AdaptiveProductCard from "@/components/AdaptiveProductCard";
+import CountryEmptyState from "@/components/CountryEmptyState";
+import { useCountry } from "@/components/CountryProvider";
 import {
   adaptiveBrands,
   adaptiveProducts,
   AdaptiveProduct,
 } from "@/data/adaptiveBrands";
+import { GLOBAL } from "@/lib/countries";
 
 type Filters = {
   brand: string;
@@ -119,6 +122,7 @@ function SelectFilter({
 export default function SingaporeCatalogue() {
   const [query, setQuery] = useState("");
   const [filters, setFilters] = useState<Filters>(emptyFilters);
+  const { country } = useCountry();
 
   const results = useMemo(
     () =>
@@ -168,6 +172,14 @@ export default function SingaporeCatalogue() {
 
   function updateFilter<Key extends keyof Filters>(key: Key, value: Filters[Key]) {
     setFilters((current) => ({ ...current, [key]: value }));
+  }
+
+  if (country && country !== GLOBAL && country !== "Singapore") {
+    return (
+      <main className="mx-auto min-h-[65vh] max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <CountryEmptyState />
+      </main>
+    );
   }
 
   return (

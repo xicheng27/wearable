@@ -9,11 +9,11 @@ import {
   clothingTypeOptions,
   disabilityNeedOptions,
   fitOptions,
-  locationOptions,
   products,
   sizeOptions,
   styleOptions,
 } from "@/data/products";
+import CountrySelector from "@/components/CountrySelector";
 
 interface FilterGroupProps {
   label: string;
@@ -124,7 +124,6 @@ export default function SearchFilters() {
     "size",
     "fit",
     "availability",
-    "location",
     "sensory",
     "seated",
     "oneHanded",
@@ -185,11 +184,12 @@ export default function SearchFilters() {
           paramKey="availability"
           options={availabilityOptions}
         />
-        <FilterGroup
-          label="Location"
-          paramKey="location"
-          options={locationOptions}
-        />
+        <div className="border-b border-gray-100 py-4">
+          <p className="mb-3 text-xs font-bold uppercase tracking-wider text-gray-900">
+            Shopping location
+          </p>
+          <CountrySelector className="w-full justify-between" />
+        </div>
 
         <div className="pt-4">
           <p className="mb-2 text-xs font-bold uppercase tracking-wider text-gray-900">
