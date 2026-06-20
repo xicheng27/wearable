@@ -24,31 +24,73 @@ type CountryContextValue = {
 const CountryContext = createContext<CountryContextValue | null>(null);
 const storageKey = "xis-shopping-country";
 
+// Some ICU region names differ from the labels in our country list; normalise
+// the common ones so detection still matches.
+const nameAliases: Record<string, string> = {
+  Czechia: "Czech Republic",
+  "Myanmar (Burma)": "Myanmar",
+  "Hong Kong SAR China": "Hong Kong",
+  "United States of America": "United States",
+};
+
 function regionName(code: string): string | null {
   try {
-    return new Intl.DisplayNames(["en"], { type: "region" }).of(code) ?? null;
+    const name = new Intl.DisplayNames(["en"], { type: "region" }).of(code);
+    if (!name) return null;
+    return nameAliases[name] ?? name;
   } catch {
     return null;
   }
 }
 
-// Best-effort country detection: IP geolocation first (most accurate for
-// "where are you shopping from"), then the browser locale's region. Returns a
-// country name that matches our list, or null so the picker can be shown.
-async function detectCountry(): Promise<string | null> {
+async function fetchCountryCode(
+  url: string,
+  pick: (data: Record<string, unknown>) => unknown
+): Promise<string | null> {
   try {
     const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 2500);
-    const res = await fetch("https://ipapi.co/json/", { signal: controller.signal });
+    const timer = setTimeout(() => controller.abort(), 1800);
+    const res = await fetch(url, { signal: controller.signal });
     clearTimeout(timer);
-    if (res.ok) {
-      const data = await res.json();
-      const code = data?.country_code || data?.country;
-      const name = code ? regionName(String(code)) : null;
+    if (!res.ok) return null;
+    const data = await res.json();
+    const code = pick(data);
+    return typeof code === "string" && code ? code : null;
+  } catch {
+    return null;
+  }
+}
+
+// Best-effort country detection. Tries several CORS-friendly IP geolocation
+// services in turn (each returns quickly or is skipped), then falls back to the
+// browser locale's region. Returns a country name that matches our list, or
+// null so the picker can be shown.
+async function detectCountry(): Promise<string | null> {
+  const providers: Array<() => Promise<string | null>> = [
+    () => fetchCountryCode("https://api.country.is/", (d) => d.country),
+    () =>
+      fetchCountryCode(
+        "https://ipwho.is/?fields=country_code",
+        (d) => d.country_code
+      ),
+    () =>
+      fetchCountryCode(
+        "https://get.geojs.io/v1/ip/country.json",
+        (d) => d.country
+      ),
+    () =>
+      fetchCountryCode(
+        "https://ipapi.co/json/",
+        (d) => d.country_code || d.country
+      ),
+  ];
+
+  for (const provider of providers) {
+    const code = await provider();
+    if (code) {
+      const name = regionName(code.toUpperCase());
       if (name && countries.includes(name)) return name;
     }
-  } catch {
-    // Ignore network/abort errors and fall through to locale detection.
   }
 
   try {
@@ -73,23 +115,25 @@ export default function CountryProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const { setCurrency } = useCurrency();
+  const { setCurrencyForCountry } = useCurrency();
   const [country, setCountryState] = useState<string | null>(null);
   const [hydrated, setHydrated] = useState(false);
   const [pickerOpen, setPickerOpen] = useState(false);
 
   // Sync the display currency to a country (skip "Global", which keeps the
   // current currency). Unknown countries fall back to USD as a neutral default.
-  const syncCurrency = (next: string) => {
+  const syncCurrency = (next: string, force: boolean) => {
     if (next === GLOBAL) return;
-    setCurrency(currencyForCountry(next) ?? "USD");
+    setCurrencyForCountry(currencyForCountry(next) ?? "USD", { force });
   };
 
   useEffect(() => {
     const stored = window.localStorage.getItem(storageKey);
     if (stored) {
-      // Returning visitor: keep their stored country and currency untouched.
+      // Returning visitor: keep their stored country, and make the currency
+      // follow it (unless they've manually overridden the currency).
       setCountryState(stored);
+      syncCurrency(stored, false);
       setHydrated(true);
       return;
     }
@@ -101,7 +145,7 @@ export default function CountryProvider({
       if (detected) {
         setCountryState(detected);
         window.localStorage.setItem(storageKey, detected);
-        syncCurrency(detected);
+        syncCurrency(detected, false);
       } else {
         setPickerOpen(true);
       }
@@ -117,7 +161,8 @@ export default function CountryProvider({
     setCountryState(next);
     window.localStorage.setItem(storageKey, next);
     setPickerOpen(false);
-    syncCurrency(next);
+    // Explicit country change drives the currency, overriding a manual choice.
+    syncCurrency(next, true);
   };
 
   const value = useMemo(
