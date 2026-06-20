@@ -1,10 +1,8 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import ProductCard from "@/components/ProductCard";
 import ProductImage from "@/components/ProductImage";
 import PriceDisplay from "@/components/PriceDisplay";
-import LocationAwareProductGrid from "@/components/LocationAwareProductGrid";
-import OfficialProductLink from "@/components/OfficialProductLink";
-import ProductLocationGate from "@/components/ProductLocationGate";
 import { getBrandById } from "@/data/brands";
 import {
   getProductById,
@@ -40,8 +38,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
   const similarItems = getSimilarProducts(product);
 
   return (
-    <ProductLocationGate product={product}>
-      <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50">
       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <nav className="mb-8 text-sm text-gray-500" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-primary-700">Home</Link>
@@ -137,15 +134,18 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
               </div>
 
               <div className="mt-auto pt-8">
-                <OfficialProductLink
-                  href={product.productUrl}
-                  exact={product.linkType === "exact-product"}
-                  className="btn-primary block w-full text-center"
-                >
-                  {product.linkType === "exact-product"
-                    ? "View official product"
-                    : "View official source"}
-                </OfficialProductLink>
+                {product.productUrl && (
+                  <a
+                    href={product.productUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary block w-full text-center"
+                  >
+                    {product.linkType === "exact-product"
+                      ? "Shop this exact item"
+                      : "View brand page only"}
+                  </a>
+                )}
                 <Link
                   href={`/brands/${brand.id}`}
                   className="btn-outline mt-3 block w-full text-center"
@@ -255,14 +255,14 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                 Browse all &rarr;
               </Link>
             </div>
-            <LocationAwareProductGrid
-              products={similarItems}
-              className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
-            />
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {similarItems.map((item) => (
+                <ProductCard key={item.id} product={item} />
+              ))}
+            </div>
           </section>
         )}
       </main>
-      </div>
-    </ProductLocationGate>
+    </div>
   );
 }

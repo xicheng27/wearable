@@ -3,15 +3,12 @@
 import Link from "next/link";
 import ProductImage from "@/components/ProductImage";
 import SearchBar from "@/components/SearchBar";
-import { getBrandName, products } from "@/data/products";
-import { useShoppingLocation } from "@/components/LocationProvider";
-import { filterProductsForCountry } from "@/lib/shipping";
+import { getBrandName, products, filterProductsByCountry } from "@/data/products";
+import { useCountry } from "@/components/CountryProvider";
 
 export default function HeroSection() {
-  const { selectedCountry, ready } = useShoppingLocation();
-  const availableProducts = ready
-    ? filterProductsForCountry(products, selectedCountry)
-    : products;
+  const { country } = useCountry();
+  const availableProducts = filterProductsByCountry(products, country);
   const featured = [
     availableProducts.find(
       (product) => product.id === "tommy-adaptive-magnetic-polo"

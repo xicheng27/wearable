@@ -1,53 +1,68 @@
-export const GLOBAL_LOCATION = "Global";
+export const GLOBAL = "Global";
 
-const countryCodes = `
-AD AE AF AG AI AL AM AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL
-BM BN BO BQ BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV
-CW CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD
-GE GF GG GH GI GL GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IM
-IN IO IQ IR IS IT JE JM JO JP KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK
-LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW
-MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR
-PS PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR SS
-ST SV SX SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY
-UZ VA VC VE VG VI VN VU WF WS XK YE YT ZA ZM ZW
-`
-  .trim()
-  .split(/\s+/);
+// Full ISO-style country list shown in the location picker. Kept as a flat,
+// alphabetically sorted list so it's easy to add/remove a country later.
+export const countries: string[] = [
+  "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Argentina", "Armenia",
+  "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados",
+  "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina",
+  "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia",
+  "Cameroon", "Canada", "Cape Verde", "Chad", "Chile", "China", "Colombia", "Comoros",
+  "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti",
+  "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Estonia",
+  "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia",
+  "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guyana", "Haiti",
+  "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq",
+  "Ireland", "Israel", "Italy", "Ivory Coast", "Jamaica", "Japan", "Jordan", "Kazakhstan",
+  "Kenya", "Kiribati", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho",
+  "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi",
+  "Malaysia", "Maldives", "Mali", "Malta", "Mauritania", "Mauritius", "Mexico",
+  "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar",
+  "Namibia", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria",
+  "North Korea", "North Macedonia", "Norway", "Oman", "Pakistan", "Panama",
+  "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar",
+  "Romania", "Russia", "Rwanda", "Samoa", "San Marino", "Saudi Arabia", "Senegal",
+  "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia",
+  "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain",
+  "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", "Taiwan",
+  "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga",
+  "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda",
+  "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay",
+  "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia",
+  "Zimbabwe",
+].sort();
 
-const displayNames = new Intl.DisplayNames(["en"], { type: "region" });
+export const europeanUnionCountries = [
+  "Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czech Republic", "Denmark",
+  "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Ireland", "Italy",
+  "Latvia", "Lithuania", "Luxembourg", "Malta", "Netherlands", "Poland", "Portugal",
+  "Romania", "Slovakia", "Slovenia", "Spain", "Sweden",
+];
 
-const preferredNames: Record<string, string> = {
-  BO: "Bolivia",
-  BN: "Brunei",
-  CD: "Democratic Republic of the Congo",
-  CG: "Republic of the Congo",
-  CI: "Cote d'Ivoire",
-  CZ: "Czechia",
-  FM: "Micronesia",
-  GB: "United Kingdom",
-  IR: "Iran",
-  KP: "North Korea",
-  KR: "South Korea",
-  LA: "Laos",
-  MD: "Moldova",
-  PS: "Palestine",
-  RU: "Russia",
-  SY: "Syria",
-  TW: "Taiwan",
-  TZ: "Tanzania",
-  US: "United States",
-  VA: "Vatican City",
-  VE: "Venezuela",
-  VN: "Vietnam",
-  XK: "Kosovo",
+// Legacy region labels used in existing product/availability data, mapped to the
+// real countries they cover. Add new entries here as catalogue data changes.
+export const regionAliases: Record<string, string[]> = {
+  USA: ["United States"],
+  UK: ["United Kingdom"],
+  EU: europeanUnionCountries,
+  Canada: ["Canada"],
+  Australia: ["Australia"],
+  Ireland: ["Ireland"],
 };
 
-export const countries = countryCodes
-  .map((code) => ({
-    code,
-    name: preferredNames[code] ?? displayNames.of(code) ?? code,
-  }))
-  .sort((a, b) => a.name.localeCompare(b.name));
-
-export const countryNames = countries.map((country) => country.name);
+export function expandShippingRegions(values: string[]): string[] {
+  const expanded = new Set<string>();
+  for (const value of values) {
+    if (value === GLOBAL) {
+      expanded.add(GLOBAL);
+      continue;
+    }
+    const alias = regionAliases[value];
+    if (alias) {
+      alias.forEach((country) => expanded.add(country));
+    } else {
+      expanded.add(value);
+    }
+  }
+  return Array.from(expanded);
+}

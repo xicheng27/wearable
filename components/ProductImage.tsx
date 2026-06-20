@@ -5,21 +5,26 @@ import { useState } from "react";
 import type { PermissionStatus } from "@/data/imageMeta";
 
 /**
- * Product image with graceful fallback.
+ * PRODUCT/BRAND IMAGE
+ * -------------------
+ * Renders the product/brand photo whenever an image URL is available, falling
+ * back to a clean first-party placeholder only when there is no usable image
+ * (missing URL or the image fails to load). Brand and product names and images
+ * are used for identification purposes only — see /disclaimer.
  *
- * Xi's displays product/brand images from the catalogue for identification,
- * accessibility reference, and shopping comparison. If a URL is unavailable or
- * fails to load, the component falls back to a quiet first-party placeholder.
+ * The optional `permissionStatus`/`attribution` props are kept so licence
+ * metadata can still be recorded per product (see data/imageMeta.ts); they no
+ * longer suppress display.
  */
+
 interface ProductImageProps {
   src: string | null;
   alt: string;
   className?: string;
   priority?: boolean;
   fallbackLabel?: string;
-  /** Optional provenance status for data review/admin notes. */
   permissionStatus?: PermissionStatus;
-  /** Shown subtly over the image only when an approved attribution is supplied. */
+  /** Shown subtly over the image, e.g. a source/credit line. */
   attribution?: string;
 }
 
@@ -28,18 +33,17 @@ export default function ProductImage({
   alt,
   className = "",
   priority = false,
-  fallbackLabel = "Image pending verification",
-  permissionStatus = "needs-review",
+  fallbackLabel = "Image coming soon",
   attribution,
 }: ProductImageProps) {
   const [failed, setFailed] = useState(false);
-  const hasImage = !!src && !failed;
+  const cleared = !!src && !failed;
 
   return (
     <div
       className={`fabric-texture relative overflow-hidden bg-gradient-to-br from-[#EEE4D3] via-paper to-lavender/60 ${className}`}
     >
-      {hasImage ? (
+      {cleared ? (
         <>
           <Image
             src={src as string}
@@ -50,9 +54,8 @@ export default function ProductImage({
             sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
             className="object-contain p-3 transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.035] sm:p-4"
             onError={() => setFailed(true)}
-            unoptimized={src?.startsWith("http://")}
           />
-          {attribution && permissionStatus === "approved" && (
+          {attribution && (
             <span className="absolute inset-x-0 bottom-0 bg-ink/55 px-2 py-1 text-center text-[11px] font-medium text-paper">
               {attribution}
             </span>

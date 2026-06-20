@@ -3,8 +3,8 @@
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
 import { Product } from "@/types";
-import { useShoppingLocation } from "@/components/LocationProvider";
-import { filterProductsForCountry } from "@/lib/shipping";
+import { filterProductsByCountry } from "@/data/products";
+import { useCountry } from "@/components/CountryProvider";
 
 interface ProductSectionProps {
   title: string;
@@ -21,11 +21,9 @@ export default function ProductSection({
   href,
   compact = false,
 }: ProductSectionProps) {
-  const { selectedCountry, ready } = useShoppingLocation();
-  const availableProducts = ready
-    ? filterProductsForCountry(products, selectedCountry)
-    : [];
-  if (!ready || availableProducts.length === 0) return null;
+  const { country } = useCountry();
+  const visibleProducts = filterProductsByCountry(products, country);
+  if (visibleProducts.length === 0) return null;
   const headingId = `${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-heading`;
 
   return (
@@ -51,7 +49,7 @@ export default function ProductSection({
         </div>
 
         <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4">
-          {availableProducts.slice(0, 4).map((product) => (
+          {visibleProducts.slice(0, 4).map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>

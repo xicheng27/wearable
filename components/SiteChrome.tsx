@@ -1,7 +1,6 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import DisclaimerNotice from "@/components/DisclaimerNotice";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
@@ -15,12 +14,9 @@ export default function SiteChrome({
 
   if (isQuiz) {
     return (
-      <>
-        <main className="h-[calc(100dvh-2.25rem)] min-h-0 overflow-hidden">
-          {children}
-        </main>
-        <DisclaimerNotice compact />
-      </>
+      <main className="h-[calc(100dvh-2.25rem)] min-h-0 overflow-hidden">
+        {children}
+      </main>
     );
   }
 

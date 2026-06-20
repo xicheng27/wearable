@@ -13,7 +13,7 @@ import {
   sizeOptions,
   styleOptions,
 } from "@/data/products";
-import LocationButton from "@/components/LocationButton";
+import CountrySelector from "@/components/CountrySelector";
 
 interface FilterGroupProps {
   label: string;
@@ -188,7 +188,7 @@ export default function SearchFilters() {
           <p className="mb-3 text-xs font-bold uppercase tracking-wider text-gray-900">
             Shopping location
           </p>
-          <LocationButton className="w-full justify-between" />
+          <CountrySelector className="w-full justify-between" />
         </div>
 
         <div className="pt-4">

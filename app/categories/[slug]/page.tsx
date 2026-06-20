@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import LocationAwareProductGrid from "@/components/LocationAwareProductGrid";
+import ProductGrid from "@/components/ProductGrid";
 import {
   getProductsByCategory,
   productCategories,
@@ -55,7 +55,11 @@ export default function CategoryPage({ params }: CategoryPageProps) {
       </header>
 
       <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <div className="mb-6 flex items-center justify-end gap-4">
+        <div className="mb-6 flex items-center justify-between gap-4">
+          <p className="text-sm text-gray-600">
+            <span className="font-bold text-gray-950">{categoryProducts.length}</span>{" "}
+            {categoryProducts.length === 1 ? "item" : "items"}
+          </p>
           <Link
             href={`/search?clothing=${encodeURIComponent(category.label.replace("Adaptive ", ""))}`}
             className="text-sm font-bold text-primary-700 hover:text-primary-800"
@@ -64,7 +68,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
           </Link>
         </div>
 
-        <LocationAwareProductGrid products={categoryProducts} showCount />
+        <ProductGrid products={categoryProducts} />
       </main>
     </div>
   );

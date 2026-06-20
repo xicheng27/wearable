@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
-import LocationEmptyState from "@/components/LocationEmptyState";
-import { useShoppingLocation } from "@/components/LocationProvider";
-import { productShipsTo } from "@/lib/shipping";
+import CountryEmptyState from "@/components/CountryEmptyState";
+import { productShipsToCountry } from "@/data/products";
+import { useCountry } from "@/components/CountryProvider";
+import { GLOBAL } from "@/lib/countries";
 import { Product } from "@/types";
 
 type Recommendation = {
@@ -12,21 +13,17 @@ type Recommendation = {
   reasons: string[];
 };
 
-export default function LocationAwareRecommendations({
+export default function RecommendationsGrid({
   recommendations,
 }: {
   recommendations: Recommendation[];
 }) {
-  const { selectedCountry, ready } = useShoppingLocation();
-  if (!ready) {
-    return <div className="h-64 animate-pulse rounded-2xl bg-white" />;
-  }
-
+  const { country } = useCountry();
   const available = recommendations.filter(({ product }) =>
-    productShipsTo(product, selectedCountry)
+    productShipsToCountry(product, country ?? GLOBAL)
   );
 
-  if (available.length === 0) return <LocationEmptyState />;
+  if (available.length === 0) return <CountryEmptyState />;
 
   return (
     <>
@@ -59,4 +56,3 @@ export default function LocationAwareRecommendations({
     </>
   );
 }
-

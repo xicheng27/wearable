@@ -3,10 +3,10 @@ import HeroSection from "@/components/HeroSection";
 import CategoryGrid from "@/components/CategoryGrid";
 import HowItWorks from "@/components/HowItWorks";
 import ProductSection from "@/components/ProductSection";
-import { products } from "@/data/products";
+import { products, diversifyProducts } from "@/data/products";
 
 export default function HomePage() {
-  const popular = products.filter((product) => product.featured);
+  const popular = diversifyProducts(products.filter((product) => product.featured));
   const shoes = products.filter((product) => product.category === "shoes");
   const seated = products.filter(
     (product) =>

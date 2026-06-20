@@ -1,4 +1,4 @@
-import LocationAwareRecommendations from "@/components/LocationAwareRecommendations";
+import RecommendationsGrid from "@/components/RecommendationsGrid";
 import { recommendProducts } from "@/data/products";
 
 interface QuizResultsPageProps {
@@ -140,7 +140,7 @@ export default function QuizResultsPage({
       </header>
 
       <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <LocationAwareRecommendations recommendations={visibleRecommendations} />
+        <RecommendationsGrid recommendations={visibleRecommendations} />
       </main>
     </div>
   );

@@ -1,14 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import SearchBar from "@/components/SearchBar";
 import SearchFilters from "@/components/SearchFilters";
 import ProductCard from "@/components/ProductCard";
-import { searchProducts } from "@/data/products";
-import { useShoppingLocation } from "@/components/LocationProvider";
-import { filterProductsForCountry } from "@/lib/shipping";
-import LocationEmptyState from "@/components/LocationEmptyState";
+import {
+  searchProducts,
+  filterProductsByCountry,
+  diversifyProducts,
+} from "@/data/products";
+import { useCountry } from "@/components/CountryProvider";
+import { GLOBAL } from "@/lib/countries";
 
 const filterLabels: Record<string, string> = {
   clothing: "Clothing",
@@ -20,6 +23,7 @@ const filterLabels: Record<string, string> = {
   size: "Size",
   fit: "Fit",
   availability: "Availability",
+  location: "Location",
   sensory: "Sensory-friendly",
   seated: "Seated fit",
   oneHanded: "One-handed dressing",
@@ -27,12 +31,14 @@ const filterLabels: Record<string, string> = {
 
 export default function SearchResultsClient() {
   const searchParams = useSearchParams();
+  const { country, setCountry } = useCountry();
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [visibleCount, setVisibleCount] = useState(48);
-  const { selectedCountry, ready } = useShoppingLocation();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   const query = searchParams.get("q") ?? "";
-  const unfilteredResults = searchProducts({
+  const matchedFilters = searchProducts({
     query: query || undefined,
     clothingType: searchParams.get("clothing") || undefined,
     brand: searchParams.get("brand") || undefined,
@@ -43,13 +49,14 @@ export default function SearchResultsClient() {
     size: searchParams.get("size") || undefined,
     genderFit: searchParams.get("fit") || undefined,
     availability: searchParams.get("availability") || undefined,
+    location: searchParams.get("location") || undefined,
     sensoryFriendly: searchParams.get("sensory") === "true",
     seatedFit: searchParams.get("seated") === "true",
     oneHandedDressing: searchParams.get("oneHanded") === "true",
   });
-  const results = ready
-    ? filterProductsForCountry(unfilteredResults, selectedCountry)
-    : [];
+  const countryFiltered = filterProductsByCountry(matchedFilters, country);
+  const hiddenByLocation =
+    countryFiltered.length === 0 && matchedFilters.length > 0 && !!country && country !== GLOBAL;
 
   const activeFilters = Object.keys(filterLabels)
     .filter((key) => searchParams.has(key))
@@ -60,6 +67,13 @@ export default function SearchResultsClient() {
           ? filterLabels[key]
           : `${filterLabels[key]}: ${searchParams.get(key)}`,
     }));
+
+  // With no search or filters applied, diversify the default grid (mixed brands
+  // and categories, rotated daily). Once the user filters or searches, keep the
+  // relevance ordering from searchProducts.
+  const isDefaultView = activeFilters.length === 0 && !query;
+  const results =
+    isDefaultView && mounted ? diversifyProducts(countryFiltered) : countryFiltered;
   const visibleResults = results.slice(0, visibleCount);
 
   function removeFilter(key: string) {
@@ -132,14 +146,32 @@ export default function SearchResultsClient() {
               </button>
             </div>
 
-            {!ready ? (
-              <div className="h-64 animate-pulse rounded-2xl bg-white" />
+            {results.length === 0 && hiddenByLocation ? (
+              <div className="rounded-2xl border border-gray-100 bg-white px-6 py-20 text-center">
+                <h2 className="text-xl font-bold text-gray-900">
+                  No products currently available for your location.
+                </h2>
+                <p className="mt-2 text-gray-500">
+                  These items don&apos;t list shipping to {country} yet.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setCountry(GLOBAL)}
+                  className="btn-primary mt-6 inline-block"
+                >
+                  View globally available items
+                </button>
+              </div>
             ) : results.length === 0 ? (
-              unfilteredResults.length > 0 ? (
-                <LocationEmptyState />
-              ) : (
-                <LocationEmptyState generic />
-              )
+              <div className="rounded-2xl border border-gray-100 bg-white px-6 py-20 text-center">
+                <h2 className="text-xl font-bold text-gray-900">No clothing items found</h2>
+                <p className="mt-2 text-gray-500">
+                  Try a broader phrase or remove one of the filters.
+                </p>
+                <a href="/search" className="btn-primary mt-6 inline-block">
+                  Clear all filters
+                </a>
+              </div>
             ) : (
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
                 {visibleResults.map((product) => (
