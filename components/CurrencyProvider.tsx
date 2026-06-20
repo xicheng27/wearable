@@ -44,7 +44,7 @@ export default function CurrencyProvider({
   useEffect(() => {
     let cancelled = false;
 
-    fetch("https://api.frankfurter.app/latest?from=EUR&to=USD,SGD,CAD,GBP")
+    fetch("https://api.frankfurter.app/latest?from=EUR&to=USD,SGD,CAD,GBP,AUD")
       .then((response) => {
         if (!response.ok) throw new Error("Currency rates unavailable");
         return response.json();

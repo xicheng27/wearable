@@ -1,11 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import SearchBar from "@/components/SearchBar";
 import SearchFilters from "@/components/SearchFilters";
 import ProductCard from "@/components/ProductCard";
-import { searchProducts, filterProductsByCountry } from "@/data/products";
+import {
+  searchProducts,
+  filterProductsByCountry,
+  diversifyProducts,
+} from "@/data/products";
 import { useCountry } from "@/components/CountryProvider";
 import { GLOBAL } from "@/lib/countries";
 
@@ -30,6 +34,8 @@ export default function SearchResultsClient() {
   const { country, setCountry } = useCountry();
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [visibleCount, setVisibleCount] = useState(48);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   const query = searchParams.get("q") ?? "";
   const matchedFilters = searchProducts({
@@ -48,9 +54,9 @@ export default function SearchResultsClient() {
     seatedFit: searchParams.get("seated") === "true",
     oneHandedDressing: searchParams.get("oneHanded") === "true",
   });
-  const results = filterProductsByCountry(matchedFilters, country);
+  const countryFiltered = filterProductsByCountry(matchedFilters, country);
   const hiddenByLocation =
-    results.length === 0 && matchedFilters.length > 0 && !!country && country !== GLOBAL;
+    countryFiltered.length === 0 && matchedFilters.length > 0 && !!country && country !== GLOBAL;
 
   const activeFilters = Object.keys(filterLabels)
     .filter((key) => searchParams.has(key))
@@ -61,6 +67,13 @@ export default function SearchResultsClient() {
           ? filterLabels[key]
           : `${filterLabels[key]}: ${searchParams.get(key)}`,
     }));
+
+  // With no search or filters applied, diversify the default grid (mixed brands
+  // and categories, rotated daily). Once the user filters or searches, keep the
+  // relevance ordering from searchProducts.
+  const isDefaultView = activeFilters.length === 0 && !query;
+  const results =
+    isDefaultView && mounted ? diversifyProducts(countryFiltered) : countryFiltered;
   const visibleResults = results.slice(0, visibleCount);
 
   function removeFilter(key: string) {

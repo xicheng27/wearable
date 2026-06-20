@@ -8,8 +8,11 @@ import {
 
 const labels: Record<DisplayCurrency, string> = {
   SGD: "SGD",
-  EUR: "EUR",
   USD: "USD",
+  EUR: "EUR",
+  GBP: "GBP",
+  CAD: "CAD",
+  AUD: "AUD",
 };
 
 export default function CurrencySelector({
