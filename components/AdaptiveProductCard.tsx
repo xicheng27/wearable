@@ -8,8 +8,10 @@ function sourceLevel(product: AdaptiveProduct) {
     return "Service";
   }
   if (
+    product.productType === "Collection" ||
     source.includes("category") ||
     source.includes("collection") ||
+    source.includes("brand-level") ||
     source.includes("initiative") ||
     source.includes("planned")
   ) {
