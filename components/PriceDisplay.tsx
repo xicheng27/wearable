@@ -54,8 +54,8 @@ export default function PriceDisplay({
         {prefix}
         {formatCurrency(converted, currency)}
       </span>
-      <span className="mt-0.5 text-[0.68rem] font-semibold leading-tight text-ink/50">
-        Estimated in {currency} · Exact source {exactSource}
+      <span className="mt-0.5 text-xs font-semibold leading-tight text-ink/60">
+        Estimated in {currency}. Exact source {exactSource}
       </span>
     </span>
   );

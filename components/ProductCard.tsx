@@ -9,6 +9,14 @@ import { useShoppingLocation } from "@/components/LocationProvider";
 import { productShippingLabel } from "@/lib/shipping";
 import OfficialProductLink from "@/components/OfficialProductLink";
 
+function plainBestFor(product: Product) {
+  const text = product.bestFor[0] || product.disabilityNeeds[0] || "adaptive dressing";
+  return text
+    .replace("Limited hand dexterity", "limited hand movement")
+    .replace("Full-time wheelchair users", "wheelchair users")
+    .replace("One-handed formal dressing", "one-handed dressing");
+}
+
 export default function ProductCard({ product }: { product: Product }) {
   const brandName = getBrandName(product.brandId);
   const { selectedCountry } = useShoppingLocation();
@@ -81,11 +89,11 @@ export default function ProductCard({ product }: { product: Product }) {
         </p>
 
         <div className="mt-4">
-          <p className="text-xs font-bold tracking-wide text-ink/45">
+          <p className="text-sm font-bold text-ink/55">
             Best for
           </p>
-          <p className="mt-1 text-sm leading-relaxed text-ink/75">
-            {product.bestFor.slice(0, 2).join(", ")}
+          <p className="mt-1 text-base leading-relaxed text-ink/78">
+            {plainBestFor(product)}
           </p>
         </div>
 
@@ -101,10 +109,10 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
 
         <div className="mt-auto pt-5">
-          <p className="mb-3 w-fit rounded-md bg-primary-50 px-2.5 py-1 text-xs font-semibold text-primary-800">
+          <p className="mb-3 w-fit rounded-md bg-primary-50 px-3 py-1.5 text-sm font-bold text-primary-900">
             {productShippingLabel(product, selectedCountry)}
           </p>
-          <div className="mb-3 flex items-center gap-2 text-xs text-ink/55">
+          <div className="mb-4 flex items-center gap-2 text-sm text-ink/60">
             <span
               className={`h-2 w-2 rounded-full ${
                 product.availability.online ? "bg-sage" : "bg-ink/20"
@@ -119,18 +127,18 @@ export default function ProductCard({ product }: { product: Product }) {
           </div>
           <Link
             href={`/products/${product.id}`}
-            className="btn-primary flex w-full px-4 py-2.5 text-center text-sm"
+            className="btn-primary flex w-full px-4 py-3.5 text-center text-base"
           >
             View details
           </Link>
           <OfficialProductLink
             href={product.productUrl}
             exact={product.linkType === "exact-product"}
-            className="link-underline mx-auto mt-4 block w-fit text-center text-xs font-semibold text-ink/60"
+            className="btn-secondary mt-3 flex w-full px-4 py-3 text-center text-sm"
           >
             {product.linkType === "exact-product"
-              ? "View official product \u2192"
-              : "View official source \u2192"}
+              ? "Buy / view official product"
+              : "View official source"}
           </OfficialProductLink>
         </div>
       </div>

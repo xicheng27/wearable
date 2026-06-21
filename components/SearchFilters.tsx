@@ -8,6 +8,7 @@ import {
   budgetOptions,
   clothingTypeOptions,
   disabilityNeedOptions,
+  dressingDifficultyOptions,
   fitOptions,
   products,
   sizeOptions,
@@ -43,10 +44,10 @@ function FilterGroup({
   }
 
   return (
-    <details className="border-b border-gray-100 py-4" open={open}>
-      <summary className="flex cursor-pointer list-none items-center justify-between text-xs font-bold uppercase tracking-wider text-gray-900">
+    <details className="border-b border-ink/10 py-4" open={open}>
+      <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-extrabold text-ink">
         {label}
-        <span className="text-lg font-normal text-gray-400" aria-hidden="true">
+        <span className="text-lg font-normal text-ink/40" aria-hidden="true">
           +
         </span>
       </summary>
@@ -55,18 +56,18 @@ function FilterGroup({
           const checked = current.toLowerCase() === option.toLowerCase();
           return (
             <li key={option}>
-              <label className="group flex cursor-pointer items-center gap-2.5">
+              <label className="group flex min-h-11 cursor-pointer items-center gap-3 rounded-xl px-2 py-1 hover:bg-sand/45">
                 <input
                   type="checkbox"
                   checked={checked}
                   onChange={() => toggle(option)}
-                  className="h-4 w-4 cursor-pointer rounded border-gray-300 text-primary-500 focus:ring-primary-400"
+                  className="h-5 w-5 cursor-pointer rounded border-ink/25 text-primary-600 focus:ring-primary-400"
                 />
                 <span
-                  className={`text-sm ${
+                  className={`text-base ${
                     checked
-                      ? "font-semibold text-primary-700"
-                      : "text-gray-700 group-hover:text-gray-950"
+                      ? "font-bold text-primary-800"
+                      : "text-ink/75 group-hover:text-ink"
                   }`}
                 >
                   {option}
@@ -99,13 +100,13 @@ function ToggleFilter({
   }
 
   return (
-    <label className="flex cursor-pointer items-center justify-between gap-4 py-2">
-      <span className="text-sm font-medium text-gray-700">{label}</span>
+    <label className="flex min-h-12 cursor-pointer items-center justify-between gap-4 rounded-xl px-2 py-2 hover:bg-sand/45">
+      <span className="text-base font-semibold text-ink/78">{label}</span>
       <input
         type="checkbox"
         checked={checked}
         onChange={toggle}
-        className="h-4 w-4 rounded border-gray-300 text-primary-500 focus:ring-primary-400"
+        className="h-5 w-5 rounded border-ink/25 text-primary-600 focus:ring-primary-400"
       />
     </label>
   );
@@ -124,9 +125,14 @@ export default function SearchFilters() {
     "size",
     "fit",
     "availability",
+    "difficulty",
     "sensory",
     "seated",
     "oneHanded",
+    "easyClosures",
+    "wheelchair",
+    "limitedDexterity",
+    "prosthetic",
   ];
   const hasFilters = filterKeys.some((key) => searchParams.has(key));
   const brandOptions = brands
@@ -143,13 +149,13 @@ export default function SearchFilters() {
   return (
     <aside className="w-full" aria-label="Product filters">
       <div className="flex items-center justify-between">
-        <h2 className="text-sm font-bold uppercase tracking-wider text-gray-900">
+        <h2 className="font-display text-2xl font-semibold text-ink">
           Filters
         </h2>
         {hasFilters && (
           <button
             onClick={clearAll}
-            className="text-xs font-semibold text-primary-700 underline underline-offset-2"
+            className="rounded-lg px-2 py-1 text-sm font-bold text-primary-800 underline underline-offset-2 hover:bg-primary-50"
           >
             Clear all
           </button>
@@ -175,6 +181,11 @@ export default function SearchFilters() {
           paramKey="feature"
           options={adaptiveFeatureOptions}
         />
+        <FilterGroup
+          label="Dressing difficulty"
+          paramKey="difficulty"
+          options={dressingDifficultyOptions}
+        />
         <FilterGroup label="Style" paramKey="style" options={styleOptions} />
         <FilterGroup label="Budget" paramKey="budget" options={budgetOptions} />
         <FilterGroup label="Size" paramKey="size" options={sizeOptions} />
@@ -184,20 +195,24 @@ export default function SearchFilters() {
           paramKey="availability"
           options={availabilityOptions}
         />
-        <div className="border-b border-gray-100 py-4">
-          <p className="mb-3 text-xs font-bold uppercase tracking-wider text-gray-900">
-            Shopping location
+        <div className="border-b border-ink/10 py-4">
+          <p className="mb-3 text-sm font-extrabold text-ink">
+            Location availability
           </p>
           <LocationButton className="w-full justify-between" />
         </div>
 
         <div className="pt-4">
-          <p className="mb-2 text-xs font-bold uppercase tracking-wider text-gray-900">
+          <p className="mb-2 text-sm font-extrabold text-ink">
             Quick needs
           </p>
-          <ToggleFilter label="Sensory-friendly" paramKey="sensory" />
-          <ToggleFilter label="Wheelchair seated-fit" paramKey="seated" />
+          <ToggleFilter label="Sensory-friendly fabric" paramKey="sensory" />
+          <ToggleFilter label="Seated fit" paramKey="seated" />
           <ToggleFilter label="One-handed dressing" paramKey="oneHanded" />
+          <ToggleFilter label="Velcro / easy closures" paramKey="easyClosures" />
+          <ToggleFilter label="Wheelchair users" paramKey="wheelchair" />
+          <ToggleFilter label="Arthritis / limited dexterity" paramKey="limitedDexterity" />
+          <ToggleFilter label="Prosthetic or AFO access" paramKey="prosthetic" />
         </div>
       </div>
     </aside>

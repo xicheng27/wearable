@@ -32,10 +32,34 @@ export default function HomePage() {
 
       <ProductSection
         title="Popular adaptive pieces"
-        description="A mixed edit of individual products people can compare by need, style and price."
+        description="Individual products you can compare by need, style, price and location."
         products={popular}
         href="/search"
       />
+
+      <section className="bg-ivory px-4 py-12 sm:px-6 lg:px-8" aria-labelledby="help-choosing-heading">
+        <div className="paper-panel mx-auto grid max-w-7xl gap-6 rounded-[2rem_.9rem_2rem_2rem] p-6 sm:p-8 lg:grid-cols-[1.4fr_.8fr] lg:items-center">
+          <div>
+            <p className="eyebrow">Need help choosing?</p>
+            <h2 id="help-choosing-heading" className="mt-2 font-display text-3xl font-semibold text-ink sm:text-4xl">
+              Answer a few simple questions.
+            </h2>
+            <p className="mt-3 max-w-2xl text-lg leading-8 text-ink/72">
+              If you are not sure what to search for, the guided flow can start
+              with country, clothing type, dressing difficulty, comfort needs
+              and budget.
+            </p>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+            <Link href="/quiz" className="btn-primary text-base">
+              Find clothing for me
+            </Link>
+            <Link href="/search" className="btn-secondary text-base">
+              Browse all clothing
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <CategoryGrid />
 

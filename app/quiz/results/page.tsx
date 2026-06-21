@@ -1,5 +1,6 @@
 import LocationAwareRecommendations from "@/components/LocationAwareRecommendations";
-import { recommendProducts } from "@/data/products";
+import { products } from "@/data/products";
+import { rankProductRecommendations } from "@/lib/recommendations";
 
 interface QuizResultsPageProps {
   searchParams: Record<string, string | string[] | undefined>;
@@ -46,12 +47,36 @@ function normalizeNeeds(searchParams: QuizResultsPageProps["searchParams"]) {
   if (fastenings.some((value) => value.toLowerCase().includes("zipper"))) {
     needs.push("Easy entry");
   }
+  needs.forEach((need) => {
+    const value = need.toLowerCase();
+    if (value.includes("easy shoes")) {
+      needs.push("Hands-free entry", "Wide opening", "Limited mobility");
+    }
+    if (value.includes("sensory")) {
+      needs.push("Sensory processing", "Skin sensitivity");
+    }
+    if (value.includes("wheelchair") || value.includes("seated")) {
+      needs.push("Wheelchair users", "Seated fit");
+    }
+    if (value.includes("arthritis")) {
+      needs.push("Arthritis", "Limited dexterity");
+    }
+    if (value.includes("prosthetic")) {
+      needs.push("Prosthetic users", "Orthotics and AFOs", "Limb differences");
+    }
+    if (value.includes("magnetic")) {
+      needs.push("Magnetic closures", "One-handed dressing");
+    }
+  });
 
   return Array.from(new Set(needs));
 }
 
 function normalizeBudget(value: string | string[] | undefined) {
   const budget = readList(value)[0] ?? "";
+  if (["Under $50", "$50-$100", "$100-$150", "$150+"].includes(budget)) {
+    return budget;
+  }
   if (budget.startsWith("$ Â·") || budget.toLowerCase().includes("budget")) {
     return "Under $50";
   }
@@ -64,6 +89,44 @@ function normalizeBudget(value: string | string[] | undefined) {
   return budget || undefined;
 }
 
+function inferClosureTypes(needs: string[]) {
+  const closures: string[] = [];
+  needs.forEach((need) => {
+    const value = need.toLowerCase();
+    if (value.includes("magnetic")) closures.push("Magnetic closures");
+    if (value.includes("zip") || value.includes("easy shoes")) closures.push("Zip access", "Hands-free entry");
+    if (value.includes("velcro") || value.includes("easy closure")) closures.push("Velcro / touch closures");
+    if (value.includes("snap")) closures.push("Snap closures");
+  });
+  return Array.from(new Set(closures));
+}
+
+function inferSensoryNeeds(needs: string[]) {
+  return needs.some((need) => /sensory|skin|autism|tag|seam/i.test(need))
+    ? ["Sensory-friendly", "Skin sensitivity"]
+    : [];
+}
+
+function inferMobilityNeeds(needs: string[]) {
+  const mobility: string[] = [];
+  needs.forEach((need) => {
+    const value = need.toLowerCase();
+    if (value.includes("wheelchair") || value.includes("seated")) {
+      mobility.push("Wheelchair-friendly", "Seated fit");
+    }
+    if (value.includes("one-handed") || value.includes("arthritis") || value.includes("dexterity")) {
+      mobility.push("One-handed dressing", "Limited dexterity");
+    }
+    if (value.includes("prosthetic") || value.includes("orthotic") || value.includes("afo")) {
+      mobility.push("Prosthetic-friendly", "Orthotics / AFOs");
+    }
+    if (value.includes("easy shoes") || value.includes("limited mobility")) {
+      mobility.push("Limited mobility");
+    }
+  });
+  return Array.from(new Set(mobility));
+}
+
 export default function QuizResultsPage({
   searchParams,
 }: QuizResultsPageProps) {
@@ -74,49 +137,79 @@ export default function QuizResultsPage({
   ];
   const budget = normalizeBudget(searchParams.budget);
   const clothing = readList(searchParams.clothing);
+  const availability = readList(searchParams.availability)[0] ?? "";
   const otherNeeds = readList(searchParams.otherNeeds).join(", ").slice(0, 500);
+  const country = readList(searchParams.location)[0];
+  const targetGroup = readList(searchParams.forWhom)[0];
+  const ageRange = readList(searchParams.ageRange)[0];
+  const personality = [
+    ...readList(searchParams.personality),
+    ...readList(searchParams.personalityType),
+  ];
 
-  const recommendations = recommendProducts({
-    needs,
-    styles,
-    budget,
+  const recommendations = rankProductRecommendations(products, {
+    targetGroup,
+    bodyNeeds: needs,
+    country,
+    stylePreference: styles,
+    ageRange,
+    personalityType: personality,
+    budgetRange: budget,
+    closureTypes: inferClosureTypes(needs),
+    sensoryNeeds: inferSensoryNeeds(needs),
+    mobilityNeeds: inferMobilityNeeds(needs),
+    clothingTypes: clothing.filter((item) => item !== "Not sure"),
+    availabilityPreference: availability,
     openEndedNeed: otherNeeds,
     limit: 9,
   }).filter(({ product }) => {
     if (clothing.length === 0) return true;
     return clothing.some((choice) => {
       const normalized = choice.toLowerCase();
+      if (normalized === "not sure") return true;
       return (
         product.clothingType.toLowerCase().includes(normalized.replace("adaptive ", "")) ||
         normalized.includes(product.clothingType.toLowerCase()) ||
         normalized.includes(product.category)
       );
     });
+  }).filter(({ product }) => {
+    if (availability.toLowerCase().includes("in-store")) {
+      return product.availability.inStore;
+    }
+    return true;
   });
 
   const visibleRecommendations =
     recommendations.length > 0
       ? recommendations
-      : recommendProducts({
-          needs,
-          styles,
-          budget,
+      : rankProductRecommendations(products, {
+          targetGroup,
+          bodyNeeds: needs,
+          country,
+          stylePreference: styles,
+          ageRange,
+          personalityType: personality,
+          budgetRange: budget,
+          closureTypes: inferClosureTypes(needs),
+          sensoryNeeds: inferSensoryNeeds(needs),
+          mobilityNeeds: inferMobilityNeeds(needs),
+          openEndedNeed: otherNeeds,
           limit: 9,
         });
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="border-b border-gray-100 bg-white py-12">
+    <div className="min-h-screen bg-ivory">
+      <header className="paper-texture border-b border-ink/10 bg-paper py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-primary-700">
-            Quiz complete
-          </p>
-          <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-gray-950">
+          <p className="eyebrow">Quiz complete</p>
+          <h1 className="mt-2 font-display text-4xl font-semibold tracking-[-0.03em] text-ink sm:text-5xl">
             Your recommended clothing pieces
           </h1>
-          <p className="mt-3 max-w-2xl text-lg text-gray-600">
-            Individual items are ranked by accessibility features, style and
-            budget. Brands are supporting information, not the starting point.
+          <p className="mt-3 max-w-2xl text-lg leading-8 text-ink/68">
+            Individual items are ranked by your needs, location, clothing type,
+            style, budget and dressing preferences. Brands are supporting
+            information, not the starting point.
           </p>
           <div className="mt-5 flex flex-wrap gap-2">
             {[...needs, ...styles, budget]

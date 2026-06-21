@@ -5,7 +5,7 @@ import DisclaimerNotice from "@/components/DisclaimerNotice";
 const groups = [
   ["Browse", [["All clothing", "/search"], ["Singapore guide", "/singapore"], ["Global map", "/map"], ["Adaptive shoes", "/categories/shoes"]]],
   ["Find by need", [["One-handed dressing", "/search?oneHanded=true"], ["Sensory-friendly", "/search?sensory=true"], ["Orthotics and AFOs", "/search?disability=Orthotics"], ["Find my match", "/quiz"]]],
-  ["Xi's", [["Our approach", "/"], ["Accessibility", "/"], ["Disclaimer", "/disclaimer"], ["Submit an item", "/"], ["Contact", "/"]]],
+  ["Xi's", [["Our approach", "/"], ["Accessibility", "/accessibility"], ["Disclaimer", "/disclaimer"], ["Submit an item", "/submit"], ["Contact", "/submit"]]],
 ];
 
 export default function Footer() {

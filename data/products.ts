@@ -722,6 +722,11 @@ export const adaptiveFeatureOptions = [
   "AFO friendly",
   "Hands-free entry",
   "Wide opening",
+  "Touch-and-close fastening",
+  "Velcro",
+  "Easy dressing",
+  "Zip access",
+  "Prosthetic access",
 ];
 
 export const styleOptions = [
@@ -753,6 +758,13 @@ export const sizeOptions = [
 export const fitOptions = ["Women", "Men", "Unisex", "Kids"];
 export const budgetOptions = ["Under $50", "$50-$100", "$100-$150", "$150+"];
 export const availabilityOptions = ["Online", "In store"];
+export const dressingDifficultyOptions = [
+  "Hard to use buttons",
+  "Hard to bend or reach feet",
+  "Need help from a caregiver",
+  "Need clothing that works while seated",
+  "Need room for braces or prosthetics",
+];
 export const productCategories = [
   { slug: "tops", label: "Adaptive Tops", description: "Soft, easy-on layers and sensory-friendly essentials." },
   { slug: "shirts", label: "Adaptive Shirts", description: "Magnetic, open-back and easy-fastening shirts." },
@@ -880,6 +892,55 @@ export function searchProducts(params: ProductSearchParams): Product[] {
     if (params.sensoryFriendly && !product.sensoryFriendly) return false;
     if (params.seatedFit && !product.seatedFit) return false;
     if (params.oneHandedDressing && !product.oneHandedDressing) return false;
+    if (
+      params.easyClosures &&
+      !product.adaptiveFeatures.some((feature) =>
+        /velcro|touch|magnetic|zip|snap|closure|fasten|easy dressing|easy entry/i.test(feature)
+      )
+    ) {
+      return false;
+    }
+    if (
+      params.wheelchairFriendly &&
+      !product.seatedFit &&
+      !product.disabilityNeeds.some((need) => /wheelchair|seated/i.test(need)) &&
+      !product.bestFor.some((need) => /wheelchair|seated/i.test(need))
+    ) {
+      return false;
+    }
+    if (
+      params.limitedDexterity &&
+      !product.oneHandedDressing &&
+      !product.disabilityNeeds.some((need) => /dexterity|arthritis|parkinson|tremor/i.test(need)) &&
+      !product.bestFor.some((need) => /dexterity|arthritis|parkinson|tremor/i.test(need))
+    ) {
+      return false;
+    }
+    if (
+      params.prostheticAccess &&
+      !product.adaptiveFeatures.some((feature) => /prosthetic|orthotic|afo|brace|wide opening/i.test(feature)) &&
+      !product.disabilityNeeds.some((need) => /prosthetic|orthotic|afo|limb|brace/i.test(need))
+    ) {
+      return false;
+    }
+    if (params.dressingDifficulty) {
+      const difficulty = params.dressingDifficulty.toLowerCase();
+      const productText = [
+        product.name,
+        product.description,
+        product.accessibilityExplanation,
+        ...product.adaptiveFeatures,
+        ...product.disabilityNeeds,
+        ...product.bestFor,
+      ].join(" ").toLowerCase();
+      const difficultyMatches =
+        (difficulty.includes("buttons") && /magnetic|velcro|touch|snap|closure|fasten/.test(productText)) ||
+        (difficulty.includes("bend") && /shoe|footwear|hands-free|wide opening|zip|slip/.test(productText)) ||
+        (difficulty.includes("caregiver") && /assisted|open-back|snap|side|easy dressing/.test(productText)) ||
+        (difficulty.includes("seated") && /seated|wheelchair/.test(productText)) ||
+        (difficulty.includes("braces") && /prosthetic|orthotic|afo|brace|wide opening/.test(productText));
+      if (!difficultyMatches) return false;
+    }
     return true;
   }).sort(
     (a, b) =>

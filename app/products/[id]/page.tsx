@@ -12,6 +12,19 @@ import {
   products,
 } from "@/data/products";
 
+function explainFeature(feature: string) {
+  const value = feature.toLowerCase();
+  if (value.includes("magnetic")) return "Magnets can reduce the need to line up and push small buttons.";
+  if (value.includes("seated")) return "The cut is designed to sit more comfortably while using a wheelchair or sitting for long periods.";
+  if (value.includes("open-back")) return "The back opening can make assisted dressing easier, especially while seated or lying down.";
+  if (value.includes("side")) return "Side openings can reduce bending, pulling, or stepping into clothing.";
+  if (value.includes("zip")) return "Zip access can make openings larger and easier to manage.";
+  if (value.includes("velcro") || value.includes("touch")) return "Touch-and-close fasteners can be easier than buttons for limited dexterity.";
+  if (value.includes("sensory") || value.includes("seam") || value.includes("tag")) return "Softer finishes may reduce scratching, rubbing, or sensory discomfort.";
+  if (value.includes("wide") || value.includes("afo") || value.includes("orthotic")) return "Extra room can help with braces, orthotics, swelling, or easier shoe entry.";
+  return "This feature is intended to make dressing, comfort, or access easier.";
+}
+
 interface ProductPageProps {
   params: { id: string };
 }
@@ -41,17 +54,17 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
 
   return (
     <ProductLocationGate product={product}>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-ivory">
       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <nav className="mb-8 text-sm text-gray-500" aria-label="Breadcrumb">
+        <nav className="mb-8 text-sm text-ink/55" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-primary-700">Home</Link>
           <span className="px-2" aria-hidden="true">/</span>
           <Link href="/search" className="hover:text-primary-700">Clothing</Link>
           <span className="px-2" aria-hidden="true">/</span>
-          <span className="text-gray-900">{product.name}</span>
+          <span className="text-ink">{product.name}</span>
         </nav>
 
-        <section className="overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-sm">
+        <section className="paper-panel overflow-hidden rounded-[2rem_.9rem_2rem_2rem]">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <ProductImage
               src={product.imageUrl}
@@ -65,14 +78,14 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
             <div className="flex flex-col p-6 sm:p-10">
               <Link
                 href={`/brands/${brand.id}`}
-                className="text-sm font-bold uppercase tracking-[0.16em] text-primary-700 hover:text-primary-800"
+                className="link-underline w-fit text-sm"
               >
                 {brand.name}
               </Link>
-              <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-gray-950 sm:text-4xl">
+              <h1 className="mt-3 font-display text-4xl font-semibold tracking-[-0.03em] text-ink sm:text-5xl">
                 {product.name}
               </h1>
-              <p className="mt-4 text-2xl font-extrabold text-gray-950">
+              <p className="mt-4 text-2xl font-extrabold text-ink">
                 <PriceDisplay
                   price={product.price}
                   sourceCurrency={product.currency}
@@ -80,40 +93,40 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                   prominent
                 />
               </p>
-              <p className="mt-5 text-lg leading-relaxed text-gray-600">
+              <p className="mt-5 text-lg leading-relaxed text-ink/68">
                 {product.description}
               </p>
 
-              <dl className="mt-8 grid grid-cols-2 gap-4 border-y border-gray-100 py-6 text-sm">
+              <dl className="mt-8 grid grid-cols-1 gap-4 border-y border-ink/10 py-6 text-sm sm:grid-cols-2">
                 <div>
-                  <dt className="font-bold uppercase tracking-wider text-gray-400">
+                  <dt className="font-bold text-ink/45">
                     Clothing type
                   </dt>
-                  <dd className="mt-1 font-semibold text-gray-900">
+                  <dd className="mt-1 text-base font-semibold text-ink">
                     {product.clothingType}
                   </dd>
                 </div>
                 <div>
-                  <dt className="font-bold uppercase tracking-wider text-gray-400">
+                  <dt className="font-bold text-ink/45">
                     Style
                   </dt>
-                  <dd className="mt-1 font-semibold text-gray-900">
+                  <dd className="mt-1 text-base font-semibold text-ink">
                     {product.styleTags.slice(0, 2).join(", ")}
                   </dd>
                 </div>
                 <div>
-                  <dt className="font-bold uppercase tracking-wider text-gray-400">
+                  <dt className="font-bold text-ink/45">
                     Fit
                   </dt>
-                  <dd className="mt-1 font-semibold text-gray-900">
+                  <dd className="mt-1 text-base font-semibold text-ink">
                     {product.genderFit.join(", ")}
                   </dd>
                 </div>
                 <div>
-                  <dt className="font-bold uppercase tracking-wider text-gray-400">
+                  <dt className="font-bold text-ink/45">
                     Availability
                   </dt>
-                  <dd className="mt-1 font-semibold text-gray-900">
+                  <dd className="mt-1 text-base font-semibold text-ink">
                     {product.availability.online && product.availability.inStore
                       ? "Online and in store"
                       : product.availability.online
@@ -124,12 +137,12 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
               </dl>
 
               <div className="mt-6">
-                <h2 className="text-xs font-bold uppercase tracking-wider text-gray-500">
-                  Best for
+                <h2 className="text-base font-bold text-ink">
+                  What this helps with
                 </h2>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {product.bestFor.map((item) => (
-                    <span key={item} className="badge bg-blue-50 text-blue-800">
+                    <span key={item} className="badge bg-primary-50 text-primary-900">
                       {item}
                     </span>
                   ))}
@@ -140,15 +153,15 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                 <OfficialProductLink
                   href={product.productUrl}
                   exact={product.linkType === "exact-product"}
-                  className="btn-primary block w-full text-center"
+                  className="btn-primary block w-full py-4 text-center text-base"
                 >
                   {product.linkType === "exact-product"
-                    ? "View official product"
+                    ? "Buy / view official product"
                     : "View official source"}
                 </OfficialProductLink>
                 <Link
                   href={`/brands/${brand.id}`}
-                  className="btn-outline mt-3 block w-full text-center"
+                  className="btn-outline mt-3 block w-full py-3.5 text-center text-base"
                 >
                   View brand
                 </Link>
@@ -165,13 +178,12 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                       : "Brand page only"}
                   </span>
                 </div>
-                <p className="mt-3 text-center text-xs leading-relaxed text-gray-500">
-                  The source price is exact at the time checked. Currency
-                  conversions are estimates; confirm current stock, price,
-                  sizing and delivery on the official website.
+                <p className="mt-3 text-center text-sm leading-relaxed text-ink/55">
+                  Stock, price, sizing, delivery and returns can change. Please
+                  check the official site before buying.
                 </p>
                 {product.sourceVerifiedAt && (
-                  <p className="mt-2 text-center text-xs font-semibold text-gray-500">
+                  <p className="mt-2 text-center text-sm font-semibold text-ink/60">
                     Official product data checked {product.sourceVerifiedAt}.
                   </p>
                 )}
@@ -181,59 +193,71 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
         </section>
 
         <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-3">
-          <section className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm lg:col-span-2">
-            <h2 className="text-xl font-bold text-gray-950">
-              Why this item is adaptive
+          <section className="paper-panel rounded-[1.5rem_.7rem_1.5rem_1.5rem] p-6 lg:col-span-2">
+            <h2 className="font-display text-3xl font-semibold text-ink">
+              Adaptive features explained
             </h2>
-            <p className="mt-4 leading-relaxed text-gray-700">
+            <p className="mt-4 leading-relaxed text-ink/70">
               {product.accessibilityExplanation}
             </p>
-            <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div className="mt-6 grid grid-cols-1 gap-3">
               {product.adaptiveFeatures.map((feature) => (
                 <div
                   key={feature}
-                  className="flex items-center gap-3 rounded-xl bg-primary-50 p-3 text-sm font-semibold text-primary-900"
+                  className="rounded-xl bg-primary-50 p-4 text-sm text-primary-950"
                 >
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary-500 text-white">
-                    &#10003;
-                  </span>
-                  {feature}
+                  <p className="font-bold">{feature}</p>
+                  <p className="mt-1 leading-6">{explainFeature(feature)}</p>
                 </div>
               ))}
             </div>
           </section>
 
-          <aside className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
-            <h2 className="text-xl font-bold text-gray-950">Fit and access</h2>
+          <aside className="paper-panel rounded-[1.5rem_.7rem_1.5rem_1.5rem] p-6">
+            <h2 className="font-display text-3xl font-semibold text-ink">
+              Fit and access
+            </h2>
             <dl className="mt-5 space-y-5 text-sm">
               <div>
-                <dt className="font-bold uppercase tracking-wider text-gray-400">
-                  Accessibility needs
+                <dt className="font-bold text-ink/45">
+                  Who it may suit
                 </dt>
-                <dd className="mt-2 text-gray-700">
+                <dd className="mt-2 leading-6 text-ink/72">
                   {product.disabilityNeeds.join(", ")}
                 </dd>
               </div>
               <div>
-                <dt className="font-bold uppercase tracking-wider text-gray-400">
-                  Sizes
+                <dt className="font-bold text-ink/45">
+                  Sizing information
                 </dt>
-                <dd className="mt-2 text-gray-700">{product.sizes.join(", ")}</dd>
+                <dd className="mt-2 leading-6 text-ink/72">
+                  {product.sizes.length > 0
+                    ? product.sizes.join(", ")
+                    : "Sizing was not listed in our current data. Check the official product page."}
+                </dd>
               </div>
               <div>
-                <dt className="font-bold uppercase tracking-wider text-gray-400">
-                  Where available
+                <dt className="font-bold text-ink/45">
+                  Location availability
                 </dt>
-                <dd className="mt-2 text-gray-700">
+                <dd className="mt-2 leading-6 text-ink/72">
                   {product.availability.note}
                 </dd>
               </div>
               <div>
-                <dt className="font-bold uppercase tracking-wider text-gray-400">
+                <dt className="font-bold text-ink/45">
                   Ships to
                 </dt>
-                <dd className="mt-2 text-gray-700">
+                <dd className="mt-2 leading-6 text-ink/72">
                   {product.availability.countries.join(", ")}
+                </dd>
+              </div>
+              <div>
+                <dt className="font-bold text-ink/45">
+                  Returns / source policy
+                </dt>
+                <dd className="mt-2 leading-6 text-ink/72">
+                  {brand.shipping.returnsPolicy || "Check the official retailer for current returns and exchange rules."}
                 </dd>
               </div>
             </dl>
@@ -244,10 +268,10 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
           <section className="mt-16" aria-labelledby="similar-heading">
             <div className="mb-8 flex items-end justify-between">
               <div>
-                <h2 id="similar-heading" className="text-3xl font-extrabold text-gray-950">
+                <h2 id="similar-heading" className="font-display text-4xl font-semibold text-ink">
                   Similar items from other brands
                 </h2>
-                <p className="mt-2 text-gray-600">
+                <p className="mt-2 text-ink/65">
                   Compare another approach to the same clothing or accessibility need.
                 </p>
               </div>

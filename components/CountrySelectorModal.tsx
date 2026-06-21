@@ -3,6 +3,15 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { countries, GLOBAL_LOCATION } from "@/lib/countries";
 
+const quickCountries = [
+  "Singapore",
+  "United States",
+  "United Kingdom",
+  "Canada",
+  "Australia",
+  GLOBAL_LOCATION,
+];
+
 export default function CountrySelectorModal({
   selectedCountry,
   onSelect,
@@ -14,6 +23,8 @@ export default function CountrySelectorModal({
 }) {
   const [query, setQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const previousFocusRef = useRef<HTMLElement | null>(null);
 
   const matches = useMemo(() => {
     const normalized = query.trim().toLowerCase();
@@ -26,16 +37,34 @@ export default function CountrySelectorModal({
   }, [query]);
 
   useEffect(() => {
+    previousFocusRef.current = document.activeElement as HTMLElement | null;
     inputRef.current?.focus();
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape" && onClose) onClose();
+      if (event.key !== "Tab") return;
+
+      const focusable = dialogRef.current?.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      );
+      if (!focusable || focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     };
     window.addEventListener("keydown", onKeyDown);
     return () => {
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", onKeyDown);
+      previousFocusRef.current?.focus?.();
     };
   }, [onClose]);
 
@@ -45,8 +74,12 @@ export default function CountrySelectorModal({
       role="dialog"
       aria-modal="true"
       aria-labelledby="country-selector-title"
+      aria-describedby="country-selector-description"
     >
-      <div className="paper-panel relative flex max-h-[min(42rem,calc(100dvh-2rem))] w-full max-w-xl flex-col overflow-hidden rounded-[2rem_.8rem_2rem_2rem] bg-ivory">
+      <div
+        ref={dialogRef}
+        className="paper-panel relative flex max-h-[min(44rem,calc(100dvh-2rem))] w-full max-w-xl flex-col overflow-hidden rounded-[2rem_.8rem_2rem_2rem] bg-ivory"
+      >
         {onClose && (
           <button
             type="button"
@@ -66,13 +99,38 @@ export default function CountrySelectorModal({
           >
             Where are you shopping from?
           </h2>
-          <p className="mt-3 max-w-md text-sm leading-6 text-ink/65">
+          <p
+            id="country-selector-description"
+            className="mt-3 max-w-md text-base leading-7 text-ink/70"
+          >
             We will show pieces available in or shipping to your country. You
-            can change this later from the navigation bar.
+            can change this later from the navigation bar or results page.
           </p>
 
-          <label className="mt-5 block">
-            <span className="sr-only">Search countries</span>
+          <div className="mt-5" aria-label="Common shopping locations">
+            <p className="mb-2 text-sm font-bold text-ink">Quick choices</p>
+            <div className="flex flex-wrap gap-2">
+              {quickCountries.map((country) => (
+                <button
+                  key={country}
+                  type="button"
+                  onClick={() => onSelect(country)}
+                  className={`rounded-xl border px-3.5 py-2.5 text-sm font-bold transition ${
+                    selectedCountry === country
+                      ? "border-primary-700 bg-primary-700 text-white"
+                      : "border-ink/15 bg-paper text-ink/75 hover:border-primary-400 hover:text-primary-800"
+                  }`}
+                >
+                  {country === GLOBAL_LOCATION ? "View global items" : country}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <label className="mt-5 block" htmlFor="country-search">
+            <span className="mb-2 block text-sm font-bold text-ink">
+              Search all countries
+            </span>
             <div className="flex items-center gap-3 rounded-xl border border-ink/15 bg-paper px-4 shadow-soft focus-within:border-primary-500">
               <svg
                 className="h-5 w-5 flex-none text-ink/40"
@@ -86,6 +144,7 @@ export default function CountrySelectorModal({
                 <path d="m20 20-3.5-3.5" />
               </svg>
               <input
+                id="country-search"
                 ref={inputRef}
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
@@ -98,19 +157,6 @@ export default function CountrySelectorModal({
               />
             </div>
           </label>
-
-          <button
-            type="button"
-            onClick={() => onSelect(GLOBAL_LOCATION)}
-            className={`mt-3 flex w-full items-center justify-between rounded-xl border px-4 py-3 text-left text-sm font-bold transition ${
-              selectedCountry === GLOBAL_LOCATION
-                ? "border-primary-600 bg-primary-50 text-primary-900"
-                : "border-ink/10 bg-lavender/35 text-ink hover:border-primary-300"
-            }`}
-          >
-            View globally available items
-            <span aria-hidden="true">&rarr;</span>
-          </button>
         </div>
 
         <div
@@ -137,7 +183,7 @@ export default function CountrySelectorModal({
             ))
           ) : (
             <p className="px-3 py-8 text-center text-sm text-ink/55">
-              No country matches “{query}”.
+              No country matches &quot;{query}&quot;.
             </p>
           )}
         </div>
