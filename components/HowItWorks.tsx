@@ -7,7 +7,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="overflow-hidden bg-paper py-24" aria-labelledby="how-heading">
+    <section id="how-it-works" className="overflow-hidden bg-paper py-24 scroll-mt-20" aria-labelledby="how-heading">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[.72fr_1.28fr]">
           <div className="lg:sticky lg:top-28 lg:self-start">

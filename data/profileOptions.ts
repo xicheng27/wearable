@@ -9,7 +9,7 @@ export const targetGroupOptions: { value: TargetGroup; label: string }[] = [
   },
   {
     value: "caregiver",
-    label: "Someone else — I'm a caregiver or family member",
+    label: "Someone else — a parent, child, friend or patient I support",
   },
 ];
 
