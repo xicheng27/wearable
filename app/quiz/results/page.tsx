@@ -1,6 +1,14 @@
+import Link from "next/link";
 import RecommendationsGrid from "@/components/RecommendationsGrid";
-import { products } from "@/data/products";
-import { rankProductRecommendations } from "@/lib/recommendations";
+import { expandShippingRegions } from "@/lib/countries";
+import { findNearbyStores } from "@/lib/mapProvider";
+import {
+  buildMatchSummary,
+  classifyAdaptiveProfiles,
+  recommendAdaptiveProducts,
+} from "@/lib/recommendationEngine";
+import { deriveCaregiverInvolvement, deriveDressingDifficulty, deriveMobilityLevel } from "@/lib/userProfile";
+import type { AgeRange, LifestyleSetting, TargetGroup } from "@/types";
 
 interface QuizResultsPageProps {
   searchParams: Record<string, string | string[] | undefined>;
@@ -9,7 +17,7 @@ interface QuizResultsPageProps {
 export const metadata = {
   title: "Your Adaptive Clothing Matches | Xi's",
   description:
-    "Individual adaptive clothing recommendations matched to accessibility needs, style and budget.",
+    "Individual adaptive clothing recommendations matched to accessibility needs, style, location and budget.",
 };
 
 function readList(value: string | string[] | undefined): string[] {
@@ -26,14 +34,12 @@ function readList(value: string | string[] | undefined): string[] {
     .filter(Boolean);
 }
 
-function normalizeNeeds(searchParams: QuizResultsPageProps["searchParams"]) {
-  const needs = [
-    ...readList(searchParams.need),
-    ...readList(searchParams.needs),
-  ];
-  const seated = readList(searchParams.seated);
-  const sensory = readList(searchParams.sensory);
-  const fastenings = readList(searchParams.fastenings);
+function readValue(value: string | string[] | undefined): string | undefined {
+  return readList(value)[0];
+}
+
+function normalizeNeeds(rawNeeds: string[], sensory: string[], fastenings: string[], seated: string[]) {
+  const needs = [...rawNeeds];
 
   if (seated.some((value) => value.toLowerCase().includes("yes"))) {
     needs.push("Wheelchair users", "Seated fit");
@@ -72,10 +78,13 @@ function normalizeNeeds(searchParams: QuizResultsPageProps["searchParams"]) {
   return Array.from(new Set(needs));
 }
 
-function normalizeBudget(value: string | string[] | undefined) {
-  const budget = readList(value)[0] ?? "";
+function normalizeBudget(value: string | undefined) {
+  const budget = value ?? "";
   if (["Under $50", "$50-$100", "$100-$150", "$150+"].includes(budget)) {
     return budget;
+  }
+  if (budget.startsWith("$ Â·") || budget.toLowerCase().includes("budget")) {
+    return "Under $50";
   }
   const lower = budget.toLowerCase();
   if (lower.includes("budget")) return "Under $50";
@@ -84,117 +93,77 @@ function normalizeBudget(value: string | string[] | undefined) {
   return budget && !lower.includes("no limit") ? budget : undefined;
 }
 
-function inferClosureTypes(needs: string[], fastenings: string[]) {
-  const closures: string[] = [];
-  [...needs, ...fastenings].forEach((need) => {
-    const value = need.toLowerCase();
-    if (value.includes("magnetic")) closures.push("Magnetic closures");
-    if (value.includes("zip") || value.includes("easy shoes")) closures.push("Zip access", "Hands-free entry");
-    if (value.includes("velcro") || value.includes("easy closure")) closures.push("Velcro / touch closures");
-    if (value.includes("snap")) closures.push("Snap closures");
-    if (value.includes("slip-on") || value.includes("no fastenings")) closures.push("Pull-on", "Hands-free entry");
-  });
-  return Array.from(new Set(closures));
-}
+const LIFESTYLE_LABELS: Record<LifestyleSetting, string> = {
+  school: "School",
+  work: "Work",
+  home: "Mostly at home",
+  outdoor: "Outdoor activities",
+  "formal-event": "Formal events",
+  "daily-wear": "Everyday, daily wear",
+};
 
-function inferSensoryNeeds(needs: string[], sensory: string[]) {
-  return [...needs, ...sensory].some((need) => /sensory|skin|autism|tag|seam|soft|fabric/i.test(need))
-    ? ["Sensory-friendly", "Skin sensitivity"]
-    : [];
-}
-
-function inferMobilityNeeds(needs: string[]) {
-  const mobility: string[] = [];
-  needs.forEach((need) => {
-    const value = need.toLowerCase();
-    if (value.includes("wheelchair") || value.includes("seated")) {
-      mobility.push("Wheelchair-friendly", "Seated fit");
-    }
-    if (value.includes("one-handed") || value.includes("arthritis") || value.includes("dexterity")) {
-      mobility.push("One-handed dressing", "Limited dexterity");
-    }
-    if (value.includes("prosthetic") || value.includes("orthotic") || value.includes("afo")) {
-      mobility.push("Prosthetic-friendly", "Orthotics / AFOs");
-    }
-    if (value.includes("easy shoes") || value.includes("limited mobility")) {
-      mobility.push("Limited mobility");
-    }
-  });
-  return Array.from(new Set(mobility));
-}
-
-export default function QuizResultsPage({
-  searchParams,
-}: QuizResultsPageProps) {
-  const needs = normalizeNeeds(searchParams);
+export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) {
+  const rawNeeds = readList(searchParams.needs);
   const sensory = readList(searchParams.sensory);
   const fastenings = readList(searchParams.fastenings);
-  const styles = [
-    ...readList(searchParams.style),
-    ...readList(searchParams.styles),
-  ];
-  const budget = normalizeBudget(searchParams.budget);
+  const seated = readList(searchParams.seated);
+  const needs = normalizeNeeds(rawNeeds, sensory, fastenings, seated);
+  const styles = [...readList(searchParams.style), ...readList(searchParams.styles)];
+  const budget = normalizeBudget(readValue(searchParams.budget));
   const clothing = readList(searchParams.clothing);
   const availability = readList(searchParams.availability)[0] ?? "";
   const otherNeeds = readList(searchParams.otherNeeds).join(", ").slice(0, 500);
-  const country = readList(searchParams.location)[0];
-  const targetGroup = readList(searchParams.targetGroup)[0] || readList(searchParams.forWhom)[0];
-  const ageRange = readList(searchParams.ageRange)[0];
-  const personality = [
-    ...readList(searchParams.personality),
-    ...readList(searchParams.personalityType),
-  ];
+  const location = readValue(searchParams.location);
+  const targetGroup = (readValue(searchParams.targetGroup) ?? readValue(searchParams.forWhom)) as
+    | TargetGroup
+    | undefined;
+  const ageRange = readValue(searchParams.ageRange) as AgeRange | undefined;
+  const lifestyleSetting = readValue(searchParams.lifestyleSetting) as LifestyleSetting | undefined;
+  const fabricComfortNeeds = sensory.filter((value) => /soft|lightweight|breathable|flat seams/i.test(value));
 
-  const recommendations = rankProductRecommendations(products, {
+  const input = {
     targetGroup,
-    bodyNeeds: needs,
-    country,
-    stylePreference: styles,
     ageRange,
-    personalityType: personality,
-    budgetRange: budget,
-    closureTypes: inferClosureTypes(needs, fastenings),
-    sensoryNeeds: inferSensoryNeeds(needs, sensory),
-    mobilityNeeds: inferMobilityNeeds(needs),
-    clothingTypes: clothing.filter((item) => item !== "Not sure"),
-    availabilityPreference: availability,
+    needs,
+    styles,
+    budget,
     openEndedNeed: otherNeeds,
+    location,
+    mobilityLevel: deriveMobilityLevel(rawNeeds),
+    dressingDifficulty: deriveDressingDifficulty(rawNeeds, fastenings),
+    sensoryNeeds: sensory,
+    closurePreference: fastenings,
+    fabricComfortNeeds,
+    lifestyleSetting,
+    caregiverInvolvement: deriveCaregiverInvolvement(targetGroup),
+    clothingTypes: clothing.filter((item) => item !== "Not sure"),
     limit: 9,
-  }).filter(({ product }) => {
-    if (clothing.length === 0) return true;
-    return clothing.some((choice) => {
-      const normalized = choice.toLowerCase();
-      if (normalized === "not sure") return true;
-      return (
-        product.clothingType.toLowerCase().includes(normalized.replace("adaptive ", "")) ||
-        normalized.includes(product.clothingType.toLowerCase()) ||
-        normalized.includes(product.category)
-      );
-    });
-  }).filter(({ product }) => {
-    if (availability.toLowerCase().includes("in-store")) {
-      return product.availability.inStore;
-    }
-    return true;
-  });
+  };
 
-  const visibleRecommendations =
-    recommendations.length > 0
-      ? recommendations
-      : rankProductRecommendations(products, {
-          targetGroup,
-          bodyNeeds: needs,
-          country,
-          stylePreference: styles,
-          ageRange,
-          personalityType: personality,
-          budgetRange: budget,
-          closureTypes: inferClosureTypes(needs, fastenings),
-          sensoryNeeds: inferSensoryNeeds(needs, sensory),
-          mobilityNeeds: inferMobilityNeeds(needs),
-          openEndedNeed: otherNeeds,
-          limit: 9,
-        });
+  const profiles = classifyAdaptiveProfiles(input);
+  const summary = buildMatchSummary(input);
+  const allResults = recommendAdaptiveProducts(input);
+  const clothingFiltered = clothing.length
+    ? allResults.filter(({ product }) =>
+        clothing.some((choice) => {
+          const normalized = choice.toLowerCase();
+          return (
+            product.clothingType.toLowerCase().includes(normalized.replace("adaptive ", "")) ||
+            normalized.includes(product.clothingType.toLowerCase()) ||
+            normalized.includes(product.category)
+          );
+        })
+      )
+    : allResults;
+  const availabilityFiltered = availability.toLowerCase().includes("in-store")
+    ? clothingFiltered.filter(({ product }) => product.availability.inStore)
+    : clothingFiltered;
+  const visibleResults = availabilityFiltered.length > 0 ? availabilityFiltered : allResults;
+
+  const nearbyCountries = location
+    ? Array.from(new Set([location, ...expandShippingRegions([location])]))
+    : [];
+  const nearbyStores = location ? findNearbyStores({ countries: nearbyCountries }) : null;
 
   return (
     <div className="min-h-screen bg-ivory">
@@ -204,13 +173,41 @@ export default function QuizResultsPage({
           <h1 className="mt-2 font-display text-4xl font-semibold tracking-[-0.03em] text-ink sm:text-5xl">
             Your recommended clothing pieces
           </h1>
+
+          {profiles.length > 0 && (
+            <div className="mt-6 max-w-3xl rounded-2xl border border-primary-100 bg-primary-50/60 px-5 py-4">
+              <p className="text-sm font-bold text-primary-800">
+                Step 1 · We understand your needs
+              </p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {profiles.map((profile) => (
+                  <span
+                    key={profile.id}
+                    title={profile.description}
+                    className="badge bg-white text-primary-800"
+                  >
+                    {profile.label}
+                  </span>
+                ))}
+              </div>
+              <p className="mt-3 text-sm font-bold text-primary-800">
+                Step 2 · Narrowing down suitable adaptive clothing
+              </p>
+              <p className="mt-1 text-sm text-primary-950">{summary}</p>
+              <p className="mt-2 text-xs text-primary-700/80">
+                This groups your self-selected answers into shopping categories only — it is not a
+                medical assessment or diagnosis.
+              </p>
+            </div>
+          )}
+
           <p className="mt-3 max-w-2xl text-lg leading-8 text-ink/68">
             Individual items are ranked by your needs, location, clothing type,
             style, budget and dressing preferences. Brands are supporting
             information, not the starting point.
           </p>
           <div className="mt-5 flex flex-wrap gap-2">
-            {[...needs, ...styles, budget]
+            {[...needs, ...styles, budget, lifestyleSetting && LIFESTYLE_LABELS[lifestyleSetting]]
               .filter(Boolean)
               .slice(0, 10)
               .map((item) => (
@@ -227,11 +224,25 @@ export default function QuizResultsPage({
               <p className="mt-1 text-sm leading-6 text-ink/70">{otherNeeds}</p>
             </div>
           )}
+          {nearbyStores && nearbyStores.places.length > 0 && (
+            <div className="mt-4 max-w-3xl rounded-2xl border border-gray-200 bg-white px-5 py-4">
+              <p className="text-sm font-semibold text-gray-700">
+                {nearbyStores.places.length} demo stockist
+                {nearbyStores.places.length === 1 ? "" : "s"} mapped near {location}
+              </p>
+              <p className="mt-1 text-xs text-gray-500">
+                Sample locations from our directory — not a live store locator yet.{" "}
+                <Link href="/map" className="font-semibold text-primary-700 underline">
+                  See the map
+                </Link>
+              </p>
+            </div>
+          )}
         </div>
       </header>
 
       <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <RecommendationsGrid recommendations={visibleRecommendations} />
+        <RecommendationsGrid recommendations={visibleResults} />
       </main>
     </div>
   );

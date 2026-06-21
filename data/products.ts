@@ -925,11 +925,11 @@ export function filterProductsByCountry(
   return productList.filter((product) => productShipsToCountry(product, country));
 }
 
-function matches(value: string, candidate: string) {
+export function matches(value: string, candidate: string) {
   return value.toLowerCase().includes(candidate.toLowerCase());
 }
 
-function budgetMatches(priceRange: string, budget: string) {
+export function budgetMatches(priceRange: string, budget: string) {
   if (budget === "Under $50") return priceRange === "$25-$50";
   if (budget === "$50-$100") return ["$25-$50", "$50-$100"].includes(priceRange);
   if (budget === "$100-$150") return ["$75-$125", "$100-$150"].includes(priceRange);

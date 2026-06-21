@@ -13,12 +13,15 @@ import {
 import { quizClothingOptions } from "@/data/categories";
 import {
   ageRangeOptions,
+  lifestyleSettingOptions,
   personalityOptions,
   targetGroupOptions,
 } from "@/data/profileOptions";
 import { useUserProfile } from "@/components/UserProfileProvider";
 import {
   deriveBudgetRange,
+  deriveCaregiverInvolvement,
+  deriveDressingDifficulty,
   deriveMobilityLevel,
   shippingLocationCurrency,
 } from "@/lib/userProfile";
@@ -81,6 +84,7 @@ const steps: StepDef[] = [
       "Soft, tag-free fabrics",
       "Flat seams",
       "Loose, non-restrictive fits",
+      "Lightweight, breathable fabrics",
       "No sensory preferences",
     ],
   },
@@ -103,6 +107,13 @@ const steps: StepDef[] = [
     subtitle: "Choose one or more clothing pieces.",
     type: "multi",
     options: quizClothingOptions.map((option) => option.label),
+  },
+  {
+    id: "lifestyleSetting",
+    title: "Where will you wear this most?",
+    subtitle: "This helps us weigh practicality alongside style.",
+    type: "single",
+    options: lifestyleSettingOptions.map((option) => option.label),
   },
   {
     id: "style",
@@ -236,6 +247,9 @@ export default function QuizClient() {
         (option) => option.label === answers.ageRange?.[0]
       )?.value;
       const location = answers.location?.[0];
+      const lifestyleSetting = lifestyleSettingOptions.find(
+        (option) => option.label === answers.lifestyleSetting?.[0]
+      )?.value;
 
       if (location) setCountry(location);
 
@@ -247,9 +261,15 @@ export default function QuizClient() {
         stylePreference: answers.style,
         personalityType: answers.personality?.[0],
         bodyNeeds: answers.needs,
-        dressingDifficulty: answers.fastenings,
+        closurePreference: answers.fastenings,
+        dressingDifficulty: deriveDressingDifficulty(answers.needs ?? [], answers.fastenings ?? []),
         mobilityLevel: deriveMobilityLevel(answers.needs ?? []),
         sensoryNeeds: answers.sensory,
+        fabricComfortNeeds: (answers.sensory ?? []).filter((value) =>
+          /soft|lightweight|breathable|flat seams/i.test(value)
+        ),
+        lifestyleSetting,
+        caregiverInvolvement: deriveCaregiverInvolvement(targetGroup),
         budgetRange: deriveBudgetRange(answers.budget?.[0] ?? ""),
       });
 
@@ -271,6 +291,7 @@ export default function QuizClient() {
       if (targetGroup) params.set("targetGroup", targetGroup);
       if (ageRange) params.set("ageRange", ageRange);
       if (answers.personality?.[0]) params.set("personality", answers.personality[0]);
+      if (lifestyleSetting) params.set("lifestyleSetting", lifestyleSetting);
       router.push(`/quiz/results?${params.toString()}`);
     } else {
       setStep((currentStep) => currentStep + 1);
