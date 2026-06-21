@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import SearchBar from "@/components/SearchBar";
 import SearchFilters from "@/components/SearchFilters";
 import ProductCard from "@/components/ProductCard";
+import CountrySelector from "@/components/CountrySelector";
 import {
   searchProducts,
   filterProductsByCountry,
@@ -24,9 +25,14 @@ const filterLabels: Record<string, string> = {
   fit: "Fit",
   availability: "Availability",
   location: "Location",
+  difficulty: "Dressing difficulty",
   sensory: "Sensory-friendly",
   seated: "Seated fit",
   oneHanded: "One-handed dressing",
+  easyClosures: "Easy closures",
+  wheelchair: "Wheelchair users",
+  limitedDexterity: "Limited dexterity",
+  prosthetic: "Prosthetic access",
 };
 
 export default function SearchResultsClient() {
@@ -53,10 +59,18 @@ export default function SearchResultsClient() {
     sensoryFriendly: searchParams.get("sensory") === "true",
     seatedFit: searchParams.get("seated") === "true",
     oneHandedDressing: searchParams.get("oneHanded") === "true",
+    easyClosures: searchParams.get("easyClosures") === "true",
+    wheelchairFriendly: searchParams.get("wheelchair") === "true",
+    limitedDexterity: searchParams.get("limitedDexterity") === "true",
+    prostheticAccess: searchParams.get("prosthetic") === "true",
+    dressingDifficulty: searchParams.get("difficulty") || undefined,
   });
   const countryFiltered = filterProductsByCountry(matchedFilters, country);
   const hiddenByLocation =
-    countryFiltered.length === 0 && matchedFilters.length > 0 && !!country && country !== GLOBAL;
+    countryFiltered.length === 0 &&
+    matchedFilters.length > 0 &&
+    !!country &&
+    country !== GLOBAL;
 
   const activeFilters = Object.keys(filterLabels)
     .filter((key) => searchParams.has(key))
@@ -68,9 +82,6 @@ export default function SearchResultsClient() {
           : `${filterLabels[key]}: ${searchParams.get(key)}`,
     }));
 
-  // With no search or filters applied, diversify the default grid (mixed brands
-  // and categories, rotated daily). Once the user filters or searches, keep the
-  // relevance ordering from searchProducts.
   const isDefaultView = activeFilters.length === 0 && !query;
   const results =
     isDefaultView && mounted ? diversifyProducts(countryFiltered) : countryFiltered;
@@ -83,24 +94,25 @@ export default function SearchResultsClient() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="border-b border-gray-100 bg-white py-8">
+    <div className="min-h-screen bg-ivory">
+      <header className="paper-texture border-b border-ink/10 bg-paper py-8">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-primary-700">
-            Product discovery
-          </p>
-          <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+          <p className="eyebrow">Product discovery</p>
+          <h1 className="mt-2 font-display text-4xl font-semibold tracking-[-0.03em] text-ink sm:text-5xl">
             {query ? `Adaptive clothing for "${query}"` : "Browse adaptive clothing"}
           </h1>
-          <p className="mt-2 max-w-2xl text-gray-600">
+          <p className="mt-3 max-w-2xl text-lg leading-8 text-ink/68">
             Compare individual pieces from different brands by fit, function,
-            style and accessibility need.
+            style, accessibility need and location availability.
           </p>
-          <div className="mt-6 max-w-3xl">
-            <SearchBar
-              defaultValue={query}
-              placeholder="Try 'magnetic shirt', 'wheelchair jeans' or 'easy shoes'"
-            />
+          <div className="mt-6 grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+            <div className="max-w-3xl">
+              <SearchBar
+                defaultValue={query}
+                placeholder="Try 'magnetic shirt', 'wheelchair jeans' or 'easy shoes'"
+              />
+            </div>
+            <CountrySelector className="justify-between px-4 py-3 text-sm" />
           </div>
         </div>
       </header>
@@ -108,7 +120,7 @@ export default function SearchResultsClient() {
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="flex gap-8">
           <aside className="hidden w-72 flex-shrink-0 lg:block">
-            <div className="sticky top-24 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
+            <div className="paper-panel sticky top-24 rounded-[1.5rem_.8rem_1.5rem_1.5rem] p-6">
               <SearchFilters />
             </div>
           </aside>
@@ -116,15 +128,15 @@ export default function SearchResultsClient() {
           <main className="min-w-0 flex-1">
             <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
               <div className="flex flex-wrap items-center gap-2">
-                <p className="mr-1 text-sm text-gray-600">
-                  <span className="font-bold text-gray-950">{results.length}</span>{" "}
+                <p className="mr-1 text-sm text-ink/65">
+                  <span className="font-bold text-ink">{results.length}</span>{" "}
                   {results.length === 1 ? "item" : "items"}
                 </p>
                 {activeFilters.map((filter) => (
                   <button
                     key={filter.key}
                     onClick={() => removeFilter(filter.key)}
-                    className="inline-flex items-center gap-1 rounded-full border border-primary-200 bg-primary-50 px-2.5 py-1 text-xs font-semibold text-primary-800 hover:bg-primary-100"
+                    className="inline-flex min-h-9 items-center gap-1 rounded-full border border-primary-200 bg-primary-50 px-3 py-1.5 text-sm font-semibold text-primary-800 hover:bg-primary-100"
                     aria-label={`Remove ${filter.label} filter`}
                   >
                     {filter.label}
@@ -134,7 +146,7 @@ export default function SearchResultsClient() {
               </div>
 
               <button
-                className="inline-flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2 text-sm font-bold text-gray-700 lg:hidden"
+                className="inline-flex min-h-12 items-center gap-2 rounded-xl border border-ink/15 bg-paper px-4 py-2 text-base font-bold text-ink/80 shadow-soft lg:hidden"
                 onClick={() => setMobileFiltersOpen(true)}
               >
                 Filters
@@ -147,12 +159,12 @@ export default function SearchResultsClient() {
             </div>
 
             {results.length === 0 && hiddenByLocation ? (
-              <div className="rounded-2xl border border-gray-100 bg-white px-6 py-20 text-center">
-                <h2 className="text-xl font-bold text-gray-900">
+              <div className="rounded-2xl border border-ink/10 bg-paper px-6 py-20 text-center">
+                <h2 className="text-xl font-bold text-ink">
                   No products currently available for your location.
                 </h2>
-                <p className="mt-2 text-gray-500">
-                  These items don&apos;t list shipping to {country} yet.
+                <p className="mt-2 text-ink/60">
+                  These items do not list shipping to {country} yet.
                 </p>
                 <button
                   type="button"
@@ -163,9 +175,9 @@ export default function SearchResultsClient() {
                 </button>
               </div>
             ) : results.length === 0 ? (
-              <div className="rounded-2xl border border-gray-100 bg-white px-6 py-20 text-center">
-                <h2 className="text-xl font-bold text-gray-900">No clothing items found</h2>
-                <p className="mt-2 text-gray-500">
+              <div className="rounded-2xl border border-ink/10 bg-paper px-6 py-20 text-center">
+                <h2 className="text-xl font-bold text-ink">No clothing items found</h2>
+                <p className="mt-2 text-ink/60">
                   Try a broader phrase or remove one of the filters.
                 </p>
                 <a href="/search" className="btn-primary mt-6 inline-block">
@@ -188,7 +200,7 @@ export default function SearchResultsClient() {
                 >
                   Load more clothing
                 </button>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-ink/60">
                   Showing {visibleResults.length} of {results.length} items
                 </p>
               </div>
@@ -209,7 +221,7 @@ export default function SearchResultsClient() {
             onClick={() => setMobileFiltersOpen(false)}
             aria-label="Close filters"
           />
-          <div className="relative ml-auto h-full w-[min(22rem,90vw)] overflow-y-auto bg-white p-6 shadow-xl">
+          <div className="relative ml-auto h-full w-[min(24rem,92vw)] overflow-y-auto bg-ivory p-6 shadow-xl">
             <div className="mb-4 flex items-center justify-between">
               <h2 className="text-lg font-bold">Filter clothing</h2>
               <button

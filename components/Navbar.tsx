@@ -40,8 +40,11 @@ export default function Navbar() {
               </Link>
             ))}
           </nav>
-          <Link href="/quiz" className="btn-primary hidden whitespace-nowrap px-4 py-2 text-xs 2xl:inline-flex">
-            Find by need
+          <Link
+            href="/quiz"
+            className="btn-primary hidden whitespace-nowrap px-4 py-2 text-xs 2xl:inline-flex"
+          >
+            Find clothing for me
           </Link>
           <div className="hidden items-center gap-2 xl:flex">
             <CountrySelector />
@@ -49,10 +52,10 @@ export default function Navbar() {
           </div>
 
           <button
-            className="rounded-lg border border-ink/10 bg-paper p-2 text-ink hover:bg-sand/50 xl:hidden"
+            className="min-h-11 min-w-11 rounded-lg border border-ink/10 bg-paper p-2 text-ink hover:bg-sand/50 xl:hidden"
             onClick={() => setMenuOpen((open) => !open)}
             aria-expanded={menuOpen}
-            aria-label="Toggle menu"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               {menuOpen ? (
@@ -71,12 +74,19 @@ export default function Navbar() {
               <CountrySelector className="flex-1 justify-between" />
               <CurrencySelector className="rounded-xl border border-ink/10 bg-paper px-3 py-2" />
             </div>
+            <Link
+              href="/quiz"
+              className="btn-primary flex w-full text-base"
+              onClick={() => setMenuOpen(false)}
+            >
+              Find clothing for me
+            </Link>
             <nav className="flex flex-col">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="py-2 text-sm font-semibold text-ink/75 hover:text-primary-700"
+                  className="min-h-11 py-2 text-base font-semibold text-ink/75 hover:text-primary-700"
                   onClick={() => setMenuOpen(false)}
                 >
                   {item.label}

@@ -8,6 +8,14 @@
     -webkit-tap-highlight-color: transparent;
   }
 
+  html[data-text-size="large"] {
+    font-size: 112.5%;
+  }
+
+  html[data-text-size="larger"] {
+    font-size: 125%;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
@@ -23,12 +31,24 @@
     background-size: 6px 6px;
   }
 
+  html[data-high-contrast="true"] body {
+    background-color: #fffaf0;
+    color: #181410;
+    background-image: none;
+  }
+
+  html[data-high-contrast="true"] input,
+  html[data-high-contrast="true"] select,
+  html[data-high-contrast="true"] textarea {
+    border-color: #181410 !important;
+  }
+
   ::selection {
     @apply bg-primary-100 text-primary-900;
   }
 
   *:focus-visible {
-    @apply outline-none ring-2 ring-primary-500 ring-offset-4 ring-offset-ivory;
+    @apply outline-none ring-4 ring-primary-700 ring-offset-4 ring-offset-ivory;
   }
 
   h1,
@@ -40,11 +60,11 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-primary-800 bg-primary-700 px-6 py-3 text-sm font-bold text-white shadow-[0_3px_0_#30202C] transition duration-200 hover:-translate-y-0.5 hover:bg-primary-800 hover:shadow-[0_5px_0_#30202C] active:translate-y-0.5 active:shadow-[0_1px_0_#30202C];
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-primary-800 bg-primary-700 px-6 py-3 text-sm font-bold text-white shadow-[0_3px_0_#30202C] transition duration-200 hover:-translate-y-0.5 hover:bg-primary-800 hover:shadow-[0_5px_0_#30202C] active:translate-y-0.5 active:shadow-[0_1px_0_#30202C];
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-ink/20 bg-paper px-6 py-3 text-sm font-bold text-ink shadow-[0_3px_0_rgba(41,36,31,.18)] transition duration-200 hover:-translate-y-0.5 hover:border-primary-400 hover:text-primary-800 active:translate-y-0.5 active:shadow-none;
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border border-ink/20 bg-paper px-6 py-3 text-sm font-bold text-ink shadow-[0_3px_0_rgba(41,36,31,.18)] transition duration-200 hover:-translate-y-0.5 hover:border-primary-400 hover:text-primary-800 active:translate-y-0.5 active:shadow-none;
   }
 
   .btn-outline {
@@ -99,6 +119,24 @@
   .link-underline:hover {
     background-size: 100% 1px;
   }
+
+  html[data-high-contrast="true"] .card,
+  html[data-high-contrast="true"] .paper-panel,
+  html[data-high-contrast="true"] .btn-secondary,
+  html[data-high-contrast="true"] .badge,
+  html[data-high-contrast="true"] .sticker {
+    border-color: rgba(24, 20, 16, 0.45) !important;
+  }
+
+  html[data-large-buttons="true"] button,
+  html[data-large-buttons="true"] a.btn-primary,
+  html[data-large-buttons="true"] a.btn-secondary,
+  html[data-large-buttons="true"] .btn-primary,
+  html[data-large-buttons="true"] .btn-secondary,
+  html[data-large-buttons="true"] input,
+  html[data-large-buttons="true"] select {
+    min-height: 3.25rem;
+  }
 }
 
 @layer utilities {
@@ -147,6 +185,15 @@
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
     }
+  }
+
+  html[data-reduce-motion="true"] *,
+  html[data-reduce-motion="true"] *::before,
+  html[data-reduce-motion="true"] *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
 
