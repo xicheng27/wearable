@@ -5,6 +5,7 @@ import CurrencyProvider from "@/components/CurrencyProvider";
 import CountryProvider from "@/components/CountryProvider";
 import CountryPicker from "@/components/CountryPicker";
 import DisclaimerFooter from "@/components/DisclaimerFooter";
+import UserProfileProvider from "@/components/UserProfileProvider";
 
 export const metadata: Metadata = {
   title: "Xi's | Adaptive Clothing Finder",
@@ -34,9 +35,11 @@ export default function RootLayout({
       <body className="flex min-h-screen flex-col font-sans antialiased">
         <CurrencyProvider>
           <CountryProvider>
-            <SiteChrome>{children}</SiteChrome>
-            <CountryPicker />
-            <DisclaimerFooter />
+            <UserProfileProvider>
+              <SiteChrome>{children}</SiteChrome>
+              <CountryPicker />
+              <DisclaimerFooter />
+            </UserProfileProvider>
           </CountryProvider>
         </CurrencyProvider>
       </body>

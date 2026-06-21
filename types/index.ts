@@ -92,6 +92,32 @@ export interface Product {
   sourceVerifiedAt?: string;
 }
 
+// --- User profile / target group segmentation ---
+
+/** Who the shopper is shopping for — drives tone, defaults and recommendations. */
+export type TargetGroup = "elderly" | "disability" | "caregiver";
+
+export type AgeRange = "under-40" | "40-59" | "60-74" | "75-plus";
+
+export type MobilityLevel = "full-mobility" | "some-difficulty" | "wheelchair-or-seated";
+
+export type BudgetRange = "budget" | "mid-range" | "premium" | "no-limit";
+
+/** Structured tags collected from the onboarding quiz, persisted per visitor. */
+export interface UserProfile {
+  targetGroup?: TargetGroup;
+  ageRange?: AgeRange;
+  stylePreference?: string[];
+  personalityType?: string;
+  bodyNeeds?: string[];
+  dressingDifficulty?: string[];
+  mobilityLevel?: MobilityLevel;
+  sensoryNeeds?: string[];
+  budgetRange?: BudgetRange;
+  location?: string;
+  preferredCurrency?: string;
+}
+
 export interface ProductSearchParams {
   query?: string;
   clothingType?: string;
