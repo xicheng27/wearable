@@ -5,8 +5,17 @@ import { Product } from "@/types";
 import { getBrandName, getProductShipsTo } from "@/data/products";
 import ProductImage from "@/components/ProductImage";
 import PriceDisplay from "@/components/PriceDisplay";
+import OfficialProductLink from "@/components/OfficialProductLink";
 import { useCountry } from "@/components/CountryProvider";
 import { GLOBAL } from "@/lib/countries";
+
+function plainBestFor(product: Product) {
+  const text = product.bestFor[0] || product.disabilityNeeds[0] || "adaptive dressing";
+  return text
+    .replace("Limited hand dexterity", "limited hand movement")
+    .replace("Full-time wheelchair users", "wheelchair users")
+    .replace("One-handed formal dressing", "one-handed dressing");
+}
 
 export default function ProductCard({ product }: { product: Product }) {
   const brandName = getBrandName(product.brandId);
@@ -87,11 +96,9 @@ export default function ProductCard({ product }: { product: Product }) {
         </p>
 
         <div className="mt-4">
-          <p className="text-xs font-bold tracking-wide text-ink/45">
-            Best for
-          </p>
-          <p className="mt-1 text-sm leading-relaxed text-ink/75">
-            {product.bestFor.slice(0, 2).join(", ")}
+          <p className="text-sm font-bold text-ink/55">Best for</p>
+          <p className="mt-1 text-base leading-relaxed text-ink/78">
+            {plainBestFor(product)}
           </p>
         </div>
 
@@ -107,7 +114,7 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
 
         <div className="mt-auto pt-5">
-          <div className="mb-2 flex items-center gap-2 text-xs text-ink/55">
+          <div className="mb-2 flex items-center gap-2 text-sm text-ink/60">
             <span
               className={`h-2 w-2 rounded-full ${
                 product.availability.online ? "bg-sage" : "bg-ink/20"
@@ -120,25 +127,24 @@ export default function ProductCard({ product }: { product: Product }) {
                 ? "Available online"
                 : "In-store availability"}
           </div>
-          <p className="mb-3 text-xs font-semibold text-ink/45">{shippingLabel}</p>
-          {product.productUrl && (
-            <a
-              href={product.productUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary flex w-full px-4 py-2.5 text-center text-sm"
-            >
-              {product.linkType === "exact-product"
-                ? "View exact item"
-                : "View brand page"}
-            </a>
-          )}
+          <p className="mb-3 w-fit rounded-md bg-primary-50 px-3 py-1.5 text-sm font-bold text-primary-900">
+            {shippingLabel}
+          </p>
           <Link
             href={`/products/${product.id}`}
-            className="link-underline mx-auto mt-4 block w-fit text-center text-xs"
+            className="btn-primary flex w-full px-4 py-3.5 text-center text-base"
           >
             View details
           </Link>
+          <OfficialProductLink
+            href={product.productUrl}
+            exact={product.linkType === "exact-product"}
+            className="btn-secondary mt-3 flex w-full px-4 py-3 text-center text-sm"
+          >
+            {product.linkType === "exact-product"
+              ? "Buy / view official product"
+              : "View official source"}
+          </OfficialProductLink>
         </div>
       </div>
     </article>

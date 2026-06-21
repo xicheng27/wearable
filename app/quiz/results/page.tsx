@@ -53,22 +53,44 @@ function normalizeNeeds(rawNeeds: string[], sensory: string[], fastenings: strin
   if (fastenings.some((value) => value.toLowerCase().includes("zipper"))) {
     needs.push("Easy entry");
   }
+  needs.forEach((need) => {
+    const value = need.toLowerCase();
+    if (value.includes("easy shoes")) {
+      needs.push("Hands-free entry", "Wide opening", "Limited mobility");
+    }
+    if (value.includes("sensory") || value.includes("seam") || value.includes("tag")) {
+      needs.push("Sensory processing", "Skin sensitivity");
+    }
+    if (value.includes("wheelchair") || value.includes("seated")) {
+      needs.push("Wheelchair users", "Seated fit");
+    }
+    if (value.includes("arthritis")) {
+      needs.push("Arthritis", "Limited dexterity");
+    }
+    if (value.includes("prosthetic")) {
+      needs.push("Prosthetic users", "Orthotics and AFOs", "Limb differences");
+    }
+    if (value.includes("magnetic")) {
+      needs.push("Magnetic closures", "One-handed dressing");
+    }
+  });
 
   return Array.from(new Set(needs));
 }
 
 function normalizeBudget(value: string | undefined) {
   const budget = value ?? "";
+  if (["Under $50", "$50-$100", "$100-$150", "$150+"].includes(budget)) {
+    return budget;
+  }
   if (budget.startsWith("$ Â·") || budget.toLowerCase().includes("budget")) {
     return "Under $50";
   }
-  if (budget.startsWith("$$ Â·") || budget.toLowerCase().includes("mid")) {
-    return "$50-$100";
-  }
-  if (budget.startsWith("$$$ Â·") || budget.toLowerCase().includes("premium")) {
-    return "$100-$150";
-  }
-  return budget || undefined;
+  const lower = budget.toLowerCase();
+  if (lower.includes("budget")) return "Under $50";
+  if (lower.includes("mid")) return "$50-$100";
+  if (lower.includes("premium")) return "$100-$150";
+  return budget && !lower.includes("no limit") ? budget : undefined;
 }
 
 const LIFESTYLE_LABELS: Record<LifestyleSetting, string> = {
@@ -89,9 +111,12 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
   const styles = [...readList(searchParams.style), ...readList(searchParams.styles)];
   const budget = normalizeBudget(readValue(searchParams.budget));
   const clothing = readList(searchParams.clothing);
+  const availability = readList(searchParams.availability)[0] ?? "";
   const otherNeeds = readList(searchParams.otherNeeds).join(", ").slice(0, 500);
   const location = readValue(searchParams.location);
-  const targetGroup = readValue(searchParams.targetGroup) as TargetGroup | undefined;
+  const targetGroup = (readValue(searchParams.targetGroup) ?? readValue(searchParams.forWhom)) as
+    | TargetGroup
+    | undefined;
   const ageRange = readValue(searchParams.ageRange) as AgeRange | undefined;
   const lifestyleSetting = readValue(searchParams.lifestyleSetting) as LifestyleSetting | undefined;
   const fabricComfortNeeds = sensory.filter((value) => /soft|lightweight|breathable|flat seams/i.test(value));
@@ -111,6 +136,7 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
     fabricComfortNeeds,
     lifestyleSetting,
     caregiverInvolvement: deriveCaregiverInvolvement(targetGroup),
+    clothingTypes: clothing.filter((item) => item !== "Not sure"),
     limit: 9,
   };
 
@@ -129,7 +155,10 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
         })
       )
     : allResults;
-  const visibleResults = clothingFiltered.length > 0 ? clothingFiltered : allResults;
+  const availabilityFiltered = availability.toLowerCase().includes("in-store")
+    ? clothingFiltered.filter(({ product }) => product.availability.inStore)
+    : clothingFiltered;
+  const visibleResults = availabilityFiltered.length > 0 ? availabilityFiltered : allResults;
 
   const nearbyCountries = location
     ? Array.from(new Set([location, ...expandShippingRegions([location])]))
@@ -137,13 +166,11 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
   const nearbyStores = location ? findNearbyStores({ countries: nearbyCountries }) : null;
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="border-b border-gray-100 bg-white py-12">
+    <div className="min-h-screen bg-ivory">
+      <header className="paper-texture border-b border-ink/10 bg-paper py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-primary-700">
-            Quiz complete
-          </p>
-          <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-gray-950">
+          <p className="eyebrow">Quiz complete</p>
+          <h1 className="mt-2 font-display text-4xl font-semibold tracking-[-0.03em] text-ink sm:text-5xl">
             Your recommended clothing pieces
           </h1>
 
@@ -174,9 +201,10 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
             </div>
           )}
 
-          <p className="mt-3 max-w-2xl text-lg text-gray-600">
-            Individual items are ranked by accessibility features, style, location and budget.
-            Brands are supporting information, not the starting point.
+          <p className="mt-3 max-w-2xl text-lg leading-8 text-ink/68">
+            Individual items are ranked by your needs, location, clothing type,
+            style, budget and dressing preferences. Brands are supporting
+            information, not the starting point.
           </p>
           <div className="mt-5 flex flex-wrap gap-2">
             {[...needs, ...styles, budget, lifestyleSetting && LIFESTYLE_LABELS[lifestyleSetting]]

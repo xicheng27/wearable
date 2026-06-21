@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { LogoMark } from "@/components/Logo";
 import Photo from "@/components/Photo";
+import { useCountry } from "@/components/CountryProvider";
 import {
   disabilityOptionsList,
   shippingLocationsList,
@@ -32,7 +33,6 @@ interface StepDef {
   type: "single" | "multi" | "text";
   options?: string[];
   placeholder?: string;
-  /** "list" stacks options full-width — used when labels are long sentences. */
   layout?: "grid" | "list";
 }
 
@@ -62,7 +62,7 @@ const steps: StepDef[] = [
   {
     id: "needs",
     title: "Which of these best describe your physical or functional needs?",
-    subtitle: "Select all that apply — this helps us match the right brands.",
+    subtitle: "Select all that apply. This helps us match the right products.",
     type: "multi",
     options: disabilityOptionsList,
   },
@@ -106,7 +106,7 @@ const steps: StepDef[] = [
     title: "What are you shopping for?",
     subtitle: "Choose one or more clothing pieces.",
     type: "multi",
-    options: quizClothingOptions.map((o) => o.label),
+    options: quizClothingOptions.map((option) => option.label),
   },
   {
     id: "lifestyleSetting",
@@ -142,9 +142,16 @@ const steps: StepDef[] = [
   {
     id: "budget",
     title: "What's your budget?",
-    subtitle: "A rough range is fine — you can always change it later.",
+    subtitle: "A rough range is fine. Always check final prices on the official site.",
     type: "single",
     options: ["$ · Budget-friendly", "$$ · Mid-range", "$$$ · Premium", "No limit"],
+  },
+  {
+    id: "availability",
+    title: "How do you want to shop?",
+    subtitle: "Most adaptive pieces are online, but some brands also have stores or stockists.",
+    type: "single",
+    options: ["Online only", "In-store also", "No preference"],
   },
 ];
 
@@ -185,8 +192,8 @@ function OptionButton({ label, selected, onClick, image }: OptionButtonProps) {
         image ? "p-2 pr-3" : "px-5 py-3.5"
       } ${
         selected
-          ? "border-primary-600 bg-primary-50 text-primary-700"
-          : "border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50"
+          ? "border-primary-700 bg-primary-50 text-primary-900 shadow-soft"
+          : "border-ink/15 bg-paper text-ink/78 hover:border-primary-300 hover:bg-sand/35"
       }`}
     >
       <span className="flex items-center gap-3">
@@ -197,7 +204,7 @@ function OptionButton({ label, selected, onClick, image }: OptionButtonProps) {
       </span>
       <span
         className={`flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full transition-all duration-200 ${
-          selected ? "bg-primary-600 text-white" : "border border-gray-300 text-transparent"
+          selected ? "bg-primary-700 text-white" : "border border-ink/25 text-transparent"
         }`}
         aria-hidden="true"
       >
@@ -210,6 +217,7 @@ function OptionButton({ label, selected, onClick, image }: OptionButtonProps) {
 export default function QuizClient() {
   const router = useRouter();
   const { setProfile } = useUserProfile();
+  const { setCountry } = useCountry();
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string[]>>({});
   const [otherNeeds, setOtherNeeds] = useState("");
@@ -225,7 +233,7 @@ export default function QuizClient() {
           ? []
           : [option]
         : selected.includes(option)
-          ? selected.filter((v) => v !== option)
+          ? selected.filter((value) => value !== option)
           : [...selected, option];
     setAnswers({ ...answers, [current.id]: next });
   }
@@ -242,6 +250,8 @@ export default function QuizClient() {
       const lifestyleSetting = lifestyleSettingOptions.find(
         (option) => option.label === answers.lifestyleSetting?.[0]
       )?.value;
+
+      if (location) setCountry(location);
 
       setProfile({
         targetGroup,
@@ -265,7 +275,9 @@ export default function QuizClient() {
 
       const params = new URLSearchParams();
       const set = (key: string, list?: string[]) => {
-        if (list && list.length > 0) params.set(key, list.map(encodeURIComponent).join(","));
+        if (list && list.length > 0) {
+          params.set(key, list.map(encodeURIComponent).join(","));
+        }
       };
       set("needs", answers.needs);
       set("sensory", answers.sensory);
@@ -274,6 +286,7 @@ export default function QuizClient() {
       if (location) params.set("location", location);
       set("styles", answers.style);
       if (answers.budget?.[0]) params.set("budget", answers.budget[0]);
+      if (answers.availability?.[0]) params.set("availability", answers.availability[0]);
       if (otherNeeds.trim()) params.set("otherNeeds", otherNeeds.trim());
       if (targetGroup) params.set("targetGroup", targetGroup);
       if (ageRange) params.set("ageRange", ageRange);
@@ -281,7 +294,7 @@ export default function QuizClient() {
       if (lifestyleSetting) params.set("lifestyleSetting", lifestyleSetting);
       router.push(`/quiz/results?${params.toString()}`);
     } else {
-      setStep(step + 1);
+      setStep((currentStep) => currentStep + 1);
     }
   }
 
@@ -291,12 +304,12 @@ export default function QuizClient() {
         <Link href="/" className="flex items-center gap-2" aria-label="Xi's home">
           <LogoMark size={32} />
         </Link>
-        <p className="text-sm text-gray-400">
+        <p className="text-sm font-semibold text-ink/45">
           {step + 1} of {steps.length}
         </p>
         <Link
           href="/"
-          className="rounded-full p-2 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600"
+          className="rounded-full p-2 text-ink/45 transition-colors hover:bg-sand/45 hover:text-ink"
           aria-label="Exit quiz"
         >
           <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -306,9 +319,9 @@ export default function QuizClient() {
       </header>
 
       <div className="mx-auto w-full max-w-3xl shrink-0 px-5 sm:px-6">
-        <div className="h-1 w-full overflow-hidden rounded-full bg-gray-100" aria-hidden="true">
+        <div className="h-1.5 w-full overflow-hidden rounded-full bg-ink/10" aria-hidden="true">
           <div
-            className="h-full rounded-full bg-primary-600 transition-all duration-500 ease-out"
+            className="h-full rounded-full bg-primary-700 transition-all duration-500 ease-out"
             style={{ width: `${((step + 1) / steps.length) * 100}%` }}
           />
         </div>
@@ -319,27 +332,27 @@ export default function QuizClient() {
           key={step}
           className="animate-fade-up min-h-0 flex-1 overflow-y-auto py-5 pr-1 sm:py-6"
         >
-          <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+          <h1 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
             {current.title}
           </h1>
-          <p className="mt-2 text-base text-gray-500 sm:text-lg">{current.subtitle}</p>
+          <p className="mt-3 text-base leading-7 text-ink/65">{current.subtitle}</p>
 
           <div
-            className={`mt-5 grid grid-cols-1 gap-3 ${
+            className={`mt-6 grid grid-cols-1 gap-3 ${
               current.layout === "list" ? "" : "sm:grid-cols-2"
             }`}
           >
             {current.type === "text" ? (
               <div className="sm:col-span-2">
-                <label htmlFor="other-needs" className="sr-only">
-                  Other clothing or accessibility needs
+                <label htmlFor="other-needs" className="mb-2 block text-sm font-bold text-ink">
+                  Optional notes
                 </label>
                 <textarea
                   id="other-needs"
                   value={otherNeeds}
                   onChange={(event) => setOtherNeeds(event.target.value.slice(0, 500))}
                   placeholder={current.placeholder}
-                  rows={6}
+                  rows={5}
                   className="paper-panel w-full resize-y rounded-[1.4rem_.6rem_1.4rem_1.4rem] border-ink/15 px-5 py-4 text-base leading-7 text-ink placeholder:text-ink/40 focus:border-primary-400 focus:ring-primary-300"
                 />
                 <div className="mt-2 flex items-center justify-between gap-4 text-xs text-ink/50">
@@ -348,13 +361,13 @@ export default function QuizClient() {
                 </div>
               </div>
             ) : (
-              current.options?.map((opt) => (
+              current.options?.map((option) => (
                 <OptionButton
-                  key={opt}
-                  label={opt}
-                  selected={selected.includes(opt)}
-                  onClick={() => select(opt)}
-                  image={current.id === "style" ? styleImages[opt] : undefined}
+                  key={option}
+                  label={option}
+                  selected={selected.includes(option)}
+                  onClick={() => select(option)}
+                  image={current.id === "style" ? styleImages[option] : undefined}
                 />
               ))
             )}
@@ -364,14 +377,14 @@ export default function QuizClient() {
         <div className="z-10 flex shrink-0 items-center justify-between gap-4 border-t border-ink/10 bg-paper/95 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur">
           <button
             type="button"
-            onClick={() => setStep(step - 1)}
-            className={`rounded-full px-5 py-3 text-sm font-medium text-gray-500 transition-colors duration-200 hover:bg-gray-50 hover:text-gray-700 ${
+            onClick={() => setStep((currentStep) => currentStep - 1)}
+            className={`rounded-xl px-5 py-3 text-sm font-bold text-ink/55 transition-colors duration-200 hover:bg-sand/45 hover:text-ink ${
               step === 0 ? "invisible" : ""
             }`}
           >
             Back
           </button>
-          <button type="button" onClick={next} className="btn-primary px-8">
+          <button type="button" onClick={next} className="btn-primary px-8 py-3.5 text-base">
             {isLastStep
               ? "Show my matches"
               : current.type === "text"

@@ -30,33 +30,37 @@ export default function HeroSection() {
       <div className="absolute -left-20 top-28 h-64 w-64 rounded-full bg-clay/10 blur-3xl" aria-hidden="true" />
       <div className="absolute right-0 top-0 h-72 w-72 bg-lavender/30 blur-3xl" aria-hidden="true" />
 
-      <div className="relative mx-auto grid min-h-[720px] max-w-7xl items-center gap-14 px-4 py-16 sm:px-6 lg:grid-cols-[1.02fr_.98fr] lg:px-8 lg:py-24">
+      <div className="relative mx-auto grid min-h-[620px] max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.12fr_.88fr] lg:px-8 lg:py-18">
         <div className="relative z-10">
           <p className="eyebrow rotate-[-1deg]">Adaptive fashion, thoughtfully found</p>
-          <h1 id="hero-heading" className="mt-5 max-w-3xl font-display text-6xl font-semibold leading-[.92] tracking-[-.055em] text-ink sm:text-7xl lg:text-[5.7rem]">
-            Clothes should meet you where you are.
+          <h1 id="hero-heading" className="mt-5 max-w-3xl font-display text-5xl font-semibold leading-[.98] tracking-[-.045em] text-ink sm:text-6xl lg:text-[4.9rem]">
+            Find adaptive clothing that works for your body, needs, and location.
           </h1>
-          <p className="mt-7 max-w-xl text-lg leading-8 text-ink/70">
-            Discover real adaptive pieces across brands, chosen for comfort,
-            independence and personal style.
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-ink/72">
+            Search by clothing type, dressing needs, seated fit, sensory comfort,
+            shoes, and country availability.
           </p>
 
           <div className="mt-9 max-w-2xl rounded-[1.25rem] border border-ink/15 bg-paper/90 p-2 shadow-paper backdrop-blur">
             <SearchBar placeholder="Try 'magnetic shirt' or 'wheelchair jeans'" />
           </div>
 
-          <div className="mt-7 flex flex-wrap items-center gap-4">
-            <Link href="/search" className="btn-primary">
-              Browse clothing <span aria-hidden="true">&rarr;</span>
+          <div className="mt-7 flex flex-wrap items-center gap-3 sm:gap-4">
+            <Link href="/quiz" className="btn-primary px-7 py-4 text-base">
+              Find clothing for me <span aria-hidden="true">&rarr;</span>
             </Link>
-            <Link href="/quiz" className="btn-secondary">
-              Find by need
+            <Link href="/search" className="btn-secondary px-7 py-4 text-base">
+              Browse all clothing
             </Link>
-            <span className="font-hand text-xs text-ink/55">9 brands, one considered edit</span>
           </div>
+
+          <p className="mt-5 max-w-xl text-sm leading-6 text-ink/58">
+            Not sure what to search? Use the guided flow. Prefer to compare
+            everything yourself? Browse the full catalogue.
+          </p>
         </div>
 
-        <div className="relative mx-auto h-[550px] w-full max-w-[570px]" aria-label="Featured adaptive clothing pieces">
+        <div className="relative mx-auto hidden h-[500px] w-full max-w-[520px] lg:block" aria-label="Featured adaptive clothing pieces">
           <div className="absolute left-[7%] top-[5%] h-[70%] w-[56%] rotate-[-3deg] overflow-hidden rounded-[2rem_2rem_.8rem_2rem] border-[10px] border-paper bg-sand shadow-lift">
             {uniqueFeatured[0] && <ProductImage src={uniqueFeatured[0].imageUrl} alt={uniqueFeatured[0].imageAlt} permissionStatus={uniqueFeatured[0].permissionStatus} attribution={uniqueFeatured[0].attributionText} priority className="h-full w-full" />}
             <span className="absolute bottom-3 left-3 right-3 bg-paper/90 px-3 py-2 text-xs font-bold text-ink backdrop-blur">

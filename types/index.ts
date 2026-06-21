@@ -49,7 +49,9 @@ export type ProductAvailability = {
 export interface Product {
   id: string;
   name: string;
+  productName?: string;
   brandId: string;
+  brand?: string;
   clothingType: string;
   category: string;
   priceRange: string;
@@ -81,8 +83,17 @@ export interface Product {
   styleTags: string[];
   availability: ProductAvailability;
   shipsTo?: string[];
+  countriesAvailable?: string[];
   sizes: string[];
   genderFit: string[];
+  targetGroups?: string[];
+  suitableAgeRanges?: string[];
+  personalityTags?: string[];
+  closureTypes?: string[];
+  mobilityNeeds?: string[];
+  sensoryNeeds?: string[];
+  careEase?: string[];
+  reasonWhyRelevant?: string;
   sensoryFriendly: boolean;
   seatedFit: boolean;
   oneHandedDressing: boolean;
@@ -203,4 +214,9 @@ export interface ProductSearchParams {
   sensoryFriendly?: boolean;
   seatedFit?: boolean;
   oneHandedDressing?: boolean;
+  easyClosures?: boolean;
+  wheelchairFriendly?: boolean;
+  limitedDexterity?: boolean;
+  prostheticAccess?: boolean;
+  dressingDifficulty?: string;
 }
