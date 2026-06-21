@@ -103,6 +103,21 @@ export type MobilityLevel = "full-mobility" | "some-difficulty" | "wheelchair-or
 
 export type BudgetRange = "budget" | "mid-range" | "premium" | "no-limit";
 
+/** How much difficulty a shopper has with dressing day-to-day — a derived severity level, not a diagnosis. */
+export type DressingDifficulty = "low" | "moderate" | "high";
+
+/** Where the clothing will mostly be worn — used to weight style and practicality. */
+export type LifestyleSetting =
+  | "school"
+  | "work"
+  | "home"
+  | "outdoor"
+  | "formal-event"
+  | "daily-wear";
+
+/** Whether the shopper dresses themselves or is assisted by a caregiver. */
+export type CaregiverInvolvement = "self-dressing" | "caregiver-assisted";
+
 /** Structured tags collected from the onboarding quiz, persisted per visitor. */
 export interface UserProfile {
   targetGroup?: TargetGroup;
@@ -110,12 +125,67 @@ export interface UserProfile {
   stylePreference?: string[];
   personalityType?: string;
   bodyNeeds?: string[];
-  dressingDifficulty?: string[];
+  /** Literal closures/fastenings the shopper prefers (e.g. "Magnetic buttons"). */
+  closurePreference?: string[];
+  /** Derived difficulty level — distinct from closurePreference, which is the literal fastening type. */
+  dressingDifficulty?: DressingDifficulty;
   mobilityLevel?: MobilityLevel;
   sensoryNeeds?: string[];
+  fabricComfortNeeds?: string[];
+  lifestyleSetting?: LifestyleSetting;
+  caregiverInvolvement?: CaregiverInvolvement;
   budgetRange?: BudgetRange;
   location?: string;
   preferredCurrency?: string;
+}
+
+/**
+ * A practical, self-selected adaptive clothing profile (e.g. "Wheelchair users").
+ * This is a shopping/sizing categorization the user opts into themselves —
+ * never a medical diagnosis.
+ */
+export interface AdaptiveClothingProfile {
+  id: string;
+  label: string;
+  description: string;
+}
+
+export type PriceStatus = "known" | "unknown";
+
+/** Strict operational input to the adaptive recommendation engine. */
+export interface RecommendationInput {
+  targetGroup?: TargetGroup;
+  ageRange?: AgeRange;
+  needs?: string[];
+  styles?: string[];
+  budget?: string;
+  openEndedNeed?: string;
+  location?: string;
+  mobilityLevel?: MobilityLevel;
+  dressingDifficulty?: DressingDifficulty;
+  sensoryNeeds?: string[];
+  closurePreference?: string[];
+  fabricComfortNeeds?: string[];
+  lifestyleSetting?: LifestyleSetting;
+  caregiverInvolvement?: CaregiverInvolvement;
+  clothingTypes?: string[];
+  limit?: number;
+}
+
+/** A single recommended item plus the structured reasoning behind the match. */
+export interface RecommendationResult {
+  product: Product;
+  score: number;
+  reasons: string[];
+  /** Adaptive clothing function tags (e.g. "Seated-fit jeans", "Magnetic closure shirt"). */
+  itemClassification: string[];
+  needsSatisfied: string[];
+  preferencesSatisfied: string[];
+  unmetNeeds: string[];
+  /** True when this result came from a broadened search because nothing matched all criteria. */
+  isFallback: boolean;
+  shipsToLocation: boolean;
+  priceStatus: PriceStatus;
 }
 
 export interface ProductSearchParams {
