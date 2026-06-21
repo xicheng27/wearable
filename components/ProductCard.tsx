@@ -7,6 +7,7 @@ import ProductImage from "@/components/ProductImage";
 import PriceDisplay from "@/components/PriceDisplay";
 import OfficialProductLink from "@/components/OfficialProductLink";
 import { useCountry } from "@/components/CountryProvider";
+import { useSavedItems } from "@/components/SavedItemsProvider";
 import { GLOBAL } from "@/lib/countries";
 
 function plainBestFor(product: Product) {
@@ -20,6 +21,8 @@ function plainBestFor(product: Product) {
 export default function ProductCard({ product }: { product: Product }) {
   const brandName = getBrandName(product.brandId);
   const { country } = useCountry();
+  const { isSaved, toggleSaved } = useSavedItems();
+  const saved = isSaved(product.id);
   const shipsTo = getProductShipsTo(product);
   const shipsGlobally = shipsTo.includes(GLOBAL);
   const shippingLabel = shipsGlobally
@@ -30,42 +33,66 @@ export default function ProductCard({ product }: { product: Product }) {
 
   return (
     <article className="group card card-hover flex h-full flex-col overflow-hidden rounded-[1.7rem_.7rem_1.7rem_1.7rem]">
-      <Link
-        href={`/products/${product.id}`}
-        className="relative block"
-        aria-label={`View ${product.name}`}
-      >
-        <ProductImage
-          src={product.imageUrl}
-          alt={product.imageAlt}
-          permissionStatus={product.permissionStatus}
-          attribution={product.attributionText}
-          className="aspect-[4/5] w-full"
-        />
-        <div className="absolute left-3 top-3 flex flex-wrap gap-2">
-          <span
-            className={`sticker border-paper/70 shadow-sm ${
-              product.linkType === "exact-product"
-                ? "text-primary-800"
-                : "text-amber-800"
-            }`}
+      <div className="relative">
+        <Link
+          href={`/products/${product.id}`}
+          className="relative block"
+          aria-label={`View ${product.name}`}
+        >
+          <ProductImage
+            src={product.imageUrl}
+            alt={product.imageAlt}
+            permissionStatus={product.permissionStatus}
+            attribution={product.attributionText}
+            className="aspect-[4/5] w-full"
+          />
+          <div className="absolute left-3 top-3 flex flex-wrap gap-2">
+            <span
+              className={`sticker border-paper/70 shadow-sm ${
+                product.linkType === "exact-product"
+                  ? "text-primary-800"
+                  : "text-amber-800"
+              }`}
+            >
+              {product.linkType === "exact-product"
+                ? "Exact product"
+                : "Brand page only"}
+            </span>
+            {product.seatedFit && (
+              <span className="sticker rotate-[1deg] bg-sage/25 text-ink shadow-sm">
+                Seated fit
+              </span>
+            )}
+            {product.sensoryFriendly && (
+              <span className="sticker rotate-[1deg] bg-lavender/70 text-ink shadow-sm">
+                Sensory-friendly
+              </span>
+            )}
+          </div>
+        </Link>
+        <button
+          type="button"
+          onClick={() => toggleSaved(product.id)}
+          aria-pressed={saved}
+          aria-label={saved ? `Remove ${product.name} from saved items` : `Save ${product.name}`}
+          className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full border border-paper/70 bg-paper/90 text-primary-800 shadow-sm backdrop-blur transition-transform active:scale-95"
+        >
+          <svg
+            className="h-5 w-5"
+            viewBox="0 0 24 24"
+            fill={saved ? "currentColor" : "none"}
+            stroke="currentColor"
+            strokeWidth={2}
+            aria-hidden="true"
           >
-            {product.linkType === "exact-product"
-              ? "Exact product"
-              : "Brand page only"}
-          </span>
-          {product.seatedFit && (
-            <span className="sticker rotate-[1deg] bg-sage/25 text-ink shadow-sm">
-              Seated fit
-            </span>
-          )}
-          {product.sensoryFriendly && (
-            <span className="sticker rotate-[1deg] bg-lavender/70 text-ink shadow-sm">
-              Sensory-friendly
-            </span>
-          )}
-        </div>
-      </Link>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 20.5s-7.5-4.6-9.8-9.1C.7 8 2 4.5 5.3 3.6c2-.5 4 .3 5 2.1 1-1.8 3-2.6 5-2.1C18.6 4.5 19.9 8 18.4 11.4 16.1 15.9 12 20.5 12 20.5z"
+            />
+          </svg>
+        </button>
+      </div>
 
       <div className="flex flex-1 flex-col p-5 sm:p-6">
         <div className="mb-2 flex items-center justify-between gap-3 text-xs">

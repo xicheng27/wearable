@@ -167,6 +167,62 @@ const styleImages: Record<string, string> = {
   "Smart casual": "/images/style-smartcasual.svg",
 };
 
+function getAcknowledgment(
+  stepId: string,
+  values: string[],
+  otherNeedsText: string
+): string | null {
+  const lower = values.map((value) => value.toLowerCase());
+
+  switch (stepId) {
+    case "targetGroup":
+      if (values.length === 0) return null;
+      return lower[0].startsWith("myself")
+        ? "Got it — I'll tailor fit and recommendations for you."
+        : "Got it — I'll tailor fit and recommendations for the person you're supporting.";
+    case "ageRange":
+      return values.length ? "Noted — I'll fine-tune sizing for that age range." : null;
+    case "location":
+      return values.length
+        ? `Got it — I'll show ${values[0]}-friendly options first and use local pricing where possible.`
+        : null;
+    case "needs": {
+      if (values.length === 0) return null;
+      const bits: string[] = [];
+      if (lower.some((value) => value.includes("wheelchair") || value.includes("seated")))
+        bits.push("seated comfort");
+      if (lower.some((value) => value.includes("dexterity") || value.includes("arthritis")))
+        bits.push("easy closures");
+      if (lower.some((value) => value.includes("prosthetic") || value.includes("limb")))
+        bits.push("prosthetic-friendly openings");
+      if (bits.length === 0) bits.push("clothes that fit your needs");
+      return `Got it — I'll prioritise ${bits.join(" and ")}.`;
+    }
+    case "otherNeeds":
+      return otherNeedsText.trim() ? "Thanks for the detail — I'll factor that in too." : null;
+    case "sensory":
+      if (values.length === 0 || lower.some((value) => value.includes("no sensory"))) return null;
+      return "Noted — I'll lean toward soft, tag-free fabrics that feel right.";
+    case "fastenings":
+      if (values.length === 0 || lower.some((value) => value.includes("no preference"))) return null;
+      return `Got it — I'll favour ${values[0].toLowerCase()} where I can.`;
+    case "clothing":
+      return values.length
+        ? `Searching for ${values.map((value) => value.toLowerCase()).join(", ")}.`
+        : null;
+    case "lifestyleSetting":
+      return values.length ? `Good to know — I'll weigh practicality for ${values[0].toLowerCase()}.` : null;
+    case "style":
+      return values.length ? "Love it — I'll lean into that look." : null;
+    case "personality":
+      return values.length ? `Got it, ${values[0].toLowerCase()} it is.` : null;
+    case "budget":
+      return values.length ? `Noted — I'll keep things around ${values[0]}.` : null;
+    default:
+      return null;
+  }
+}
+
 function CheckIcon() {
   return (
     <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
@@ -221,6 +277,7 @@ export default function QuizClient() {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string[]>>({});
   const [otherNeeds, setOtherNeeds] = useState("");
+  const [acknowledgment, setAcknowledgment] = useState<string | null>(null);
 
   const current = steps[step];
   const selected = answers[current.id] ?? [];
@@ -239,6 +296,7 @@ export default function QuizClient() {
   }
 
   function next() {
+    setAcknowledgment(getAcknowledgment(current.id, selected, otherNeeds));
     if (isLastStep) {
       const targetGroup = targetGroupOptions.find(
         (option) => option.label === answers.targetGroup?.[0]
@@ -332,6 +390,14 @@ export default function QuizClient() {
           key={step}
           className="animate-fade-up min-h-0 flex-1 overflow-y-auto py-5 pr-1 sm:py-6"
         >
+          {acknowledgment && (
+            <p
+              className="mb-4 inline-flex max-w-full items-center rounded-full bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-800"
+              aria-live="polite"
+            >
+              {acknowledgment}
+            </p>
+          )}
           <h1 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
             {current.title}
           </h1>
@@ -377,7 +443,10 @@ export default function QuizClient() {
         <div className="z-10 flex shrink-0 items-center justify-between gap-4 border-t border-ink/10 bg-paper/95 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur">
           <button
             type="button"
-            onClick={() => setStep((currentStep) => currentStep - 1)}
+            onClick={() => {
+              setAcknowledgment(null);
+              setStep((currentStep) => currentStep - 1);
+            }}
             className={`rounded-xl px-5 py-3 text-sm font-bold text-ink/55 transition-colors duration-200 hover:bg-sand/45 hover:text-ink ${
               step === 0 ? "invisible" : ""
             }`}
