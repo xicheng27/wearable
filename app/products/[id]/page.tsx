@@ -1,10 +1,9 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import ProductCard from "@/components/ProductCard";
 import ProductImage from "@/components/ProductImage";
 import PriceDisplay from "@/components/PriceDisplay";
-import LocationAwareProductGrid from "@/components/LocationAwareProductGrid";
 import OfficialProductLink from "@/components/OfficialProductLink";
-import ProductLocationGate from "@/components/ProductLocationGate";
 import { getBrandById } from "@/data/brands";
 import {
   getProductById,
@@ -53,8 +52,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
   const similarItems = getSimilarProducts(product);
 
   return (
-    <ProductLocationGate product={product}>
-      <div className="min-h-screen bg-ivory">
+    <div className="min-h-screen bg-ivory">
       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <nav className="mb-8 text-sm text-ink/55" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-primary-700">Home</Link>
@@ -99,33 +97,25 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
 
               <dl className="mt-8 grid grid-cols-1 gap-4 border-y border-ink/10 py-6 text-sm sm:grid-cols-2">
                 <div>
-                  <dt className="font-bold text-ink/45">
-                    Clothing type
-                  </dt>
+                  <dt className="font-bold text-ink/45">Clothing type</dt>
                   <dd className="mt-1 text-base font-semibold text-ink">
                     {product.clothingType}
                   </dd>
                 </div>
                 <div>
-                  <dt className="font-bold text-ink/45">
-                    Style
-                  </dt>
+                  <dt className="font-bold text-ink/45">Style</dt>
                   <dd className="mt-1 text-base font-semibold text-ink">
                     {product.styleTags.slice(0, 2).join(", ")}
                   </dd>
                 </div>
                 <div>
-                  <dt className="font-bold text-ink/45">
-                    Fit
-                  </dt>
+                  <dt className="font-bold text-ink/45">Fit</dt>
                   <dd className="mt-1 text-base font-semibold text-ink">
                     {product.genderFit.join(", ")}
                   </dd>
                 </div>
                 <div>
-                  <dt className="font-bold text-ink/45">
-                    Availability
-                  </dt>
+                  <dt className="font-bold text-ink/45">Availability</dt>
                   <dd className="mt-1 text-base font-semibold text-ink">
                     {product.availability.online && product.availability.inStore
                       ? "Online and in store"
@@ -219,17 +209,13 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
             </h2>
             <dl className="mt-5 space-y-5 text-sm">
               <div>
-                <dt className="font-bold text-ink/45">
-                  Who it may suit
-                </dt>
+                <dt className="font-bold text-ink/45">Who it may suit</dt>
                 <dd className="mt-2 leading-6 text-ink/72">
                   {product.disabilityNeeds.join(", ")}
                 </dd>
               </div>
               <div>
-                <dt className="font-bold text-ink/45">
-                  Sizing information
-                </dt>
+                <dt className="font-bold text-ink/45">Sizing information</dt>
                 <dd className="mt-2 leading-6 text-ink/72">
                   {product.sizes.length > 0
                     ? product.sizes.join(", ")
@@ -237,17 +223,13 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                 </dd>
               </div>
               <div>
-                <dt className="font-bold text-ink/45">
-                  Location availability
-                </dt>
+                <dt className="font-bold text-ink/45">Location availability</dt>
                 <dd className="mt-2 leading-6 text-ink/72">
                   {product.availability.note}
                 </dd>
               </div>
               <div>
-                <dt className="font-bold text-ink/45">
-                  Ships to
-                </dt>
+                <dt className="font-bold text-ink/45">Ships to</dt>
                 <dd className="mt-2 leading-6 text-ink/72">
                   {product.availability.countries.join(", ")}
                 </dd>
@@ -257,7 +239,8 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                   Returns / source policy
                 </dt>
                 <dd className="mt-2 leading-6 text-ink/72">
-                  {brand.shipping.returnsPolicy || "Check the official retailer for current returns and exchange rules."}
+                  {brand.shipping.returnsPolicy ||
+                    "Check the official retailer for current returns and exchange rules."}
                 </dd>
               </div>
             </dl>
@@ -279,14 +262,14 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                 Browse all &rarr;
               </Link>
             </div>
-            <LocationAwareProductGrid
-              products={similarItems}
-              className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
-            />
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {similarItems.map((item) => (
+                <ProductCard key={item.id} product={item} />
+              ))}
+            </div>
           </section>
         )}
       </main>
-      </div>
-    </ProductLocationGate>
+    </div>
   );
 }

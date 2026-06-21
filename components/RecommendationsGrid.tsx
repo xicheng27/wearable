@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
-import LocationEmptyState from "@/components/LocationEmptyState";
-import { useShoppingLocation } from "@/components/LocationProvider";
-import { productShipsTo } from "@/lib/shipping";
+import CountryEmptyState from "@/components/CountryEmptyState";
+import { productShipsToCountry } from "@/data/products";
+import { useCountry } from "@/components/CountryProvider";
+import { GLOBAL } from "@/lib/countries";
 import { Product } from "@/types";
 import type { ProductRecommendation } from "@/lib/recommendations";
 
@@ -24,12 +25,15 @@ function RecommendationDetails({
   const why =
     reasons.length > 0
       ? reasons.slice(0, 4).join(". ")
-      : `${product.adaptiveFeatures.slice(0, 2).join(" and ")} with a ${product.styleTags[0]?.toLowerCase() ?? "practical"} style.`;
+      : `${product.adaptiveFeatures.slice(0, 2).join(" and ")} with a ${
+          product.styleTags[0]?.toLowerCase() ?? "practical"
+        } style.`;
   const targetGroups =
     metadata?.targetGroups?.filter((group) => group !== "Friend").slice(0, 3) ??
     product.bestFor.slice(0, 2);
   const features =
-    metadata?.adaptiveFeatures?.slice(0, 4) ?? product.adaptiveFeatures.slice(0, 4);
+    metadata?.adaptiveFeatures?.slice(0, 4) ??
+    product.adaptiveFeatures.slice(0, 4);
 
   return (
     <div className="-mt-3 rounded-b-2xl border border-t-0 border-primary-100 bg-primary-50 px-5 pb-5 pt-6">
@@ -53,7 +57,10 @@ function RecommendationDetails({
       )}
 
       {features.length > 0 && (
-        <div className="mt-3 flex flex-wrap gap-1.5" aria-label="Recommended adaptive features">
+        <div
+          className="mt-3 flex flex-wrap gap-1.5"
+          aria-label="Recommended adaptive features"
+        >
           {features.map((feature) => (
             <span
               key={feature}
@@ -68,21 +75,17 @@ function RecommendationDetails({
   );
 }
 
-export default function LocationAwareRecommendations({
+export default function RecommendationsGrid({
   recommendations,
 }: {
   recommendations: Recommendation[];
 }) {
-  const { selectedCountry, ready } = useShoppingLocation();
-  if (!ready) {
-    return <div className="h-64 animate-pulse rounded-2xl bg-white" />;
-  }
-
+  const { country } = useCountry();
   const available = recommendations.filter(({ product }) =>
-    productShipsTo(product, selectedCountry)
+    productShipsToCountry(product, country ?? GLOBAL)
   );
 
-  if (available.length === 0) return <LocationEmptyState />;
+  if (available.length === 0) return <CountryEmptyState />;
 
   return (
     <>
@@ -111,4 +114,3 @@ export default function LocationAwareRecommendations({
     </>
   );
 }
-

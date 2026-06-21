@@ -1,14 +1,14 @@
 "use client";
 
-import { useShoppingLocation } from "@/components/LocationProvider";
-import { GLOBAL_LOCATION } from "@/lib/countries";
+import { useCountry } from "@/components/CountryProvider";
+import { GLOBAL } from "@/lib/countries";
 
-export default function LocationEmptyState({
+export default function CountryEmptyState({
   generic = false,
 }: {
   generic?: boolean;
 }) {
-  const { setCountry } = useShoppingLocation();
+  const { setCountry } = useCountry();
 
   return (
     <div className="paper-panel rounded-[1.5rem_.6rem_1.5rem_1.5rem] px-6 py-16 text-center">
@@ -25,7 +25,7 @@ export default function LocationEmptyState({
       {!generic && (
         <button
           type="button"
-          onClick={() => setCountry(GLOBAL_LOCATION)}
+          onClick={() => setCountry(GLOBAL)}
           className="btn-primary mt-6"
         >
           View globally available items
@@ -34,4 +34,3 @@ export default function LocationEmptyState({
     </div>
   );
 }
-

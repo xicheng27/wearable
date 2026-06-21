@@ -1,6 +1,7 @@
 import { Product, ProductSearchParams } from "@/types";
 import { brands } from "@/data/brands";
 import { verifiedProducts } from "@/data/verifiedProducts";
+import { GLOBAL, expandShippingRegions } from "@/lib/countries";
 
 const originalProducts: Product[] = [
   {
@@ -683,6 +684,94 @@ export const products = mixProductsByBrand(
   }))
 );
 
+// Deterministic PRNG so a given seed always yields the same order. This keeps
+// server and client render output identical (no hydration mismatch) while still
+// letting the default selection rotate when the seed changes.
+function seededRandom(seed: number) {
+  let state = seed >>> 0;
+  return function next() {
+    state += 0x6d2b79f5;
+    let t = state;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function seededShuffle<T>(items: T[], next: () => number): T[] {
+  const copy = [...items];
+  for (let i = copy.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(next() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+// Seed that rotates once per day so the default grid feels fresh without
+// changing within a session (and stays identical between server and client).
+export function dailySeed(date = new Date()): number {
+  return Math.floor(date.getTime() / 86_400_000);
+}
+
+/**
+ * Builds a diversified ordering for the default (unfiltered) product display:
+ * no two consecutive items share a brand where avoidable, categories are varied,
+ * and the whole selection is shuffled by a daily seed so it rotates over time.
+ * Used only when the user has NOT applied filters — filtered/searched views keep
+ * their own relevance ordering.
+ */
+export function diversifyProducts(
+  list: Product[],
+  seed: number = dailySeed()
+): Product[] {
+  if (list.length <= 2) return list;
+  const next = seededRandom(seed);
+
+  const byBrand = new Map<string, Product[]>();
+  for (const product of list) {
+    const group = byBrand.get(product.brandId);
+    if (group) group.push(product);
+    else byBrand.set(product.brandId, [product]);
+  }
+
+  // Shuffle within each brand, then shuffle the order brands are visited in.
+  const groups = seededShuffle(
+    Array.from(byBrand.values()).map((group) => seededShuffle(group, next)),
+    next
+  );
+  const cursors = groups.map(() => 0);
+
+  const result: Product[] = [];
+  let lastBrand: string | null = null;
+  let lastCategory: string | null = null;
+
+  while (result.length < list.length) {
+    const available = groups
+      .map((_, index) => index)
+      .filter((index) => cursors[index] < groups[index].length);
+    if (available.length === 0) break;
+
+    // Prefer a different brand than the previous item, then a different category.
+    let pool = available.filter(
+      (index) => groups[index][cursors[index]].brandId !== lastBrand
+    );
+    if (pool.length === 0) pool = available;
+    const categoryPool = pool.filter(
+      (index) => groups[index][cursors[index]].category !== lastCategory
+    );
+    if (categoryPool.length > 0) pool = categoryPool;
+
+    const choice = pool[0];
+    const product = groups[choice][cursors[choice]];
+    cursors[choice] += 1;
+    result.push(product);
+    lastBrand = product.brandId;
+    lastCategory = product.category;
+  }
+
+  return result;
+}
+
 export const clothingTypeOptions = [
   "Tops",
   "Shirts",
@@ -806,6 +895,34 @@ export function getProductsByCategory(slug: string): Product[] {
 
 export function getBrandName(brandId: string): string {
   return brands.find((brand) => brand.id === brandId)?.name ?? brandId;
+}
+
+// Countries a product ships to, derived from its availability data (with legacy
+// region labels like "EU" expanded into real countries) plus the home country of
+// Singapore-based brands, who can fulfil locally. Products with no shipping data
+// default to Global so nothing is hidden by missing data.
+export function getProductShipsTo(product: Product): string[] {
+  const declared = product.availability?.countries ?? [];
+  const expanded = expandShippingRegions(declared);
+  const brandCountry = brands.find((brand) => brand.id === product.brandId)?.country;
+  if (brandCountry === "Singapore" && !expanded.includes("Singapore")) {
+    expanded.push("Singapore");
+  }
+  return expanded.length > 0 ? expanded : [GLOBAL];
+}
+
+export function productShipsToCountry(product: Product, country: string): boolean {
+  if (!country || country === GLOBAL) return true;
+  const shipsTo = getProductShipsTo(product);
+  return shipsTo.includes(GLOBAL) || shipsTo.includes(country);
+}
+
+export function filterProductsByCountry(
+  productList: Product[],
+  country: string | null
+): Product[] {
+  if (!country || country === GLOBAL) return productList;
+  return productList.filter((product) => productShipsToCountry(product, country));
 }
 
 function matches(value: string, candidate: string) {

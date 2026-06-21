@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import { Product } from "@/types";
-import { getBrandName } from "@/data/products";
+import { getBrandName, getProductShipsTo } from "@/data/products";
 import ProductImage from "@/components/ProductImage";
 import PriceDisplay from "@/components/PriceDisplay";
-import { useShoppingLocation } from "@/components/LocationProvider";
-import { productShippingLabel } from "@/lib/shipping";
 import OfficialProductLink from "@/components/OfficialProductLink";
+import { useCountry } from "@/components/CountryProvider";
+import { GLOBAL } from "@/lib/countries";
 
 function plainBestFor(product: Product) {
   const text = product.bestFor[0] || product.disabilityNeeds[0] || "adaptive dressing";
@@ -19,7 +19,14 @@ function plainBestFor(product: Product) {
 
 export default function ProductCard({ product }: { product: Product }) {
   const brandName = getBrandName(product.brandId);
-  const { selectedCountry } = useShoppingLocation();
+  const { country } = useCountry();
+  const shipsTo = getProductShipsTo(product);
+  const shipsGlobally = shipsTo.includes(GLOBAL);
+  const shippingLabel = shipsGlobally
+    ? "Available globally"
+    : country && country !== GLOBAL && shipsTo.includes(country)
+      ? `Ships to ${country}`
+      : `Ships to ${shipsTo[0]}`;
 
   return (
     <article className="group card card-hover flex h-full flex-col overflow-hidden rounded-[1.7rem_.7rem_1.7rem_1.7rem]">
@@ -89,9 +96,7 @@ export default function ProductCard({ product }: { product: Product }) {
         </p>
 
         <div className="mt-4">
-          <p className="text-sm font-bold text-ink/55">
-            Best for
-          </p>
+          <p className="text-sm font-bold text-ink/55">Best for</p>
           <p className="mt-1 text-base leading-relaxed text-ink/78">
             {plainBestFor(product)}
           </p>
@@ -109,10 +114,7 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
 
         <div className="mt-auto pt-5">
-          <p className="mb-3 w-fit rounded-md bg-primary-50 px-3 py-1.5 text-sm font-bold text-primary-900">
-            {productShippingLabel(product, selectedCountry)}
-          </p>
-          <div className="mb-4 flex items-center gap-2 text-sm text-ink/60">
+          <div className="mb-2 flex items-center gap-2 text-sm text-ink/60">
             <span
               className={`h-2 w-2 rounded-full ${
                 product.availability.online ? "bg-sage" : "bg-ink/20"
@@ -125,6 +127,9 @@ export default function ProductCard({ product }: { product: Product }) {
                 ? "Available online"
                 : "In-store availability"}
           </div>
+          <p className="mb-3 w-fit rounded-md bg-primary-50 px-3 py-1.5 text-sm font-bold text-primary-900">
+            {shippingLabel}
+          </p>
           <Link
             href={`/products/${product.id}`}
             className="btn-primary flex w-full px-4 py-3.5 text-center text-base"

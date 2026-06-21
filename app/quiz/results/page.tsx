@@ -1,4 +1,4 @@
-import LocationAwareRecommendations from "@/components/LocationAwareRecommendations";
+import RecommendationsGrid from "@/components/RecommendationsGrid";
 import { products } from "@/data/products";
 import { rankProductRecommendations } from "@/lib/recommendations";
 
@@ -52,7 +52,7 @@ function normalizeNeeds(searchParams: QuizResultsPageProps["searchParams"]) {
     if (value.includes("easy shoes")) {
       needs.push("Hands-free entry", "Wide opening", "Limited mobility");
     }
-    if (value.includes("sensory")) {
+    if (value.includes("sensory") || value.includes("seam") || value.includes("tag")) {
       needs.push("Sensory processing", "Skin sensitivity");
     }
     if (value.includes("wheelchair") || value.includes("seated")) {
@@ -77,32 +77,28 @@ function normalizeBudget(value: string | string[] | undefined) {
   if (["Under $50", "$50-$100", "$100-$150", "$150+"].includes(budget)) {
     return budget;
   }
-  if (budget.startsWith("$ Â·") || budget.toLowerCase().includes("budget")) {
-    return "Under $50";
-  }
-  if (budget.startsWith("$$ Â·") || budget.toLowerCase().includes("mid")) {
-    return "$50-$100";
-  }
-  if (budget.startsWith("$$$ Â·") || budget.toLowerCase().includes("premium")) {
-    return "$100-$150";
-  }
-  return budget || undefined;
+  const lower = budget.toLowerCase();
+  if (lower.includes("budget")) return "Under $50";
+  if (lower.includes("mid")) return "$50-$100";
+  if (lower.includes("premium")) return "$100-$150";
+  return budget && !lower.includes("no limit") ? budget : undefined;
 }
 
-function inferClosureTypes(needs: string[]) {
+function inferClosureTypes(needs: string[], fastenings: string[]) {
   const closures: string[] = [];
-  needs.forEach((need) => {
+  [...needs, ...fastenings].forEach((need) => {
     const value = need.toLowerCase();
     if (value.includes("magnetic")) closures.push("Magnetic closures");
     if (value.includes("zip") || value.includes("easy shoes")) closures.push("Zip access", "Hands-free entry");
     if (value.includes("velcro") || value.includes("easy closure")) closures.push("Velcro / touch closures");
     if (value.includes("snap")) closures.push("Snap closures");
+    if (value.includes("slip-on") || value.includes("no fastenings")) closures.push("Pull-on", "Hands-free entry");
   });
   return Array.from(new Set(closures));
 }
 
-function inferSensoryNeeds(needs: string[]) {
-  return needs.some((need) => /sensory|skin|autism|tag|seam/i.test(need))
+function inferSensoryNeeds(needs: string[], sensory: string[]) {
+  return [...needs, ...sensory].some((need) => /sensory|skin|autism|tag|seam|soft|fabric/i.test(need))
     ? ["Sensory-friendly", "Skin sensitivity"]
     : [];
 }
@@ -131,6 +127,8 @@ export default function QuizResultsPage({
   searchParams,
 }: QuizResultsPageProps) {
   const needs = normalizeNeeds(searchParams);
+  const sensory = readList(searchParams.sensory);
+  const fastenings = readList(searchParams.fastenings);
   const styles = [
     ...readList(searchParams.style),
     ...readList(searchParams.styles),
@@ -140,7 +138,7 @@ export default function QuizResultsPage({
   const availability = readList(searchParams.availability)[0] ?? "";
   const otherNeeds = readList(searchParams.otherNeeds).join(", ").slice(0, 500);
   const country = readList(searchParams.location)[0];
-  const targetGroup = readList(searchParams.forWhom)[0];
+  const targetGroup = readList(searchParams.targetGroup)[0] || readList(searchParams.forWhom)[0];
   const ageRange = readList(searchParams.ageRange)[0];
   const personality = [
     ...readList(searchParams.personality),
@@ -155,8 +153,8 @@ export default function QuizResultsPage({
     ageRange,
     personalityType: personality,
     budgetRange: budget,
-    closureTypes: inferClosureTypes(needs),
-    sensoryNeeds: inferSensoryNeeds(needs),
+    closureTypes: inferClosureTypes(needs, fastenings),
+    sensoryNeeds: inferSensoryNeeds(needs, sensory),
     mobilityNeeds: inferMobilityNeeds(needs),
     clothingTypes: clothing.filter((item) => item !== "Not sure"),
     availabilityPreference: availability,
@@ -191,8 +189,8 @@ export default function QuizResultsPage({
           ageRange,
           personalityType: personality,
           budgetRange: budget,
-          closureTypes: inferClosureTypes(needs),
-          sensoryNeeds: inferSensoryNeeds(needs),
+          closureTypes: inferClosureTypes(needs, fastenings),
+          sensoryNeeds: inferSensoryNeeds(needs, sensory),
           mobilityNeeds: inferMobilityNeeds(needs),
           openEndedNeed: otherNeeds,
           limit: 9,
@@ -233,7 +231,7 @@ export default function QuizResultsPage({
       </header>
 
       <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <LocationAwareRecommendations recommendations={visibleRecommendations} />
+        <RecommendationsGrid recommendations={visibleRecommendations} />
       </main>
     </div>
   );

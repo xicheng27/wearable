@@ -1,7 +1,10 @@
 import type { Product } from "@/types";
-import { getBrandName } from "@/data/products";
-import { GLOBAL_LOCATION } from "@/lib/countries";
-import { getProductShipsTo, productShipsTo } from "@/lib/shipping";
+import {
+  getBrandName,
+  getProductShipsTo,
+  productShipsToCountry,
+} from "@/data/products";
+import { GLOBAL } from "@/lib/countries";
 import { parsePrice } from "@/lib/currency";
 
 export type RecommendationInput = {
@@ -390,12 +393,12 @@ export function scoreProductRecommendation(
 
   const country = input.country?.trim();
   if (country) {
-    if (country === GLOBAL_LOCATION || productShipsTo(product, country)) {
+    if (country === GLOBAL || productShipsToCountry(product, country)) {
       addScore(
         state,
         "countryAvailability",
         SCORE_WEIGHTS.countryAvailability,
-        country === GLOBAL_LOCATION
+        country === GLOBAL
           ? "Available to global shoppers"
           : `Available for shoppers in ${country}`
       );

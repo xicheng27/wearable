@@ -1,8 +1,15 @@
-export type DisplayCurrency = "SGD" | "EUR" | "USD";
+export type DisplayCurrency = "SGD" | "EUR" | "USD" | "GBP" | "CAD" | "AUD";
 
 export type CurrencyRates = Record<string, number>;
 
-export const displayCurrencies: DisplayCurrency[] = ["SGD", "EUR", "USD"];
+export const displayCurrencies: DisplayCurrency[] = [
+  "SGD",
+  "USD",
+  "EUR",
+  "GBP",
+  "CAD",
+  "AUD",
+];
 
 // ECB reference rates, with EUR as the base, checked 2026-06-12.
 export const fallbackCurrencyRates: CurrencyRates = {
@@ -11,9 +18,46 @@ export const fallbackCurrencyRates: CurrencyRates = {
   GBP: 0.86305,
   CAD: 1.618,
   SGD: 1.4854,
+  AUD: 1.7785,
 };
 
 export const fallbackRatesDate = "2026-06-12";
+
+// Maps a shopping country to the display currency we show prices in. Countries
+// without a dedicated supported currency fall back to USD as a neutral default.
+// Add overrides here as more currencies are supported.
+const currencyByCountry: Record<string, DisplayCurrency> = {
+  Singapore: "SGD",
+  "United States": "USD",
+  "United Kingdom": "GBP",
+  Canada: "CAD",
+  Australia: "AUD",
+  Ireland: "EUR",
+  Austria: "EUR",
+  Belgium: "EUR",
+  Croatia: "EUR",
+  Cyprus: "EUR",
+  Estonia: "EUR",
+  Finland: "EUR",
+  France: "EUR",
+  Germany: "EUR",
+  Greece: "EUR",
+  Italy: "EUR",
+  Latvia: "EUR",
+  Lithuania: "EUR",
+  Luxembourg: "EUR",
+  Malta: "EUR",
+  Netherlands: "EUR",
+  Portugal: "EUR",
+  Slovakia: "EUR",
+  Slovenia: "EUR",
+  Spain: "EUR",
+};
+
+export function currencyForCountry(country: string): DisplayCurrency | null {
+  return currencyByCountry[country] ?? null;
+}
+
 
 export function convertCurrency(
   amount: number,
@@ -35,6 +79,7 @@ export function formatCurrency(amount: number, currency: string) {
     EUR: "€",
     CAD: "CA$",
     GBP: "£",
+    AUD: "A$",
   };
   const formattedAmount = new Intl.NumberFormat("en-SG", {
     minimumFractionDigits: 2,

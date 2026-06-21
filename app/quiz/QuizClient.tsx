@@ -4,8 +4,24 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { LogoMark } from "@/components/Logo";
-import { useShoppingLocation } from "@/components/LocationProvider";
-import { GLOBAL_LOCATION } from "@/lib/countries";
+import Photo from "@/components/Photo";
+import { useCountry } from "@/components/CountryProvider";
+import {
+  disabilityOptionsList,
+  shippingLocationsList,
+} from "@/data/brands";
+import { quizClothingOptions } from "@/data/categories";
+import {
+  ageRangeOptions,
+  personalityOptions,
+  targetGroupOptions,
+} from "@/data/profileOptions";
+import { useUserProfile } from "@/components/UserProfileProvider";
+import {
+  deriveBudgetRange,
+  deriveMobilityLevel,
+  shippingLocationCurrency,
+} from "@/lib/userProfile";
 
 interface StepDef {
   id: string;
@@ -14,59 +30,110 @@ interface StepDef {
   type: "single" | "multi" | "text";
   options?: string[];
   placeholder?: string;
+  layout?: "grid" | "list";
 }
 
 const steps: StepDef[] = [
   {
+    id: "targetGroup",
+    title: "Who are you shopping for?",
+    subtitle: "This helps us show the right fit and features first.",
+    type: "single",
+    layout: "list",
+    options: targetGroupOptions.map((option) => option.label),
+  },
+  {
+    id: "ageRange",
+    title: "What's your age range?",
+    subtitle: "We'll tailor sizing and fit suggestions accordingly.",
+    type: "single",
+    options: ageRangeOptions.map((option) => option.label),
+  },
+  {
     id: "location",
     title: "Where are you shopping from?",
-    subtitle: "This helps us show clothing that ships to you.",
+    subtitle: "We'll only show brands that deliver to you.",
     type: "single",
-    options: [
-      "Singapore",
-      "United States",
-      "United Kingdom",
-      "Canada",
-      "Australia",
-      GLOBAL_LOCATION,
-    ],
-  },
-  {
-    id: "forWhom",
-    title: "Who is this for?",
-    subtitle: "Choose the closest answer. You can skip any question.",
-    type: "single",
-    options: ["Me", "Parent", "Child", "Friend", "Caregiver"],
-  },
-  {
-    id: "clothing",
-    title: "What clothing are you looking for?",
-    subtitle: "Pick one or more. If you are unsure, choose Not sure.",
-    type: "multi",
-    options: ["Tops", "Pants", "Shoes", "Underwear", "Formal", "Not sure"],
+    options: shippingLocationsList,
   },
   {
     id: "needs",
-    title: "What help do you need?",
-    subtitle: "Select anything that would make dressing or wearing clothing easier.",
+    title: "Which of these best describe your physical or functional needs?",
+    subtitle: "Select all that apply. This helps us match the right products.",
+    type: "multi",
+    options: disabilityOptionsList,
+  },
+  {
+    id: "otherNeeds",
+    title: "Is there anything else clothing needs to do for you?",
+    subtitle:
+      "Describe anything we have not covered, in your own words. This is optional.",
+    type: "text",
+    placeholder:
+      "For example: I need trousers that work with a feeding tube, or tops that are easy to change while lying down.",
+  },
+  {
+    id: "sensory",
+    title: "Any sensory preferences?",
+    subtitle: "We'll prioritise fabrics and finishes that feel right.",
     type: "multi",
     options: [
-      "One-handed dressing",
-      "Seated fit",
-      "Magnetic closures",
-      "Easy shoes",
-      "Sensory-friendly",
-      "Wheelchair-friendly",
-      "Arthritis-friendly",
-      "Prosthetic-friendly",
+      "Soft, tag-free fabrics",
+      "Flat seams",
+      "Loose, non-restrictive fits",
+      "No sensory preferences",
     ],
   },
   {
-    id: "budget",
-    title: "Preferred budget",
-    subtitle: "A rough range is enough. Prices should be checked on the official site.",
+    id: "fastenings",
+    title: "Which closures or fastenings work best for you?",
+    subtitle: "Pick whatever makes dressing easier.",
+    type: "multi",
+    options: [
+      "Magnetic buttons",
+      "Velcro",
+      "Easy zippers",
+      "Slip-on / no fastenings",
+      "No preference",
+    ],
+  },
+  {
+    id: "clothing",
+    title: "What are you shopping for?",
+    subtitle: "Choose one or more clothing pieces.",
+    type: "multi",
+    options: quizClothingOptions.map((option) => option.label),
+  },
+  {
+    id: "style",
+    title: "What's your style?",
+    subtitle: "Pick the looks you love. You can choose more than one.",
+    type: "multi",
+    options: [
+      "Swedish style",
+      "Clean / minimal",
+      "Old money",
+      "Streetwear",
+      "Formal",
+      "Casual",
+      "Sporty",
+      "Vintage",
+      "Smart casual",
+    ],
+  },
+  {
+    id: "personality",
+    title: "What's your style personality?",
+    subtitle: "Pick the vibe that feels most like you.",
     type: "single",
-    options: ["Under $50", "$50-$100", "$100-$150", "$150+", "No limit"],
+    options: personalityOptions,
+  },
+  {
+    id: "budget",
+    title: "What's your budget?",
+    subtitle: "A rough range is fine. Always check final prices on the official site.",
+    type: "single",
+    options: ["$ · Budget-friendly", "$$ · Mid-range", "$$$ · Premium", "No limit"],
   },
   {
     id: "availability",
@@ -75,15 +142,19 @@ const steps: StepDef[] = [
     type: "single",
     options: ["Online only", "In-store also", "No preference"],
   },
-  {
-    id: "otherNeeds",
-    title: "Anything we did not ask about?",
-    subtitle: "Optional. Tell us in your own words if your needs are more specific.",
-    type: "text",
-    placeholder:
-      "For example: trousers that work with a feeding tube, tops that are easy to change while lying down, or shoes that fit braces.",
-  },
 ];
+
+const styleImages: Record<string, string> = {
+  "Swedish style": "/images/style-swedish.svg",
+  "Clean / minimal": "/images/style-minimal.svg",
+  "Old money": "/images/style-oldmoney.svg",
+  Streetwear: "/images/style-streetwear.svg",
+  Formal: "/images/style-formal.svg",
+  Casual: "/images/style-casual.svg",
+  Sporty: "/images/style-sporty.svg",
+  Vintage: "/images/style-vintage.svg",
+  "Smart casual": "/images/style-smartcasual.svg",
+};
 
 function CheckIcon() {
   return (
@@ -93,29 +164,35 @@ function CheckIcon() {
   );
 }
 
-function OptionButton({
-  label,
-  selected,
-  onClick,
-}: {
+interface OptionButtonProps {
   label: string;
   selected: boolean;
   onClick: () => void;
-}) {
+  image?: string;
+}
+
+function OptionButton({ label, selected, onClick, image }: OptionButtonProps) {
   return (
     <button
       type="button"
       onClick={onClick}
       aria-pressed={selected}
-      className={`flex min-h-14 items-center justify-between gap-3 rounded-2xl border px-5 py-4 text-left text-base font-bold transition-all duration-200 active:scale-[0.98] ${
+      className={`flex min-h-14 items-center justify-between gap-3 rounded-xl border text-left text-base font-semibold leading-snug transition-all duration-200 active:scale-[0.98] ${
+        image ? "p-2 pr-3" : "px-5 py-3.5"
+      } ${
         selected
           ? "border-primary-700 bg-primary-50 text-primary-900 shadow-soft"
           : "border-ink/15 bg-paper text-ink/78 hover:border-primary-300 hover:bg-sand/35"
       }`}
     >
-      <span>{label === GLOBAL_LOCATION ? "View global items" : label}</span>
+      <span className="flex items-center gap-3">
+        {image && (
+          <Photo src={image} alt="" className="h-12 w-12 flex-shrink-0 rounded-xl" />
+        )}
+        {label}
+      </span>
       <span
-        className={`flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full transition-all duration-200 ${
+        className={`flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full transition-all duration-200 ${
           selected ? "bg-primary-700 text-white" : "border border-ink/25 text-transparent"
         }`}
         aria-hidden="true"
@@ -128,7 +205,8 @@ function OptionButton({
 
 export default function QuizClient() {
   const router = useRouter();
-  const { setCountry } = useShoppingLocation();
+  const { setProfile } = useUserProfile();
+  const { setCountry } = useCountry();
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string[]>>({});
   const [otherNeeds, setOtherNeeds] = useState("");
@@ -149,34 +227,54 @@ export default function QuizClient() {
     setAnswers({ ...answers, [current.id]: next });
   }
 
-  function finish() {
-    const params = new URLSearchParams();
-    const set = (key: string, list?: string[]) => {
-      if (list && list.length > 0) {
-        params.set(key, list.map(encodeURIComponent).join(","));
-      }
-    };
-
-    set("needs", answers.needs);
-    set("clothing", (answers.clothing ?? []).filter((item) => item !== "Not sure"));
-
-    if (answers.location?.[0]) {
-      params.set("location", answers.location[0]);
-      setCountry(answers.location[0]);
-    }
-    if (answers.forWhom?.[0]) params.set("forWhom", answers.forWhom[0]);
-    if (answers.availability?.[0]) params.set("availability", answers.availability[0]);
-    if (answers.budget?.[0] && answers.budget[0] !== "No limit") {
-      params.set("budget", answers.budget[0]);
-    }
-    if (otherNeeds.trim()) params.set("otherNeeds", otherNeeds.trim());
-
-    router.push(`/quiz/results?${params.toString()}`);
-  }
-
   function next() {
-    if (isLastStep) finish();
-    else setStep((currentStep) => currentStep + 1);
+    if (isLastStep) {
+      const targetGroup = targetGroupOptions.find(
+        (option) => option.label === answers.targetGroup?.[0]
+      )?.value;
+      const ageRange = ageRangeOptions.find(
+        (option) => option.label === answers.ageRange?.[0]
+      )?.value;
+      const location = answers.location?.[0];
+
+      if (location) setCountry(location);
+
+      setProfile({
+        targetGroup,
+        ageRange,
+        location,
+        preferredCurrency: location ? shippingLocationCurrency[location] : undefined,
+        stylePreference: answers.style,
+        personalityType: answers.personality?.[0],
+        bodyNeeds: answers.needs,
+        dressingDifficulty: answers.fastenings,
+        mobilityLevel: deriveMobilityLevel(answers.needs ?? []),
+        sensoryNeeds: answers.sensory,
+        budgetRange: deriveBudgetRange(answers.budget?.[0] ?? ""),
+      });
+
+      const params = new URLSearchParams();
+      const set = (key: string, list?: string[]) => {
+        if (list && list.length > 0) {
+          params.set(key, list.map(encodeURIComponent).join(","));
+        }
+      };
+      set("needs", answers.needs);
+      set("sensory", answers.sensory);
+      set("fastenings", answers.fastenings);
+      set("clothing", answers.clothing);
+      if (location) params.set("location", location);
+      set("styles", answers.style);
+      if (answers.budget?.[0]) params.set("budget", answers.budget[0]);
+      if (answers.availability?.[0]) params.set("availability", answers.availability[0]);
+      if (otherNeeds.trim()) params.set("otherNeeds", otherNeeds.trim());
+      if (targetGroup) params.set("targetGroup", targetGroup);
+      if (ageRange) params.set("ageRange", ageRange);
+      if (answers.personality?.[0]) params.set("personality", answers.personality[0]);
+      router.push(`/quiz/results?${params.toString()}`);
+    } else {
+      setStep((currentStep) => currentStep + 1);
+    }
   }
 
   return (
@@ -209,13 +307,20 @@ export default function QuizClient() {
       </div>
 
       <main className="mx-auto flex min-h-0 w-full max-w-3xl flex-1 flex-col px-5 sm:px-6">
-        <div key={step} className="animate-fade-up min-h-0 flex-1 overflow-y-auto py-5 pr-1 sm:py-6">
+        <div
+          key={step}
+          className="animate-fade-up min-h-0 flex-1 overflow-y-auto py-5 pr-1 sm:py-6"
+        >
           <h1 className="font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
             {current.title}
           </h1>
           <p className="mt-3 text-base leading-7 text-ink/65">{current.subtitle}</p>
 
-          <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <div
+            className={`mt-6 grid grid-cols-1 gap-3 ${
+              current.layout === "list" ? "" : "sm:grid-cols-2"
+            }`}
+          >
             {current.type === "text" ? (
               <div className="sm:col-span-2">
                 <label htmlFor="other-needs" className="mb-2 block text-sm font-bold text-ink">
@@ -241,6 +346,7 @@ export default function QuizClient() {
                   label={option}
                   selected={selected.includes(option)}
                   onClick={() => select(option)}
+                  image={current.id === "style" ? styleImages[option] : undefined}
                 />
               ))
             )}

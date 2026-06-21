@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Logo from "@/components/Logo";
-import DisclaimerNotice from "@/components/DisclaimerNotice";
 
 const groups = [
   ["Browse", [["All clothing", "/search"], ["Singapore guide", "/singapore"], ["Global map", "/map"], ["Adaptive shoes", "/categories/shoes"]]],
@@ -37,7 +36,6 @@ export default function Footer() {
           <p>&copy; 2026 Xi&apos;s. Adaptive fashion discovery.</p>
           <p>Comfort, dignity, independence, style.</p>
         </div>
-        <DisclaimerNotice />
       </div>
     </footer>
   );

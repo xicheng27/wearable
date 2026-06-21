@@ -1,63 +1,48 @@
-import Link from "next/link";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Disclaimer | Xi's",
-  description:
-    "How Xi's uses brand names, product names, logos, and product images for adaptive fashion discovery.",
+  description: "How Xi's uses brand names, product images and links.",
 };
 
 export default function DisclaimerPage() {
   return (
-    <main className="min-h-screen bg-ivory">
-      <section className="paper-texture border-b border-ink/10 bg-[#EEE5D5] py-14">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <p className="eyebrow">Independent discovery tool</p>
-          <h1 className="mt-3 font-display text-5xl font-semibold tracking-[-.04em] text-ink sm:text-6xl">
-            Disclaimer
-          </h1>
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-ink/65">
-            Xi&apos;s helps people discover adaptive fashion and compare
-            clothing features. It is not a retailer and does not sell products
-            directly.
+    <div className="min-h-screen bg-gray-50">
+      <main className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+        <h1 className="text-4xl font-extrabold tracking-tight text-gray-950">
+          Disclaimer
+        </h1>
+        <div className="mt-8 space-y-6 text-base leading-relaxed text-gray-700">
+          <p>
+            Xi&apos;s is an independent adaptive clothing discovery tool. We are
+            not affiliated with, sponsored by, or endorsed by any of the
+            brands listed on this site.
+          </p>
+          <p>
+            Brand and product names, logos and images shown on Xi&apos;s are
+            used solely for identification purposes, so that you can
+            recognize and compare items across brands. They remain the
+            property of their respective owners, and all trademarks belong
+            to their respective owners.
+          </p>
+          <p>
+            Prices, availability and product details are checked periodically
+            but can change without notice. Please purchase directly from the
+            official brand or retailer, and confirm current stock, pricing,
+            sizing and delivery details on their website before buying.
+          </p>
+          <p>
+            Where available, we provide a link to the official product or
+            brand page. These links are provided for convenience only and do
+            not imply any partnership with Xi&apos;s.
+          </p>
+          <p>
+            If you have a question about how your brand or product is
+            represented on this site, please get in touch and we will be
+            happy to help.
           </p>
         </div>
-      </section>
-
-      <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="paper-panel space-y-7 rounded-[1.5rem_.6rem_1.5rem_1.5rem] p-6 text-base leading-8 text-ink/75 sm:p-8">
-          <p>
-            This website is an independent adaptive fashion discovery tool. It
-            is not affiliated with, sponsored by, or endorsed by any fashion,
-            footwear, or adaptive clothing brand unless explicitly stated.
-          </p>
-
-          <p>
-            Brand names, product names, logos, and product images may appear on
-            Xi&apos;s only to identify the relevant item, support accessibility
-            reference, make recommendations easier to understand, and provide
-            useful shopping information.
-          </p>
-
-          <p>
-            Official product links may be provided so users can visit the
-            original brand, retailer, or authorized seller. Users should confirm
-            current prices, sizing, availability, shipping, return policies, and
-            accessibility details directly with the official retailer before
-            purchasing.
-          </p>
-
-          <p>
-            All trademarks, copyrights, product images, brand names, and product
-            names belong to their respective owners.
-          </p>
-
-          <div className="border-t border-ink/10 pt-7">
-            <Link href="/" className="btn-primary">
-              Back to Xi&apos;s
-            </Link>
-          </div>
-        </div>
-      </section>
-    </main>
+      </main>
+    </div>
   );
 }

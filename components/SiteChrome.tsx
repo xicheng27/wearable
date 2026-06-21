@@ -1,7 +1,6 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import DisclaimerNotice from "@/components/DisclaimerNotice";
 import AccessibilityPanel from "@/components/AccessibilityPanel";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
@@ -21,7 +20,6 @@ export default function SiteChrome({
           {children}
         </main>
         <AccessibilityPanel />
-        <DisclaimerNotice compact />
       </>
     );
   }

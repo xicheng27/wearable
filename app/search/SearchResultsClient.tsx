@@ -1,15 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import SearchBar from "@/components/SearchBar";
 import SearchFilters from "@/components/SearchFilters";
 import ProductCard from "@/components/ProductCard";
-import { searchProducts } from "@/data/products";
-import { useShoppingLocation } from "@/components/LocationProvider";
-import { filterProductsForCountry } from "@/lib/shipping";
-import LocationEmptyState from "@/components/LocationEmptyState";
-import LocationButton from "@/components/LocationButton";
+import CountrySelector from "@/components/CountrySelector";
+import {
+  searchProducts,
+  filterProductsByCountry,
+  diversifyProducts,
+} from "@/data/products";
+import { useCountry } from "@/components/CountryProvider";
+import { GLOBAL } from "@/lib/countries";
 
 const filterLabels: Record<string, string> = {
   clothing: "Clothing",
@@ -21,6 +24,7 @@ const filterLabels: Record<string, string> = {
   size: "Size",
   fit: "Fit",
   availability: "Availability",
+  location: "Location",
   difficulty: "Dressing difficulty",
   sensory: "Sensory-friendly",
   seated: "Seated fit",
@@ -33,12 +37,14 @@ const filterLabels: Record<string, string> = {
 
 export default function SearchResultsClient() {
   const searchParams = useSearchParams();
+  const { country, setCountry } = useCountry();
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [visibleCount, setVisibleCount] = useState(48);
-  const { selectedCountry, ready } = useShoppingLocation();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   const query = searchParams.get("q") ?? "";
-  const unfilteredResults = searchProducts({
+  const matchedFilters = searchProducts({
     query: query || undefined,
     clothingType: searchParams.get("clothing") || undefined,
     brand: searchParams.get("brand") || undefined,
@@ -49,6 +55,7 @@ export default function SearchResultsClient() {
     size: searchParams.get("size") || undefined,
     genderFit: searchParams.get("fit") || undefined,
     availability: searchParams.get("availability") || undefined,
+    location: searchParams.get("location") || undefined,
     sensoryFriendly: searchParams.get("sensory") === "true",
     seatedFit: searchParams.get("seated") === "true",
     oneHandedDressing: searchParams.get("oneHanded") === "true",
@@ -58,9 +65,12 @@ export default function SearchResultsClient() {
     prostheticAccess: searchParams.get("prosthetic") === "true",
     dressingDifficulty: searchParams.get("difficulty") || undefined,
   });
-  const results = ready
-    ? filterProductsForCountry(unfilteredResults, selectedCountry)
-    : [];
+  const countryFiltered = filterProductsByCountry(matchedFilters, country);
+  const hiddenByLocation =
+    countryFiltered.length === 0 &&
+    matchedFilters.length > 0 &&
+    !!country &&
+    country !== GLOBAL;
 
   const activeFilters = Object.keys(filterLabels)
     .filter((key) => searchParams.has(key))
@@ -71,6 +81,10 @@ export default function SearchResultsClient() {
           ? filterLabels[key]
           : `${filterLabels[key]}: ${searchParams.get(key)}`,
     }));
+
+  const isDefaultView = activeFilters.length === 0 && !query;
+  const results =
+    isDefaultView && mounted ? diversifyProducts(countryFiltered) : countryFiltered;
   const visibleResults = results.slice(0, visibleCount);
 
   function removeFilter(key: string) {
@@ -98,7 +112,7 @@ export default function SearchResultsClient() {
                 placeholder="Try 'magnetic shirt', 'wheelchair jeans' or 'easy shoes'"
               />
             </div>
-            <LocationButton className="justify-between px-4 py-3" />
+            <CountrySelector className="justify-between px-4 py-3 text-sm" />
           </div>
         </div>
       </header>
@@ -144,14 +158,32 @@ export default function SearchResultsClient() {
               </button>
             </div>
 
-            {!ready ? (
-              <div className="h-64 animate-pulse rounded-2xl bg-paper" />
+            {results.length === 0 && hiddenByLocation ? (
+              <div className="rounded-2xl border border-ink/10 bg-paper px-6 py-20 text-center">
+                <h2 className="text-xl font-bold text-ink">
+                  No products currently available for your location.
+                </h2>
+                <p className="mt-2 text-ink/60">
+                  These items do not list shipping to {country} yet.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setCountry(GLOBAL)}
+                  className="btn-primary mt-6 inline-block"
+                >
+                  View globally available items
+                </button>
+              </div>
             ) : results.length === 0 ? (
-              unfilteredResults.length > 0 ? (
-                <LocationEmptyState />
-              ) : (
-                <LocationEmptyState generic />
-              )
+              <div className="rounded-2xl border border-ink/10 bg-paper px-6 py-20 text-center">
+                <h2 className="text-xl font-bold text-ink">No clothing items found</h2>
+                <p className="mt-2 text-ink/60">
+                  Try a broader phrase or remove one of the filters.
+                </p>
+                <a href="/search" className="btn-primary mt-6 inline-block">
+                  Clear all filters
+                </a>
+              </div>
             ) : (
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
                 {visibleResults.map((product) => (
@@ -168,7 +200,7 @@ export default function SearchResultsClient() {
                 >
                   Load more clothing
                 </button>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-ink/60">
                   Showing {visibleResults.length} of {results.length} items
                 </p>
               </div>

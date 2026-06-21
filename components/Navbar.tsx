@@ -5,7 +5,7 @@ import { useState } from "react";
 import SearchBar from "@/components/SearchBar";
 import Logo from "@/components/Logo";
 import CurrencySelector from "@/components/CurrencySelector";
-import LocationButton from "@/components/LocationButton";
+import CountrySelector from "@/components/CountrySelector";
 
 const navItems = [
   { href: "/search", label: "Browse Clothing" },
@@ -40,11 +40,16 @@ export default function Navbar() {
               </Link>
             ))}
           </nav>
-          <Link href="/quiz" className="btn-primary hidden whitespace-nowrap px-4 py-2 text-xs 2xl:inline-flex">
+          <Link
+            href="/quiz"
+            className="btn-primary hidden whitespace-nowrap px-4 py-2 text-xs 2xl:inline-flex"
+          >
             Find clothing for me
           </Link>
-          <CurrencySelector className="hidden xl:flex" compact />
-          <LocationButton className="hidden xl:inline-flex" compact />
+          <div className="hidden items-center gap-2 xl:flex">
+            <CountrySelector />
+            <CurrencySelector compact />
+          </div>
 
           <button
             className="min-h-11 min-w-11 rounded-lg border border-ink/10 bg-paper p-2 text-ink hover:bg-sand/50 xl:hidden"
@@ -65,8 +70,10 @@ export default function Navbar() {
         {menuOpen && (
           <div className="space-y-3 border-t border-ink/10 py-4 xl:hidden">
             <SearchBar compact />
-            <CurrencySelector className="justify-between rounded-xl border border-ink/10 bg-paper px-3 py-2" />
-            <LocationButton className="w-full justify-between" />
+            <div className="flex items-center gap-2">
+              <CountrySelector className="flex-1 justify-between" />
+              <CurrencySelector className="rounded-xl border border-ink/10 bg-paper px-3 py-2" />
+            </div>
             <Link
               href="/quiz"
               className="btn-primary flex w-full text-base"
