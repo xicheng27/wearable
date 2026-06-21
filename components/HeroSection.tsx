@@ -37,16 +37,13 @@ export default function HeroSection() {
             Find adaptive clothing that works for your body, needs, and location.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-ink/72">
-            Search by clothing type, dressing needs, seated fit, sensory comfort,
-            shoes, and country availability.
+            Answer a few simple questions about your body, accessibility needs,
+            location and style. We match you to exact clothing pieces — not just
+            a list of brands.
           </p>
 
-          <div className="mt-9 max-w-2xl rounded-[1.25rem] border border-ink/15 bg-paper/90 p-2 shadow-paper backdrop-blur">
-            <SearchBar placeholder="Try 'magnetic shirt' or 'wheelchair jeans'" />
-          </div>
-
-          <div className="mt-7 flex flex-wrap items-center gap-3 sm:gap-4">
-            <Link href="/quiz" className="btn-primary px-7 py-4 text-base">
+          <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
+            <Link href="/quiz" className="btn-primary px-8 py-4 text-lg">
               Find clothing for me <span aria-hidden="true">&rarr;</span>
             </Link>
             <Link href="/search" className="btn-secondary px-7 py-4 text-base">
@@ -54,9 +51,14 @@ export default function HeroSection() {
             </Link>
           </div>
 
+          <div className="mt-8 max-w-2xl rounded-[1.25rem] border border-ink/15 bg-paper/90 p-2 shadow-paper backdrop-blur">
+            <SearchBar placeholder="Or search directly: 'magnetic shirt', 'wheelchair jeans'" />
+          </div>
+
           <p className="mt-5 max-w-xl text-sm leading-6 text-ink/58">
-            Not sure what to search? Use the guided flow. Prefer to compare
-            everything yourself? Browse the full catalogue.
+            The guided flow treats your accessibility needs as requirements, then
+            ranks by style and budget. Prefer to browse? The full catalogue is one
+            tap away.
           </p>
         </div>
 

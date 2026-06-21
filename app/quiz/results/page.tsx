@@ -159,6 +159,10 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
     ? clothingFiltered.filter(({ product }) => product.availability.inStore)
     : clothingFiltered;
   const visibleResults = availabilityFiltered.length > 0 ? availabilityFiltered : allResults;
+  // Exact matches satisfy every hard accessibility/availability requirement;
+  // fallbacks are the closest partial matches, shown clearly separated below.
+  const exactMatches = visibleResults.filter((result) => !result.isFallback);
+  const fallbackMatches = visibleResults.filter((result) => result.isFallback);
 
   const nearbyCountries = location
     ? Array.from(new Set([location, ...expandShippingRegions([location])]))
@@ -242,7 +246,36 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
       </header>
 
       <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <RecommendationsGrid recommendations={visibleResults} />
+        {exactMatches.length > 0 && (
+          <section aria-labelledby="exact-matches-heading">
+            <h2 id="exact-matches-heading" className="sr-only">
+              Best matches
+            </h2>
+            <RecommendationsGrid
+              recommendations={exactMatches}
+              showActions={fallbackMatches.length === 0}
+            />
+          </section>
+        )}
+
+        {fallbackMatches.length > 0 && (
+          <section aria-labelledby="closest-alternatives-heading" className="mt-14">
+            <div className="mb-6 max-w-3xl">
+              <h2
+                id="closest-alternatives-heading"
+                className="font-display text-2xl font-semibold text-ink"
+              >
+                Closest alternatives
+              </h2>
+              <p className="mt-2 text-sm leading-6 text-ink/68">
+                We didn&apos;t have enough pieces that meet every one of your needs, so
+                these are the nearest options. Each card shows clearly what it does and
+                doesn&apos;t cover — they are not exact matches.
+              </p>
+            </div>
+            <RecommendationsGrid recommendations={fallbackMatches} />
+          </section>
+        )}
       </main>
     </div>
   );

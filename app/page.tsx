@@ -143,15 +143,17 @@ export default function HomePage() {
             Start with what you want to wear.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-ink/65">
-            Search across brands, compare accessibility features and open a
-            detailed page for every piece.
+            Tell us your needs once and we match exact pieces to your body,
+            accessibility needs, location and style — or browse everything yourself.
           </p>
-          <Link
-            href="/search"
-            className="btn-primary mt-8 px-8 py-4"
-          >
-            Browse adaptive clothing <span aria-hidden="true">&rarr;</span>
-          </Link>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Link href="/quiz" className="btn-primary px-8 py-4">
+              Find clothing for me <span aria-hidden="true">&rarr;</span>
+            </Link>
+            <Link href="/search" className="btn-secondary px-8 py-4">
+              Browse adaptive clothing
+            </Link>
+          </div>
         </div>
       </section>
     </>

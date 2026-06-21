@@ -190,13 +190,20 @@ export interface RecommendationResult {
   reasons: string[];
   /** Adaptive clothing function tags (e.g. "Seated-fit jeans", "Magnetic closure shirt"). */
   itemClassification: string[];
+  /** Hard accessibility requirements this item satisfies (human-readable labels). */
   needsSatisfied: string[];
+  /** Soft preferences this item satisfies (style, budget, lifestyle, etc.). */
   preferencesSatisfied: string[];
+  /** Active hard requirements this item does NOT meet — only populated for fallbacks. */
   unmetNeeds: string[];
-  /** True when this result came from a broadened search because nothing matched all criteria. */
+  /** True when this result failed one or more hard requirements and was shown as a closest alternative. */
   isFallback: boolean;
   shipsToLocation: boolean;
   priceStatus: PriceStatus;
+  /** Plain-language sentence explaining why this item was shown. */
+  explanation: string;
+  /** Country availability label (e.g. "Available in Singapore"). */
+  availabilityLabel?: string;
 }
 
 export interface ProductSearchParams {
