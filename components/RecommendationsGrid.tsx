@@ -7,14 +7,11 @@ import CountryEmptyState from "@/components/CountryEmptyState";
 import { productShipsToCountry } from "@/data/products";
 import { useCountry } from "@/components/CountryProvider";
 import { GLOBAL } from "@/lib/countries";
-import { Product } from "@/types";
-import type { ProductRecommendation } from "@/lib/recommendations";
+import type { Product, RecommendationResult } from "@/types";
 
-type Recommendation = {
+type Recommendation = Partial<RecommendationResult> & {
   product: Product;
   reasons: string[];
-  score?: number;
-  metadata?: ProductRecommendation["metadata"];
   matchedTags?: string[];
   unmatchedTags?: string[];
 };
@@ -79,96 +76,106 @@ function RecommendationFeedback({ productId }: { productId: string }) {
   );
 }
 
-function RecommendationDetails({
+function MatchDetail({
   product,
   reasons,
   score,
-  metadata,
-  matchedTags = [],
-  unmatchedTags = [],
+  itemClassification,
+  needsSatisfied,
+  preferencesSatisfied,
+  unmetNeeds,
+  isFallback,
+  explanation,
+  matchedTags,
+  unmatchedTags,
 }: Recommendation) {
   const why =
-    reasons.length > 0
-      ? reasons.slice(0, 4).join(". ")
-      : `${product.adaptiveFeatures.slice(0, 2).join(" and ")} with a ${
-          product.styleTags[0]?.toLowerCase() ?? "practical"
-        } style.`;
-  const targetGroups =
-    metadata?.targetGroups?.filter((group) => group !== "Friend").slice(0, 3) ??
-    product.bestFor.slice(0, 2);
-  const features =
-    metadata?.adaptiveFeatures?.slice(0, 4) ??
-    product.adaptiveFeatures.slice(0, 4);
+    explanation && explanation.length > 0
+      ? explanation
+      : reasons.length > 0
+        ? reasons.join(". ")
+        : `${product.adaptiveFeatures.slice(0, 2).join(" and ")} with a ${
+            product.styleTags[0]?.toLowerCase() ?? "practical"
+          } style.`;
+
+  const shownMatchedTags =
+    matchedTags && matchedTags.length > 0
+      ? matchedTags
+      : [...(needsSatisfied ?? []), ...(preferencesSatisfied ?? [])];
 
   return (
-    <div className="-mt-3 rounded-b-2xl border border-t-0 border-primary-100 bg-primary-50 px-5 pb-5 pt-6">
-      <div className="flex items-center justify-between gap-3">
+    <div
+      className={`-mt-3 rounded-b-2xl border border-t-0 px-5 pb-5 pt-6 ${
+        isFallback ? "border-amber-200 bg-amber-50/60" : "border-primary-100 bg-primary-50"
+      }`}
+    >
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-xs font-bold uppercase tracking-wider text-primary-800">
-          Why it matches
+          {isFallback ? "Closest alternative" : "Why it matches"}
         </p>
         {typeof score === "number" && (
-          <span className="rounded-full bg-paper px-3 py-1 text-xs font-extrabold text-primary-900">
-            Match {score}
+          <span className="rounded-full bg-paper px-2.5 py-1 text-xs font-bold text-primary-900">
+            Match score {Math.round(score)}
           </span>
         )}
       </div>
-      <p className="mt-2 text-sm leading-6 text-primary-950">{why}</p>
 
-      {targetGroups.length > 0 && (
-        <p className="mt-3 text-sm leading-6 text-primary-950">
-          <span className="font-bold">Best for: </span>
-          {targetGroups.join(", ")}
-        </p>
-      )}
-
-      {features.length > 0 && (
-        <div
-          className="mt-3 flex flex-wrap gap-1.5"
-          aria-label="Recommended adaptive features"
-        >
-          {features.map((feature) => (
+      {itemClassification && itemClassification.length > 0 && (
+        <div className="mt-2 flex flex-wrap gap-1.5">
+          {itemClassification.map((tag) => (
             <span
-              key={feature}
-              className="rounded-md border border-primary-200 bg-paper px-2.5 py-1 text-xs font-bold text-primary-900"
+              key={tag}
+              className="rounded-full bg-primary-100 px-2.5 py-0.5 text-[11px] font-semibold text-primary-800"
             >
-              {feature}
+              {tag}
             </span>
           ))}
         </div>
       )}
 
-      <div className="mt-4 grid gap-3 text-xs sm:grid-cols-2">
-        <div>
-          <p className="font-bold uppercase tracking-wider text-primary-800">
+      <p className="mt-2 text-sm leading-6 text-primary-950">{why}</p>
+
+      {shownMatchedTags.length > 0 && (
+        <div className="mt-3">
+          <p className="text-[11px] font-bold uppercase tracking-wide text-primary-700/80">
             Matched tags
           </p>
-          <div className="mt-2 flex flex-wrap gap-1.5">
-            {matchedTags.slice(0, 8).map((tag) => (
-              <span key={tag} className="rounded-md bg-paper px-2 py-1 font-bold text-primary-900">
+          <div className="mt-1 flex flex-wrap gap-1.5">
+            {shownMatchedTags.slice(0, 8).map((need) => (
+              <span
+                key={need}
+                className="rounded-md border border-primary-200 bg-paper px-2 py-0.5 text-xs font-semibold text-primary-900"
+              >
+                {need}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {unmatchedTags && unmatchedTags.length > 0 && (
+        <div className="mt-3">
+          <p className="text-[11px] font-bold uppercase tracking-wide text-primary-700/80">
+            Not matched
+          </p>
+          <div className="mt-1 flex flex-wrap gap-1.5">
+            {unmatchedTags.slice(0, 6).map((tag) => (
+              <span
+                key={tag}
+                className="rounded-md border border-primary-200 bg-transparent px-2 py-0.5 text-xs font-semibold text-primary-900/70"
+              >
                 {tag}
               </span>
             ))}
           </div>
         </div>
-        <div>
-          <p className="font-bold uppercase tracking-wider text-primary-800">
-            Not matched
-          </p>
-          <div className="mt-2 flex flex-wrap gap-1.5">
-            {unmatchedTags.length > 0 ? (
-              unmatchedTags.slice(0, 6).map((tag) => (
-                <span key={tag} className="rounded-md border border-primary-200 bg-transparent px-2 py-1 font-bold text-primary-900/70">
-                  {tag}
-                </span>
-              ))
-            ) : (
-              <span className="rounded-md bg-paper px-2 py-1 font-bold text-primary-900">
-                All key tags matched
-              </span>
-            )}
-          </div>
-        </div>
-      </div>
+      )}
+
+      {isFallback && unmetNeeds && unmetNeeds.length > 0 && (
+        <p className="mt-3 text-xs font-medium text-amber-700">
+          Doesn&apos;t yet cover: {unmetNeeds.slice(0, 2).join(", ").toLowerCase()}.
+        </p>
+      )}
 
       <RecommendationFeedback productId={product.id} />
     </div>
@@ -177,8 +184,10 @@ function RecommendationDetails({
 
 export default function RecommendationsGrid({
   recommendations,
+  showActions = true,
 }: {
   recommendations: Recommendation[];
+  showActions?: boolean;
 }) {
   const { country } = useCountry();
   const available = recommendations.filter(({ product }) =>
@@ -190,29 +199,24 @@ export default function RecommendationsGrid({
   return (
     <>
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {available.map(({ product, reasons, score, metadata, matchedTags, unmatchedTags }) => (
-          <div key={product.id} className="flex flex-col">
-            <ProductCard product={product} />
-            <RecommendationDetails
-              product={product}
-              reasons={reasons}
-              score={score}
-              metadata={metadata}
-              matchedTags={matchedTags}
-              unmatchedTags={unmatchedTags}
-            />
+        {available.map((recommendation) => (
+          <div key={recommendation.product.id} className="flex flex-col">
+            <ProductCard product={recommendation.product} />
+            <MatchDetail {...recommendation} />
           </div>
         ))}
       </div>
 
-      <div className="mt-10 flex flex-wrap justify-center gap-3">
-        <Link href="/quiz" className="btn-outline">
-          Retake quiz
-        </Link>
-        <Link href="/search" className="btn-primary">
-          Browse all clothing
-        </Link>
-      </div>
+      {showActions && (
+        <div className="mt-10 flex flex-wrap justify-center gap-3">
+          <Link href="/quiz" className="btn-outline">
+            Retake quiz
+          </Link>
+          <Link href="/search" className="btn-primary">
+            Browse all clothing
+          </Link>
+        </div>
+      )}
     </>
   );
 }

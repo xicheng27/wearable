@@ -1,5 +1,6 @@
 import Link from "next/link";
 import HeroSection from "@/components/HeroSection";
+import HowItWorks from "@/components/HowItWorks";
 
 const targetGroups = [
   {
@@ -30,12 +31,11 @@ export default function HomePage() {
           <div className="max-w-3xl">
             <p className="eyebrow">One clear path</p>
             <h2 id="assistant-heading" className="section-title">
-              The quiz is the start of every recommendation.
+              The quiz is the easiest place to start.
             </h2>
             <p className="section-subtitle text-lg">
-              Xi&apos;s is not trying to be a giant storefront. It is a guided
-              matching tool for adaptive fashion, built around accessibility
-              needs first and personal style second.
+              Xi&apos;s is a guided matching tool for adaptive fashion, built
+              around accessibility needs first and personal style second.
             </p>
           </div>
 
@@ -53,7 +53,7 @@ export default function HomePage() {
           <div className="paper-panel mt-12 flex flex-col gap-5 rounded-[2rem_.9rem_2rem_2rem] p-6 sm:p-8 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <h2 className="font-display text-3xl font-semibold text-ink">
-                Ready to build your recommendations?
+                Need help choosing?
               </h2>
               <p className="mt-2 max-w-2xl text-base leading-7 text-ink/70">
                 Answer simple questions about daily dressing, mobility, comfort,
@@ -61,7 +61,30 @@ export default function HomePage() {
               </p>
             </div>
             <Link href="/quiz" className="btn-primary shrink-0 px-8 py-4 text-lg">
-              Build my recommendations
+              Find clothing for me
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <HowItWorks />
+
+      <section className="paper-texture bg-lavender py-24 text-ink" aria-labelledby="cta-heading">
+        <div className="paper-panel mx-auto max-w-4xl rounded-[3rem_1rem_3rem_3rem] px-6 py-14 text-center sm:px-12">
+          <p className="eyebrow">Your wardrobe, your terms</p>
+          <h2 id="cta-heading" className="mt-3 font-display text-4xl font-semibold sm:text-5xl">
+            Start with what you want to wear.
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-ink/65">
+            Tell us your needs once and we match exact pieces to your body,
+            accessibility needs, location and style, or browse everything yourself.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Link href="/quiz" className="btn-primary px-8 py-4">
+              Find clothing for me <span aria-hidden="true">&rarr;</span>
+            </Link>
+            <Link href="/search" className="btn-secondary px-8 py-4">
+              Browse adaptive clothing
             </Link>
           </div>
         </div>

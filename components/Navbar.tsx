@@ -6,18 +6,17 @@ import SearchBar from "@/components/SearchBar";
 import Logo from "@/components/Logo";
 import CurrencySelector from "@/components/CurrencySelector";
 import CountrySelector from "@/components/CountrySelector";
+import { useSavedItems } from "@/components/SavedItemsProvider";
 
 const navItems = [
-  { href: "/search", label: "Browse Clothing" },
-  { href: "/singapore", label: "Singapore Guide" },
-  { href: "/map", label: "Global Map" },
-  { href: "/categories/shoes", label: "Adaptive Shoes" },
-  { href: "/search?sensory=true", label: "Sensory Picks" },
-  { href: "/search?seated=true", label: "Seated Fit" },
+  { href: "/search", label: "Browse products" },
+  { href: "/saved", label: "Saved items" },
+  { href: "/#how-it-works", label: "How it works" },
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { savedIds } = useSavedItems();
 
   return (
     <header className="sticky top-0 z-50 border-b border-ink/10 bg-ivory/95 shadow-[0_5px_20px_rgba(41,36,31,.05)] backdrop-blur-lg">
@@ -34,15 +33,20 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="link-underline text-sm text-ink/70"
+                className="link-underline flex items-center gap-1.5 text-sm text-ink/70"
               >
                 {item.label}
+                {item.href === "/saved" && savedIds.length > 0 && (
+                  <span className="rounded-full bg-primary-700 px-1.5 py-0.5 text-[11px] font-bold text-paper">
+                    {savedIds.length}
+                  </span>
+                )}
               </Link>
             ))}
           </nav>
           <Link
             href="/quiz"
-            className="btn-primary hidden whitespace-nowrap px-4 py-2 text-xs 2xl:inline-flex"
+            className="btn-primary hidden whitespace-nowrap px-4 py-2 text-xs xl:inline-flex"
           >
             Find clothing for me
           </Link>
@@ -86,10 +90,15 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="min-h-11 py-2 text-base font-semibold text-ink/75 hover:text-primary-700"
+                  className="flex min-h-11 items-center gap-2 py-2 text-base font-semibold text-ink/75 hover:text-primary-700"
                   onClick={() => setMenuOpen(false)}
                 >
                   {item.label}
+                  {item.href === "/saved" && savedIds.length > 0 && (
+                    <span className="rounded-full bg-primary-700 px-2 py-0.5 text-xs font-bold text-paper">
+                      {savedIds.length}
+                    </span>
+                  )}
                 </Link>
               ))}
             </nav>

@@ -3,6 +3,7 @@ import type {
   BudgetRange,
   DressingMethod,
   GenderStylePreference,
+  LifestyleSetting,
   MobilityLevel,
   TargetGroup,
   UserType,
@@ -16,12 +17,25 @@ export const userTypeOptions: { value: UserType; label: string }[] = [
   { value: "other", label: "Someone else" },
 ];
 
+export const targetGroupOptions: { value: TargetGroup; label: string }[] = [
+  { value: "elderly", label: "Older adult or elderly family member" },
+  { value: "disability", label: "Physical disability or mobility limitation" },
+  { value: "caregiver", label: "Caregiver or family member" },
+];
+
 export const ageGroupOptions: { value: AgeRange; label: string }[] = [
   { value: "under_18", label: "Under 18" },
   { value: "18_30", label: "18-30" },
   { value: "31_50", label: "31-50" },
   { value: "51_65", label: "51-65" },
   { value: "65_plus", label: "65+" },
+];
+
+export const ageRangeOptions: { value: AgeRange; label: string }[] = [
+  { value: "under-40", label: "Under 40" },
+  { value: "40-59", label: "40-59" },
+  { value: "60-74", label: "60-74" },
+  { value: "75-plus", label: "75 and over" },
 ];
 
 export const mobilityOptions: { value: MobilityLevel; label: string }[] = [
@@ -73,6 +87,14 @@ export const functionalFeatureOptions = [
   "Breathable fabric",
 ];
 
+export const sensoryOptions = [
+  "Soft, tag-free fabrics",
+  "Flat seams",
+  "Loose, non-restrictive fits",
+  "Lightweight, breathable fabrics",
+  "No sensory preferences",
+];
+
 export const quizStyleOptions = [
   "Minimalist",
   "Streetwear",
@@ -116,10 +138,12 @@ export const budgetOptions: { value: BudgetRange; label: string }[] = [
   { value: "no_preference", label: "No preference" },
 ];
 
-export const targetGroupOptions: { value: TargetGroup; label: string }[] = [
-  { value: "elderly", label: "Elderly user / caregiver-assisted dressing" },
-  { value: "disability", label: "Physical disability or mobility limitation" },
-  { value: "caregiver", label: "Caregiver or family member" },
+/** "Where will you wear this most?" lets practicality and style weighting reflect real-world setting. */
+export const lifestyleSettingOptions: { value: LifestyleSetting; label: string }[] = [
+  { value: "daily-wear", label: "Everyday, daily wear" },
+  { value: "work", label: "Work" },
+  { value: "school", label: "School" },
+  { value: "home", label: "Mostly at home" },
+  { value: "outdoor", label: "Outdoor activities" },
+  { value: "formal-event", label: "Formal events" },
 ];
-
-export const ageRangeOptions = ageGroupOptions;

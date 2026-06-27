@@ -105,7 +105,7 @@ export interface Product {
 
 // --- User profile / target group segmentation ---
 
-/** Who the shopper is shopping for — drives tone, defaults and recommendations. */
+/** Who the shopper is shopping for. This drives tone, defaults and recommendations. */
 export type TargetGroup = "elderly" | "disability" | "caregiver";
 
 export type UserType = "self" | "family" | "child" | "patient" | "other";
@@ -154,28 +154,103 @@ export type BudgetRange =
   | "no_preference"
   | "no-limit";
 
+/** How much difficulty a shopper has with dressing day to day. */
+export type DressingDifficulty = "low" | "moderate" | "high";
+
+/** Where the clothing will mostly be worn. */
+export type LifestyleSetting =
+  | "school"
+  | "work"
+  | "home"
+  | "outdoor"
+  | "formal-event"
+  | "daily-wear";
+
+/** Whether the shopper dresses themselves or is assisted by a caregiver. */
+export type CaregiverInvolvement = "self-dressing" | "caregiver-assisted";
+
 /** Structured tags collected from the onboarding quiz, persisted per visitor. */
 export interface UserProfile {
   userType?: UserType;
   targetGroup?: TargetGroup;
   ageRange?: AgeRange;
   country?: string;
+  location?: string;
+  preferredCurrency?: string;
   mobilityLevel?: MobilityLevel;
   dressingMethod?: DressingMethod;
   mainChallenges?: string[];
+  bodyNeeds?: string[];
   clothingCategories?: string[];
   requiredFeatures?: string[];
   genderStylePreference?: GenderStylePreference;
   personalityVibe?: string[];
-  budget?: BudgetRange;
-  sensoryNeeds?: string[];
   stylePreference?: string[];
   personalityType?: string;
-  bodyNeeds?: string[];
-  dressingDifficulty?: string[];
+  budget?: BudgetRange;
   budgetRange?: BudgetRange;
+  sensoryNeeds?: string[];
+  closurePreference?: string[];
+  dressingDifficulty?: DressingDifficulty;
+  fabricComfortNeeds?: string[];
+  lifestyleSetting?: LifestyleSetting;
+  caregiverInvolvement?: CaregiverInvolvement;
+}
+
+/**
+ * A practical, self-selected adaptive clothing profile (e.g. "Wheelchair users").
+ * This is a shopping/sizing categorization the user opts into themselves,
+ * never a medical diagnosis.
+ */
+export interface AdaptiveClothingProfile {
+  id: string;
+  label: string;
+  description: string;
+}
+
+export type PriceStatus = "known" | "unknown";
+
+/** Strict operational input to the adaptive recommendation engine. */
+export interface RecommendationInput {
+  targetGroup?: TargetGroup;
+  ageRange?: AgeRange;
+  needs?: string[];
+  styles?: string[];
+  budget?: string;
+  openEndedNeed?: string;
   location?: string;
-  preferredCurrency?: string;
+  mobilityLevel?: MobilityLevel;
+  dressingDifficulty?: DressingDifficulty;
+  sensoryNeeds?: string[];
+  closurePreference?: string[];
+  fabricComfortNeeds?: string[];
+  lifestyleSetting?: LifestyleSetting;
+  caregiverInvolvement?: CaregiverInvolvement;
+  clothingTypes?: string[];
+  limit?: number;
+}
+
+/** A single recommended item plus the structured reasoning behind the match. */
+export interface RecommendationResult {
+  product: Product;
+  score: number;
+  reasons: string[];
+  /** Adaptive clothing function tags (e.g. "Seated-fit jeans", "Magnetic closure shirt"). */
+  itemClassification: string[];
+  /** Hard accessibility requirements this item satisfies (human-readable labels). */
+  needsSatisfied: string[];
+  /** Soft preferences this item satisfies (style, budget, lifestyle, etc.). */
+  preferencesSatisfied: string[];
+  /** Active hard requirements this item does NOT meet; only populated for fallbacks. */
+  unmetNeeds: string[];
+  /** True when this result failed one or more hard requirements and is shown as a closest alternative. */
+  isFallback: boolean;
+  shipsToLocation: boolean;
+  priceStatus: PriceStatus;
+  /** Plain-language sentence explaining why this item was shown. */
+  explanation: string;
+  /** Country availability label (e.g. "Available in Singapore"). */
+  availabilityLabel?: string;
 }
 
 export interface ProductSearchParams {

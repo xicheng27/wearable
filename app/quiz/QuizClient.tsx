@@ -6,6 +6,7 @@ import { useState } from "react";
 import { LogoMark } from "@/components/Logo";
 import Photo from "@/components/Photo";
 import { useCountry } from "@/components/CountryProvider";
+import { useUserProfile } from "@/components/UserProfileProvider";
 import { GLOBAL } from "@/lib/countries";
 import {
   ageGroupOptions,
@@ -17,11 +18,13 @@ import {
   mobilityOptions,
   personalityOptions,
   quizStyleOptions,
+  sensoryOptions,
   userTypeOptions,
 } from "@/data/profileOptions";
-import { useUserProfile } from "@/components/UserProfileProvider";
 import {
   deriveBudgetRange,
+  deriveCaregiverInvolvement,
+  deriveDressingDifficulty,
   deriveMobilityLevel,
   mapDressingMethod,
   mapGenderStylePreference,
@@ -33,9 +36,10 @@ interface StepDef {
   id: string;
   title: string;
   subtitle: string;
-  type: "single" | "multi";
-  options: string[];
+  type: "single" | "multi" | "text";
+  options?: string[];
   layout?: "grid" | "list";
+  placeholder?: string;
 }
 
 const countryOptions = [
@@ -59,6 +63,7 @@ const clothingOptions = [
   "Workwear / formalwear",
   "Everyday wear",
   "Sleepwear",
+  "Not sure",
 ];
 
 const steps: StepDef[] = [
@@ -86,11 +91,19 @@ const steps: StepDef[] = [
   },
   {
     id: "mainChallenges",
-    title: "What is the main dressing challenge?",
+    title: "What help do you need?",
     subtitle: "Pick all that matter. Accessibility needs are filtered first.",
     type: "multi",
     layout: "list",
     options: mainChallengeOptions,
+  },
+  {
+    id: "otherNeeds",
+    title: "Anything else clothing needs to do?",
+    subtitle: "Optional. Use your own words if your need was not listed.",
+    type: "text",
+    placeholder:
+      "For example: trousers that work with a feeding tube, or tops that are easy to change while lying down.",
   },
   {
     id: "mobilityLevel",
@@ -124,6 +137,13 @@ const steps: StepDef[] = [
     options: functionalFeatureOptions,
   },
   {
+    id: "sensory",
+    title: "Any sensory comfort needs?",
+    subtitle: "Pick what matters, or skip if this is not relevant.",
+    type: "multi",
+    options: sensoryOptions,
+  },
+  {
     id: "stylePreferences",
     title: "What style should we look for?",
     subtitle: "Choose anything that feels right, or choose no preference.",
@@ -132,7 +152,7 @@ const steps: StepDef[] = [
   },
   {
     id: "genderStylePreference",
-    title: "Which clothing style range should we prioritise?",
+    title: "Which clothing range should we prioritise?",
     subtitle: "This helps avoid showing items from the wrong range.",
     type: "single",
     layout: "list",
@@ -163,6 +183,60 @@ const styleImages: Record<string, string> = {
   Classic: "/images/style-oldmoney.svg",
   Trendy: "/images/style-vintage.svg",
 };
+
+function getAcknowledgment(
+  stepId: string,
+  values: string[],
+  otherNeedsText: string
+): string | null {
+  const lower = values.map((value) => value.toLowerCase());
+
+  switch (stepId) {
+    case "userType":
+      if (values.length === 0) return null;
+      return lower[0].includes("myself")
+        ? "Got it. I will tailor fit and recommendations for you."
+        : "Got it. I will tailor fit and recommendations for the person you are supporting.";
+    case "ageGroup":
+      return values.length ? "Noted. I will fine-tune recommendations for that age range." : null;
+    case "country":
+      return values.length
+        ? `Got it. I will show ${values[0]}-friendly options first.`
+        : null;
+    case "mainChallenges": {
+      if (values.length === 0) return null;
+      const bits: string[] = [];
+      if (lower.some((value) => value.includes("wheelchair") || value.includes("seated"))) {
+        bits.push("seated comfort");
+      }
+      if (lower.some((value) => value.includes("dexterity") || value.includes("one-handed"))) {
+        bits.push("easy dressing");
+      }
+      if (lower.some((value) => value.includes("sensory"))) {
+        bits.push("sensory comfort");
+      }
+      if (bits.length === 0) bits.push("clothes that fit your needs");
+      return `Got it. I will prioritise ${bits.join(" and ")}.`;
+    }
+    case "otherNeeds":
+      return otherNeedsText.trim() ? "Thanks for the detail. I will factor that in too." : null;
+    case "requiredFeatures":
+      return values.length ? "Good. I will use those features as strong signals." : null;
+    case "sensory":
+      if (values.length === 0 || lower.some((value) => value.includes("no sensory"))) return null;
+      return "Noted. I will lean toward soft, low-irritation pieces.";
+    case "clothingCategories":
+      return values.length
+        ? `Searching for ${values.map((value) => value.toLowerCase()).join(", ")}.`
+        : null;
+    case "stylePreferences":
+      return values.length ? "Got it. I will layer style after the accessibility match." : null;
+    case "budget":
+      return values.length ? `Noted. I will keep things around ${values[0].toLowerCase()}.` : null;
+    default:
+      return null;
+  }
+}
 
 function CheckIcon() {
   return (
@@ -237,6 +311,8 @@ export default function QuizClient() {
   const { setCountry } = useCountry();
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string[]>>({});
+  const [otherNeeds, setOtherNeeds] = useState("");
+  const [acknowledgment, setAcknowledgment] = useState<string | null>(null);
 
   const current = steps[step];
   const selected = answers[current.id] ?? [];
@@ -268,9 +344,12 @@ export default function QuizClient() {
     const mainChallenges = answers.mainChallenges ?? [];
     const requiredFeatures = answers.requiredFeatures ?? [];
     const sensoryNeeds = [
+      ...(answers.sensory ?? []).filter((value) => !/no sensory/i.test(value)),
       ...mainChallenges.filter((value) => /sensory/i.test(value)),
       ...requiredFeatures.filter((value) => /tagless|soft|breathable/i.test(value)),
     ];
+    const resolvedMobilityLevel = deriveMobilityLevel(mainChallenges, mobilityLevel);
+    const dressingDifficulty = deriveDressingDifficulty(mainChallenges, requiredFeatures);
 
     if (country) setCountry(country);
 
@@ -281,13 +360,14 @@ export default function QuizClient() {
       country,
       location: country,
       preferredCurrency: country ? shippingLocationCurrency[country] : undefined,
-      mobilityLevel: deriveMobilityLevel(mainChallenges, mobilityLevel),
+      mobilityLevel: resolvedMobilityLevel,
       dressingMethod,
       mainChallenges,
       bodyNeeds: mainChallenges,
       clothingCategories: answers.clothingCategories,
       requiredFeatures,
-      dressingDifficulty: requiredFeatures,
+      closurePreference: requiredFeatures,
+      dressingDifficulty,
       stylePreference: answers.stylePreferences,
       genderStylePreference,
       personalityVibe: answers.personalityVibe,
@@ -295,27 +375,36 @@ export default function QuizClient() {
       budget,
       budgetRange: budget,
       sensoryNeeds,
+      fabricComfortNeeds: sensoryNeeds.filter((value) =>
+        /soft|lightweight|breathable|flat seams|tag/i.test(value)
+      ),
+      caregiverInvolvement: deriveCaregiverInvolvement(targetGroup, dressingMethod),
     });
 
     const params = new URLSearchParams();
     const set = (key: string, list?: string[]) => {
       if (list && list.length > 0) {
-        params.set(key, list.map(encodeURIComponent).join(","));
+        params.set(key, list.join(","));
       }
     };
     if (userType) params.set("userType", userType);
     if (targetGroup) params.set("targetGroup", targetGroup);
-    if (ageGroup) params.set("ageGroup", ageGroup);
+    if (ageGroup) {
+      params.set("ageGroup", ageGroup);
+      params.set("ageRange", ageGroup);
+    }
     if (country) params.set("location", country);
-    if (mobilityLevel) params.set("mobilityLevel", mobilityLevel);
+    if (resolvedMobilityLevel) params.set("mobilityLevel", resolvedMobilityLevel);
     if (dressingMethod) params.set("dressingMethod", dressingMethod);
     if (genderStylePreference) params.set("genderStyle", genderStylePreference);
     if (budget) params.set("budget", budget);
+    if (otherNeeds.trim()) params.set("otherNeeds", otherNeeds.trim());
     set("needs", mainChallenges);
     set("features", requiredFeatures);
     set("fastenings", requiredFeatures);
     set("clothing", answers.clothingCategories);
     set("styles", answers.stylePreferences);
+    set("style", answers.stylePreferences);
     set("personality", answers.personalityVibe);
     set("sensory", sensoryNeeds);
 
@@ -323,6 +412,7 @@ export default function QuizClient() {
   }
 
   function next() {
+    setAcknowledgment(getAcknowledgment(current.id, selected, otherNeeds));
     if (isLastStep) finish();
     else setStep((currentStep) => currentStep + 1);
   }
@@ -361,6 +451,14 @@ export default function QuizClient() {
           key={step}
           className="animate-fade-up min-h-0 flex-1 overflow-y-auto py-5 pr-1 sm:py-6"
         >
+          {acknowledgment && (
+            <p
+              className="mb-4 inline-flex max-w-full items-center rounded-full bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-800"
+              aria-live="polite"
+            >
+              {acknowledgment}
+            </p>
+          )}
           <p className="eyebrow">Personalisation quiz</p>
           <h1 className="mt-2 font-display text-3xl font-semibold tracking-[-0.02em] text-ink sm:text-4xl">
             {current.title}
@@ -370,32 +468,50 @@ export default function QuizClient() {
           {step === 0 && (
             <div className="mt-4 rounded-xl border border-primary-100 bg-primary-50 px-4 py-3 text-sm leading-6 text-primary-950">
               Xi&apos;s recommends clothing by matching your daily-life needs,
-              mobility, dressing method, style range, age group, budget and
+              mobility, dressing method, sensory comfort, style, age, budget and
               country with tagged adaptive clothing data.
             </div>
           )}
 
-          <div
-            className={`mt-6 grid grid-cols-1 gap-3 ${
-              current.layout === "list" ? "" : "sm:grid-cols-2"
-            }`}
-          >
-            {current.options.map((option) => (
-              <OptionButton
-                key={option}
-                label={option}
-                selected={selected.includes(option)}
-                onClick={() => select(option)}
-                image={current.id === "stylePreferences" ? styleImages[option] : undefined}
+          {current.type === "text" ? (
+            <div className="mt-6">
+              <label htmlFor="other-needs" className="text-sm font-bold text-ink">
+                Describe anything we missed
+              </label>
+              <textarea
+                id="other-needs"
+                value={otherNeeds}
+                onChange={(event) => setOtherNeeds(event.target.value)}
+                placeholder={current.placeholder}
+                className="mt-2 min-h-40 w-full rounded-2xl border border-ink/15 bg-paper px-4 py-3 text-base leading-7 text-ink shadow-paper outline-none transition focus:border-primary-600 focus:ring-4 focus:ring-primary-100"
               />
-            ))}
-          </div>
+            </div>
+          ) : (
+            <div
+              className={`mt-6 grid grid-cols-1 gap-3 ${
+                current.layout === "list" ? "" : "sm:grid-cols-2"
+              }`}
+            >
+              {(current.options ?? []).map((option) => (
+                <OptionButton
+                  key={option}
+                  label={option}
+                  selected={selected.includes(option)}
+                  onClick={() => select(option)}
+                  image={current.id === "stylePreferences" ? styleImages[option] : undefined}
+                />
+              ))}
+            </div>
+          )}
         </div>
 
         <div className="z-10 flex shrink-0 items-center justify-between gap-4 border-t border-ink/10 bg-paper/95 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur">
           <button
             type="button"
-            onClick={() => setStep((currentStep) => currentStep - 1)}
+            onClick={() => {
+              setAcknowledgment(null);
+              setStep((currentStep) => currentStep - 1);
+            }}
             className={`rounded-xl px-5 py-3 text-sm font-bold text-ink/55 transition-colors duration-200 hover:bg-sand/45 hover:text-ink ${
               step === 0 ? "invisible" : ""
             }`}
@@ -403,7 +519,7 @@ export default function QuizClient() {
             Back
           </button>
           <button type="button" onClick={next} className="btn-primary px-8 py-3.5 text-base">
-            {isLastStep ? "Build my recommendations" : selected.length > 0 ? "Continue" : "Skip"}
+            {isLastStep ? "Build my recommendations" : selected.length > 0 || current.type === "text" ? "Continue" : "Skip"}
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>

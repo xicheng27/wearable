@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import SearchBar from "@/components/SearchBar";
 
 const signals = [
-  "Physical needs first",
-  "Style and fit second",
+  "Needs first",
+  "Style second",
   "Country availability checked",
   "Official product links",
 ];
@@ -25,26 +26,30 @@ export default function HeroSection() {
             id="hero-heading"
             className="mt-5 max-w-3xl font-display text-5xl font-semibold leading-[.98] tracking-[-.045em] text-ink sm:text-6xl lg:text-[4.9rem]"
           >
-            Find clothes that fit your body, needs, and daily life.
+            Find adaptive clothing that works for your body, needs, and location.
           </h1>
-          <p className="mt-6 max-w-2xl text-xl leading-9 text-ink/74">
-            Xi&apos;s builds adaptive clothing recommendations from a guided
-            quiz, matching mobility, dressing method, sensory comfort, style,
-            age, budget and country availability with tagged product data.
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-ink/72">
+            Search by clothing type, dressing needs, seated fit, sensory comfort,
+            shoes, and country availability.
           </p>
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
             <Link href="/quiz" className="btn-primary px-8 py-4 text-lg">
-              Start personalisation quiz <span aria-hidden="true">&rarr;</span>
+              Find clothing for me <span aria-hidden="true">&rarr;</span>
             </Link>
             <Link href="/search" className="btn-secondary px-8 py-4 text-base">
-              Browse catalogue
+              Browse all clothing
             </Link>
           </div>
 
-          <p className="mt-5 max-w-xl text-base leading-7 text-ink/65">
-            The quiz is the main feature. It filters out unsuitable items first,
-            then ranks the remaining pieces by style, budget and fit.
+          <div className="mt-8 max-w-2xl rounded-[1.25rem] border border-ink/15 bg-paper/90 p-2 shadow-paper backdrop-blur">
+            <SearchBar placeholder="Or search directly: 'magnetic shirt', 'wheelchair jeans'" />
+          </div>
+
+          <p className="mt-5 max-w-xl text-sm leading-6 text-ink/58">
+            The guided flow treats accessibility needs as requirements, then
+            ranks by style and budget. Prefer to browse? The full catalogue is
+            one tap away.
           </p>
         </div>
 
@@ -55,9 +60,21 @@ export default function HeroSection() {
           </h2>
           <div className="mt-6 space-y-4">
             {[
-              ["1", "Tell us about dressing challenges", "Wheelchair fit, dexterity, caregiver help, sensory comfort and medical access are treated as serious constraints."],
-              ["2", "Add style, age and budget", "The system respects clothing range, style preference and country availability after access needs are protected."],
-              ["3", "Get explained recommendations", "Each result shows why it matched, which tags matched, and what did not match."],
+              [
+                "1",
+                "Tell us about dressing challenges",
+                "Wheelchair fit, dexterity, caregiver help, sensory comfort and medical access are treated as serious constraints.",
+              ],
+              [
+                "2",
+                "Add style, age and budget",
+                "The system respects clothing range, style preference and country availability after access needs are protected.",
+              ],
+              [
+                "3",
+                "Get explained recommendations",
+                "Each result shows why it matched, which needs it supports, and where it may fall short.",
+              ],
             ].map(([step, title, body]) => (
               <article key={step} className="rounded-2xl border border-ink/10 bg-paper p-4">
                 <div className="flex gap-4">

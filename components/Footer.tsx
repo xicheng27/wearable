@@ -2,9 +2,9 @@ import Link from "next/link";
 import Logo from "@/components/Logo";
 
 const groups = [
-  ["Browse", [["All clothing", "/search"], ["Singapore guide", "/singapore"], ["Global map", "/map"], ["Adaptive shoes", "/categories/shoes"]]],
+  ["Browse", [["All clothing", "/search"], ["Saved items", "/saved"], ["Singapore guide", "/singapore"], ["Global map", "/map"]]],
   ["Find by need", [["One-handed dressing", "/search?oneHanded=true"], ["Sensory-friendly", "/search?sensory=true"], ["Orthotics and AFOs", "/search?disability=Orthotics"], ["Find my match", "/quiz"]]],
-  ["Xi's", [["Our approach", "/"], ["Accessibility", "/accessibility"], ["Disclaimer", "/disclaimer"], ["Submit an item", "/submit"], ["Contact", "/submit"]]],
+  ["Xi's", [["How it works", "/#how-it-works"], ["Accessibility", "/accessibility"], ["Disclaimer", "/disclaimer"], ["Submit an item", "/submit"], ["Contact", "/submit"]]],
 ];
 
 export default function Footer() {

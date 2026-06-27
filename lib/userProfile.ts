@@ -1,8 +1,11 @@
 import type {
   BudgetRange,
+  CaregiverInvolvement,
+  DressingDifficulty,
   DressingMethod,
   GenderStylePreference,
   MobilityLevel,
+  TargetGroup,
   UserType,
 } from "@/types";
 
@@ -23,7 +26,14 @@ export function deriveMobilityLevel(
   const lower = challenges.map((need) => need.toLowerCase());
   if (lower.some((need) => need.includes("wheelchair"))) return "wheelchair";
   if (lower.some((need) => need.includes("seated"))) return "mostly_seated";
-  if (lower.some((need) => need.includes("bending") || need.includes("mobility"))) {
+  if (
+    lower.some(
+      (need) =>
+        need.includes("bending") ||
+        need.includes("mobility") ||
+        need.includes("arthritis")
+    )
+  ) {
     return "support";
   }
   return "independent";
@@ -70,4 +80,62 @@ export function mapGenderStylePreference(
   if (value.includes("children") || value.includes("teen")) return "children_teen";
   if (value.includes("no preference")) return "no_preference";
   return undefined;
+}
+
+/** Caregivers shop on someone else's behalf; everyone else defaults to self-dressing. */
+export function deriveCaregiverInvolvement(
+  targetGroup?: TargetGroup,
+  dressingMethod?: DressingMethod
+): CaregiverInvolvement {
+  if (
+    targetGroup === "caregiver" ||
+    dressingMethod === "caregiver_often" ||
+    dressingMethod === "fully_caregiver"
+  ) {
+    return "caregiver-assisted";
+  }
+  return "self-dressing";
+}
+
+/**
+ * A rough, self-reported difficulty level for dressing, not a clinical
+ * assessment. Used only to weight how much an adaptive feature matters.
+ */
+export function deriveDressingDifficulty(
+  needs: string[],
+  closurePreference: string[]
+): DressingDifficulty {
+  const lowerNeeds = needs.map((need) => need.toLowerCase());
+  const highSignal = [
+    "wheelchair",
+    "limb difference",
+    "neurological",
+    "stroke",
+    "parkinson",
+    "caregiver",
+    "bed",
+  ];
+  if (lowerNeeds.some((need) => highSignal.some((signal) => need.includes(signal)))) {
+    return "high";
+  }
+
+  const lowerClosures = closurePreference.map((value) => value.toLowerCase());
+  const adaptiveClosureSignal = lowerClosures.some(
+    (value) =>
+      value.includes("magnetic") ||
+      value.includes("velcro") ||
+      value.includes("slip-on") ||
+      value.includes("side opening") ||
+      value.includes("open-back")
+  );
+  if (
+    adaptiveClosureSignal ||
+    lowerNeeds.some(
+      (need) => need.includes("fine motor") || need.includes("limited hand")
+    )
+  ) {
+    return "moderate";
+  }
+
+  return "low";
 }
