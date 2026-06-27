@@ -8,6 +8,7 @@ import { GLOBAL } from "@/lib/countries";
 import { parsePrice } from "@/lib/currency";
 
 export type RecommendationInput = {
+  userType?: string;
   targetGroup?: string | string[];
   bodyNeeds?: string[];
   country?: string;
@@ -16,8 +17,12 @@ export type RecommendationInput = {
   personalityType?: string[];
   budgetRange?: string;
   closureTypes?: string[];
+  requiredFeatures?: string[];
   sensoryNeeds?: string[];
   mobilityNeeds?: string[];
+  mobilityLevel?: string;
+  dressingMethod?: string;
+  genderStylePreference?: string;
   clothingTypes?: string[];
   availabilityPreference?: string;
   openEndedNeed?: string;
@@ -50,6 +55,9 @@ export type ProductRecommendation = {
   metadata: RecommendationProductMetadata;
   score: number;
   reasons: string[];
+  matchedTags: string[];
+  unmatchedTags: string[];
+  hardFilterReasons: string[];
   scoreBreakdown: Record<string, number>;
 };
 
@@ -116,6 +124,10 @@ function includesMatch(values: string[], query: string) {
       normalizedQuery.includes(normalizedValue)
     );
   });
+}
+
+function anyMatch(values: string[], queries: string[]) {
+  return queries.some((query) => includesMatch(values, query));
 }
 
 function unique(values: string[]) {
@@ -326,9 +338,21 @@ function getSearchableValues(
 }
 
 function budgetFits(product: Product, budgetRange?: string) {
-  if (!budgetRange || /no limit/i.test(budgetRange)) return false;
+  if (!budgetRange || /no limit|no_preference/i.test(budgetRange)) return false;
   const price = parsePrice(product.price);
   const text = product.priceRange;
+  if (budgetRange === "budget") {
+    return (price !== null && price <= 50) || text === "$25-$50";
+  }
+  if (budgetRange === "mid_range" || budgetRange === "mid-range") {
+    return (
+      (price !== null && price <= 125) ||
+      ["$25-$50", "$50-$100", "$75-$125"].includes(text)
+    );
+  }
+  if (budgetRange === "premium") {
+    return true;
+  }
   if (/under \$?50/i.test(budgetRange)) {
     return (price !== null && price <= 50) || text === "$25-$50";
   }
@@ -346,6 +370,232 @@ function budgetFits(product: Product, budgetRange?: string) {
   }
   if (/\$?150\+/i.test(budgetRange)) return text === "$150+";
   return false;
+}
+
+function productSupportsWheelchair(
+  product: Product,
+  metadata: RecommendationProductMetadata
+) {
+  return (
+    product.seatedFit ||
+    anyMatch(metadata.mobilityNeeds, ["wheelchair", "seated fit"]) ||
+    anyMatch(metadata.adaptiveFeatures, [
+      "seated fit",
+      "high back rise",
+      "no back pockets",
+      "seamless back",
+    ])
+  );
+}
+
+function productSupportsDexterity(
+  product: Product,
+  metadata: RecommendationProductMetadata
+) {
+  return (
+    product.oneHandedDressing ||
+    metadata.closureTypes.length > 0 ||
+    anyMatch(metadata.adaptiveFeatures, [
+      "magnetic",
+      "velcro",
+      "touch",
+      "zip",
+      "snap",
+      "elastic",
+      "front opening",
+      "easy dressing",
+      "hands-free",
+    ])
+  );
+}
+
+function productSupportsCaregiver(
+  metadata: RecommendationProductMetadata
+) {
+  return (
+    anyMatch(metadata.careEase, ["assisted dressing"]) ||
+    anyMatch(metadata.closureTypes, ["open-back", "side opening", "snap"]) ||
+    anyMatch(metadata.adaptiveFeatures, [
+      "open back",
+      "open-back",
+      "side opening",
+      "side access",
+      "snap closure",
+      "easy change",
+    ])
+  );
+}
+
+function productSupportsSensory(
+  product: Product,
+  metadata: RecommendationProductMetadata
+) {
+  return (
+    product.sensoryFriendly ||
+    metadata.sensoryNeeds.length > 0 ||
+    anyMatch(metadata.adaptiveFeatures, [
+      "tag-free",
+      "tagless",
+      "flat seams",
+      "soft fabric",
+      "breathable",
+      "seamless",
+    ])
+  );
+}
+
+function productGenderMatches(product: Product, preference?: string) {
+  if (!preference || preference === "no_preference") return true;
+  const fits = product.genderFit.map(normalize);
+  if (preference === "womenswear") {
+    return fits.includes("women") || fits.includes("unisex");
+  }
+  if (preference === "menswear") {
+    return fits.includes("men") || fits.includes("unisex");
+  }
+  if (preference === "gender_neutral") {
+    return (
+      fits.includes("unisex") ||
+      (fits.includes("men") && fits.includes("women"))
+    );
+  }
+  if (preference === "children_teen") {
+    return fits.includes("kids") || fits.includes("children");
+  }
+  return true;
+}
+
+function productCategoryMatches(
+  product: Product,
+  metadata: RecommendationProductMetadata,
+  categories?: string[]
+) {
+  if (!categories?.length) return true;
+  return categories.some((category) => {
+    const value = normalize(category);
+    if (value.includes("everyday")) return true;
+    if (value.includes("workwear") || value.includes("formal")) {
+      return anyMatch(metadata.styleTags, ["formal", "professional", "smart casual"]);
+    }
+    if (value.includes("dresses")) return anyMatch([product.category, product.clothingType], ["dress", "skirt"]);
+    if (value.includes("undergarments")) return anyMatch([product.category, product.clothingType], ["underwear", "socks", "basics"]);
+    if (value.includes("outerwear")) return anyMatch([product.category, product.clothingType], ["jacket", "outerwear", "coat"]);
+    return anyMatch([product.category, product.clothingType], [category]);
+  });
+}
+
+function requiresWheelchairSupport(input: RecommendationInput) {
+  const text = [
+    input.mobilityLevel ?? "",
+    ...(input.bodyNeeds ?? []),
+    ...(input.requiredFeatures ?? []),
+    ...(input.mobilityNeeds ?? []),
+  ].join(" ").toLowerCase();
+  return /wheelchair|mostly_seated|seated|no back pockets|pressure/.test(text);
+}
+
+function requiresDexteritySupport(input: RecommendationInput) {
+  const text = [
+    ...(input.bodyNeeds ?? []),
+    ...(input.requiredFeatures ?? []),
+    ...(input.closureTypes ?? []),
+  ].join(" ").toLowerCase();
+  return /dexterity|one-handed|arthritis|parkinson|injury|magnetic|velcro|zipper|no buttons|elastic|front opening/.test(text);
+}
+
+function requiresCaregiverSupport(input: RecommendationInput) {
+  const text = [
+    input.dressingMethod ?? "",
+    input.mobilityLevel ?? "",
+    ...(input.bodyNeeds ?? []),
+    ...(input.requiredFeatures ?? []),
+  ].join(" ").toLowerCase();
+  return /caregiver|fully_caregiver|caregiver_often|bedridden|lying|open-back|open back|side opening|lifting arms/.test(text);
+}
+
+function requiresSensorySupport(input: RecommendationInput) {
+  const text = [
+    ...(input.bodyNeeds ?? []),
+    ...(input.sensoryNeeds ?? []),
+    ...(input.requiredFeatures ?? []),
+  ].join(" ").toLowerCase();
+  return /sensory|tagless|tag-free|soft|breathable|seam|irritating|fabric/.test(text);
+}
+
+function hardFilterProduct(
+  product: Product,
+  metadata: RecommendationProductMetadata,
+  input: RecommendationInput
+) {
+  const reasons: string[] = [];
+
+  if (input.country && !productShipsToCountry(product, input.country)) {
+    reasons.push(`Not available in ${input.country}`);
+  }
+  if (!productCategoryMatches(product, metadata, input.clothingTypes)) {
+    reasons.push("Wrong clothing category");
+  }
+  if (!productGenderMatches(product, input.genderStylePreference)) {
+    reasons.push("Wrong clothing style range");
+  }
+  if (requiresWheelchairSupport(input) && !productSupportsWheelchair(product, metadata)) {
+    reasons.push("Does not clearly support seated or wheelchair needs");
+  }
+  if (requiresDexteritySupport(input) && !productSupportsDexterity(product, metadata)) {
+    reasons.push("Does not clearly support limited dexterity or easy closures");
+  }
+  if (requiresCaregiverSupport(input) && !productSupportsCaregiver(metadata)) {
+    reasons.push("Does not clearly support caregiver-assisted dressing");
+  }
+  if (requiresSensorySupport(input) && !productSupportsSensory(product, metadata)) {
+    reasons.push("Does not clearly support sensory comfort needs");
+  }
+
+  return {
+    passed: reasons.length === 0,
+    reasons,
+  };
+}
+
+function ageMatches(metadata: RecommendationProductMetadata, ageRange?: string) {
+  if (!ageRange) return false;
+  if (["65_plus", "60-74", "75-plus"].includes(ageRange)) {
+    return includesMatch(metadata.suitableAgeRanges, "Older adults");
+  }
+  if (ageRange === "under_18") {
+    return includesMatch(metadata.suitableAgeRanges, "Children");
+  }
+  return includesMatch(metadata.suitableAgeRanges, ageRange) ||
+    includesMatch(metadata.suitableAgeRanges, "Adults");
+}
+
+function auditTags(
+  product: Product,
+  metadata: RecommendationProductMetadata,
+  input: RecommendationInput
+) {
+  const expected = unique([
+    ...(input.bodyNeeds ?? []),
+    ...(input.requiredFeatures ?? []),
+    ...(input.closureTypes ?? []),
+    ...(input.sensoryNeeds ?? []),
+    ...(input.mobilityNeeds ?? []),
+    ...(input.stylePreference ?? []),
+    ...(input.personalityType ?? []),
+    ...(input.clothingTypes ?? []),
+    input.ageRange ?? "",
+    input.budgetRange ?? "",
+    input.genderStylePreference ?? "",
+  ]);
+  const searchable = getSearchableValues(product, metadata);
+  const matchedTags = expected.filter((tag) => {
+    if (tag === "no_preference") return true;
+    if (tag === input.genderStylePreference) return productGenderMatches(product, tag);
+    if (tag === input.budgetRange) return budgetFits(product, tag);
+    return includesMatch(searchable, tag);
+  });
+  const unmatchedTags = expected.filter((tag) => !matchedTags.includes(tag));
+  return { matchedTags, unmatchedTags };
 }
 
 function openEndedTerms(value?: string) {
@@ -375,6 +625,7 @@ export function scoreProductRecommendation(
 ): ProductRecommendation {
   const metadata = getRecommendationMetadata(product);
   const searchableValues = getSearchableValues(product, metadata);
+  const hardFilter = hardFilterProduct(product, metadata, input);
   const state = { score: 0, reasons: [] as string[], scoreBreakdown: {} as Record<string, number> };
 
   const bodyNeeds = input.bodyNeeds ?? [];
@@ -387,6 +638,22 @@ export function scoreProductRecommendation(
           ? SCORE_WEIGHTS.mainPhysicalNeed
           : Math.round(SCORE_WEIGHTS.mainPhysicalNeed * 0.65),
         `Matches your need for ${need.toLowerCase()}`
+      );
+    }
+  });
+
+  (input.requiredFeatures ?? []).forEach((feature) => {
+    if (
+      includesMatch(metadata.adaptiveFeatures, feature) ||
+      includesMatch(metadata.closureTypes, feature) ||
+      includesMatch(metadata.sensoryNeeds, feature) ||
+      includesMatch(metadata.mobilityNeeds, feature)
+    ) {
+      addScore(
+        state,
+        "functionalMatch",
+        16,
+        `Includes ${feature.toLowerCase()}`
       );
     }
   });
@@ -447,7 +714,7 @@ export function scoreProductRecommendation(
     }
   });
 
-  if (input.ageRange && includesMatch(metadata.suitableAgeRanges, input.ageRange)) {
+  if (input.ageRange && ageMatches(metadata, input.ageRange)) {
     addScore(
       state,
       "ageRange",
@@ -477,6 +744,28 @@ export function scoreProductRecommendation(
       );
     }
   });
+
+  if (input.mobilityLevel && includesMatch(metadata.mobilityNeeds, input.mobilityLevel)) {
+    addScore(
+      state,
+      "mobilityLevel",
+      SCORE_WEIGHTS.mobilityNeed,
+      `Fits ${input.mobilityLevel.replace(/_/g, " ").toLowerCase()} mobility`
+    );
+  }
+
+  if (
+    input.dressingMethod &&
+    ["caregiver_often", "fully_caregiver", "occasional_help"].includes(input.dressingMethod) &&
+    productSupportsCaregiver(metadata)
+  ) {
+    addScore(
+      state,
+      "dressingMethod",
+      SCORE_WEIGHTS.mobilityNeed,
+      "Supports assisted dressing"
+    );
+  }
 
   (input.clothingTypes ?? []).forEach((type) => {
     if (
@@ -542,12 +831,16 @@ export function scoreProductRecommendation(
       "Uses an exact product link"
     );
   }
+  const tagAudit = auditTags(product, metadata, input);
 
   return {
     product,
     metadata,
     score: state.score,
     reasons: state.reasons,
+    matchedTags: tagAudit.matchedTags,
+    unmatchedTags: tagAudit.unmatchedTags,
+    hardFilterReasons: hardFilter.reasons,
     scoreBreakdown: state.scoreBreakdown,
   };
 }
@@ -558,6 +851,7 @@ export function rankProductRecommendations(
 ) {
   return candidateProducts
     .map((product) => scoreProductRecommendation(product, input))
+    .filter((recommendation) => recommendation.hardFilterReasons.length === 0)
     .filter((recommendation) => {
       if (recommendation.score > 0) return true;
       return !(

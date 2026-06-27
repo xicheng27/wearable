@@ -108,22 +108,71 @@ export interface Product {
 /** Who the shopper is shopping for — drives tone, defaults and recommendations. */
 export type TargetGroup = "elderly" | "disability" | "caregiver";
 
-export type AgeRange = "under-40" | "40-59" | "60-74" | "75-plus";
+export type UserType = "self" | "family" | "child" | "patient" | "other";
 
-export type MobilityLevel = "full-mobility" | "some-difficulty" | "wheelchair-or-seated";
+export type AgeRange =
+  | "under_18"
+  | "18_30"
+  | "31_50"
+  | "51_65"
+  | "65_plus"
+  | "under-40"
+  | "40-59"
+  | "60-74"
+  | "75-plus";
 
-export type BudgetRange = "budget" | "mid-range" | "premium" | "no-limit";
+export type MobilityLevel =
+  | "independent"
+  | "support"
+  | "mostly_seated"
+  | "wheelchair"
+  | "bedridden"
+  | "prefer_not_say"
+  | "full-mobility"
+  | "some-difficulty"
+  | "wheelchair-or-seated";
+
+export type DressingMethod =
+  | "independent"
+  | "slow_independent"
+  | "occasional_help"
+  | "caregiver_often"
+  | "fully_caregiver";
+
+export type GenderStylePreference =
+  | "womenswear"
+  | "menswear"
+  | "gender_neutral"
+  | "children_teen"
+  | "no_preference";
+
+export type BudgetRange =
+  | "budget"
+  | "mid_range"
+  | "mid-range"
+  | "premium"
+  | "no_preference"
+  | "no-limit";
 
 /** Structured tags collected from the onboarding quiz, persisted per visitor. */
 export interface UserProfile {
+  userType?: UserType;
   targetGroup?: TargetGroup;
   ageRange?: AgeRange;
+  country?: string;
+  mobilityLevel?: MobilityLevel;
+  dressingMethod?: DressingMethod;
+  mainChallenges?: string[];
+  clothingCategories?: string[];
+  requiredFeatures?: string[];
+  genderStylePreference?: GenderStylePreference;
+  personalityVibe?: string[];
+  budget?: BudgetRange;
+  sensoryNeeds?: string[];
   stylePreference?: string[];
   personalityType?: string;
   bodyNeeds?: string[];
   dressingDifficulty?: string[];
-  mobilityLevel?: MobilityLevel;
-  sensoryNeeds?: string[];
   budgetRange?: BudgetRange;
   location?: string;
   preferredCurrency?: string;

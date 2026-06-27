@@ -74,6 +74,9 @@ function normalizeNeeds(searchParams: QuizResultsPageProps["searchParams"]) {
 
 function normalizeBudget(value: string | string[] | undefined) {
   const budget = readList(value)[0] ?? "";
+  if (["budget", "mid_range", "premium", "no_preference"].includes(budget)) {
+    return budget;
+  }
   if (["Under $50", "$50-$100", "$100-$150", "$150+"].includes(budget)) {
     return budget;
   }
@@ -128,7 +131,10 @@ export default function QuizResultsPage({
 }: QuizResultsPageProps) {
   const needs = normalizeNeeds(searchParams);
   const sensory = readList(searchParams.sensory);
-  const fastenings = readList(searchParams.fastenings);
+  const features = [
+    ...readList(searchParams.features),
+    ...readList(searchParams.fastenings),
+  ];
   const styles = [
     ...readList(searchParams.style),
     ...readList(searchParams.styles),
@@ -139,13 +145,18 @@ export default function QuizResultsPage({
   const otherNeeds = readList(searchParams.otherNeeds).join(", ").slice(0, 500);
   const country = readList(searchParams.location)[0];
   const targetGroup = readList(searchParams.targetGroup)[0] || readList(searchParams.forWhom)[0];
-  const ageRange = readList(searchParams.ageRange)[0];
+  const ageRange = readList(searchParams.ageGroup)[0] || readList(searchParams.ageRange)[0];
+  const userType = readList(searchParams.userType)[0];
+  const mobilityLevel = readList(searchParams.mobilityLevel)[0];
+  const dressingMethod = readList(searchParams.dressingMethod)[0];
+  const genderStylePreference = readList(searchParams.genderStyle)[0];
   const personality = [
     ...readList(searchParams.personality),
     ...readList(searchParams.personalityType),
   ];
 
   const recommendations = rankProductRecommendations(products, {
+    userType,
     targetGroup,
     bodyNeeds: needs,
     country,
@@ -153,9 +164,13 @@ export default function QuizResultsPage({
     ageRange,
     personalityType: personality,
     budgetRange: budget,
-    closureTypes: inferClosureTypes(needs, fastenings),
-    sensoryNeeds: inferSensoryNeeds(needs, sensory),
+    closureTypes: inferClosureTypes(needs, features),
+    requiredFeatures: features,
+    sensoryNeeds: inferSensoryNeeds([...needs, ...features], sensory),
     mobilityNeeds: inferMobilityNeeds(needs),
+    mobilityLevel,
+    dressingMethod,
+    genderStylePreference,
     clothingTypes: clothing.filter((item) => item !== "Not sure"),
     availabilityPreference: availability,
     openEndedNeed: otherNeeds,
@@ -182,6 +197,7 @@ export default function QuizResultsPage({
     recommendations.length > 0
       ? recommendations
       : rankProductRecommendations(products, {
+          userType,
           targetGroup,
           bodyNeeds: needs,
           country,
@@ -189,9 +205,13 @@ export default function QuizResultsPage({
           ageRange,
           personalityType: personality,
           budgetRange: budget,
-          closureTypes: inferClosureTypes(needs, fastenings),
-          sensoryNeeds: inferSensoryNeeds(needs, sensory),
+          closureTypes: inferClosureTypes(needs, features),
+          requiredFeatures: features,
+          sensoryNeeds: inferSensoryNeeds([...needs, ...features], sensory),
           mobilityNeeds: inferMobilityNeeds(needs),
+          mobilityLevel,
+          dressingMethod,
+          genderStylePreference,
           openEndedNeed: otherNeeds,
           limit: 9,
         });
@@ -210,7 +230,7 @@ export default function QuizResultsPage({
             information, not the starting point.
           </p>
           <div className="mt-5 flex flex-wrap gap-2">
-            {[...needs, ...styles, budget]
+            {[...needs, ...features, ...styles, genderStylePreference, budget]
               .filter(Boolean)
               .slice(0, 10)
               .map((item) => (
