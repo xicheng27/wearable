@@ -26,6 +26,8 @@ interface ProductImageProps {
   permissionStatus?: PermissionStatus;
   /** Shown subtly over the image, e.g. a source/credit line. */
   attribution?: string;
+  /** Brand/source the image comes from, shown as a subtle "Image via …" credit. */
+  source?: string;
 }
 
 export default function ProductImage({
@@ -35,6 +37,7 @@ export default function ProductImage({
   priority = false,
   fallbackLabel = "Image coming soon",
   attribution,
+  source,
 }: ProductImageProps) {
   const [failed, setFailed] = useState(false);
   const cleared = !!src && !failed;
@@ -55,11 +58,17 @@ export default function ProductImage({
             className="object-contain p-3 transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.035] sm:p-4"
             onError={() => setFailed(true)}
           />
-          {/* Subtle, non-ownership source label. Images are shown for
-              identification only — this is a preview/credit, not a Xi's mark. */}
-          <span className="pointer-events-none absolute bottom-1.5 right-1.5 select-none rounded-md bg-ink/45 px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-paper/85 backdrop-blur-sm">
-            Preview image
+          {/* Subtle, non-ownership identification label. Images are shown only
+              to identify the product — this is not a Xi's-owned mark. */}
+          <span className="pointer-events-none absolute bottom-1 right-1 select-none rounded bg-ink/40 px-1.5 py-0.5 text-[8.5px] font-medium leading-none tracking-wide text-paper/85 backdrop-blur-sm">
+            Image for identification only
           </span>
+          {/* Optional source credit, e.g. "Image via June Adaptive". */}
+          {source && (
+            <span className="pointer-events-none absolute bottom-1 left-1 max-w-[60%] select-none truncate rounded bg-ink/35 px-1.5 py-0.5 text-[8.5px] font-medium leading-none tracking-wide text-paper/80 backdrop-blur-sm">
+              Image via {source}
+            </span>
+          )}
           {attribution && (
             <span className="absolute inset-x-0 bottom-0 bg-ink/55 px-2 py-1 text-center text-[11px] font-medium text-paper">
               {attribution}

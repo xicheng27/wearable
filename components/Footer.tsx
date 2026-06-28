@@ -32,7 +32,17 @@ export default function Footer() {
             ))}
           </div>
         </div>
-        <div className="mt-14 flex flex-col gap-3 border-t border-paper/15 pt-7 text-xs text-paper/45 sm:flex-row sm:justify-between">
+        <p className="mt-12 max-w-4xl text-xs leading-relaxed text-paper/45">
+          Xi&apos;s is an independent adaptive clothing discovery tool and is not
+          affiliated with any brand. Product names, trademarks, and images are
+          used for identification and recommendation purposes only. All rights
+          belong to their respective owners.{" "}
+          <Link href="/disclaimer" className="underline underline-offset-2 hover:text-paper">
+            Read the full disclaimer
+          </Link>
+          .
+        </p>
+        <div className="mt-7 flex flex-col gap-3 border-t border-paper/15 pt-7 text-xs text-paper/45 sm:flex-row sm:justify-between">
           <p>&copy; 2026 Xi&apos;s. Adaptive fashion discovery.</p>
           <p>Comfort, dignity, independence, style.</p>
         </div>
