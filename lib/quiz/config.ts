@@ -12,6 +12,8 @@ export interface QuizModelState {
   garments: Garment[];
   /** Active aesthetic style id driving the avatar transformation. */
   style?: string;
+  /** Whether a supportive helper figure should appear (assisted dressing). */
+  helper: boolean;
   accents: {
     soft?: boolean;
     oneHanded?: boolean;
@@ -603,7 +605,16 @@ export function modelState(a: Answers, currentStepId: string): QuizModelState {
   const styles = a.style ?? [];
   const activeStyle = styles.length ? styleId(styles[styles.length - 1]) : undefined;
 
-  return { persona, seated, zones: Array.from(zones), garments, style: activeStyle, accents };
+  const helper = isAssistedDressing(a);
+
+  return { persona, seated, zones: Array.from(zones), garments, style: activeStyle, helper, accents };
+}
+
+/** True when the profile involves caregiver / assisted dressing. */
+export function isAssistedDressing(a: Answers): boolean {
+  if (hasHelp(a, "Caregiver")) return true;
+  const di = a.dressingIndependence?.[0] ?? "";
+  return /caregiver|with some help|with help/i.test(di);
 }
 
 function deriveGarments(a: Answers): Garment[] {
@@ -638,7 +649,7 @@ export function profileChips(a: Answers): string[] {
   });
   if (hasHelp(a, "Seated")) chips.push("Seated fit");
   if (hasHelp(a, "One-handed")) chips.push("One-handed dressing");
-  if (hasHelp(a, "Caregiver")) chips.push("Caregiver access");
+  if (isAssistedDressing(a)) chips.push("Assisted dressing");
   if (hasHelp(a, "Shoulder")) chips.push("Shoulder / arm ease");
   (a.closures ?? []).forEach((c) => chips.push(c));
   if ((a.fabricFeel ?? []).includes("Soft") || (a.bodyIssues ?? []).includes("sk-soft"))

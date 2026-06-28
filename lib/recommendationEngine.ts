@@ -620,9 +620,63 @@ function sortByQuality(a: ScoredProduct, b: ScoredProduct): number {
  * exact matches exist appends clearly-labelled fallbacks (with their specific
  * unmet hard requirements) so the list is never empty and never dishonest.
  */
+// --- Strict clothing-category filtering -----------------------------------
+//
+// The product-type question ("What are you looking for?") is a HARD category
+// filter: if the shopper picks Footwear, only footwear may appear. Categories
+// are matched by family so e.g. "Bottoms" covers pants, jeans and shorts.
+
+const CATEGORY_FAMILIES: Record<string, RegExp> = {
+  tops: /\b(top|tops|shirt|shirts|blouse|tee|t-shirt|polo|sweater|jumper|knit|tank|tunic|cami)\b/,
+  bottoms:
+    /\b(pant|pants|trouser|trousers|jean|jeans|short|shorts|legging|leggings|bottom|bottoms|chino|chinos|jogger|joggers|sweatpant|sweatpants|skort)\b/,
+  dresses: /\b(dress|dresses|skirt|skirts|gown|jumpsuit|romper|one-piece|onepiece|overall|overalls|pinafore)\b/,
+  outerwear:
+    /\b(jacket|jackets|coat|coats|outerwear|hoodie|hoodies|parka|blazer|vest|gilet|windbreaker|raincoat|cardigan|poncho)\b/,
+  undergarments:
+    /\b(underwear|undergarment|undergarments|bra|bras|brief|briefs|boxer|boxers|base layer|baselayer|undershirt|lingerie|sock|socks|tights|hosiery)\b/,
+  footwear:
+    /\b(shoe|shoes|footwear|sneaker|sneakers|boot|boots|sandal|sandals|slipper|slippers|loafer|loafers|trainer|trainers|clog|clogs|moccasin)\b/,
+};
+
+/** Resolve a selected clothing term (e.g. "Pants", "Bottoms", "Shoes") to a family key. */
+function categoryFamilyFor(term: string): keyof typeof CATEGORY_FAMILIES | null {
+  const t = term.toLowerCase();
+  if (/under|base layer|baselayer|bra|sock/.test(t)) return "undergarments";
+  if (/shoe|foot|sneaker|boot|sandal/.test(t)) return "footwear";
+  if (/dress|skirt|one-?piece|gown|jumpsuit/.test(t)) return "dresses";
+  if (/jacket|outerwear|coat|hoodie|blazer/.test(t)) return "outerwear";
+  if (/pant|bottom|jean|trouser|short|legging/.test(t)) return "bottoms";
+  if (/top|shirt|blouse|tee|polo|sweater/.test(t)) return "tops";
+  return null;
+}
+
+/** Strict: does the product belong to at least one of the selected categories? */
+function productInSelectedCategories(product: Product, selected: string[]): boolean {
+  const families = new Set<RegExp>();
+  selected.forEach((term) => {
+    const fam = categoryFamilyFor(term);
+    if (fam) families.add(CATEGORY_FAMILIES[fam]);
+  });
+  if (families.size === 0) return true;
+  const hay = `${product.clothingType} ${product.category}`.toLowerCase();
+  return Array.from(families).some((re) => re.test(hay));
+}
+
 export function recommendAdaptiveProducts(input: RecommendationInput): RecommendationResult[] {
   const limit = input.limit ?? 9;
-  const scored = products.map((product) => scoreProduct(product, input));
+
+  // Hard category filter applied BEFORE scoring, so exact matches AND fallbacks
+  // stay strictly within the chosen product type(s). "Not sure" => no filter.
+  const selectedCats = (input.clothingTypes ?? []).filter(
+    (c) => c && !/not sure/i.test(c)
+  );
+  const pool = selectedCats.length
+    ? products.filter((p) => productInSelectedCategories(p, selectedCats))
+    : products;
+  const candidates = pool.length > 0 ? pool : products;
+
+  const scored = candidates.map((product) => scoreProduct(product, input));
 
   // 1. HARD FILTER: keep only products that satisfy every active requirement.
   const exact = scored.filter((s) => s.isExactMatch).sort(sortByQuality);

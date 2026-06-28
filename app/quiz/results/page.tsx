@@ -172,22 +172,12 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
 
   const profiles = classifyAdaptiveProfiles(input);
   const summary = buildMatchSummary(input);
+  // The engine strictly filters by the chosen clothing categories already, so
+  // results never cross categories (unless the shopper picked "Not sure").
   const allResults = recommendAdaptiveProducts(input);
-  const clothingFiltered = clothing.length
-    ? allResults.filter(({ product }) =>
-        clothing.some((choice) => {
-          const normalized = choice.toLowerCase().replace("adaptive ", "");
-          return (
-            product.clothingType.toLowerCase().includes(normalized) ||
-            normalized.includes(product.clothingType.toLowerCase()) ||
-            normalized.includes(product.category.toLowerCase())
-          );
-        })
-      )
-    : allResults;
   const availabilityFiltered = availability.toLowerCase().includes("in-store")
-    ? clothingFiltered.filter(({ product }) => product.availability.inStore)
-    : clothingFiltered;
+    ? allResults.filter(({ product }) => product.availability.inStore)
+    : allResults;
   const visibleResults = availabilityFiltered.length > 0 ? availabilityFiltered : allResults;
   const exactMatches = visibleResults.filter((result) => !result.isFallback);
   const fallbackMatches = visibleResults.filter((result) => result.isFallback);
