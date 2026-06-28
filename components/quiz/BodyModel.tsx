@@ -42,6 +42,14 @@ export interface BodyModelProps {
   garments?: Garment[];
   /** Active aesthetic style id (e.g. "old-money", "streetwear", "y2k"). */
   style?: string;
+  /** Show a supportive helper figure (caregiver-assisted dressing). */
+  helper?: boolean;
+  /** When true, body zones become tappable hotspots on the avatar. */
+  interactive?: boolean;
+  /** The currently focused zone (gets a stronger outline). */
+  focusZone?: BodyZone;
+  /** Called when a body zone hotspot is tapped/activated. */
+  onZoneClick?: (zone: BodyZone) => void;
   accents?: {
     soft?: boolean;
     oneHanded?: boolean;
@@ -122,12 +130,40 @@ const ZONES_SEATED: Record<BodyZone, JSX.Element> = {
   skin: <rect x="56" y="86" width="108" height="180" rx="40" />,
 };
 
+const ZONE_LABELS: Record<BodyZone, string> = {
+  shoulders: "Shoulders",
+  arms: "Arms",
+  hands: "Hands",
+  chest: "Chest",
+  waist: "Waist / abdomen",
+  hips: "Hips / seated area",
+  legs: "Legs",
+  feet: "Feet",
+  skin: "Skin / full body",
+};
+
+// Render order so smaller zones sit on top and stay tappable.
+const HOTSPOT_ORDER: BodyZone[] = [
+  "chest",
+  "waist",
+  "hips",
+  "legs",
+  "shoulders",
+  "arms",
+  "hands",
+  "feet",
+];
+
 export default function BodyModel({
   persona = "adult",
   seated = false,
   zones = [],
   garments = [],
   style,
+  helper = false,
+  interactive = false,
+  focusZone,
+  onZoneClick,
   accents = {},
   className = "",
 }: BodyModelProps) {
@@ -167,17 +203,15 @@ export default function BodyModel({
           <stop offset="0" stopColor="#EFD7C2" />
           <stop offset="1" stopColor="#D9BFA6" />
         </radialGradient>
-        <linearGradient id="bm-style" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="rgba(255,255,255,.7)" />
-          <stop offset=".5" stopColor="rgba(255,255,255,0)" />
-        </linearGradient>
-        <linearGradient id="bm-sheen" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stopColor="rgba(255,255,255,0)" />
-          <stop offset=".5" stopColor="rgba(255,255,255,.5)" />
-          <stop offset="1" stopColor="rgba(255,255,255,0)" />
-        </linearGradient>
+        <radialGradient id="bm-hl" cx="50%" cy="50%" r="50%">
+          <stop offset="0" stopColor="rgba(255,255,255,.16)" />
+          <stop offset="100%" stopColor="rgba(255,255,255,0)" />
+        </radialGradient>
         <filter id="bm-soft" x="-20%" y="-20%" width="140%" height="140%">
           <feGaussianBlur stdDeviation="2.2" />
+        </filter>
+        <filter id="bm-soft-lg" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="6" />
         </filter>
         <clipPath id="bm-torso-clip">
           <path d="M82 110c8-8 46-8 56 0 6 5 8 18 8 30 0 22-4 40-6 56H80c-2-16-6-34-6-56 0-12 2-25 8-30z" />
@@ -189,12 +223,28 @@ export default function BodyModel({
 
       {/* idle-bobbing, hover-tilting figure */}
       <g className="bm-figure">
-        {/* care-support helper figure behind */}
-        {persona === "care" && (
-          <g opacity="0.45" filter="url(#bm-soft)">
-            <circle cx="170" cy="98" r="15" fill="#A87FA0" />
-            <path d="M152 196c0-30 8-58 18-58s18 28 18 58z" fill="#A87FA0" />
-            <path d="M152 150c-10 6-16 18-14 30" stroke="#A87FA0" strokeWidth="9" fill="none" strokeLinecap="round" />
+        {/* supportive helper figure (care persona or caregiver-assisted dressing) */}
+        {(persona === "care" || helper) && (
+          <g className="bm-accent">
+            {/* soft "support" link between helper hand and the main avatar */}
+            <path
+              d="M168 150c-14 4-26 12-34 22"
+              stroke="#B97861"
+              strokeWidth="3"
+              strokeLinecap="round"
+              fill="none"
+              opacity="0.55"
+            />
+            <g opacity="0.5">
+              <circle cx="176" cy="96" r="15" fill="#9D7594" />
+              <path d="M158 200c0-32 8-62 18-62s18 30 18 62z" fill="#9D7594" />
+              {/* extended supporting arm reaching toward the avatar */}
+              <path d="M160 150c-10 4-18 12-22 22" stroke="#9D7594" strokeWidth="9" fill="none" strokeLinecap="round" />
+              <circle cx="138" cy="172" r="5.5" fill="#E7C9A9" />
+            </g>
+            <text x="176" y="222" textAnchor="middle" className="bm-helper-label">
+              support
+            </text>
           </g>
         )}
 
@@ -216,12 +266,11 @@ export default function BodyModel({
           d="M82 110c8-8 46-8 56 0 6 5 8 18 8 30 0 22-4 40-6 56H80c-2-16-6-34-6-56 0-12 2-25 8-30z"
           fill="url(#bm-garment)"
         />
-        {/* torso inner shadow (right) + highlight (left) for volume */}
+        {/* soft, intentional torso shading — gentle right-side shadow and a
+            diffuse left highlight (no hard white patch) */}
         <g clipPath="url(#bm-torso-clip)">
-          <rect x="120" y="104" width="40" height="100" fill="rgba(41,36,31,.16)" />
-          <rect x="74" y="104" width="22" height="100" fill="rgba(255,255,255,.14)" />
-          {/* animated sheen sweep */}
-          <rect className="bm-sheen" x="-40" y="100" width="34" height="110" fill="url(#bm-sheen)" />
+          <ellipse cx="138" cy="156" rx="26" ry="52" fill="rgba(41,36,31,.18)" filter="url(#bm-soft-lg)" />
+          <ellipse cx="96" cy="138" rx="20" ry="38" fill="url(#bm-hl)" filter="url(#bm-soft-lg)" />
         </g>
 
         {/* arms */}
@@ -261,15 +310,6 @@ export default function BodyModel({
 
         {/* ---- aesthetic style transformation ---- */}
         {style && <StyleLayer style={style} seated={seated} headCy={headCy} />}
-
-        {/* style sheen overlay (subtle gloss when style chosen) */}
-        {(accents.style || style) && (
-          <path
-            d="M82 110c8-8 46-8 56 0 6 5 8 18 8 30 0 22-4 40-6 56H80c-2-16-6-34-6-56 0-12 2-25 8-30z"
-            fill="url(#bm-style)"
-            opacity="0.5"
-          />
-        )}
 
         {/* ---- clothing-type overlays ---- */}
         <GarmentOverlays garments={garmentSet} seated={seated} />
@@ -324,6 +364,33 @@ export default function BodyModel({
             </g>
           ))}
         </g>
+
+        {/* interactive tappable hotspots on the avatar */}
+        {interactive && (
+          <g>
+            {HOTSPOT_ORDER.map((zone) => (
+              <g
+                key={zone}
+                className="bm-hotspot"
+                role="button"
+                tabIndex={0}
+                data-active={focusZone === zone}
+                aria-label={ZONE_LABELS[zone]}
+                aria-pressed={focusZone === zone}
+                onClick={() => onZoneClick?.(zone)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    onZoneClick?.(zone);
+                  }
+                }}
+              >
+                <title>{ZONE_LABELS[zone]}</title>
+                <g className="bm-hit">{overlays[zone]}</g>
+              </g>
+            ))}
+          </g>
+        )}
       </g>
 
       {/* orbiting clothing icons for "not sure" */}
@@ -334,15 +401,18 @@ export default function BodyModel({
         .bm-root:hover .bm-figure { transform: rotate(1.4deg) translateY(-2px); }
         .bm-zone { animation: bmPulse 1.8s ease-in-out infinite; }
         .bm-accent { animation: bmPop .45s cubic-bezier(.16,1,.3,1) both; }
-        .bm-sheen { animation: bmSheen 5.5s ease-in-out infinite; }
         .bm-orbit { transform-box: view-box; transform-origin: 110px 180px; animation: bmSpin 18s linear infinite; }
+        .bm-hotspot { cursor: pointer; outline: none; }
+        .bm-hit { pointer-events: all; fill: rgba(118,83,110,0); stroke: rgba(118,83,110,0); stroke-width: 2; transition: fill .18s ease, stroke .18s ease; }
+        .bm-hotspot:hover > .bm-hit, .bm-hotspot:focus-visible > .bm-hit { fill: rgba(118,83,110,.16); stroke: rgba(118,83,110,.55); }
+        .bm-hotspot[data-active="true"] > .bm-hit { fill: rgba(118,83,110,.26); stroke: #76536E; }
+        .bm-helper-label { font: 600 9px Helvetica, Arial, sans-serif; fill: #9D7594; letter-spacing: .08em; text-transform: uppercase; opacity: .7; }
         @keyframes bmBob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
         @keyframes bmPulse { 0%,100% { opacity:.55; } 50% { opacity:1; } }
         @keyframes bmPop { from { opacity:0; transform: scale(.6); } to { opacity:1; transform: scale(1); } }
-        @keyframes bmSheen { 0%,18% { transform: translateX(0); } 38%,100% { transform: translateX(150px); } }
         @keyframes bmSpin { to { transform: rotate(360deg); } }
         @media (prefers-reduced-motion: reduce) {
-          .bm-figure, .bm-zone, .bm-accent, .bm-sheen, .bm-orbit { animation: none; }
+          .bm-figure, .bm-zone, .bm-accent, .bm-orbit { animation: none; }
           .bm-root:hover .bm-figure { transform: none; }
         }
       `}</style>
@@ -498,11 +568,11 @@ function StyleLayer({
         <path d="M80 110q30-8 60 0l5 150h-70z" fill={p.base} />
       )}
 
-      {/* recoloured torso for the chosen aesthetic */}
+      {/* recoloured torso for the chosen aesthetic, with soft diffuse shading */}
       <path d={TORSO_PATH} fill={p.base} />
       <g clipPath="url(#bm-torso-clip)">
-        <rect x="120" y="104" width="40" height="100" fill="rgba(0,0,0,.20)" />
-        <rect x="74" y="104" width="20" height="100" fill="rgba(255,255,255,.16)" />
+        <ellipse cx="138" cy="156" rx="26" ry="52" fill="rgba(0,0,0,.20)" filter="url(#bm-soft-lg)" />
+        <ellipse cx="96" cy="138" rx="20" ry="38" fill="url(#bm-hl)" filter="url(#bm-soft-lg)" />
       </g>
 
       {/* signature overlay per style */}

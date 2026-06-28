@@ -27,6 +27,10 @@ import {
 
 /* ------------------------------- Helpers --------------------------------- */
 
+const ZONE_LABEL = Object.fromEntries(
+  bodyZoneGroups.map((g) => [g.zone, g.title])
+) as Record<BodyZone, string>;
+
 function CheckIcon() {
   return (
     <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
@@ -224,16 +228,21 @@ function ModelPanel({
   stepId,
   extraZones = [],
   compact = false,
+  focusZone,
+  onZoneClick,
 }: {
   answers: Answers;
   stepId: string;
   extraZones?: BodyZone[];
   compact?: boolean;
+  focusZone?: BodyZone;
+  onZoneClick?: (zone: BodyZone) => void;
 }) {
   const state = modelState(answers, stepId);
   const zones = Array.from(new Set([...state.zones, ...extraZones]));
   const chips = profileChips(answers);
   const country = answers.country?.[0];
+  const interactive = stepId === "bodymap";
 
   return (
     <div className="flex h-full flex-col">
@@ -248,12 +257,21 @@ function ModelPanel({
           zones={zones}
           garments={state.garments}
           style={state.style}
+          helper={state.helper}
+          interactive={interactive}
+          focusZone={focusZone}
+          onZoneClick={onZoneClick}
           accents={state.accents}
           className={compact ? "h-[34vh] w-auto" : "h-full max-h-[52vh] w-auto"}
         />
         <span className="absolute left-4 top-4 rounded-full bg-paper/80 px-3 py-1 text-xs font-bold text-primary-800 shadow-soft backdrop-blur">
           Live profile mirror
         </span>
+        {interactive && focusZone && (
+          <span className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-primary-700 px-3 py-1 text-xs font-bold text-white shadow-soft">
+            {ZONE_LABEL[focusZone]} · tap the avatar
+          </span>
+        )}
         {country && <CountryBadge country={country} compact={compact} />}
         {country && <FlagPin country={country} compact={compact} />}
       </div>
@@ -378,13 +396,26 @@ export default function QuizClient() {
         {/* Model — desktop sticky panel */}
         <aside className="hidden min-h-0 px-6 py-4 lg:flex">
           <div className="w-full">
-            <ModelPanel answers={answers} stepId={current.id} extraZones={bodymapZones} />
+            <ModelPanel
+              answers={answers}
+              stepId={current.id}
+              extraZones={bodymapZones}
+              focusZone={focusZone}
+              onZoneClick={setFocusZone}
+            />
           </div>
         </aside>
 
         {/* Model — mobile compact band */}
         <div className="min-h-0 border-b border-ink/10 px-4 pb-2 pt-1 lg:hidden">
-          <ModelPanel answers={answers} stepId={current.id} extraZones={bodymapZones} compact />
+          <ModelPanel
+            answers={answers}
+            stepId={current.id}
+            extraZones={bodymapZones}
+            compact
+            focusZone={focusZone}
+            onZoneClick={setFocusZone}
+          />
         </div>
 
         {/* Question column */}
