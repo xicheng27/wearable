@@ -170,6 +170,30 @@ function BodyFitMap({
 
 /* ----------------------------- Model panel ------------------------------- */
 
+function CountryBadge({ country, compact }: { country: string; compact: boolean }) {
+  const isGlobal = country === GLOBAL;
+  const Flag = isGlobal
+    ? GlobeGraphic
+    : country === "Other country"
+      ? FlagOther
+      : COUNTRY_FLAGS[country] ?? FlagOther;
+  const label = isGlobal
+    ? "Global availability"
+    : country === "Other country"
+      ? "Shopping worldwide"
+      : `Shopping from ${country}`;
+  return (
+    <span
+      className={`absolute right-3 top-3 inline-flex items-center gap-2 rounded-full border border-ink/10 bg-paper/90 py-1 pl-1.5 pr-3 font-bold text-ink/80 shadow-soft backdrop-blur ${
+        compact ? "text-[11px]" : "text-xs"
+      }`}
+    >
+      <Flag size={compact ? 24 : 28} />
+      {label}
+    </span>
+  );
+}
+
 function ModelPanel({
   answers,
   stepId,
@@ -184,11 +208,12 @@ function ModelPanel({
   const state = modelState(answers, stepId);
   const zones = Array.from(new Set([...state.zones, ...extraZones]));
   const chips = profileChips(answers);
+  const country = answers.country?.[0];
 
   return (
     <div className="flex h-full flex-col">
       <div
-        className={`relative flex flex-1 items-center justify-center rounded-3xl border border-ink/10 bg-gradient-to-b from-ivory to-paper ${
+        className={`relative flex flex-1 items-center justify-center overflow-hidden rounded-3xl border border-ink/10 bg-gradient-to-b from-ivory to-paper ${
           compact ? "min-h-0 py-2" : "p-4"
         }`}
       >
@@ -196,12 +221,14 @@ function ModelPanel({
           persona={state.persona}
           seated={state.seated}
           zones={zones}
+          garments={state.garments}
           accents={state.accents}
           className={compact ? "h-[34vh] w-auto" : "h-full max-h-[52vh] w-auto"}
         />
         <span className="absolute left-4 top-4 rounded-full bg-paper/80 px-3 py-1 text-xs font-bold text-primary-800 shadow-soft backdrop-blur">
-          Your adaptive profile
+          Live profile mirror
         </span>
+        {country && <CountryBadge country={country} compact={compact} />}
       </div>
 
       {chips.length > 0 && (

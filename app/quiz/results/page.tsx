@@ -141,6 +141,7 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
     | AgeRange
     | undefined;
   const lifestyleSetting = readValue(searchParams.lifestyleSetting) as LifestyleSetting | undefined;
+  const genderRange = readValue(searchParams.genderRange) ?? readValue(searchParams.genderStyle);
   const dressingMethod = readValue(searchParams.dressingMethod) as DressingMethod | undefined;
   const mobilityLevel =
     normalizeMobility(readValue(searchParams.mobilityLevel)) ??
@@ -165,6 +166,7 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
     lifestyleSetting,
     caregiverInvolvement: deriveCaregiverInvolvement(targetGroup, dressingMethod),
     clothingTypes: clothing.filter((item) => item !== "Not sure"),
+    genderRange,
     limit: 9,
   };
 
