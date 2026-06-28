@@ -308,6 +308,23 @@ function scoreSoftPreferences(product: Product, input: RecommendationInput): Sof
     reasons.push(`fits your ${input.budget.toLowerCase()} budget`);
   }
 
+  // Clothing range is a soft ranking signal only — it never filters out an
+  // item, so functional needs always come first.
+  if (input.genderRange) {
+    const fit = (product.genderFit ?? []).join(" ");
+    const wanted =
+      input.genderRange === "womenswear"
+        ? /women/i
+        : input.genderRange === "menswear"
+          ? /\bmen\b/i
+          : /unisex|neutral/i;
+    if (wanted.test(fit) || /unisex/i.test(fit)) {
+      score += 1.5;
+      preferencesSatisfied.push("Your clothing range");
+      reasons.push("matches your selected clothing range");
+    }
+  }
+
   if (input.lifestyleSetting) {
     const hint = LIFESTYLE_STYLE_HINTS[input.lifestyleSetting];
     if (hint && product.styleTags.some((tag) => hint.test(tag.toLowerCase()))) {

@@ -55,6 +55,11 @@ export default function ProductImage({
             className="object-contain p-3 transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.035] sm:p-4"
             onError={() => setFailed(true)}
           />
+          {/* Subtle, non-ownership source label. Images are shown for
+              identification only — this is a preview/credit, not a Xi's mark. */}
+          <span className="pointer-events-none absolute bottom-1.5 right-1.5 select-none rounded-md bg-ink/45 px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-paper/85 backdrop-blur-sm">
+            Preview image
+          </span>
           {attribution && (
             <span className="absolute inset-x-0 bottom-0 bg-ink/55 px-2 py-1 text-center text-[11px] font-medium text-paper">
               {attribution}

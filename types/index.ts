@@ -227,6 +227,8 @@ export interface RecommendationInput {
   lifestyleSetting?: LifestyleSetting;
   caregiverInvolvement?: CaregiverInvolvement;
   clothingTypes?: string[];
+  /** Preferred clothing range for ranking: womenswear | menswear | gender_neutral. */
+  genderRange?: string;
   limit?: number;
 }
 

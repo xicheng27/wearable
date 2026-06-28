@@ -1,4 +1,4 @@
-import type { BodyZone, Persona } from "@/components/quiz/BodyModel";
+import type { BodyZone, Garment, Persona } from "@/components/quiz/BodyModel";
 import { GLOBAL } from "@/lib/countries";
 
 /* --------------------------- Answer model -------------------------------- */
@@ -9,6 +9,7 @@ export interface QuizModelState {
   persona: Persona;
   seated: boolean;
   zones: BodyZone[];
+  garments: Garment[];
   accents: {
     soft?: boolean;
     oneHanded?: boolean;
@@ -67,6 +68,26 @@ const CLOTHING_TO_CATALOG: Record<string, string> = {
   Outerwear: "Jackets",
   "Underwear / base layers": "Undergarments",
   Footwear: "Shoes",
+};
+
+// Map the friendly clothing label to an avatar garment overlay.
+const CLOTHING_TO_GARMENT: Record<string, Garment> = {
+  Tops: "top",
+  Bottoms: "bottoms",
+  "Dresses / one-piece": "dress",
+  Outerwear: "outerwear",
+  "Underwear / base layers": "baselayer",
+  Footwear: "footwear",
+};
+
+// A short chip label for each selected clothing type.
+const CLOTHING_CHIP: Record<string, string> = {
+  Tops: "Tops",
+  Bottoms: "Bottoms",
+  "Dresses / one-piece": "Dresses",
+  Outerwear: "Outerwear",
+  "Underwear / base layers": "Base layers",
+  Footwear: "Footwear",
 };
 
 /* ----------------------------- Step 4: help ------------------------------ */
@@ -280,6 +301,13 @@ export const styleOptions = [
   "Mature",
 ];
 
+export const rangeOptions = [
+  "Female",
+  "Male",
+  "Gender-neutral / unisex",
+  "Prefer not to say",
+];
+
 export const budgetOptions = [
   "Budget",
   "Mid-range",
@@ -470,6 +498,15 @@ export const steps: Step[] = [
     active: () => true,
   },
   {
+    id: "range",
+    title: "Which clothing range should we prioritise?",
+    subtitle: "A recommendation filter for sizing and ranking — not an identity judgement. Functional needs still come first.",
+    type: "single",
+    optional: true,
+    options: rangeOptions,
+    active: () => true,
+  },
+  {
     id: "budget",
     title: "What budget should we keep in mind?",
     subtitle: "Prices change on official sites, so this is a guide for ranking.",
@@ -547,7 +584,20 @@ export function modelState(a: Answers, currentStepId: string): QuizModelState {
     style: currentStepId === "style" || (a.style ?? []).length > 0,
   };
 
-  return { persona, seated, zones: Array.from(zones), accents };
+  const garments = deriveGarments(a);
+
+  return { persona, seated, zones: Array.from(zones), garments, accents };
+}
+
+function deriveGarments(a: Answers): Garment[] {
+  const chosen = a.clothing ?? [];
+  if (chosen.length === 0) return [];
+  if (chosen.some((c) => c.startsWith("Not sure"))) return ["notsure"];
+  const garments = chosen
+    .map((c) => CLOTHING_TO_GARMENT[c])
+    .filter((g): g is Garment => Boolean(g));
+  // If footwear is among them, also surface footwear emphasis last so it draws.
+  return Array.from(new Set(garments));
 }
 
 /* --------------------------- Live profile chips -------------------------- */
@@ -557,13 +607,18 @@ export function profileChips(a: Answers): string[] {
   const who = a.who?.[0];
   if (who) chips.push(personaChipLabel(who));
   if (a.country?.[0] && a.country[0] !== GLOBAL) {
-    chips.push(a.country[0] === "Other country" ? "Other country" : a.country[0]);
+    chips.push(
+      a.country[0] === "Other country"
+        ? "Shopping from: Other"
+        : `Shopping from ${a.country[0]}`
+    );
   } else if (a.country?.[0] === GLOBAL) {
-    chips.push("Global");
+    chips.push("Global availability");
   }
-  (a.clothing ?? [])
-    .filter((c) => !c.startsWith("Not sure"))
-    .forEach((c) => chips.push(c));
+  (a.clothing ?? []).forEach((c) => {
+    if (c.startsWith("Not sure")) chips.push("Looking for: Not sure");
+    else if (CLOTHING_CHIP[c]) chips.push(`Looking for: ${CLOTHING_CHIP[c]}`);
+  });
   if (hasHelp(a, "Seated")) chips.push("Seated fit");
   if (hasHelp(a, "One-handed")) chips.push("One-handed dressing");
   if (hasHelp(a, "Caregiver")) chips.push("Caregiver access");
@@ -575,8 +630,9 @@ export function profileChips(a: Answers): string[] {
   if (medicalActive(a)) chips.push("Body-zone access");
   if (braceActive(a)) chips.push("Brace / AFO space");
   (a.style ?? []).slice(0, 2).forEach((s) => chips.push(`${s} style`));
+  if (a.range?.[0]) chips.push(`Range: ${rangeChipLabel(a.range[0])}`);
   if (a.budget?.[0] && a.budget[0] !== "No preference") chips.push(`Budget: ${a.budget[0]}`);
-  return Array.from(new Set(chips)).slice(0, 14);
+  return Array.from(new Set(chips)).slice(0, 16);
 }
 
 function personaChipLabel(who: string): string {
@@ -584,6 +640,13 @@ function personaChipLabel(who: string): string {
   if (who.includes("Older")) return "Older adult";
   if (who.includes("care")) return "Care & support";
   return "Adult";
+}
+
+function rangeChipLabel(range: string): string {
+  if (range.startsWith("Female")) return "Female";
+  if (range.startsWith("Male")) return "Male";
+  if (range.startsWith("Gender")) return "Unisex";
+  return "Prefer not to say";
 }
 
 /* ----------------------- Build results query params ---------------------- */
@@ -681,15 +744,27 @@ export function buildResultParams(a: Answers, otherNeeds: string): URLSearchPara
     p.set("mobilityLevel", "wheelchair");
   }
 
-  // style + derived gender range
+  // style
   const style = a.style ?? [];
   if (style.length) {
     p.set("styles", style.join(","));
     p.set("style", style.join(","));
-    if (style.includes("Feminine")) p.set("genderStyle", "womenswear");
-    else if (style.includes("Masculine")) p.set("genderStyle", "menswear");
-    else if (style.includes("Neutral")) p.set("genderStyle", "gender_neutral");
   }
+
+  // clothing range (explicit answer wins; falls back to style cue)
+  const range = a.range?.[0] ?? "";
+  let genderStyle = "";
+  if (range.startsWith("Female")) genderStyle = "womenswear";
+  else if (range.startsWith("Male")) genderStyle = "menswear";
+  else if (range.startsWith("Gender")) genderStyle = "gender_neutral";
+  else if (!range && style.includes("Feminine")) genderStyle = "womenswear";
+  else if (!range && style.includes("Masculine")) genderStyle = "menswear";
+  else if (!range && style.includes("Neutral")) genderStyle = "gender_neutral";
+  if (genderStyle) {
+    p.set("genderStyle", genderStyle);
+    p.set("genderRange", genderStyle);
+  }
+  if (range) p.set("range", rangeChipLabel(range));
 
   // budget
   if (a.budget?.[0] && a.budget[0] !== "No preference") p.set("budget", a.budget[0]);
