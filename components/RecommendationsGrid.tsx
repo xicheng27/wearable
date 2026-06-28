@@ -79,13 +79,13 @@ function RecommendationFeedback({ productId }: { productId: string }) {
 function MatchDetail({
   product,
   reasons,
-  score,
   itemClassification,
   needsSatisfied,
   preferencesSatisfied,
   unmetNeeds,
   isFallback,
   explanation,
+  availabilityLabel,
   matchedTags,
   unmatchedTags,
 }: Recommendation) {
@@ -103,6 +103,12 @@ function MatchDetail({
       ? matchedTags
       : [...(needsSatisfied ?? []), ...(preferencesSatisfied ?? [])];
 
+  const needCount = (needsSatisfied ?? []).length;
+  const prefCount = (preferencesSatisfied ?? []).length;
+  const matchPercent = isFallback
+    ? Math.max(38, 70 - (unmetNeeds?.length ?? 1) * 12)
+    : Math.min(98, 80 + needCount * 5 + prefCount * 3);
+
   return (
     <div
       className={`-mt-3 rounded-b-2xl border border-t-0 px-5 pb-5 pt-6 ${
@@ -111,13 +117,15 @@ function MatchDetail({
     >
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-xs font-bold uppercase tracking-wider text-primary-800">
-          {isFallback ? "Closest alternative" : "Why it matches"}
+          {isFallback ? "Closest alternative" : "Why this matches you"}
         </p>
-        {typeof score === "number" && (
-          <span className="rounded-full bg-paper px-2.5 py-1 text-xs font-bold text-primary-900">
-            Match score {Math.round(score)}
-          </span>
-        )}
+        <span
+          className={`rounded-full px-2.5 py-1 text-xs font-bold ${
+            isFallback ? "bg-amber-100 text-amber-800" : "bg-primary-700 text-white"
+          }`}
+        >
+          {matchPercent}% match
+        </span>
       </div>
 
       {itemClassification && itemClassification.length > 0 && (
@@ -134,6 +142,16 @@ function MatchDetail({
       )}
 
       <p className="mt-2 text-sm leading-6 text-primary-950">{why}</p>
+
+      {availabilityLabel && (
+        <p className="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold text-primary-800">
+          <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 21s-7-5.2-7-11a7 7 0 1 1 14 0c0 5.8-7 11-7 11z" />
+            <circle cx="12" cy="10" r="2.2" />
+          </svg>
+          {availabilityLabel}
+        </p>
+      )}
 
       {shownMatchedTags.length > 0 && (
         <div className="mt-3">

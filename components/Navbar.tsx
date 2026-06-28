@@ -11,7 +11,7 @@ import { useSavedItems } from "@/components/SavedItemsProvider";
 const navItems = [
   { href: "/search", label: "Browse products" },
   { href: "/saved", label: "Saved items" },
-  { href: "/#how-it-works", label: "How it works" },
+  { href: "/how-it-works", label: "How it works" },
 ];
 
 export default function Navbar() {
