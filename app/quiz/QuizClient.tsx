@@ -194,6 +194,31 @@ function CountryBadge({ country, compact }: { country: string; compact: boolean 
   );
 }
 
+/** A floating location marker pinned over the avatar with the country's flag. */
+function FlagPin({ country, compact }: { country: string; compact: boolean }) {
+  const isGlobal = country === GLOBAL;
+  const Flag = isGlobal
+    ? GlobeGraphic
+    : country === "Other country"
+      ? FlagOther
+      : COUNTRY_FLAGS[country] ?? FlagOther;
+  const size = compact ? 34 : 46;
+  return (
+    <span
+      className="animate-floaty pointer-events-none absolute left-1/2 top-[10%] z-10 flex -translate-x-1/2 flex-col items-center"
+      aria-hidden="true"
+    >
+      <span
+        className="grid place-items-center overflow-hidden rounded-full border-2 border-paper bg-paper shadow-lift"
+        style={{ width: size, height: size }}
+      >
+        <Flag size={size + 8} />
+      </span>
+      <span className="-mt-1 h-3 w-3 rotate-45 border-b-2 border-r-2 border-paper bg-paper shadow-soft" />
+    </span>
+  );
+}
+
 function ModelPanel({
   answers,
   stepId,
@@ -222,6 +247,7 @@ function ModelPanel({
           seated={state.seated}
           zones={zones}
           garments={state.garments}
+          style={state.style}
           accents={state.accents}
           className={compact ? "h-[34vh] w-auto" : "h-full max-h-[52vh] w-auto"}
         />
@@ -229,6 +255,7 @@ function ModelPanel({
           Live profile mirror
         </span>
         {country && <CountryBadge country={country} compact={compact} />}
+        {country && <FlagPin country={country} compact={compact} />}
       </div>
 
       {chips.length > 0 && (

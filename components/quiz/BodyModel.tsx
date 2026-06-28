@@ -40,6 +40,8 @@ export interface BodyModelProps {
   seated?: boolean;
   zones?: BodyZone[];
   garments?: Garment[];
+  /** Active aesthetic style id (e.g. "old-money", "streetwear", "y2k"). */
+  style?: string;
   accents?: {
     soft?: boolean;
     oneHanded?: boolean;
@@ -125,6 +127,7 @@ export default function BodyModel({
   seated = false,
   zones = [],
   garments = [],
+  style,
   accents = {},
   className = "",
 }: BodyModelProps) {
@@ -256,11 +259,15 @@ export default function BodyModel({
           </>
         )}
 
-        {/* style sheen overlay */}
-        {accents.style && (
+        {/* ---- aesthetic style transformation ---- */}
+        {style && <StyleLayer style={style} seated={seated} headCy={headCy} />}
+
+        {/* style sheen overlay (subtle gloss when style chosen) */}
+        {(accents.style || style) && (
           <path
             d="M82 110c8-8 46-8 56 0 6 5 8 18 8 30 0 22-4 40-6 56H80c-2-16-6-34-6-56 0-12 2-25 8-30z"
             fill="url(#bm-style)"
+            opacity="0.5"
           />
         )}
 
@@ -410,6 +417,217 @@ function OrbitingGarments() {
           <path d={ic.d} fill="none" stroke="#76536E" strokeWidth="1.6" strokeLinejoin="round" />
         </g>
       ))}
+    </g>
+  );
+}
+
+/* ----------------------- aesthetic style transformation ------------------ */
+
+const TORSO_PATH =
+  "M82 110c8-8 46-8 56 0 6 5 8 18 8 30 0 22-4 40-6 56H80c-2-16-6-34-6-56 0-12 2-25 8-30z";
+
+interface Palette {
+  base: string;
+  dark: string;
+  light: string;
+  accent: string;
+}
+
+const STYLE_PALETTE: Record<string, Palette> = {
+  "old-money": { base: "#2D3B50", dark: "#1F2A3B", light: "#41526B", accent: "#C9A24A" },
+  clean: { base: "#E8E3D9", dark: "#CBC3B4", light: "#F5F1E9", accent: "#9A9082" },
+  chic: { base: "#2A2630", dark: "#191620", light: "#3C3645", accent: "#C9A24A" },
+  streetwear: { base: "#3C4F73", dark: "#2A3A57", light: "#52688F", accent: "#E8B04B" },
+  minimal: { base: "#9C958C", dark: "#827B72", light: "#B6B0A7", accent: "#6E665E" },
+  sporty: { base: "#2F726B", dark: "#205049", light: "#3FA093", accent: "#E8B04B" },
+  formal: { base: "#33323B", dark: "#222129", light: "#45444F", accent: "#B8B2C0" },
+  y2k: { base: "#E58FB5", dark: "#C76E99", light: "#F7BBD6", accent: "#6FA8E5" },
+  "soft-cozy": { base: "#C49A74", dark: "#A87E59", light: "#DEBA96", accent: "#7C5034" },
+  elegant: { base: "#6E4B66", dark: "#523649", light: "#90698A", accent: "#E0D2E0" },
+  casual: { base: "#6E7E94", dark: "#566379", light: "#8E9DB1", accent: "#E7DAC4" },
+  modest: { base: "#5E6B6A", dark: "#45504F", light: "#788481", accent: "#C9BCA9" },
+  trendy: { base: "#B5604F", dark: "#8E4639", light: "#D27C68", accent: "#E8B04B" },
+  default: { base: "#7C5A74", dark: "#5E4357", light: "#A87FA0", accent: "#B97861" },
+};
+
+function Star({ cx, cy, r, fill }: { cx: number; cy: number; r: number; fill: string }) {
+  const pts: string[] = [];
+  for (let i = 0; i < 8; i++) {
+    const ang = (i * Math.PI) / 4 - Math.PI / 2;
+    const rad = i % 2 === 0 ? r : r * 0.42;
+    pts.push(`${cx + Math.cos(ang) * rad},${cy + Math.sin(ang) * rad}`);
+  }
+  return <polygon points={pts.join(" ")} fill={fill} />;
+}
+
+function StyleLayer({
+  style,
+  seated,
+  headCy,
+}: {
+  style: string;
+  seated: boolean;
+  headCy: number;
+}) {
+  const p = STYLE_PALETTE[style] ?? STYLE_PALETTE.default;
+  const feet = seated
+    ? [
+        { x: 101, y: 268 },
+        { x: 129, y: 268 },
+      ]
+    : [
+        { x: 95, y: 308 },
+        { x: 125, y: 308 },
+      ];
+
+  const Sneakers = (
+    <g>
+      {feet.map((f, i) => (
+        <g key={i}>
+          <ellipse cx={f.x} cy={f.y} rx="16" ry="9" fill="#F4F0E8" stroke={p.dark} strokeWidth="1.5" />
+          <path d={`M${f.x - 12} ${f.y} h24`} stroke={p.accent} strokeWidth="2.5" />
+        </g>
+      ))}
+    </g>
+  );
+
+  return (
+    <g className="bm-accent">
+      {/* longline / coat styles paint a longer body first */}
+      {style === "modest" && (
+        <path d="M80 110q30-8 60 0l5 150h-70z" fill={p.base} />
+      )}
+
+      {/* recoloured torso for the chosen aesthetic */}
+      <path d={TORSO_PATH} fill={p.base} />
+      <g clipPath="url(#bm-torso-clip)">
+        <rect x="120" y="104" width="40" height="100" fill="rgba(0,0,0,.20)" />
+        <rect x="74" y="104" width="20" height="100" fill="rgba(255,255,255,.16)" />
+      </g>
+
+      {/* signature overlay per style */}
+      {(style === "old-money" || style === "formal") && (
+        <g>
+          <path d="M110 112 94 112 90 158 106 150Z" fill={p.dark} />
+          <path d="M110 112 126 112 130 158 114 150Z" fill={p.dark} />
+          <path d="M104 116 110 152 116 116Z" fill="#EDE7DA" />
+          {style === "formal" ? (
+            <path d="M107 120 113 120 112 152 110 160 108 152Z" fill={p.accent} />
+          ) : (
+            <>
+              <circle cx="110" cy="160" r="2" fill={p.accent} />
+              <circle cx="110" cy="170" r="2" fill={p.accent} />
+              <rect x="120" y="150" width="9" height="6" fill={p.accent} />
+            </>
+          )}
+        </g>
+      )}
+
+      {style === "clean" && (
+        <g fill="none" stroke={p.accent} strokeWidth="2">
+          <path d="M101 114q9 6 18 0" />
+          <rect x="119" y="150" width="11" height="12" rx="1" />
+        </g>
+      )}
+
+      {style === "chic" && (
+        <g>
+          <path d="M101 114q9 6 18 0" fill="none" stroke={p.dark} strokeWidth="2" />
+          <rect x="80" y="178" width="60" height="5" fill={p.dark} />
+          <rect x="106" y="178" width="8" height="5" fill={p.accent} />
+          {/* sleek sunglasses */}
+          <g>
+            <rect x={110 - 13} y={headCy - 2} width="10" height="6" rx="2" fill={p.dark} />
+            <rect x={110 + 3} y={headCy - 2} width="10" height="6" rx="2" fill={p.dark} />
+            <path d={`M${110 - 3} ${headCy + 1}h6`} stroke={p.dark} strokeWidth="1.5" />
+          </g>
+        </g>
+      )}
+
+      {style === "streetwear" && (
+        <g>
+          {/* hood */}
+          <path d="M90 110q20-17 40 0q-20 9-40 0z" fill={p.dark} />
+          {/* drawstrings */}
+          <path d="M104 122v18M116 122v18" stroke={p.accent} strokeWidth="2" />
+          <circle cx="104" cy="142" r="2.2" fill={p.accent} />
+          <circle cx="116" cy="142" r="2.2" fill={p.accent} />
+          {/* kangaroo pocket */}
+          <path d="M90 166h40v16H90z" fill="rgba(0,0,0,.20)" />
+          {/* graphic patch */}
+          <rect x="100" y="148" width="20" height="13" rx="2" fill={p.accent} opacity="0.85" />
+          {Sneakers}
+        </g>
+      )}
+
+      {style === "sporty" && (
+        <g>
+          <path d="M80 148 140 136" stroke={p.accent} strokeWidth="4" fill="none" />
+          <path d="M80 158 140 146" stroke={p.light} strokeWidth="3" fill="none" />
+          <path d="M50 150h-9M50 160h-12M50 170h-9" stroke={p.accent} strokeWidth="2" />
+          {Sneakers}
+        </g>
+      )}
+
+      {style === "y2k" && (
+        <g>
+          <ellipse cx="100" cy="142" rx="9" ry="18" fill="rgba(255,255,255,.28)" />
+          <path d="M82 150 140 162" stroke={p.accent} strokeWidth="4" fill="none" />
+          <Star cx={124} cy={148} r={5} fill={p.accent} />
+          <Star cx={94} cy={170} r={4} fill="#FCF9F2" />
+          <Star cx={118} cy={178} r={3} fill={p.accent} />
+        </g>
+      )}
+
+      {style === "soft-cozy" && (
+        <g>
+          <path d={TORSO_PATH} fill="none" stroke={p.light} strokeWidth="3" strokeDasharray="2 4" />
+          <path d="M104 114 110 130 116 114" fill="none" stroke={p.dark} strokeWidth="2.5" />
+          <path d="M105 114v82M115 114v82" stroke={p.dark} strokeWidth="2" />
+          <circle cx="110" cy="146" r="2" fill={p.accent} />
+          <circle cx="110" cy="160" r="2" fill={p.accent} />
+          <circle cx="110" cy="174" r="2" fill={p.accent} />
+        </g>
+      )}
+
+      {style === "elegant" && (
+        <g>
+          <path d="M84 176q26 10 52 0l9 58q-35 16-70 0z" fill={p.base} opacity="0.92" />
+          <path d="M84 176q26 10 52 0" fill="none" stroke={p.light} strokeWidth="2" />
+          <path d="M102 116q8 9 16 0" fill="none" stroke={p.accent} strokeWidth="1.5" />
+          <circle cx="110" cy="125" r="2" fill={p.accent} />
+        </g>
+      )}
+
+      {style === "casual" && (
+        <g>
+          <path d="M101 114q9 6 18 0" fill="none" stroke={p.dark} strokeWidth="2" />
+          <path d="M80 150h60" stroke={p.light} strokeWidth="3" opacity="0.55" />
+        </g>
+      )}
+
+      {style === "modest" && (
+        <g>
+          <g clipPath="url(#bm-torso-clip)" />
+          <path d="M100 108q10-4 20 0v9q-10 4-20 0z" fill={p.dark} />
+          <path d="M110 120v138" stroke={p.dark} strokeWidth="2" />
+          <path d="M80 196h60" stroke={p.dark} strokeWidth="2" opacity="0.5" />
+        </g>
+      )}
+
+      {style === "minimal" && (
+        <g>
+          <path d="M101 114q9 6 18 0" fill="none" stroke={p.dark} strokeWidth="2" />
+        </g>
+      )}
+
+      {style === "trendy" && (
+        <g>
+          <path d="M110 110 138 120 138 174 110 196Z" fill={p.accent} opacity="0.8" />
+          <path d="M88 114 142 188" stroke={p.dark} strokeWidth="4" fill="none" />
+          <rect x="134" y="182" width="15" height="13" rx="3" fill={p.dark} />
+        </g>
+      )}
     </g>
   );
 }
