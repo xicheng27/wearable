@@ -10,6 +10,8 @@ export interface QuizModelState {
   seated: boolean;
   zones: BodyZone[];
   garments: Garment[];
+  /** Active aesthetic style id driving the avatar transformation. */
+  style?: string;
   accents: {
     soft?: boolean;
     oneHanded?: boolean;
@@ -288,18 +290,29 @@ export const footwearOptions = [
 /* ----------------------------- Step: style ------------------------------- */
 
 export const styleOptions = [
-  "Minimal",
+  "Old money",
+  "Clean",
+  "Chic",
   "Streetwear",
-  "Smart casual",
-  "Formal",
+  "Minimal",
   "Sporty",
-  "Feminine",
-  "Masculine",
-  "Neutral",
+  "Formal",
+  "Y2K",
+  "Soft / cozy",
+  "Elegant",
+  "Casual",
   "Modest",
-  "Youthful",
-  "Mature",
+  "Trendy",
 ];
+
+/** Normalise a style label to a stable id used by the avatar + tags. */
+export function styleId(label: string): string {
+  return label
+    .toLowerCase()
+    .replace(/\s*\/\s*/g, " ")
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-");
+}
 
 export const rangeOptions = [
   "Female",
@@ -586,7 +599,11 @@ export function modelState(a: Answers, currentStepId: string): QuizModelState {
 
   const garments = deriveGarments(a);
 
-  return { persona, seated, zones: Array.from(zones), garments, accents };
+  // The most recently selected style drives the avatar's look.
+  const styles = a.style ?? [];
+  const activeStyle = styles.length ? styleId(styles[styles.length - 1]) : undefined;
+
+  return { persona, seated, zones: Array.from(zones), garments, style: activeStyle, accents };
 }
 
 function deriveGarments(a: Answers): Garment[] {
@@ -629,7 +646,7 @@ export function profileChips(a: Answers): string[] {
   if ((a.bodyIssues ?? []).includes("wa-band")) chips.push("Waist pressure");
   if (medicalActive(a)) chips.push("Body-zone access");
   if (braceActive(a)) chips.push("Brace / AFO space");
-  (a.style ?? []).slice(0, 2).forEach((s) => chips.push(`${s} style`));
+  (a.style ?? []).slice(-2).forEach((s) => chips.push(`Style: ${s}`));
   if (a.range?.[0]) chips.push(`Range: ${rangeChipLabel(a.range[0])}`);
   if (a.budget?.[0] && a.budget[0] !== "No preference") chips.push(`Budget: ${a.budget[0]}`);
   return Array.from(new Set(chips)).slice(0, 16);
@@ -757,9 +774,6 @@ export function buildResultParams(a: Answers, otherNeeds: string): URLSearchPara
   if (range.startsWith("Female")) genderStyle = "womenswear";
   else if (range.startsWith("Male")) genderStyle = "menswear";
   else if (range.startsWith("Gender")) genderStyle = "gender_neutral";
-  else if (!range && style.includes("Feminine")) genderStyle = "womenswear";
-  else if (!range && style.includes("Masculine")) genderStyle = "menswear";
-  else if (!range && style.includes("Neutral")) genderStyle = "gender_neutral";
   if (genderStyle) {
     p.set("genderStyle", genderStyle);
     p.set("genderRange", genderStyle);

@@ -226,7 +226,7 @@ export function buildSignalMap(raw: Raw): SignalMap {
       { test: /strap|fasten|stable sole/, tag: "adjustable_footwear", weight: 1 },
     ], "Room for supports and matched footwear closures are factored in."),
     scoreCategory("fashion", "Fashion identity & shopping context", fashionBlob, [
-      { test: /minimal|smart|formal|street|sporty|modest|feminine|masculine|neutral|youthful|mature/, tag: "style_direction", weight: 1.4 },
+      { test: /old money|clean|chic|street|minimal|sporty|formal|y2k|soft|cozy|elegant|casual|modest|trendy/, tag: "style_direction", weight: 1.4 },
       { test: /budget|mid-range|premium/, tag: "budget_set", weight: 1 },
       { test: /female|male|unisex/, tag: "clothing_range", weight: 1 },
       { test: /local/, tag: "local_brands", weight: 0.8 },
@@ -373,15 +373,20 @@ function buildPersona(
     mixed: "Mobility-First",
   };
   const styleNoun = (() => {
-    const s = styles[0] ?? "";
-    if (s.startsWith("Minimal")) return "Minimalist";
-    if (s.startsWith("Street")) return "Streetwear Profile";
-    if (s.startsWith("Smart")) return "Classic";
-    if (s.startsWith("Formal")) return "Refined Dresser";
-    if (s.startsWith("Sporty")) return "Athlete";
-    if (s.startsWith("Modest")) return "Modest Dresser";
-    if (s.startsWith("Youthful")) return "Original";
-    if (s.startsWith("Mature")) return "Curator";
+    const s = (styles[0] ?? "").toLowerCase();
+    if (s.startsWith("old money")) return "Classicist";
+    if (s.startsWith("clean")) return "Essentialist";
+    if (s.startsWith("chic")) return "Stylist";
+    if (s.startsWith("street")) return "Streetwear Profile";
+    if (s.startsWith("minimal")) return "Minimalist";
+    if (s.startsWith("sporty")) return "Athlete";
+    if (s.startsWith("formal")) return "Refined Dresser";
+    if (s.startsWith("y2k")) return "Trendsetter";
+    if (s.startsWith("soft")) return "Comfort Seeker";
+    if (s.startsWith("elegant")) return "Elegant";
+    if (s.startsWith("casual")) return "Everyday Dresser";
+    if (s.startsWith("modest")) return "Modest Dresser";
+    if (s.startsWith("trendy")) return "Trendsetter";
     return "";
   })();
 
