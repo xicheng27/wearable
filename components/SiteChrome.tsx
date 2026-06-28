@@ -11,9 +11,9 @@ export default function SiteChrome({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const isQuiz = pathname === "/quiz";
+  const isFullScreen = pathname === "/quiz" || pathname === "/";
 
-  if (isQuiz) {
+  if (isFullScreen) {
     return (
       <>
         <main className="h-[calc(100dvh-2.25rem)] min-h-0 overflow-hidden">

@@ -1,5 +1,7 @@
 import Link from "next/link";
 import RecommendationsGrid from "@/components/RecommendationsGrid";
+import SignalMap from "@/components/SignalMap";
+import { buildSignalMap } from "@/lib/signalMap";
 import { expandShippingRegions } from "@/lib/countries";
 import { findNearbyStores } from "@/lib/mapProvider";
 import {
@@ -15,7 +17,6 @@ import {
 import type {
   AgeRange,
   DressingMethod,
-  GenderStylePreference,
   LifestyleSetting,
   MobilityLevel,
   TargetGroup,
@@ -117,15 +118,6 @@ function normalizeMobility(value: string | undefined): MobilityLevel | undefined
   return value as MobilityLevel;
 }
 
-const LIFESTYLE_LABELS: Record<LifestyleSetting, string> = {
-  school: "School",
-  work: "Work",
-  home: "Mostly at home",
-  outdoor: "Outdoor activities",
-  "formal-event": "Formal events",
-  "daily-wear": "Everyday, daily wear",
-};
-
 export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) {
   const rawNeeds = readList(searchParams.needs);
   const features = readList(searchParams.features);
@@ -149,9 +141,6 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
     | AgeRange
     | undefined;
   const lifestyleSetting = readValue(searchParams.lifestyleSetting) as LifestyleSetting | undefined;
-  const genderStylePreference = readValue(searchParams.genderStyle) as
-    | GenderStylePreference
-    | undefined;
   const dressingMethod = readValue(searchParams.dressingMethod) as DressingMethod | undefined;
   const mobilityLevel =
     normalizeMobility(readValue(searchParams.mobilityLevel)) ??
@@ -206,63 +195,36 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
     : [];
   const nearbyStores = location ? findNearbyStores({ countries: nearbyCountries }) : null;
 
+  const signalMap = buildSignalMap(searchParams);
+
   return (
     <div className="min-h-screen bg-ivory">
-      <header className="paper-texture border-b border-ink/10 bg-paper py-12">
+      <header className="paper-texture border-b border-ink/10 bg-paper py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="eyebrow">Quiz complete</p>
           <h1 className="mt-2 font-display text-4xl font-semibold tracking-[-0.03em] text-ink sm:text-5xl">
-            Your recommended clothing pieces
+            Your adaptive clothing results
           </h1>
-
-          {profiles.length > 0 && (
-            <div className="mt-6 max-w-3xl rounded-2xl border border-primary-100 bg-primary-50/60 px-5 py-4">
-              <p className="text-sm font-bold text-primary-800">
-                Step 1: we understand your needs
-              </p>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {profiles.map((profile) => (
-                  <span
-                    key={profile.id}
-                    title={profile.description}
-                    className="badge bg-white text-primary-800"
-                  >
-                    {profile.label}
-                  </span>
-                ))}
-              </div>
-              <p className="mt-3 text-sm font-bold text-primary-800">
-                Step 2: narrowing down suitable adaptive clothing
-              </p>
-              <p className="mt-1 text-sm text-primary-950">{summary}</p>
-              <p className="mt-2 text-xs text-primary-700/80">
-                This groups your self-selected answers into shopping categories only. It is not a
-                medical assessment or diagnosis.
-              </p>
-            </div>
-          )}
-
           <p className="mt-3 max-w-2xl text-lg leading-8 text-ink/68">
-            Individual items are ranked by your needs, location, clothing type,
-            style, budget and dressing preferences. Brands are supporting
-            information, not the starting point.
+            {summary}
           </p>
-          <div className="mt-5 flex flex-wrap gap-2">
-            {[
-              ...needs,
-              ...styles,
-              genderStylePreference,
-              budget,
-              lifestyleSetting && LIFESTYLE_LABELS[lifestyleSetting],
-            ]
-              .filter(Boolean)
-              .slice(0, 10)
-              .map((item) => (
-                <span key={String(item)} className="badge bg-primary-50 text-primary-800">
-                  {item}
+          {profiles.length > 0 && (
+            <div className="mt-5 flex flex-wrap gap-2">
+              {profiles.slice(0, 6).map((profile) => (
+                <span
+                  key={profile.id}
+                  title={profile.description}
+                  className="badge bg-primary-50 text-primary-800"
+                >
+                  {profile.label}
                 </span>
               ))}
-          </div>
+            </div>
+          )}
+          <p className="mt-3 text-xs text-ink/50">
+            We group your self-selected answers into shopping categories only. This
+            is not a medical assessment or diagnosis.
+          </p>
           {otherNeeds && (
             <div className="paper-panel mt-6 max-w-3xl rounded-[1.2rem_.5rem_1.2rem_1.2rem] px-5 py-4">
               <p className="font-hand text-xs font-semibold text-primary-700">
@@ -289,6 +251,20 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
       </header>
 
       <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        <SignalMap data={signalMap} />
+
+        <div className="mt-12 mb-6 max-w-3xl">
+          <p className="eyebrow">Matched for you</p>
+          <h2 className="mt-2 font-display text-3xl font-semibold tracking-[-0.02em] text-ink">
+            Your recommended clothing pieces
+          </h2>
+          <p className="mt-2 text-base leading-7 text-ink/65">
+            Ranked by your hard functional needs first, then body-zone fit,
+            access, country availability, budget and style. Every card explains
+            why it matched.
+          </p>
+        </div>
+
         {exactMatches.length > 0 && (
           <section aria-labelledby="exact-matches-heading">
             <h2 id="exact-matches-heading" className="sr-only">
