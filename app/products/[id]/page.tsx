@@ -69,6 +69,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
               alt={product.imageAlt}
               permissionStatus={product.permissionStatus}
               attribution={product.attributionText}
+              source={brand.name}
               className="aspect-[4/3] min-h-[360px] lg:aspect-auto lg:min-h-[620px]"
               priority
             />

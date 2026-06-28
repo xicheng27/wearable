@@ -13,17 +13,27 @@ export default function DisclaimerPage() {
           Disclaimer
         </h1>
         <div className="mt-8 space-y-6 text-base leading-relaxed text-gray-700">
+          <p className="rounded-2xl border border-gray-200 bg-white px-5 py-4 font-medium text-gray-800">
+            Xi&apos;s is an independent adaptive clothing discovery tool and is
+            not affiliated with any brand. Product names, trademarks, and images
+            are used for identification and recommendation purposes only. All
+            rights belong to their respective owners.
+          </p>
           <p>
-            Xi&apos;s is an independent adaptive clothing discovery tool. We are
-            not affiliated with, sponsored by, or endorsed by any of the
-            brands listed on this site.
+            Xi&apos;s is not affiliated with, sponsored by, or endorsed by any
+            of the brands listed on this site. We do not sell any of these
+            products directly — we are a discovery and recommendation tool that
+            helps you find adaptive clothing and then links you to the official
+            brand or retailer.
           </p>
           <p>
             Brand and product names, logos and images shown on Xi&apos;s are
-            used solely for identification purposes, so that you can
-            recognize and compare items across brands. They remain the
-            property of their respective owners, and all trademarks belong
-            to their respective owners.
+            used solely for identification and recommendation purposes, so that
+            you can recognize and compare items across brands. Product images are
+            shown as small reference thumbnails only, each labelled &ldquo;Image
+            for identification only&rdquo;. They remain the property of their
+            respective owners, and all trademarks belong to their respective
+            owners.
           </p>
           <p>
             Prices, availability and product details are checked periodically

@@ -44,6 +44,7 @@ export default function ProductCard({ product }: { product: Product }) {
             alt={product.imageAlt}
             permissionStatus={product.permissionStatus}
             attribution={product.attributionText}
+            source={brandName}
             className="aspect-[4/5] w-full"
           />
           <div className="absolute left-3 top-3 flex flex-wrap gap-2">
@@ -169,8 +170,8 @@ export default function ProductCard({ product }: { product: Product }) {
             className="btn-secondary mt-3 flex w-full px-4 py-3 text-center text-sm"
           >
             {product.linkType === "exact-product"
-              ? "Buy / view official product"
-              : "View official source"}
+              ? "View official product →"
+              : "View official source →"}
           </OfficialProductLink>
         </div>
       </div>

@@ -44,6 +44,7 @@ export default function AdaptiveProductCard({
       <ProductImage
         src={product.imageUrl ?? null}
         alt={`${product.name} by ${product.brandName}`}
+        source={product.brandName}
         className="min-h-56 border-b border-ink/10"
         fallbackLabel={`${product.brandName} - ${product.productType} - Image pending verification`}
       />
