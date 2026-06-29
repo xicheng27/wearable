@@ -1,5 +1,8 @@
 "use client";
 
+import { useId } from "react";
+import { COUNTRY_FLAGS, FlagOther, GlobeGraphic } from "@/components/quiz/QuizGraphics";
+
 /**
  * Pseudo-3D adaptive-clothing avatar. A soft, stylised, inclusive figure
  * (never hyper-realistic) that reads as dimensional through gradient shading,
@@ -44,6 +47,11 @@ export interface BodyModelProps {
   style?: string;
   /** Show a supportive helper figure (caregiver-assisted dressing). */
   helper?: boolean;
+  /**
+   * Country name / "Global" / "Other country" for the floating location badge,
+   * drawn on the avatar's exact vertical centre line (independent of the helper).
+   */
+  locationFlag?: string;
   /** When true, body zones become tappable hotspots on the avatar. */
   interactive?: boolean;
   /** The currently focused zone (gets a stronger outline). */
@@ -161,18 +169,23 @@ export default function BodyModel({
   garments = [],
   style,
   helper = false,
+  locationFlag,
   interactive = false,
   focusZone,
   onZoneClick,
   accents = {},
   className = "",
 }: BodyModelProps) {
+  // Unique per-instance id prefix so the two avatars on screen (desktop aside
+  // + mobile band) never share gradient/filter/clip ids. Sharing ids made the
+  // hidden instance's defs win and the visible avatar render unpainted.
+  const uid = useId().replace(/[^a-zA-Z0-9_-]/g, "");
   const headR = persona === "teen" ? 19 : 21;
   const headCy = 86 - (persona === "teen" ? 4 : 0);
   const zoneSet = new Set(zones);
   const garmentSet = new Set(garments);
   const overlays = seated ? ZONES_SEATED : ZONES_STANDING;
-  const skinFill = persona === "older" ? "url(#bm-skin-older)" : "url(#bm-skin)";
+  const skinFill = persona === "older" ? `url(#${uid}-skin-older)` : `url(#${uid}-skin)`;
 
   return (
     <svg
@@ -182,44 +195,47 @@ export default function BodyModel({
       aria-label="Adaptive clothing avatar that updates with your answers"
     >
       <defs>
-        <radialGradient id="bm-floor" cx="50%" cy="50%" r="50%">
+        <radialGradient id={`${uid}-floor`} cx="50%" cy="50%" r="50%">
           <stop offset="0%" stopColor="rgba(118,83,110,.22)" />
           <stop offset="100%" stopColor="rgba(118,83,110,0)" />
         </radialGradient>
-        <linearGradient id="bm-garment" x1="0" y1="0" x2="1" y2="1">
+        <linearGradient id={`${uid}-garment`} x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stopColor="#A87FA0" />
           <stop offset=".55" stopColor="#7C5A74" />
           <stop offset="1" stopColor="#5E4357" />
         </linearGradient>
-        <linearGradient id="bm-pants" x1="0" y1="0" x2="1" y2="1">
+        <linearGradient id={`${uid}-pants`} x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stopColor="#6E5A66" />
           <stop offset="1" stopColor="#43343D" />
         </linearGradient>
-        <radialGradient id="bm-skin" cx="38%" cy="32%" r="75%">
+        <radialGradient id={`${uid}-skin`} cx="38%" cy="32%" r="75%">
           <stop offset="0" stopColor="#F2D8BC" />
           <stop offset="1" stopColor="#DDB994" />
         </radialGradient>
-        <radialGradient id="bm-skin-older" cx="38%" cy="32%" r="75%">
+        <radialGradient id={`${uid}-skin-older`} cx="38%" cy="32%" r="75%">
           <stop offset="0" stopColor="#EFD7C2" />
           <stop offset="1" stopColor="#D9BFA6" />
         </radialGradient>
-        <radialGradient id="bm-hl" cx="50%" cy="50%" r="50%">
+        <radialGradient id={`${uid}-hl`} cx="50%" cy="50%" r="50%">
           <stop offset="0" stopColor="rgba(255,255,255,.16)" />
           <stop offset="100%" stopColor="rgba(255,255,255,0)" />
         </radialGradient>
-        <filter id="bm-soft" x="-20%" y="-20%" width="140%" height="140%">
+        <filter id={`${uid}-soft`} x="-20%" y="-20%" width="140%" height="140%">
           <feGaussianBlur stdDeviation="2.2" />
         </filter>
-        <filter id="bm-soft-lg" x="-40%" y="-40%" width="180%" height="180%">
+        <filter id={`${uid}-soft-lg`} x="-40%" y="-40%" width="180%" height="180%">
           <feGaussianBlur stdDeviation="6" />
         </filter>
-        <clipPath id="bm-torso-clip">
+        <clipPath id={`${uid}-torso-clip`}>
           <path d="M82 110c8-8 46-8 56 0 6 5 8 18 8 30 0 22-4 40-6 56H80c-2-16-6-34-6-56 0-12 2-25 8-30z" />
+        </clipPath>
+        <clipPath id={`${uid}-loc-clip`}>
+          <circle cx="110" cy="36" r="16" />
         </clipPath>
       </defs>
 
       {/* soft pedestal */}
-      <ellipse cx="110" cy="330" rx="80" ry="15" fill="url(#bm-floor)" />
+      <ellipse cx="110" cy="330" rx="80" ry="15" fill={`url(#${uid}-floor)`} />
 
       {/* idle-bobbing, hover-tilting figure */}
       <g className="bm-figure">
@@ -251,7 +267,7 @@ export default function BodyModel({
         {seated && <Wheelchair />}
 
         {/* contact shadow under torso for depth */}
-        <ellipse cx="113" cy="196" rx="42" ry="30" fill="rgba(41,36,31,.12)" filter="url(#bm-soft)" />
+        <ellipse cx="113" cy="196" rx="42" ry="30" fill="rgba(41,36,31,.12)" filter={`url(#${uid}-soft)`} />
 
         {/* head with soft shading */}
         <circle cx="110" cy={headCy} r={headR} fill={skinFill} />
@@ -264,13 +280,13 @@ export default function BodyModel({
         {/* torso garment */}
         <path
           d="M82 110c8-8 46-8 56 0 6 5 8 18 8 30 0 22-4 40-6 56H80c-2-16-6-34-6-56 0-12 2-25 8-30z"
-          fill="url(#bm-garment)"
+          fill={`url(#${uid}-garment)`}
         />
         {/* soft, intentional torso shading — gentle right-side shadow and a
             diffuse left highlight (no hard white patch) */}
-        <g clipPath="url(#bm-torso-clip)">
-          <ellipse cx="138" cy="156" rx="26" ry="52" fill="rgba(41,36,31,.18)" filter="url(#bm-soft-lg)" />
-          <ellipse cx="96" cy="138" rx="20" ry="38" fill="url(#bm-hl)" filter="url(#bm-soft-lg)" />
+        <g clipPath={`url(#${uid}-torso-clip)`}>
+          <ellipse cx="138" cy="156" rx="26" ry="52" fill="rgba(41,36,31,.18)" filter={`url(#${uid}-soft-lg)`} />
+          <ellipse cx="96" cy="138" rx="20" ry="38" fill={`url(#${uid}-hl)`} filter={`url(#${uid}-soft-lg)`} />
         </g>
 
         {/* arms */}
@@ -293,23 +309,23 @@ export default function BodyModel({
         {/* lower body */}
         {seated ? (
           <>
-            <path d="M82 196h56c4 0 6 4 6 10v14H76v-14c0-6 2-10 6-10z" fill="url(#bm-pants)" />
-            <rect x="120" y="220" width="18" height="44" rx="8" fill="url(#bm-pants)" />
-            <rect x="92" y="220" width="18" height="44" rx="8" fill="url(#bm-pants)" />
+            <path d="M82 196h56c4 0 6 4 6 10v14H76v-14c0-6 2-10 6-10z" fill={`url(#${uid}-pants)`} />
+            <rect x="120" y="220" width="18" height="44" rx="8" fill={`url(#${uid}-pants)`} />
+            <rect x="92" y="220" width="18" height="44" rx="8" fill={`url(#${uid}-pants)`} />
             <ellipse cx="129" cy="268" rx="13" ry="7" fill="#3E3038" />
             <ellipse cx="101" cy="268" rx="13" ry="7" fill="#3E3038" />
           </>
         ) : (
           <>
-            <rect x="86" y="196" width="20" height="108" rx="10" fill="url(#bm-pants)" />
-            <rect x="114" y="196" width="20" height="108" rx="10" fill="url(#bm-pants)" />
+            <rect x="86" y="196" width="20" height="108" rx="10" fill={`url(#${uid}-pants)`} />
+            <rect x="114" y="196" width="20" height="108" rx="10" fill={`url(#${uid}-pants)`} />
             <ellipse cx="95" cy="308" rx="15" ry="8" fill="#3E3038" />
             <ellipse cx="125" cy="308" rx="15" ry="8" fill="#3E3038" />
           </>
         )}
 
         {/* ---- aesthetic style transformation ---- */}
-        {style && <StyleLayer style={style} seated={seated} headCy={headCy} />}
+        {style && <StyleLayer style={style} seated={seated} headCy={headCy} uid={uid} />}
 
         {/* ---- clothing-type overlays ---- */}
         <GarmentOverlays garments={garmentSet} seated={seated} />
@@ -396,6 +412,12 @@ export default function BodyModel({
       {/* orbiting clothing icons for "not sure" */}
       {garmentSet.has("notsure") && <OrbitingGarments />}
 
+      {/* Floating location badge, drawn in the avatar's own coordinate space at
+          x=110 — the exact vertical centre line of head/torso/legs/shadow. It
+          sits OUTSIDE the figure group so it never tilts or shifts with the
+          helper figure, guaranteeing it stays centred over the main avatar. */}
+      {locationFlag && <LocationBadge country={locationFlag} uid={uid} />}
+
       <style>{`
         .bm-figure { transform-box: fill-box; transform-origin: 50% 100%; animation: bmBob 4.5s ease-in-out infinite; transition: transform .5s ease; }
         .bm-root:hover .bm-figure { transform: rotate(1.4deg) translateY(-2px); }
@@ -407,16 +429,47 @@ export default function BodyModel({
         .bm-hotspot:hover > .bm-hit, .bm-hotspot:focus-visible > .bm-hit { fill: rgba(118,83,110,.16); stroke: rgba(118,83,110,.55); }
         .bm-hotspot[data-active="true"] > .bm-hit { fill: rgba(118,83,110,.26); stroke: #76536E; }
         .bm-helper-label { font: 600 9px Helvetica, Arial, sans-serif; fill: #9D7594; letter-spacing: .08em; text-transform: uppercase; opacity: .7; }
+        .bm-locbadge { transform-box: view-box; transform-origin: 110px 36px; animation: bmFloat 3.6s ease-in-out infinite; }
         @keyframes bmBob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+        @keyframes bmFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
         @keyframes bmPulse { 0%,100% { opacity:.55; } 50% { opacity:1; } }
         @keyframes bmPop { from { opacity:0; transform: scale(.6); } to { opacity:1; transform: scale(1); } }
         @keyframes bmSpin { to { transform: rotate(360deg); } }
         @media (prefers-reduced-motion: reduce) {
-          .bm-figure, .bm-zone, .bm-accent, .bm-orbit { animation: none; }
+          .bm-figure, .bm-zone, .bm-accent, .bm-orbit, .bm-locbadge { animation: none; }
           .bm-root:hover .bm-figure { transform: none; }
         }
       `}</style>
     </svg>
+  );
+}
+
+/** Location badge drawn at the avatar's centre line (x=110), above the head. */
+function LocationBadge({ country, uid }: { country: string; uid: string }) {
+  const Flag =
+    country === "Global"
+      ? GlobeGraphic
+      : country === "Other country"
+        ? FlagOther
+        : COUNTRY_FLAGS[country] ?? FlagOther;
+  return (
+    <g className="bm-locbadge">
+      {/* soft drop shadow */}
+      <ellipse cx="110" cy="40" rx="18" ry="18" fill="rgba(41,36,31,.16)" filter={`url(#${uid}-soft)`} />
+      {/* downward pointer toward the head */}
+      <path d="M110 62 L103 49 L117 49 Z" fill="#FCF9F2" stroke="rgba(41,36,31,.12)" strokeWidth="1" />
+      {/* badge plate */}
+      <circle cx="110" cy="36" r="18" fill="#FCF9F2" />
+      {/* flag, centred in the badge and clipped to a circle */}
+      <g clipPath={`url(#${uid}-loc-clip)`}>
+        <g transform="translate(90 16)">
+          <Flag size={40} />
+        </g>
+      </g>
+      {/* crisp ring */}
+      <circle cx="110" cy="36" r="18" fill="none" stroke="#FCF9F2" strokeWidth="2.5" />
+      <circle cx="110" cy="36" r="18" fill="none" stroke="rgba(41,36,31,.14)" strokeWidth="1" />
+    </g>
   );
 }
 
@@ -534,10 +587,12 @@ function StyleLayer({
   style,
   seated,
   headCy,
+  uid,
 }: {
   style: string;
   seated: boolean;
   headCy: number;
+  uid: string;
 }) {
   const p = STYLE_PALETTE[style] ?? STYLE_PALETTE.default;
   const feet = seated
@@ -570,9 +625,9 @@ function StyleLayer({
 
       {/* recoloured torso for the chosen aesthetic, with soft diffuse shading */}
       <path d={TORSO_PATH} fill={p.base} />
-      <g clipPath="url(#bm-torso-clip)">
-        <ellipse cx="138" cy="156" rx="26" ry="52" fill="rgba(0,0,0,.20)" filter="url(#bm-soft-lg)" />
-        <ellipse cx="96" cy="138" rx="20" ry="38" fill="url(#bm-hl)" filter="url(#bm-soft-lg)" />
+      <g clipPath={`url(#${uid}-torso-clip)`}>
+        <ellipse cx="138" cy="156" rx="26" ry="52" fill="rgba(0,0,0,.20)" filter={`url(#${uid}-soft-lg)`} />
+        <ellipse cx="96" cy="138" rx="20" ry="38" fill={`url(#${uid}-hl)`} filter={`url(#${uid}-soft-lg)`} />
       </g>
 
       {/* signature overlay per style */}
@@ -678,7 +733,6 @@ function StyleLayer({
 
       {style === "modest" && (
         <g>
-          <g clipPath="url(#bm-torso-clip)" />
           <path d="M100 108q10-4 20 0v9q-10 4-20 0z" fill={p.dark} />
           <path d="M110 120v138" stroke={p.dark} strokeWidth="2" />
           <path d="M80 196h60" stroke={p.dark} strokeWidth="2" opacity="0.5" />
