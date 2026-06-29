@@ -223,31 +223,6 @@ function CountryBadge({ country, compact }: { country: string; compact: boolean 
   );
 }
 
-/** A floating location marker pinned over the avatar with the country's flag. */
-function FlagPin({ country, compact }: { country: string; compact: boolean }) {
-  const isGlobal = country === GLOBAL;
-  const Flag = isGlobal
-    ? GlobeGraphic
-    : country === "Other country"
-      ? FlagOther
-      : COUNTRY_FLAGS[country] ?? FlagOther;
-  const size = compact ? 32 : 44;
-  return (
-    <span
-      className="animate-floaty pointer-events-none absolute left-1/2 top-[2%] z-10 flex -translate-x-1/2 flex-col items-center"
-      aria-hidden="true"
-    >
-      <span
-        className="grid place-items-center overflow-hidden rounded-full border-2 border-paper bg-paper shadow-lift"
-        style={{ width: size, height: size }}
-      >
-        <Flag size={size + 8} />
-      </span>
-      <span className="-mt-1 h-3 w-3 rotate-45 border-b-2 border-r-2 border-paper bg-paper shadow-soft" />
-    </span>
-  );
-}
-
 function ModelPanel({
   answers,
   stepId,
@@ -276,9 +251,9 @@ function ModelPanel({
           compact ? "min-h-0 py-2" : "p-4"
         }`}
       >
-        {/* Avatar + its location pin are grouped in a box sized exactly to the
-            avatar, so the pin anchors to the avatar itself (its centre), never
-            to the whole card — robust across sizes and helper/flag states. */}
+        {/* The location badge is drawn inside the avatar SVG at its exact
+            centre line (x=110), so it's anchored to the main avatar — never the
+            card or the helper figure — and stays centred at every size. */}
         <div
           className={`relative ${compact ? "h-[34vh]" : "h-full max-h-[52vh]"}`}
           style={{ aspectRatio: "220 / 348" }}
@@ -290,13 +265,13 @@ function ModelPanel({
             garments={state.garments}
             style={state.style}
             helper={state.helper}
+            locationFlag={country}
             interactive={interactive}
             focusZone={focusZone}
             onZoneClick={onZoneClick}
             accents={state.accents}
             className="h-full w-full"
           />
-          {country && <FlagPin country={country} compact={compact} />}
         </div>
         <span className="absolute left-4 top-4 rounded-full bg-paper/80 px-3 py-1 text-xs font-bold text-primary-800 shadow-soft backdrop-blur">
           Live profile mirror
