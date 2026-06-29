@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { LogoMark } from "@/components/Logo";
 import { useCountry } from "@/components/CountryProvider";
 import { useUserProfile } from "@/components/UserProfileProvider";
@@ -32,6 +32,23 @@ import {
 const ZONE_LABEL = Object.fromEntries(
   bodyZoneGroups.map((g) => [g.zone, g.title])
 ) as Record<BodyZone, string>;
+
+// The named regions the quiz offers as one-tap options.
+const NAMED_REGIONS = [
+  "Singapore",
+  "United States",
+  "United Kingdom",
+  "Canada",
+  "Australia",
+];
+
+/** Map the shared shopping-region (from the header) to a quiz option. */
+function regionToOption(country: string | null): string {
+  if (!country) return "";
+  if (country === GLOBAL) return GLOBAL;
+  if (NAMED_REGIONS.includes(country)) return country;
+  return "Other country";
+}
 
 function CheckIcon() {
   return (
@@ -192,8 +209,8 @@ function CountryBadge({ country, compact }: { country: string; compact: boolean 
   const label = isGlobal
     ? "Global availability"
     : country === "Other country"
-      ? "Shopping worldwide"
-      : `Shopping from ${country}`;
+      ? "Shopping region: Other"
+      : `Shopping region: ${country}`;
   return (
     <span
       className={`absolute right-3 top-3 inline-flex items-center gap-2 rounded-full border border-ink/10 bg-paper/90 py-1 pl-1.5 pr-3 font-bold text-ink/80 shadow-soft backdrop-blur ${
@@ -214,10 +231,10 @@ function FlagPin({ country, compact }: { country: string; compact: boolean }) {
     : country === "Other country"
       ? FlagOther
       : COUNTRY_FLAGS[country] ?? FlagOther;
-  const size = compact ? 34 : 46;
+  const size = compact ? 32 : 44;
   return (
     <span
-      className="animate-floaty pointer-events-none absolute left-1/2 top-[10%] z-10 flex -translate-x-1/2 flex-col items-center"
+      className="animate-floaty pointer-events-none absolute left-1/2 top-[2%] z-10 flex -translate-x-1/2 flex-col items-center"
       aria-hidden="true"
     >
       <span
@@ -259,19 +276,28 @@ function ModelPanel({
           compact ? "min-h-0 py-2" : "p-4"
         }`}
       >
-        <BodyModel
-          persona={state.persona}
-          seated={state.seated}
-          zones={zones}
-          garments={state.garments}
-          style={state.style}
-          helper={state.helper}
-          interactive={interactive}
-          focusZone={focusZone}
-          onZoneClick={onZoneClick}
-          accents={state.accents}
-          className={compact ? "h-[34vh] w-auto" : "h-full max-h-[52vh] w-auto"}
-        />
+        {/* Avatar + its location pin are grouped in a box sized exactly to the
+            avatar, so the pin anchors to the avatar itself (its centre), never
+            to the whole card — robust across sizes and helper/flag states. */}
+        <div
+          className={`relative ${compact ? "h-[34vh]" : "h-full max-h-[52vh]"}`}
+          style={{ aspectRatio: "220 / 348" }}
+        >
+          <BodyModel
+            persona={state.persona}
+            seated={state.seated}
+            zones={zones}
+            garments={state.garments}
+            style={state.style}
+            helper={state.helper}
+            interactive={interactive}
+            focusZone={focusZone}
+            onZoneClick={onZoneClick}
+            accents={state.accents}
+            className="h-full w-full"
+          />
+          {country && <FlagPin country={country} compact={compact} />}
+        </div>
         <span className="absolute left-4 top-4 rounded-full bg-paper/80 px-3 py-1 text-xs font-bold text-primary-800 shadow-soft backdrop-blur">
           Live profile mirror
         </span>
@@ -281,7 +307,6 @@ function ModelPanel({
           </span>
         )}
         {country && <CountryBadge country={country} compact={compact} />}
-        {country && <FlagPin country={country} compact={compact} />}
       </div>
 
       {chips.length > 0 && (
@@ -305,13 +330,30 @@ function ModelPanel({
 export default function QuizClient() {
   const router = useRouter();
   const { setProfile } = useUserProfile();
-  const { setCountry } = useCountry();
+  const { country: regionCountry, setCountry, openPicker } = useCountry();
 
   const [answers, setAnswers] = useState<Answers>({});
   const [otherNeeds, setOtherNeeds] = useState("");
   const [customNeed, setCustomNeed] = useState("");
   const [stepIndex, setStepIndex] = useState(0);
   const [focusZone, setFocusZone] = useState<BodyZone>("shoulders");
+
+  // One shared source of truth for shopping region: mirror the header's
+  // CountryProvider into the quiz answer (storing the real country, even one
+  // not in our one-tap list), so the header and quiz can never silently differ.
+  useEffect(() => {
+    const value = regionCountry ?? "";
+    setAnswers((prev) =>
+      (prev.country?.[0] ?? "") === value ? prev : { ...prev, country: value ? [value] : [] }
+    );
+  }, [regionCountry]);
+
+  // Selecting a region in the quiz updates the shared region (and the header).
+  function chooseRegion(option: string) {
+    if (option === GLOBAL) setCountry(GLOBAL);
+    else if (option === "Other country") openPicker();
+    else setCountry(option);
+  }
 
   const visible = useMemo(() => activeSteps(answers), [answers]);
   const clampedIndex = Math.min(stepIndex, visible.length - 1);
@@ -439,6 +481,14 @@ export default function QuizClient() {
             </h1>
             <p className="mt-2 text-base leading-7 text-ink/65">{current.subtitle}</p>
 
+            {current.id === "country" && regionCountry && (
+              <p className="mt-3 inline-flex items-center gap-2 rounded-full bg-primary-50 px-3 py-1.5 text-sm font-semibold text-primary-800">
+                <span className="h-2 w-2 rounded-full bg-primary-600" aria-hidden="true" />
+                Using your site setting:{" "}
+                {regionCountry === GLOBAL ? "Global" : regionCountry}
+              </p>
+            )}
+
             <div className="mt-5">
               {current.type === "bodymap" ? (
                 <BodyFitMap
@@ -454,8 +504,16 @@ export default function QuizClient() {
                       key={option}
                       label={option === GLOBAL ? "View globally available items" : option}
                       multi={current.type === "multi"}
-                      selected={selected.includes(option)}
-                      onClick={() => toggle(current.id, option, current.type !== "multi")}
+                      selected={
+                        current.id === "country"
+                          ? regionToOption(answers.country?.[0] ?? null) === option
+                          : selected.includes(option)
+                      }
+                      onClick={() =>
+                        current.id === "country"
+                          ? chooseRegion(option)
+                          : toggle(current.id, option, current.type !== "multi")
+                      }
                       leading={leadingFor(current, option)}
                     />
                   ))}

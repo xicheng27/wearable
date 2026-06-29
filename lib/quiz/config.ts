@@ -407,8 +407,9 @@ export const steps: Step[] = [
   },
   {
     id: "country",
-    title: "Where are you shopping from?",
-    subtitle: "This sets availability, shipping, currency and how we rank items.",
+    title: "Confirm your shopping region",
+    subtitle:
+      "We'll use this for availability, shipping, currency and recommendation ranking.",
     type: "country",
     options: countryOptions,
     active: () => true,
@@ -656,11 +657,11 @@ export function profileChips(a: Answers): string[] {
   if (a.country?.[0] && a.country[0] !== GLOBAL) {
     chips.push(
       a.country[0] === "Other country"
-        ? "Shopping from: Other"
-        : `Shopping from ${a.country[0]}`
+        ? "Shopping region: Other"
+        : `Shopping region: ${a.country[0]}`
     );
   } else if (a.country?.[0] === GLOBAL) {
-    chips.push("Global availability");
+    chips.push("Shopping region: Global");
   }
   (a.clothing ?? []).forEach((c) => {
     if (c.startsWith("Not sure")) chips.push("Looking for: Not sure");
@@ -724,7 +725,9 @@ export function buildResultParams(
   p.set("targetGroup", targetGroup);
 
   const country = a.country?.[0];
-  if (country && country !== "Other country") p.set("location", country);
+  if (country && country !== "Other country" && country !== GLOBAL) {
+    p.set("location", country);
+  }
 
   // clothing → catalogue terms
   const clothing = (a.clothing ?? [])
