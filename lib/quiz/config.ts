@@ -96,6 +96,11 @@ const CLOTHING_CHIP: Record<string, string> = {
 
 /* ----------------------------- Step 4: help ------------------------------ */
 
+/** Inclusive escape hatch shown across multi-select steps. */
+export const NOT_LISTED = "Something else / not listed";
+/** Body-map issue id for the same escape hatch. */
+export const NOT_LISTED_ISSUE = "nl-custom";
+
 export const helpOptions: { value: string; icon: string; zones: BodyZone[] }[] = [
   { value: "Seated or wheelchair comfort", icon: "seated", zones: ["hips", "waist"] },
   { value: "Easier dressing", icon: "dressing", zones: ["chest", "waist"] },
@@ -106,7 +111,16 @@ export const helpOptions: { value: string; icon: string; zones: BodyZone[] }[] =
   { value: "Medical or body-zone access", icon: "medical", zones: ["waist", "chest"] },
   { value: "AFO / brace / footwear accommodation", icon: "brace", zones: ["feet", "legs"] },
   { value: "I mainly care about style and fit", icon: "style", zones: [] },
+  { value: NOT_LISTED, icon: "more", zones: [] },
 ];
+
+/** Whether the shopper flagged a need that isn't in our preset lists. */
+export function hasNotListed(a: Answers): boolean {
+  const inAny = Object.entries(a).some(
+    ([key, values]) => key !== "bodyIssues" && (values ?? []).includes(NOT_LISTED)
+  );
+  return inAny || (a.bodyIssues ?? []).includes(NOT_LISTED_ISSUE);
+}
 
 const hasHelp = (a: Answers, key: string) =>
   (a.help ?? []).some((h) => h.includes(key));
@@ -233,6 +247,7 @@ export const closureOptions = [
   "Elastic",
   "Snap buttons",
   "No fasteners",
+  NOT_LISTED,
 ];
 
 export const dressingIndependenceOptions = [
@@ -253,6 +268,7 @@ export const sensoryAvoidOptions = [
   "Scratchy fabric",
   "Heat buildup",
   "Heavy fabric",
+  NOT_LISTED,
 ];
 
 export const fabricFeelOptions = [
@@ -263,7 +279,7 @@ export const fabricFeelOptions = [
   "Smooth",
 ];
 
-export const medicalAreaOptions = ["Chest", "Abdomen", "Arm", "Waist", "Leg"];
+export const medicalAreaOptions = ["Chest", "Abdomen", "Arm", "Waist", "Leg", NOT_LISTED];
 
 export const medicalAccessOptions = [
   "Port access",
@@ -271,6 +287,7 @@ export const medicalAccessOptions = [
   "Ostomy access",
   "Easy examination access",
   "Privacy-friendly openings",
+  NOT_LISTED,
 ];
 
 export const braceOptions = [
@@ -279,6 +296,7 @@ export const braceOptions = [
   "Leg brace",
   "Swelling",
   "Orthotics",
+  NOT_LISTED,
 ];
 
 export const footwearOptions = [
@@ -287,6 +305,7 @@ export const footwearOptions = [
   "Removable insole",
   "Stable sole",
   "Easy fastening",
+  NOT_LISTED,
 ];
 
 /* ----------------------------- Step: style ------------------------------- */
@@ -651,7 +670,9 @@ export function profileChips(a: Answers): string[] {
   if (hasHelp(a, "One-handed")) chips.push("One-handed dressing");
   if (isAssistedDressing(a)) chips.push("Assisted dressing");
   if (hasHelp(a, "Shoulder")) chips.push("Shoulder / arm ease");
-  (a.closures ?? []).forEach((c) => chips.push(c));
+  (a.closures ?? [])
+    .filter((c) => c !== NOT_LISTED)
+    .forEach((c) => chips.push(c));
   if ((a.fabricFeel ?? []).includes("Soft") || (a.bodyIssues ?? []).includes("sk-soft"))
     chips.push("Soft fabric");
   if ((a.bodyIssues ?? []).includes("wa-band")) chips.push("Waist pressure");
@@ -660,6 +681,7 @@ export function profileChips(a: Answers): string[] {
   (a.style ?? []).slice(-2).forEach((s) => chips.push(`Style: ${s}`));
   if (a.range?.[0]) chips.push(`Range: ${rangeChipLabel(a.range[0])}`);
   if (a.budget?.[0] && a.budget[0] !== "No preference") chips.push(`Budget: ${a.budget[0]}`);
+  if (hasNotListed(a)) chips.push("Custom need added");
   return Array.from(new Set(chips)).slice(0, 16);
 }
 
@@ -679,7 +701,11 @@ function rangeChipLabel(range: string): string {
 
 /* ----------------------- Build results query params ---------------------- */
 
-export function buildResultParams(a: Answers, otherNeeds: string): URLSearchParams {
+export function buildResultParams(
+  a: Answers,
+  otherNeeds: string,
+  customNeed = ""
+): URLSearchParams {
   const p = new URLSearchParams();
   const who = a.who?.[0] ?? "";
   const userType = who.includes("Child")
@@ -726,8 +752,9 @@ export function buildResultParams(a: Answers, otherNeeds: string): URLSearchPara
   if (bi.some((id) => ["le-brace", "fe-afo"].includes(id))) needs.push("Orthotics and AFOs");
   if (needs.length) p.set("needs", Array.from(new Set(needs)).join(","));
 
-  // closures / features
-  const features: string[] = [...(a.closures ?? [])];
+  // closures / features ("Something else / not listed" is captured separately
+  // via the custom-need field, so it must not feed the closure hard filter)
+  const features: string[] = [...(a.closures ?? []).filter((c) => c !== NOT_LISTED)];
   if (hasHelp(a, "Medical") || bi.includes("wa-device"))
     features.push("Medical port or tube access");
   if (bi.includes("ch-front") || (a.dressingExtra ?? []).some((d) => d.includes("front")))
@@ -811,6 +838,11 @@ export function buildResultParams(a: Answers, otherNeeds: string): URLSearchPara
   raw("avoid", a.sensoryAvoid);
   raw("feel", a.fabricFeel);
   raw("shopping", a.shopping);
+
+  // Custom / "not listed" need — kept private; only a soft flag + free text.
+  const custom = customNeed.trim();
+  if (custom) p.set("custom", custom);
+  if (custom || hasNotListed(a)) p.set("customflag", "1");
 
   return p;
 }

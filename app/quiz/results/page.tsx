@@ -149,6 +149,9 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
   const fabricComfortNeeds = sensory.filter((value) =>
     /soft|lightweight|breathable|flat seams|tag/i.test(value)
   );
+  // A custom "not listed" need: free text that softly matches product tags.
+  const customNeed = readList(searchParams.custom).join(", ").slice(0, 500);
+  const openEndedNeed = [otherNeeds, customNeed].filter(Boolean).join(". ");
 
   const input = {
     targetGroup,
@@ -156,7 +159,7 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
     needs,
     styles,
     budget,
-    openEndedNeed: otherNeeds,
+    openEndedNeed,
     location,
     mobilityLevel,
     dressingDifficulty: deriveDressingDifficulty(needs, fastenings),

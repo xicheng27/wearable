@@ -51,6 +51,10 @@ export interface SignalMap {
   weighting: WeightSlice[];
   keyTags: string[];
   share: ShareableProfile;
+  /** A custom "not listed" need was added (private — shown only to the user). */
+  hasCustom: boolean;
+  /** The user's own free-text custom need (never shown on the share card). */
+  customNeed?: string;
 }
 
 type Raw = Record<string, string | string[] | undefined>;
@@ -174,6 +178,16 @@ export function buildSignalMap(raw: Raw): SignalMap {
   const range = list(raw.range);
   const location = (list(raw.location)[0] ?? "").trim();
 
+  // Custom "not listed" need — read raw (don't split on commas) and keep private.
+  const customRaw = Array.isArray(raw.custom) ? raw.custom.join(",") : raw.custom ?? "";
+  let customNeed = "";
+  try {
+    customNeed = decodeURIComponent(customRaw).trim();
+  } catch {
+    customNeed = customRaw.trim();
+  }
+  const hasCustom = customNeed.length > 0 || list(raw.customflag).length > 0;
+
   const all = (...arr: string[][]) => arr.flat().join(" | ").toLowerCase();
 
   const fitBlob = all(help, needs, seated, zones, issues);
@@ -283,8 +297,9 @@ export function buildSignalMap(raw: Raw): SignalMap {
   // Persona title.
   const persona = buildPersona(signatureKey, dominantFunctional, styles);
 
-  // Privacy-safe key tags.
+  // Privacy-safe key tags. A custom need is surfaced only with soft wording.
   const keyTags = privacySafeTags(categories);
+  if (hasCustom) keyTags.push("custom clothing need");
 
   const strongest = topSignals[0] ?? categories[0];
   const topNeed = dominantFunctional && dominantFunctional.tags.length
@@ -309,6 +324,8 @@ export function buildSignalMap(raw: Raw): SignalMap {
     weighting,
     keyTags,
     share,
+    hasCustom,
+    customNeed: customNeed || undefined,
   };
 }
 

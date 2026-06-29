@@ -21,6 +21,8 @@ import {
   helpOptions,
   modelState,
   profileChips,
+  NOT_LISTED,
+  NOT_LISTED_ISSUE,
   type Answers,
   type Step,
 } from "@/lib/quiz/config";
@@ -167,6 +169,12 @@ function BodyFitMap({
             onClick={() => toggleIssue(issue.id)}
           />
         ))}
+        <OptionCard
+          label={NOT_LISTED}
+          multi
+          selected={selected.has(NOT_LISTED_ISSUE)}
+          onClick={() => toggleIssue(NOT_LISTED_ISSUE)}
+        />
       </div>
     </div>
   );
@@ -301,6 +309,7 @@ export default function QuizClient() {
 
   const [answers, setAnswers] = useState<Answers>({});
   const [otherNeeds, setOtherNeeds] = useState("");
+  const [customNeed, setCustomNeed] = useState("");
   const [stepIndex, setStepIndex] = useState(0);
   const [focusZone, setFocusZone] = useState<BodyZone>("shoulders");
 
@@ -341,7 +350,7 @@ export default function QuizClient() {
   }
 
   function finish() {
-    const params = buildResultParams(answers, otherNeeds);
+    const params = buildResultParams(answers, otherNeeds, customNeed);
     const country = answers.country?.[0];
     if (country && country !== "Other country" && country !== GLOBAL) setCountry(country);
 
@@ -359,6 +368,10 @@ export default function QuizClient() {
 
   const canContinue = current.optional || selected.length > 0 || current.type === "bodymap";
   const bodymapZones: BodyZone[] = current.type === "bodymap" ? [focusZone] : [];
+  const showCustomField =
+    current.type === "bodymap"
+      ? (answers.bodyIssues ?? []).includes(NOT_LISTED_ISSUE)
+      : selected.includes(NOT_LISTED);
 
   return (
     <div className="flex h-full min-h-0 flex-col bg-paper">
@@ -450,6 +463,26 @@ export default function QuizClient() {
               )}
             </div>
 
+            {showCustomField && (
+              <div className="animate-fade-in mt-6 rounded-2xl border border-primary-200 bg-primary-50/60 p-4">
+                <label htmlFor="custom-need" className="text-sm font-bold text-ink">
+                  Tell us what clothing needs to work better for you. (optional)
+                </label>
+                <p className="mt-1 text-xs leading-5 text-ink/60">
+                  What clothing need is not listed here? Describe it in terms of
+                  comfort, access, movement or fit — you don&apos;t need to share
+                  any diagnosis.
+                </p>
+                <textarea
+                  id="custom-need"
+                  value={customNeed}
+                  onChange={(e) => setCustomNeed(e.target.value)}
+                  placeholder="For example: I need a waistband that doesn't press on a sensitive area, or sleeves that open fully."
+                  className="mt-2 min-h-24 w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-base leading-7 text-ink outline-none transition focus:border-primary-600 focus:ring-4 focus:ring-primary-100"
+                />
+              </div>
+            )}
+
             {isLast && (
               <div className="mt-6">
                 <label htmlFor="other-needs" className="text-sm font-bold text-ink">
@@ -474,10 +507,15 @@ export default function QuizClient() {
             <button
               type="button"
               onClick={goBack}
-              className={`min-h-[3rem] rounded-xl px-5 py-3 text-sm font-bold text-ink/60 transition hover:bg-sand/45 hover:text-ink ${
-                clampedIndex === 0 ? "invisible" : ""
+              aria-hidden={clampedIndex === 0}
+              tabIndex={clampedIndex === 0 ? -1 : 0}
+              className={`inline-flex min-h-[3rem] items-center gap-2 rounded-full border-2 border-primary-300 bg-primary-50 px-5 py-2.5 text-base font-bold text-primary-800 transition hover:border-primary-500 hover:bg-primary-100 hover:text-primary-900 active:scale-[0.98] ${
+                clampedIndex === 0 ? "pointer-events-none invisible" : ""
               }`}
             >
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
               Back
             </button>
             <button

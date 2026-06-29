@@ -178,6 +178,28 @@ export default function SignalMap({ data }: { data: SignalMapData }) {
         </div>
       )}
 
+      {/* Custom need — private to the user, never on the public share card */}
+      {data.hasCustom && (
+        <div className="mt-6 rounded-2xl border border-primary-200 bg-primary-50/50 p-5">
+          <div className="flex items-center gap-2">
+            <span className="rounded-full bg-primary-700 px-2.5 py-1 text-xs font-bold text-white">
+              Custom need added
+            </span>
+            <span className="text-xs text-ink/50">Private — kept off your shareable card</span>
+          </div>
+          {data.customNeed && (
+            <p className="mt-3 text-sm leading-6 text-ink/75">
+              &ldquo;{data.customNeed}&rdquo;
+            </p>
+          )}
+          <p className="mt-2 text-xs leading-5 text-ink/55">
+            We factor this into your recommendations where we can match it to
+            product details. On your shareable card it appears only as
+            &ldquo;custom clothing need&rdquo;.
+          </p>
+        </div>
+      )}
+
       <ProfileCard share={data.share} uniqueness={data.uniqueness} />
     </section>
   );
