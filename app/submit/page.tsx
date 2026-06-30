@@ -1,10 +1,13 @@
 import Link from "next/link";
 import SubmitItemForm from "@/components/SubmitItemForm";
 
-export const metadata = {
-  title: "Submit an Adaptive Clothing Item | Xi's",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Submit an Adaptive Clothing Item",
   description:
-    "Suggest adaptive clothing products, brands, or resources for Xi's to review.",
+    "Suggest adaptive clothing products, brands, or resources for Xi's to review and add to the catalogue. Manually reviewed; email optional.",
+  alternates: { canonical: "/submit" },
 };
 
 export default function SubmitItemPage() {

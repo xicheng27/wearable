@@ -1,5 +1,6 @@
 import Link from "next/link";
 import RecommendationsGrid from "@/components/RecommendationsGrid";
+import ResultsViewedTracker from "@/components/ResultsViewedTracker";
 import SignalMap from "@/components/SignalMap";
 import { buildSignalMap } from "@/lib/signalMap";
 import { expandShippingRegions } from "@/lib/countries";
@@ -30,6 +31,8 @@ export const metadata = {
   title: "Your Adaptive Clothing Matches | Xi's",
   description:
     "Individual adaptive clothing recommendations matched to accessibility needs, style, location and budget.",
+  // Personalised, query-string-driven results — not a stable indexable page.
+  robots: { index: false, follow: true },
 };
 
 function readList(value: string | string[] | undefined): string[] {
@@ -194,6 +197,10 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
 
   return (
     <div className="min-h-screen bg-ivory">
+      <ResultsViewedTracker
+        exactCount={exactMatches.length}
+        fallbackCount={fallbackMatches.length}
+      />
       <header className="paper-texture border-b border-ink/10 bg-paper py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="eyebrow">Quiz complete</p>

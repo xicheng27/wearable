@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
+import { trackEvent } from "@/lib/analytics";
 import { brands } from "@/data/brands";
 import {
   adaptiveFeatureOptions,
@@ -37,8 +38,10 @@ function FilterGroup({
     const params = new URLSearchParams(searchParams.toString());
     if (current.toLowerCase() === value.toLowerCase()) {
       params.delete(paramKey);
+      trackEvent("filter_cleared", { filter: paramKey });
     } else {
       params.set(paramKey, value);
+      trackEvent("filter_applied", { filter: paramKey });
     }
     router.push(`/search?${params.toString()}`);
   }
@@ -94,8 +97,13 @@ function ToggleFilter({
 
   function toggle() {
     const params = new URLSearchParams(searchParams.toString());
-    if (checked) params.delete(paramKey);
-    else params.set(paramKey, "true");
+    if (checked) {
+      params.delete(paramKey);
+      trackEvent("filter_cleared", { filter: paramKey });
+    } else {
+      params.set(paramKey, "true");
+      trackEvent("filter_applied", { filter: paramKey });
+    }
     router.push(`/search?${params.toString()}`);
   }
 
@@ -143,6 +151,7 @@ export default function SearchFilters() {
     const query = searchParams.get("q");
     const params = new URLSearchParams();
     if (query) params.set("q", query);
+    trackEvent("filter_cleared", { filter: "all" });
     router.push(`/search?${params.toString()}`);
   }
 
@@ -163,37 +172,18 @@ export default function SearchFilters() {
       </div>
 
       <div className="mt-2">
+        {/* Primary filters — most people start here, always visible. */}
         <FilterGroup
           label="Clothing type"
           paramKey="clothing"
           options={clothingTypeOptions}
           open
         />
-        <FilterGroup label="Brand" paramKey="brand" options={brandOptions} open />
         <FilterGroup
           label="Accessibility need"
           paramKey="disability"
           options={disabilityNeedOptions}
           open
-        />
-        <FilterGroup
-          label="Adaptive feature"
-          paramKey="feature"
-          options={adaptiveFeatureOptions}
-        />
-        <FilterGroup
-          label="Dressing difficulty"
-          paramKey="difficulty"
-          options={dressingDifficultyOptions}
-        />
-        <FilterGroup label="Style" paramKey="style" options={styleOptions} />
-        <FilterGroup label="Budget" paramKey="budget" options={budgetOptions} />
-        <FilterGroup label="Size" paramKey="size" options={sizeOptions} />
-        <FilterGroup label="Gender / fit" paramKey="fit" options={fitOptions} />
-        <FilterGroup
-          label="Availability"
-          paramKey="availability"
-          options={availabilityOptions}
         />
         <div className="border-b border-ink/10 py-4">
           <p className="mb-3 text-sm font-extrabold text-ink">
@@ -202,18 +192,48 @@ export default function SearchFilters() {
           <CountrySelector className="w-full justify-between" />
         </div>
 
-        <div className="pt-4">
-          <p className="mb-2 text-sm font-extrabold text-ink">
-            Quick needs
-          </p>
+        <div className="py-2">
+          <p className="mb-2 mt-2 text-sm font-extrabold text-ink">Quick needs</p>
           <ToggleFilter label="Sensory-friendly fabric" paramKey="sensory" />
           <ToggleFilter label="Seated fit" paramKey="seated" />
           <ToggleFilter label="One-handed dressing" paramKey="oneHanded" />
           <ToggleFilter label="Velcro / easy closures" paramKey="easyClosures" />
           <ToggleFilter label="Wheelchair users" paramKey="wheelchair" />
-          <ToggleFilter label="Arthritis / limited dexterity" paramKey="limitedDexterity" />
-          <ToggleFilter label="Prosthetic or AFO access" paramKey="prosthetic" />
         </div>
+
+        {/* Lower-priority filters tucked away so the rail isn't a wall on mobile. */}
+        <details className="mt-2 border-t border-ink/10 pt-2" open={hasFilters}>
+          <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between py-2 text-sm font-extrabold text-primary-800">
+            More filters
+            <span className="text-lg font-normal text-ink/40" aria-hidden="true">
+              +
+            </span>
+          </summary>
+          <FilterGroup label="Brand" paramKey="brand" options={brandOptions} />
+          <FilterGroup
+            label="Adaptive feature"
+            paramKey="feature"
+            options={adaptiveFeatureOptions}
+          />
+          <FilterGroup
+            label="Dressing difficulty"
+            paramKey="difficulty"
+            options={dressingDifficultyOptions}
+          />
+          <FilterGroup label="Style" paramKey="style" options={styleOptions} />
+          <FilterGroup label="Budget" paramKey="budget" options={budgetOptions} />
+          <FilterGroup label="Size" paramKey="size" options={sizeOptions} />
+          <FilterGroup label="Gender / fit" paramKey="fit" options={fitOptions} />
+          <FilterGroup
+            label="Availability"
+            paramKey="availability"
+            options={availabilityOptions}
+          />
+          <div className="pt-2">
+            <ToggleFilter label="Arthritis / limited dexterity" paramKey="limitedDexterity" />
+            <ToggleFilter label="Prosthetic or AFO access" paramKey="prosthetic" />
+          </div>
+        </details>
       </div>
     </aside>
   );

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Disclaimer | Xi's",
-  description: "How Xi's uses brand names, product images and links.",
+  title: "Disclaimer",
+  description:
+    "How Xi's uses brand names, product images and links — an independent adaptive clothing discovery tool, not a retailer. Always verify details with the official brand.",
+  alternates: { canonical: "/disclaimer" },
 };
 
 export default function DisclaimerPage() {
