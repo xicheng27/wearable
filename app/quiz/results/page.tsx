@@ -255,6 +255,17 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
       <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <SignalMap data={signalMap} />
 
+        <div className="mt-6 rounded-2xl border border-primary-200 bg-primary-50/60 px-5 py-4 sm:px-6">
+          <p className="text-sm font-bold text-primary-900">
+            How your matches are chosen
+          </p>
+          <p className="mt-1 max-w-3xl text-sm leading-6 text-ink/70">
+            Your functional needs are protected first. Style, budget, and
+            preferences are used after that to rank the best options — they never
+            override an access need.
+          </p>
+        </div>
+
         <div className="mt-12 mb-6 max-w-3xl">
           <p className="eyebrow">Matched for you</p>
           <h2 className="mt-2 font-display text-3xl font-semibold tracking-[-0.02em] text-ink">

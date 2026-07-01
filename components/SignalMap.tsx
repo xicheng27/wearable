@@ -82,6 +82,10 @@ export default function SignalMap({ data }: { data: SignalMapData }) {
         answers. This is your adaptive clothing profile — the stats behind how
         results are ranked.
       </p>
+      <p className="mt-2 max-w-2xl text-sm leading-6 text-ink/60">
+        These percentages show how strongly your answers point to each clothing
+        need. They are not medical scores.
+      </p>
 
       {/* Persona + fit signature + uniqueness */}
       <div className="mt-6 grid gap-4 lg:grid-cols-[1.4fr_1fr]">
