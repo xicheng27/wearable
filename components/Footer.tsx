@@ -32,18 +32,7 @@ export default function Footer() {
             ))}
           </div>
         </div>
-        <p className="mt-12 max-w-3xl text-xs leading-relaxed text-paper/45">
-          Independent discovery tool, not affiliated with any brand. Always check
-          price, stock, sizing and returns on the official retailer.{" "}
-          <Link href="/disclaimer" className="underline underline-offset-2 hover:text-paper">
-            Full disclaimer
-          </Link>{" "}
-          ·{" "}
-          <Link href="/privacy" className="underline underline-offset-2 hover:text-paper">
-            Privacy
-          </Link>
-        </p>
-        <div className="mt-7 flex flex-col gap-3 border-t border-paper/15 pt-7 text-xs text-paper/45 sm:flex-row sm:justify-between">
+        <div className="mt-12 flex flex-col gap-3 border-t border-paper/15 pt-7 text-xs text-paper/45 sm:flex-row sm:justify-between">
           <p>&copy; 2026 Xi&apos;s. Adaptive fashion discovery.</p>
           <p>Comfort, dignity, independence, style.</p>
         </div>
