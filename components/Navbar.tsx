@@ -27,16 +27,16 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between gap-4">
           <Logo size={38} />
 
-          <div className="hidden max-w-sm flex-1 md:flex">
+          <div className="hidden max-w-sm flex-1 xl:flex">
             <SearchBar compact />
           </div>
 
-          <nav className="hidden items-center gap-5 xl:flex" aria-label="Main navigation">
+          <nav className="hidden items-center gap-4 lg:flex xl:gap-5" aria-label="Main navigation">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="link-underline flex items-center gap-1.5 text-sm text-ink/70"
+                className="link-underline flex items-center gap-1.5 whitespace-nowrap text-sm text-ink/70"
               >
                 {item.label}
                 {item.href === "/saved" && savedIds.length > 0 && (
@@ -49,18 +49,18 @@ export default function Navbar() {
           </nav>
           <Link
             href="/quiz"
-            className="btn-primary hidden whitespace-nowrap px-4 py-2 text-xs xl:inline-flex"
+            className="btn-primary hidden whitespace-nowrap px-4 py-2 text-xs lg:inline-flex"
             onClick={() => trackEvent("cta_quiz_start", { location: "navbar" })}
           >
             Start quiz
           </Link>
-          <div className="hidden items-center gap-2 xl:flex">
+          <div className="hidden items-center gap-2 lg:flex">
             <CountrySelector />
             <CurrencySelector compact />
           </div>
 
           <button
-            className="min-h-11 min-w-11 rounded-lg border border-ink/10 bg-paper p-2 text-ink hover:bg-sand/50 xl:hidden"
+            className="min-h-11 min-w-11 rounded-lg border border-ink/10 bg-paper p-2 text-ink hover:bg-sand/50 lg:hidden"
             onClick={() => setMenuOpen((open) => !open)}
             aria-expanded={menuOpen}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -76,7 +76,7 @@ export default function Navbar() {
         </div>
 
         {menuOpen && (
-          <div className="space-y-3 border-t border-ink/10 py-4 xl:hidden">
+          <div className="space-y-3 border-t border-ink/10 py-4 lg:hidden">
             <SearchBar compact />
             <div className="flex items-center gap-2">
               <CountrySelector className="flex-1 justify-between" />

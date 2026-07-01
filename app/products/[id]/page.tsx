@@ -10,6 +10,67 @@ import {
   getSimilarProducts,
   products,
 } from "@/data/products";
+import { absoluteUrl, siteConfig } from "@/lib/siteConfig";
+import type { Brand, Product } from "@/types";
+
+/** Resolve a product image to an absolute URL (remote CDNs stay as-is). */
+function absoluteImage(src: string): string {
+  return src.startsWith("http") ? src : absoluteUrl(src);
+}
+
+/**
+ * Conservative Product + BreadcrumbList JSON-LD. We only attach an `offers`
+ * block when the product has a real numeric price and an exact product link —
+ * never a fabricated price or availability. Everything else (brand, name,
+ * image, description, category) is taken straight from our catalogue data.
+ */
+function buildProductJsonLd(product: Product, brand: Brand) {
+  const numericPrice = Number.parseFloat(product.price);
+  const hasRealOffer =
+    Number.isFinite(numericPrice) &&
+    numericPrice > 0 &&
+    product.linkType === "exact-product" &&
+    Boolean(product.productUrl);
+
+  const productLd: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description,
+    image: absoluteImage(product.imageUrl),
+    category: product.clothingType,
+    url: absoluteUrl(`/products/${product.id}`),
+    brand: { "@type": "Brand", name: brand.name },
+  };
+
+  if (hasRealOffer) {
+    productLd.offers = {
+      "@type": "Offer",
+      url: product.productUrl,
+      priceCurrency: product.currency,
+      price: numericPrice.toFixed(2),
+      itemCondition: "https://schema.org/NewCondition",
+      seller: { "@type": "Organization", name: brand.name },
+    };
+  }
+
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
+      { "@type": "ListItem", position: 2, name: "Clothing", item: absoluteUrl("/search") },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: product.name,
+        item: absoluteUrl(`/products/${product.id}`),
+      },
+    ],
+  };
+
+  return [productLd, breadcrumbLd];
+}
 
 function explainFeature(feature: string) {
   const value = feature.toLowerCase();
@@ -50,9 +111,14 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
   const brand = getBrandById(product.brandId);
   if (!brand) notFound();
   const similarItems = getSimilarProducts(product);
+  const jsonLd = buildProductJsonLd(product, brand);
 
   return (
     <div className="min-h-screen bg-ivory">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <nav className="mb-8 text-sm text-ink/55" aria-label="Breadcrumb">
           <Link href="/" className="hover:text-primary-700">Home</Link>
