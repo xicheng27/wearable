@@ -1,9 +1,10 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Accessibility | Xi's",
+  title: "Accessibility",
   description:
-    "Accessibility features and usability notes for Xi's adaptive fashion finder.",
+    "Accessibility features and usability commitments for Xi's adaptive fashion finder: keyboard navigation, screen-reader support, contrast, large touch targets and text controls.",
+  alternates: { canonical: "/accessibility" },
 };
 
 export default function AccessibilityPage() {

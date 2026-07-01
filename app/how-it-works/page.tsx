@@ -2,9 +2,10 @@ import Link from "next/link";
 import HowItWorks from "@/components/HowItWorks";
 
 export const metadata = {
-  title: "How it works | Xi's",
+  title: "How It Works",
   description:
-    "How Xi's translates mobility, comfort, body access, style and location into adaptive clothing recommendations.",
+    "How Xi's translates mobility, comfort, body access, style and location into strict adaptive clothing recommendations by need — and how the quiz and filters work.",
+  alternates: { canonical: "/how-it-works" },
 };
 
 const targetGroups = [
@@ -28,7 +29,7 @@ const targetGroups = [
 
 export default function HowItWorksPage() {
   return (
-    <div className="bg-ivory">
+    <main className="bg-ivory">
       <section className="paper-texture border-b border-ink/10 bg-paper px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <p className="eyebrow">How it works</p>
@@ -93,6 +94,6 @@ export default function HowItWorksPage() {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

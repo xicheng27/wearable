@@ -16,7 +16,7 @@ export default function SiteChrome({
   if (isFullScreen) {
     return (
       <>
-        <main className="h-[calc(100dvh-2.25rem)] min-h-0 overflow-hidden">
+        <main id="main-content" className="h-[calc(100dvh-2.25rem)] min-h-0 overflow-hidden">
           {children}
         </main>
         <AccessibilityPanel />
@@ -24,10 +24,14 @@ export default function SiteChrome({
     );
   }
 
+  // Content pages render their own <main> landmark, so this wrapper is a plain
+  // focus target for the skip link (avoids nesting two <main> elements).
   return (
     <>
       <Navbar />
-      <main className="flex-1">{children}</main>
+      <div id="main-content" tabIndex={-1} className="flex-1 focus:outline-none">
+        {children}
+      </div>
       <AccessibilityPanel />
       <Footer />
     </>

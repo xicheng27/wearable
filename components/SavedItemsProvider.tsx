@@ -7,6 +7,7 @@ import {
   useMemo,
   useState,
 } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 type SavedItemsContextValue = {
   savedIds: string[];
@@ -37,10 +38,13 @@ export default function SavedItemsProvider({
 
   const toggleSaved = (productId: string) => {
     setSavedIds((current) => {
-      const next = current.includes(productId)
-        ? current.filter((id) => id !== productId)
-        : [...current, productId];
+      const willSave = !current.includes(productId);
+      const next = willSave
+        ? [...current, productId]
+        : current.filter((id) => id !== productId);
       window.localStorage.setItem(storageKey, JSON.stringify(next));
+      // productId is a non-identifying catalogue slug, safe to record.
+      trackEvent(willSave ? "product_saved" : "product_unsaved", { productId });
       return next;
     });
   };

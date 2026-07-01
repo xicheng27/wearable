@@ -122,6 +122,9 @@ function SelectFilter({
 export default function SingaporeCatalogue() {
   const [query, setQuery] = useState("");
   const [filters, setFilters] = useState<Filters>(emptyFilters);
+  // Default open so server-rendered HTML (and no-JS users) see every filter;
+  // a mobile-only toggle lets phone users collapse the panel to reach products.
+  const [filtersOpen, setFiltersOpen] = useState(true);
   const { country } = useCountry();
 
   const results = useMemo(
@@ -215,20 +218,35 @@ export default function SingaporeCatalogue() {
                 Search names, brands, features or who an item may suit.
               </p>
             </div>
-            {hasFilters && (
+            <div className="flex items-center gap-2">
+              {hasFilters && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setQuery("");
+                    setFilters(emptyFilters);
+                  }}
+                  className="btn-secondary px-4 py-2 text-sm"
+                >
+                  Clear filters
+                </button>
+              )}
               <button
                 type="button"
-                onClick={() => {
-                  setQuery("");
-                  setFilters(emptyFilters);
-                }}
-                className="btn-secondary px-4 py-2 text-sm"
+                onClick={() => setFiltersOpen((open) => !open)}
+                className="btn-secondary px-4 py-2 text-sm lg:hidden"
+                aria-expanded={filtersOpen}
+                aria-controls="singapore-filter-body"
               >
-                Clear filters
+                {filtersOpen ? "Hide filters" : "Show filters"}
               </button>
-            )}
+            </div>
           </div>
 
+          <div
+            id="singapore-filter-body"
+            className={filtersOpen ? "block" : "hidden lg:block"}
+          >
           <label className="mt-5 block">
             <span className="text-sm font-bold text-ink">Search catalogue</span>
             <div className="relative mt-1.5">
@@ -280,6 +298,7 @@ export default function SingaporeCatalogue() {
               ))}
             </div>
           </fieldset>
+          </div>
         </section>
 
         <div className="my-7 flex items-center justify-between gap-4">

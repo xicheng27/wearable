@@ -1,10 +1,29 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import Logo from "@/components/Logo";
 import BodyModel from "@/components/quiz/BodyModel";
+import QuizCtaLink from "@/components/QuizCtaLink";
+import { siteConfig } from "@/lib/siteConfig";
+
+export const metadata: Metadata = {
+  title: "Adaptive Clothing Finder — Clothing That Works for Your Body",
+  description:
+    "Take a short visual quiz to get adaptive clothing recommendations by mobility, comfort, access need, style and location — or browse accessible, disability-friendly fashion directly.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: siteConfig.title,
+    description:
+      "Take a short quiz to get adaptive clothing recommendations by mobility, comfort, access need, style and location.",
+    url: siteConfig.url,
+    type: "website",
+  },
+};
 
 const navItems = [
-  { href: "/search", label: "Browse products" },
-  { href: "/saved", label: "Saved items" },
+  { href: "/search", label: "Browse clothing" },
+  { href: "/singapore", label: "Singapore guide" },
+  { href: "/map", label: "Global map" },
+  { href: "/saved", label: "Saved" },
   { href: "/how-it-works", label: "How it works" },
 ];
 
@@ -21,11 +40,13 @@ export default function HomePage() {
       <header className="flex shrink-0 items-center justify-between gap-4 px-5 py-4 sm:px-8">
         <Logo size={34} />
         <nav className="flex items-center gap-1 sm:gap-2" aria-label="Main navigation">
-          {navItems.map((item) => (
+          {navItems.map((item, index) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-full px-3 py-2 text-sm font-semibold text-ink/70 transition hover:bg-sand/40 hover:text-ink"
+              className={`rounded-full px-3 py-2 text-sm font-semibold text-ink/70 transition hover:bg-sand/40 hover:text-ink ${
+                index === 0 ? "" : "hidden lg:inline-flex"
+              }`}
             >
               {item.label}
             </Link>
@@ -46,14 +67,17 @@ export default function HomePage() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link href="/quiz" className="btn-primary px-8 py-4 text-lg">
-              Find clothing for me
+            <QuizCtaLink className="btn-primary px-8 py-4 text-lg" location="home_hero">
+              Start quiz
               <span aria-hidden="true">&rarr;</span>
-            </Link>
+            </QuizCtaLink>
             <Link href="/search" className="btn-secondary px-7 py-4 text-base">
-              Browse products
+              Browse clothing
             </Link>
           </div>
+          <p className="mt-4 text-sm text-ink/55">
+            Free to use · no account needed · takes about 2 minutes
+          </p>
         </div>
 
         {/* Visual preview: interactive model + signal-map vibe */}

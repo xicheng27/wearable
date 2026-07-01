@@ -167,6 +167,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <OfficialProductLink
             href={product.productUrl}
             exact={product.linkType === "exact-product"}
+            productId={product.id}
             className="btn-secondary mt-3 flex w-full px-4 py-3 text-center text-sm"
           >
             {product.linkType === "exact-product"

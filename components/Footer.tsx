@@ -2,9 +2,9 @@ import Link from "next/link";
 import Logo from "@/components/Logo";
 
 const groups = [
-  ["Browse", [["All clothing", "/search"], ["Saved items", "/saved"], ["Singapore guide", "/singapore"], ["Global map", "/map"]]],
-  ["Find by need", [["One-handed dressing", "/search?oneHanded=true"], ["Sensory-friendly", "/search?sensory=true"], ["Orthotics and AFOs", "/search?disability=Orthotics"], ["Find my match", "/quiz"]]],
-  ["Xi's", [["How it works", "/#how-it-works"], ["Accessibility", "/accessibility"], ["Disclaimer", "/disclaimer"], ["Submit an item", "/submit"], ["Contact", "/submit"]]],
+  ["Browse", [["Start quiz", "/quiz"], ["All clothing", "/search"], ["Singapore guide", "/singapore"], ["Global map", "/map"], ["Saved", "/saved"]]],
+  ["Find by need", [["One-handed dressing", "/search?oneHanded=true"], ["Sensory-friendly", "/search?sensory=true"], ["Orthotics and AFOs", "/search?disability=Orthotics"], ["How it works", "/how-it-works"]]],
+  ["About & legal", [["Accessibility", "/accessibility"], ["Disclaimer", "/disclaimer"], ["Privacy", "/privacy"], ["Submit an item", "/submit"], ["Contact", "/contact"]]],
 ];
 
 export default function Footer() {
@@ -32,15 +32,16 @@ export default function Footer() {
             ))}
           </div>
         </div>
-        <p className="mt-12 max-w-4xl text-xs leading-relaxed text-paper/45">
-          Xi&apos;s is an independent adaptive clothing discovery tool and is not
-          affiliated with any brand. Product names, trademarks, and images are
-          used for identification and recommendation purposes only. All rights
-          belong to their respective owners.{" "}
+        <p className="mt-12 max-w-3xl text-xs leading-relaxed text-paper/45">
+          Independent discovery tool, not affiliated with any brand. Always check
+          price, stock, sizing and returns on the official retailer.{" "}
           <Link href="/disclaimer" className="underline underline-offset-2 hover:text-paper">
-            Read the full disclaimer
+            Full disclaimer
+          </Link>{" "}
+          ·{" "}
+          <Link href="/privacy" className="underline underline-offset-2 hover:text-paper">
+            Privacy
           </Link>
-          .
         </p>
         <div className="mt-7 flex flex-col gap-3 border-t border-paper/15 pt-7 text-xs text-paper/45 sm:flex-row sm:justify-between">
           <p>&copy; 2026 Xi&apos;s. Adaptive fashion discovery.</p>

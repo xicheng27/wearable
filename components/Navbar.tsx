@@ -7,10 +7,13 @@ import Logo from "@/components/Logo";
 import CurrencySelector from "@/components/CurrencySelector";
 import CountrySelector from "@/components/CountrySelector";
 import { useSavedItems } from "@/components/SavedItemsProvider";
+import { trackEvent } from "@/lib/analytics";
 
 const navItems = [
-  { href: "/search", label: "Browse products" },
-  { href: "/saved", label: "Saved items" },
+  { href: "/search", label: "Browse clothing" },
+  { href: "/singapore", label: "Singapore guide" },
+  { href: "/map", label: "Global map" },
+  { href: "/saved", label: "Saved" },
   { href: "/how-it-works", label: "How it works" },
 ];
 
@@ -47,8 +50,9 @@ export default function Navbar() {
           <Link
             href="/quiz"
             className="btn-primary hidden whitespace-nowrap px-4 py-2 text-xs xl:inline-flex"
+            onClick={() => trackEvent("cta_quiz_start", { location: "navbar" })}
           >
-            Find clothing for me
+            Start quiz
           </Link>
           <div className="hidden items-center gap-2 xl:flex">
             <CountrySelector />
@@ -81,9 +85,12 @@ export default function Navbar() {
             <Link
               href="/quiz"
               className="btn-primary flex w-full text-base"
-              onClick={() => setMenuOpen(false)}
+              onClick={() => {
+                trackEvent("cta_quiz_start", { location: "navbar_mobile" });
+                setMenuOpen(false);
+              }}
             >
-              Find clothing for me
+              Start quiz
             </Link>
             <nav className="flex flex-col">
               {navItems.map((item) => (

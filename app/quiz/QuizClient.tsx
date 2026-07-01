@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { LogoMark } from "@/components/Logo";
+import { trackEvent } from "@/lib/analytics";
 import { useCountry } from "@/components/CountryProvider";
 import { useUserProfile } from "@/components/UserProfileProvider";
 import { GLOBAL } from "@/lib/countries";
@@ -313,6 +314,15 @@ export default function QuizClient() {
   const [stepIndex, setStepIndex] = useState(0);
   const [focusZone, setFocusZone] = useState<BodyZone>("shoulders");
 
+  // Fire quiz_started exactly once, when the quiz first renders.
+  const startedRef = useRef(false);
+  useEffect(() => {
+    if (!startedRef.current) {
+      startedRef.current = true;
+      trackEvent("quiz_started");
+    }
+  }, []);
+
   // One shared source of truth for shopping region: mirror the header's
   // CountryProvider into the quiz answer (storing the real country, even one
   // not in our one-tap list), so the header and quiz can never silently differ.
@@ -359,6 +369,8 @@ export default function QuizClient() {
 
   function goNext() {
     if (isLast) return finish();
+    // step id is a non-identifying question key (e.g. "country", "clothing").
+    trackEvent("quiz_step_completed", { step: current.id, index: clampedIndex });
     setStepIndex(clampedIndex + 1);
   }
 
@@ -369,6 +381,12 @@ export default function QuizClient() {
   function finish() {
     const params = buildResultParams(answers, otherNeeds, customNeed);
     const country = answers.country?.[0];
+    // Coarse, non-identifying completion signal (counts + which categories).
+    trackEvent("quiz_completed", {
+      clothingCount: (answers.clothing ?? []).length,
+      needsCount: (answers.help ?? []).length,
+      hasLocation: Boolean(country && country !== "Other country"),
+    });
     if (country && country !== "Other country" && country !== GLOBAL) setCountry(country);
 
     setProfile({

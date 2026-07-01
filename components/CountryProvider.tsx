@@ -10,6 +10,7 @@ import {
 import { useCurrency } from "@/components/CurrencyProvider";
 import { countries, GLOBAL } from "@/lib/countries";
 import { currencyForCountry } from "@/lib/currency";
+import { trackEvent } from "@/lib/analytics";
 
 type CountryContextValue = {
   /** null until the visitor's country is known (detected or chosen). */
@@ -146,6 +147,7 @@ export default function CountryProvider({
         setCountryState(detected);
         window.localStorage.setItem(storageKey, detected);
         syncCurrency(detected, false);
+        trackEvent("location_used", { country: detected, source: "auto" });
       } else {
         setPickerOpen(true);
       }
@@ -163,6 +165,8 @@ export default function CountryProvider({
     setPickerOpen(false);
     // Explicit country change drives the currency, overriding a manual choice.
     syncCurrency(next, true);
+    // Coarse country name is the shopping region, not precise/PII location data.
+    trackEvent("location_used", { country: next, source: "manual" });
   };
 
   const value = useMemo(

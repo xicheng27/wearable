@@ -1,6 +1,8 @@
 "use client";
 
-import { useId, useState } from "react";
+import Link from "next/link";
+import { useId, useRef, useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 type FormState = {
   productName: string;
@@ -27,15 +29,32 @@ export default function SubmitItemForm() {
   const [form, setForm] = useState<FormState>(emptyForm);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const startedRef = useRef(false);
+  // Honeypot: real users never fill a hidden field; bots usually do.
+  const honeypotRef = useRef<HTMLInputElement>(null);
+  const mountedAtRef = useRef<number>(Date.now());
 
   function updateField(field: keyof FormState, value: string) {
     setForm((current) => ({ ...current, [field]: value }));
     setError("");
     setSuccess("");
+    if (!startedRef.current) {
+      startedRef.current = true;
+      trackEvent("submit_item_started");
+    }
   }
 
   function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    // Simple spam protection (no server endpoint exists; data is stored locally):
+    // drop submissions that trip the honeypot or are completed implausibly fast.
+    if (honeypotRef.current?.value) return;
+    if (Date.now() - mountedAtRef.current < 1500) {
+      setError("Please take a moment to fill in the details, then submit again.");
+      return;
+    }
+
     if (!form.productName.trim() || !form.brandName.trim()) {
       setError("Please add at least the product name and brand name.");
       return;
@@ -46,6 +65,10 @@ export default function SubmitItemForm() {
     submissions.push({ ...form, submittedAt: new Date().toISOString() });
     window.localStorage.setItem(storageKey, JSON.stringify(submissions));
     setForm(emptyForm);
+    startedRef.current = false;
+    mountedAtRef.current = Date.now();
+    // Analytics: record the conversion only — never the entered values/email.
+    trackEvent("submit_item_submitted", { hasContact: Boolean(form.contact.trim()) });
     setSuccess(
       "Thanks. Your suggestion was saved on this device for review."
     );
@@ -113,7 +136,8 @@ export default function SubmitItemForm() {
 
         <label className="block" htmlFor={`${id}-contact`}>
           <span className="text-base font-bold text-ink">
-            Your email, optional
+            Your email{" "}
+            <span className="font-normal text-ink/55">(optional)</span>
           </span>
           <input
             id={`${id}-contact`}
@@ -122,7 +146,15 @@ export default function SubmitItemForm() {
             className="mt-2 min-h-12 w-full rounded-xl border border-ink/20 bg-paper px-4 text-base text-ink"
             inputMode="email"
             autoComplete="email"
+            aria-describedby={`${id}-contact-help`}
           />
+          <span
+            id={`${id}-contact-help`}
+            className="mt-1 block text-sm leading-6 text-ink/60"
+          >
+            Only used to follow up on this suggestion if needed. Never shared or
+            used for marketing.
+          </span>
         </label>
 
         <label className="block sm:col-span-2" htmlFor={`${id}-notes`}>
@@ -141,6 +173,27 @@ export default function SubmitItemForm() {
           />
         </label>
       </div>
+
+      {/* Honeypot — visually hidden, ignored by humans, often filled by bots. */}
+      <div className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+        <label htmlFor={`${id}-website`}>Leave this field empty</label>
+        <input
+          id={`${id}-website`}
+          ref={honeypotRef}
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
+      <p className="mt-6 text-sm leading-6 text-ink/65">
+        Your suggestion is saved on this device for review. Adding your email is
+        optional. See how we handle data in our{" "}
+        <Link href="/privacy" className="link-underline">
+          privacy notice
+        </Link>
+        .
+      </p>
 
       {error && (
         <p
