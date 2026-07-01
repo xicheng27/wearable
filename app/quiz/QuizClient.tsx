@@ -143,6 +143,11 @@ function BodyFitMap({
 
   return (
     <div>
+      <p className="mb-3 text-sm leading-6 text-ink/65">
+        Select a body area to see what clothing needs to support, then choose
+        what makes dressing harder there. You can pick more than one. Tapping a
+        zone also highlights it on the avatar.
+      </p>
       <div className="flex flex-wrap gap-2" role="tablist" aria-label="Body areas">
         {bodyZoneGroups.map((g) => {
           const active = g.zone === focusZone;

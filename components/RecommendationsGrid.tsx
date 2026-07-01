@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import ProductCard from "@/components/ProductCard";
+import MatchBadges from "@/components/MatchBadges";
 import CountryEmptyState from "@/components/CountryEmptyState";
 import { productShipsToCountry } from "@/data/products";
 import { useCountry } from "@/components/CountryProvider";
@@ -121,27 +122,7 @@ function MatchDetail({
         isFallback ? "border-amber-200 bg-amber-50/60" : "border-primary-100 bg-primary-50"
       }`}
     >
-      <div className="flex flex-wrap items-center gap-2">
-        <span
-          className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold ${
-            isFallback ? "bg-amber-100 text-amber-900" : "bg-primary-700 text-white"
-          }`}
-        >
-          <span aria-hidden="true">{isFallback ? "≈" : "✓"}</span>
-          {isFallback ? "Closest alternative" : "Exact match"}
-        </span>
-        {coverage !== null && (
-          <span
-            className={`rounded-full border px-2.5 py-1 text-xs font-bold ${
-              coverage === 100
-                ? "border-primary-200 bg-paper text-primary-800"
-                : "border-amber-300 bg-paper text-amber-800"
-            }`}
-          >
-            Constraint coverage {coverage}%
-          </span>
-        )}
-      </div>
+      <MatchBadges isFallback={Boolean(isFallback)} coverage={coverage} />
       <p className="mt-3 text-[11px] font-bold uppercase tracking-wider text-primary-800/80">
         Why this matches you
       </p>

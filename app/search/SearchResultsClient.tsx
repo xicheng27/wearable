@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import SearchBar from "@/components/SearchBar";
 import SearchFilters from "@/components/SearchFilters";
 import ProductCard from "@/components/ProductCard";
+import MatchBadges from "@/components/MatchBadges";
 import CountrySelector from "@/components/CountrySelector";
 import {
   searchProducts,
@@ -14,6 +15,23 @@ import {
 import { useCountry } from "@/components/CountryProvider";
 import { GLOBAL } from "@/lib/countries";
 import { trackEvent } from "@/lib/analytics";
+
+// Filter keys that represent real access / functional needs (not taste or
+// availability). searchProducts is a strict AND filter, so every result meets
+// all of these — coverage is honestly 100% and never invented. Style, brand,
+// budget, size, fit, availability and location are preferences, not needs.
+const NEED_FILTER_KEYS = [
+  "disability",
+  "feature",
+  "sensory",
+  "seated",
+  "oneHanded",
+  "easyClosures",
+  "wheelchair",
+  "limitedDexterity",
+  "prosthetic",
+  "difficulty",
+] as const;
 
 const filterLabels: Record<string, string> = {
   clothing: "Clothing",
@@ -99,6 +117,13 @@ export default function SearchResults({
           ? filterLabels[key]
           : `${filterLabels[key]}: ${params[key]}`,
     }));
+
+  // Human-readable list of the access needs currently being filtered on.
+  // Boolean toggles use their label ("Seated fit"); value filters use the value.
+  const needsCovered = NEED_FILTER_KEYS.filter(
+    (key) => params[key] && params[key] !== "false"
+  ).map((key) => (params[key] === "true" ? filterLabels[key] : params[key]));
+  const hasNeeds = needsCovered.length > 0;
 
   const isDefaultView = activeFilters.length === 0 && !query;
   const results =
@@ -245,6 +270,45 @@ export default function SearchResults({
               </div>
             </div>
 
+            {results.length > 0 && hasNeeds && (
+              <div className="mb-6 rounded-2xl border border-primary-200 bg-primary-50/60 px-5 py-4">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-primary-700 px-3 py-1 text-xs font-bold text-white">
+                    <span aria-hidden="true">✓</span>Exact matches
+                  </span>
+                  <span className="rounded-full border border-primary-200 bg-paper px-2.5 py-1 text-xs font-bold text-primary-800">
+                    Constraint coverage 100%
+                  </span>
+                </div>
+                <p className="mt-2 max-w-3xl text-sm leading-6 text-ink/70">
+                  Every item below meets all of your selected access needs. Style,
+                  budget and other filters only narrow the list — they never
+                  override an access need.
+                </p>
+                <div className="mt-2">
+                  <p className="text-[11px] font-bold uppercase tracking-wide text-primary-700/80">
+                    Needs covered
+                  </p>
+                  <div className="mt-1 flex flex-wrap gap-1.5">
+                    {needsCovered.map((need) => (
+                      <span
+                        key={need}
+                        className="rounded-md border border-primary-200 bg-paper px-2 py-0.5 text-xs font-semibold text-primary-900"
+                      >
+                        {need}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+            {results.length > 0 && !hasNeeds && (query || activeFilters.length > 0) && (
+              <p className="mb-6 text-sm leading-6 text-ink/60">
+                Showing items that match your selected filters. Add an access need
+                (like seated fit or sensory-friendly) to see constraint coverage.
+              </p>
+            )}
+
             {results.length === 0 && hiddenByLocation ? (
               <div className="rounded-2xl border border-ink/10 bg-paper px-6 py-20 text-center">
                 <h2 className="text-xl font-bold text-ink">
@@ -279,9 +343,20 @@ export default function SearchResults({
               </div>
             ) : (
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
-                {visibleResults.map((product) => (
-                  <ProductCard key={product.id} product={product} />
-                ))}
+                {visibleResults.map((product) =>
+                  hasNeeds ? (
+                    <div key={product.id} className="flex flex-col">
+                      <MatchBadges
+                        isFallback={false}
+                        coverage={100}
+                        className="mb-2"
+                      />
+                      <ProductCard product={product} />
+                    </div>
+                  ) : (
+                    <ProductCard key={product.id} product={product} />
+                  )
+                )}
               </div>
             )}
             {visibleCount < results.length && (
