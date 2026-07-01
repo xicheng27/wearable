@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import ProductCard from "@/components/ProductCard";
+import MatchBadges from "@/components/MatchBadges";
 import CountryEmptyState from "@/components/CountryEmptyState";
 import { productShipsToCountry } from "@/data/products";
 import { useCountry } from "@/components/CountryProvider";
@@ -103,11 +104,17 @@ function MatchDetail({
       ? matchedTags
       : [...(needsSatisfied ?? []), ...(preferencesSatisfied ?? [])];
 
-  const needCount = (needsSatisfied ?? []).length;
-  const prefCount = (preferencesSatisfied ?? []).length;
-  const matchPercent = isFallback
-    ? Math.max(38, 70 - (unmetNeeds?.length ?? 1) * 12)
-    : Math.min(98, 80 + needCount * 5 + prefCount * 3);
+  // Constraint coverage is REAL: the share of your active access needs this item
+  // meets (satisfied vs satisfied + still-unmet). Exact matches cover them all;
+  // when no functional needs were set there is nothing to cover, so we hide the
+  // percentage rather than invent one. No fabricated "match %" is ever shown.
+  const satisfied = needsSatisfied ?? [];
+  const unmet = unmetNeeds ?? [];
+  const totalConstraints = satisfied.length + unmet.length;
+  const coverage =
+    totalConstraints > 0
+      ? Math.round((satisfied.length / totalConstraints) * 100)
+      : null;
 
   return (
     <div
@@ -115,18 +122,10 @@ function MatchDetail({
         isFallback ? "border-amber-200 bg-amber-50/60" : "border-primary-100 bg-primary-50"
       }`}
     >
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <p className="text-xs font-bold uppercase tracking-wider text-primary-800">
-          {isFallback ? "Closest alternative" : "Why this matches you"}
-        </p>
-        <span
-          className={`rounded-full px-2.5 py-1 text-xs font-bold ${
-            isFallback ? "bg-amber-100 text-amber-800" : "bg-primary-700 text-white"
-          }`}
-        >
-          {matchPercent}% match
-        </span>
-      </div>
+      <MatchBadges isFallback={Boolean(isFallback)} coverage={coverage} />
+      <p className="mt-3 text-[11px] font-bold uppercase tracking-wider text-primary-800/80">
+        Why this matches you
+      </p>
 
       {itemClassification && itemClassification.length > 0 && (
         <div className="mt-2 flex flex-wrap gap-1.5">
@@ -156,7 +155,7 @@ function MatchDetail({
       {shownMatchedTags.length > 0 && (
         <div className="mt-3">
           <p className="text-[11px] font-bold uppercase tracking-wide text-primary-700/80">
-            Matched tags
+            Needs covered
           </p>
           <div className="mt-1 flex flex-wrap gap-1.5">
             {shownMatchedTags.slice(0, 8).map((need) => (
@@ -174,7 +173,7 @@ function MatchDetail({
       {unmatchedTags && unmatchedTags.length > 0 && (
         <div className="mt-3">
           <p className="text-[11px] font-bold uppercase tracking-wide text-primary-700/80">
-            Not matched
+            Still check
           </p>
           <div className="mt-1 flex flex-wrap gap-1.5">
             {unmatchedTags.slice(0, 6).map((tag) => (
