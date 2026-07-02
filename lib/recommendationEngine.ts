@@ -220,6 +220,37 @@ const HARD_REQUIREMENTS: HardRequirement[] = [
       /tag-free|tag free|tagless|seamless|flat seam|soft|low-friction|low friction|non-irritating|sensory/.test(blob),
   },
   {
+    id: "afo-orthotic",
+    label: "AFO / orthotic / prosthetic accommodation",
+    reason: "makes room for AFOs, braces or prosthetics",
+    active: (i) =>
+      anyMatch(i.needs ?? [], /\bafo\b|orthotic|prosthetic|leg brace|ankle brace/),
+    satisfied: (_p, blob) =>
+      /\bafo\b|orthotic|prosthetic|brace|wide opening|extra depth|wide fit|adjustable width|removable insole|limb difference/.test(
+        blob
+      ),
+  },
+  {
+    id: "medical-access",
+    label: "Medical device / body-zone access",
+    reason: "gives access for medical or body-zone needs",
+    active: (i) =>
+      anyMatch(i.needs ?? [], /medical|post-surgery|surgery|\bport\b|\btube\b|ostomy|body-zone/) ||
+      anyMatch(i.closurePreference ?? [], /port or tube|medical/),
+    satisfied: (_p, blob) =>
+      /port access|tube access|ostomy|medical|post-surgery|surgery|recovery|snap crotch|full-length opening|side opening|side-opening|drop-front|drop front|open-back|open back|easy access|abdominal access|examination/.test(
+        blob
+      ),
+  },
+  {
+    id: "posture-fit",
+    label: "Spinal / posture-aware fit",
+    reason: "is shaped for spinal or posture support",
+    active: (i) => anyMatch(i.needs ?? [], /scoliosis|spinal|posture|kyphosis/),
+    satisfied: (_p, blob) =>
+      /scoliosis|spinal|posture|back support|seated posture|torso support/.test(blob),
+  },
+  {
     id: "closure",
     label: "Your preferred closure type",
     reason: "has the closure type you prefer",
@@ -308,20 +339,16 @@ function scoreSoftPreferences(product: Product, input: RecommendationInput): Sof
     reasons.push(`fits your ${input.budget.toLowerCase()} budget`);
   }
 
-  // Clothing range is a soft ranking signal only — it never filters out an
-  // item, so functional needs always come first.
-  if (input.genderRange) {
-    const fit = (product.genderFit ?? []).join(" ");
-    const wanted =
-      input.genderRange === "womenswear"
-        ? /women/i
-        : input.genderRange === "menswear"
-          ? /\bmen\b/i
-          : /unisex|neutral/i;
-    if (wanted.test(fit) || /unisex/i.test(fit)) {
-      score += 1.5;
+  // Clothing range is enforced as a STRICT pre-filter before scoring (see
+  // productMatchesGenderRange), so every candidate here already fits the
+  // selected range. A small bonus still favours items made specifically for
+  // that range over unisex ones.
+  if (input.genderRange === "womenswear" || input.genderRange === "menswear") {
+    const wanted = input.genderRange === "womenswear" ? /women/i : /\bmen\b/i;
+    if ((product.genderFit ?? []).some((fit) => wanted.test(fit))) {
+      score += 1;
       preferencesSatisfied.push("Your clothing range");
-      reasons.push("matches your selected clothing range");
+      reasons.push("is made for your selected clothing range");
     }
   }
 
@@ -640,7 +667,7 @@ const CATEGORY_FAMILIES: Record<string, RegExp> = {
 };
 
 /** Resolve a selected clothing term (e.g. "Pants", "Bottoms", "Shoes") to a family key. */
-function categoryFamilyFor(term: string): keyof typeof CATEGORY_FAMILIES | null {
+export function categoryFamilyFor(term: string): keyof typeof CATEGORY_FAMILIES | null {
   const t = term.toLowerCase();
   if (/under|base layer|baselayer|bra|sock/.test(t)) return "undergarments";
   if (/shoe|foot|sneaker|boot|sandal/.test(t)) return "footwear";
@@ -651,30 +678,119 @@ function categoryFamilyFor(term: string): keyof typeof CATEGORY_FAMILIES | null 
   return null;
 }
 
-/** Strict: does the product belong to at least one of the selected categories? */
-function productInSelectedCategories(product: Product, selected: string[]): boolean {
-  const families = new Set<RegExp>();
+// Workwear / formalwear is an occasion, not a garment shape: it matches the
+// Formalwear catalogue type or a formal/professional style — while still
+// respecting any specific garment type the shopper also selected.
+const FORMAL_TERM = /\b(formal|formalwear|workwear|business|office)\b/i;
+const FORMAL_PRODUCT = /\b(formal|formalwear|workwear|professional|business|smart|suit|blazer|office)\b/;
+
+function productLooksFormal(product: Product): boolean {
+  const hay = [product.clothingType, product.category, ...product.styleTags]
+    .join(" ")
+    .toLowerCase();
+  return FORMAL_PRODUCT.test(hay);
+}
+
+/**
+ * The garment families a product belongs to. Its own clothingType decides
+ * first (a product typed "Socks" is undergarments even if the catalogue
+ * shelves it under the "shoes" category); the category field is only a
+ * fallback when the type isn't recognised.
+ */
+function productFamilies(product: Product): string[] {
+  const byType = Object.keys(CATEGORY_FAMILIES).filter((fam) =>
+    CATEGORY_FAMILIES[fam].test(product.clothingType.toLowerCase())
+  );
+  if (byType.length > 0) return byType;
+  return Object.keys(CATEGORY_FAMILIES).filter((fam) =>
+    CATEGORY_FAMILIES[fam].test(product.category.toLowerCase())
+  );
+}
+
+/**
+ * STRICT category normalization: does the product belong to at least one of
+ * the selected clothing categories? Footwear only ever matches footwear,
+ * bottoms only bottoms, and so on. Workwear/formalwear narrows to formal
+ * pieces without overriding a selected garment type. An empty selection (or
+ * "Not sure") applies no filter.
+ */
+export function productInSelectedCategories(product: Product, selected: string[]): boolean {
+  const families = new Set<string>();
+  let wantsFormal = false;
   selected.forEach((term) => {
+    if (FORMAL_TERM.test(term)) {
+      wantsFormal = true;
+      return;
+    }
     const fam = categoryFamilyFor(term);
-    if (fam) families.add(CATEGORY_FAMILIES[fam]);
+    if (fam) families.add(fam);
   });
-  if (families.size === 0) return true;
-  const hay = `${product.clothingType} ${product.category}`.toLowerCase();
-  return Array.from(families).some((re) => re.test(hay));
+
+  const productFams = productFamilies(product);
+  const inFamily =
+    families.size === 0 || productFams.some((fam) => families.has(fam));
+
+  if (wantsFormal) {
+    // Formal + a garment type => that garment type, formal-leaning.
+    // Formal alone => any formal piece.
+    return families.size > 0 ? inFamily && productLooksFormal(product) : productLooksFormal(product);
+  }
+  return inFamily;
+}
+
+/**
+ * STRICT clothing-range filter. Womenswear shows women/unisex, menswear shows
+ * men/unisex, gender-neutral shows unisex (or clearly multi-fit) items, and
+ * shopping for a child/teen shows kids items only. Never a ranking tweak —
+ * a product that fails this is not shown at all.
+ */
+export function productMatchesGenderRange(
+  product: Product,
+  genderRange?: string,
+  childrenTeen?: boolean
+): boolean {
+  const fits = (product.genderFit ?? []).map((f) => f.toLowerCase());
+  if (childrenTeen) {
+    return fits.some((f) => /kid|child|teen|youth|junior/.test(f));
+  }
+  if (!genderRange || /no_preference|prefer not/i.test(genderRange)) return true;
+  const isUnisex = fits.some((f) => /unisex|neutral/.test(f));
+  if (/women|female/i.test(genderRange)) {
+    return isUnisex || fits.some((f) => /women/.test(f));
+  }
+  if (/gender_neutral|neutral|unisex/i.test(genderRange)) {
+    // Unisex, or clearly multi-fit (made for both women and men).
+    return (
+      isUnisex ||
+      (fits.some((f) => /women/.test(f)) && fits.some((f) => /\bmen\b|^men$/.test(f)))
+    );
+  }
+  if (/\bmen\b|^men|male/i.test(genderRange)) {
+    return isUnisex || fits.some((f) => /\bmen\b|^men$/.test(f) && !/women/.test(f));
+  }
+  return true;
 }
 
 export function recommendAdaptiveProducts(input: RecommendationInput): RecommendationResult[] {
   const limit = input.limit ?? 9;
 
-  // Hard category filter applied BEFORE scoring, so exact matches AND fallbacks
-  // stay strictly within the chosen product type(s). "Not sure" => no filter.
+  // STRICT pre-filters applied BEFORE any scoring: clothing category and
+  // clothing range are hard requirements for exact matches AND fallbacks —
+  // a shopper who picked Footwear/Womenswear never sees pants or men-only
+  // items, not even as "closest alternatives". "Not sure" => no filter.
   const selectedCats = (input.clothingTypes ?? []).filter(
     (c) => c && !/not sure/i.test(c)
   );
-  const pool = selectedCats.length
-    ? products.filter((p) => productInSelectedCategories(p, selectedCats))
-    : products;
-  const candidates = pool.length > 0 ? pool : products;
+  const candidates = products.filter(
+    (p) =>
+      (selectedCats.length === 0 || productInSelectedCategories(p, selectedCats)) &&
+      productMatchesGenderRange(p, input.genderRange, input.childrenTeen)
+  );
+
+  // Nothing in the catalogue satisfies the strict category/range selection.
+  // Return an empty list so the UI can show an honest empty state — never
+  // silently substitute unrelated products.
+  if (candidates.length === 0) return [];
 
   const scored = candidates.map((product) => scoreProduct(product, input));
 

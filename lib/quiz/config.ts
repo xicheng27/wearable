@@ -358,9 +358,55 @@ export const shoppingOptions = [
   "Need discreet / privacy-friendly design",
 ];
 
+/* --------------------------- Example need chips --------------------------- */
+
+/**
+ * One-tap examples on the conversational first screen. Each chip pre-fills
+ * the matching functional need (and clothing type when it implies one), so
+ * shoppers can start from a familiar phrase instead of a blank form.
+ */
+export interface ExampleChip {
+  label: string;
+  set: Record<string, string[]>;
+}
+
+export const exampleChips: ExampleChip[] = [
+  {
+    label: "Seated-fit pants",
+    set: { help: ["Seated or wheelchair comfort"], clothing: ["Bottoms"] },
+  },
+  {
+    label: "Easy shoes",
+    set: { help: ["Easier dressing"], clothing: ["Footwear"] },
+  },
+  {
+    label: "Sensory-friendly tops",
+    set: { help: ["Sensory or skin comfort"], clothing: ["Tops"] },
+  },
+  {
+    label: "Caregiver-assisted dressing",
+    set: { help: ["Caregiver-assisted dressing"] },
+  },
+  {
+    label: "One-handed dressing",
+    set: { help: ["One-handed dressing"] },
+  },
+];
+
 /* ------------------------------- Steps ----------------------------------- */
 
-export type StepType = "single" | "multi" | "bodymap" | "country";
+export type StepType = "single" | "multi" | "bodymap" | "country" | "grouped";
+
+/** A labelled option group inside a grouped step (keeps screens compact). */
+export interface StepGroup {
+  key: string;
+  title: string;
+  subtitle?: string;
+  options: string[];
+  single?: boolean;
+  /** Hide this group when its trigger answers aren't present. */
+  active?: (a: Answers) => boolean;
+}
 
 export interface Step {
   id: string;
@@ -368,7 +414,13 @@ export interface Step {
   subtitle: string;
   type: StepType;
   options?: string[];
+  /** Labelled sections for "grouped" steps. */
+  groups?: StepGroup[];
   optional?: boolean;
+  /** Show the optional free-text box on this step. */
+  freeText?: boolean;
+  /** Show the one-tap example chips on this step. */
+  showExampleChips?: boolean;
   /** Whether this step should be shown given current answers (skip logic). */
   active: (a: Answers) => boolean;
 }
@@ -396,44 +448,57 @@ const footwearActive = (a: Answers) =>
   (a.clothing ?? []).some((c) => c.includes("Footwear")) ||
   (a.bodyIssues ?? []).some((id) => ISSUE_ZONE[id] === "feet");
 
+// The flow is deliberately compact: 6 core screens plus up to 5 follow-up
+// screens that only appear when the shopper's own answers make them relevant
+// (progressive disclosure). Worst case is 11 screens; a typical path is 7–8.
 export const steps: Step[] = [
   {
-    id: "who",
-    title: "Who are we helping today?",
-    subtitle: "We tailor fit and tone to the person who'll wear the clothing.",
-    type: "single",
-    options: whoOptions.map((o) => o.value),
+    id: "help",
+    title: "Tell us what clothing needs to do.",
+    subtitle:
+      "Pick what matters, tap an example, or describe it in your own words — you never need to share a diagnosis.",
+    type: "multi",
+    options: helpOptions.map((o) => o.value),
+    freeText: true,
+    showExampleChips: true,
     active: () => true,
   },
   {
-    id: "country",
-    title: "Confirm your shopping region",
+    id: "whoWhere",
+    title: "Who is this for, and where do you shop?",
     subtitle:
-      "We'll use this for availability, shipping, currency and recommendation ranking.",
-    type: "country",
-    options: countryOptions,
+      "We tailor fit and tone to the wearer, and use your region for availability, shipping and currency.",
+    type: "grouped",
+    groups: [
+      {
+        key: "who",
+        title: "Who will wear the clothing?",
+        options: whoOptions.map((o) => o.value),
+        single: true,
+      },
+      {
+        key: "country",
+        title: "Your shopping region",
+        options: countryOptions,
+        single: true,
+      },
+    ],
     active: () => true,
   },
   {
     id: "clothing",
     title: "What clothing are you looking for?",
-    subtitle: "Pick anything that applies — this shapes the rest of the questions.",
+    subtitle:
+      "Pick anything that applies — results stay strictly within what you choose here.",
     type: "multi",
     options: clothingOptions,
     active: () => true,
   },
   {
-    id: "help",
-    title: "What should the clothing help with?",
-    subtitle: "Choose all that matter. This is the heart of your adaptive profile.",
-    type: "multi",
-    options: helpOptions.map((o) => o.value),
-    active: () => true,
-  },
-  {
     id: "bodymap",
     title: "Tap where clothing needs to work better.",
-    subtitle: "Select a body area, then the issues that fit. The model highlights as you go.",
+    subtitle:
+      "Optional — select a body area, then the issues that fit. The model highlights as you go.",
     type: "bodymap",
     optional: true,
     active: () => true,
@@ -449,79 +514,91 @@ export const steps: Step[] = [
       (a.bodyIssues ?? []).some((id) => ["hi-rise", "hi-pull", "hi-fit", "hi-pressure", "wa-seated"].includes(id)),
   },
   {
-    id: "closures",
-    title: "Which closures are easiest for you?",
-    subtitle: "These become strong signals for dressing independence.",
-    type: "multi",
-    options: closureOptions,
+    id: "dressing",
+    title: "How should dressing work?",
+    subtitle: "These become strong signals for dressing independence and access.",
+    type: "grouped",
+    groups: [
+      {
+        key: "closures",
+        title: "Which closures are easiest?",
+        options: closureOptions,
+      },
+      {
+        key: "dressingIndependence",
+        title: "How does dressing usually happen?",
+        subtitle: "This tells us whether to prioritise self-dressing or caregiver access.",
+        options: dressingIndependenceOptions,
+        single: true,
+      },
+      {
+        key: "dressingExtra",
+        title: "Anything else about dressing? (optional)",
+        options: dressingExtraOptions,
+      },
+    ],
     active: dressingActive,
   },
   {
-    id: "dressingIndependence",
-    title: "How does dressing usually happen?",
-    subtitle: "This tells us whether to prioritise self-dressing or caregiver access.",
-    type: "single",
-    options: dressingIndependenceOptions,
-    active: dressingActive,
-  },
-  {
-    id: "dressingExtra",
-    title: "Anything else about dressing?",
-    subtitle: "Optional — pick what's true for you.",
-    type: "multi",
-    optional: true,
-    options: dressingExtraOptions,
-    active: dressingActive,
-  },
-  {
-    id: "sensoryAvoid",
-    title: "What should clothing avoid?",
-    subtitle: "We'll steer away from these against the skin.",
-    type: "multi",
-    options: sensoryAvoidOptions,
+    id: "sensory",
+    title: "What should fabric avoid — and feel like?",
+    subtitle: "We'll steer away from irritants and lean toward fabrics that feel right.",
+    type: "grouped",
+    groups: [
+      {
+        key: "sensoryAvoid",
+        title: "Clothing should avoid",
+        options: sensoryAvoidOptions,
+      },
+      {
+        key: "fabricFeel",
+        title: "Preferred fabric feel",
+        options: fabricFeelOptions,
+      },
+    ],
     active: sensoryActive,
   },
   {
-    id: "fabricFeel",
-    title: "What fabric feel do you prefer?",
-    subtitle: "We'll lean toward fabrics that feel right.",
-    type: "multi",
-    options: fabricFeelOptions,
-    active: sensoryActive,
-  },
-  {
-    id: "medicalArea",
-    title: "Which area needs access?",
-    subtitle: "This stays private and is only used to find the right openings.",
-    type: "multi",
+    id: "medical",
+    title: "Where does clothing need to give access?",
+    subtitle:
+      "This stays private and is only used to find the right openings. Skip anything you'd rather not share.",
+    type: "grouped",
     optional: true,
-    options: medicalAreaOptions,
+    groups: [
+      {
+        key: "medicalArea",
+        title: "Which area needs access?",
+        options: medicalAreaOptions,
+      },
+      {
+        key: "medicalAccess",
+        title: "What type of access matters?",
+        options: medicalAccessOptions,
+      },
+    ],
     active: medicalActive,
   },
   {
-    id: "medicalAccess",
-    title: "What type of access matters?",
-    subtitle: "Choose what's relevant. You can skip anything you'd rather not share.",
-    type: "multi",
-    optional: true,
-    options: medicalAccessOptions,
-    active: medicalActive,
-  },
-  {
-    id: "brace",
-    title: "What needs extra space?",
-    subtitle: "We'll make room for supports and accommodate swelling.",
-    type: "multi",
-    options: braceOptions,
-    active: braceActive,
-  },
-  {
-    id: "footwear",
-    title: "Preferred footwear features",
-    subtitle: "We'll match closures and openings to how your feet move.",
-    type: "multi",
-    options: footwearOptions,
-    active: footwearActive,
+    id: "support",
+    title: "Braces, supports and footwear",
+    subtitle: "We'll make room for supports and match closures to how your feet move.",
+    type: "grouped",
+    groups: [
+      {
+        key: "brace",
+        title: "What needs extra space?",
+        options: braceOptions,
+        active: braceActive,
+      },
+      {
+        key: "footwear",
+        title: "Preferred footwear features",
+        options: footwearOptions,
+        active: footwearActive,
+      },
+    ],
+    active: (a) => braceActive(a) || footwearActive(a),
   },
   {
     id: "style",
@@ -533,29 +610,26 @@ export const steps: Step[] = [
     active: () => true,
   },
   {
-    id: "range",
-    title: "Which clothing range should we prioritise?",
-    subtitle: "A recommendation filter for sizing and ranking — not an identity judgement. Functional needs still come first.",
-    type: "single",
-    optional: true,
-    options: rangeOptions,
-    active: () => true,
-  },
-  {
-    id: "budget",
-    title: "What budget should we keep in mind?",
-    subtitle: "Prices change on official sites, so this is a guide for ranking.",
-    type: "single",
-    options: budgetOptions,
-    active: () => true,
-  },
-  {
-    id: "shopping",
-    title: "Any shopping preferences?",
-    subtitle: "These fine-tune ranking — they won't repeat your country choice.",
-    type: "multi",
-    optional: true,
-    options: shoppingOptions,
+    id: "rangeBudget",
+    title: "Clothing range and budget",
+    subtitle:
+      "A recommendation filter for sizing and ranking — not an identity judgement. Functional needs still come first.",
+    type: "grouped",
+    groups: [
+      {
+        key: "range",
+        title: "Which clothing range should we prioritise?",
+        options: rangeOptions,
+        single: true,
+      },
+      {
+        key: "budget",
+        title: "What budget should we keep in mind?",
+        subtitle: "Prices change on official sites, so this is a guide for ranking.",
+        options: budgetOptions,
+        single: true,
+      },
+    ],
     active: () => true,
   },
 ];
@@ -588,11 +662,11 @@ export function modelState(a: Answers, currentStepId: string): QuizModelState {
   });
 
   // emphasise the zone tied to the current step
-  if (currentStepId === "brace" || currentStepId === "footwear") {
+  if (currentStepId === "support") {
     zones.add("feet");
     zones.add("legs");
   }
-  if (currentStepId === "medicalArea" || currentStepId === "medicalAccess") {
+  if (currentStepId === "medical") {
     (a.medicalArea ?? []).forEach((m) => {
       const map: Record<string, BodyZone> = {
         Chest: "chest",
@@ -604,7 +678,7 @@ export function modelState(a: Answers, currentStepId: string): QuizModelState {
       if (map[m]) zones.add(map[m]);
     });
   }
-  if ((currentStepId === "sensoryAvoid" || currentStepId === "fabricFeel")) {
+  if (currentStepId === "sensory") {
     zones.add("skin");
   }
 

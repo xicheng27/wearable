@@ -145,6 +145,10 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
     | undefined;
   const lifestyleSetting = readValue(searchParams.lifestyleSetting) as LifestyleSetting | undefined;
   const genderRange = readValue(searchParams.genderRange) ?? readValue(searchParams.genderStyle);
+  // Shopping for a child or teen restricts results to kids/teen items only.
+  const childrenTeen =
+    readValue(searchParams.userType) === "child" ||
+    /children|child|teen|kids/i.test(readValue(searchParams.range) ?? "");
   const dressingMethod = readValue(searchParams.dressingMethod) as DressingMethod | undefined;
   const mobilityLevel =
     normalizeMobility(readValue(searchParams.mobilityLevel)) ??
@@ -173,6 +177,7 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
     caregiverInvolvement: deriveCaregiverInvolvement(targetGroup, dressingMethod),
     clothingTypes: clothing.filter((item) => item !== "Not sure"),
     genderRange,
+    childrenTeen,
     limit: 9,
   };
 
@@ -187,6 +192,25 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
   const visibleResults = availabilityFiltered.length > 0 ? availabilityFiltered : allResults;
   const exactMatches = visibleResults.filter((result) => !result.isFallback);
   const fallbackMatches = visibleResults.filter((result) => result.isFallback);
+
+  // Plain-language description of what the strict filters were, so an empty
+  // state can say exactly what is missing instead of showing unrelated items.
+  const strictParts: string[] = [];
+  if (clothing.length > 0) strictParts.push(clothing.join(" / ").toLowerCase());
+  const strictWhere = location ? ` in ${location}` : "";
+  const needHighlights = Array.from(
+    new Set(
+      needs.filter((n) =>
+        /wheelchair|seated|one-handed|sensory|caregiver|orthotic|afo|prosthetic|medical|dexterity/i.test(n)
+      )
+    )
+  ).slice(0, 3);
+  const strictFor = needHighlights.length
+    ? ` for ${needHighlights.join(", ").toLowerCase()} needs`
+    : "";
+  const emptyStateMessage = `We couldn't find exact ${
+    strictParts.length ? strictParts.join(", ") : "clothing"
+  } matches${strictWhere}${strictFor} yet.`;
 
   const nearbyCountries = location
     ? Array.from(new Set([location, ...expandShippingRegions([location])]))
@@ -277,6 +301,52 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
             why it matched.
           </p>
         </div>
+
+        {visibleResults.length === 0 && (
+          <section
+            aria-labelledby="no-matches-heading"
+            className="rounded-3xl border border-amber-200 bg-amber-50/70 px-6 py-10 text-center"
+          >
+            <h2
+              id="no-matches-heading"
+              className="font-display text-2xl font-semibold text-ink"
+            >
+              {emptyStateMessage}
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-ink/70">
+              Rather than show clothing that doesn&apos;t fit what you asked for,
+              we&apos;d suggest broadening one filter and trying again:
+            </p>
+            <ul className="mx-auto mt-4 max-w-md space-y-2 text-left text-sm leading-6 text-ink/75">
+              <li>• Add another clothing type, or choose “Not sure” to see all suitable categories.</li>
+              {location && <li>• Switch your shopping region to Global to include international brands.</li>}
+              <li>• Keep your access needs and relax a style or budget choice instead.</li>
+            </ul>
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Link href="/quiz" className="btn-primary">
+                Adjust my answers
+              </Link>
+              <Link href="/search" className="btn-outline">
+                Browse the catalog
+              </Link>
+            </div>
+          </section>
+        )}
+
+        {exactMatches.length === 0 && fallbackMatches.length > 0 && (
+          <div
+            className="mb-8 rounded-2xl border border-amber-200 bg-amber-50/70 px-5 py-4"
+            role="status"
+          >
+            <p className="text-sm font-bold text-ink">{emptyStateMessage}</p>
+            <p className="mt-1 text-sm leading-6 text-ink/70">
+              Below are the closest alternatives in your selected category and
+              region — each card says exactly which of your needs it does not
+              yet cover. Broadening one filter (clothing type, region, or one
+              need) usually unlocks exact matches.
+            </p>
+          </div>
+        )}
 
         {exactMatches.length > 0 && (
           <section aria-labelledby="exact-matches-heading">

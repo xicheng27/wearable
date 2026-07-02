@@ -19,13 +19,15 @@ import {
   activeSteps,
   bodyZoneGroups,
   buildResultParams,
+  exampleChips,
   helpOptions,
   modelState,
   profileChips,
   NOT_LISTED,
   NOT_LISTED_ISSUE,
   type Answers,
-  type Step,
+  type ExampleChip,
+  type StepGroup,
 } from "@/lib/quiz/config";
 
 /* ------------------------------- Helpers --------------------------------- */
@@ -101,14 +103,14 @@ function OptionCard({
   );
 }
 
-function leadingFor(step: Step, option: string): React.ReactNode {
-  if (step.id === "country") {
+function leadingFor(key: string, option: string): React.ReactNode {
+  if (key === "country") {
     if (option === GLOBAL) return <GlobeGraphic size={34} />;
     if (option === "Other country") return <FlagOther size={34} />;
     const Flag = COUNTRY_FLAGS[option];
     return Flag ? <Flag size={34} /> : <FlagOther size={34} />;
   }
-  if (step.id === "help") {
+  if (key === "help") {
     const meta = helpOptions.find((o) => o.value === option);
     const Icon = meta ? NEED_ICONS[meta.icon] : undefined;
     return Icon ? (
@@ -372,6 +374,27 @@ export default function QuizClient() {
     );
   }
 
+  // One-tap example chips pre-fill the matching answers (and undo them again).
+  function chipApplied(chip: ExampleChip, a: Answers): boolean {
+    return Object.entries(chip.set).every(([key, values]) =>
+      values.every((v) => (a[key] ?? []).includes(v))
+    );
+  }
+
+  function toggleChip(chip: ExampleChip) {
+    setAnswers((prev) => {
+      const on = chipApplied(chip, prev);
+      const next = { ...prev };
+      Object.entries(chip.set).forEach(([key, values]) => {
+        const curr = next[key] ?? [];
+        next[key] = on
+          ? curr.filter((v) => !values.includes(v))
+          : Array.from(new Set([...curr, ...values]));
+      });
+      return next;
+    });
+  }
+
   function goNext() {
     if (isLast) return finish();
     // step id is a non-identifying question key (e.g. "country", "clothing").
@@ -406,12 +429,23 @@ export default function QuizClient() {
     router.push(`/quiz/results?${params.toString()}`);
   }
 
-  const canContinue = current.optional || selected.length > 0 || current.type === "bodymap";
+  const visibleGroups: StepGroup[] =
+    current.type === "grouped"
+      ? (current.groups ?? []).filter((g) => g.active?.(answers) ?? true)
+      : [];
+  const groupSelections = visibleGroups.flatMap((g) => answers[g.key] ?? []);
+  const canContinue =
+    current.optional ||
+    current.type === "bodymap" ||
+    (current.type === "grouped" ? groupSelections.length > 0 : selected.length > 0) ||
+    Boolean(current.freeText && otherNeeds.trim());
   const bodymapZones: BodyZone[] = current.type === "bodymap" ? [focusZone] : [];
   const showCustomField =
     current.type === "bodymap"
       ? (answers.bodyIssues ?? []).includes(NOT_LISTED_ISSUE)
-      : selected.includes(NOT_LISTED);
+      : current.type === "grouped"
+        ? groupSelections.includes(NOT_LISTED)
+        : selected.includes(NOT_LISTED);
 
   return (
     <div className="flex h-full min-h-0 flex-col bg-paper">
@@ -479,12 +513,40 @@ export default function QuizClient() {
             </h1>
             <p className="mt-2 text-base leading-7 text-ink/65">{current.subtitle}</p>
 
-            {current.id === "country" && regionCountry && (
+            {current.id === "whoWhere" && regionCountry && (
               <p className="mt-3 inline-flex items-center gap-2 rounded-full bg-primary-50 px-3 py-1.5 text-sm font-semibold text-primary-800">
                 <span className="h-2 w-2 rounded-full bg-primary-600" aria-hidden="true" />
                 Using your site setting:{" "}
                 {regionCountry === GLOBAL ? "Global" : regionCountry}
               </p>
+            )}
+
+            {current.showExampleChips && (
+              <div className="mt-4">
+                <p className="text-xs font-bold uppercase tracking-wider text-ink/50">
+                  Quick examples
+                </p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {exampleChips.map((chip) => {
+                    const on = chipApplied(chip, answers);
+                    return (
+                      <button
+                        key={chip.label}
+                        type="button"
+                        onClick={() => toggleChip(chip)}
+                        aria-pressed={on}
+                        className={`min-h-10 rounded-full border px-3.5 py-1.5 text-sm font-semibold transition ${
+                          on
+                            ? "border-primary-700 bg-primary-700 text-white"
+                            : "border-ink/15 bg-paper text-ink/70 hover:border-primary-300 hover:bg-sand/30"
+                        }`}
+                      >
+                        {chip.label}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
             )}
 
             <div className="mt-5">
@@ -495,6 +557,41 @@ export default function QuizClient() {
                   setFocusZone={setFocusZone}
                   toggleIssue={toggleIssue}
                 />
+              ) : current.type === "grouped" ? (
+                <div className="grid gap-8">
+                  {visibleGroups.map((group) => (
+                    <fieldset key={group.key}>
+                      <legend className="text-base font-bold text-ink">
+                        {group.title}
+                      </legend>
+                      {group.subtitle && (
+                        <p className="mt-1 text-sm leading-6 text-ink/60">
+                          {group.subtitle}
+                        </p>
+                      )}
+                      <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                        {group.options.map((option) => (
+                          <OptionCard
+                            key={option}
+                            label={option === GLOBAL ? "View globally available items" : option}
+                            multi={!group.single}
+                            selected={
+                              group.key === "country"
+                                ? regionToOption(answers.country?.[0] ?? null) === option
+                                : (answers[group.key] ?? []).includes(option)
+                            }
+                            onClick={() =>
+                              group.key === "country"
+                                ? chooseRegion(option)
+                                : toggle(group.key, option, Boolean(group.single))
+                            }
+                            leading={leadingFor(group.key, option)}
+                          />
+                        ))}
+                      </div>
+                    </fieldset>
+                  ))}
+                </div>
               ) : (
                 <div className="grid gap-3 sm:grid-cols-2">
                   {(current.options ?? []).map((option) => (
@@ -502,17 +599,9 @@ export default function QuizClient() {
                       key={option}
                       label={option === GLOBAL ? "View globally available items" : option}
                       multi={current.type === "multi"}
-                      selected={
-                        current.id === "country"
-                          ? regionToOption(answers.country?.[0] ?? null) === option
-                          : selected.includes(option)
-                      }
-                      onClick={() =>
-                        current.id === "country"
-                          ? chooseRegion(option)
-                          : toggle(current.id, option, current.type !== "multi")
-                      }
-                      leading={leadingFor(current, option)}
+                      selected={selected.includes(option)}
+                      onClick={() => toggle(current.id, option, current.type !== "multi")}
+                      leading={leadingFor(current.id, option)}
                     />
                   ))}
                 </div>
@@ -539,16 +628,16 @@ export default function QuizClient() {
               </div>
             )}
 
-            {isLast && (
+            {current.freeText && (
               <div className="mt-6">
                 <label htmlFor="other-needs" className="text-sm font-bold text-ink">
-                  Anything we missed? (optional)
+                  Or describe it in your own words (optional)
                 </label>
                 <textarea
                   id="other-needs"
                   value={otherNeeds}
                   onChange={(e) => setOtherNeeds(e.target.value)}
-                  placeholder="In your own words — e.g. tops that are easy to change while lying down."
+                  placeholder="For example: tops that are easy to change while lying down, or pants that don't press when seated."
                   className="mt-2 min-h-24 w-full rounded-2xl border border-ink/15 bg-paper px-4 py-3 text-base leading-7 text-ink outline-none transition focus:border-primary-600 focus:ring-4 focus:ring-primary-100"
                 />
               </div>
