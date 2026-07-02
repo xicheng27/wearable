@@ -227,8 +227,10 @@ export interface RecommendationInput {
   lifestyleSetting?: LifestyleSetting;
   caregiverInvolvement?: CaregiverInvolvement;
   clothingTypes?: string[];
-  /** Preferred clothing range for ranking: womenswear | menswear | gender_neutral. */
+  /** Strict clothing range filter: womenswear | menswear | gender_neutral. */
   genderRange?: string;
+  /** Strict: shopping for a child or teen — only kids/teen items may be shown. */
+  childrenTeen?: boolean;
   limit?: number;
 }
 
