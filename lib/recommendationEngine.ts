@@ -3,7 +3,9 @@ import { expandShippingRegions, GLOBAL } from "@/lib/countries";
 import { resolvePriceStatus } from "@/lib/pricingProvider";
 import type {
   AdaptiveClothingProfile,
+  ConfidenceLevel,
   Product,
+  ProductNeedsEvaluation,
   RecommendationInput,
   RecommendationResult,
 } from "@/types";
@@ -61,6 +63,29 @@ function searchableText(product: Product): string {
     ...product.disabilityNeeds,
     ...product.bestFor,
     ...product.styleTags,
+  ]
+    .join(" ")
+    .toLowerCase();
+}
+
+/**
+ * Only the product's STRUCTURED adaptive data — listed features, stated
+ * needs and fit fields — with free-form marketing description excluded.
+ * A hard requirement satisfied against this text counts as explicit
+ * evidence; one satisfied only against the full text is inferred, which
+ * lowers confidence and adds a "check before buying" note.
+ */
+function structuredText(product: Product): string {
+  return [
+    product.clothingType,
+    product.category,
+    ...product.adaptiveFeatures,
+    ...product.disabilityNeeds,
+    ...product.bestFor,
+    ...(product.closureTypes ?? []),
+    ...(product.mobilityNeeds ?? []),
+    ...(product.sensoryNeeds ?? []),
+    ...(product.careEase ?? []),
   ]
     .join(" ")
     .toLowerCase();
@@ -254,7 +279,9 @@ const HARD_REQUIREMENTS: HardRequirement[] = [
     id: "closure",
     label: "Your preferred closure type",
     reason: "has the closure type you prefer",
-    active: (i) => (i.closurePreference ?? []).some((c) => !/no preference/i.test(c)),
+    // Active only when a *recognized* closure type was chosen — auto-added
+    // feature hints must not activate an unsatisfiable requirement.
+    active: (i) => recognizedClosurePrefs(i.closurePreference ?? []).length > 0,
     // satisfied is computed specially via closureSatisfied().
     satisfied: () => true,
   },
@@ -268,9 +295,22 @@ const CLOSURE_KEYWORDS: { test: RegExp; pattern: RegExp }[] = [
   { test: /slip-on|slip on|no fastening/i, pattern: /slip-on|slip on|pull-on|pull on|elastic|hands-free/ },
 ];
 
+/**
+ * Only preferences that name a real closure type participate in the closure
+ * hard requirement. The quiz auto-adds feature hints ("Open-back design",
+ * "Medical port or tube access") to the same list; those are enforced by the
+ * caregiver/medical hard requirements — treating them as closures would make
+ * this requirement unsatisfiable and hide every product.
+ */
+function recognizedClosurePrefs(closurePreference: string[]): string[] {
+  return closurePreference.filter(
+    (c) => !/no preference/i.test(c) && CLOSURE_KEYWORDS.some((entry) => entry.test.test(c))
+  );
+}
+
 /** Does the product offer at least one of the shopper's preferred closures? */
 function closureSatisfied(blob: string, closurePreference: string[]): boolean {
-  const wanted = closurePreference.filter((c) => !/no preference/i.test(c));
+  const wanted = recognizedClosurePrefs(closurePreference);
   if (wanted.length === 0) return true;
   return wanted.some((pref) =>
     CLOSURE_KEYWORDS.some((entry) => entry.test.test(pref) && entry.pattern.test(blob))
@@ -294,6 +334,169 @@ function isHardRequirementSatisfied(
   if (requirement.id === "country") return shipsToLocation(product, input.location);
   if (requirement.id === "closure") return closureSatisfied(blob, input.closurePreference ?? []);
   return requirement.satisfied(product, blob);
+}
+
+// =========================================================================
+// CONFIDENCE — how verifiable a match is, separate from the match itself
+// =========================================================================
+
+interface ConfidenceInfo {
+  level: ConfidenceLevel;
+  notes: string[];
+}
+
+/**
+ * high  = every active need confirmed by explicit product data AND clear
+ *         availability AND an exact product link.
+ * medium= matches, but some evidence was inferred from description text or
+ *         some data (price, exact link) is incomplete.
+ * low   = misses a need, or availability in the shopper's country can't be
+ *         shown.
+ */
+function confidenceFor(opts: {
+  activeCount: number;
+  inferredLabels: string[];
+  unmetCount: number;
+  ships: boolean;
+  hasLocation: boolean;
+  exactLink: boolean;
+  priceKnown: boolean;
+}): ConfidenceInfo {
+  const notes: string[] = [];
+
+  if (opts.unmetCount > 0) {
+    notes.push("Doesn't meet every need you selected — shown only as a closest alternative.");
+    return { level: "low", notes };
+  }
+  if (opts.hasLocation && !opts.ships) {
+    notes.push("Availability in your selected country isn't listed.");
+    return { level: "low", notes };
+  }
+
+  if (opts.inferredLabels.length > 0) {
+    notes.push(
+      `${opts.inferredLabels.slice(0, 2).join(" and ")} ${
+        opts.inferredLabels.length === 1 ? "was" : "were"
+      } inferred from the product description rather than listed features.`
+    );
+  }
+  if (!opts.exactLink) {
+    notes.push("Links to the brand's page rather than the exact product.");
+  }
+  if (!opts.priceKnown) {
+    notes.push("Price isn't verified.");
+  }
+
+  if (opts.activeCount === 0) {
+    notes.unshift(
+      "No access needs selected — confidence reflects how complete the product data is."
+    );
+    return { level: "medium", notes };
+  }
+
+  if (opts.inferredLabels.length === 0 && opts.exactLink) {
+    notes.unshift("Every need you selected is confirmed by the brand's listed features.");
+    return { level: "high", notes };
+  }
+  return { level: "medium", notes };
+}
+
+/** Honest pre-purchase checks: fit, shipping, returns, missing data. Max 4. */
+function buildCheckBeforeBuying(opts: {
+  product: Product;
+  inferredLabels: string[];
+  ships: boolean;
+  hasLocation: boolean;
+  location?: string;
+  priceKnown: boolean;
+  exactLink: boolean;
+}): string[] {
+  const checks: string[] = [];
+  const shipsTo = getProductShipsTo(opts.product);
+  const shipsOnlyViaGlobal =
+    opts.hasLocation &&
+    opts.ships &&
+    shipsTo.includes(GLOBAL) &&
+    !expandShippingRegions([opts.location!]).some((c) => shipsTo.includes(c));
+
+  opts.inferredLabels.slice(0, 2).forEach((label) => {
+    checks.push(
+      `"${label}" was inferred from the description — confirm it with the brand before buying.`
+    );
+  });
+  if (!opts.exactLink) {
+    checks.push("The link opens the brand's page, not this exact item — confirm it there.");
+  }
+  if (!opts.priceKnown) {
+    checks.push("No verified price on file — check the official site for current pricing.");
+  }
+  if (opts.hasLocation && !opts.ships) {
+    checks.push(`Shipping to ${opts.location} isn't listed — check delivery options first.`);
+  } else if (shipsOnlyViaGlobal) {
+    checks.push(
+      `Ships internationally — confirm delivery to ${opts.location}, costs and duties.`
+    );
+  }
+  checks.push("Check the size guide and the brand's return policy before ordering.");
+  return checks.slice(0, 4);
+}
+
+/**
+ * Evaluate one product against a shopper's needs (e.g. their Adaptive Fit
+ * Passport) outside the quiz-results flow — used by the browse-page passport
+ * filter and the saved-items list. Category, clothing range and location are
+ * included as hard requirements, exactly like the quiz results.
+ */
+export function evaluateProductForInput(
+  product: Product,
+  input: RecommendationInput
+): ProductNeedsEvaluation {
+  const blob = searchableText(product);
+  const structured = structuredText(product);
+  const activeHard = HARD_REQUIREMENTS.filter((req) => req.active(input));
+
+  const unmetNeeds: string[] = [];
+  const inferredLabels: string[] = [];
+  activeHard.forEach((req) => {
+    if (!isHardRequirementSatisfied(req, product, blob, input)) {
+      unmetNeeds.push(req.label);
+    } else if (
+      req.id !== "country" &&
+      !(req.id === "closure"
+        ? closureSatisfied(structured, input.closurePreference ?? [])
+        : req.satisfied(product, structured))
+    ) {
+      inferredLabels.push(req.label);
+    }
+  });
+
+  const selectedCats = (input.clothingTypes ?? []).filter((c) => c && !/not sure/i.test(c));
+  const matchesCategory =
+    selectedCats.length === 0 || productInSelectedCategories(product, selectedCats);
+  const matchesRange = productMatchesGenderRange(product, input.genderRange, input.childrenTeen);
+  const ships = shipsToLocation(product, input.location);
+
+  if (!matchesCategory) unmetNeeds.push("Your selected clothing type");
+  if (!matchesRange) unmetNeeds.push("Your clothing range");
+
+  const confidence = confidenceFor({
+    activeCount: activeHard.length,
+    inferredLabels,
+    unmetCount: unmetNeeds.length,
+    ships,
+    hasLocation: Boolean(input.location),
+    exactLink: product.linkType === "exact-product",
+    priceKnown: resolvePriceStatus(product) === "known",
+  });
+
+  return {
+    meetsAllNeeds: unmetNeeds.length === 0,
+    unmetNeeds,
+    confidence: confidence.level,
+    matchesCategory,
+    matchesRange,
+    shipsToSelectedLocation: ships,
+  };
 }
 
 // =========================================================================
@@ -554,11 +757,13 @@ function buildExplanation(
  */
 function scoreProduct(product: Product, input: RecommendationInput): ScoredProduct {
   const blob = searchableText(product);
+  const structured = structuredText(product);
   const activeHard = HARD_REQUIREMENTS.filter((req) => req.active(input));
 
   const satisfiedLabels: string[] = [];
   const satisfiedReasons: string[] = [];
   const unmetLabels: string[] = [];
+  const inferredLabels: string[] = [];
   let hardSatisfiedCount = 0;
 
   activeHard.forEach((req) => {
@@ -567,6 +772,13 @@ function scoreProduct(product: Product, input: RecommendationInput): ScoredProdu
       if (req.id !== "country") {
         satisfiedLabels.push(req.label);
         satisfiedReasons.push(req.reason);
+        // Satisfied against structured data => explicit; only against the
+        // free-form description => inferred (lower confidence, extra check).
+        const explicit =
+          req.id === "closure"
+            ? closureSatisfied(structured, input.closurePreference ?? [])
+            : req.satisfied(product, structured);
+        if (!explicit) inferredLabels.push(req.label);
       }
     } else {
       unmetLabels.push(req.label);
@@ -580,6 +792,27 @@ function scoreProduct(product: Product, input: RecommendationInput): ScoredProdu
       ? `Available in ${input.location}`
       : `Ships outside ${input.location}`
     : undefined;
+
+  const exactLink = product.linkType === "exact-product";
+  const priceKnown = resolvePriceStatus(product) === "known";
+  const confidence = confidenceFor({
+    activeCount: activeHard.length,
+    inferredLabels,
+    unmetCount: unmetLabels.length,
+    ships,
+    hasLocation: Boolean(input.location),
+    exactLink,
+    priceKnown,
+  });
+  const checkBeforeBuying = buildCheckBeforeBuying({
+    product,
+    inferredLabels,
+    ships,
+    hasLocation: Boolean(input.location),
+    location: input.location,
+    priceKnown,
+    exactLink,
+  });
 
   // Soft preferences only contribute to ranking, never inclusion.
   const soft = scoreSoftPreferences(product, input);
@@ -623,6 +856,9 @@ function scoreProduct(product: Product, input: RecommendationInput): ScoredProdu
       priceStatus: resolvePriceStatus(product),
       explanation,
       availabilityLabel,
+      confidence: confidence.level,
+      confidenceNotes: confidence.notes,
+      checkBeforeBuying,
     },
   };
 }

@@ -867,6 +867,10 @@ export function buildResultParams(
   if (di.includes("caregiver")) p.set("dressingMethod", "fully_caregiver");
   else if (di.includes("some help")) p.set("dressingMethod", "occasional_help");
   else if (di.includes("independently")) p.set("dressingMethod", "independent");
+  // Picking "Caregiver-assisted dressing" as a need must activate the
+  // caregiver hard requirement even if the how-dressing-happens follow-up
+  // was skipped.
+  else if (hasHelp(a, "Caregiver")) p.set("dressingMethod", "caregiver_often");
 
   // mobility
   if (

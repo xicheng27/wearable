@@ -46,6 +46,33 @@ export type ProductAvailability = {
   note: string;
 };
 
+// --- Community verification (future-ready structure) -----------------------
+
+/**
+ * Tags wearers and caregivers will be able to confirm on a product once
+ * community reporting ships. The data structure exists now so products and
+ * the UI are ready; no reports are fabricated in the meantime.
+ */
+export type CommunityVerificationTag =
+  | "worked-for-wheelchair"
+  | "easy-one-handed"
+  | "caregiver-friendly"
+  | "sensory-friendly"
+  | "afo-orthotic-friendly"
+  | "ships-as-listed"
+  | "size-runs-small"
+  | "size-runs-large"
+  | "not-actually-adaptive"
+  | "returns-easy"
+  | "returns-difficult";
+
+export interface CommunityVerificationReport {
+  tag: CommunityVerificationTag;
+  /** Number of wearers/caregivers who confirmed this. */
+  count: number;
+  lastReportedAt?: string;
+}
+
 export interface Product {
   id: string;
   name: string;
@@ -101,6 +128,8 @@ export interface Product {
   productUrl: string;
   linkType: "exact-product" | "brand-page-only";
   sourceVerifiedAt?: string;
+  /** Community fit reports (empty until community verification ships). */
+  communityVerifications?: CommunityVerificationReport[];
 }
 
 // --- User profile / target group segmentation ---
@@ -210,6 +239,40 @@ export interface AdaptiveClothingProfile {
 
 export type PriceStatus = "known" | "unknown";
 
+/**
+ * How sure we are that a product really meets the shopper's needs, separate
+ * from whether it matched:
+ *  - high: every active need is confirmed by explicit product data (tags,
+ *    flags, listed features) and availability is clear
+ *  - medium: it matches, but some evidence was inferred from descriptions
+ *    or some information (price, exact link) is incomplete
+ *  - low: it misses a need, or key details can't be verified
+ */
+export type ConfidenceLevel = "high" | "medium" | "low";
+
+// --- Adaptive Fit Passport --------------------------------------------------
+
+/**
+ * The reusable profile a shopper builds once (via the quiz) and uses across
+ * the whole site — results, browsing, saved items and future updates.
+ *
+ * The raw quiz answers are the single source of truth; everything shown in
+ * the passport UI and every recommendation input is derived from them, so
+ * editing the passport is editing the answers (no retake needed). Stored
+ * only on the shopper's device.
+ */
+export interface AdaptiveFitPassport {
+  version: 1;
+  createdAt: string;
+  updatedAt: string;
+  /** Raw quiz answers keyed by question (who, country, clothing, help, ...). */
+  answers: Record<string, string[]>;
+  /** Free-text description of needs from the first quiz screen. */
+  otherNeeds?: string;
+  /** Free-text "not listed" need. */
+  customNeed?: string;
+}
+
 /** Strict operational input to the adaptive recommendation engine. */
 export interface RecommendationInput {
   targetGroup?: TargetGroup;
@@ -255,6 +318,24 @@ export interface RecommendationResult {
   explanation: string;
   /** Country availability label (e.g. "Available in Singapore"). */
   availabilityLabel?: string;
+  /** How verifiable the match is (explicit data vs inferred from text). */
+  confidence: ConfidenceLevel;
+  /** Plain-language notes explaining the confidence level. */
+  confidenceNotes: string[];
+  /** Honest pre-purchase checks: fit, shipping, returns, missing data. */
+  checkBeforeBuying: string[];
+}
+
+/** A single product evaluated against a passport/input outside the quiz flow. */
+export interface ProductNeedsEvaluation {
+  /** True when every active hard requirement (incl. category/range/location) passes. */
+  meetsAllNeeds: boolean;
+  /** Hard requirements the product does not meet. */
+  unmetNeeds: string[];
+  confidence: ConfidenceLevel;
+  matchesCategory: boolean;
+  matchesRange: boolean;
+  shipsToSelectedLocation: boolean;
 }
 
 export interface ProductSearchParams {

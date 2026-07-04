@@ -8,6 +8,7 @@ import CountryProvider from "@/components/CountryProvider";
 import CountryPicker from "@/components/CountryPicker";
 import DisclaimerFooter from "@/components/DisclaimerFooter";
 import UserProfileProvider from "@/components/UserProfileProvider";
+import PassportProvider from "@/components/PassportProvider";
 import SavedItemsProvider from "@/components/SavedItemsProvider";
 import { siteConfig } from "@/lib/siteConfig";
 
@@ -84,11 +85,13 @@ export default function RootLayout({
         <CurrencyProvider>
           <CountryProvider>
             <UserProfileProvider>
-              <SavedItemsProvider>
-                <SiteChrome>{children}</SiteChrome>
-                <CountryPicker />
-                <DisclaimerFooter />
-              </SavedItemsProvider>
+              <PassportProvider>
+                <SavedItemsProvider>
+                  <SiteChrome>{children}</SiteChrome>
+                  <CountryPicker />
+                  <DisclaimerFooter />
+                </SavedItemsProvider>
+              </PassportProvider>
             </UserProfileProvider>
           </CountryProvider>
         </CurrencyProvider>

@@ -6,6 +6,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { LogoMark } from "@/components/Logo";
 import { trackEvent } from "@/lib/analytics";
 import { useCountry } from "@/components/CountryProvider";
+import { usePassport } from "@/components/PassportProvider";
 import { useUserProfile } from "@/components/UserProfileProvider";
 import { GLOBAL } from "@/lib/countries";
 import BodyModel, { type BodyZone } from "@/components/quiz/BodyModel";
@@ -313,6 +314,7 @@ function ModelPanel({
 export default function QuizClient() {
   const router = useRouter();
   const { setProfile } = useUserProfile();
+  const { savePassport } = usePassport();
   const { country: regionCountry, setCountry, openPicker } = useCountry();
 
   const [answers, setAnswers] = useState<Answers>({});
@@ -425,6 +427,10 @@ export default function QuizClient() {
       bodyNeeds: answers.help,
       stylePreference: answers.style,
     });
+
+    // The answers become the shopper's reusable Adaptive Fit Passport,
+    // stored on this device and reused across results, browse and saved.
+    savePassport(answers, otherNeeds, customNeed);
 
     router.push(`/quiz/results?${params.toString()}`);
   }

@@ -1,12 +1,19 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import SearchBar from "@/components/SearchBar";
 import SearchFilters from "@/components/SearchFilters";
 import ProductCard from "@/components/ProductCard";
-import MatchBadges from "@/components/MatchBadges";
+import MatchBadges, { ConfidenceBadge } from "@/components/MatchBadges";
 import CountrySelector from "@/components/CountrySelector";
+import {
+  PASSPORT_FILTER_STORAGE_KEY,
+  usePassport,
+} from "@/components/PassportProvider";
+import { passportMustHaves, passportToRecommendationInput } from "@/lib/passport";
+import { evaluateProductForInput } from "@/lib/recommendationEngine";
 import {
   searchProducts,
   filterProductsByCountry,
@@ -15,6 +22,7 @@ import {
 import { useCountry } from "@/components/CountryProvider";
 import { GLOBAL } from "@/lib/countries";
 import { trackEvent } from "@/lib/analytics";
+import type { ProductNeedsEvaluation } from "@/types";
 
 // Filter keys that represent real access / functional needs (not taste or
 // availability). searchProducts is a strict AND filter, so every result meets
@@ -63,13 +71,27 @@ export default function SearchResults({
 }) {
   const router = useRouter();
   const { country, setCountry } = useCountry();
+  const { passport, hydrated: passportHydrated } = usePassport();
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [mounted, setMounted] = useState(false);
+  const [passportOn, setPassportOn] = useState(false);
   const drawerRef = useRef<HTMLDivElement>(null);
   const filtersButtonRef = useRef<HTMLButtonElement>(null);
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    setMounted(true);
+    setPassportOn(window.localStorage.getItem(PASSPORT_FILTER_STORAGE_KEY) === "1");
+  }, []);
+
+  function togglePassportFilter() {
+    setPassportOn((on) => {
+      const next = !on;
+      window.localStorage.setItem(PASSPORT_FILTER_STORAGE_KEY, next ? "1" : "0");
+      trackEvent("passport_filter_toggled", { on: next });
+      return next;
+    });
+  }
 
   const query = params.q ?? "";
 
@@ -126,8 +148,45 @@ export default function SearchResults({
   const hasNeeds = needsCovered.length > 0;
 
   const isDefaultView = activeFilters.length === 0 && !query;
-  const results =
+  const baseResults =
     isDefaultView && mounted ? diversifyProducts(countryFiltered) : countryFiltered;
+
+  // "Use my passport to filter products": every item is evaluated against the
+  // Adaptive Fit Passport's hard requirements (category, range, location and
+  // access needs). Items that fail are hidden — never silently mixed in.
+  const passportActive = mounted && passportHydrated && passportOn && Boolean(passport);
+  const passportInput = useMemo(
+    () => (passport ? passportToRecommendationInput(passport) : null),
+    [passport]
+  );
+  const passportMust = useMemo(
+    () => (passport ? passportMustHaves(passport) : []),
+    [passport]
+  );
+  // Evaluating the whole result set is regex-heavy, so only recompute when
+  // the inputs that shape baseResults (params, country, mount) or the
+  // passport change — not on unrelated re-renders like "Load more" clicks.
+  const paramsKey = JSON.stringify(params);
+  const passportEvaluations = useMemo<Map<string, ProductNeedsEvaluation> | null>(
+    () => {
+      if (!passportActive || !passportInput) return null;
+      return new Map(
+        baseResults.map((product) => [
+          product.id,
+          evaluateProductForInput(product, passportInput),
+        ])
+      );
+    },
+    // baseResults is rebuilt each render but derives solely from these deps.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [passportActive, passportInput, paramsKey, country, mounted]
+  );
+  const results = passportEvaluations
+    ? baseResults.filter(
+        (product) => passportEvaluations.get(product.id)?.meetsAllNeeds
+      )
+    : baseResults;
+  const hiddenByPassport = baseResults.length - results.length;
   const visibleResults = results.slice(0, visibleCount);
 
   function buildHref(next: URLSearchParams) {
@@ -270,14 +329,104 @@ export default function SearchResults({
               </div>
             </div>
 
-            {results.length > 0 && hasNeeds && (
+            {/* Adaptive Fit Passport filter */}
+            {mounted && passportHydrated && (
+              <div className="mb-6 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-primary-200 bg-paper px-4 py-3 sm:px-5">
+                {passport ? (
+                  <>
+                    <button
+                      type="button"
+                      role="switch"
+                      aria-checked={passportOn}
+                      onClick={togglePassportFilter}
+                      className="inline-flex min-h-11 items-center gap-3 rounded-xl px-1 py-1 text-left text-sm font-bold text-ink focus:outline-none focus-visible:ring-4 focus-visible:ring-primary-200"
+                    >
+                      <span
+                        aria-hidden="true"
+                        className={`relative inline-flex h-7 w-12 flex-shrink-0 items-center rounded-full border transition-colors ${
+                          passportOn
+                            ? "border-primary-700 bg-primary-700"
+                            : "border-ink/25 bg-ink/15"
+                        }`}
+                      >
+                        <span
+                          className={`absolute h-5 w-5 rounded-full bg-white shadow transition-all ${
+                            passportOn ? "left-6" : "left-1"
+                          }`}
+                        />
+                      </span>
+                      Use my passport to filter products
+                      <span className="font-normal text-ink/55">
+                        {passportOn ? "(on)" : "(off)"}
+                      </span>
+                    </button>
+                    <Link
+                      href="/passport"
+                      className="link-underline text-sm font-semibold text-primary-800"
+                    >
+                      View / edit passport
+                    </Link>
+                  </>
+                ) : (
+                  <p className="text-sm leading-6 text-ink/70">
+                    Take the{" "}
+                    <Link
+                      href="/quiz"
+                      className="font-bold text-primary-800 underline underline-offset-2"
+                    >
+                      short quiz
+                    </Link>{" "}
+                    to create an Adaptive Fit Passport, then filter everything
+                    here by your real needs.
+                  </p>
+                )}
+              </div>
+            )}
+
+            {passportActive && results.length > 0 && passportMust.length > 0 && (
+              <div className="mb-6 rounded-2xl border border-primary-200 bg-primary-50/60 px-5 py-4" role="status">
+                <p className="text-sm font-bold text-primary-900">
+                  Filtered by your Adaptive Fit Passport — {results.length} of{" "}
+                  {baseResults.length} items meet your must-haves
+                  {hiddenByPassport > 0 ? ` (${hiddenByPassport} hidden)` : ""}.
+                </p>
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  {passportMust.map((item) => (
+                    <span
+                      key={item}
+                      className="inline-flex items-center gap-1 rounded-full bg-primary-700 px-2.5 py-1 text-xs font-bold text-white"
+                    >
+                      <span aria-hidden="true">✓</span>
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+            {passportActive && passportMust.length === 0 && (
+              <div className="mb-6 rounded-2xl border border-ink/15 bg-paper px-5 py-4" role="status">
+                <p className="text-sm leading-6 text-ink/70">
+                  Your passport doesn&apos;t have any must-have requirements
+                  yet, so nothing is filtered out.{" "}
+                  <Link
+                    href="/passport"
+                    className="font-bold text-primary-800 underline underline-offset-2"
+                  >
+                    Add needs to your passport
+                  </Link>{" "}
+                  to narrow this list to items that truly fit.
+                </p>
+              </div>
+            )}
+
+            {results.length > 0 && hasNeeds && !passportActive && (
               <div className="mb-6 rounded-2xl border border-primary-200 bg-primary-50/60 px-5 py-4">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-primary-700 px-3 py-1 text-xs font-bold text-white">
                     <span aria-hidden="true">✓</span>Exact matches
                   </span>
                   <span className="rounded-full border border-primary-200 bg-paper px-2.5 py-1 text-xs font-bold text-primary-800">
-                    Constraint coverage 100%
+                    Needs matched 100%
                   </span>
                 </div>
                 <p className="mt-2 max-w-3xl text-sm leading-6 text-ink/70">
@@ -309,7 +458,31 @@ export default function SearchResults({
               </p>
             )}
 
-            {results.length === 0 && hiddenByLocation ? (
+            {passportActive && results.length === 0 && baseResults.length > 0 ? (
+              <div className="rounded-2xl border border-amber-200 bg-amber-50/60 px-6 py-16 text-center">
+                <h2 className="text-xl font-bold text-ink">
+                  None of these {baseResults.length} items meet your
+                  passport&apos;s must-haves.
+                </h2>
+                <p className="mx-auto mt-2 max-w-xl text-ink/65">
+                  Rather than show items that don&apos;t fit your needs, we hid
+                  them. Broaden one requirement in your passport, or turn the
+                  passport filter off to see everything.
+                </p>
+                <div className="mt-6 flex flex-wrap justify-center gap-3">
+                  <button
+                    type="button"
+                    onClick={togglePassportFilter}
+                    className="btn-primary"
+                  >
+                    Turn passport filter off
+                  </button>
+                  <Link href="/passport" className="btn-secondary">
+                    Edit my passport
+                  </Link>
+                </div>
+              </div>
+            ) : results.length === 0 && hiddenByLocation ? (
               <div className="rounded-2xl border border-ink/10 bg-paper px-6 py-20 text-center">
                 <h2 className="text-xl font-bold text-ink">
                   No products currently available for your location.
@@ -343,8 +516,25 @@ export default function SearchResults({
               </div>
             ) : (
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
-                {visibleResults.map((product) =>
-                  hasNeeds ? (
+                {visibleResults.map((product) => {
+                  // With no must-haves there is nothing to vet, so per-card
+                  // "meets your passport" badges would be empty reassurance.
+                  const evaluation =
+                    passportMust.length > 0
+                      ? passportEvaluations?.get(product.id)
+                      : undefined;
+                  return evaluation ? (
+                    <div key={product.id} className="flex flex-col">
+                      <div className="mb-2 flex flex-wrap items-center gap-2">
+                        <span className="inline-flex items-center gap-1.5 rounded-full bg-primary-700 px-3 py-1 text-xs font-bold text-white">
+                          <span aria-hidden="true">✓</span>
+                          Meets your passport
+                        </span>
+                        <ConfidenceBadge level={evaluation.confidence} />
+                      </div>
+                      <ProductCard product={product} />
+                    </div>
+                  ) : hasNeeds ? (
                     <div key={product.id} className="flex flex-col">
                       <MatchBadges
                         isFallback={false}
@@ -355,8 +545,8 @@ export default function SearchResults({
                     </div>
                   ) : (
                     <ProductCard key={product.id} product={product} />
-                  )
-                )}
+                  );
+                })}
               </div>
             )}
             {visibleCount < results.length && (

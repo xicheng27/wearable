@@ -11,6 +11,7 @@ import { trackEvent } from "@/lib/analytics";
 
 const navItems = [
   { href: "/search", label: "Browse clothing" },
+  { href: "/passport", label: "My passport" },
   { href: "/singapore", label: "Singapore guide" },
   { href: "/map", label: "Global map" },
   { href: "/saved", label: "Saved" },
