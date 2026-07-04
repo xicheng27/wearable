@@ -28,8 +28,14 @@ export const metadata = {
 export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) {
   // Shared parsing with the Adaptive Fit Passport, so a passport-generated
   // results link and a fresh quiz submission are interpreted identically.
-  const { input, needs, clothing, availability, otherNeeds, location } =
+  const { input, needs, clothing, styles, availability, otherNeeds, location } =
     parseResultParams(searchParams);
+
+  // Whether the shopper is buying for someone else / with caregiver support —
+  // wording below must not assume the reader is the wearer.
+  const caregiverAssisted = input.caregiverInvolvement === "caregiver-assisted";
+  const shoppingForSomeoneElse =
+    input.targetGroup === "caregiver" || input.targetGroup === "elderly";
 
   const profiles = classifyAdaptiveProfiles(input);
   const summary = buildMatchSummary(input);
@@ -61,6 +67,29 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
   const emptyStateMessage = `We couldn't find exact ${
     strictParts.length ? strictParts.join(", ") : "clothing"
   } matches${strictWhere}${strictFor} yet.`;
+
+  // The shopper's active constraints, shown as chips so it's obvious every
+  // answer is being respected.
+  const rangeLabel =
+    input.childrenTeen
+      ? "Kids / teen"
+      : input.genderRange === "womenswear"
+        ? "Womenswear"
+        : input.genderRange === "menswear"
+          ? "Menswear"
+          : input.genderRange === "gender_neutral"
+            ? "Gender-neutral"
+            : undefined;
+  const activeConstraints = Array.from(
+    new Set([
+      ...(location ? [location] : []),
+      ...clothing,
+      ...needHighlights,
+      ...(rangeLabel ? [rangeLabel] : []),
+      ...styles.slice(0, 2),
+      ...(input.budget ? [input.budget] : []),
+    ])
+  );
 
   const nearbyCountries = location
     ? Array.from(new Set([location, ...expandShippingRegions([location])]))
@@ -97,6 +126,34 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
               ))}
             </div>
           )}
+          {activeConstraints.length > 0 && (
+            <div className="mt-5 max-w-4xl rounded-2xl border border-ink/10 bg-ivory/70 px-4 py-3">
+              <p className="text-xs font-bold uppercase tracking-wider text-ink/55">
+                Showing matches for
+              </p>
+              <ul className="mt-1.5 flex flex-wrap items-center gap-x-1.5 gap-y-1.5">
+                {activeConstraints.map((constraint, index) => (
+                  <li key={constraint} className="flex items-center gap-1.5">
+                    {index > 0 && (
+                      <span aria-hidden="true" className="text-ink/30">
+                        ·
+                      </span>
+                    )}
+                    <span className="rounded-full border border-primary-200 bg-paper px-2.5 py-1 text-sm font-semibold text-primary-900">
+                      {constraint}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {(caregiverAssisted || shoppingForSomeoneElse) && (
+            <p className="mt-4 max-w-3xl rounded-2xl border border-primary-100 bg-primary-50/50 px-4 py-3 text-sm leading-6 text-ink/75">
+              {caregiverAssisted
+                ? "These picks prioritise assisted dressing — open backs, side openings and simpler fastenings — and the notes below are written for the wearer and whoever helps them dress."
+                : "You're shopping for someone else, so the fit and comfort notes below are about the wearer, not the person reading this."}
+            </p>
+          )}
           <p className="mt-3 text-xs text-ink/50">
             We group your self-selected answers into shopping categories only. This
             is not a medical assessment or diagnosis.
@@ -131,14 +188,30 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
         <SignalMap data={signalMap} />
 
         <div className="mt-6 rounded-2xl border border-primary-200 bg-primary-50/60 px-5 py-4 sm:px-6">
-          <p className="text-sm font-bold text-primary-900">
-            How your matches are chosen
-          </p>
+          <p className="text-sm font-bold text-primary-900">How we ranked these</p>
           <p className="mt-1 max-w-3xl text-sm leading-6 text-ink/70">
-            Your functional needs are protected first. Style, budget, and
-            preferences are used after that to rank the best options — they never
-            override an access need.
+            Your selected clothing category comes first, then your accessibility
+            needs, then availability in your country — those are strict filters.
+            Only after they pass do fit and comfort, clothing range, style and
+            budget refine the order, followed by brand variety and how complete
+            each product&apos;s data is. Accessibility always outranks style.
           </p>
+          <ol className="mt-2 flex max-w-3xl flex-wrap gap-x-3 gap-y-1 text-xs font-semibold text-primary-800/80">
+            {[
+              "Clothing category",
+              "Accessibility needs",
+              "Country availability",
+              "Fit & comfort",
+              "Clothing range",
+              "Style & budget",
+              "Brand variety",
+              "Data confidence",
+            ].map((step, index) => (
+              <li key={step}>
+                {index + 1}. {step}
+              </li>
+            ))}
+          </ol>
         </div>
 
         <div className="mt-12 mb-6 max-w-3xl">
@@ -218,12 +291,13 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
                 id="closest-alternatives-heading"
                 className="font-display text-2xl font-semibold text-ink"
               >
-                Closest alternatives
+                Partial matches &amp; closest alternatives
               </h2>
               <p className="mt-2 text-sm leading-6 text-ink/68">
                 We did not have enough pieces that meet every one of your needs,
-                so these are the nearest options. Each card shows clearly what it
-                does and does not cover.
+                so these are the nearest options — partial matches still cover
+                most of your needs; closest alternatives cover fewer. Each card
+                states exactly what it does and does not cover.
               </p>
             </div>
             <RecommendationsGrid recommendations={fallbackMatches} />

@@ -275,6 +275,17 @@ export type PriceStatus = "known" | "unknown";
  */
 export type ConfidenceLevel = "high" | "medium" | "low";
 
+/**
+ * Honest match-quality tiers:
+ *  - exact:  category, location/shipping and every selected accessibility
+ *            need pass, plus the shopper's style/budget preferences
+ *  - strong: every hard requirement passes, but a minor preference
+ *            (style or budget) isn't met
+ *  - partial: right category and ships, but only some accessibility needs
+ *  - alternative: closest available option when nothing better exists
+ */
+export type MatchQuality = "exact" | "strong" | "partial" | "alternative";
+
 // --- Adaptive Fit Passport --------------------------------------------------
 
 /**
@@ -352,6 +363,8 @@ export interface RecommendationResult {
   explanation: string;
   /** Country availability label (e.g. "Available in Singapore"). */
   availabilityLabel?: string;
+  /** Honest match tier: exact | strong | partial | alternative. */
+  matchQuality: MatchQuality;
   /** How verifiable the match is (explicit data vs inferred from text). */
   confidence: ConfidenceLevel;
   /** Plain-language notes explaining the confidence level. */

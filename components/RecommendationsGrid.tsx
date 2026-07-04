@@ -99,6 +99,7 @@ function MatchDetail({
   isFallback,
   explanation,
   availabilityLabel,
+  matchQuality,
   confidence,
   confidenceNotes,
   checkBeforeBuying,
@@ -141,7 +142,14 @@ function MatchDetail({
         isFallback={Boolean(isFallback)}
         coverage={coverage}
         confidence={confidence}
+        quality={matchQuality}
       />
+      {matchQuality === "strong" && (
+        <p className="mt-2 text-xs leading-5 text-ink/60">
+          Meets every access need you selected — it just misses a minor style
+          or budget preference.
+        </p>
+      )}
       {confidence && confidenceNotes && confidenceNotes.length > 0 && (
         <p className="mt-2 text-xs leading-5 text-ink/60">{confidenceNotes[0]}</p>
       )}
