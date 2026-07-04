@@ -4,6 +4,7 @@ import { resolvePriceStatus } from "@/lib/pricingProvider";
 import type {
   AdaptiveClothingProfile,
   ConfidenceLevel,
+  MatchQuality,
   Product,
   ProductNeedsEvaluation,
   RecommendationInput,
@@ -419,15 +420,42 @@ function confidenceFor(opts: {
   return { level: "medium", notes };
 }
 
-/** Honest pre-purchase checks: fit, shipping, returns, missing data. Max 4. */
+/**
+ * Personal, need-specific pre-purchase advice keyed by active hard
+ * requirement — adaptive clothing is sensitive, so the check list speaks to
+ * the shopper's own situation, not generic shopping tips.
+ */
+const NEED_SPECIFIC_CHECKS: Record<string, string> = {
+  "wheelchair-seated":
+    "Check the waistband and seat feel comfortable when sitting for long periods.",
+  "afo-orthotic":
+    "Check the depth, opening width and whether the insole is removable for your AFO or orthotic.",
+  sensory:
+    "Check the fabric composition, seam placement, labels and elastic tightness against your sensitivities.",
+  "limited-hand-mobility":
+    "Check whether the fasteners can be managed with limited grip or one hand.",
+  "one-handed": "Check whether the fasteners can be managed one-handed.",
+  "caregiver-assisted":
+    "Check the opening direction and access points work for assisted dressing.",
+  "medical-access":
+    "Check the access opening position and size match what you need.",
+  "posture-fit": "Check the cut supports your posture without pressure points.",
+};
+
+const MAGNET_CAUTION =
+  "Magnetic closures may not be suitable with some medical devices (like pacemakers) — check with a healthcare professional or the manufacturer if unsure.";
+
+/** Honest pre-purchase checks: personal fit risks first, then data gaps. Max 5. */
 function buildCheckBeforeBuying(opts: {
   product: Product;
   inferredLabels: string[];
+  activeRequirementIds: string[];
   ships: boolean;
   hasLocation: boolean;
   location?: string;
   priceKnown: boolean;
   exactLink: boolean;
+  blob: string;
 }): string[] {
   const checks: string[] = [];
   const shipsTo = getProductShipsTo(opts.product);
@@ -437,7 +465,19 @@ function buildCheckBeforeBuying(opts: {
     shipsTo.includes(GLOBAL) &&
     !expandShippingRegions([opts.location!]).some((c) => shipsTo.includes(c));
 
-  opts.inferredLabels.slice(0, 2).forEach((label) => {
+  // Safety first: magnet caution whenever the item uses magnetic closures.
+  if (/magnetic/.test(opts.blob)) {
+    checks.push(MAGNET_CAUTION);
+  }
+
+  // Advice specific to the shopper's own selected needs (max 2).
+  opts.activeRequirementIds
+    .map((id) => NEED_SPECIFIC_CHECKS[id])
+    .filter(Boolean)
+    .slice(0, 2)
+    .forEach((advice) => checks.push(advice));
+
+  opts.inferredLabels.slice(0, 1).forEach((label) => {
     checks.push(
       `"${label}" was inferred from the description — confirm it with the brand before buying.`
     );
@@ -461,7 +501,7 @@ function buildCheckBeforeBuying(opts: {
       ? `Returns: ${opts.product.returnsNote}`
       : "Check the size guide and the brand's return policy before ordering."
   );
-  return checks.slice(0, 4);
+  return checks.slice(0, 5);
 }
 
 /**
@@ -566,6 +606,8 @@ interface SoftScore {
   score: number;
   reasons: string[];
   preferencesSatisfied: string[];
+  /** Selected minor preferences (style/budget) this product does NOT meet. */
+  missedPreferences: string[];
 }
 
 /**
@@ -576,20 +618,28 @@ interface SoftScore {
 function scoreSoftPreferences(product: Product, input: RecommendationInput): SoftScore {
   const reasons: string[] = [];
   const preferencesSatisfied: string[] = [];
+  const missedPreferences: string[] = [];
   let score = 0;
 
+  let styleMatched = (input.styles ?? []).length === 0;
   (input.styles ?? []).forEach((style) => {
     if (product.styleTags.some((tag) => matches(tag, style))) {
       score += 3;
+      styleMatched = true;
       preferencesSatisfied.push(style);
       reasons.push(`matches your ${style.toLowerCase()} style`);
     }
   });
+  if (!styleMatched) missedPreferences.push("your preferred style");
 
-  if (input.budget && budgetMatches(product.priceRange, input.budget)) {
-    score += 2;
-    preferencesSatisfied.push(input.budget);
-    reasons.push(`fits your ${input.budget.toLowerCase()} budget`);
+  if (input.budget) {
+    if (budgetMatches(product.priceRange, input.budget)) {
+      score += 2;
+      preferencesSatisfied.push(input.budget);
+      reasons.push(`fits your ${input.budget.toLowerCase()} budget`);
+    } else {
+      missedPreferences.push(`your ${input.budget.toLowerCase()} budget`);
+    }
   }
 
   // Clothing range is enforced as a STRICT pre-filter before scoring (see
@@ -623,7 +673,12 @@ function scoreSoftPreferences(product: Product, input: RecommendationInput): Sof
   // Prefer items with a verified exact-product link as a final tiebreak.
   if (product.linkType === "exact-product") score += 0.5;
 
-  return { score, reasons, preferencesSatisfied: Array.from(new Set(preferencesSatisfied)) };
+  return {
+    score,
+    reasons,
+    preferencesSatisfied: Array.from(new Set(preferencesSatisfied)),
+    missedPreferences,
+  };
 }
 
 // --- Self-selected adaptive clothing profiles (non-medical) ---------------
@@ -858,11 +913,13 @@ function scoreProduct(product: Product, input: RecommendationInput): ScoredProdu
   const checkBeforeBuying = buildCheckBeforeBuying({
     product,
     inferredLabels,
+    activeRequirementIds: activeHard.map((req) => req.id),
     ships,
     hasLocation: Boolean(input.location),
     location: input.location,
     priceKnown,
     exactLink,
+    blob,
   });
 
   // Soft preferences only contribute to ranking, never inclusion.
@@ -882,6 +939,17 @@ function scoreProduct(product: Product, input: RecommendationInput): ScoredProdu
   // Hard requirements dominate the score so exact matches always outrank
   // partial ones; soft points only break ties within a tier.
   const score = hardSatisfiedCount * 10 + soft.score + openEndedScore;
+
+  // Honest match tier. Every hard requirement passing makes it exact, unless
+  // a selected minor preference (style/budget) is missed — then it's strong.
+  // Items that fail hard requirements are tiered later (partial/alternative)
+  // by recommendAdaptiveProducts, which knows how many functional needs the
+  // shopper set overall.
+  const matchQuality: MatchQuality = isExactMatch
+    ? soft.missedPreferences.length > 0
+      ? "strong"
+      : "exact"
+    : "alternative";
 
   const explanation = buildExplanation(
     satisfiedReasons,
@@ -907,12 +975,15 @@ function scoreProduct(product: Product, input: RecommendationInput): ScoredProdu
       priceStatus: resolvePriceStatus(product),
       explanation,
       availabilityLabel,
+      matchQuality,
       confidence: confidence.level,
       confidenceNotes: confidence.notes,
       checkBeforeBuying,
     },
   };
 }
+
+const CONFIDENCE_RANK: Record<ConfidenceLevel, number> = { high: 2, medium: 1, low: 0 };
 
 function sortByQuality(a: ScoredProduct, b: ScoredProduct): number {
   if (a.result.shipsToLocation !== b.result.shipsToLocation) {
@@ -922,10 +993,42 @@ function sortByQuality(a: ScoredProduct, b: ScoredProduct): number {
     return b.hardSatisfiedCount - a.hardSatisfiedCount;
   }
   if (b.result.score !== a.result.score) return b.result.score - a.result.score;
+  // Weaker evidence sinks: low-confidence items rank below equally-matched
+  // high-confidence ones, never above.
+  if (CONFIDENCE_RANK[b.result.confidence] !== CONFIDENCE_RANK[a.result.confidence]) {
+    return CONFIDENCE_RANK[b.result.confidence] - CONFIDENCE_RANK[a.result.confidence];
+  }
   return (
     Number(b.result.product.linkType === "exact-product") -
     Number(a.result.product.linkType === "exact-product")
   );
+}
+
+/**
+ * Brand variety WITHOUT sacrificing accuracy: within a list that has already
+ * been ranked (and whose items are equivalent on hard requirements), avoid
+ * runs of 3+ items from one brand by pulling the next different-brand item
+ * forward. Items never move across need/shipping tiers — only within them.
+ */
+function interleaveBrands(list: ScoredProduct[]): ScoredProduct[] {
+  const pool = [...list];
+  const out: ScoredProduct[] = [];
+  while (pool.length > 0) {
+    let pick = 0;
+    const lastBrand = out[out.length - 1]?.result.product.brandId;
+    const prevBrand = out[out.length - 2]?.result.product.brandId;
+    if (lastBrand && lastBrand === prevBrand) {
+      const sameTier = (candidate: ScoredProduct) =>
+        candidate.hardSatisfiedCount === pool[0].hardSatisfiedCount &&
+        candidate.result.shipsToLocation === pool[0].result.shipsToLocation;
+      const alt = pool.findIndex(
+        (candidate) => candidate.result.product.brandId !== lastBrand && sameTier(candidate)
+      );
+      if (alt > 0) pick = alt;
+    }
+    out.push(pool.splice(pick, 1)[0]);
+  }
+  return out;
 }
 
 /**
@@ -1086,7 +1189,9 @@ export function recommendAdaptiveProducts(input: RecommendationInput): Recommend
   const scored = candidates.map((product) => scoreProduct(product, input));
 
   // 1. HARD FILTER: keep only products that satisfy every active requirement.
-  const exact = scored.filter((s) => s.isExactMatch).sort(sortByQuality);
+  // Brand variety is applied last, and only within equivalent tiers, so it
+  // can never outrank an accessibility need.
+  const exact = interleaveBrands(scored.filter((s) => s.isExactMatch).sort(sortByQuality));
 
   if (exact.length >= limit) {
     return exact.slice(0, limit).map((s) => s.result);
@@ -1094,35 +1199,49 @@ export function recommendAdaptiveProducts(input: RecommendationInput): Recommend
 
   // 2. FALLBACK: not enough exact matches — fill the rest with the closest
   // partial matches, ranked by how many hard requirements they still meet.
+  // "Partial match" = ships and still meets at least half of the selected
+  // functional needs; anything weaker is only a "closest alternative".
+  const activeFunctionalCount = HARD_REQUIREMENTS.filter(
+    (req) => req.active(input) && req.id !== "country"
+  ).length;
   const exactIds = new Set(exact.map((s) => s.result.product.id));
-  const fallback = scored
-    .filter((s) => !exactIds.has(s.result.product.id))
-    .sort(sortByQuality)
-    .slice(0, Math.max(0, limit - exact.length))
-    .map((s) => {
-      const blob = searchableText(s.result.product);
-      const unmetNeeds = HARD_REQUIREMENTS.filter(
-        (req) =>
-          req.active(input) &&
-          req.id !== "country" &&
-          !isHardRequirementSatisfied(req, s.result.product, blob, input)
-      ).map((req) => req.label);
-      return {
-        ...s,
-        result: {
-          ...s.result,
-          isFallback: true,
+  const fallback = interleaveBrands(
+    scored
+      .filter((s) => !exactIds.has(s.result.product.id))
+      .sort(sortByQuality)
+      .slice(0, Math.max(0, limit - exact.length))
+  ).map((s) => {
+    const blob = searchableText(s.result.product);
+    const unmetNeeds = HARD_REQUIREMENTS.filter(
+      (req) =>
+        req.active(input) &&
+        req.id !== "country" &&
+        !isHardRequirementSatisfied(req, s.result.product, blob, input)
+    ).map((req) => req.label);
+    const satisfiedFunctional = activeFunctionalCount - unmetNeeds.length;
+    const matchQuality: MatchQuality =
+      s.result.shipsToLocation &&
+      unmetNeeds.length > 0 &&
+      satisfiedFunctional >= unmetNeeds.length
+        ? "partial"
+        : "alternative";
+    return {
+      ...s,
+      result: {
+        ...s.result,
+        isFallback: true,
+        unmetNeeds,
+        matchQuality,
+        explanation: buildExplanation(
+          s.result.reasons,
+          [],
+          s.result.availabilityLabel,
           unmetNeeds,
-          explanation: buildExplanation(
-            s.result.reasons,
-            [],
-            s.result.availabilityLabel,
-            unmetNeeds,
-            s.result.product
-          ),
-        },
-      };
-    });
+          s.result.product
+        ),
+      },
+    };
+  });
 
   return [...exact, ...fallback].map((s) => s.result);
 }

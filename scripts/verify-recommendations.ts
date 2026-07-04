@@ -494,6 +494,107 @@ console.log("\n16. Named helper API agrees with the engine");
   }
 }
 
+console.log("\n17. Match-quality tiers are honest");
+{
+  const results = recommendAdaptiveProducts({
+    location: "Singapore",
+    mobilityLevel: "wheelchair-or-seated",
+    needs: ["Wheelchair or seated comfort"],
+    clothingTypes: ["Pants"],
+    budget: "Under $50",
+    styles: ["Formal"],
+    limit: 9,
+  });
+  const exactTier = exact(results);
+  check(
+    "non-fallbacks are only exact or strong",
+    exactTier.every((r) => r.matchQuality === "exact" || r.matchQuality === "strong")
+  );
+  check(
+    "strong appears only when a style/budget preference is missed",
+    exactTier
+      .filter((r) => r.matchQuality === "strong")
+      .every(
+        (r) =>
+          !(r.preferencesSatisfied.includes("Under $50") &&
+            r.preferencesSatisfied.includes("Formal"))
+      )
+  );
+  const fallbacks = results.filter((r) => r.isFallback);
+  check(
+    "fallbacks are only partial or alternative",
+    fallbacks.every((r) => r.matchQuality === "partial" || r.matchQuality === "alternative")
+  );
+  check(
+    "partial matches always ship to the selected country",
+    fallbacks.filter((r) => r.matchQuality === "partial").every((r) => r.shipsToLocation)
+  );
+}
+
+console.log("\n18. Brand variety without sacrificing needs");
+{
+  const results = recommendAdaptiveProducts({
+    location: "United States",
+    clothingTypes: ["Tops"],
+    needs: ["Limited dexterity"],
+    limit: 9,
+  });
+  const exactTier = exact(results);
+  let maxRun = 1;
+  let run = 1;
+  for (let i = 1; i < exactTier.length; i++) {
+    run = exactTier[i].product.brandId === exactTier[i - 1].product.brandId ? run + 1 : 1;
+    maxRun = Math.max(maxRun, run);
+  }
+  check(
+    `no 3+ same-brand run in exact matches (max run: ${maxRun})`,
+    maxRun <= 2 || new Set(exactTier.map((r) => r.product.brandId)).size === 1
+  );
+  const pattern =
+    /magnetic|velcro|hook-and-loop|elastic|pull-on|pull on|slip-on|slip on|easy-grip|easy grip|snap|one-handed|hands-free/;
+  check(
+    "variety never admits an item that misses the dexterity need",
+    exactTier.every((r) => r.product.oneHandedDressing || pattern.test(blob(r.product)))
+  );
+}
+
+console.log("\n19. Need-specific pre-purchase checks & magnet caution");
+{
+  const seated = recommendAdaptiveProducts({
+    mobilityLevel: "wheelchair-or-seated",
+    needs: ["Wheelchair or seated comfort"],
+    clothingTypes: ["Pants"],
+    limit: 9,
+  });
+  check(
+    "wheelchair profiles get seated waistband advice",
+    exact(seated).every((r) =>
+      r.checkBeforeBuying.some((c) => /waistband and seat/i.test(c))
+    )
+  );
+  const afo = recommendAdaptiveProducts({
+    needs: ["Orthotics and AFOs"],
+    clothingTypes: ["Shoes"],
+    limit: 9,
+  });
+  check(
+    "AFO profiles get depth/opening/insole advice",
+    exact(afo).every((r) =>
+      r.checkBeforeBuying.some((c) => /depth, opening width/i.test(c))
+    )
+  );
+  const magneticResults = recommendAdaptiveProducts({
+    closurePreference: ["Magnetic closures"],
+    limit: 9,
+  });
+  check(
+    "magnetic items carry the medical-device caution",
+    exact(magneticResults)
+      .filter((r) => /magnetic/.test(blob(r.product)))
+      .every((r) => r.checkBeforeBuying.some((c) => /Magnetic closures may not be suitable/i.test(c)))
+  );
+}
+
 console.log(
   failures === 0
     ? "\nAll recommendation verification cases passed."
