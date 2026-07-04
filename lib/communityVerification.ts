@@ -43,7 +43,14 @@ export interface VerificationDisplay {
 
 export function communityVerificationsFor(product: Product): VerificationDisplay[] {
   return (product.communityVerifications ?? [])
-    .filter((report): report is CommunityVerificationReport => report.count > 0)
+    .filter(
+      (report): report is CommunityVerificationReport =>
+        report.count > 0 &&
+        // Unmoderated reports never render — absence of the field is treated
+        // as approved only for seed data we authored ourselves.
+        report.moderationStatus !== "pending" &&
+        report.moderationStatus !== "rejected"
+    )
     .map((report) => ({
       tag: report.tag,
       label: COMMUNITY_VERIFICATION_LABELS[report.tag] ?? report.tag,

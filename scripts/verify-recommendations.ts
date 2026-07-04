@@ -25,9 +25,19 @@ import {
 } from "@/lib/recommendationEngine";
 import {
   buildPassport,
+  passportMissingInfo,
   passportMustHaves,
+  passportToMarkdown,
   passportToRecommendationInput,
 } from "@/lib/passport";
+import { buildAvatarAriaLabel } from "@/lib/avatar";
+import {
+  getMissingEvidenceFields,
+  getUnmetHardRequirements,
+  normalizeRequestedCategories,
+  productMatchesRequestedCategory,
+  productMeetsAccessibilityNeeds,
+} from "@/lib/recommendationEngine";
 import type { Product, RecommendationResult } from "@/types";
 
 let failures = 0;
@@ -389,6 +399,97 @@ console.log("\n13. Passport → evaluator agrees with the quiz engine");
       "evaluator rejects a shoe for a pants-only passport",
       !evaluation.meetsAllNeeds &&
         evaluation.unmetNeeds.includes("Your selected clothing type")
+    );
+  }
+}
+
+console.log("\n14. Passport export & missing-info honesty");
+{
+  const passport = buildPassport(
+    {
+      who: ["Myself"],
+      country: ["Singapore"],
+      clothing: ["Bottoms"],
+      help: ["Seated or wheelchair comfort"],
+      range: ["Female"],
+    },
+    "waistbands that don't press"
+  );
+  const md = passportToMarkdown(passport);
+  check("markdown has the passport title", md.includes("# Adaptive Fit Passport"));
+  check("markdown lists must-haves", md.includes("## Must-have requirements"));
+  check("markdown includes fit needs section", md.includes("## Fit needs"));
+  check("markdown includes the free-text need", md.includes("waistbands that don't press"));
+  check(
+    "markdown carries the non-medical, device-only disclaimer",
+    md.includes("not a medical record") && md.includes("own device")
+  );
+  const missing = passportMissingInfo(passport);
+  check(
+    "missing-info names style and budget (unspecified)",
+    missing.includes("Style preference") && missing.includes("Budget")
+  );
+  check(
+    "missing-info omits what was specified",
+    !missing.includes("Shopping region") && !missing.includes("Clothing categories")
+  );
+}
+
+console.log("\n15. Avatar aria-label includes highlighted zones");
+{
+  const label = buildAvatarAriaLabel(["feet", "hands", "hips"], {
+    seated: true,
+    helper: true,
+  });
+  check(
+    "label names feet, hands and the seated area",
+    /feet/.test(label) && /hands/.test(label) && /hips and seated area/.test(label)
+  );
+  check("label declares seated posture", /Seated posture/.test(label));
+  check("label declares caregiver support", /Caregiver support/.test(label));
+  const emptyLabel = buildAvatarAriaLabel([]);
+  check(
+    "empty state is described, not silent",
+    /No areas highlighted yet/.test(emptyLabel)
+  );
+}
+
+console.log("\n16. Named helper API agrees with the engine");
+{
+  const cats = normalizeRequestedCategories(["Shoes", "Not sure, show me suitable options"]);
+  check("normalizeRequestedCategories maps Shoes → footwear", cats.join(",") === "footwear");
+  const input = {
+    location: "Singapore",
+    mobilityLevel: "wheelchair-or-seated" as const,
+    needs: ["Wheelchair or seated comfort"],
+    clothingTypes: ["Pants"],
+    limit: 9,
+  };
+  const results = recommendAdaptiveProducts(input);
+  const exactOnes = exact(results);
+  check(
+    "productMeetsAccessibilityNeeds accepts every engine exact match",
+    exactOnes.every((r) => productMeetsAccessibilityNeeds(r.product, input))
+  );
+  check(
+    "getUnmetHardRequirements is empty for exact matches",
+    exactOnes.every((r) => getUnmetHardRequirements(r.product, input).length === 0)
+  );
+  check(
+    "productMatchesRequestedCategory holds for every result",
+    results.every((r) =>
+      productMatchesRequestedCategory(r.product, normalizeRequestedCategories(["Pants"]))
+    )
+  );
+  const weakProduct = products.find(
+    (p) => p.linkType === "brand-page-only" && !p.sourceVerifiedAt
+  );
+  if (weakProduct) {
+    const evidence = getMissingEvidenceFields(weakProduct, input);
+    check(
+      "missing-evidence names the exact-link and verification gaps",
+      evidence.includes("Exact product link") &&
+        evidence.includes("Recent source verification")
     );
   }
 }

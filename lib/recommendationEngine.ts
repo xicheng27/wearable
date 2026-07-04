@@ -79,6 +79,7 @@ function structuredText(product: Product): string {
   return [
     product.clothingType,
     product.category,
+    product.categoryNormalized ?? "",
     ...product.adaptiveFeatures,
     ...product.disabilityNeeds,
     ...product.bestFor,
@@ -86,6 +87,10 @@ function structuredText(product: Product): string {
     ...(product.mobilityNeeds ?? []),
     ...(product.sensoryNeeds ?? []),
     ...(product.careEase ?? []),
+    ...(product.sensoryAttributes ?? []),
+    ...(product.caregiverFeatures ?? []),
+    ...(product.orthoticCompatibility ?? []),
+    ...(product.medicalAccessZones ?? []),
   ]
     .join(" ")
     .toLowerCase();
@@ -353,6 +358,15 @@ interface ConfidenceInfo {
  * low   = misses a need, or availability in the shopper's country can't be
  *         shown.
  */
+/** Source verification counts as "recent" within this window. */
+const SOURCE_FRESH_MS = 1000 * 60 * 60 * 24 * 365;
+
+function sourceIsStale(product: Product): boolean {
+  if (!product.sourceVerifiedAt) return false; // absent = a note, not a demotion
+  const verified = Date.parse(product.sourceVerifiedAt);
+  return Number.isFinite(verified) && Date.now() - verified > SOURCE_FRESH_MS;
+}
+
 function confidenceFor(opts: {
   activeCount: number;
   inferredLabels: string[];
@@ -361,6 +375,7 @@ function confidenceFor(opts: {
   hasLocation: boolean;
   exactLink: boolean;
   priceKnown: boolean;
+  staleSource?: boolean;
 }): ConfidenceInfo {
   const notes: string[] = [];
 
@@ -386,6 +401,9 @@ function confidenceFor(opts: {
   if (!opts.priceKnown) {
     notes.push("Price isn't verified.");
   }
+  if (opts.staleSource) {
+    notes.push("The source for this item was last verified over a year ago.");
+  }
 
   if (opts.activeCount === 0) {
     notes.unshift(
@@ -394,7 +412,7 @@ function confidenceFor(opts: {
     return { level: "medium", notes };
   }
 
-  if (opts.inferredLabels.length === 0 && opts.exactLink) {
+  if (opts.inferredLabels.length === 0 && opts.exactLink && !opts.staleSource) {
     notes.unshift("Every need you selected is confirmed by the brand's listed features.");
     return { level: "high", notes };
   }
@@ -437,8 +455,39 @@ function buildCheckBeforeBuying(opts: {
       `Ships internationally — confirm delivery to ${opts.location}, costs and duties.`
     );
   }
-  checks.push("Check the size guide and the brand's return policy before ordering.");
+  // Prefer the brand's actual stated return policy when we have it.
+  checks.push(
+    opts.product.returnsNote
+      ? `Returns: ${opts.product.returnsNote}`
+      : "Check the size guide and the brand's return policy before ordering."
+  );
   return checks.slice(0, 4);
+}
+
+/**
+ * Which pieces of evidence are missing or weak for this product against this
+ * shopper's needs — the honest counterpart to the confidence level.
+ */
+export function getMissingEvidenceFields(
+  product: Product,
+  input: RecommendationInput
+): string[] {
+  const blob = searchableText(product);
+  const structured = structuredText(product);
+  const missing: string[] = [];
+
+  HARD_REQUIREMENTS.forEach((req) => {
+    if (req.id === "country" || req.id === "closure") return;
+    if (!req.active(input)) return;
+    if (req.satisfied(product, blob) && !req.satisfied(product, structured)) {
+      missing.push(`${req.label} (inferred from description, not listed features)`);
+    }
+  });
+  if (product.linkType !== "exact-product") missing.push("Exact product link");
+  if (resolvePriceStatus(product) === "unknown") missing.push("Verified price");
+  if (!product.sourceVerifiedAt) missing.push("Recent source verification");
+  if (!product.returnsNote) missing.push("Stated return policy");
+  return missing;
 }
 
 /**
@@ -487,6 +536,7 @@ export function evaluateProductForInput(
     hasLocation: Boolean(input.location),
     exactLink: product.linkType === "exact-product",
     priceKnown: resolvePriceStatus(product) === "known",
+    staleSource: sourceIsStale(product),
   });
 
   return {
@@ -803,6 +853,7 @@ function scoreProduct(product: Product, input: RecommendationInput): ScoredProdu
     hasLocation: Boolean(input.location),
     exactLink,
     priceKnown,
+    staleSource: sourceIsStale(product),
   });
   const checkBeforeBuying = buildCheckBeforeBuying({
     product,
@@ -934,6 +985,10 @@ function productLooksFormal(product: Product): boolean {
  * fallback when the type isn't recognised.
  */
 function productFamilies(product: Product): string[] {
+  // Explicit structured metadata wins over anything derived.
+  if (product.categoryNormalized && CATEGORY_FAMILIES[product.categoryNormalized]) {
+    return [product.categoryNormalized];
+  }
   const byType = Object.keys(CATEGORY_FAMILIES).filter((fam) =>
     CATEGORY_FAMILIES[fam].test(product.clothingType.toLowerCase())
   );
@@ -1070,4 +1125,50 @@ export function recommendAdaptiveProducts(input: RecommendationInput): Recommend
     });
 
   return [...exact, ...fallback].map((s) => s.result);
+}
+
+// =========================================================================
+// Named helper API — stable, self-describing entry points for other
+// surfaces (browse filter, saved items, tests). Thin wrappers over the
+// same logic the quiz engine uses, so no surface can drift.
+// =========================================================================
+
+/** Resolve the shopper's selected clothing terms to canonical family keys. */
+export function normalizeRequestedCategories(clothingTypes?: string[]): string[] {
+  return Array.from(
+    new Set(
+      (clothingTypes ?? [])
+        .filter((c) => c && !/not sure|everyday wear/i.test(c))
+        .map((term) => categoryFamilyFor(term))
+        .filter((fam): fam is string => Boolean(fam))
+    )
+  );
+}
+
+/** STRICT: does the product belong to one of the requested categories? */
+export function productMatchesRequestedCategory(
+  product: Product,
+  requestedCategories: string[]
+): boolean {
+  if (requestedCategories.length === 0) return true;
+  return productFamilies(product).some((fam) => requestedCategories.includes(fam));
+}
+
+/** Does the product satisfy every ACTIVE accessibility/physical hard requirement? */
+export function productMeetsAccessibilityNeeds(
+  product: Product,
+  input: RecommendationInput
+): boolean {
+  return getUnmetHardRequirements(product, input).length === 0;
+}
+
+/** The active hard requirements (incl. country) this product does NOT meet. */
+export function getUnmetHardRequirements(
+  product: Product,
+  input: RecommendationInput
+): string[] {
+  const blob = searchableText(product);
+  return HARD_REQUIREMENTS.filter(
+    (req) => req.active(input) && !isHardRequirementSatisfied(req, product, blob, input)
+  ).map((req) => req.label);
 }
