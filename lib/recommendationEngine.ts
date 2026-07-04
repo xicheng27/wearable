@@ -279,7 +279,9 @@ const HARD_REQUIREMENTS: HardRequirement[] = [
     id: "closure",
     label: "Your preferred closure type",
     reason: "has the closure type you prefer",
-    active: (i) => (i.closurePreference ?? []).some((c) => !/no preference/i.test(c)),
+    // Active only when a *recognized* closure type was chosen — auto-added
+    // feature hints must not activate an unsatisfiable requirement.
+    active: (i) => recognizedClosurePrefs(i.closurePreference ?? []).length > 0,
     // satisfied is computed specially via closureSatisfied().
     satisfied: () => true,
   },
@@ -293,9 +295,22 @@ const CLOSURE_KEYWORDS: { test: RegExp; pattern: RegExp }[] = [
   { test: /slip-on|slip on|no fastening/i, pattern: /slip-on|slip on|pull-on|pull on|elastic|hands-free/ },
 ];
 
+/**
+ * Only preferences that name a real closure type participate in the closure
+ * hard requirement. The quiz auto-adds feature hints ("Open-back design",
+ * "Medical port or tube access") to the same list; those are enforced by the
+ * caregiver/medical hard requirements — treating them as closures would make
+ * this requirement unsatisfiable and hide every product.
+ */
+function recognizedClosurePrefs(closurePreference: string[]): string[] {
+  return closurePreference.filter(
+    (c) => !/no preference/i.test(c) && CLOSURE_KEYWORDS.some((entry) => entry.test.test(c))
+  );
+}
+
 /** Does the product offer at least one of the shopper's preferred closures? */
 function closureSatisfied(blob: string, closurePreference: string[]): boolean {
-  const wanted = closurePreference.filter((c) => !/no preference/i.test(c));
+  const wanted = recognizedClosurePrefs(closurePreference);
   if (wanted.length === 0) return true;
   return wanted.some((pref) =>
     CLOSURE_KEYWORDS.some((entry) => entry.test.test(pref) && entry.pattern.test(blob))

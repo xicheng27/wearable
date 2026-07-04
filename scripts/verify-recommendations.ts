@@ -168,6 +168,36 @@ console.log("\n6. Caregiver-assisted: exact matches must support assisted dressi
   );
 }
 
+console.log(
+  "\n6a. Caregiver profile that skipped the closures question still gets exact matches"
+);
+{
+  // The quiz auto-adds "Open-back design" to closurePreference for caregiver
+  // profiles. It is not a closure type — it must not activate an
+  // unsatisfiable closure requirement that hides every product.
+  const results = recommendAdaptiveProducts({
+    caregiverInvolvement: "caregiver-assisted",
+    closurePreference: ["Open-back design"],
+    limit: 9,
+  });
+  check("exact matches exist", exact(results).length > 0);
+  const closureUnmet = results.some((r) =>
+    r.unmetNeeds.includes("Your preferred closure type")
+  );
+  check("closure requirement is not activated by feature hints", !closureUnmet);
+  // A real closure choice still filters strictly.
+  const magnetic = recommendAdaptiveProducts({
+    closurePreference: ["Magnetic closures"],
+    limit: 9,
+  });
+  const offenders = exact(magnetic).filter((r) => !/magnetic/.test(blob(r.product)));
+  check(
+    "a recognized closure preference still filters strictly",
+    offenders.length === 0,
+    offenders.map((r) => r.product.name).join(", ")
+  );
+}
+
 console.log("\n6b. AFO/orthotic needs: exact matches must accommodate them");
 {
   const results = recommendAdaptiveProducts({
@@ -318,6 +348,14 @@ console.log("\n13. Passport → evaluator agrees with the quiz engine");
   check(
     "passport input keeps caregiver need",
     input.caregiverInvolvement === "caregiver-assisted"
+  );
+
+  // Choosing caregiver-assisted dressing as a need must activate the
+  // caregiver hard requirement even when the follow-up question was skipped.
+  const helpOnly = buildPassport({ help: ["Caregiver-assisted dressing"] });
+  check(
+    "caregiver help selection alone activates the caregiver requirement",
+    passportToRecommendationInput(helpOnly).caregiverInvolvement === "caregiver-assisted"
   );
 
   const must = passportMustHaves(passport);

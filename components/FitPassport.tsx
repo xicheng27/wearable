@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { useCountry } from "@/components/CountryProvider";
 import { usePassport } from "@/components/PassportProvider";
 import {
   passportEditSections,
@@ -116,6 +117,7 @@ function PassportEditor({
 
 export default function FitPassport() {
   const { passport, hydrated, updateAnswers, clearPassport } = usePassport();
+  const { setCountry } = useCountry();
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState<Answers | null>(null);
   const [confirmingReset, setConfirmingReset] = useState(false);
@@ -164,7 +166,13 @@ export default function FitPassport() {
   }
 
   function saveEdits() {
-    if (draft) updateAnswers(draft);
+    if (draft) {
+      updateAnswers(draft);
+      // Keep the shared shopping region in sync (like the quiz does), so
+      // results and browse grids never filter against a stale header country.
+      const country = draft.country?.[0];
+      if (country && country !== "Other country") setCountry(country);
+    }
     setEditing(false);
     setDraft(null);
   }

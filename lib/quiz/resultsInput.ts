@@ -128,7 +128,11 @@ export function parseResultParams(searchParams: SearchParamsRecord): QuizResults
   ];
   const seated = readList(searchParams.seated);
   const needs = normalizeNeeds(rawNeeds, sensory, fastenings, seated, features);
-  const styles = [...readList(searchParams.style), ...readList(searchParams.styles)];
+  // The quiz sets both "style" and "styles" to the same values for backwards
+  // compatibility — dedupe so each style is only scored once.
+  const styles = Array.from(
+    new Set([...readList(searchParams.style), ...readList(searchParams.styles)])
+  );
   const budget = normalizeBudget(readValue(searchParams.budget));
   const clothing = readList(searchParams.clothing);
   const availability = readValue(searchParams.availability) ?? "";

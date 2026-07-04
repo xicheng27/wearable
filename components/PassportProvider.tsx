@@ -32,6 +32,8 @@ type PassportContextValue = {
 
 const PassportContext = createContext<PassportContextValue | null>(null);
 const storageKey = "xis-fit-passport";
+/** Whether the browse page filters by the passport — cleared on reset so a future passport never inherits it silently. */
+export const PASSPORT_FILTER_STORAGE_KEY = "xis-passport-filter";
 
 export default function PassportProvider({ children }: { children: React.ReactNode }) {
   const [passport, setPassport] = useState<AdaptiveFitPassport | null>(null);
@@ -75,6 +77,7 @@ export default function PassportProvider({ children }: { children: React.ReactNo
 
   const clearPassport = useCallback(() => {
     persist(null);
+    window.localStorage.removeItem(PASSPORT_FILTER_STORAGE_KEY);
     trackEvent("passport_reset");
   }, [persist]);
 

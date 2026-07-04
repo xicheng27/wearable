@@ -8,7 +8,10 @@ import SearchFilters from "@/components/SearchFilters";
 import ProductCard from "@/components/ProductCard";
 import MatchBadges, { ConfidenceBadge } from "@/components/MatchBadges";
 import CountrySelector from "@/components/CountrySelector";
-import { usePassport } from "@/components/PassportProvider";
+import {
+  PASSPORT_FILTER_STORAGE_KEY,
+  usePassport,
+} from "@/components/PassportProvider";
 import { passportMustHaves, passportToRecommendationInput } from "@/lib/passport";
 import { evaluateProductForInput } from "@/lib/recommendationEngine";
 import {
@@ -61,8 +64,6 @@ const filterLabels: Record<string, string> = {
 
 const PAGE_SIZE = 48;
 
-const PASSPORT_FILTER_KEY = "xis-passport-filter";
-
 export default function SearchResults({
   params,
 }: {
@@ -80,13 +81,13 @@ export default function SearchResults({
 
   useEffect(() => {
     setMounted(true);
-    setPassportOn(window.localStorage.getItem(PASSPORT_FILTER_KEY) === "1");
+    setPassportOn(window.localStorage.getItem(PASSPORT_FILTER_STORAGE_KEY) === "1");
   }, []);
 
   function togglePassportFilter() {
     setPassportOn((on) => {
       const next = !on;
-      window.localStorage.setItem(PASSPORT_FILTER_KEY, next ? "1" : "0");
+      window.localStorage.setItem(PASSPORT_FILTER_STORAGE_KEY, next ? "1" : "0");
       trackEvent("passport_filter_toggled", { on: next });
       return next;
     });
@@ -162,19 +163,29 @@ export default function SearchResults({
     () => (passport ? passportMustHaves(passport) : []),
     [passport]
   );
-  let passportEvaluations: Map<string, ProductNeedsEvaluation> | null = null;
-  let results = baseResults;
-  if (passportActive && passportInput) {
-    passportEvaluations = new Map(
-      baseResults.map((product) => [
-        product.id,
-        evaluateProductForInput(product, passportInput),
-      ])
-    );
-    results = baseResults.filter(
-      (product) => passportEvaluations!.get(product.id)?.meetsAllNeeds
-    );
-  }
+  // Evaluating the whole result set is regex-heavy, so only recompute when
+  // the inputs that shape baseResults (params, country, mount) or the
+  // passport change — not on unrelated re-renders like "Load more" clicks.
+  const paramsKey = JSON.stringify(params);
+  const passportEvaluations = useMemo<Map<string, ProductNeedsEvaluation> | null>(
+    () => {
+      if (!passportActive || !passportInput) return null;
+      return new Map(
+        baseResults.map((product) => [
+          product.id,
+          evaluateProductForInput(product, passportInput),
+        ])
+      );
+    },
+    // baseResults is rebuilt each render but derives solely from these deps.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [passportActive, passportInput, paramsKey, country, mounted]
+  );
+  const results = passportEvaluations
+    ? baseResults.filter(
+        (product) => passportEvaluations.get(product.id)?.meetsAllNeeds
+      )
+    : baseResults;
   const hiddenByPassport = baseResults.length - results.length;
   const visibleResults = results.slice(0, visibleCount);
 
@@ -372,26 +383,39 @@ export default function SearchResults({
               </div>
             )}
 
-            {passportActive && results.length > 0 && (
+            {passportActive && results.length > 0 && passportMust.length > 0 && (
               <div className="mb-6 rounded-2xl border border-primary-200 bg-primary-50/60 px-5 py-4" role="status">
                 <p className="text-sm font-bold text-primary-900">
                   Filtered by your Adaptive Fit Passport — {results.length} of{" "}
                   {baseResults.length} items meet your must-haves
                   {hiddenByPassport > 0 ? ` (${hiddenByPassport} hidden)` : ""}.
                 </p>
-                {passportMust.length > 0 && (
-                  <div className="mt-2 flex flex-wrap gap-1.5">
-                    {passportMust.map((item) => (
-                      <span
-                        key={item}
-                        className="inline-flex items-center gap-1 rounded-full bg-primary-700 px-2.5 py-1 text-xs font-bold text-white"
-                      >
-                        <span aria-hidden="true">✓</span>
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                )}
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  {passportMust.map((item) => (
+                    <span
+                      key={item}
+                      className="inline-flex items-center gap-1 rounded-full bg-primary-700 px-2.5 py-1 text-xs font-bold text-white"
+                    >
+                      <span aria-hidden="true">✓</span>
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+            {passportActive && passportMust.length === 0 && (
+              <div className="mb-6 rounded-2xl border border-ink/15 bg-paper px-5 py-4" role="status">
+                <p className="text-sm leading-6 text-ink/70">
+                  Your passport doesn&apos;t have any must-have requirements
+                  yet, so nothing is filtered out.{" "}
+                  <Link
+                    href="/passport"
+                    className="font-bold text-primary-800 underline underline-offset-2"
+                  >
+                    Add needs to your passport
+                  </Link>{" "}
+                  to narrow this list to items that truly fit.
+                </p>
               </div>
             )}
 
@@ -493,7 +517,12 @@ export default function SearchResults({
             ) : (
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
                 {visibleResults.map((product) => {
-                  const evaluation = passportEvaluations?.get(product.id);
+                  // With no must-haves there is nothing to vet, so per-card
+                  // "meets your passport" badges would be empty reassurance.
+                  const evaluation =
+                    passportMust.length > 0
+                      ? passportEvaluations?.get(product.id)
+                      : undefined;
                   return evaluation ? (
                     <div key={product.id} className="flex flex-col">
                       <div className="mb-2 flex flex-wrap items-center gap-2">
