@@ -391,6 +391,14 @@ export const exampleChips: ExampleChip[] = [
     label: "One-handed dressing",
     set: { help: ["One-handed dressing"] },
   },
+  {
+    label: "AFO-friendly footwear",
+    set: { help: ["AFO / brace / footwear accommodation"], clothing: ["Footwear"] },
+  },
+  {
+    label: "Post-surgery access",
+    set: { help: ["Medical or body-zone access"] },
+  },
 ];
 
 /* ------------------------------- Steps ----------------------------------- */

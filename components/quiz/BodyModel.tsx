@@ -2,6 +2,7 @@
 
 import { useId } from "react";
 import { COUNTRY_FLAGS, FlagOther, GlobeGraphic } from "@/components/quiz/QuizGraphics";
+import { buildAvatarAriaLabel } from "@/lib/avatar";
 
 /**
  * Pseudo-3D adaptive-clothing avatar. A soft, stylised, inclusive figure
@@ -192,7 +193,7 @@ export default function BodyModel({
       viewBox="0 0 220 348"
       className={`bm-root ${className}`}
       role="img"
-      aria-label="Adaptive clothing avatar that updates with your answers"
+      aria-label={buildAvatarAriaLabel(zones, { seated, helper })}
     >
       <defs>
         <radialGradient id={`${uid}-floor`} cx="50%" cy="50%" r="50%">
@@ -439,6 +440,16 @@ export default function BodyModel({
           .bm-figure, .bm-zone, .bm-accent, .bm-orbit, .bm-locbadge { animation: none; }
           .bm-root:hover .bm-figure { transform: none; }
         }
+        /* Also honour the site's accessibility panel toggle: no idle bob,
+           pulsing highlights, orbit spin or hover tilt — static highlights
+           stay, and manual rotation still works (it's direct manipulation,
+           not an animation). */
+        html[data-reduce-motion="true"] .bm-figure,
+        html[data-reduce-motion="true"] .bm-zone,
+        html[data-reduce-motion="true"] .bm-accent,
+        html[data-reduce-motion="true"] .bm-orbit,
+        html[data-reduce-motion="true"] .bm-locbadge { animation: none; }
+        html[data-reduce-motion="true"] .bm-root:hover .bm-figure { transform: none; }
       `}</style>
     </svg>
   );

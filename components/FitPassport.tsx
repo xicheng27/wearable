@@ -6,9 +6,11 @@ import { useCountry } from "@/components/CountryProvider";
 import { usePassport } from "@/components/PassportProvider";
 import {
   passportEditSections,
+  passportMissingInfo,
   passportMustHaves,
   passportResultsHref,
   passportSections,
+  passportToMarkdown,
   passportWearer,
 } from "@/lib/passport";
 import { GLOBAL } from "@/lib/countries";
@@ -121,6 +123,7 @@ export default function FitPassport() {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState<Answers | null>(null);
   const [confirmingReset, setConfirmingReset] = useState(false);
+  const [exportStatus, setExportStatus] = useState<string | null>(null);
 
   const sections = useMemo(
     () => (passport ? passportSections(passport) : []),
@@ -130,6 +133,36 @@ export default function FitPassport() {
     () => (passport ? passportMustHaves(passport) : []),
     [passport]
   );
+  const missingInfo = useMemo(
+    () => (passport ? passportMissingInfo(passport) : []),
+    [passport]
+  );
+
+  async function copyPassport() {
+    if (!passport) return;
+    try {
+      await navigator.clipboard.writeText(passportToMarkdown(passport));
+      setExportStatus("Passport summary copied to your clipboard.");
+    } catch {
+      setExportStatus("Couldn't access the clipboard — use Download instead.");
+    }
+  }
+
+  function downloadPassport() {
+    if (!passport) return;
+    const blob = new Blob([passportToMarkdown(passport)], {
+      type: "text/markdown;charset=utf-8",
+    });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "adaptive-fit-passport.md";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+    setExportStatus("Passport downloaded as adaptive-fit-passport.md.");
+  }
 
   if (!hydrated) {
     return (
@@ -284,10 +317,39 @@ export default function FitPassport() {
               ))}
             </div>
 
+            {missingInfo.length > 0 && (
+              <section
+                aria-label="Not specified yet"
+                className="mt-4 rounded-2xl border border-dashed border-ink/20 bg-ivory/40 px-4 py-4"
+              >
+                <h3 className="text-sm font-bold text-ink/60">Not specified yet</h3>
+                <p className="mt-1 text-xs leading-5 text-ink/55">
+                  The matching engine can&apos;t use these for you until you add
+                  them — everything here is optional.
+                </p>
+                <ul className="mt-2 flex flex-wrap gap-1.5">
+                  {missingInfo.map((item) => (
+                    <li
+                      key={item}
+                      className="rounded-md border border-ink/15 bg-paper px-2 py-1 text-sm text-ink/60"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
             <div className="mt-8 flex flex-wrap items-center gap-3 border-t border-ink/10 pt-5">
               <Link href="/search" className="btn-secondary px-4 py-2.5 text-sm">
                 Browse with my passport
               </Link>
+              <button type="button" onClick={copyPassport} className="btn-secondary px-4 py-2.5 text-sm">
+                Copy summary
+              </button>
+              <button type="button" onClick={downloadPassport} className="btn-secondary px-4 py-2.5 text-sm">
+                Download as Markdown
+              </button>
               <Link href="/quiz" className="link-underline text-sm font-semibold text-ink/70">
                 Retake the quiz instead
               </Link>
@@ -326,6 +388,11 @@ export default function FitPassport() {
                 )}
               </div>
             </div>
+            {exportStatus && (
+              <p role="status" className="mt-3 text-sm font-semibold text-primary-800">
+                {exportStatus}
+              </p>
+            )}
           </>
         )}
       </div>

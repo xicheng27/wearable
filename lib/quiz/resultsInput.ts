@@ -161,6 +161,9 @@ export function parseResultParams(searchParams: SearchParamsRecord): QuizResults
   const customNeed = readList(searchParams.custom).join(", ").slice(0, 500);
   const openEndedNeed = [otherNeeds, customNeed].filter(Boolean).join(". ");
 
+  // Body zones flagged on the body map (zone keys, "~"-separated).
+  const bodyZones = (readValue(searchParams.zones) ?? "").split("~").filter(Boolean);
+
   const input: RecommendationInput = {
     targetGroup,
     ageRange,
@@ -170,6 +173,8 @@ export function parseResultParams(searchParams: SearchParamsRecord): QuizResults
     openEndedNeed,
     location,
     mobilityLevel,
+    bodyZones,
+    dressingMethod,
     dressingDifficulty: deriveDressingDifficulty(needs, fastenings),
     sensoryNeeds: sensory,
     closurePreference: fastenings,

@@ -50,7 +50,10 @@ function RecommendationFeedback({ productId }: { productId: string }) {
   return (
     <div className="mt-4 border-t border-primary-200 pt-3">
       <p className="text-xs font-bold uppercase tracking-wider text-primary-800">
-        Feedback
+        Your feedback{" "}
+        <span className="font-semibold normal-case tracking-normal text-primary-800/70">
+          (private to this device)
+        </span>
       </p>
       <div className="mt-2 flex flex-wrap gap-2">
         {actions.map((action) => (
@@ -71,7 +74,8 @@ function RecommendationFeedback({ productId }: { productId: string }) {
       </div>
       {selected && (
         <p className="mt-2 text-xs font-semibold text-primary-900" role="status">
-          Feedback saved for later recommendation tuning.
+          Saved on this device only — it tunes your own recommendations and is
+          never shared as community proof.
         </p>
       )}
     </div>
@@ -252,6 +256,18 @@ function MatchDetail({
             ))}
           </ul>
         </div>
+      )}
+
+      {product.sourceVerifiedAt && (
+        <p className="mt-3 text-xs text-ink/55">
+          Source last verified{" "}
+          {new Date(product.sourceVerifiedAt).toLocaleDateString(undefined, {
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+          })}
+          .
+        </p>
       )}
 
       <div className="mt-4">

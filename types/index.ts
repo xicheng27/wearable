@@ -71,6 +71,10 @@ export interface CommunityVerificationReport {
   /** Number of wearers/caregivers who confirmed this. */
   count: number;
   lastReportedAt?: string;
+  /** When this report was last verified/moderated. */
+  lastVerifiedAt?: string;
+  /** Moderation state — only "approved" reports should ever render. */
+  moderationStatus?: "pending" | "approved" | "rejected";
 }
 
 export interface Product {
@@ -130,6 +134,27 @@ export interface Product {
   sourceVerifiedAt?: string;
   /** Community fit reports (empty until community verification ships). */
   communityVerifications?: CommunityVerificationReport[];
+
+  // --- Optional structured adaptive metadata -------------------------------
+  // When present these are treated as explicit evidence (higher confidence
+  // than anything inferred from description text). Absent fields simply fall
+  // back to the existing derived matching.
+  /** Canonical garment family, e.g. "footwear", "bottoms", "tops". */
+  categoryNormalized?: string;
+  /** "online" | "in-store" | "both" — richer than the availability booleans. */
+  availabilityMode?: "online" | "in-store" | "both";
+  /** e.g. ["tag-free", "flat seams", "soft cotton"]. */
+  sensoryAttributes?: string[];
+  /** e.g. ["open back", "side zip", "assisted dressing loops"]. */
+  caregiverFeatures?: string[];
+  /** e.g. ["AFO clearance", "wide opening", "removable insole"]. */
+  orthoticCompatibility?: string[];
+  /** e.g. ["abdomen", "chest port", "leg"]. */
+  medicalAccessZones?: string[];
+  /** Brand's stated return policy for this item, shown pre-purchase. */
+  returnsNote?: string;
+  /** URLs or names of the sources the adaptive claims were verified against. */
+  evidenceSources?: string[];
 }
 
 // --- User profile / target group segmentation ---
@@ -294,6 +319,15 @@ export interface RecommendationInput {
   genderRange?: string;
   /** Strict: shopping for a child or teen — only kids/teen items may be shown. */
   childrenTeen?: boolean;
+  /** Body areas the shopper flagged on the body map (zone titles). */
+  bodyZones?: string[];
+  /** Personality / vibe tags — soft ranking signal only. */
+  personalityVibe?: string[];
+  /** Specific medical access needs (soft detail; the hard filter uses needs). */
+  medicalAccessNeeds?: string[];
+  /** Specific AFO/orthotic needs (soft detail; the hard filter uses needs). */
+  orthoticAccessNeeds?: string[];
+  dressingMethod?: DressingMethod;
   limit?: number;
 }
 

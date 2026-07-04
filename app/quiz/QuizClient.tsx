@@ -10,6 +10,7 @@ import { usePassport } from "@/components/PassportProvider";
 import { useUserProfile } from "@/components/UserProfileProvider";
 import { GLOBAL } from "@/lib/countries";
 import BodyModel, { type BodyZone } from "@/components/quiz/BodyModel";
+import { avatarZoneChips, buildAvatarAriaLabel } from "@/lib/avatar";
 import {
   COUNTRY_FLAGS,
   FlagOther,
@@ -232,6 +233,12 @@ function CountryBadge({ country, compact }: { country: string; compact: boolean 
   );
 }
 
+const ROTATION_LIMIT = 34;
+
+function clampRotation(value: number): number {
+  return Math.max(-ROTATION_LIMIT, Math.min(ROTATION_LIMIT, value));
+}
+
 function ModelPanel({
   answers,
   stepId,
@@ -253,6 +260,47 @@ function ModelPanel({
   const country = answers.country?.[0];
   const interactive = stepId === "bodymap";
 
+  // Manual rotation of the fit preview: pointer drag (with a small threshold
+  // so body-map taps still register) or arrow keys. Direct manipulation, so
+  // it stays available under reduced motion; only idle animations stop.
+  const [rotation, setRotation] = useState(0);
+  const dragRef = useRef<{ startX: number; startRot: number; active: boolean } | null>(null);
+  const zoneChips = avatarZoneChips(zones);
+  const ariaLabel = `${buildAvatarAriaLabel(zones, {
+    seated: state.seated,
+    helper: state.helper,
+  })} Drag, or use the left and right arrow keys, to rotate the preview.`;
+
+  function onPointerDown(e: React.PointerEvent<HTMLDivElement>) {
+    dragRef.current = { startX: e.clientX, startRot: rotation, active: false };
+  }
+  function onPointerMove(e: React.PointerEvent<HTMLDivElement>) {
+    const drag = dragRef.current;
+    if (!drag) return;
+    const dx = e.clientX - drag.startX;
+    if (!drag.active) {
+      if (Math.abs(dx) < 6) return;
+      drag.active = true;
+      e.currentTarget.setPointerCapture(e.pointerId);
+    }
+    setRotation(clampRotation(drag.startRot + dx * 0.35));
+  }
+  function onPointerEnd() {
+    dragRef.current = null;
+  }
+  function onKeyDown(e: React.KeyboardEvent<HTMLDivElement>) {
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      setRotation((r) => clampRotation(r - 8));
+    } else if (e.key === "ArrowRight") {
+      e.preventDefault();
+      setRotation((r) => clampRotation(r + 8));
+    } else if (e.key === "Home") {
+      e.preventDefault();
+      setRotation(0);
+    }
+  }
+
   return (
     <div className="flex h-full flex-col">
       <div
@@ -264,37 +312,73 @@ function ModelPanel({
             centre line (x=110), so it's anchored to the main avatar — never the
             card or the helper figure — and stays centred at every size. */}
         <div
-          className={`relative ${compact ? "h-[34vh]" : "h-full max-h-[52vh]"}`}
-          style={{ aspectRatio: "220 / 348" }}
+          className={`relative rounded-2xl focus:outline-none focus-visible:ring-4 focus-visible:ring-primary-300 ${
+            compact ? "h-[34vh]" : "h-full max-h-[52vh]"
+          }`}
+          style={{
+            aspectRatio: "220 / 348",
+            perspective: "900px",
+            // Vertical swipes keep scrolling the page — no scroll trap.
+            touchAction: "pan-y",
+          }}
+          role="group"
+          tabIndex={0}
+          aria-label={ariaLabel}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={onPointerEnd}
+          onPointerCancel={onPointerEnd}
+          onPointerLeave={onPointerEnd}
+          onKeyDown={onKeyDown}
         >
-          <BodyModel
-            persona={state.persona}
-            seated={state.seated}
-            zones={zones}
-            garments={state.garments}
-            style={state.style}
-            helper={state.helper}
-            locationFlag={country}
-            interactive={interactive}
-            focusZone={focusZone}
-            onZoneClick={onZoneClick}
-            accents={state.accents}
+          <div
             className="h-full w-full"
-          />
+            style={{ transform: `rotateY(${rotation}deg)`, transformStyle: "preserve-3d" }}
+          >
+            <BodyModel
+              persona={state.persona}
+              seated={state.seated}
+              zones={zones}
+              garments={state.garments}
+              style={state.style}
+              helper={state.helper}
+              locationFlag={country}
+              interactive={interactive}
+              focusZone={focusZone}
+              onZoneClick={onZoneClick}
+              accents={state.accents}
+              className="h-full w-full"
+            />
+          </div>
         </div>
         <span className="absolute left-4 top-4 rounded-full bg-paper/80 px-3 py-1 text-xs font-bold text-primary-800 shadow-soft backdrop-blur">
           Live profile mirror
         </span>
+        {!compact && (
+          <span
+            className="absolute bottom-3 left-1/2 -translate-x-1/2 rounded-full bg-paper/85 px-3 py-1 text-[11px] font-semibold text-ink/55 shadow-soft backdrop-blur"
+            aria-hidden="true"
+          >
+            ↔ Drag to rotate · arrow keys work too
+          </span>
+        )}
         {interactive && focusZone && (
-          <span className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-primary-700 px-3 py-1 text-xs font-bold text-white shadow-soft">
+          <span className="absolute bottom-10 left-1/2 -translate-x-1/2 rounded-full bg-primary-700 px-3 py-1 text-xs font-bold text-white shadow-soft">
             {ZONE_LABEL[focusZone]} · tap the avatar
           </span>
         )}
         {country && <CountryBadge country={country} compact={compact} />}
       </div>
 
+      {zoneChips.length > 0 && (
+        <p className={`${compact ? "mt-1.5" : "mt-3"} text-xs leading-5 text-ink/60`}>
+          <span className="font-bold text-ink/70">Highlighted:</span>{" "}
+          {zoneChips.join(", ")}
+        </p>
+      )}
+
       {chips.length > 0 && (
-        <div className={`${compact ? "mt-2" : "mt-4"} flex flex-wrap gap-1.5`} aria-label="Your profile so far">
+        <div className={`${compact ? "mt-2" : "mt-3"} flex flex-wrap gap-1.5`} aria-label="Your profile so far">
           {chips.map((chip) => (
             <span
               key={chip}
