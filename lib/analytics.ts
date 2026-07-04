@@ -26,7 +26,11 @@ export type AnalyticsEvent =
   | "filter_applied"
   | "filter_cleared"
   | "submit_item_started"
-  | "submit_item_submitted";
+  | "submit_item_submitted"
+  | "passport_saved"
+  | "passport_edited"
+  | "passport_reset"
+  | "passport_filter_toggled";
 
 type AllowedValue = string | number | boolean | null;
 

@@ -14,14 +14,20 @@
  *    unrelated substitutes
  */
 
-import { getProductShipsTo } from "@/data/products";
+import { getProductShipsTo, products } from "@/data/products";
 import { expandShippingRegions, GLOBAL } from "@/lib/countries";
 import {
   categoryFamilyFor,
+  evaluateProductForInput,
   productInSelectedCategories,
   productMatchesGenderRange,
   recommendAdaptiveProducts,
 } from "@/lib/recommendationEngine";
+import {
+  buildPassport,
+  passportMustHaves,
+  passportToRecommendationInput,
+} from "@/lib/passport";
 import type { Product, RecommendationResult } from "@/types";
 
 let failures = 0;
@@ -262,6 +268,91 @@ console.log("\n11. Gender range helper unit checks");
     "adult unisex fails children/teen",
     !productMatchesGenderRange(mk(["Unisex"]), undefined, true)
   );
+}
+
+console.log("\n12. Confidence & Truth Card data on every result");
+{
+  const results = recommendAdaptiveProducts({
+    location: "Singapore",
+    mobilityLevel: "wheelchair-or-seated",
+    needs: ["Wheelchair or seated comfort"],
+    clothingTypes: ["Pants"],
+    limit: 9,
+  });
+  check("results exist", results.length > 0);
+  check(
+    "every result carries a confidence level",
+    results.every((r) => ["high", "medium", "low"].includes(r.confidence))
+  );
+  check(
+    "every result carries check-before-buying guidance",
+    results.every((r) => r.checkBeforeBuying.length > 0)
+  );
+  const fallbacks = results.filter((r) => r.isFallback);
+  check(
+    "fallbacks are never high confidence",
+    fallbacks.every((r) => r.confidence === "low")
+  );
+  const exactHigh = exact(results).filter((r) => r.confidence === "high");
+  check(
+    "high-confidence exact matches link to the exact product",
+    exactHigh.every((r) => r.product.linkType === "exact-product")
+  );
+}
+
+console.log("\n13. Passport → evaluator agrees with the quiz engine");
+{
+  const passport = buildPassport({
+    who: ["Myself"],
+    country: ["Singapore"],
+    clothing: ["Bottoms"],
+    help: ["Seated or wheelchair comfort", "Caregiver-assisted dressing"],
+    dressingIndependence: ["A caregiver dresses me"],
+    range: ["Female"],
+    budget: ["Mid-range"],
+  });
+  const input = passportToRecommendationInput(passport);
+  check("passport input keeps location", input.location === "Singapore");
+  check("passport input keeps category", (input.clothingTypes ?? []).includes("Pants"));
+  check("passport input keeps range", input.genderRange === "womenswear");
+  check(
+    "passport input keeps caregiver need",
+    input.caregiverInvolvement === "caregiver-assisted"
+  );
+
+  const must = passportMustHaves(passport);
+  check(
+    "must-haves name category, location, range, seated and caregiver",
+    ["pants", "Singapore", "Womenswear", "Seated", "Caregiver"].every((k) =>
+      must.some((m) => m.toLowerCase().includes(k.toLowerCase()))
+    ),
+    must.join(" | ")
+  );
+
+  // Every exact match from the engine must also pass the standalone evaluator
+  // (used by the browse-page passport filter), so the two never disagree.
+  const engineResults = recommendAdaptiveProducts(input);
+  const engineExact = exact(engineResults);
+  const disagreement = engineExact.filter(
+    (r) => !evaluateProductForInput(r.product, input).meetsAllNeeds
+  );
+  check(
+    "browse-page evaluator accepts every quiz exact match",
+    disagreement.length === 0,
+    disagreement.map((r) => r.product.name).join(", ")
+  );
+
+  // And the evaluator must reject items that violate the passport's strict
+  // category — e.g. any shoe.
+  const shoe = products.find((p) => /shoe/i.test(p.clothingType));
+  if (shoe) {
+    const evaluation = evaluateProductForInput(shoe, input);
+    check(
+      "evaluator rejects a shoe for a pants-only passport",
+      !evaluation.meetsAllNeeds &&
+        evaluation.unmetNeeds.includes("Your selected clothing type")
+    );
+  }
 }
 
 console.log(
