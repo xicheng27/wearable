@@ -40,6 +40,7 @@ export default function ProductImage({
   source,
 }: ProductImageProps) {
   const [failed, setFailed] = useState(false);
+  const [loaded, setLoaded] = useState(false);
   const cleared = !!src && !failed;
 
   return (
@@ -48,6 +49,14 @@ export default function ProductImage({
     >
       {cleared ? (
         <>
+          {/* Skeleton while the photo loads — a calm pulse on the same warm
+              surface, so there's never a hard blank flash. */}
+          {!loaded && (
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 animate-pulse bg-gradient-to-br from-sand/50 via-paper to-lavender/40"
+            />
+          )}
           <Image
             src={src as string}
             alt={alt}
@@ -55,8 +64,11 @@ export default function ProductImage({
             priority={priority}
             quality={90}
             sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
-            className="object-contain p-3 transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.035] sm:p-4"
+            className={`object-contain p-3 transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.035] sm:p-4 ${
+              loaded ? "opacity-100" : "opacity-0"
+            }`}
             onError={() => setFailed(true)}
+            onLoad={() => setLoaded(true)}
           />
           {/* Subtle, non-ownership identification label. Images are shown only
               to identify the product — this is not a Xi's-owned mark. */}

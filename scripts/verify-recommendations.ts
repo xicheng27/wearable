@@ -31,6 +31,7 @@ import {
   passportToRecommendationInput,
 } from "@/lib/passport";
 import { buildAvatarAriaLabel } from "@/lib/avatar";
+import { demoScenarios, fitSignals } from "@/lib/demoScenarios";
 import {
   getMissingEvidenceFields,
   getUnmetHardRequirements,
@@ -593,6 +594,32 @@ console.log("\n19. Need-specific pre-purchase checks & magnet caution");
       .filter((r) => /magnetic/.test(blob(r.product)))
       .every((r) => r.checkBeforeBuying.some((c) => /Magnetic closures may not be suitable/i.test(c)))
   );
+}
+
+console.log("\n20. Public demo scenarios stay strict and honest");
+{
+  check("all five demo scenarios exist", demoScenarios.length === 5);
+  demoScenarios.forEach((scenario) => {
+    const results = recommendAdaptiveProducts(scenario.input);
+    check(`${scenario.slug}: returns results`, results.length > 0);
+    const cats = (scenario.input.clothingTypes ?? []).filter(Boolean);
+    if (cats.length > 0) {
+      const offenders = results.filter(
+        (r) => !productInSelectedCategories(r.product, cats)
+      );
+      check(
+        `${scenario.slug}: every result stays in ${cats.join("/")}`,
+        offenders.length === 0,
+        offenders.map((r) => r.product.name).join(", ")
+      );
+    }
+    // Fit signals always name their evidence, so the bars are never bare numbers.
+    const signals = fitSignals(results[0].product, scenario.input);
+    check(
+      `${scenario.slug}: six evidence-backed fit signals`,
+      signals.length === 6 && signals.every((s) => s.evidence.length > 0 && s.score >= 0 && s.score <= 100)
+    );
+  });
 }
 
 console.log(
