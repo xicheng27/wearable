@@ -730,6 +730,155 @@ function deriveGarments(a: Answers): Garment[] {
   return Array.from(new Set(garments));
 }
 
+/* ----------------------------- Fit signals -------------------------------- */
+
+/**
+ * A fit signal is one prioritised matching dimension shown in the live
+ * profile mirror: a short chip label, the body zones it lights up on the
+ * fit map (max 3 rendered), and a one-line explanation of what the engine
+ * is doing with it.
+ */
+export interface FitSignal {
+  id: string;
+  label: string;
+  zones: BodyZone[];
+  detail: string;
+}
+
+/**
+ * Derives the ordered list of active fit signals from the answers so far.
+ * Order is priority order — the card shows the first few and folds the rest
+ * behind a "+N more" toggle (progressive disclosure).
+ */
+export function fitSignals(a: Answers): FitSignal[] {
+  const out: FitSignal[] = [];
+  const bi = a.bodyIssues ?? [];
+  const zoneOf = (id: string) => ISSUE_ZONE[id];
+
+  const seated =
+    hasHelp(a, "Seated") ||
+    (a.seated ?? []).length > 0 ||
+    bi.some((id) => ["hi-rise", "hi-pull", "hi-fit", "hi-pressure", "wa-seated"].includes(id));
+  if (seated)
+    out.push({
+      id: "seated",
+      label: "Seated fit",
+      zones: ["hips", "waist"],
+      detail: "Prioritising seated comfort",
+    });
+
+  if (
+    hasHelp(a, "One-handed") ||
+    bi.includes("ha-onehand") ||
+    (a.dressingExtra ?? []).some((d) => d.includes("One-handed"))
+  )
+    out.push({
+      id: "onehand",
+      label: "One-handed dressing",
+      zones: ["hands", "arms"],
+      detail: "Prioritising one-handed dressing",
+    });
+
+  if (
+    hasHelp(a, "Easier dressing") ||
+    bi.some((id) => ["ha-buttons", "ha-zips"].includes(id)) ||
+    (a.closures ?? []).some((c) => c !== NOT_LISTED)
+  )
+    out.push({
+      id: "closures",
+      label: "Easy closures",
+      zones: ["hands"],
+      detail: "Avoiding small fasteners",
+    });
+
+  if (
+    hasHelp(a, "Shoulder") ||
+    bi.some((id) => zoneOf(id) === "shoulders" || zoneOf(id) === "arms")
+  )
+    out.push({
+      id: "shoulder",
+      label: "Shoulder & arm ease",
+      zones: ["shoulders", "arms"],
+      detail: "Prioritising easy arm movement",
+    });
+
+  if (sensoryActive(a) || (a.fabricFeel ?? []).length > 0)
+    out.push({
+      id: "sensory",
+      label: "Sensory comfort",
+      zones: ["skin"],
+      detail: "Checking sensory-friendly materials",
+    });
+
+  if (medicalActive(a))
+    out.push({
+      id: "medical",
+      label: "Medical access",
+      zones: ["waist", "chest"],
+      detail: "Prioritising medical-access openings",
+    });
+
+  if (braceActive(a))
+    out.push({
+      id: "brace",
+      label: "AFO / orthotics",
+      zones: ["feet", "legs"],
+      detail: "Making room for braces and orthotics",
+    });
+
+  if (isAssistedDressing(a))
+    out.push({
+      id: "assisted",
+      label: "Assisted dressing",
+      zones: ["chest", "shoulders"],
+      detail: "Looking for caregiver-assisted dressing features",
+    });
+
+  // Finer body-map signals not already covered above.
+  if (bi.some((id) => zoneOf(id) === "chest") && !medicalActive(a))
+    out.push({
+      id: "chest",
+      label: "Chest access",
+      zones: ["chest"],
+      detail: "Prioritising front and chest openings",
+    });
+  if (bi.includes("wa-band") && !seated)
+    out.push({
+      id: "waist",
+      label: "Waist comfort",
+      zones: ["waist"],
+      detail: "Reducing waistband pressure",
+    });
+  if (bi.some((id) => zoneOf(id) === "legs") && !braceActive(a))
+    out.push({
+      id: "legs",
+      label: "Leg access",
+      zones: ["legs"],
+      detail: "Prioritising easier leg access",
+    });
+  if (
+    !braceActive(a) &&
+    (bi.some((id) => zoneOf(id) === "feet") || (a.footwear ?? []).some((f) => f !== NOT_LISTED))
+  )
+    out.push({
+      id: "footwear",
+      label: "Easy footwear",
+      zones: ["feet"],
+      detail: "Prioritising easy-on footwear",
+    });
+
+  const styles = a.style ?? [];
+  if (styles.length)
+    out.push({
+      id: "style",
+      label: `Style: ${styles[styles.length - 1]}`,
+      zones: [],
+      detail: "Balancing style with your fit needs",
+    });
+
+  return out;
+}
+
 /* --------------------------- Live profile chips -------------------------- */
 
 export function profileChips(a: Answers): string[] {
