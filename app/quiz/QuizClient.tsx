@@ -10,7 +10,7 @@ import { usePassport } from "@/components/PassportProvider";
 import { useUserProfile } from "@/components/UserProfileProvider";
 import { GLOBAL } from "@/lib/countries";
 import BodyModel, { type BodyZone } from "@/components/quiz/BodyModel";
-import { avatarZoneChips, buildAvatarAriaLabel } from "@/lib/avatar";
+import { buildAvatarAriaLabel } from "@/lib/avatar";
 import {
   COUNTRY_FLAGS,
   FlagOther,
@@ -22,9 +22,9 @@ import {
   bodyZoneGroups,
   buildResultParams,
   exampleChips,
+  fitSignals,
   helpOptions,
   modelState,
-  profileChips,
   NOT_LISTED,
   NOT_LISTED_ISSUE,
   type Answers,
@@ -209,26 +209,19 @@ function BodyFitMap({
 
 /* ----------------------------- Model panel ------------------------------- */
 
-function CountryBadge({ country, compact }: { country: string; compact: boolean }) {
+/** The single location indicator: one small chip in the card header. */
+function LocationChip({ country }: { country: string }) {
   const isGlobal = country === GLOBAL;
   const Flag = isGlobal
     ? GlobeGraphic
     : country === "Other country"
       ? FlagOther
       : COUNTRY_FLAGS[country] ?? FlagOther;
-  const label = isGlobal
-    ? "Global availability"
-    : country === "Other country"
-      ? "Shopping region: Other"
-      : `Shopping region: ${country}`;
+  const label = isGlobal ? "Global" : country === "Other country" ? "Other region" : country;
   return (
-    <span
-      className={`absolute right-3 top-3 inline-flex items-center gap-2 rounded-full border border-ink/10 bg-paper/90 py-1 pl-1.5 pr-3 font-bold text-ink/80 shadow-soft backdrop-blur ${
-        compact ? "text-[11px]" : "text-xs"
-      }`}
-    >
-      <Flag size={compact ? 24 : 28} />
-      {label}
+    <span className="inline-flex max-w-[11rem] items-center gap-1.5 rounded-full border border-ink/10 bg-sand/40 py-1 pl-1.5 pr-2.5 text-xs font-bold text-ink/70">
+      <Flag size={18} />
+      <span className="truncate">{label}</span>
     </span>
   );
 }
@@ -239,33 +232,82 @@ function clampRotation(value: number): number {
   return Math.max(-ROTATION_LIMIT, Math.min(ROTATION_LIMIT, value));
 }
 
+/**
+ * Live profile mirror — a calm fit dashboard: header with title + one
+ * location chip, a minimal fit-signal silhouette in the centre (drag or
+ * arrow keys to rotate), a one-line feedback message, and an "Active
+ * signals" chip row. Tapping a chip previews its body zones on the map;
+ * signals beyond the first few fold behind "+N more".
+ */
 function ModelPanel({
   answers,
   stepId,
-  extraZones = [],
   compact = false,
   focusZone,
   onZoneClick,
 }: {
   answers: Answers;
   stepId: string;
-  extraZones?: BodyZone[];
   compact?: boolean;
   focusZone?: BodyZone;
   onZoneClick?: (zone: BodyZone) => void;
 }) {
   const state = modelState(answers, stepId);
-  const zones = Array.from(new Set([...state.zones, ...extraZones]));
-  const chips = profileChips(answers);
+  const signals = useMemo(() => fitSignals(answers), [answers]);
   const country = answers.country?.[0];
   const interactive = stepId === "bodymap";
+
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [showAll, setShowAll] = useState(false);
+  // Mobile: the map is collapsible so it never forces long scrolling.
+  // null = automatic (open only on the body-map step, where it's tappable).
+  const [mapOpen, setMapOpen] = useState<boolean | null>(null);
+  const showMap = !compact || (mapOpen ?? interactive);
+
+  // When a quiz answer adds a new signal, softly bring it into focus so the
+  // mirror visibly responds to the selection.
+  const signalKey = signals.map((s) => s.id).join("|");
+  const prevIdsRef = useRef<string[] | null>(null);
+  useEffect(() => {
+    const ids = signalKey ? signalKey.split("|") : [];
+    const prev = prevIdsRef.current;
+    prevIdsRef.current = ids;
+    if (prev === null) return; // initial render: no selection jump
+    const added = ids.filter((id) => !prev.includes(id));
+    if (added.length) setSelectedId(added[added.length - 1]);
+    else setSelectedId((curr) => (curr && ids.includes(curr) ? curr : null));
+  }, [signalKey]);
+
+  const selectedSignal = signals.find((s) => s.id === selectedId);
+  // At most 3 highlight zones at once: the focused body-map zone, the
+  // previewed signal's zones, or an overview of the top signals.
+  const zones: BodyZone[] = interactive
+    ? focusZone
+      ? [focusZone]
+      : []
+    : selectedSignal
+      ? selectedSignal.zones
+      : Array.from(new Set(signals.flatMap((s) => s.zones))).slice(0, 3);
+
+  const feedback = interactive
+    ? focusZone
+      ? `Checking ${ZONE_LABEL[focusZone].toLowerCase()} fit`
+      : "Tap a body area to check its fit"
+    : selectedSignal?.detail ??
+      signals[0]?.detail ??
+      (country && country !== "Other country"
+        ? `Filtering for ${country === GLOBAL ? "global" : country} availability`
+        : "Your answers update this preview as you go");
+
+  const maxChips = compact ? 3 : 4;
+  const visibleSignals = showAll ? signals : signals.slice(0, maxChips);
+  const hiddenCount = signals.length - visibleSignals.length;
 
   // Manual rotation of the fit preview: pointer drag (with a small threshold
   // so body-map taps still register) or arrow keys. Direct manipulation, so
   // it stays available under reduced motion; only idle animations stop.
   const [rotation, setRotation] = useState(0);
   const dragRef = useRef<{ startX: number; startRot: number; active: boolean } | null>(null);
-  const zoneChips = avatarZoneChips(zones);
   const ariaLabel = `${buildAvatarAriaLabel(zones, {
     seated: state.seated,
     helper: state.helper,
@@ -302,94 +344,155 @@ function ModelPanel({
   }
 
   return (
-    <div className="flex h-full flex-col">
-      <div
-        className={`relative flex flex-1 items-center justify-center overflow-hidden rounded-3xl border border-ink/10 bg-gradient-to-b from-ivory to-paper ${
-          compact ? "min-h-0 py-2" : "p-4"
-        }`}
-      >
-        {/* The location badge is drawn inside the avatar SVG at its exact
-            centre line (x=110), so it's anchored to the main avatar — never the
-            card or the helper figure — and stays centred at every size. */}
-        <div
-          className={`relative rounded-2xl focus:outline-none focus-visible:ring-4 focus-visible:ring-primary-300 ${
-            compact ? "h-[34vh]" : "h-full max-h-[52vh]"
-          }`}
-          style={{
-            aspectRatio: "220 / 348",
-            perspective: "900px",
-            // Vertical swipes keep scrolling the page — no scroll trap.
-            touchAction: "pan-y",
-          }}
-          role="group"
-          tabIndex={0}
-          aria-label={ariaLabel}
-          onPointerDown={onPointerDown}
-          onPointerMove={onPointerMove}
-          onPointerUp={onPointerEnd}
-          onPointerCancel={onPointerEnd}
-          onPointerLeave={onPointerEnd}
-          onKeyDown={onKeyDown}
-        >
-          <div
-            className="h-full w-full"
-            style={{ transform: `rotateY(${rotation}deg)`, transformStyle: "preserve-3d" }}
-          >
-            <BodyModel
-              persona={state.persona}
-              seated={state.seated}
-              zones={zones}
-              garments={state.garments}
-              style={state.style}
-              helper={state.helper}
-              locationFlag={country}
-              interactive={interactive}
-              focusZone={focusZone}
-              onZoneClick={onZoneClick}
-              accents={state.accents}
-              className="h-full w-full"
-            />
-          </div>
-        </div>
-        <span className="absolute left-4 top-4 rounded-full bg-paper/80 px-3 py-1 text-xs font-bold text-primary-800 shadow-soft backdrop-blur">
+    <section
+      aria-label="Live profile mirror"
+      className={`flex h-full w-full flex-col rounded-3xl border border-ink/10 bg-paper shadow-soft ${
+        compact ? "p-3" : "p-4"
+      }`}
+    >
+      {/* Header: title + the one and only location indicator */}
+      <div className="flex items-center justify-between gap-2">
+        <p className="text-xs font-bold uppercase tracking-wider text-primary-800">
           Live profile mirror
-        </span>
-        {!compact && (
-          <span
-            className="absolute bottom-3 left-1/2 -translate-x-1/2 rounded-full bg-paper/85 px-3 py-1 text-[11px] font-semibold text-ink/55 shadow-soft backdrop-blur"
-            aria-hidden="true"
-          >
-            ↔ Drag to rotate · arrow keys work too
-          </span>
-        )}
-        {interactive && focusZone && (
-          <span className="absolute bottom-10 left-1/2 -translate-x-1/2 rounded-full bg-primary-700 px-3 py-1 text-xs font-bold text-white shadow-soft">
-            {ZONE_LABEL[focusZone]} · tap the avatar
-          </span>
-        )}
-        {country && <CountryBadge country={country} compact={compact} />}
+        </p>
+        <div className="flex items-center gap-1.5">
+          {country && <LocationChip country={country} />}
+          {compact && (
+            <button
+              type="button"
+              onClick={() => setMapOpen(!showMap)}
+              aria-expanded={showMap}
+              className="inline-flex min-h-8 items-center gap-1 rounded-full border border-ink/15 px-2.5 py-1 text-xs font-bold text-ink/60 transition hover:border-primary-300 hover:text-primary-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
+            >
+              {showMap ? "Hide map" : "Show map"}
+              <svg
+                className={`h-3.5 w-3.5 transition-transform ${showMap ? "rotate-180" : ""}`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2.5}
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+          )}
+        </div>
       </div>
 
-      {zoneChips.length > 0 && (
-        <p className={`${compact ? "mt-1.5" : "mt-3"} text-xs leading-5 text-ink/60`}>
-          <span className="font-bold text-ink/70">Highlighted:</span>{" "}
-          {zoneChips.join(", ")}
-        </p>
-      )}
-
-      {chips.length > 0 && (
-        <div className={`${compact ? "mt-2" : "mt-3"} flex flex-wrap gap-1.5`} aria-label="Your profile so far">
-          {chips.map((chip) => (
-            <span
-              key={chip}
-              className="rounded-full border border-primary-100 bg-primary-50 px-2.5 py-1 text-xs font-semibold text-primary-800"
+      {/* Fit map stage */}
+      {showMap && (
+        <div
+          className={`relative mt-2 flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-b from-ivory to-paper ${
+            compact ? "py-1" : "min-h-0 flex-1 p-2"
+          }`}
+        >
+          <div
+            className={`relative rounded-2xl focus:outline-none focus-visible:ring-4 focus-visible:ring-primary-300 ${
+              compact ? "h-[30vh] max-h-64" : "h-full max-h-[46vh]"
+            }`}
+            style={{
+              aspectRatio: "220 / 340",
+              perspective: "900px",
+              // Vertical swipes keep scrolling the page — no scroll trap.
+              touchAction: "pan-y",
+            }}
+            role="group"
+            tabIndex={0}
+            aria-label={ariaLabel}
+            onPointerDown={onPointerDown}
+            onPointerMove={onPointerMove}
+            onPointerUp={onPointerEnd}
+            onPointerCancel={onPointerEnd}
+            onPointerLeave={onPointerEnd}
+            onKeyDown={onKeyDown}
+          >
+            <div
+              className="h-full w-full"
+              style={{ transform: `rotateY(${rotation}deg)`, transformStyle: "preserve-3d" }}
             >
-              {chip}
-            </span>
-          ))}
+              <BodyModel
+                persona={state.persona}
+                seated={state.seated}
+                zones={zones}
+                style={state.style}
+                helper={state.helper}
+                interactive={interactive}
+                focusZone={interactive ? focusZone : undefined}
+                onZoneClick={onZoneClick}
+                className="h-full w-full"
+              />
+            </div>
+          </div>
         </div>
       )}
-    </div>
+
+      {/* One-line feedback: what the matching is prioritising right now */}
+      <p
+        aria-live="polite"
+        className={`${showMap ? "mt-2" : "mt-3"} text-sm font-semibold leading-5 text-primary-800`}
+      >
+        {feedback}
+      </p>
+
+      {/* Active signals */}
+      <div className="mt-2.5">
+        <p className="text-[11px] font-bold uppercase tracking-wider text-ink/45">
+          Active signals
+        </p>
+        {signals.length === 0 ? (
+          <p className="mt-1.5 text-xs leading-5 text-ink/55">
+            None yet — pick options and they&apos;ll appear here.
+          </p>
+        ) : (
+          <div className="mt-1.5 flex flex-wrap gap-1.5">
+            {visibleSignals.map((signal) => {
+              const on = signal.id === selectedId;
+              return (
+                <button
+                  key={signal.id}
+                  type="button"
+                  onClick={() => setSelectedId(on ? null : signal.id)}
+                  aria-pressed={on}
+                  className={`min-h-9 rounded-full border px-3 py-1 text-xs font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 focus-visible:ring-offset-1 ${
+                    on
+                      ? "border-primary-700 bg-primary-700 text-white"
+                      : "border-primary-100 bg-primary-50 text-primary-800 hover:border-primary-400"
+                  }`}
+                >
+                  {signal.label}
+                </button>
+              );
+            })}
+            {hiddenCount > 0 && (
+              <button
+                type="button"
+                onClick={() => setShowAll(true)}
+                className="min-h-9 rounded-full border border-dashed border-ink/25 px-3 py-1 text-xs font-semibold text-ink/60 transition hover:border-primary-400 hover:text-primary-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
+              >
+                +{hiddenCount} more fit signal{hiddenCount > 1 ? "s" : ""}
+              </button>
+            )}
+            {showAll && signals.length > maxChips && (
+              <button
+                type="button"
+                onClick={() => setShowAll(false)}
+                className="min-h-9 rounded-full px-2.5 py-1 text-xs font-semibold text-ink/50 transition hover:text-primary-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
+              >
+                Show fewer
+              </button>
+            )}
+          </div>
+        )}
+      </div>
+
+      {/* Footer hint */}
+      {showMap && !compact && (
+        <p className="mt-3 border-t border-ink/10 pt-2.5 text-center text-[11px] font-semibold text-ink/45">
+          Tap a signal to preview · Drag to rotate
+        </p>
+      )}
+    </section>
   );
 }
 
@@ -529,7 +632,6 @@ export default function QuizClient() {
     current.type === "bodymap" ||
     (current.type === "grouped" ? groupSelections.length > 0 : selected.length > 0) ||
     Boolean(current.freeText && otherNeeds.trim());
-  const bodymapZones: BodyZone[] = current.type === "bodymap" ? [focusZone] : [];
   const showCustomField =
     current.type === "bodymap"
       ? (answers.bodyIssues ?? []).includes(NOT_LISTED_ISSUE)
@@ -576,19 +678,17 @@ export default function QuizClient() {
             <ModelPanel
               answers={answers}
               stepId={current.id}
-              extraZones={bodymapZones}
               focusZone={focusZone}
               onZoneClick={setFocusZone}
             />
           </div>
         </aside>
 
-        {/* Model — mobile compact band */}
-        <div className="min-h-0 border-b border-ink/10 px-4 pb-2 pt-1 lg:hidden">
+        {/* Model — mobile compact band (collapsible fit map, chips always visible) */}
+        <div className="min-h-0 px-4 py-2 lg:hidden">
           <ModelPanel
             answers={answers}
             stepId={current.id}
-            extraZones={bodymapZones}
             compact
             focusZone={focusZone}
             onZoneClick={setFocusZone}
