@@ -9,7 +9,12 @@ import { useCountry } from "@/components/CountryProvider";
 import { usePassport } from "@/components/PassportProvider";
 import { useUserProfile } from "@/components/UserProfileProvider";
 import { GLOBAL } from "@/lib/countries";
-import BodyModel, { TONE, type BodyZone, type SignalTone } from "@/components/quiz/BodyModel";
+import BodyModel, {
+  STYLE_TINT,
+  TONE,
+  type BodyZone,
+  type SignalTone,
+} from "@/components/quiz/BodyModel";
 import { buildAvatarAriaLabel } from "@/lib/avatar";
 import {
   COUNTRY_FLAGS,
@@ -25,6 +30,7 @@ import {
   fitSignals,
   helpOptions,
   modelState,
+  styleId,
   NOT_LISTED,
   NOT_LISTED_ISSUE,
   type Answers,
@@ -105,6 +111,66 @@ function OptionCard({
   );
 }
 
+/** Small line glyph per clothing category so the options read as category cards. */
+function ClothingGlyph({ option }: { option: string }) {
+  const p = {
+    width: 22,
+    height: 22,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.6,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    "aria-hidden": true as const,
+  };
+  if (option === "Tops")
+    return (
+      <svg {...p}>
+        <path d="M9 3 6 5l1.5 3L9 7v14h6V7l1.5 1L18 5l-3-2-3 2H12L9 3Z" />
+      </svg>
+    );
+  if (option === "Bottoms")
+    return (
+      <svg {...p}>
+        <path d="M7 3h10l-1 18h-3.5l-1-11-1 11H7L7 3Z" />
+      </svg>
+    );
+  if (option === "Dresses / one-piece")
+    return (
+      <svg {...p}>
+        <path d="M9 3h6l-1 5 4 13H6l4-13-1-5Z" />
+      </svg>
+    );
+  if (option === "Outerwear")
+    return (
+      <svg {...p}>
+        <path d="M12 3 6 5 4 9l3 1v10h10V10l3-1-2-4-6-2Z" />
+        <path d="M12 3v17" />
+      </svg>
+    );
+  if (option === "Underwear / base layers")
+    return (
+      <svg {...p}>
+        <path d="M4 7h16l-2 6c-2 0-3-1-6-1s-4 1-6 1L4 7Z" />
+      </svg>
+    );
+  if (option === "Footwear")
+    return (
+      <svg {...p}>
+        <path d="M3 15h12l4 1.5a2 2 0 0 1 2 2V19H3v-4Z" />
+        <path d="M3 15V9l4 1c1 1.6 2.6 2.5 4.5 2.5H15" />
+      </svg>
+    );
+  return (
+    <svg {...p}>
+      <path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z" />
+      <path d="M9.5 9.5a2.5 2.5 0 1 1 3.4 2.3c-.6.3-.9.8-.9 1.4v.6" />
+      <path d="M12 17h.01" />
+    </svg>
+  );
+}
+
 function leadingFor(key: string, option: string): React.ReactNode {
   if (key === "country") {
     if (option === GLOBAL) return <GlobeGraphic size={34} />;
@@ -119,6 +185,23 @@ function leadingFor(key: string, option: string): React.ReactNode {
       <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary-50 text-primary-700">
         <Icon size={22} />
       </span>
+    ) : null;
+  }
+  if (key === "clothing") {
+    return (
+      <span className="grid h-10 w-10 place-items-center rounded-xl bg-sand/50 text-primary-700">
+        <ClothingGlyph option={option} />
+      </span>
+    );
+  }
+  if (key === "style") {
+    const tint = STYLE_TINT[styleId(option)];
+    return tint ? (
+      <span
+        className="h-9 w-9 flex-shrink-0 rounded-lg border border-ink/15 shadow-inner"
+        style={{ background: `linear-gradient(135deg, ${tint} 0%, ${tint}bb 100%)` }}
+        aria-hidden="true"
+      />
     ) : null;
   }
   return null;
@@ -447,6 +530,7 @@ function ModelPanel({
                 persona={state.persona}
                 seated={state.seated}
                 zones={zones}
+                garments={state.garments}
                 zoneTones={zoneTones}
                 sensoryTone={sensoryTone}
                 accent={accent}

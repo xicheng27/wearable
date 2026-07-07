@@ -126,8 +126,9 @@ const HOTSPOT_ORDER: BodyZone[] = [
   "feet",
 ];
 
-/** Subtle torso tint per aesthetic style — an accent, never a costume. */
-const STYLE_TINT: Record<string, string> = {
+/** Subtle torso tint per aesthetic style — an accent, never a costume. Also
+ *  used as the outfit fabric colour and the style swatch in the quiz. */
+export const STYLE_TINT: Record<string, string> = {
   "old-money": "#38465C",
   clean: "#D9D2C4",
   chic: "#3A3442",
@@ -188,10 +189,78 @@ const TORSO_PATH =
 const LEG_LEFT = "M92 210 C90 240 92 270 94 296 L106 296 C106 270 106 240 105 210 Z";
 const LEG_RIGHT = "M128 210 C130 240 128 270 126 296 L114 296 C114 270 114 240 115 210 Z";
 
+/* --- Garment overlays: subtle outfit silhouettes for the clothing category. --- */
+const TOP_PATH =
+  "M82 94 C80 98 80 104 82 112 C84 138 86 158 95 174 L125 174 " +
+  "C134 158 136 138 138 112 C140 104 140 98 138 94 " +
+  "C130 90 120 89 110 89 C100 89 90 90 82 94 Z";
+const BOTTOMS_PATH =
+  "M93 168 C88 182 85 194 86 204 C87 212 92 216 100 216 L120 216 " +
+  "C128 216 133 212 134 204 C135 194 132 182 127 168 Z";
+const SKIRT_PATH = "M94 168 L126 168 L148 252 Q110 262 72 252 Z";
+const COAT_LEFT = "M106 90 L82 95 C77 100 79 155 84 206 L106 208 Z";
+const COAT_RIGHT = "M114 90 L138 95 C143 100 141 155 136 206 L114 208 Z";
+
+/** Default fabric tone when no aesthetic style has been picked yet — a warm
+ *  clay that reads clearly as an outfit against the cool lavender figure. */
+const GARMENT_DEFAULT = "#BC8266";
+
+/**
+ * One tasteful outfit silhouette layered over the standing figure so the
+ * clothing-category answer visibly "dresses" the avatar. Rendered semi-
+ * transparent (the body shading reads through it like fabric), never a loud
+ * costume, and only one garment at a time to keep the model calm.
+ */
+function GarmentOverlay({ garment, color, uid }: { garment: Garment; color: string; uid: string }) {
+  const sheen = "rgba(255,255,255,.3)";
+  switch (garment) {
+    case "top":
+      return (
+        <g className="fsm-garment" data-uid={uid}>
+          <path d="M80 100 C73 114 69 130 69 142" fill="none" stroke={color} strokeWidth="14" strokeLinecap="round" opacity=".45" />
+          <path d="M140 100 C147 114 151 130 151 142" fill="none" stroke={color} strokeWidth="14" strokeLinecap="round" opacity=".45" />
+          <path d={TOP_PATH} fill={color} opacity=".5" />
+          <path d={TOP_PATH} fill="none" stroke={sheen} strokeWidth="1" />
+        </g>
+      );
+    case "bottoms":
+      return (
+        <g className="fsm-garment">
+          <path d={BOTTOMS_PATH} fill={color} opacity=".5" />
+          <path d={LEG_LEFT} fill={color} opacity=".5" />
+          <path d={LEG_RIGHT} fill={color} opacity=".5" />
+          <path d={BOTTOMS_PATH} fill="none" stroke={sheen} strokeWidth="1" />
+        </g>
+      );
+    case "dress":
+      return (
+        <g className="fsm-garment">
+          <path d={TOP_PATH} fill={color} opacity=".48" />
+          <path d={SKIRT_PATH} fill={color} opacity=".48" />
+          <path d={SKIRT_PATH} fill="none" stroke={sheen} strokeWidth="1" />
+        </g>
+      );
+    case "outerwear":
+      return (
+        <g className="fsm-garment">
+          <path d={COAT_LEFT} fill={color} opacity=".55" />
+          <path d={COAT_RIGHT} fill={color} opacity=".55" />
+          <path d="M106 90 L100 99 M114 90 L120 99" stroke={color} strokeWidth="2.4" strokeLinecap="round" opacity=".8" />
+          <path d={COAT_LEFT} fill="none" stroke={sheen} strokeWidth="1" />
+        </g>
+      );
+    case "baselayer":
+      return <path className="fsm-garment" d={TORSO_PATH} fill={color} opacity=".26" />;
+    default:
+      return null;
+  }
+}
+
 export default function BodyModel({
   persona = "adult",
   seated = false,
   zones = [],
+  garments = [],
   style,
   helper = false,
   interactive = false,
@@ -224,6 +293,10 @@ export default function BodyModel({
   const tint = style ? STYLE_TINT[style] : undefined;
   const dom = TONE[dominantTone];
   const auraTone = TONE[sensoryTone];
+  // One outfit silhouette from the clothing answer (standing only, and not on
+  // the tappable body-map step, so it never competes with the hotspots).
+  const garmentColor = tint ?? GARMENT_DEFAULT;
+  const primaryGarment = !seated && !interactive ? garments.find((g) => g !== "notsure") : undefined;
   // Teens read slightly smaller; everyone else shares the same calm figure.
   const scale = persona === "teen" ? 0.93 : 1;
 
@@ -292,6 +365,9 @@ export default function BodyModel({
         ) : (
           <StandingFigure uid={uid} tint={tint} />
         )}
+
+        {/* outfit silhouette from the clothing category — the avatar gets dressed */}
+        {primaryGarment && <GarmentOverlay garment={primaryGarment} color={garmentColor} uid={uid} />}
 
         {/* one dominant garment cue, drawn under the rings so it never clutters */}
         {accent === "closures" && !seated && (
@@ -383,6 +459,7 @@ export default function BodyModel({
         .fsm-sig[data-active="true"] .fsm-sig-glow { animation: fsmBreath 2.6s ease-in-out infinite; }
         .fsm-aura { animation: fsmFade .6s ease both; }
         .fsm-accent { animation: fsmFade .5s ease both; }
+        .fsm-garment { animation: fsmFade .5s ease both; }
         .fsm-hotspot { cursor: pointer; outline: none; }
         .fsm-hit { fill: rgba(118,83,110,0); stroke: rgba(118,83,110,0); stroke-width: 1.5; transition: fill .18s ease, stroke .18s ease; }
         .fsm-hotspot:hover .fsm-hit, .fsm-hotspot:focus-visible .fsm-hit { fill: rgba(118,83,110,.12); stroke: rgba(118,83,110,.5); }
@@ -392,13 +469,14 @@ export default function BodyModel({
         @keyframes fsmBreath { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
         @keyframes fsmFade { from { opacity: 0; } to { opacity: .7; } }
         @media (prefers-reduced-motion: reduce) {
-          .fsm-sig, .fsm-sig[data-active="true"] .fsm-sig-glow, .fsm-aura, .fsm-accent { animation: none; }
+          .fsm-sig, .fsm-sig[data-active="true"] .fsm-sig-glow, .fsm-aura, .fsm-accent, .fsm-garment { animation: none; }
         }
         /* Honour the site's accessibility panel toggle too. */
         html[data-reduce-motion="true"] .fsm-sig,
         html[data-reduce-motion="true"] .fsm-sig[data-active="true"] .fsm-sig-glow,
         html[data-reduce-motion="true"] .fsm-aura,
-        html[data-reduce-motion="true"] .fsm-accent { animation: none; }
+        html[data-reduce-motion="true"] .fsm-accent,
+        html[data-reduce-motion="true"] .fsm-garment { animation: none; }
       `}</style>
     </svg>
   );
