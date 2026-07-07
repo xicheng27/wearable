@@ -161,6 +161,21 @@
     50% { transform: translate(-50%, -6px); }
   }
 
+  /* Soft "live" ping on the profile mirror header dot. */
+  .fsm-live-ping {
+    animation: fsm-live-ping 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  @keyframes fsm-live-ping {
+    0% { transform: scale(1); opacity: .6; }
+    70%, 100% { transform: scale(2.4); opacity: 0; }
+  }
+
+  html[data-reduce-motion="true"] .fsm-live-ping {
+    animation: none;
+    opacity: 0;
+  }
+
   html[data-reduce-motion="true"] .animate-floaty {
     animation: none;
     transform: translate(-50%, 0);

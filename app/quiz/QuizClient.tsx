@@ -352,7 +352,11 @@ function ModelPanel({
     >
       {/* Header: title + the one and only location indicator */}
       <div className="flex items-center justify-between gap-2">
-        <p className="text-xs font-bold uppercase tracking-wider text-primary-800">
+        <p className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-primary-800">
+          <span className="relative flex h-1.5 w-1.5" aria-hidden="true">
+            <span className="fsm-live-ping absolute inline-flex h-full w-full rounded-full bg-primary-500 opacity-60" />
+            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary-600" />
+          </span>
           Live profile mirror
         </p>
         <div className="flex items-center gap-1.5">
@@ -383,7 +387,7 @@ function ModelPanel({
       {/* Fit map stage */}
       {showMap && (
         <div
-          className={`relative mt-2 flex items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-b from-ivory to-paper ${
+          className={`relative mt-2 flex items-center justify-center overflow-hidden rounded-2xl bg-[radial-gradient(125%_92%_at_50%_16%,#FCF9F2_0%,#F3ECDE_66%,#EADFCD_100%)] ring-1 ring-inset ring-ink/5 ${
             compact ? "py-1" : "min-h-0 flex-1 p-2"
           }`}
         >
@@ -430,9 +434,13 @@ function ModelPanel({
       {/* One-line feedback: what the matching is prioritising right now */}
       <p
         aria-live="polite"
-        className={`${showMap ? "mt-2" : "mt-3"} text-sm font-semibold leading-5 text-primary-800`}
+        className={`${showMap ? "mt-2.5" : "mt-3"} flex items-start gap-2 text-sm font-semibold leading-5 text-primary-800`}
       >
-        {feedback}
+        <span
+          className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-clay"
+          aria-hidden="true"
+        />
+        <span>{feedback}</span>
       </p>
 
       {/* Active signals */}
