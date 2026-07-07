@@ -4,13 +4,15 @@ import { useId } from "react";
 import { buildAvatarAriaLabel } from "@/lib/avatar";
 
 /**
- * Fit Signal Map — a calm, minimal body silhouette used as the quiz's
- * "live profile mirror". Deliberately closer to a modern UX diagram than an
- * illustration: one flat figure, at most a few glowing signal dots anchored
- * to body zones, a soft dotted aura for skin/sensory comfort, and a clean
- * side-profile wheelchair when seated posture is active. All labels live
- * OUTSIDE the graphic (as text chips in the surrounding card), never on the
- * body itself.
+ * Fit Signal Map — the quiz's "live profile mirror".
+ *
+ * A calm, editorial adaptive-fit figure: one smoothly-shaded silhouette (soft
+ * 2.5D gradient + a single quiet highlight, never flat rectangles), at most a
+ * few elegant signal rings anchored to body zones, a soft sensory aura, and a
+ * clean side-profile figure with a minimal wheelchair when seated. Every label
+ * lives OUTSIDE the graphic (as text chips in the surrounding card) so the body
+ * itself stays uncluttered. Premium, minimal, fashion-oriented — never a toy,
+ * never medical, never a placeholder.
  */
 
 export type Persona = "adult" | "teen" | "older" | "care";
@@ -38,7 +40,7 @@ export type Garment =
 export interface BodyModelProps {
   persona?: Persona;
   seated?: boolean;
-  /** Body zones to mark with a signal dot ("skin" renders as a soft aura). */
+  /** Body zones to mark with a signal ring ("skin" renders as a soft aura). */
   zones?: BodyZone[];
   /** Accepted for API compatibility; garments are shown as text chips, not overlays. */
   garments?: Garment[];
@@ -65,29 +67,29 @@ export interface BodyModelProps {
   className?: string;
 }
 
-/** Single anchor point per zone — one clean dot per active signal. */
+/** Single anchor point per zone — one clean ring per active signal. */
 type Anchor = { x: number; y: number };
 
 const ANCHORS_STANDING: Record<Exclude<BodyZone, "skin">, Anchor> = {
-  shoulders: { x: 80, y: 98 },
-  arms: { x: 66, y: 146 },
-  hands: { x: 66, y: 202 },
+  shoulders: { x: 82, y: 100 },
+  arms: { x: 70, y: 150 },
+  hands: { x: 68, y: 200 },
   chest: { x: 110, y: 122 },
-  waist: { x: 110, y: 162 },
-  hips: { x: 110, y: 196 },
-  legs: { x: 95, y: 252 },
-  feet: { x: 94, y: 300 },
+  waist: { x: 110, y: 166 },
+  hips: { x: 110, y: 200 },
+  legs: { x: 100, y: 252 },
+  feet: { x: 96, y: 300 },
 };
 
 const ANCHORS_SEATED: Record<Exclude<BodyZone, "skin">, Anchor> = {
-  shoulders: { x: 112, y: 96 },
-  arms: { x: 127, y: 136 },
-  hands: { x: 141, y: 163 },
-  chest: { x: 120, y: 118 },
-  waist: { x: 115, y: 158 },
-  hips: { x: 112, y: 190 },
-  legs: { x: 136, y: 189 },
-  feet: { x: 158, y: 260 },
+  shoulders: { x: 110, y: 96 },
+  arms: { x: 128, y: 138 },
+  hands: { x: 144, y: 164 },
+  chest: { x: 118, y: 116 },
+  waist: { x: 112, y: 156 },
+  hips: { x: 110, y: 188 },
+  legs: { x: 138, y: 192 },
+  feet: { x: 160, y: 258 },
 };
 
 const ZONE_LABELS: Record<BodyZone, string> = {
@@ -130,10 +132,25 @@ const STYLE_TINT: Record<string, string> = {
   trendy: "#B56A59",
 };
 
-const SILHOUETTE = "#DCD2DA";
 const SIGNAL = "#76536E";
 const AURA = "#B97861";
-const CHAIR = "#8D7D89";
+const CHAIR = "#9B8B97";
+
+/**
+ * The standing silhouette outline (torso → waist → hips → pelvis), symmetric
+ * around x=110. Reused for the fill, the soft top sheen and the style tint so
+ * they always share the exact same premium shape.
+ */
+const TORSO_PATH =
+  "M102 82 C92 84 80 88 80 98 C80 104 85 108 85 114 " +
+  "C85 132 84 151 93 168 C88 182 84 192 85 204 " +
+  "C86 212 92 216 100 216 L120 216 " +
+  "C128 216 134 212 135 204 C136 192 132 182 127 168 " +
+  "C136 151 135 132 135 114 C135 108 140 104 140 98 " +
+  "C140 88 128 84 118 82 Z";
+
+const LEG_LEFT = "M92 210 C90 240 92 270 94 296 L106 296 C106 270 106 240 105 210 Z";
+const LEG_RIGHT = "M128 210 C130 240 128 270 126 296 L114 296 C114 270 114 240 115 210 Z";
 
 export default function BodyModel({
   persona = "adult",
@@ -158,7 +175,7 @@ export default function BodyModel({
   if (accents.medical) zoneSet.add("waist");
 
   const aura = zoneSet.has("skin");
-  // At most three signal dots at a time — the card's chips carry the rest.
+  // At most three signal rings at a time — the card's chips carry the rest.
   const dotZones = Array.from(zoneSet)
     .filter((z): z is Exclude<BodyZone, "skin"> => z !== "skin")
     .slice(0, 3);
@@ -176,19 +193,35 @@ export default function BodyModel({
       aria-label={buildAvatarAriaLabel(Array.from(zoneSet), { seated, helper })}
     >
       <defs>
+        {/* Soft vertical body shading gives the flat figure a premium 2.5D feel. */}
+        <linearGradient id={`${uid}-body`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#ECE4EB" />
+          <stop offset="52%" stopColor="#DCD1DA" />
+          <stop offset="100%" stopColor="#C7B8C5" />
+        </linearGradient>
+        {/* Slightly deeper tone so arms/limbs recede behind the torso. */}
+        <linearGradient id={`${uid}-limb`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#E1D6E0" />
+          <stop offset="100%" stopColor="#CBBCC9" />
+        </linearGradient>
+        {/* A single quiet upper-left highlight — the only "lighting" on the body. */}
+        <radialGradient id={`${uid}-sheen`} cx="38%" cy="30%" r="62%">
+          <stop offset="0%" stopColor="rgba(255,255,255,.55)" />
+          <stop offset="100%" stopColor="rgba(255,255,255,0)" />
+        </radialGradient>
         <radialGradient id={`${uid}-floor`} cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="rgba(118,83,110,.16)" />
-          <stop offset="100%" stopColor="rgba(118,83,110,0)" />
+          <stop offset="0%" stopColor="rgba(80,55,74,.18)" />
+          <stop offset="100%" stopColor="rgba(80,55,74,0)" />
         </radialGradient>
         <radialGradient id={`${uid}-glow`} cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="rgba(118,83,110,.30)" />
-          <stop offset="70%" stopColor="rgba(118,83,110,.10)" />
+          <stop offset="0%" stopColor="rgba(118,83,110,.34)" />
+          <stop offset="65%" stopColor="rgba(118,83,110,.10)" />
           <stop offset="100%" stopColor="rgba(118,83,110,0)" />
         </radialGradient>
       </defs>
 
       {/* soft ground shadow keeps the figure anchored */}
-      <ellipse cx="110" cy={seated ? 292 : 316} rx="72" ry="12" fill={`url(#${uid}-floor)`} />
+      <ellipse cx="110" cy={seated ? 292 : 316} rx="70" ry="11" fill={`url(#${uid}-floor)`} />
 
       <g
         transform={scale === 1 ? undefined : `translate(${110 * (1 - scale)} ${330 * (1 - scale)}) scale(${scale})`}
@@ -196,39 +229,43 @@ export default function BodyModel({
         {/* sensory / skin comfort: one quiet dotted aura around the figure */}
         {aura && (
           <rect
-            x={seated ? 56 : 48}
+            x={seated ? 56 : 50}
             y="30"
-            width={seated ? 134 : 124}
+            width={seated ? 132 : 120}
             height={seated ? 262 : 292}
-            rx="62"
+            rx="60"
             fill="none"
             stroke={AURA}
-            strokeWidth="2"
+            strokeWidth="1.6"
             strokeLinecap="round"
-            strokeDasharray="0.5 9"
-            opacity=".75"
+            strokeDasharray="0.5 8"
+            opacity=".7"
             className="fsm-aura"
           />
         )}
 
-        {seated ? <SeatedFigure uid={uid} tint={tint} /> : <StandingFigure uid={uid} tint={tint} />}
+        {seated ? (
+          <SeatedFigure uid={uid} tint={tint} />
+        ) : (
+          <StandingFigure uid={uid} tint={tint} />
+        )}
 
-        {/* signal dots — one per active zone, max three */}
+        {/* signal rings — one per active zone, max three */}
         {dotZones.map((zone) => {
           const a = anchors[zone];
           const active = focusZone === zone;
           return (
             <g key={zone} className="fsm-sig" data-active={active}>
-              <circle className="fsm-sig-glow" cx={a.x} cy={a.y} r="15" fill={`url(#${uid}-glow)`} />
+              <circle className="fsm-sig-glow" cx={a.x} cy={a.y} r="16" fill={`url(#${uid}-glow)`} />
               <circle
                 cx={a.x}
                 cy={a.y}
-                r={active ? 10.5 : 8.5}
-                fill="rgba(118,83,110,.14)"
+                r={active ? 11 : 9}
+                fill="rgba(252,249,242,.55)"
                 stroke={SIGNAL}
-                strokeWidth={active ? 2.5 : 2}
+                strokeWidth={active ? 2.4 : 1.8}
               />
-              <circle cx={a.x} cy={a.y} r="3" fill={SIGNAL} />
+              <circle cx={a.x} cy={a.y} r="2.6" fill={SIGNAL} />
             </g>
           );
         })}
@@ -275,7 +312,7 @@ export default function BodyModel({
         .fsm-hotspot[data-active="true"] .fsm-hit { stroke: rgba(118,83,110,.55); }
         @keyframes fsmPop { from { opacity: 0; transform: scale(.7); transform-box: fill-box; transform-origin: center; } to { opacity: 1; transform: scale(1); } }
         @keyframes fsmBreath { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
-        @keyframes fsmFade { from { opacity: 0; } to { opacity: .75; } }
+        @keyframes fsmFade { from { opacity: 0; } to { opacity: .7; } }
         @media (prefers-reduced-motion: reduce) {
           .fsm-sig, .fsm-sig[data-active="true"] .fsm-sig-glow, .fsm-aura { animation: none; }
         }
@@ -288,61 +325,103 @@ export default function BodyModel({
   );
 }
 
-/** Flat front-facing figure: head, capsule torso, parallel limbs. One tone. */
+/**
+ * Front-facing editorial silhouette: smoothly-tapered torso, slim curved arms
+ * and legs, gently shaded with one soft sheen. Reads as a premium fit form.
+ */
 function StandingFigure({ uid, tint }: { uid: string; tint?: string }) {
   return (
-    <g fill={SILHOUETTE}>
-      <circle cx="110" cy="58" r="20" />
-      <rect x="102" y="76" width="16" height="16" rx="5" />
-      {/* arms */}
-      <rect x="58" y="96" width="16" height="102" rx="8" />
-      <rect x="146" y="96" width="16" height="102" rx="8" />
+    <g>
+      {/* arms sit behind the torso and use the slightly deeper limb tone */}
+      <path
+        d="M82 102 C74 120 68 150 67 180 C67 190 67 196 68 202"
+        fill="none"
+        stroke={`url(#${uid}-limb)`}
+        strokeWidth="13"
+        strokeLinecap="round"
+      />
+      <path
+        d="M138 102 C146 120 152 150 153 180 C153 190 153 196 152 202"
+        fill="none"
+        stroke={`url(#${uid}-limb)`}
+        strokeWidth="13"
+        strokeLinecap="round"
+      />
+
       {/* legs */}
-      <rect x="84" y="192" width="22" height="106" rx="11" />
-      <rect x="114" y="192" width="22" height="106" rx="11" />
+      <path d={LEG_LEFT} fill={`url(#${uid}-limb)`} />
+      <path d={LEG_RIGHT} fill={`url(#${uid}-limb)`} />
       {/* feet */}
-      <rect x="78" y="292" width="32" height="13" rx="6.5" />
-      <rect x="110" y="292" width="32" height="13" rx="6.5" />
-      {/* torso capsule */}
-      <rect x="80" y="88" width="60" height="114" rx="26" />
-      {/* subtle style tint on the torso only */}
-      {tint && <rect x="80" y="88" width="60" height="114" rx="26" fill={tint} opacity=".55" data-uid={uid} />}
+      <ellipse cx="93" cy="300" rx="15" ry="7" fill={`url(#${uid}-limb)`} />
+      <ellipse cx="127" cy="300" rx="15" ry="7" fill={`url(#${uid}-limb)`} />
+
+      {/* neck + head */}
+      <rect x="104" y="70" width="12" height="18" rx="6" fill={`url(#${uid}-limb)`} />
+      <circle cx="110" cy="54" r="17" fill={`url(#${uid}-body)`} />
+      <ellipse cx="104" cy="48" rx="9" ry="11" fill={`url(#${uid}-sheen)`} />
+
+      {/* torso — the hero shape */}
+      <path d={TORSO_PATH} fill={`url(#${uid}-body)`} />
+      {/* one soft upper-left sheen for depth */}
+      <ellipse cx="99" cy="120" rx="26" ry="42" fill={`url(#${uid}-sheen)`} />
+      {/* subtle style tint on the torso only — an accent, never a costume */}
+      {tint && <path d={TORSO_PATH} fill={tint} opacity=".34" />}
+      {/* barely-there top sheen line */}
+      <path d={TORSO_PATH} fill="none" stroke="rgba(255,255,255,.32)" strokeWidth="1" />
     </g>
   );
 }
 
-/** Side-profile seated figure with a minimal, clean wheelchair. */
+/** Side-profile seated figure with a minimal, refined wheelchair. */
 function SeatedFigure({ uid, tint }: { uid: string; tint?: string }) {
+  const TORSO = "M100 88 C96 92 95 104 96 120 C97 140 100 158 104 174 " +
+    "C104 184 108 192 118 194 L134 196 C124 198 112 198 104 196 " +
+    "C97 194 94 186 94 174 C93 150 92 118 94 104 C95 96 97 90 100 88 Z";
   return (
     <g>
-      {/* wheelchair — one wheel, one caster, three quiet frame strokes */}
-      <g fill="none" stroke={CHAIR} strokeWidth="3" strokeLinecap="round">
-        <circle cx="104" cy="240" r="40" />
-        <circle cx="104" cy="240" r="4.5" fill={CHAIR} stroke="none" />
-        <circle cx="170" cy="270" r="9" />
-        <path d="M90 148q-8 0-8 8v50" />
-        <path d="M90 206h62l16 55" />
+      {/* wheelchair — a large hand-rimmed wheel, a caster and a quiet frame */}
+      <g fill="none" stroke={CHAIR} strokeLinecap="round">
+        <circle cx="104" cy="242" r="42" strokeWidth="2.4" />
+        <circle cx="104" cy="242" r="34" strokeWidth="1.2" opacity=".6" />
+        <circle cx="104" cy="242" r="4" fill={CHAIR} stroke="none" />
+        <circle cx="172" cy="272" r="9" strokeWidth="2.4" />
+        <path d="M172 272 L162 232" strokeWidth="2.4" />
+        <path d="M90 150 q-8 0 -8 8 v52" strokeWidth="2.6" />
+        <path d="M90 206 h64 l12 44" strokeWidth="2.6" />
       </g>
+
       {/* figure */}
-      <g fill={SILHOUETTE}>
-        <circle cx="120" cy="60" r="18" />
-        <rect x="110" y="74" width="15" height="16" rx="5" />
-        {/* torso */}
-        <rect x="98" y="86" width="34" height="112" rx="17" />
-        {tint && <rect x="98" y="86" width="34" height="112" rx="17" fill={tint} opacity=".55" data-uid={uid} />}
-        {/* arm resting toward the lap */}
-        <path
-          d="M114 102 C116 132 122 148 140 160"
-          fill="none"
-          stroke={SILHOUETTE}
-          strokeWidth="14"
-          strokeLinecap="round"
-        />
-        {/* thigh, lower leg, foot */}
-        <rect x="100" y="176" width="64" height="26" rx="13" />
-        <rect x="146" y="196" width="18" height="62" rx="9" />
-        <rect x="142" y="252" width="34" height="13" rx="6.5" />
-      </g>
+      <circle cx="118" cy="60" r="17" fill={`url(#${uid}-body)`} />
+      <ellipse cx="112" cy="54" rx="8" ry="10" fill={`url(#${uid}-sheen)`} />
+      <rect x="110" y="74" width="13" height="16" rx="6" fill={`url(#${uid}-limb)`} />
+
+      {/* torso */}
+      <path d={TORSO} fill={`url(#${uid}-body)`} />
+      <ellipse cx="106" cy="118" rx="16" ry="34" fill={`url(#${uid}-sheen)`} />
+      {tint && <path d={TORSO} fill={tint} opacity=".34" />}
+
+      {/* arm resting toward the lap */}
+      <path
+        d="M112 104 C114 132 120 150 140 162"
+        fill="none"
+        stroke={`url(#${uid}-limb)`}
+        strokeWidth="13"
+        strokeLinecap="round"
+      />
+
+      {/* thigh, lower leg, foot */}
+      <path
+        d="M104 178 C120 176 150 178 164 186 C158 196 130 196 108 196 C100 194 100 182 104 178 Z"
+        fill={`url(#${uid}-limb)`}
+      />
+      <path
+        d="M150 188 C154 210 156 234 158 256"
+        fill="none"
+        stroke={`url(#${uid}-limb)`}
+        strokeWidth="15"
+        strokeLinecap="round"
+      />
+      <ellipse cx="162" cy="260" rx="16" ry="7" fill={`url(#${uid}-limb)`} />
     </g>
   );
 }

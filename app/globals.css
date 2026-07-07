@@ -76,11 +76,45 @@
   }
 
   .card-hover {
-    @apply motion-safe:hover:-translate-y-1 motion-safe:hover:rotate-[-0.2deg] hover:border-primary-300 hover:shadow-lift;
+    @apply motion-safe:hover:-translate-y-1 hover:border-primary-300 hover:shadow-lift;
   }
 
   .badge {
     @apply inline-flex items-center rounded-md border border-ink/10 bg-sand/60 px-2.5 py-1 text-xs font-semibold text-ink/75;
+  }
+
+  /*
+   * One consistent chip / label system shared across the "signal map",
+   * "passport" and "truth card" surfaces so pills read as one family:
+   *   .panel-eyebrow — the small uppercase section label
+   *   .chip          — neutral pill
+   *   .chip-soft     — primary-tinted pill (info / selectable)
+   *   .chip-strong   — primary-filled pill (active / emphasis)
+   *   .chip-accent   — clay-tinted pill (a warm accent)
+   *   .tag           — tiny outlined tag
+   */
+  .panel-eyebrow {
+    @apply text-[11px] font-bold uppercase tracking-wider text-ink/50;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full border border-ink/10 bg-sand/45 px-2.5 py-1 text-xs font-semibold text-ink/70;
+  }
+
+  .chip-soft {
+    @apply inline-flex items-center gap-1 rounded-full border border-primary-100 bg-primary-50 px-2.5 py-1 text-xs font-semibold text-primary-800;
+  }
+
+  .chip-strong {
+    @apply inline-flex items-center gap-1 rounded-full border border-primary-700 bg-primary-700 px-2.5 py-1 text-xs font-bold text-white;
+  }
+
+  .chip-accent {
+    @apply inline-flex items-center gap-1 rounded-full border border-clay/30 bg-clay/15 px-2.5 py-1 text-xs font-bold text-clay;
+  }
+
+  .tag {
+    @apply inline-flex items-center rounded-md border border-ink/10 bg-paper px-2 py-0.5 text-[11px] font-semibold text-ink/65;
   }
 
   .section-title {
@@ -124,6 +158,9 @@
   html[data-high-contrast="true"] .paper-panel,
   html[data-high-contrast="true"] .btn-secondary,
   html[data-high-contrast="true"] .badge,
+  html[data-high-contrast="true"] .chip,
+  html[data-high-contrast="true"] .chip-soft,
+  html[data-high-contrast="true"] .tag,
   html[data-high-contrast="true"] .sticker {
     border-color: rgba(24, 20, 16, 0.45) !important;
   }
@@ -159,6 +196,21 @@
   @keyframes floaty {
     0%, 100% { transform: translate(-50%, 0); }
     50% { transform: translate(-50%, -6px); }
+  }
+
+  /* Soft "live" ping on the profile mirror header dot. */
+  .fsm-live-ping {
+    animation: fsm-live-ping 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  @keyframes fsm-live-ping {
+    0% { transform: scale(1); opacity: .6; }
+    70%, 100% { transform: scale(2.4); opacity: 0; }
+  }
+
+  html[data-reduce-motion="true"] .fsm-live-ping {
+    animation: none;
+    opacity: 0;
   }
 
   html[data-reduce-motion="true"] .animate-floaty {

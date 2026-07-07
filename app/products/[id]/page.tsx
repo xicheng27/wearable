@@ -200,7 +200,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                 </h2>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {product.bestFor.map((item) => (
-                    <span key={item} className="badge bg-primary-50 text-primary-900">
+                    <span key={item} className="chip-soft">
                       {item}
                     </span>
                   ))}

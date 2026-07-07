@@ -7,8 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "npm run verify:reco",
-    "verify:reco": "esbuild scripts/verify-recommendations.ts --bundle --platform=node --format=cjs --alias:@=. --outfile=.next/verify-recommendations.cjs --log-level=warning && node .next/verify-recommendations.cjs"
+    "test": "npm run verify:reco && npm run audit:images",
+    "verify:reco": "esbuild scripts/verify-recommendations.ts --bundle --platform=node --format=cjs --alias:@=. --outfile=.next/verify-recommendations.cjs --log-level=warning && node .next/verify-recommendations.cjs",
+    "audit:images": "node scripts/audit-image-hosts.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
