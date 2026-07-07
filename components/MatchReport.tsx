@@ -50,7 +50,7 @@ function SummaryCard({
         accent ? "border-primary-200 bg-primary-50" : "border-ink/10 bg-paper"
       }`}
     >
-      <p className="text-[11px] font-bold uppercase tracking-wider text-ink/50">{label}</p>
+      <p className="panel-eyebrow">{label}</p>
       <p className="mt-1 font-display text-2xl font-semibold tabular-nums text-ink">{value}</p>
       {sub && <p className="mt-0.5 text-xs text-ink/55">{sub}</p>}
     </div>
@@ -98,7 +98,7 @@ export default function MatchReport({ report }: { report: MatchReportData }) {
         {/* Profile + hard filters */}
         <div className="space-y-5">
           <div className="rounded-2xl border border-ink/10 bg-paper p-4">
-            <p className="text-[11px] font-bold uppercase tracking-wider text-ink/50">Matched against your profile</p>
+            <p className="panel-eyebrow">Matched against your profile</p>
             <dl className="mt-3 grid grid-cols-1 gap-x-4 gap-y-2 sm:grid-cols-2">
               {profile.map((row) => (
                 <div key={row.label} className="min-w-0">
@@ -111,7 +111,7 @@ export default function MatchReport({ report }: { report: MatchReportData }) {
 
           {hardFilters.length > 0 && (
             <div>
-              <p className="text-[11px] font-bold uppercase tracking-wider text-ink/50">
+              <p className="panel-eyebrow">
                 Non-negotiable filters
               </p>
               <p className="mt-1 text-xs leading-5 text-ink/55">
@@ -119,10 +119,7 @@ export default function MatchReport({ report }: { report: MatchReportData }) {
               </p>
               <ul className="mt-2 flex flex-wrap gap-1.5">
                 {hardFilters.map((chip) => (
-                  <li
-                    key={chip}
-                    className="inline-flex items-center gap-1 rounded-full border border-primary-200 bg-primary-50 px-2.5 py-1 text-xs font-semibold text-primary-900"
-                  >
+                  <li key={chip} className="chip-soft">
                     <svg className="h-3 w-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3} aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
@@ -159,7 +156,7 @@ export default function MatchReport({ report }: { report: MatchReportData }) {
 
           {bars.length > 0 && (
             <div className="rounded-2xl border border-ink/10 bg-paper p-4">
-              <p className="text-[11px] font-bold uppercase tracking-wider text-ink/50">Score breakdown</p>
+              <p className="panel-eyebrow">Score breakdown</p>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
                 {bars.map((bar) => (
                   <ScoreBar key={bar.key} label={bar.label} value={bar.value ?? 0} />
@@ -173,7 +170,7 @@ export default function MatchReport({ report }: { report: MatchReportData }) {
       {/* Comparison table */}
       {comparison.length > 0 && (
         <div className="mt-6">
-          <p className="text-[11px] font-bold uppercase tracking-wider text-ink/50">Product comparison</p>
+          <p className="panel-eyebrow">Product comparison</p>
           <div className="mt-2 overflow-x-auto rounded-2xl border border-ink/10">
             <table className="w-full min-w-[640px] border-collapse text-sm">
               <thead>

@@ -35,22 +35,15 @@ function CategoryRow({ c }: { c: SignalCategory }) {
         />
       </div>
 
-      <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
-        <span className="rounded-full bg-primary-50 px-2.5 py-1 font-bold text-primary-800">
-          {c.strength} signal
-        </span>
-        <span className="rounded-full bg-sand/60 px-2.5 py-1 font-semibold text-ink/70">
-          {c.role}
-        </span>
+      <div className="mt-3 flex flex-wrap items-center gap-2">
+        <span className="chip-soft">{c.strength} signal</span>
+        <span className="chip">{c.role}</span>
       </div>
 
       {c.tags.length > 0 && (
         <div className="mt-3 flex flex-wrap gap-1.5">
           {c.tags.map((t) => (
-            <span
-              key={t}
-              className="rounded-md border border-ink/10 bg-paper px-2 py-0.5 text-[11px] font-semibold text-ink/65"
-            >
+            <span key={t} className="tag">
               {t}
             </span>
           ))}
@@ -103,9 +96,7 @@ export default function SignalMap({ data }: { data: SignalMapData }) {
         <div className="rounded-2xl border border-ink/10 bg-paper p-6">
           <div className="flex items-center justify-between">
             <p className="text-sm font-bold text-ink">Profile uniqueness</p>
-            <span className="rounded-full bg-clay/15 px-2.5 py-1 text-xs font-bold text-clay">
-              {data.uniqueness.tier}
-            </span>
+            <span className="chip-accent">{data.uniqueness.tier}</span>
           </div>
           <p className="mt-2 font-display text-2xl font-semibold text-ink">
             {data.uniqueness.label}
@@ -168,13 +159,10 @@ export default function SignalMap({ data }: { data: SignalMapData }) {
       {/* Key tags */}
       {data.keyTags.length > 0 && (
         <div className="mt-6">
-          <p className="text-[11px] font-bold uppercase tracking-wide text-ink/45">Key tags</p>
+          <p className="panel-eyebrow">Key tags</p>
           <div className="mt-2 flex flex-wrap gap-1.5">
             {data.keyTags.map((t) => (
-              <span
-                key={t}
-                className="rounded-full bg-primary-50 px-2.5 py-1 text-xs font-semibold text-primary-800"
-              >
+              <span key={t} className="chip-soft">
                 {t}
               </span>
             ))}
@@ -186,9 +174,7 @@ export default function SignalMap({ data }: { data: SignalMapData }) {
       {data.hasCustom && (
         <div className="mt-6 rounded-2xl border border-primary-200 bg-primary-50/50 p-5">
           <div className="flex items-center gap-2">
-            <span className="rounded-full bg-primary-700 px-2.5 py-1 text-xs font-bold text-white">
-              Custom need added
-            </span>
+            <span className="chip-strong">Custom need added</span>
             <span className="text-xs text-ink/50">Private — kept off your shareable card</span>
           </div>
           {data.customNeed && (

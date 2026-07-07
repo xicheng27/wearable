@@ -445,9 +445,7 @@ function ModelPanel({
 
       {/* Active signals */}
       <div className="mt-2.5">
-        <p className="text-[11px] font-bold uppercase tracking-wider text-ink/45">
-          Active signals
-        </p>
+        <p className="panel-eyebrow">Active signals</p>
         {signals.length === 0 ? (
           <p className="mt-1.5 text-xs leading-5 text-ink/55">
             None yet — pick options and they&apos;ll appear here.
@@ -721,9 +719,7 @@ export default function QuizClient() {
 
             {current.showExampleChips && (
               <div className="mt-4">
-                <p className="text-xs font-bold uppercase tracking-wider text-ink/50">
-                  Quick examples
-                </p>
+                <p className="panel-eyebrow">Quick examples</p>
                 <div className="mt-2 flex flex-wrap gap-2">
                   {exampleChips.map((chip) => {
                     const on = chipApplied(chip, answers);
