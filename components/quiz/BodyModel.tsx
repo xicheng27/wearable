@@ -54,6 +54,17 @@ export interface BodyModelProps {
   interactive?: boolean;
   /** The currently focused zone (gets a stronger ring). */
   focusZone?: BodyZone;
+  /**
+   * Per-zone signal colour. Decorative only — every coloured zone also has a
+   * text chip in the surrounding card, so colour is never load-bearing.
+   */
+  zoneTones?: Partial<Record<Exclude<BodyZone, "skin">, SignalTone>>;
+  /** Colour of the sensory aura (defaults to lavender). */
+  sensoryTone?: SignalTone;
+  /** One dominant garment cue — kept to a single accent to avoid clutter. */
+  accent?: "closures" | "sole" | null;
+  /** Tone for the soft floor glow beneath the figure (defaults to primary). */
+  dominantTone?: SignalTone;
   /** Called when a body zone hotspot is tapped/activated. */
   onZoneClick?: (zone: BodyZone) => void;
   /** Legacy accents map onto zones so older call sites keep working. */
@@ -132,9 +143,34 @@ const STYLE_TINT: Record<string, string> = {
   trendy: "#B56A59",
 };
 
-const SIGNAL = "#76536E";
-const AURA = "#B97861";
 const CHAIR = "#9B8B97";
+
+/**
+ * Signal tones — a small, tasteful palette that colour-codes each fit signal
+ * on the figure. Muted (never neon) so several can appear without clashing
+ * with the cream / mauve / brown system. Colour is always paired with a text
+ * chip elsewhere, so it is never the only way a signal is conveyed.
+ */
+export type SignalTone =
+  | "teal" // seated / lower-body comfort
+  | "amber" // hands / dexterity / closures
+  | "lavender" // sensory / fabric comfort
+  | "mint" // AFO / orthotics / footwear
+  | "coral" // medical / body access
+  | "gold" // caregiver-assisted dressing
+  | "primary"; // neutral mobility / style
+
+// base = ring / dot colour · soft = translucent halo · deep = accessible
+// background behind white text (contrast ≥ 4.5:1).
+export const TONE: Record<SignalTone, { base: string; soft: string; deep: string }> = {
+  teal: { base: "#3E9A90", soft: "rgba(62,154,144,.20)", deep: "#2C6E67" },
+  amber: { base: "#C0812E", soft: "rgba(192,129,46,.20)", deep: "#875717" },
+  lavender: { base: "#8A64AE", soft: "rgba(138,100,174,.20)", deep: "#5E4382" },
+  mint: { base: "#4C9E77", soft: "rgba(76,158,119,.20)", deep: "#2F6B4F" },
+  coral: { base: "#C56670", soft: "rgba(197,102,112,.20)", deep: "#9C444D" },
+  gold: { base: "#B0893A", soft: "rgba(176,137,58,.20)", deep: "#7A5D20" },
+  primary: { base: "#76536E", soft: "rgba(118,83,110,.20)", deep: "#52364C" },
+};
 
 /**
  * The standing silhouette outline (torso → waist → hips → pelvis), symmetric
@@ -160,6 +196,10 @@ export default function BodyModel({
   helper = false,
   interactive = false,
   focusZone,
+  zoneTones = {},
+  sensoryTone = "lavender",
+  accent = null,
+  dominantTone = "primary",
   onZoneClick,
   accents = {},
   className = "",
@@ -182,6 +222,8 @@ export default function BodyModel({
 
   const anchors = seated ? ANCHORS_SEATED : ANCHORS_STANDING;
   const tint = style ? STYLE_TINT[style] : undefined;
+  const dom = TONE[dominantTone];
+  const auraTone = TONE[sensoryTone];
   // Teens read slightly smaller; everyone else shares the same calm figure.
   const scale = persona === "teen" ? 0.93 : 1;
 
@@ -209,15 +251,16 @@ export default function BodyModel({
           <stop offset="0%" stopColor="rgba(255,255,255,.55)" />
           <stop offset="100%" stopColor="rgba(255,255,255,0)" />
         </radialGradient>
+        {/* floor glow picks up the dominant signal tone — the figure quietly
+            radiates in the active colour */}
         <radialGradient id={`${uid}-floor`} cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="rgba(80,55,74,.18)" />
-          <stop offset="100%" stopColor="rgba(80,55,74,0)" />
+          <stop offset="0%" stopColor={dom.base} stopOpacity="0.22" />
+          <stop offset="100%" stopColor={dom.base} stopOpacity="0" />
         </radialGradient>
-        <radialGradient id={`${uid}-glow`} cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="rgba(118,83,110,.34)" />
-          <stop offset="65%" stopColor="rgba(118,83,110,.10)" />
-          <stop offset="100%" stopColor="rgba(118,83,110,0)" />
-        </radialGradient>
+        {/* soft blur turns the flat signal halos into premium coloured glows */}
+        <filter id={`${uid}-blur`} x="-60%" y="-60%" width="220%" height="220%">
+          <feGaussianBlur stdDeviation="3.2" />
+        </filter>
       </defs>
 
       {/* soft ground shadow keeps the figure anchored */}
@@ -235,7 +278,7 @@ export default function BodyModel({
             height={seated ? 262 : 292}
             rx="60"
             fill="none"
-            stroke={AURA}
+            stroke={auraTone.base}
             strokeWidth="1.6"
             strokeLinecap="round"
             strokeDasharray="0.5 8"
@@ -250,22 +293,56 @@ export default function BodyModel({
           <StandingFigure uid={uid} tint={tint} />
         )}
 
-        {/* signal rings — one per active zone, max three */}
+        {/* one dominant garment cue, drawn under the rings so it never clutters */}
+        {accent === "closures" && !seated && (
+          <g className="fsm-accent">
+            {[112, 132, 152].map((y) => (
+              <g key={y}>
+                <circle cx="110" cy={y} r="5" fill={TONE.amber.base} opacity="0.3" filter={`url(#${uid}-blur)`} />
+                <circle cx="110" cy={y} r="2.6" fill={TONE.amber.base} />
+                <circle cx="110" cy={y} r="2.6" fill="none" stroke="rgba(255,255,255,.5)" strokeWidth="0.8" />
+              </g>
+            ))}
+          </g>
+        )}
+        {accent === "sole" && (
+          <g className="fsm-accent">
+            {seated ? (
+              <rect x="146" y="266" width="34" height="4.5" rx="2.25" fill={TONE.mint.base} opacity="0.85" />
+            ) : (
+              <>
+                <rect x="79" y="305" width="30" height="4.5" rx="2.25" fill={TONE.mint.base} opacity="0.85" />
+                <rect x="111" y="305" width="30" height="4.5" rx="2.25" fill={TONE.mint.base} opacity="0.85" />
+              </>
+            )}
+          </g>
+        )}
+
+        {/* signal rings — one per active zone, max three, colour-coded by tone */}
         {dotZones.map((zone) => {
           const a = anchors[zone];
           const active = focusZone === zone;
+          const t = TONE[zoneTones[zone] ?? "primary"];
           return (
             <g key={zone} className="fsm-sig" data-active={active}>
-              <circle className="fsm-sig-glow" cx={a.x} cy={a.y} r="16" fill={`url(#${uid}-glow)`} />
+              <circle
+                className="fsm-sig-glow"
+                cx={a.x}
+                cy={a.y}
+                r="15"
+                fill={t.base}
+                opacity="0.32"
+                filter={`url(#${uid}-blur)`}
+              />
               <circle
                 cx={a.x}
                 cy={a.y}
                 r={active ? 11 : 9}
-                fill="rgba(252,249,242,.55)"
-                stroke={SIGNAL}
-                strokeWidth={active ? 2.4 : 1.8}
+                fill="rgba(252,249,242,.62)"
+                stroke={t.base}
+                strokeWidth={active ? 2.6 : 2}
               />
-              <circle cx={a.x} cy={a.y} r="2.6" fill={SIGNAL} />
+              <circle cx={a.x} cy={a.y} r="2.8" fill={t.base} />
             </g>
           );
         })}
@@ -305,6 +382,7 @@ export default function BodyModel({
         .fsm-sig { animation: fsmPop .5s cubic-bezier(.16,1,.3,1) both; }
         .fsm-sig[data-active="true"] .fsm-sig-glow { animation: fsmBreath 2.6s ease-in-out infinite; }
         .fsm-aura { animation: fsmFade .6s ease both; }
+        .fsm-accent { animation: fsmFade .5s ease both; }
         .fsm-hotspot { cursor: pointer; outline: none; }
         .fsm-hit { fill: rgba(118,83,110,0); stroke: rgba(118,83,110,0); stroke-width: 1.5; transition: fill .18s ease, stroke .18s ease; }
         .fsm-hotspot:hover .fsm-hit, .fsm-hotspot:focus-visible .fsm-hit { fill: rgba(118,83,110,.12); stroke: rgba(118,83,110,.5); }
@@ -314,12 +392,13 @@ export default function BodyModel({
         @keyframes fsmBreath { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
         @keyframes fsmFade { from { opacity: 0; } to { opacity: .7; } }
         @media (prefers-reduced-motion: reduce) {
-          .fsm-sig, .fsm-sig[data-active="true"] .fsm-sig-glow, .fsm-aura { animation: none; }
+          .fsm-sig, .fsm-sig[data-active="true"] .fsm-sig-glow, .fsm-aura, .fsm-accent { animation: none; }
         }
         /* Honour the site's accessibility panel toggle too. */
         html[data-reduce-motion="true"] .fsm-sig,
         html[data-reduce-motion="true"] .fsm-sig[data-active="true"] .fsm-sig-glow,
-        html[data-reduce-motion="true"] .fsm-aura { animation: none; }
+        html[data-reduce-motion="true"] .fsm-aura,
+        html[data-reduce-motion="true"] .fsm-accent { animation: none; }
       `}</style>
     </svg>
   );
