@@ -1,4 +1,4 @@
-import type { BodyZone, Garment, Persona } from "@/components/quiz/BodyModel";
+import type { BodyZone, Garment, Persona, SignalTone } from "@/components/quiz/BodyModel";
 import { GLOBAL } from "@/lib/countries";
 
 /* --------------------------- Answer model -------------------------------- */
@@ -743,7 +743,26 @@ export interface FitSignal {
   label: string;
   zones: BodyZone[];
   detail: string;
+  /** Tasteful signal colour used to colour-code this signal on the fit map. */
+  tone: SignalTone;
 }
+
+/** Signal → colour mapping (kept in one place so tones stay consistent). */
+const SIGNAL_TONE: Record<string, SignalTone> = {
+  seated: "teal",
+  onehand: "amber",
+  closures: "amber",
+  shoulder: "primary",
+  sensory: "lavender",
+  medical: "coral",
+  brace: "mint",
+  assisted: "gold",
+  chest: "coral",
+  waist: "teal",
+  legs: "mint",
+  footwear: "mint",
+  style: "primary",
+};
 
 /**
  * Derives the ordered list of active fit signals from the answers so far.
@@ -751,7 +770,7 @@ export interface FitSignal {
  * behind a "+N more" toggle (progressive disclosure).
  */
 export function fitSignals(a: Answers): FitSignal[] {
-  const out: FitSignal[] = [];
+  const out: Omit<FitSignal, "tone">[] = [];
   const bi = a.bodyIssues ?? [];
   const zoneOf = (id: string) => ISSUE_ZONE[id];
 
@@ -876,7 +895,7 @@ export function fitSignals(a: Answers): FitSignal[] {
       detail: "Balancing style with your fit needs",
     });
 
-  return out;
+  return out.map((s) => ({ ...s, tone: SIGNAL_TONE[s.id] ?? "primary" }));
 }
 
 /* --------------------------- Live profile chips -------------------------- */

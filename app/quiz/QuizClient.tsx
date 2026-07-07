@@ -9,7 +9,7 @@ import { useCountry } from "@/components/CountryProvider";
 import { usePassport } from "@/components/PassportProvider";
 import { useUserProfile } from "@/components/UserProfileProvider";
 import { GLOBAL } from "@/lib/countries";
-import BodyModel, { type BodyZone } from "@/components/quiz/BodyModel";
+import BodyModel, { TONE, type BodyZone, type SignalTone } from "@/components/quiz/BodyModel";
 import { buildAvatarAriaLabel } from "@/lib/avatar";
 import {
   COUNTRY_FLAGS,
@@ -289,6 +289,34 @@ function ModelPanel({
       ? selectedSignal.zones
       : Array.from(new Set(signals.flatMap((s) => s.zones))).slice(0, 3);
 
+  // Colour-code each highlighted zone by the highest-priority signal that
+  // lights it. Colour is decorative — the same signals also appear as labelled
+  // chips below, so nothing is conveyed by colour alone.
+  const zoneTones: Partial<Record<Exclude<BodyZone, "skin">, SignalTone>> = {};
+  let sensoryTone: SignalTone = "lavender";
+  const toneSignals = selectedSignal ? [selectedSignal] : signals;
+  for (const s of toneSignals) {
+    if (s.zones.includes("skin")) sensoryTone = s.tone;
+    for (const z of s.zones) {
+      if (z !== "skin" && !(z in zoneTones)) {
+        zoneTones[z as Exclude<BodyZone, "skin">] = s.tone;
+      }
+    }
+  }
+  if (interactive && focusZone && focusZone !== "skin") {
+    zoneTones[focusZone as Exclude<BodyZone, "skin">] = "primary";
+  }
+
+  // One dominant garment cue + floor glow, from the previewed or top signal.
+  const dominant = selectedSignal ?? signals[0];
+  const dominantTone: SignalTone = dominant?.tone ?? "primary";
+  const accent: "closures" | "sole" | null =
+    dominant?.id === "closures" || dominant?.id === "onehand"
+      ? "closures"
+      : dominant?.id === "brace" || dominant?.id === "footwear"
+        ? "sole"
+        : null;
+
   const feedback = interactive
     ? focusZone
       ? `Checking ${ZONE_LABEL[focusZone].toLowerCase()} fit`
@@ -419,6 +447,10 @@ function ModelPanel({
                 persona={state.persona}
                 seated={state.seated}
                 zones={zones}
+                zoneTones={zoneTones}
+                sensoryTone={sensoryTone}
+                accent={accent}
+                dominantTone={dominantTone}
                 style={state.style}
                 helper={state.helper}
                 interactive={interactive}
@@ -437,7 +469,8 @@ function ModelPanel({
         className={`${showMap ? "mt-2.5" : "mt-3"} flex items-start gap-2 text-sm font-semibold leading-5 text-primary-800`}
       >
         <span
-          className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-clay"
+          className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full"
+          style={{ backgroundColor: TONE[dominantTone].base }}
           aria-hidden="true"
         />
         <span>{feedback}</span>
@@ -454,18 +487,25 @@ function ModelPanel({
           <div className="mt-1.5 flex flex-wrap gap-1.5">
             {visibleSignals.map((signal) => {
               const on = signal.id === selectedId;
+              const t = TONE[signal.tone];
               return (
                 <button
                   key={signal.id}
                   type="button"
                   onClick={() => setSelectedId(on ? null : signal.id)}
                   aria-pressed={on}
-                  className={`min-h-9 rounded-full border px-3 py-1 text-xs font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 focus-visible:ring-offset-1 ${
-                    on
-                      ? "border-primary-700 bg-primary-700 text-white"
-                      : "border-primary-100 bg-primary-50 text-primary-800 hover:border-primary-400"
-                  }`}
+                  style={{
+                    borderColor: t.base,
+                    backgroundColor: on ? t.deep : t.soft,
+                    color: on ? "#fff" : t.deep,
+                  }}
+                  className="inline-flex min-h-9 items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 focus-visible:ring-offset-1"
                 >
+                  <span
+                    aria-hidden="true"
+                    className="h-1.5 w-1.5 rounded-full"
+                    style={{ backgroundColor: on ? "#fff" : t.base }}
+                  />
                   {signal.label}
                 </button>
               );
