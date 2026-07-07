@@ -133,6 +133,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
             <ProductImage
               src={product.imageUrl}
               alt={product.imageAlt}
+              category={product.categoryNormalized}
               permissionStatus={product.permissionStatus}
               attribution={product.attributionText}
               source={brand.name}

@@ -48,6 +48,11 @@ export const regionAliases: Record<string, string[]> = {
   Canada: ["Canada"],
   Australia: ["Australia"],
   Ireland: ["Ireland"],
+  // Feed data uses these words to mean "ships anywhere" — treat them as Global
+  // so worldwide products correctly count as available in any country.
+  Worldwide: [GLOBAL],
+  International: [GLOBAL],
+  Global: [GLOBAL],
 };
 
 export function expandShippingRegions(values: string[]): string[] {

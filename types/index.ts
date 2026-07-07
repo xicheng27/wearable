@@ -342,6 +342,24 @@ export interface RecommendationInput {
   limit?: number;
 }
 
+/**
+ * Per-dimension match strength (0–100), computed from real match state — the
+ * source for the results-page score bars and the product comparison table.
+ * A value of `null` means the dimension wasn't applicable (nothing selected to
+ * satisfy), so the UI can show "—" instead of a misleading percentage.
+ */
+export interface ScoreBreakdown {
+  category: number;
+  accessibility: number | null;
+  location: number | null;
+  dressing: number | null;
+  sensory: number | null;
+  range: number;
+  style: number | null;
+  budget: number | null;
+  confidence: number;
+}
+
 /** A single recommended item plus the structured reasoning behind the match. */
 export interface RecommendationResult {
   product: Product;
@@ -371,6 +389,18 @@ export interface RecommendationResult {
   confidenceNotes: string[];
   /** Honest pre-purchase checks: fit, shipping, returns, missing data. */
   checkBeforeBuying: string[];
+  /** Overall match strength 0–100 (hard requirements weighted highest). */
+  matchScore: number;
+  /** Per-dimension score bars for the results dashboard + comparison table. */
+  scoreBreakdown: ScoreBreakdown;
+  /** Active hard requirements this item passes / how many are active. */
+  hardPassed: number;
+  hardTotal: number;
+  /** Selected soft preferences this item matches / how many were selected. */
+  softMatched: number;
+  softTotal: number;
+  /** Evidence fields that are missing or weak for this product+need combo. */
+  missingData: string[];
 }
 
 /** A single product evaluated against a passport/input outside the quiz flow. */

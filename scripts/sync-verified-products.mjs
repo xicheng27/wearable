@@ -251,34 +251,65 @@ function slug(value) {
     .replace(/^-|-$/g, "");
 }
 
-function classify(title, productType, tags = "") {
-  const type = productType.toLowerCase();
-  const value = `${title} ${tags}`.toLowerCase();
-  if (/\bshoes?\b|\bboots?\b|\bslippers?\b|\bsneakers?\b|\bfootwear\b/.test(value)) return ["Shoes", "shoes"];
-  if (/\bsocks?\b|\bleg warmers?\b/.test(value)) return ["Socks", "shoes"];
-  if (/\bunderwear\b|\bbriefs?\b|\bboxers?\b|\bbra\b/.test(value)) return ["Underwear", "underwear"];
-  if (/\bnightgown\b|\bpajamas?\b|\bsleepwear\b/.test(value)) return ["Nightwear", "nightwear"];
-  if (/\bdress\b(?!\s+shirt)|\bskirt\b|\bjumpsuit\b|\boveralls?\b/.test(value)) return ["Dresses", "dresses"];
-  if (/\bjeans?\b|\bdenim pants?\b/.test(value)) return ["Jeans", "jeans"];
-  if (/\bshorts?\b/.test(value)) return ["Shorts", "pants"];
-  if (/\bpants?\b|\btrousers?\b|\bleggings?\b|\bsweatpants?\b|\bbottoms?\b|\bjoggers?\b/.test(value)) return ["Pants", "pants"];
-  if (/\bjacket\b|\bcoat\b|\bbomber\b|\bouterwear\b|\bcape\b/.test(value)) return ["Jackets", "jackets"];
-  if (/\bshirt\b|\bblouse\b|\bpolo\b/.test(value)) return ["Shirts", "shirts"];
-  if (/\btop\b|\btee\b|\bt-shirt\b|\bundershirts?\b|\brash guard\b|\bswim tank\b|\btank top\b|\bcami\b|\bsweater\b|\bhoodie\b|\bjumper\b|\bpullover\b|\bsweatshirt\b/.test(value)) return ["Tops", "tops"];
+// Adaptive/marketing phrases that contain garment words but do not name the
+// garment. Stripped before classification so they can't misclassify (kept in
+// sync with NOISE_PHRASES in lib/productMetadata.ts).
+const CLASSIFY_NOISE = [
+  /\beasy[- ]?dress(ing)?\b/g,
+  /\bassisted[- ]dressing\b/g,
+  /\bself[- ]dressing\b/g,
+  /\bstay dressed\b/g,
+  /\beasy[- ]on\b/g,
+  /\beasy[- ]off\b/g,
+  /\bslip[- ]?on\b/g,
+  /\bpull[- ]?on\b/g,
+  /\bopen[- ]back\b/g,
+  /\bback[- ]overlap\b/g,
+];
 
-  if (/footwear|shoe|boot|slipper/.test(type)) return ["Shoes", "shoes"];
-  if (/sock/.test(type)) return ["Socks", "shoes"];
-  if (/underwear|brief|bra/.test(type)) return ["Underwear", "underwear"];
-  if (/nightgown|pajama|sleepwear/.test(type)) return ["Nightwear", "nightwear"];
-  if (/dress/.test(type)) return ["Dresses", "dresses"];
-  if (/jean/.test(type)) return ["Jeans", "jeans"];
-  if (/short/.test(type) && !/short sleeve/.test(type)) return ["Shorts", "pants"];
-  if (/pant|trouser|legging|bottom/.test(type)) return ["Pants", "pants"];
-  if (/jacket|coat|outerwear|cape/.test(type)) return ["Jackets", "jackets"];
-  if (/shirt|blouse|polo/.test(type)) return ["Shirts", "shirts"];
-  if (/top|short sleeve|long sleeve|sweater|hoodie|jumper|sweat/.test(type)) {
-    return ["Tops", "tops"];
+// Garment head nouns, checked so the LAST match in the phrase wins (English
+// compounds put the head noun last: "dress shirt" = shirt, "shirt dress" =
+// dress). Mirrors GARMENT_NOUNS in lib/productMetadata.ts.
+const CLASSIFY_NOUNS = [
+  [/\b(shoes?|boots?|sneakers?|sandals?|slippers?|trainers?|loafers?|clogs?|moccasins?|footwear)\b/g, ["Shoes", "shoes"]],
+  [/\b(pajamas?|pyjamas?|nightgowns?|nightshirts?|nighties?|sleepwear|robes?|bathrobes?)\b/g, ["Nightwear", "nightwear"]],
+  [/\b(socks?|tights|stockings?)\b/g, ["Socks", "underwear"]],
+  [/\b(bras?|briefs?|boxers?|underwear|panty|panties|knickers|undershirts?|camisoles?|camis?|bodysuits?|lingerie)\b/g, ["Underwear", "underwear"]],
+  [/\bslips?\b(?![- ]?on)/g, ["Underwear", "underwear"]],
+  [/\bdress(es)?\b(?!\s+(shirt|pant|trouser)s?)/g, ["Dresses", "dresses"]],
+  [/\b(skirts?|skorts?|gowns?|jumpsuits?|rompers?|overalls?|pinafores?|kaftans?|muu ?muus?)\b/g, ["Dresses", "dresses"]],
+  [/\bjeans?\b/g, ["Jeans", "jeans"]],
+  [/\bshorts\b/g, ["Shorts", "pants"]],
+  [/\b(pants?|trousers?|leggings?|joggers?|sweatpants?|chinos?|capris?|bottoms|slacks)\b/g, ["Pants", "pants"]],
+  [/\b(jackets?|coats?|capes?|ponchos?|parkas?|blazers?|vests?|gilets?|windbreakers?|raincoats?|anoraks?|outerwear|shawls?)\b/g, ["Jackets", "jackets"]],
+  [/\b(shirts?|blouses?|polos?|tees?|t-?shirts?|tank tops?|tanks?|tunics?|sweaters?|hoodies?|jumpers?|pullovers?|sweatshirts?|cardigans?|henleys?|turtlenecks?|rash ?guards?|tankinis?|tops?)\b/g, ["Tops", "tops"]],
+];
+
+function lastNounMatch(text) {
+  let best = null;
+  for (const [pattern, result] of CLASSIFY_NOUNS) {
+    const re = new RegExp(pattern.source, "g");
+    let m;
+    while ((m = re.exec(text)) !== null) {
+      if (!best || m.index > best.index) best = { index: m.index, result };
+    }
   }
+  return best?.result ?? null;
+}
+
+function classify(title, productType, tags = "") {
+  // The garment is named before any "with"/"for" clause ("Jumpsuit with Polo
+  // Shirt" is a jumpsuit; "Shirt for Assisted Dressing" is a shirt).
+  let phrase = ` ${String(title).toLowerCase()} `.split(/\bwith\b/)[0].split(/\bfor\b/)[0];
+  CLASSIFY_NOISE.forEach((p) => (phrase = phrase.replace(p, " ")));
+
+  const fromTitle = lastNounMatch(phrase);
+  if (fromTitle) return fromTitle;
+
+  // Fall back to the product_type field when the title names no garment.
+  const type = ` ${productType.toLowerCase()} `;
+  const fromType = lastNounMatch(type);
+  if (fromType) return fromType;
 
   return ["Clothing", "tops"];
 }

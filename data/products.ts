@@ -2,6 +2,7 @@ import { Product, ProductSearchParams } from "@/types";
 import { brands } from "@/data/brands";
 import { verifiedProducts } from "@/data/verifiedProducts";
 import { GLOBAL, expandShippingRegions } from "@/lib/countries";
+import { normalizeCategory } from "@/lib/productMetadata";
 
 const originalProducts: Product[] = [
   {
@@ -675,6 +676,10 @@ function mixProductsByBrand(items: Product[]) {
 export const products = mixProductsByBrand(
   combinedProducts.map((product) => ({
     ...product,
+    // Authoritative, title-validated category recomputed at load so the
+    // engine and browse always trust a correct value even if a legacy field
+    // (or a future feed sync) is wrong. See lib/productMetadata.ts.
+    categoryNormalized: normalizeCategory(product),
     shipsTo:
       product.shipsTo?.length
         ? product.shipsTo

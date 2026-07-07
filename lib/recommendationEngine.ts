@@ -183,10 +183,14 @@ export function classifyItem(product: Product): string[] {
 // satisfy EVERY active hard requirement to be an exact match. `label` is shown
 // as a matched/unmet need; `reason` feeds the plain-language explanation.
 
+/** Which score-breakdown bar a hard requirement contributes to. */
+type RequirementGroup = "location" | "accessibility" | "dressing" | "sensory";
+
 interface HardRequirement {
   id: string;
   label: string;
   reason: string;
+  group: RequirementGroup;
   active: (input: RecommendationInput) => boolean;
   satisfied: (product: Product, blob: string) => boolean;
 }
@@ -196,6 +200,7 @@ const HARD_REQUIREMENTS: HardRequirement[] = [
     id: "country",
     label: "Available in your country",
     reason: "is available where you are",
+    group: "location",
     active: (i) => Boolean(i.location),
     // satisfied is computed specially (needs the location), see shipsToLocation().
     satisfied: () => true,
@@ -204,6 +209,7 @@ const HARD_REQUIREMENTS: HardRequirement[] = [
     id: "wheelchair-seated",
     label: "Wheelchair / seated-fit",
     reason: "supports seated comfort",
+    group: "accessibility",
     active: (i) =>
       i.mobilityLevel === "wheelchair-or-seated" ||
       anyMatch(i.needs ?? [], /wheelchair|seated/),
@@ -213,6 +219,7 @@ const HARD_REQUIREMENTS: HardRequirement[] = [
     id: "limited-hand-mobility",
     label: "Easy closures for limited hand movement",
     reason: "uses fasteners that are easy on the hands",
+    group: "dressing",
     active: (i) =>
       anyMatch(i.needs ?? [], /dexterity|arthritis|parkinson|fine motor|tremor|stroke|limited hand/),
     satisfied: (p, blob) =>
@@ -223,6 +230,7 @@ const HARD_REQUIREMENTS: HardRequirement[] = [
     id: "one-handed",
     label: "One-handed dressing support",
     reason: "can be put on with one hand",
+    group: "dressing",
     active: (i) =>
       anyMatch(i.needs ?? [], /one-handed|one handed/) ||
       anyMatch(i.closurePreference ?? [], /magnetic|slip-on|slip on/),
@@ -233,6 +241,7 @@ const HARD_REQUIREMENTS: HardRequirement[] = [
     id: "caregiver-assisted",
     label: "Easy caregiver-assisted dressing",
     reason: "is easy to change with a caregiver's help",
+    group: "dressing",
     active: (i) => i.caregiverInvolvement === "caregiver-assisted",
     satisfied: (_p, blob) =>
       /open-back|open back|back opening|back-opening|side opening|side-opening|side fasten|drop-front|drop front|wrap|assisted|caregiver/.test(
@@ -243,6 +252,7 @@ const HARD_REQUIREMENTS: HardRequirement[] = [
     id: "sensory",
     label: "Sensory-friendly",
     reason: "is gentle on sensitive skin",
+    group: "sensory",
     active: (i) =>
       (i.sensoryNeeds ?? []).some((n) => !/no sensory/i.test(n)) ||
       anyMatch(i.needs ?? [], /sensory|autism|skin sensitivity/),
@@ -254,6 +264,7 @@ const HARD_REQUIREMENTS: HardRequirement[] = [
     id: "afo-orthotic",
     label: "AFO / orthotic / prosthetic accommodation",
     reason: "makes room for AFOs, braces or prosthetics",
+    group: "accessibility",
     active: (i) =>
       anyMatch(i.needs ?? [], /\bafo\b|orthotic|prosthetic|leg brace|ankle brace/),
     satisfied: (_p, blob) =>
@@ -265,6 +276,7 @@ const HARD_REQUIREMENTS: HardRequirement[] = [
     id: "medical-access",
     label: "Medical device / body-zone access",
     reason: "gives access for medical or body-zone needs",
+    group: "accessibility",
     active: (i) =>
       anyMatch(i.needs ?? [], /medical|post-surgery|surgery|\bport\b|\btube\b|ostomy|body-zone/) ||
       anyMatch(i.closurePreference ?? [], /port or tube|medical/),
@@ -277,6 +289,7 @@ const HARD_REQUIREMENTS: HardRequirement[] = [
     id: "posture-fit",
     label: "Spinal / posture-aware fit",
     reason: "is shaped for spinal or posture support",
+    group: "accessibility",
     active: (i) => anyMatch(i.needs ?? [], /scoliosis|spinal|posture|kyphosis/),
     satisfied: (_p, blob) =>
       /scoliosis|spinal|posture|back support|seated posture|torso support/.test(blob),
@@ -285,6 +298,7 @@ const HARD_REQUIREMENTS: HardRequirement[] = [
     id: "closure",
     label: "Your preferred closure type",
     reason: "has the closure type you prefer",
+    group: "dressing",
     // Active only when a *recognized* closure type was chosen — auto-added
     // feature hints must not activate an unsatisfiable requirement.
     active: (i) => recognizedClosurePrefs(i.closurePreference ?? []).length > 0,
@@ -608,6 +622,11 @@ interface SoftScore {
   preferencesSatisfied: string[];
   /** Selected minor preferences (style/budget) this product does NOT meet. */
   missedPreferences: string[];
+  /** Per-dimension soft state for the score breakdown (null = not selected). */
+  styleActive: boolean;
+  styleMatched: boolean;
+  budgetActive: boolean;
+  budgetMatched: boolean;
 }
 
 /**
@@ -621,7 +640,8 @@ function scoreSoftPreferences(product: Product, input: RecommendationInput): Sof
   const missedPreferences: string[] = [];
   let score = 0;
 
-  let styleMatched = (input.styles ?? []).length === 0;
+  const styleActive = (input.styles ?? []).length > 0;
+  let styleMatched = !styleActive;
   (input.styles ?? []).forEach((style) => {
     if (product.styleTags.some((tag) => matches(tag, style))) {
       score += 3;
@@ -632,9 +652,12 @@ function scoreSoftPreferences(product: Product, input: RecommendationInput): Sof
   });
   if (!styleMatched) missedPreferences.push("your preferred style");
 
+  const budgetActive = Boolean(input.budget);
+  let budgetMatched = !budgetActive;
   if (input.budget) {
     if (budgetMatches(product.priceRange, input.budget)) {
       score += 2;
+      budgetMatched = true;
       preferencesSatisfied.push(input.budget);
       reasons.push(`fits your ${input.budget.toLowerCase()} budget`);
     } else {
@@ -678,6 +701,10 @@ function scoreSoftPreferences(product: Product, input: RecommendationInput): Sof
     reasons,
     preferencesSatisfied: Array.from(new Set(preferencesSatisfied)),
     missedPreferences,
+    styleActive,
+    styleMatched,
+    budgetActive,
+    budgetMatched,
   };
 }
 
@@ -871,9 +898,19 @@ function scoreProduct(product: Product, input: RecommendationInput): ScoredProdu
   const inferredLabels: string[] = [];
   let hardSatisfiedCount = 0;
 
+  // Per-group tallies drive the honest score-breakdown bars.
+  const groupActive: Record<RequirementGroup, number> = {
+    location: 0, accessibility: 0, dressing: 0, sensory: 0,
+  };
+  const groupSatisfied: Record<RequirementGroup, number> = {
+    location: 0, accessibility: 0, dressing: 0, sensory: 0,
+  };
+
   activeHard.forEach((req) => {
+    groupActive[req.group] += 1;
     if (isHardRequirementSatisfied(req, product, blob, input)) {
       hardSatisfiedCount += 1;
+      groupSatisfied[req.group] += 1;
       if (req.id !== "country") {
         satisfiedLabels.push(req.label);
         satisfiedReasons.push(req.reason);
@@ -959,6 +996,38 @@ function scoreProduct(product: Product, input: RecommendationInput): ScoredProdu
     product
   );
 
+  // ----- Quantitative breakdown (all honest, derived from real state) -----
+  const pct = (satisfied: number, active: number): number | null =>
+    active === 0 ? null : Math.round((satisfied / active) * 100);
+  // Category & range are strict pre-filters — every shown item already passes,
+  // which is exactly why they read 100%.
+  const rangeActive = productMatchesGenderRange(product, input.genderRange, input.childrenTeen);
+  const confidenceScore =
+    confidence.level === "high" ? 92 : confidence.level === "medium" ? 68 : 40;
+  const scoreBreakdown = {
+    category: 100,
+    accessibility: pct(groupSatisfied.accessibility, groupActive.accessibility),
+    location: input.location ? (ships ? 100 : 0) : null,
+    dressing: pct(groupSatisfied.dressing, groupActive.dressing),
+    sensory: pct(groupSatisfied.sensory, groupActive.sensory),
+    range: rangeActive ? 100 : 0,
+    style: soft.styleActive ? (soft.styleMatched ? 100 : 0) : null,
+    budget: soft.budgetActive ? (soft.budgetMatched ? 100 : 0) : null,
+    confidence: confidenceScore,
+  };
+  const hardTotal = activeHard.length;
+  const hardPassed = hardSatisfiedCount;
+  const softTotal = (soft.styleActive ? 1 : 0) + (soft.budgetActive ? 1 : 0);
+  const softMatched =
+    (soft.styleActive && soft.styleMatched ? 1 : 0) +
+    (soft.budgetActive && soft.budgetMatched ? 1 : 0);
+  // Overall match score: hard requirements weighted highest (70), then soft
+  // preferences (20), then data confidence (10). Never above 100.
+  const hardRatio = hardTotal === 0 ? 1 : hardPassed / hardTotal;
+  const softRatio = softTotal === 0 ? 1 : softMatched / softTotal;
+  const matchScore = Math.round(hardRatio * 70 + softRatio * 20 + (confidenceScore / 100) * 10);
+  const missingData = getMissingEvidenceFields(product, input);
+
   return {
     hardSatisfiedCount,
     isExactMatch,
@@ -979,6 +1048,13 @@ function scoreProduct(product: Product, input: RecommendationInput): ScoredProdu
       confidence: confidence.level,
       confidenceNotes: confidence.notes,
       checkBeforeBuying,
+      matchScore,
+      scoreBreakdown,
+      hardPassed,
+      hardTotal,
+      softMatched,
+      softTotal,
+      missingData,
     },
   };
 }
@@ -1082,15 +1158,32 @@ function productLooksFormal(product: Product): boolean {
 }
 
 /**
- * The garment families a product belongs to. Its own clothingType decides
- * first (a product typed "Socks" is undergarments even if the catalogue
- * shelves it under the "shoes" category); the category field is only a
- * fallback when the type isn't recognised.
+ * Maps the authoritative normalized category (lib/productMetadata.ts vocab)
+ * onto the engine's quiz-facing garment families. Normalized categories with
+ * no quiz counterpart (sleepwear, accessories, adaptive_sets) intentionally
+ * map to NO family, so they only ever surface under "Not sure" — never as a
+ * false match when a shopper picks Tops, Bottoms, etc.
+ */
+const NORMALIZED_TO_FAMILY: Record<string, keyof typeof CATEGORY_FAMILIES> = {
+  footwear: "footwear",
+  tops: "tops",
+  bottoms: "bottoms",
+  dresses_skirts: "dresses",
+  outerwear: "outerwear",
+  undergarments: "undergarments",
+};
+
+/**
+ * The garment families a product belongs to. The title-validated
+ * `categoryNormalized` (stamped for every product at load) is authoritative;
+ * only when it is absent or "unknown" do we fall back to the looser
+ * clothingType/category fields.
  */
 function productFamilies(product: Product): string[] {
-  // Explicit structured metadata wins over anything derived.
-  if (product.categoryNormalized && CATEGORY_FAMILIES[product.categoryNormalized]) {
-    return [product.categoryNormalized];
+  const norm = product.categoryNormalized;
+  if (norm && norm !== "unknown") {
+    const fam = NORMALIZED_TO_FAMILY[norm];
+    return fam ? [fam] : [];
   }
   const byType = Object.keys(CATEGORY_FAMILIES).filter((fam) =>
     CATEGORY_FAMILIES[fam].test(product.clothingType.toLowerCase())
@@ -1279,6 +1372,17 @@ export function productMeetsAccessibilityNeeds(
   input: RecommendationInput
 ): boolean {
   return getUnmetHardRequirements(product, input).length === 0;
+}
+
+/** The active hard requirements (incl. country) for the given input. */
+export function getActiveHardRequirements(
+  input: RecommendationInput
+): { id: string; label: string; group: string }[] {
+  return HARD_REQUIREMENTS.filter((req) => req.active(input)).map((req) => ({
+    id: req.id,
+    label: req.label,
+    group: req.group,
+  }));
 }
 
 /** The active hard requirements (incl. country) this product does NOT meet. */

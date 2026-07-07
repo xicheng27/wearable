@@ -24,6 +24,15 @@ import {
   recommendAdaptiveProducts,
 } from "@/lib/recommendationEngine";
 import {
+  auditCatalog,
+  detectMetadataWarnings,
+  inferCategoryFromTitle,
+  normalizeCategory,
+  normalizeGenderFit,
+  validateCategoryAgainstTitle,
+} from "@/lib/productMetadata";
+import { buildMatchReport } from "@/lib/matchReport";
+import {
   buildPassport,
   passportMissingInfo,
   passportMustHaves,
@@ -593,6 +602,137 @@ console.log("\n19. Need-specific pre-purchase checks & magnet caution");
       .filter((r) => /magnetic/.test(blob(r.product)))
       .every((r) => r.checkBeforeBuying.some((c) => /Magnetic closures may not be suitable/i.test(c)))
   );
+}
+
+console.log("\n20. Product metadata accuracy");
+{
+  // Title inference resolves the tricky adaptive-phrase cases correctly.
+  check("shirt 'for Assisted Dressing' → tops",
+    inferCategoryFromTitle("Women's Open-Back Knit Shirt for Assisted Dressing") === "tops");
+  check("'Sweater Knit Dress' → dresses_skirts",
+    inferCategoryFromTitle("Women's Open Back Sweater Knit Dress") === "dresses_skirts");
+  check("'Dress Shirt' → tops (head noun wins)",
+    inferCategoryFromTitle("Formal Velcro Dress Shirt") === "tops");
+  check("'Front Closure Bra' → undergarments",
+    inferCategoryFromTitle("Women's Easy Touch Front Closure Bra") === "undergarments");
+  check("'Sleep Cape' is not footwear",
+    inferCategoryFromTitle("Women's Easy On Cozy Sleep Cape") !== "footwear");
+  check("'Adjustable Sneakers' → footwear",
+    inferCategoryFromTitle("Extra-Wide Adjustable Sneakers") === "footwear");
+
+  // The live catalog carries ZERO category-mismatch errors after the repair.
+  const errors = auditCatalog(products, "error");
+  check(
+    `catalog has no category-mismatch errors (${errors.length})`,
+    errors.length === 0,
+    errors.slice(0, 3).map((e) => e.message).join(" | ")
+  );
+
+  // Every product resolves to a known normalized category (never "unknown").
+  const unknowns = products.filter((p) => normalizeCategory(p) === "unknown");
+  check(`every product has a known normalized category (${unknowns.length} unknown)`,
+    unknowns.length === 0);
+
+  // A deliberately mislabelled product is flagged by the validator.
+  const bogus = {
+    ...products[0],
+    id: "bogus-test",
+    name: "Adaptive Wide-Leg Pull-On Trousers",
+    clothingType: "Dresses",
+    category: "dresses",
+    categoryNormalized: "dresses_skirts",
+  };
+  check("validateCategoryAgainstTitle flags pants mislabelled as a dress",
+    validateCategoryAgainstTitle(bogus as never)?.severity === "error");
+  check("detectMetadataWarnings surfaces that same error",
+    detectMetadataWarnings(bogus as never).some((w) => w.severity === "error"));
+
+  // Gender normalization maps onto the requested enum.
+  check("genderFit ['Women'] → women",
+    normalizeGenderFit({ genderFit: ["Women"] } as never) === "women");
+  check("genderFit ['Women','Men'] → unisex",
+    normalizeGenderFit({ genderFit: ["Women", "Men"] } as never) === "unisex");
+}
+
+console.log("\n21. Strict category exactness uses corrected metadata");
+{
+  const footwear = exact(recommendAdaptiveProducts({ clothingTypes: ["Footwear"], limit: 12 }));
+  check("footwear request → only footwear exact matches",
+    footwear.length > 0 && footwear.every((r) => normalizeCategory(r.product) === "footwear"));
+
+  const bottoms = exact(recommendAdaptiveProducts({ clothingTypes: ["Bottoms"], limit: 12 }));
+  check("bottoms request → only bottoms exact matches",
+    bottoms.length > 0 && bottoms.every((r) => normalizeCategory(r.product) === "bottoms"));
+
+  const tops = exact(recommendAdaptiveProducts({ clothingTypes: ["Tops"], limit: 12 }));
+  check("tops request → no footwear/bottoms leak",
+    tops.every((r) => normalizeCategory(r.product) === "tops"));
+}
+
+console.log("\n22. AFO footwear, Singapore availability & gender range");
+{
+  const afo = exact(recommendAdaptiveProducts({
+    location: "Singapore", clothingTypes: ["Footwear"],
+    needs: ["Orthotics and AFOs"], limit: 9,
+  }));
+  check("SG + footwear + AFO → footwear only", afo.every((r) => normalizeCategory(r.product) === "footwear"));
+  const afoEvidence = /afo|orthotic|prosthetic|brace|wide|extra depth|adjustable|removable insole/;
+  check("SG AFO footwear all carry orthotic/adjustable evidence",
+    afo.length > 0 && afo.every((r) => afoEvidence.test(blob(r.product))));
+  check("SG exact matches all ship to Singapore",
+    afo.every((r) => shipsTo(r.product, "Singapore")));
+
+  const women = exact(recommendAdaptiveProducts({ clothingTypes: ["Tops"], genderRange: "womenswear", limit: 9 }));
+  check("womenswear tops → women or unisex only",
+    women.every((r) => productMatchesGenderRange(r.product, "womenswear")));
+}
+
+console.log("\n23. Impossible constraints stay honest");
+{
+  const impossible = recommendAdaptiveProducts({
+    clothingTypes: ["Footwear"],
+    needs: ["Medical device access"],
+    caregiverInvolvement: "caregiver-assisted",
+    sensoryNeeds: ["Tags", "Rough seams"],
+    location: "Singapore",
+    limit: 9,
+  });
+  // Any exact match must genuinely pass every hard requirement; the engine
+  // never fills exacts with unrelated footwear.
+  check("no exact match ever crosses out of footwear",
+    exact(impossible).every((r) => normalizeCategory(r.product) === "footwear"));
+  check("results shown are labelled honestly (fallbacks flagged)",
+    impossible.every((r) => (r.isFallback ? r.unmetNeeds.length > 0 : r.unmetNeeds.length === 0)));
+}
+
+console.log("\n24. Score breakdown & dashboard math");
+{
+  const input = {
+    location: "Singapore", clothingTypes: ["Footwear"],
+    needs: ["Orthotics and AFOs"], styles: ["Minimal"], budget: "$50-$100", limit: 6,
+  };
+  const results = recommendAdaptiveProducts(input);
+  const e = exact(results);
+  check("exact matches score category 100%", e.every((r) => r.scoreBreakdown.category === 100));
+  check("exact matches ship → location 100%", e.every((r) => r.scoreBreakdown.location === 100));
+  check("every breakdown value is 0–100 or null",
+    results.every((r) => Object.values(r.scoreBreakdown).every(
+      (v) => v === null || (typeof v === "number" && v >= 0 && v <= 100))));
+  check("matchScore is within 0–100", results.every((r) => r.matchScore >= 0 && r.matchScore <= 100));
+  check("hardPassed never exceeds hardTotal", results.every((r) => r.hardPassed <= r.hardTotal));
+
+  const report = buildMatchReport(results, input, {
+    shoppingFor: "Older adult", clothing: ["Footwear"], styles: ["Minimal"], location: "Singapore",
+  });
+  check("report exposes non-negotiable hard filters", report.hardFilters.length >= 2);
+  check("report includes a footwear-only hard filter",
+    report.hardFilters.some((c) => /footwear/i.test(c)));
+  check("report overall quality is a sane percentage",
+    report.summary.overallQuality > 0 && report.summary.overallQuality <= 100);
+  check("comparison table has a row per shown product (capped at 8)",
+    report.comparison.length === Math.min(results.length, 8));
+  check("score bars only contain applicable dimensions",
+    report.bars.every((b) => b.value !== null));
 }
 
 console.log(

@@ -2,7 +2,9 @@ import Link from "next/link";
 import RecommendationsGrid from "@/components/RecommendationsGrid";
 import ResultsViewedTracker from "@/components/ResultsViewedTracker";
 import SignalMap from "@/components/SignalMap";
+import MatchReport from "@/components/MatchReport";
 import { buildSignalMap } from "@/lib/signalMap";
+import { buildMatchReport } from "@/lib/matchReport";
 import { expandShippingRegions } from "@/lib/countries";
 import { findNearbyStores } from "@/lib/mapProvider";
 import PassportSummary from "@/components/PassportSummary";
@@ -98,6 +100,20 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
 
   const signalMap = buildSignalMap(searchParams);
 
+  const shoppingFor = input.childrenTeen
+    ? "Child or teen"
+    : input.targetGroup === "elderly"
+      ? "Older adult"
+      : input.targetGroup === "caregiver"
+        ? "Someone I care for"
+        : "Myself";
+  const matchReport = buildMatchReport(visibleResults, input, {
+    shoppingFor,
+    clothing,
+    styles,
+    location,
+  });
+
   return (
     <div className="min-h-screen bg-ivory">
       <ResultsViewedTracker
@@ -185,34 +201,13 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
       </header>
 
       <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <SignalMap data={signalMap} />
+        {visibleResults.length > 0 && (
+          <div className="mb-8">
+            <MatchReport report={matchReport} />
+          </div>
+        )}
 
-        <div className="mt-6 rounded-2xl border border-primary-200 bg-primary-50/60 px-5 py-4 sm:px-6">
-          <p className="text-sm font-bold text-primary-900">How we ranked these</p>
-          <p className="mt-1 max-w-3xl text-sm leading-6 text-ink/70">
-            Your selected clothing category comes first, then your accessibility
-            needs, then availability in your country — those are strict filters.
-            Only after they pass do fit and comfort, clothing range, style and
-            budget refine the order, followed by brand variety and how complete
-            each product&apos;s data is. Accessibility always outranks style.
-          </p>
-          <ol className="mt-2 flex max-w-3xl flex-wrap gap-x-3 gap-y-1 text-xs font-semibold text-primary-800/80">
-            {[
-              "Clothing category",
-              "Accessibility needs",
-              "Country availability",
-              "Fit & comfort",
-              "Clothing range",
-              "Style & budget",
-              "Brand variety",
-              "Data confidence",
-            ].map((step, index) => (
-              <li key={step}>
-                {index + 1}. {step}
-              </li>
-            ))}
-          </ol>
-        </div>
+        <SignalMap data={signalMap} />
 
         <div className="mt-12 mb-6 max-w-3xl">
           <p className="eyebrow">Matched for you</p>
