@@ -9,7 +9,12 @@ import { useCountry } from "@/components/CountryProvider";
 import { usePassport } from "@/components/PassportProvider";
 import { useUserProfile } from "@/components/UserProfileProvider";
 import { GLOBAL } from "@/lib/countries";
-import BodyModel, { TONE, type BodyZone, type SignalTone } from "@/components/quiz/BodyModel";
+import BodyModel, {
+  STYLE_TINT,
+  TONE,
+  type BodyZone,
+  type SignalTone,
+} from "@/components/quiz/BodyModel";
 import { buildAvatarAriaLabel } from "@/lib/avatar";
 import {
   COUNTRY_FLAGS,
@@ -25,6 +30,7 @@ import {
   fitSignals,
   helpOptions,
   modelState,
+  styleId,
   NOT_LISTED,
   NOT_LISTED_ISSUE,
   type Answers,
@@ -187,6 +193,16 @@ function leadingFor(key: string, option: string): React.ReactNode {
         <ClothingGlyph option={option} />
       </span>
     );
+  }
+  if (key === "style") {
+    const tint = STYLE_TINT[styleId(option)];
+    return tint ? (
+      <span
+        className="h-9 w-9 flex-shrink-0 rounded-lg border border-ink/15 shadow-inner"
+        style={{ background: `linear-gradient(135deg, ${tint} 0%, ${tint}bb 100%)` }}
+        aria-hidden="true"
+      />
+    ) : null;
   }
   return null;
 }

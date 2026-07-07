@@ -126,8 +126,9 @@ const HOTSPOT_ORDER: BodyZone[] = [
   "feet",
 ];
 
-/** Subtle torso tint per aesthetic style — an accent, never a costume. */
-const STYLE_TINT: Record<string, string> = {
+/** Subtle torso tint per aesthetic style — an accent, never a costume. Also
+ *  used as the outfit fabric colour and the style swatch in the quiz. */
+export const STYLE_TINT: Record<string, string> = {
   "old-money": "#38465C",
   clean: "#D9D2C4",
   chic: "#3A3442",
