@@ -85,8 +85,11 @@ export default function HomePage() {
           <div className="paper-panel relative grid w-full max-w-md grid-cols-[1fr_1.1fr] items-center gap-4 rounded-[2.25rem_.9rem_2.25rem_2.25rem] p-6">
             <BodyModel
               persona="adult"
-              zones={["hips", "hands", "skin"]}
-              accents={{ soft: true, oneHanded: true }}
+              zones={["waist", "hands", "skin"]}
+              zoneTones={{ waist: "teal", hands: "amber" }}
+              sensoryTone="lavender"
+              dominantTone="teal"
+              garments={["top"]}
               className="h-[44vh] w-auto"
             />
             <div className="space-y-4">
@@ -128,8 +131,10 @@ export default function HomePage() {
           <div className="paper-panel flex items-center gap-4 rounded-[1.5rem_.6rem_1.5rem_1.5rem] p-4">
             <BodyModel
               persona="adult"
-              zones={["hips", "skin"]}
-              accents={{ soft: true }}
+              zones={["waist", "skin"]}
+              zoneTones={{ waist: "teal" }}
+              dominantTone="teal"
+              garments={["top"]}
               className="h-32 w-auto"
             />
             <div className="space-y-2">
