@@ -8,8 +8,8 @@ export const verifiedProducts: Product[] = [
     "id": "june-adaptive-womens-cardigan-with-back-overlap",
     "name": "Women's Open-Back Decorative Front Knit Shirt for Assisted Dressing",
     "brandId": "june-adaptive",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "54.99",
     "currency": "CAD",
@@ -70,14 +70,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-cardigan-with-back-overlap",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-womens-cardigan-with-open-back-1",
     "name": "Women's Open-Back Floral Knit Shirt for Assisted Dressing",
     "brandId": "june-adaptive",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "59.99",
     "currency": "CAD",
@@ -140,7 +141,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-cardigan-with-open-back-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-womens-polo-dress-with-open-back",
@@ -211,14 +213,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-polo-dress-with-open-back",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "june-adaptive-womens-lace-night-dress-with-back-overlap",
     "name": "Women’s Adaptive Open-Back Denim Dress",
     "brandId": "june-adaptive",
-    "clothingType": "Nightwear",
-    "category": "nightwear",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$50-$100",
     "price": "72.99",
     "currency": "CAD",
@@ -280,7 +283,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-lace-night-dress-with-back-overlap",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "june-adaptive-womens-knit-maxi-dress",
@@ -345,7 +349,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-knit-maxi-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "june-adaptive-mens-cotton-pants-with-elastic-waist-copy",
@@ -415,7 +420,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/mens-cotton-pants-with-elastic-waist-copy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "june-adaptive-men-s-open-back-seated-cargo-pant",
@@ -484,7 +490,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/men-s-open-back-seated-cargo-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "june-adaptive-mens-pull-on-denim-with-cargo-pockets",
@@ -553,7 +560,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/mens-pull-on-denim-with-cargo-pockets",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "june-adaptive-womens-denim-shirt-with-back-overlap",
@@ -624,14 +632,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-denim-shirt-with-back-overlap",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-womens-active-top-with-back-overlap",
     "name": "Women's Easy-Access Open-Back Snap Closure Shirt for Assisted Dressing",
     "brandId": "june-adaptive",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "CAD",
@@ -693,14 +702,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-active-top-with-back-overlap",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-womens-strappy-top-with-back-overlap",
     "name": "Easy-Access Open-Back Snap Closure Shirt for Assisted Dressing",
     "brandId": "june-adaptive",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "52.99",
     "currency": "CAD",
@@ -762,14 +772,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-strappy-top-with-back-overlap",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-womens-notched-top-with-back-overlap",
     "name": "Women's Easy-Access Open-Back Floral Snap Top",
     "brandId": "june-adaptive",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "54.99",
     "currency": "CAD",
@@ -829,14 +840,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-notched-top-with-back-overlap",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-womens-embroidered-flower-tee-with-open-back",
     "name": "Women's Open-Back Floral Shirt for Assisted Dressing",
     "brandId": "june-adaptive",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "54.99",
     "currency": "CAD",
@@ -894,14 +906,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-embroidered-flower-tee-with-open-back",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-womens-graphic-tee-with-open-back",
     "name": "Women's Open-Back Long Sleeve Shirt for Easy Assisted Dressing",
     "brandId": "june-adaptive",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "52.99",
     "currency": "CAD",
@@ -962,14 +975,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-graphic-tee-with-open-back",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-womens-diamond-neck-tee-with-back-overlap",
     "name": "Women's Easy-Access Open-Back Butterfly Shirt for Assisted Dressing",
     "brandId": "june-adaptive",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "59.99",
     "currency": "CAD",
@@ -1030,14 +1044,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-diamond-neck-tee-with-back-overlap",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-womens-lace-top-with-back-overlap",
     "name": "Women's Easy-Access Open-Back Keyhole Opening Shirt for Assisted Dressing",
     "brandId": "june-adaptive",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "59.99",
     "currency": "CAD",
@@ -1098,14 +1113,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-lace-top-with-back-overlap",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-womens-3-4-sleeve-embroidered-top-with-back-overlap",
     "name": "Women’s Open-Back Easy Dressing Cable Knit Shirt",
     "brandId": "june-adaptive",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "59.99",
     "currency": "CAD",
@@ -1166,7 +1182,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-3-4-sleeve-embroidered-top-with-back-overlap",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-womens-soft-knit-pants-with-side-closure",
@@ -1238,7 +1255,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-soft-knit-pants-with-side-closure",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "june-adaptive-womens-fleece-pants-with-back-overlap-1",
@@ -1307,7 +1325,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-fleece-pants-with-back-overlap-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "june-adaptive-womens-side-zipper-denim",
@@ -1376,7 +1395,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-side-zipper-denim",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "june-adaptive-womens-antimicrobial-open-back-nightgown",
@@ -1443,7 +1463,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-antimicrobial-open-back-nightgown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "june-adaptive-womens-long-sleeve-open-back-nightgown",
@@ -1507,7 +1528,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-long-sleeve-open-back-nightgown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "june-adaptive-womens-nightgown-with-snap-closures",
@@ -1574,7 +1596,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-nightgown-with-snap-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "june-adaptive-mens-knit-pajama-set-with-back-overlap-top-pull-on-pant-copy",
@@ -1641,14 +1664,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/mens-knit-pajama-set-with-back-overlap-top-pull-on-pant-copy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "june-adaptive-mens-open-back-nightgown",
     "name": "Men's Hospital Gown with Back Overlap",
     "brandId": "june-adaptive",
-    "clothingType": "Nightwear",
-    "category": "nightwear",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$50-$100",
     "price": "52.99",
     "currency": "CAD",
@@ -1706,7 +1730,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/mens-open-back-nightgown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "june-adaptive-mens-knit-pajama-set-with-back-overlap-top-pull-on-pant",
@@ -1772,14 +1797,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/mens-knit-pajama-set-with-back-overlap-top-pull-on-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "june-adaptive-womens-neck-tie-top-with-back-overlap",
     "name": "Women’s Open-Back Easy Dressing Jacquard Shirt for Easy Assisted Dressing",
     "brandId": "june-adaptive",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "64.99",
     "currency": "CAD",
@@ -1837,7 +1863,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-neck-tie-top-with-back-overlap",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-mens-classic-100-cotton-boxers-ultra-comfortable-easy-on-style",
@@ -1897,14 +1924,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/mens-classic-100-cotton-boxers-ultra-comfortable-easy-on-style",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "june-adaptive-womens-cotton-blend-undershirt-soft-breathable-easy-layer-1",
     "name": "Women's Cotton Blend Undershirt – Soft, Breathable & Easy Layer",
     "brandId": "june-adaptive",
-    "clothingType": "Tops",
-    "category": "tops",
+    "clothingType": "Underwear",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "14.98",
     "currency": "CAD",
@@ -1957,14 +1985,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-cotton-blend-undershirt-soft-breathable-easy-layer-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "june-adaptive-mens-cotton-undershirt-breathable-lightweight-everyday-comfort",
     "name": "Men's Cotton Undershirt – Breathable, Lightweight & Everyday Comfort",
     "brandId": "june-adaptive",
-    "clothingType": "Tops",
-    "category": "tops",
+    "clothingType": "Underwear",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "14.98",
     "currency": "CAD",
@@ -2017,7 +2046,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/mens-cotton-undershirt-breathable-lightweight-everyday-comfort",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "june-adaptive-gender-neutral-open-hem-bottom-classic-heavy-blend-sweatpants-soft-comfortable-easy-on",
@@ -2080,7 +2110,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/gender-neutral-open-hem-bottom-classic-heavy-blend-sweatpants-soft-comfortable-easy-on",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "june-adaptive-classic-heavy-blend-sweatpants-soft-comfortable-easy-relaxed-fit",
@@ -2143,7 +2174,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/classic-heavy-blend-sweatpants-soft-comfortable-easy-relaxed-fit",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "june-adaptive-classic-heavy-blend-full-zip-hooded-sweatshirt-cozy-easy-on-style",
@@ -2208,7 +2240,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/classic-heavy-blend-full-zip-hooded-sweatshirt-cozy-easy-on-style",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-classic-heavy-blend-fleece-crewneck-sweatshirt-warm-soft-easy-care",
@@ -2273,7 +2306,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/classic-heavy-blend-fleece-crewneck-sweatshirt-warm-soft-easy-care",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-womens-premium-cotton-poly-blend-crew-tee-ultra-soft-lightweight-comfort",
@@ -2338,7 +2372,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-premium-cotton-poly-blend-crew-tee-ultra-soft-lightweight-comfort",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-womens-pajama-set-with-back-overlap-top-pull-on-pant",
@@ -2405,7 +2440,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-pajama-set-with-back-overlap-top-pull-on-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "june-adaptive-womens-knit-open-back-nightgown",
@@ -2469,14 +2505,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-knit-open-back-nightgown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "june-adaptive-men-s-long-sleeve-polo-shirt-with-open-back",
     "name": "Men’s Adaptive Long Sleeve Back-Opening Polo Shirt",
     "brandId": "june-adaptive",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "64.99",
     "currency": "CAD",
@@ -2536,7 +2573,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/men-s-long-sleeve-polo-shirt-with-open-back",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-mens-open-back-zip-polo-shirt",
@@ -2603,7 +2641,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/mens-open-back-zip-polo-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-womens-cotton-underwear-tank-top-3-pack-copy",
@@ -2667,7 +2706,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-cotton-underwear-tank-top-3-pack-copy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "june-adaptive-mens-crew-neck-t-shirt-with-back-overlap",
@@ -2736,14 +2776,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/mens-crew-neck-t-shirt-with-back-overlap",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-mens-sport-shirt-with-back-closure",
     "name": "Men’s Adaptive Short Sleeve Back-Opening Shirt",
     "brandId": "june-adaptive",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "49.99",
     "currency": "CAD",
@@ -2801,14 +2842,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/mens-sport-shirt-with-back-closure",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-mens-long-sleeve-henley-shirt-with-back-overlap",
     "name": "Men’s Adaptive Back-Opening Bamboo Sport Shirt",
     "brandId": "june-adaptive",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "74.99",
     "currency": "CAD",
@@ -2869,7 +2911,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/mens-long-sleeve-henley-shirt-with-back-overlap",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-womens-knit-pants-with-back-overlap",
@@ -2938,7 +2981,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-knit-pants-with-back-overlap",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "june-adaptive-women-s-recovery-pants-with-side-zipper",
@@ -3008,7 +3052,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/women-s-recovery-pants-with-side-zipper",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "june-adaptive-mens-easy-dressing-pants-with-elastic-waist",
@@ -3077,7 +3122,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/mens-easy-dressing-pants-with-elastic-waist",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "june-adaptive-mens-side-zipper-pants",
@@ -3146,7 +3192,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/mens-side-zipper-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "june-adaptive-unisex-supportive-memory-foam-shoes-with-front-zipper-access-voyage-white",
@@ -3219,7 +3266,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/unisex-supportive-memory-foam-shoes-with-front-zipper-access-voyage-white",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "june-adaptive-unisex-supportive-memory-foam-shoes-with-front-zipper-access-voyage",
@@ -3292,7 +3340,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/unisex-supportive-memory-foam-shoes-with-front-zipper-access-voyage",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "june-adaptive-mens-wide-zippered-winter-boot-with-traction-desert-spice",
@@ -3367,7 +3416,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/mens-wide-zippered-winter-boot-with-traction-desert-spice",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "june-adaptive-kids-lightweight-shoes-with-rear-zipper-access-in-ember",
@@ -3441,7 +3491,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/kids-lightweight-shoes-with-rear-zipper-access-in-ember",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "june-adaptive-kids-lightweight-shoes-with-rear-zipper-access-in-candy-leopard",
@@ -3515,7 +3566,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/kids-lightweight-shoes-with-rear-zipper-access-in-candy-leopard",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "june-adaptive-kids-lightweight-shoes-with-rear-zipper-access-in-ember-1",
@@ -3586,7 +3638,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/kids-lightweight-shoes-with-rear-zipper-access-in-ember-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "june-adaptive-mens-lightweight-supported-shoes-with-rear-zipper-access-onyx",
@@ -3662,7 +3715,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/mens-lightweight-supported-shoes-with-rear-zipper-access-onyx",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "june-adaptive-mens-lightweight-supported-shoes-with-rear-zipper-access-woodshop",
@@ -3738,7 +3792,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/mens-lightweight-supported-shoes-with-rear-zipper-access-woodshop",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "june-adaptive-womens-wide-zippered-winter-boot-with-traction",
@@ -3814,7 +3869,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-wide-zippered-winter-boot-with-traction",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "june-adaptive-unisex-premium-sweatshirt-1",
@@ -3876,7 +3932,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/unisex-premium-sweatshirt-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-imperfectly-perfect-gender-neutral-crewneck-sweatshirt-2",
@@ -3938,7 +3995,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/imperfectly-perfect-gender-neutral-crewneck-sweatshirt-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-inner-peace-gender-neutral-crewneck-sweatshirt-2",
@@ -4000,7 +4058,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/inner-peace-gender-neutral-crewneck-sweatshirt-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-good-vibes-gender-neutral-zip-up-hoodie",
@@ -4062,7 +4121,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/good-vibes-gender-neutral-zip-up-hoodie",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-inner-peace-gender-neutral-crewneck-sweatshirt",
@@ -4122,7 +4182,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/inner-peace-gender-neutral-crewneck-sweatshirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-restore-yourself-gender-neutral-zip-up-hoodie",
@@ -4184,7 +4245,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/restore-yourself-gender-neutral-zip-up-hoodie",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-imperfectly-perfect-gender-neutral-crewneck-sweatshirt-1",
@@ -4246,7 +4308,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/imperfectly-perfect-gender-neutral-crewneck-sweatshirt-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-choose-balance-gender-neutral-sweatshirt-1",
@@ -4308,7 +4371,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/choose-balance-gender-neutral-sweatshirt-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-restore-yourself-gender-neutral-sweatpants",
@@ -4370,7 +4434,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/restore-yourself-gender-neutral-sweatpants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "june-adaptive-embrace-the-stripes-of-uniqueness-kids-hoodie-4",
@@ -4431,7 +4496,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/embrace-the-stripes-of-uniqueness-kids-hoodie-4",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-embrace-the-stripes-of-uniqueness-kids-hoodie-3",
@@ -4492,7 +4558,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/embrace-the-stripes-of-uniqueness-kids-hoodie-3",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-youre-made-of-magic-kids-hoodie-1",
@@ -4553,7 +4620,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/youre-made-of-magic-kids-hoodie-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-i-am-magical-kids-hoodie",
@@ -4614,7 +4682,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/i-am-magical-kids-hoodie",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-one-of-a-kind-kids-hoodie",
@@ -4675,7 +4744,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/one-of-a-kind-kids-hoodie",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-you-are-loved-kids-hoodie-1",
@@ -4736,7 +4806,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/you-are-loved-kids-hoodie-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-my-own-colorful-spectrum-kids-hoodie",
@@ -4797,7 +4868,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/my-own-colorful-spectrum-kids-hoodie",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-a-beautiful-mind-kids-hoodie",
@@ -4858,7 +4930,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/a-beautiful-mind-kids-hoodie",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-inner-peace-gender-neutral-sweatpants",
@@ -4920,7 +4993,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/inner-peace-gender-neutral-sweatpants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "june-adaptive-choose-balance-gender-neutral-sweatpants-1",
@@ -4982,7 +5056,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/choose-balance-gender-neutral-sweatpants-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "june-adaptive-choose-balance-gender-neutral-sweatpants",
@@ -5044,7 +5119,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/choose-balance-gender-neutral-sweatpants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "june-adaptive-restore-yourself-gender-neutral-sweatpants-1",
@@ -5106,7 +5182,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/restore-yourself-gender-neutral-sweatpants-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "june-adaptive-good-vibes-only-gender-neutral-sweatpants",
@@ -5168,7 +5245,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/good-vibes-only-gender-neutral-sweatpants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "june-adaptive-good-vibes-gender-neutral-sweatpants",
@@ -5230,7 +5308,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/good-vibes-gender-neutral-sweatpants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "june-adaptive-imperfectly-perfect-gender-neutral-sweatpants",
@@ -5292,7 +5371,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/imperfectly-perfect-gender-neutral-sweatpants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "june-adaptive-imperfectly-perfect-gender-neutral-sweatpants-2",
@@ -5354,7 +5434,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/imperfectly-perfect-gender-neutral-sweatpants-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "june-adaptive-good-vibes-only-gender-neutral-crewneck-sweatshirt",
@@ -5414,7 +5495,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/good-vibes-only-gender-neutral-crewneck-sweatshirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-imperfectly-perfect-gender-neutral-crewneck-sweatshirt",
@@ -5474,7 +5556,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/imperfectly-perfect-gender-neutral-crewneck-sweatshirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-restore-yourself-gender-neutral-crewneck-sweatshirt-1",
@@ -5535,7 +5618,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/restore-yourself-gender-neutral-crewneck-sweatshirt-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-restore-yourself-gender-neutral-crewneck-sweatshirt",
@@ -5596,7 +5680,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/restore-yourself-gender-neutral-crewneck-sweatshirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-choose-balance-unisex-crewneck-sweatshirt",
@@ -5656,7 +5741,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/choose-balance-unisex-crewneck-sweatshirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "june-adaptive-unisex-supportive-memory-foam-shoes-with-front-zipper-access",
@@ -5730,7 +5816,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/unisex-supportive-memory-foam-shoes-with-front-zipper-access",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "june-adaptive-copy-of-womens-supportive-memory-foam-shoes-with-front-zipper-access",
@@ -5801,7 +5888,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/copy-of-womens-supportive-memory-foam-shoes-with-front-zipper-access",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "june-adaptive-copy-of-womens-lightweight-cushioned-shoes-with-rear-zipper-access-cafe-au-lait",
@@ -5872,7 +5960,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/copy-of-womens-lightweight-cushioned-shoes-with-rear-zipper-access-cafe-au-lait",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "june-adaptive-mens-lightweight-supported-shoes-with-rear-zipper-access-deep-sea",
@@ -5945,7 +6034,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/mens-lightweight-supported-shoes-with-rear-zipper-access-deep-sea",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "june-adaptive-womens-mint-memory-foam-shoes-with-front-zipper-access",
@@ -6016,7 +6106,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-mint-memory-foam-shoes-with-front-zipper-access",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "june-adaptive-womens-lightweight-support-shoes-with-rear-zipper-access",
@@ -6087,7 +6178,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-lightweight-support-shoes-with-rear-zipper-access",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "june-adaptive-womens-lightweight-peach-shoes-with-rear-zipper-access",
@@ -6158,7 +6250,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/womens-lightweight-peach-shoes-with-rear-zipper-access",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "june-adaptive-kids-blue-multi-anti-slip-socks-4-pack",
@@ -6216,7 +6309,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/kids-blue-multi-anti-slip-socks-4-pack",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "june-adaptive-kids-anti-slip-socks-4-pack",
@@ -6274,14 +6368,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/kids-anti-slip-socks-4-pack",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "june-adaptive-diabetic-anti-slip-socks-3-pack",
     "name": "Diabetic Anti-Slip Socks (3 pairs)",
     "brandId": "june-adaptive",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Socks",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "42.00",
     "currency": "CAD",
@@ -6339,14 +6434,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/diabetic-anti-slip-socks-3-pack",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "june-adaptive-comfort-crew-anti-slip-socks-3-pack",
     "name": "Comfort Calf Crew Anti-Slip Socks (3 pairs)",
     "brandId": "june-adaptive",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Socks",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "40.00",
     "currency": "CAD",
@@ -6405,14 +6501,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/comfort-crew-anti-slip-socks-3-pack",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "june-adaptive-ankle-anti-slip-socks-3-pack",
     "name": "Ankle Anti-Slip Socks (3 pairs)",
     "brandId": "june-adaptive",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Socks",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "40.00",
     "currency": "CAD",
@@ -6469,14 +6566,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/ankle-anti-slip-socks-3-pack",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "june-adaptive-everyday-crew-anti-slip-socks-3-pack",
     "name": "Everyday Crew Anti-Slip Socks (3 pairs)",
     "brandId": "june-adaptive",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Socks",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "40.00",
     "currency": "CAD",
@@ -6533,7 +6631,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/everyday-crew-anti-slip-socks-3-pack",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "june-adaptive-mens-lightweight-cushioned-shoes-with-rear-zipper-access",
@@ -6605,7 +6704,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.juneadaptive.com/products/mens-lightweight-cushioned-shoes-with-rear-zipper-access",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "iz-adaptive-biker-jacket-1",
@@ -6679,7 +6779,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/biker-jacket-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "iz-adaptive-faux-leather-adaptive-leggings-made-to-order",
@@ -6754,7 +6855,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/faux-leather-adaptive-leggings-made-to-order",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "iz-adaptive-seated-faux-leather-skirt-with-ponte-knit-back",
@@ -6829,7 +6931,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/seated-faux-leather-skirt-with-ponte-knit-back",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "iz-adaptive-womens-seated-wrap-dress-copy",
@@ -6904,7 +7007,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/womens-seated-wrap-dress-copy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "iz-adaptive-the-iconic-biker-jacket-for-men-made-to-order",
@@ -6979,7 +7083,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/the-iconic-biker-jacket-for-men-made-to-order",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "iz-adaptive-leopard-print-dolman-sleeve-top-copy",
@@ -7048,7 +7153,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/leopard-print-dolman-sleeve-top-copy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "iz-adaptive-womens-wrap-easy-zip-denim-skirt",
@@ -7124,7 +7230,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/womens-wrap-easy-zip-denim-skirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "iz-adaptive-mens-self-dressing-magnetic-buttons-dress-shirt",
@@ -7195,7 +7302,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/mens-self-dressing-magnetic-buttons-dress-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "iz-adaptive-women-s-magnetic-closure-top-for-arthritis",
@@ -7266,7 +7374,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/women-s-magnetic-closure-top-for-arthritis",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "iz-adaptive-ob-button-down-shirt-slightly-shorter-fit",
@@ -7338,7 +7447,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/ob-button-down-shirt-slightly-shorter-fit",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "iz-adaptive-womens-open-back-relaxed-ribbed-long-sleeve-top",
@@ -7412,7 +7522,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/womens-open-back-relaxed-ribbed-long-sleeve-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "iz-adaptive-womens-open-back-cozy-ribbed-pants",
@@ -7487,7 +7598,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/womens-open-back-cozy-ribbed-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "iz-adaptive-womens-extra-wide-easy-closure-slippers",
@@ -7566,14 +7678,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/womens-extra-wide-easy-closure-slippers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "iz-adaptive-3-pack-mens-adaptive-sleeveless-undershirt",
     "name": "Men's Open Back Undershirts - 3 Pack",
     "brandId": "iz-adaptive",
-    "clothingType": "Shirts",
-    "category": "shirts",
+    "clothingType": "Underwear",
+    "category": "underwear",
     "priceRange": "$50-$100",
     "price": "52.00",
     "currency": "CAD",
@@ -7637,14 +7750,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/3-pack-mens-adaptive-sleeveless-undershirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "iz-adaptive-womens-adaptive-open-back-sleeveless-camisole-3-pack",
     "name": "Women's Open Back Undershirts - 3 Pack",
     "brandId": "iz-adaptive",
-    "clothingType": "Tops",
-    "category": "tops",
+    "clothingType": "Underwear",
+    "category": "underwear",
     "priceRange": "$50-$100",
     "price": "52.00",
     "currency": "CAD",
@@ -7708,14 +7822,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/womens-adaptive-open-back-sleeveless-camisole-3-pack",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "iz-adaptive-mens-womens-non-skid-hospital-socks-6-pack-slipper-socks",
     "name": "Non Gender Slip Resistant Fuzzy Socks - 6 Pack",
     "brandId": "iz-adaptive",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Socks",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "33.00",
     "currency": "CAD",
@@ -7772,7 +7887,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/mens-womens-non-skid-hospital-socks-6-pack-slipper-socks",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "iz-adaptive-womens-open-back-t-shirt-dress",
@@ -7848,7 +7964,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/womens-open-back-t-shirt-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "iz-adaptive-womens-adaptive-snap-front-closure-bras",
@@ -7917,7 +8034,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/womens-adaptive-snap-front-closure-bras",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "iz-adaptive-mens-adaptive-open-back-polo-shirt-with-long-sleeves",
@@ -7992,7 +8110,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/mens-adaptive-open-back-polo-shirt-with-long-sleeves",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "iz-adaptive-mens-pull-on-adaptive-swim-trunks",
@@ -8062,7 +8181,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/mens-pull-on-adaptive-swim-trunks",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "iz-adaptive-mens-zip-front-adaptive-swim-shirt",
@@ -8133,7 +8253,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/mens-zip-front-adaptive-swim-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "iz-adaptive-womens-pull-on-adaptive-swim-skirt",
@@ -8202,7 +8323,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/womens-pull-on-adaptive-swim-skirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "iz-adaptive-womens-zip-front-adaptive-swim-tankini",
@@ -8271,7 +8393,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/womens-zip-front-adaptive-swim-tankini",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "iz-adaptive-womens-open-front-adaptive-underwear",
@@ -8341,7 +8464,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/womens-open-front-adaptive-underwear",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "iz-adaptive-mens-open-front-adaptive-underwear",
@@ -8411,7 +8535,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/mens-open-front-adaptive-underwear",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "iz-adaptive-mens-poly-cotton-hospital-gown",
@@ -8486,7 +8611,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/mens-poly-cotton-hospital-gown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "iz-adaptive-womens-ultra-plush-shawl",
@@ -8550,7 +8676,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/womens-ultra-plush-shawl",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "iz-adaptive-senior-womens-pull-on-denim-midi-skirt",
@@ -8623,7 +8750,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/senior-womens-pull-on-denim-midi-skirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "iz-adaptive-womens-adaptive-wrap-around-skirt",
@@ -8698,7 +8826,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/womens-adaptive-wrap-around-skirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "iz-adaptive-magnetic-buttons-mens-short-sleeve-shirt",
@@ -8768,7 +8897,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/magnetic-buttons-mens-short-sleeve-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "iz-adaptive-mens-extra-wide-slip-resistant-slippers",
@@ -8848,7 +8978,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/mens-extra-wide-slip-resistant-slippers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "iz-adaptive-mens-comfort-shoes-with-easy-closures-adjustable-fit-regular-to-extra-wide",
@@ -8933,7 +9064,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/mens-comfort-shoes-with-easy-closures-adjustable-fit-regular-to-extra-wide",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "iz-adaptive-womens-extra-wide-slip-on-sneakers-without-laces",
@@ -9018,7 +9150,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/womens-extra-wide-slip-on-sneakers-without-laces",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "iz-adaptive-womens-extra-wide-comfort-shoes-with-easy-closures",
@@ -9100,7 +9233,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/womens-extra-wide-comfort-shoes-with-easy-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "iz-adaptive-men-s-open-back-magnetic-fly-pants",
@@ -9177,7 +9311,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/men-s-open-back-magnetic-fly-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "iz-adaptive-men-s-women-s-terry-shower-bath-cape",
@@ -9245,14 +9380,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/men-s-women-s-terry-shower-bath-cape",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "iz-adaptive-women-s-antimicrobial-open-back-nightgown",
     "name": "Women’s Open Back Long Sleeve Comfort Gown",
     "brandId": "iz-adaptive",
-    "clothingType": "Nightwear",
-    "category": "nightwear",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "47.00",
     "currency": "CAD",
@@ -9316,14 +9452,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/women-s-antimicrobial-open-back-nightgown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "iz-adaptive-men-s-flannel-hospital-gowns",
     "name": "Men's Open Back Flannel Hospital Gown",
     "brandId": "iz-adaptive",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$50-$100",
     "price": "52.00",
     "currency": "CAD",
@@ -9391,7 +9528,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/men-s-flannel-hospital-gowns",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "iz-adaptive-womens-open-front-nightgown",
@@ -9461,7 +9599,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/womens-open-front-nightgown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "iz-adaptive-womens-magnetic-button-shacket",
@@ -9534,7 +9673,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/womens-magnetic-button-shacket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "iz-adaptive-senior-womens-pull-on-jean",
@@ -9607,7 +9747,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/senior-womens-pull-on-jean",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "iz-adaptive-mens-open-back-long-sleeve-henley-shirt",
@@ -9678,7 +9819,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/mens-open-back-long-sleeve-henley-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "iz-adaptive-senior-womens-open-back-adaptive-jean",
@@ -9752,7 +9894,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/senior-womens-open-back-adaptive-jean",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "iz-adaptive-mens-zip-fly-sweatpant",
@@ -9829,7 +9972,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/mens-zip-fly-sweatpant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "iz-adaptive-mens-wheelchair-suit-jacket-with-single-breast-pocket",
@@ -9903,14 +10047,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/mens-wheelchair-suit-jacket-with-single-breast-pocket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "iz-adaptive-mens-short-sleeve-open-back-tee",
     "name": "Men's Short Sleeve Open Back Tee",
     "brandId": "iz-adaptive",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "52.00",
     "currency": "CAD",
@@ -9974,7 +10119,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/mens-short-sleeve-open-back-tee",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "iz-adaptive-long-sleeve-adaptive-t-shirt-for-men",
@@ -10046,7 +10192,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/long-sleeve-adaptive-t-shirt-for-men",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "iz-adaptive-seated-rain-cape",
@@ -10115,7 +10262,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/seated-rain-cape",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "iz-adaptive-seated-rain-coat-3",
@@ -10184,7 +10332,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/seated-rain-coat-3",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "iz-adaptive-womens-cowl-neck-boucle-cape-in-textured-wool-blend",
@@ -10255,14 +10404,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/womens-cowl-neck-boucle-cape-in-textured-wool-blend",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "iz-adaptive-short-sleeve-open-back-tee-1",
     "name": "Women's Short Sleeve Open Back Tee",
     "brandId": "iz-adaptive",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "42.00",
     "currency": "CAD",
@@ -10326,7 +10476,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/short-sleeve-open-back-tee-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "iz-adaptive-long-sleeve-adaptive-t-shirt-for-women",
@@ -10402,7 +10553,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/long-sleeve-adaptive-t-shirt-for-women",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "iz-adaptive-unisex-adaptive-parka-cape",
@@ -10474,7 +10626,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/unisex-adaptive-parka-cape",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "iz-adaptive-unisex-adaptive-seated-parka-1",
@@ -10548,7 +10701,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://izadaptive.com/products/unisex-adaptive-seated-parka-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "jam-the-label-side-access-cargo-pants-sand",
@@ -10619,7 +10773,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://jamthelabel.com/products/side-access-cargo-pants-sand",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "jam-the-label-zip-access-jumper",
@@ -10685,7 +10840,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://jamthelabel.com/products/zip-access-jumper",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "jam-the-label-yama-socks",
@@ -10740,7 +10896,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://jamthelabel.com/products/yama-socks",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "jam-the-label-updated-high-waisted-pant",
@@ -10812,7 +10969,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://jamthelabel.com/products/updated-high-waisted-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "jam-the-label-magnetic-zip-bomber-jacket",
@@ -10875,14 +11033,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://jamthelabel.com/products/magnetic-zip-bomber-jacket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "jam-the-label-magnetic-short-sleeve-shirt-cobalt",
     "name": "Magnetic Short Sleeve Shirt - Cobalt",
     "brandId": "jam-the-label",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "74.00",
     "currency": "SGD",
@@ -10939,7 +11098,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://jamthelabel.com/products/magnetic-short-sleeve-shirt-cobalt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "jam-the-label-magnetic-long-sleeve-shirt-green",
@@ -11002,7 +11162,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://jamthelabel.com/products/magnetic-long-sleeve-shirt-green",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "jam-the-label-magnetic-buckle-overalls",
@@ -11065,7 +11226,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://jamthelabel.com/products/magnetic-buckle-overalls",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "jam-the-label-magnetic-belt-wrap-skirt",
@@ -11130,7 +11292,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://jamthelabel.com/products/magnetic-belt-wrap-skirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "jam-the-label-easy-on-wide-leg-pants",
@@ -11198,7 +11361,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://jamthelabel.com/products/easy-on-wide-leg-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "jam-the-label-easy-on-cargo-shorts",
@@ -11263,7 +11427,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://jamthelabel.com/products/easy-on-cargo-shorts",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "jam-the-label-cropped-neoprene-zip-pullover",
@@ -11327,7 +11492,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://jamthelabel.com/products/cropped-neoprene-zip-pullover",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "jam-the-label-magnetic-hoodie",
@@ -11397,7 +11563,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://jamthelabel.com/products/magnetic-hoodie",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "jam-the-label-block-jacket",
@@ -11464,7 +11631,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://jamthelabel.com/products/block-jacket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "jam-the-label-masc-linen-shirt",
@@ -11529,7 +11697,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://jamthelabel.com/products/masc-linen-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "jam-the-label-high-waisted-pant",
@@ -11591,7 +11760,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://jamthelabel.com/products/high-waisted-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "jam-the-label-femme-linen-shirt",
@@ -11656,7 +11826,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://jamthelabel.com/products/femme-linen-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "jam-the-label-clearance-navy-jacket",
@@ -11716,7 +11887,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://jamthelabel.com/products/clearance-navy-jacket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "jam-the-label-confetti-jacket",
@@ -11776,7 +11948,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://jamthelabel.com/products/confetti-jacket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "will-and-well-onetee-second-edition",
@@ -11843,7 +12016,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://willandwell.com/products/onetee-second-edition",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "will-and-well-onetee-first-edition",
@@ -11910,7 +12084,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://willandwell.com/products/onetee-first-edition",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "will-and-well-boat-neck-drawstring-midaxi-dress",
@@ -11963,7 +12138,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://willandwell.com/products/boat-neck-drawstring-midaxi-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "will-and-well-drawstring-pants-2-0",
@@ -12018,7 +12194,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://willandwell.com/products/drawstring-pants-2-0",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "will-and-well-cropped-3-4-sleeve-blouse",
@@ -12081,7 +12258,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://willandwell.com/products/cropped-3-4-sleeve-blouse",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "will-and-well-oversized-3-4-sleeve-shirt",
@@ -12141,7 +12319,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://willandwell.com/products/oversized-3-4-sleeve-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "will-and-well-cropped-long-sleeve-shirt",
@@ -12201,7 +12380,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://willandwell.com/products/cropped-long-sleeve-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "will-and-well-two-way-flutter-sleeve-blouse",
@@ -12260,7 +12440,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://willandwell.com/products/two-way-flutter-sleeve-blouse",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "will-and-well-maxi-colourblock-cap-sleeve-dress",
@@ -12315,7 +12496,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://willandwell.com/products/maxi-colourblock-cap-sleeve-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "will-and-well-convertible-colourblock-cargo-pants",
@@ -12373,7 +12555,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://willandwell.com/products/convertible-colourblock-cargo-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "will-and-well-adjustable-shorts",
@@ -12436,7 +12619,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://willandwell.com/products/adjustable-shorts",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "will-and-well-convertible-cargo-pants",
@@ -12494,7 +12678,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://willandwell.com/products/convertible-cargo-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "will-and-well-midi-cap-sleeve-dress",
@@ -12553,14 +12738,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://willandwell.com/products/midi-cap-sleeve-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "will-and-well-tropical-short-sleeve-shirt",
     "name": "Tropical Short Sleeve Shirt",
     "brandId": "will-and-well",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "87.00",
     "currency": "SGD",
@@ -12614,7 +12800,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://willandwell.com/products/tropical-short-sleeve-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "will-and-well-two-way-blouse",
@@ -12677,14 +12864,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://willandwell.com/products/two-way-blouse",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "will-and-well-slim-fit-short-sleeve-shirt",
     "name": "Slim-Fit Short Sleeve Shirt",
     "brandId": "will-and-well",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "74.90",
     "currency": "SGD",
@@ -12738,7 +12926,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://willandwell.com/products/slim-fit-short-sleeve-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "will-and-well-leave-uv-unisex-drawstring-pants",
@@ -12800,14 +12989,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://willandwell.com/products/leave-uv-unisex-drawstring-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "will-and-well-leave-uv-slim-fit-short-sleeve-shirt",
     "name": "Leave UV: Slim-Fit Short Sleeve Shirt",
     "brandId": "will-and-well",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$100-$150",
     "price": "129.00",
     "currency": "SGD",
@@ -12861,7 +13051,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://willandwell.com/products/leave-uv-slim-fit-short-sleeve-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "will-and-well-cropped-cape",
@@ -12919,7 +13110,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://willandwell.com/products/cropped-cape",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "will-and-well-slim-fit-long-sleeve-shirt",
@@ -12979,7 +13171,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://willandwell.com/products/slim-fit-long-sleeve-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "will-and-well-drawstring-pants",
@@ -13039,7 +13232,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://willandwell.com/products/drawstring-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "will-and-well-kimono-drawstring-blouse",
@@ -13095,7 +13289,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://willandwell.com/products/kimono-drawstring-blouse",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "will-and-well-midi-sleeveless-dress",
@@ -13149,7 +13344,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://willandwell.com/products/midi-sleeveless-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "magnaready-green-and-navy-grid-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
@@ -13216,7 +13412,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/green-and-navy-grid-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-new-blue-and-orange-plaid-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
@@ -13283,7 +13480,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/new-blue-and-orange-plaid-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-light-blue-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
@@ -13350,14 +13548,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/light-blue-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-blue-and-yellow-short-sleeve-shirt-with-magnetic-closures",
     "name": "Blue and Yellow Short Sleeve Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "69.95",
     "currency": "USD",
@@ -13416,7 +13615,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/blue-and-yellow-short-sleeve-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-flat-front-adaptive-stretch-tech-pant-with-magnetic-closures-stone",
@@ -13497,7 +13697,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/flat-front-adaptive-stretch-tech-pant-with-magnetic-closures-stone",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-flat-front-adaptive-stretch-tech-pant-with-magnetic-closures-black",
@@ -13577,7 +13778,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/flat-front-adaptive-stretch-tech-pant-with-magnetic-closures-black",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-flat-front-adaptive-stretch-tech-pant-with-magnetic-closures-brown",
@@ -13657,7 +13859,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/flat-front-adaptive-stretch-tech-pant-with-magnetic-closures-brown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-brooks-brothers-x-magnaready-stretch-long-sleeve-blue-plaid-button-down-collar-with-magnetic-closures",
@@ -13724,7 +13927,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/brooks-brothers-x-magnaready-stretch-long-sleeve-blue-plaid-button-down-collar-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "magnaready-brooks-brothers-x-magnaready-stretch-long-sleeve-pink-plaid-button-down-collar-with-magnetic-closures",
@@ -13791,7 +13995,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/brooks-brothers-x-magnaready-stretch-long-sleeve-pink-plaid-button-down-collar-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "magnaready-new-adaptive-cargo-twill-short-with-magnetic-closures-stone",
@@ -13864,7 +14069,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/new-adaptive-cargo-twill-short-with-magnetic-closures-stone",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-adaptive-cargo-short-with-magnetic-closures-olive",
@@ -13937,14 +14143,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/adaptive-cargo-short-with-magnetic-closures-olive",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-adaptive-cooling-magnetic-front-short-sleeve-shirt-in-navy-window-pane",
     "name": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in Navy Windowpane",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "64.99",
     "currency": "USD",
@@ -14005,14 +14212,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/adaptive-cooling-magnetic-front-short-sleeve-shirt-in-navy-window-pane",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-adaptive-cooling-magnetic-front-short-sleeve-shirt-in-navy-diamond",
     "name": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in Navy Diamond",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "64.99",
     "currency": "USD",
@@ -14073,14 +14281,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/adaptive-cooling-magnetic-front-short-sleeve-shirt-in-navy-diamond",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-adaptive-cooling-magnetic-front-short-sleeve-shirt-in-pink-blue-stripe",
     "name": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in Pink and Blue Stripe",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "64.99",
     "currency": "USD",
@@ -14141,14 +14350,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/adaptive-cooling-magnetic-front-short-sleeve-shirt-in-pink-blue-stripe",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-adaptive-cooling-magnetic-front-short-sleeve-shirt-in-white-windowpane",
     "name": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in White Windowpane",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "64.99",
     "currency": "USD",
@@ -14209,14 +14419,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/adaptive-cooling-magnetic-front-short-sleeve-shirt-in-white-windowpane",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-adaptive-cooling-magnetic-front-short-sleeve-shirt-in-blue-grey-palm",
     "name": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in Blue Grey Palm",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "64.99",
     "currency": "USD",
@@ -14277,14 +14488,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/adaptive-cooling-magnetic-front-short-sleeve-shirt-in-blue-grey-palm",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-adaptive-cooling-magnetic-front-short-sleeve-shirt-in-green-stripe",
     "name": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in Green Stripe",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "64.99",
     "currency": "USD",
@@ -14345,14 +14557,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/adaptive-cooling-magnetic-front-short-sleeve-shirt-in-green-stripe",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-adaptive-cooling-magnetic-front-short-sleeve-shirt-in-blue-stripe",
     "name": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in Blue Stripe",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "64.99",
     "currency": "USD",
@@ -14413,14 +14626,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/adaptive-cooling-magnetic-front-short-sleeve-shirt-in-blue-stripe",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-adaptive-cooling-magnetic-front-short-sleeve-shirt-in-blue-palm",
     "name": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in Blue Palm",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "64.99",
     "currency": "USD",
@@ -14481,14 +14695,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/adaptive-cooling-magnetic-front-short-sleeve-shirt-in-blue-palm",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-adaptive-cooling-magnetic-front-short-sleeve-shirt-in-coral",
     "name": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in Coral Stripe",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "64.99",
     "currency": "USD",
@@ -14549,14 +14764,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/adaptive-cooling-magnetic-front-short-sleeve-shirt-in-coral",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-green-blue-check-short-sleeve-shirt-with-magnetic-closures",
     "name": "Green and Blue Check Short Sleeve Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "69.95",
     "currency": "USD",
@@ -14614,7 +14830,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/green-blue-check-short-sleeve-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-brown-and-white-long-sleeve-heights-button-down-collar-shirt-with-magnetic-closures",
@@ -14680,14 +14897,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/brown-and-white-long-sleeve-heights-button-down-collar-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-blue-white-tattersall-short-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "name": "Blue and White Tattersall Short Sleeve Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "69.95",
     "currency": "USD",
@@ -14745,14 +14963,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/blue-white-tattersall-short-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-blue-plaid-short-sleeve-shirt-with-magnetic-closures",
     "name": "Blue Plaid Short Sleeve Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "69.95",
     "currency": "USD",
@@ -14810,14 +15029,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/blue-plaid-short-sleeve-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-short-sleeve-untucked-aqua-casual-shirt-with-magnetic-closures",
     "name": "Short Sleeve Untucked Aqua Casual Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "74.50",
     "currency": "USD",
@@ -14878,14 +15098,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/short-sleeve-untucked-aqua-casual-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-short-sleeve-untucked-black-casual-shirt-with-magnetic-closures",
     "name": "Short Sleeve Untucked Black Casual Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "74.50",
     "currency": "USD",
@@ -14946,7 +15167,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/short-sleeve-untucked-black-casual-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-weatherproof-x-magnaready-magnetic-front-water-resistant-puffer-jacket-in-navy",
@@ -15015,7 +15237,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/weatherproof-x-magnaready-magnetic-front-water-resistant-puffer-jacket-in-navy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "magnaready-brooks-brothers-x-magnaready-stretch-long-sleeve-plaid-polo-button-down-collar-with-magnetic-closures",
@@ -15081,14 +15304,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/brooks-brothers-x-magnaready-stretch-long-sleeve-plaid-polo-button-down-collar-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "magnaready-adaptive-white-magnetic-front-long-sleeve-cooling-adaptive-polo-with-pocket",
     "name": "Adaptive White Magnetic Front Long Sleeve Adaptive Shirt with Pocket",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "69.99",
     "currency": "USD",
@@ -15149,7 +15373,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/adaptive-white-magnetic-front-long-sleeve-cooling-adaptive-polo-with-pocket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-brown-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
@@ -15218,14 +15443,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/brown-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-new-sweater-adaptive-with-magnetic-closures-and-pocket",
     "name": "Classic Blue Adaptive Sweater with Magnetic Front Closure with Pocket",
     "brandId": "magnaready",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "89.99",
     "currency": "USD",
@@ -15285,7 +15511,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/new-sweater-adaptive-with-magnetic-closures-and-pocket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-weatherproof-x-magnaready-navy-puffer-magnetic-front-vest-adaptive-comfort",
@@ -15347,7 +15574,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/weatherproof-x-magnaready®-navy-puffer-magnetic-front-vest-adaptive-comfort",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "magnaready-weatherproof-x-magnaready-puffer-magnetic-front-vest-effortless-style-adaptive-comfort",
@@ -15407,7 +15635,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/weatherproof®-x-magnaready®-puffer-magnetic-front-vest-effortless-style-adaptive-comfort",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "magnaready-blue-grey-flannel-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
@@ -15474,14 +15703,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/blue-grey-flannel-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-new-brown-magnaready-adaptive-magnetic-sweater-with-pocket",
     "name": "Classic Adaptive Sweater with Magnetic Front Closure and Pocket",
     "brandId": "magnaready",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "89.99",
     "currency": "USD",
@@ -15541,14 +15771,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/new-brown-magnaready-adaptive-magnetic-sweater-with-pocket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-new-red-adaptive-sweater-with-magnetic-front-closure-and-pocket",
     "name": "Classic Adaptive Sweater with Magnetic Front Closure and Pocket",
     "brandId": "magnaready",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "89.99",
     "currency": "USD",
@@ -15608,14 +15839,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/new-red-adaptive-sweater-with-magnetic-front-closure-and-pocket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-grey-brushed-flannel-long-sleeve-pajama-top-with-magnetic-closures",
     "name": "Long Sleeve Grey Pajama Top with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Nightwear",
-    "category": "nightwear",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "49.99",
     "currency": "USD",
@@ -15675,14 +15907,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/grey-brushed-flannel-long-sleeve-pajama-top-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-new-long-sleeve-blue-pajama-top-with-magnetic-closures",
     "name": "Long Sleeve Blue Brushed Flannel Pajama Top with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Nightwear",
-    "category": "nightwear",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "49.99",
     "currency": "USD",
@@ -15744,14 +15977,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/new-long-sleeve-blue-pajama-top-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-grey-pajama-pant-with-magnetic-closures",
     "name": "Grey Brushed Flannel Pajama Pant with Magnetic Fly",
     "brandId": "magnaready",
-    "clothingType": "Nightwear",
-    "category": "nightwear",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "49.99",
     "currency": "USD",
@@ -15811,14 +16045,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/grey-pajama-pant-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-blue-brushed-flannel-pajama-pant-with-magnetic-fly",
     "name": "Blue Brushed Flannel Pajama Pant with Magnetic Fly",
     "brandId": "magnaready",
-    "clothingType": "Nightwear",
-    "category": "nightwear",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "49.99",
     "currency": "USD",
@@ -15878,14 +16113,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/blue-brushed-flannel-pajama-pant-with-magnetic-fly",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-new-adaptive-red-and-orange-plaid-flannel-shirt-combo-layering-piece-with-magnetic-closures",
     "name": "Adaptive Red Plaid Flannel Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -15949,14 +16185,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/new-adaptive-red-and-orange-plaid-flannel-shirt-combo-layering-piece-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-new-adaptive-violet-plaid-flannel-shirt-combo-layering-piece-with-magnetic-closures",
     "name": "Adaptive Orchid Plaid Flannel Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -16020,14 +16257,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/new-adaptive-violet-plaid-flannel-shirt-combo-layering-piece-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-adaptive-olive-plaid-flannel-shirt-combo-layering-piece-with-magnetic-closures",
     "name": "Adaptive Olive Plaid Flannel Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -16091,14 +16329,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/adaptive-olive-plaid-flannel-shirt-combo-layering-piece-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-adaptive-blue-and-red-flannel-shirt-combo-layering-piece-with-magnetic-closures",
     "name": "Adaptive Blue and Red Plaid Flannel Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -16162,14 +16401,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/adaptive-blue-and-red-flannel-shirt-combo-layering-piece-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-adaptive-blue-and-orange-flannel-shirt-combo-layering-piece-with-magnetic-closures",
     "name": "Adaptive Blue and Orange Flannel Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -16232,14 +16472,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/adaptive-blue-and-orange-flannel-shirt-combo-layering-piece-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-adaptive-teal-flannel-shirt-combo-layering-piece-with-magnetic-closures",
     "name": "Adaptive Teal Plaid Flannel Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -16303,14 +16544,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/adaptive-teal-flannel-shirt-combo-layering-piece-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-adaptive-blackened-pearl-corduroy-shirt-with-magnetic-closures-and-pockets",
     "name": "Adaptive Blackened Pearl Everyday Corduroy Shirt with Magnetic Closures and Pockets",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "59.99",
     "currency": "USD",
@@ -16374,14 +16616,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/adaptive-blackened-pearl-corduroy-shirt-with-magnetic-closures-and-pockets",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-adaptive-vintage-violet-corduroy-shirt-with-magnetic-closures-and-pockets",
     "name": "Adaptive Vintage Violet Everyday Corduroy Shirt with Magnetic Closures and Pockets",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "59.99",
     "currency": "USD",
@@ -16445,14 +16688,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/adaptive-vintage-violet-corduroy-shirt-with-magnetic-closures-and-pockets",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-adaptive-classic-red-corduroy-shirt-with-magnetic-closures-and-pockets",
     "name": "Adaptive Classic Red Everyday Corduroy Shirt with Magnetic Closures and Pockets",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "59.99",
     "currency": "USD",
@@ -16516,7 +16760,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/adaptive-classic-red-corduroy-shirt-with-magnetic-closures-and-pockets",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-denim-mvp-black-five-pocket-jean-with-magnetic-closures",
@@ -16597,7 +16842,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/denim-mvp-black-five-pocket-jean-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-denim-mvp-light-wash-five-pocket-jean-with-magnetic-closures",
@@ -16678,14 +16924,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/denim-mvp-light-wash-five-pocket-jean-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-new-adaptive-heather-olive-sweatshirt-with-magnetic-closures",
     "name": "The Adaptive Magnetic Front Sweatshirt in Heathered Olive",
     "brandId": "magnaready",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "79.99",
     "currency": "USD",
@@ -16750,14 +16997,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/new-adaptive-heather-olive-sweatshirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-new-adaptive-heathered-navy-sweatshirt-with-magnetic-closures",
     "name": "The Adaptive Magnetic Front Sweatshirt Heathered Navy",
     "brandId": "magnaready",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "79.99",
     "currency": "USD",
@@ -16822,14 +17070,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/new-adaptive-heathered-navy-sweatshirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-magnetic-front-waffle-weave-casual-shirt-with-dual-oversized-pockets-in-green",
     "name": "Magnetic Front Waffle Weave Casual Shirt with Dual Oversized Pockets in Green",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "74.99",
     "currency": "USD",
@@ -16895,7 +17144,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/magnetic-front-waffle-weave-casual-shirt-with-dual-oversized-pockets-in-green",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-classic-blue-plaid-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
@@ -16964,7 +17214,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/classic-blue-plaid-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-white-and-blue-plaid-long-sleeve-button-down-collar-shirt-with-velcro-closures",
@@ -17032,7 +17283,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/white-and-blue-plaid-long-sleeve-button-down-collar-shirt-with-velcro-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-new-green-and-black-plaid-long-sleeve-button-down-collar-shirt-with-velcro-closures",
@@ -17100,7 +17352,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/new-green-and-black-plaid-long-sleeve-button-down-collar-shirt-with-velcro-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-new-fine-whale-corduroy-magnetic-zipper-front-pant",
@@ -17170,7 +17423,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/new-fine-whale-corduroy-magnetic-zipper-front-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-new-brown-fine-whale-corduroy-magnetic-zipper-front-pant",
@@ -17240,7 +17494,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/new-brown-fine-whale-corduroy-magnetic-zipper-front-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-grey-check-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
@@ -17307,7 +17562,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/grey-check-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-magnaready-stretch-long-sleeve-navy-plaid-button-down-collar-with-magnetic-closures",
@@ -17375,7 +17631,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/magnaready-stretch-long-sleeve-navy-plaid-button-down-collar-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "magnaready-blue-grey-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
@@ -17442,7 +17699,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/blue-grey-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-new-green-and-black-plaid-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
@@ -17508,7 +17766,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/new-green-and-black-plaid-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-grey-stripe-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
@@ -17577,7 +17836,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/grey-stripe-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-magnaready-stretch-long-sleeve-blue-stripe-button-down-collar-with-magnetic-closures",
@@ -17644,7 +17904,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/magnaready-stretch-long-sleeve-blue-stripe-button-down-collar-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "magnaready-new-blue-and-brown-plaid-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
@@ -17712,7 +17973,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/new-blue-and-brown-plaid-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-weatherproof-x-magnaready-magnetic-front-water-resistant-puffer-jacket-in-olive",
@@ -17781,7 +18043,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/weatherproof-x-magnaready-magnetic-front-water-resistant-puffer-jacket-in-olive",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "magnaready-brooks-brothers-x-magnaready-stretch-long-sleeve-black-watch-plaid-button-down-collar-with-magnetic-closures",
@@ -17847,7 +18110,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/brooks-brothers-x-magnaready-stretch-long-sleeve-black-watch-plaid-button-down-collar-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "magnaready-brooks-brothers-x-magnaready-stretch-long-sleeve-tartan-plaid-button-down-collar-with-magnetic-closures",
@@ -17913,14 +18177,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/brooks-brothers-x-magnaready-stretch-long-sleeve-tartan-plaid-button-down-collar-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "magnaready-nautica-x-magnaready-adaptive-fly-dress-pant-in-black",
     "name": "Nautica® x MagnaReady® Adaptive Fly Stretch Dress Pant in Black",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$50-$100",
     "price": "74.50",
     "currency": "USD",
@@ -17993,14 +18258,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/nautica-x-magnaready-adaptive-fly-dress-pant-in-black",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-pajama-top-15ms21wt004-lt-blue",
     "name": "Light Blue Oxford Long Sleeve Pajama Top with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Nightwear",
-    "category": "nightwear",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -18058,14 +18324,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/pajama-top-15ms21wt004-lt-blue",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-nautica-x-magnaready-adaptive-fly-stretch-dress-pant-in-navy",
     "name": "Nautica® x MagnaReady® Adaptive Fly Stretch Dress Pant in Navy",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$50-$100",
     "price": "74.50",
     "currency": "USD",
@@ -18138,7 +18405,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/nautica®-x-magnaready®-adaptive-fly-stretch-dress-pant-in-navy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-brooks-brothers-long-sleeve-white-dress-shirt-with-magnetic-closures",
@@ -18204,14 +18472,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/brooks-brothers-long-sleeve-white-dress-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "magnaready-f25twillls",
     "name": "Adaptive Casual Western Knit Twill Shirt with Magnetic Buttons and Chest Pocket in Star Sapphire",
     "brandId": "magnaready",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "49.99",
     "currency": "USD",
@@ -18273,14 +18542,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/f25twillls",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-f25twillls-rio-red",
     "name": "Adaptive Casual Western Knit Twill Shirt with Magnetic Buttons and Chest Pocket - Rio Red",
     "brandId": "magnaready",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "49.99",
     "currency": "USD",
@@ -18341,7 +18611,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/f25twillls-rio-red",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-blue-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
@@ -18407,7 +18678,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/blue-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-blue-white-grid-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
@@ -18473,7 +18745,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/blue-white-grid-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-pink-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
@@ -18539,7 +18812,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/pink-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-magnaready-x-weatherproof-classic-magnetized-front-golf-jacket-in-black",
@@ -18608,14 +18882,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/magnaready-x-weatherproof-classic-magnetized-front-golf-jacket-in-black",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "magnaready-orange-short-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "name": "Orange Plaid Short Sleeve Button Down Collar Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "69.95",
     "currency": "USD",
@@ -18673,14 +18948,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/orange-short-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-lavender-short-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "name": "Lavender Short Sleeve Button Down Collar Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "69.95",
     "currency": "USD",
@@ -18738,14 +19014,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/lavender-short-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-blue-check-short-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "name": "Blue Check Short Sleeve Button Down Collar Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "64.95",
     "currency": "USD",
@@ -18803,14 +19080,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/blue-check-short-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-dove-grey-short-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "name": "Dove Grey Short Sleeve Button Down Collar Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "69.95",
     "currency": "USD",
@@ -18868,7 +19146,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/dove-grey-short-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-lilac-and-white-micro-plaid-long-sleeve-button-down-heights-shirt-with-magnetic-buttons",
@@ -18936,14 +19215,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/lilac-and-white-micro-plaid-long-sleeve-button-down-heights-shirt-with-magnetic-buttons",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-cooling-magnetic-front-polo-short-sleeves-in-navy",
     "name": "Adaptive Cooling Magnetic Front Short Sleeves Shirt in Navy",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "64.99",
     "currency": "USD",
@@ -19004,14 +19284,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/cooling-magnetic-front-polo-short-sleeves-in-navy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-adaptive-cooling-magnetic-front-shirt-short-sleeves-in-white",
     "name": "Adaptive Cooling Magnetic Front Short Sleeve Shirt in White",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "64.99",
     "currency": "USD",
@@ -19072,7 +19353,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/adaptive-cooling-magnetic-front-shirt-short-sleeves-in-white",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-flat-front-fordham-easy-care-chino-twill-short-with-magnetic-closures-olive",
@@ -19147,7 +19429,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/flat-front-fordham-easy-care-chino-twill-short-with-magnetic-closures-olive",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-flat-front-fordham-easy-cary-chino-twill-pant-with-magnetic-closures-olive",
@@ -19230,14 +19513,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/flat-front-fordham-easy-cary-chino-twill-pant-with-magnetic-closures-olive",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-cooling-magnetic-front-polo-short-sleeves-in-navy-and-red",
     "name": "Adaptive Cooling Magnetic Front Short Sleeves Shirt in Navy and Red",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "64.99",
     "currency": "USD",
@@ -19298,14 +19582,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/cooling-magnetic-front-polo-short-sleeves-in-navy-and-red",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-short-sleeve-untucked-cooling-fabric-casual-shirt-with-magnetic-closures-in-grey-floral",
     "name": "Untucked Short Sleeve Cooling Fabric Casual Shirt with Magnetic Closures in Grey Floral",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -19366,14 +19651,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/short-sleeve-untucked-cooling-fabric-casual-shirt-with-magnetic-closures-in-grey-floral",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-untucked-short-sleeve-cooling-fabric-shirt-with-magnetic-closures-in-blue-palm",
     "name": "Untucked Short Sleeve Cooling Shirt with Magnetic Closures in Blue Leaf",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "59.99",
     "currency": "USD",
@@ -19434,7 +19720,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/untucked-short-sleeve-cooling-fabric-shirt-with-magnetic-closures-in-blue-palm",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-blue-green-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
@@ -19500,7 +19787,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/blue-green-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-new-womens-adaptive-magnetic-white-blouse",
@@ -19570,7 +19858,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/new-womens-adaptive-magnetic-white-blouse",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-navy-grid-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
@@ -19636,7 +19925,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/navy-grid-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-blue-white-check-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
@@ -19702,7 +19992,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/blue-white-check-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-women-chambray-shirt-magnetic",
@@ -19772,14 +20063,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/women-chambray-shirt-magnetic",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-short-sleeve-red-blue-and-white-check-shirt-with-magnetic-closures",
     "name": "Short Sleeve Red White and Blue Button Down Collar Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "69.99",
     "currency": "USD",
@@ -19837,7 +20129,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/short-sleeve-red-blue-and-white-check-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-brooks-brothers-x-magnaready-stretch-long-sleeve-blue-and-white-stripe-button-down-collar-with-magnetic-closures",
@@ -19904,14 +20197,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/brooks-brothers-x-magnaready-stretch-long-sleeve-blue-and-white-stripe-button-down-collar-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "magnaready-black-stripe-magnetic-front-long-sleeve-tech-shirt-with-pocket",
     "name": "MagnaReady Black Stripe Magnetic Front Long Sleeve Cooling Adaptive Shirt with Pocket",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "69.99",
     "currency": "USD",
@@ -19972,14 +20266,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/black-stripe-magnetic-front-long-sleeve-tech-shirt-with-pocket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-magnaready-blue-magnetic-front-long-sleeve-tech-shirt-with-pocket",
     "name": "MagnaReady Carolina Blue Magnetic Front Long Sleeve Cooling Adaptive Shirt with Pocket",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "69.99",
     "currency": "USD",
@@ -20040,14 +20335,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/magnaready-blue-magnetic-front-long-sleeve-tech-shirt-with-pocket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-brooks-brothers-x-magnaready-stretch-long-sleeve-pink-polo-button-down-collar-with-magnetic-closures",
     "name": "Brooks Brothers  X MagnaReady Stretch Long Sleeve Pink Polo Button-Down Collar with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$100-$150",
     "price": "119.99",
     "currency": "USD",
@@ -20106,14 +20402,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/brooks-brothers-x-magnaready-stretch-long-sleeve-pink-polo-button-down-collar-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-new-adaptive-magnetic-front-cardigan-sweater-in-black",
     "name": "Women's Black Adaptive Magnetic Front Knit Cardigan Sweater by MagnaReady®",
     "brandId": "magnaready",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "59.99",
     "currency": "USD",
@@ -20174,14 +20471,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/new-adaptive-magnetic-front-cardigan-sweater-in-black",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-new-adaptive-magnetic-front-cardigan-sweater-in-navy",
     "name": "Women's Navy Adaptive Magnetic Front Knit Cardigan Sweater by MagnaReady®",
     "brandId": "magnaready",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "59.99",
     "currency": "USD",
@@ -20242,14 +20540,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/new-adaptive-magnetic-front-cardigan-sweater-in-navy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-new-womens-adaptive-magnetic-front-knit-cardigan-sweater-in-yellow",
     "name": "Women's Yellow Adaptive Magnetic Front Knit Cardigan Sweater by Magnaready®",
     "brandId": "magnaready",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "59.99",
     "currency": "USD",
@@ -20310,14 +20609,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/new-womens-adaptive-magnetic-front-knit-cardigan-sweater-in-yellow",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-new-womens-adaptive-magnetic-front-knit-cardigan-sweater-in-grey",
     "name": "Women's Grey Adaptive Magnetic Front Knit Cardigan Sweater by MagnaReady®",
     "brandId": "magnaready",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "59.99",
     "currency": "USD",
@@ -20378,14 +20678,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/new-womens-adaptive-magnetic-front-knit-cardigan-sweater-in-grey",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-short-sleeve-blue-and-white-check-cotton-shirt-with-magnetic-closures",
     "name": "Short Sleeve Blue Check Cotton Shirt with Magnetic Closures and a Pocket",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -20442,14 +20743,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/short-sleeve-blue-and-white-check-cotton-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-magnetic-front-waffleweave-casual-shirt-with-dual-oversized-pockets-white",
     "name": "Magnetic Front Waffle Weave Casual Adaptive Shirt with Dual Oversized Pockets in White",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "74.99",
     "currency": "USD",
@@ -20515,7 +20817,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/magnetic-front-waffleweave-casual-shirt-with-dual-oversized-pockets-white",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-mens-adaptive-track-pants-black",
@@ -20583,7 +20886,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/mens-adaptive-track-pants-black",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-mens-adaptive-track-pants-in-grey",
@@ -20651,14 +20955,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/mens-adaptive-track-pants-in-grey",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-adaptive-true-navy-magnetic-front-long-sleeve-cooling-adaptive-polo-with-pocket",
     "name": "Adaptive True Navy Magnetic Front Long Sleeve Cooling Adaptive Shirt with Pocket",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "69.99",
     "currency": "USD",
@@ -20718,14 +21023,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/adaptive-true-navy-magnetic-front-long-sleeve-cooling-adaptive-polo-with-pocket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-arctic-cooling-magnetic-polo-rio-red",
     "name": "Adaptive Rio Red Magnetic Front Long Sleeve Cooling Shirt With Pocket",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "69.99",
     "currency": "USD",
@@ -20786,7 +21092,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/arctic-cooling-magnetic-polo-rio-red",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-flat-front-easy-care-chino-twill-short-with-magnetic-closures-navy",
@@ -20860,7 +21167,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/flat-front-easy-care-chino-twill-short-with-magnetic-closures-navy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-women-flannel-1",
@@ -20930,7 +21238,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/women-flannel-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-magnaready-women-adaptive-flannel",
@@ -21000,14 +21309,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/magnaready-women-adaptive-flannel",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-magnaready-adaptive-flannel-magnetic-button-shirt",
     "name": "Adaptive Pale Blue Plaid Flannel Shirt / Combo Layering Piece with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -21065,14 +21375,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/magnaready-adaptive-flannel-magnetic-button-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-f24-flannel-shirt-6",
     "name": "Adaptive Navy and Green Check Flannel Shirt / Combo Layering Piece with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -21130,14 +21441,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/f24-flannel-shirt-6",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-f24-flannel-shirt-2",
     "name": "Adaptive Long Sleeve White and Navy Check Flannel Shirt / Combo Layering Piece with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -21195,14 +21507,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/f24-flannel-shirt-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-f24-flannel-shirt-3",
     "name": "Adaptive Long Sleeve Khaki Flannel Shirt Combo Layering Piece with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -21260,14 +21573,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/f24-flannel-shirt-3",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-adaptive-indigo-flannel-shirt-combo-layering-piece-with-magnetic-buttons",
     "name": "Adaptive Indigo Flannel Shirt / Jacket with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Jackets",
+    "category": "jackets",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -21325,14 +21639,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/adaptive-indigo-flannel-shirt-combo-layering-piece-with-magnetic-buttons",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "magnaready-adaptive-grey-flannel-shirt-combo-layering-piece-with-magnetic-closures",
     "name": "Adaptive Grey Flannel Shirt / Combo Layering Piece with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -21390,14 +21705,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/adaptive-grey-flannel-shirt-combo-layering-piece-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-magnaready-blue-check-magnetic-front-long-sleeve-tech-polo-with-pocket",
     "name": "MagnaReady Blue Check Magnetic Front Long Sleeve Cooling Adaptive Shirt with Pocket",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "49.99",
     "currency": "USD",
@@ -21458,7 +21774,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/magnaready-blue-check-magnetic-front-long-sleeve-tech-polo-with-pocket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-orange-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
@@ -21524,14 +21841,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/orange-long-sleeve-button-down-collar-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-short-sleeve-blue-and-white-micro-plaid-shirt-with-magnetic-closures",
     "name": "Short Sleeve Blue and White Check Cotton Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -21589,14 +21907,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/short-sleeve-blue-and-white-micro-plaid-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-f24-flannel-shirt",
     "name": "Adaptive Brown Glen Plaid  Flannel Shirt Combo Layering Piece with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -21654,14 +21973,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/f24-flannel-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-adaptive-ribbed-cotton-shawl-collar-cardigan-with-magnetic-button-front-and-pockets",
     "name": "Adaptive Chunky English Rib Stitch Cardigan with Magnetic Button Front and Pockets in Charcoal",
     "brandId": "magnaready",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "59.99",
     "currency": "USD",
@@ -21723,7 +22043,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/adaptive-ribbed-cotton-shawl-collar-cardigan-with-magnetic-button-front-and-pockets",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-weatherproof-x-magnaready-magnetic-puffer-jacket-pewter",
@@ -21792,7 +22113,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/weatherproof-x-magnaready-magnetic-puffer-jacket-pewter",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "magnaready-weatherproof-x-magnaready-magnetic-puffer-jacket-black",
@@ -21861,14 +22183,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/weatherproof-x-magnaready-magnetic-puffer-jacket-black",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "magnaready-magnetic-front-knit-oxford-casual-shirt-with-pockets",
     "name": "Magnetic Front Knit Oxford Pique Long Sleeve Shirt with Pocket in Ivy Green",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -21929,14 +22252,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/magnetic-front-knit-oxford-casual-shirt-with-pockets",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-magnetic-front-knit-oxford-pique-casual-shirt-with-pocket",
     "name": "Magnetic Front Knit Oxford Pique Long Sleeve Shirt with Pocket in Sky Blue",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -21997,14 +22321,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/magnetic-front-knit-oxford-pique-casual-shirt-with-pocket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-magnetic-front-waffleweave-casual-shirt-with-dual-pockets-in-navy",
     "name": "Magnetic Front WaffleWeave Casual Shirt with Dual Pockets in Navy",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "74.99",
     "currency": "USD",
@@ -22070,14 +22395,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/magnetic-front-waffleweave-casual-shirt-with-dual-pockets-in-navy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-magnetic-front-waffleweave-casual-shirt-with-dual-pockets-in-choco",
     "name": "Magnetic Front WaffleWeave Casual Shirt with Dual Pockets in Choco",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "74.99",
     "currency": "USD",
@@ -22143,7 +22469,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/magnetic-front-waffleweave-casual-shirt-with-dual-pockets-in-choco",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-fordham-flat-front-easy-care-chino-twill-short-with-magnetic-closures-magnaready",
@@ -22217,14 +22544,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/fordham-flat-front-easy-care-chino-twill-short-with-magnetic-closures-magnaready",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-pajama-bottoms-15ms21wb002-lt-blue",
     "name": "Oxford Light Blue Pajama Pant with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Nightwear",
-    "category": "nightwear",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -22281,7 +22609,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/pajama-bottoms-15ms21wb002-lt-blue",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-magnaready-x-weatherproof-classic-magnetized-front-golf-jacket-in-new-stone",
@@ -22350,7 +22679,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/magnaready-x-weatherproof-classic-magnetized-front-golf-jacket-in-new-stone",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "magnaready-magnaready-x-weatherproof-classic-magnetized-front-golf-jacket-in-navy",
@@ -22419,7 +22749,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/magnaready-x-weatherproof-classic-magnetized-front-golf-jacket-in-navy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "magnaready-blue-chambray-long-sleeve-shirt-with-magnetic-closures-best-selling",
@@ -22489,14 +22820,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/blue-chambray-long-sleeve-shirt-with-magnetic-closures-best-selling",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-new-orange-pique-knit-short-sleeve-polo-with-magnetic-closures",
     "name": "Red Heather Pique Knit Short Sleeve Polo with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "59.99",
     "currency": "USD",
@@ -22555,7 +22887,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/new-orange-pique-knit-short-sleeve-polo-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-reversible-diamond-quilted-magnetic-button-vest",
@@ -22619,7 +22952,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/reversible-diamond-quilted-magnetic-button-vest",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "magnaready-brooks-brothers-long-sleeve-blue-dress-shirt-with-magnetic-closures",
@@ -22687,14 +23021,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/brooks-brothers-long-sleeve-blue-dress-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "magnaready-blue-solid-interlock-knit-short-sleeve-polo-with-magnetic-closures-magnaready",
     "name": "Blue Pique Knit Short Sleeve Polo with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "59.99",
     "currency": "USD",
@@ -22754,7 +23089,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/blue-solid-interlock-knit-short-sleeve-polo-with-magnetic-closures-magnaready",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-black-knit-fleece-long-sleeve-dillon-jacket-with-magnetic-closures",
@@ -22823,14 +23159,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/black-knit-fleece-long-sleeve-dillon-jacket-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "magnaready-long-sleeve-light-blue-ryan-dress-shirt-with-magnetic-closures",
     "name": "Classic Long Sleeve Light Blue ‘Ryan’ Dress Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "74.99",
     "currency": "USD",
@@ -22891,14 +23228,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/long-sleeve-light-blue-ryan-dress-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-long-sleeve-white-ryan-dress-shirt-with-magnetic-closures",
     "name": "Long Sleeve White ‘Ryan’ Dress Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "74.99",
     "currency": "USD",
@@ -22959,7 +23297,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/long-sleeve-white-ryan-dress-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-long-sleeve-orange-and-white-heights-classic-plaid-shirt-with-magnetic-closures",
@@ -23026,14 +23365,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/long-sleeve-orange-and-white-heights-classic-plaid-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-new-short-sleeve-untucked-blue-2-landry-camp-casual-shirt-with-magnetic-closures",
     "name": "Short Sleeve Untucked Blue Stripe Camp Casual Shirt with Magnetic Closures by MagnaReady®",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -23093,14 +23433,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/new-short-sleeve-untucked-blue-2-landry-camp-casual-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-new-short-sleeve-untucked-solid-blue-landry-camp-casual-shirt-with-magnetic-closures",
     "name": "Short Sleeve Untucked Solid Blue Camp Casual Shirt with Magnetic Closures by MagnaReady®",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -23160,14 +23501,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/new-short-sleeve-untucked-solid-blue-landry-camp-casual-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-short-sleeve-untucked-grey-landry-camp-casual-shirt-with-magnetic-closures",
     "name": "Short Sleeve Untucked Grey Camp Casual Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -23224,14 +23566,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/short-sleeve-untucked-grey-landry-camp-casual-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-white-solid-interlock-knit-short-sleeve-polo-with-magnetic-closures-magnaready",
     "name": "White Pique Knit Short Sleeve Polo with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "59.99",
     "currency": "USD",
@@ -23291,14 +23634,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/white-solid-interlock-knit-short-sleeve-polo-with-magnetic-closures-magnaready",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-grey-solid-interlock-knit-short-sleeve-polo-with-magnetic-closures-magnaready",
     "name": "Grey Pique Knit Short Sleeve Polo with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "59.99",
     "currency": "USD",
@@ -23358,14 +23702,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/grey-solid-interlock-knit-short-sleeve-polo-with-magnetic-closures-magnaready",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-womens-adaptive-hooded-wrap-magnetic-cardigan-magnaready",
     "name": "Women's Adaptive Hooded Wrap Magnetic Cardigan by MagnaReady®",
     "brandId": "magnaready",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "14.99",
     "currency": "USD",
@@ -23429,14 +23774,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/womens-adaptive-hooded-wrap-magnetic-cardigan-magnaready",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-burgundy-ryan-spread-collar-shirt",
     "name": "Short Sleeve Burgundy Micro Check ‘Ryan’ Spread Collar Cotton Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "34.99",
     "currency": "USD",
@@ -23498,14 +23844,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/burgundy-ryan-spread-collar-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-white-ryan-spread-collar-shirt",
     "name": "Short Sleeve Solid White ‘Ryan’ Spread Collar 80's 2ply Cotton Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "64.95",
     "currency": "USD",
@@ -23567,14 +23914,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/white-ryan-spread-collar-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-red-white-short-sleeve-heights-casual-shirt-with-magnetic-closures",
     "name": "Short Sleeve Red and White Cotton Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "34.99",
     "currency": "USD",
@@ -23632,14 +23980,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/red-white-short-sleeve-heights-casual-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-baby-blue-and-white-plaid-cotton-short-sleeve-heights-casual-shirt-with-magnetic-closures",
     "name": "Short Sleeve Baby Blue and White Micro Plaid Cotton Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "34.99",
     "currency": "USD",
@@ -23697,14 +24046,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/baby-blue-and-white-plaid-cotton-short-sleeve-heights-casual-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-orange-gingham-poplin-short-sleeve-heights-casual-shirt-with-magnetic-closures",
     "name": "Short Sleeve Orange and White Gingham Cotton Shirt with Magnetic Closures",
     "brandId": "magnaready",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "69.99",
     "currency": "USD",
@@ -23763,7 +24113,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/orange-gingham-poplin-short-sleeve-heights-casual-shirt-with-magnetic-closures",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "magnaready-fordham-flat-front-easy-cary-chino-twill-pant-with-magnetic-closures-magnaready",
@@ -23846,7 +24197,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/fordham-flat-front-easy-cary-chino-twill-pant-with-magnetic-closures-magnaready",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-five-pocket-jean-mvp-magnetic-buttons-indigo",
@@ -23927,7 +24279,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/five-pocket-jean-mvp-magnetic-buttons-indigo",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-chino-15ms21wb003-stone-navy",
@@ -24010,7 +24363,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/chino-15ms21wb003-stone-navy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-ulex-womens-adaptive-gathered-waist-pants-standing-fit",
@@ -24082,7 +24436,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/ulex-womens-adaptive-gathered-waist-pants-standing-fit",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-ulex-womens-adaptive-gathered-waist-pants-seated-fit",
@@ -24154,7 +24509,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/ulex-womens-adaptive-gathered-waist-pants-seated-fit",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-womens-gathered-waist-pants",
@@ -24226,7 +24582,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/womens-gathered-waist-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "magnaready-womens-gathered-waist-pants-pants",
@@ -24298,7 +24655,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://magnaready.com/products/womens-gathered-waist-pants-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "billy-footwear-rhinestone-rainbow-billy-goat-afo-friendly-athletic-shoes",
@@ -24380,7 +24738,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/rhinestone-rainbow-billy-goat-afo-friendly-athletic-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-cognac-billy-cuffs",
@@ -24447,14 +24806,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-cognac-billy-cuffs",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-fuchsia-billy-retro-jogger-zipper-shoes",
     "name": "Fuchsia BILLY Retro Jogger",
     "brandId": "billy-footwear",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$50-$100",
     "price": "55.00",
     "currency": "USD",
@@ -24518,7 +24878,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/fuchsia-billy-retro-jogger-zipper-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "billy-footwear-womens-blush-billy-comfort-knit",
@@ -24589,7 +24950,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-blush-billy-comfort-knit",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-grey-billy-comfort-knit",
@@ -24660,14 +25022,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-grey-billy-comfort-knit",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-kids-toddler-retro-jogger",
     "name": "Kids'/Toddler Retro Jogger",
     "brandId": "billy-footwear",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$50-$100",
     "price": "55.00",
     "currency": "USD",
@@ -24731,7 +25094,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/kids-toddler-retro-jogger",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "billy-footwear-mens-navy-suede-billy-comfort-plush",
@@ -24809,7 +25173,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-navy-suede-billy-comfort-plush",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-wavy-rainbow-billy-classic-lace-high",
@@ -24884,14 +25249,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/wavy-rainbow-billy-classic-lace-high",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-lilac-billy-retro-jogger",
     "name": "Lilac BILLY Retro Jogger",
     "brandId": "billy-footwear",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$50-$100",
     "price": "55.00",
     "currency": "USD",
@@ -24955,14 +25321,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/lilac-billy-retro-jogger",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "billy-footwear-black-billy-retro-jogger",
     "name": "Black BILLY Retro Jogger",
     "brandId": "billy-footwear",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$50-$100",
     "price": "55.00",
     "currency": "USD",
@@ -25026,7 +25393,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-billy-retro-jogger",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "billy-footwear-mens-white-navy-billy-comfort-court",
@@ -25102,7 +25470,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-white-navy-billy-comfort-court",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-white-navy-billy-limitless-253-shoes",
@@ -25180,7 +25549,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-white-navy-billy-limitless-253-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-white-navy-billy-limitless-253-shoes",
@@ -25255,7 +25625,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-white-navy-billy-limitless-253-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-black-gum-billy-sport-inclusion-dz1-zipper-shoes",
@@ -25322,7 +25693,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-black-gum-billy-sport-inclusion-dz1-zipper-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-pink-confetti-billy-sport-inclusion-dz1-zipper-shoes",
@@ -25389,7 +25761,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/pink-confetti-billy-sport-inclusion-dz1-zipper-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-black-black-gum-billy-sport-inclusion-dz1-zipper-shoes",
@@ -25462,7 +25835,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-black-black-gum-billy-sport-inclusion-dz1-zipper-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-black-white-gum-billy-sport-inclusion-dz1-zipper-shoes",
@@ -25532,7 +25906,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-black-white-gum-billy-sport-inclusion-dz1-zipper-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-mauve-white-plum-billy-sport-inclusion-dz1-zipper-shoes",
@@ -25602,7 +25977,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-mauve-white-plum-billy-sport-inclusion-dz1-zipper-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-grey-jersey-billy-goat-classic-high",
@@ -25687,7 +26063,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-grey-jersey-billy-goat-classic-high",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-grey-jersey-billy-goat-classic-high",
@@ -25772,7 +26149,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-grey-jersey-billy-goat-classic-high",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-black-white-billy-cs-low-top",
@@ -25854,7 +26232,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-black-white-billy-cs-low-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-white-black-billy-cs-low-top",
@@ -25936,7 +26315,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-white-black-billy-cs-low-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-black-white-billy-goat-classic-high",
@@ -26021,7 +26401,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-black-white-billy-goat-classic-high",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-black-white-billy-cs-low-top",
@@ -26100,7 +26481,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-black-white-billy-cs-low-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-white-black-billy-cs-low-top",
@@ -26179,7 +26561,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-white-black-billy-cs-low-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-turquoise-white-billy-cs-high-top-zipper-shoes",
@@ -26254,7 +26637,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/turquoise-white-billy-cs-high-top-zipper-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-navy-billy-d-r-ii-short-wrap-low-tops",
@@ -26336,7 +26720,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/navy-billy-d-r-ii-short-wrap-low-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-blue-watercolor-billy-cs-high-tops",
@@ -26411,7 +26796,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/blue-watercolor-billy-cs-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-black-billy-ice-winter-boots",
@@ -26487,7 +26873,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-black-billy-ice-winter-boots",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-night-sk8ter-billy-classic-d-r-ii-high-top-afo-friendly-shoes",
@@ -26569,7 +26956,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/night-sk8ter-billy-classic-d-r-ii-high-top-afo-friendly-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-pink-billy-ice-winter-boots",
@@ -26645,7 +27033,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-pink-billy-ice-winter-boots",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-grey-billy-ice-winter-boots",
@@ -26721,7 +27110,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-grey-billy-ice-winter-boots",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-purple-billy-ice-winter-boots",
@@ -26797,7 +27187,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-purple-billy-ice-winter-boots",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-dark-grey-billy-classic-d-r-high-tops",
@@ -26881,7 +27272,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/dark-grey-billy-classic-d-r-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-navy-billy-classic-d-r-high-tops",
@@ -26965,7 +27357,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/navy-billy-classic-d-r-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-pink-billy-classic-d-r-high-tops",
@@ -27049,7 +27442,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/pink-billy-classic-d-r-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-pink-print-billy-classic-d-r-high-tops",
@@ -27133,7 +27527,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/pink-print-billy-classic-d-r-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-billy-ice-boot-winter-boots",
@@ -27205,7 +27600,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-billy-ice-boot-winter-boots",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-silver-glitz-billy-cs-high-tops",
@@ -27280,7 +27676,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/silver-glitz-billy-cs-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-wicked-black-glitz-billy-cs-high-tops",
@@ -27355,7 +27752,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/wicked-black-glitz-billy-cs-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-ruby-red-glitz-billy-cs-high-tops",
@@ -27430,7 +27828,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/ruby-red-glitz-billy-cs-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-leather-billy-goat-classic-high-top-afo-friendly-zipper-shoes",
@@ -27512,7 +27911,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-leather-billy-goat-classic-high-top-afo-friendly-zipper-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-kids-toddler-d-r-ii-short-wrap-high",
@@ -27594,7 +27994,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/kids-toddler-d-r-ii-short-wrap-high",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-kids-toddler-d-r-short-wrap-low",
@@ -27678,7 +28079,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/kids-toddler-d-r-short-wrap-low",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-kids-toddler-d-r-short-wrap-high",
@@ -27762,14 +28164,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/kids-toddler-d-r-short-wrap-high",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-kids-toddler-joggers",
     "name": "Kids'/Toddler Joggers",
     "brandId": "billy-footwear",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "16.99",
     "currency": "USD",
@@ -27836,7 +28239,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/kids-toddler-joggers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "billy-footwear-womens-cozy-slipper",
@@ -27901,7 +28305,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-cozy-slipper",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-kids-tod-billy-d-r-ii-short-wrap-low",
@@ -27983,7 +28388,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/kids-tod-billy-d-r-ii-short-wrap-low",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-white-leather-billy-comfort-luxe",
@@ -28056,7 +28462,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-white-leather-billy-comfort-luxe",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-black-leather-billy-comfort-luxe",
@@ -28129,7 +28536,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-black-leather-billy-comfort-luxe",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-white-leather-billy-comfort-luxe",
@@ -28205,7 +28613,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-white-leather-billy-comfort-luxe",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-black-leather-billy-comfort-luxe",
@@ -28283,7 +28692,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-black-leather-billy-comfort-luxe",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-white-leather-billy-comfort-plush",
@@ -28358,7 +28768,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-white-leather-billy-comfort-plush",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-grey-suede-billy-comfort-plush",
@@ -28433,7 +28844,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-grey-suede-billy-comfort-plush",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-black-leather-billy-comfort-plush",
@@ -28508,7 +28920,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-black-leather-billy-comfort-plush",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-black-to-the-floor-leather-billy-comfort-plush",
@@ -28586,7 +28999,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-black-to-the-floor-leather-billy-comfort-plush",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-charcoal-suede-billy-comfort-plush",
@@ -28664,7 +29078,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-charcoal-suede-billy-comfort-plush",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-black-leather-billy-comfort-plush",
@@ -28742,7 +29157,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-black-leather-billy-comfort-plush",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-navy-green-light-ups-billy-classic-d-r-high-top-afo-friendly-shoes",
@@ -28824,7 +29240,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/navy-green-light-ups-billy-classic-d-r-high-top-afo-friendly-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-multi-glitter-billy-classic-d-r-ii-high-top-afo-friendly-shoes",
@@ -28906,7 +29323,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-multi-glitter-billy-classic-d-r-ii-high-top-afo-friendly-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-silver-multi-glitter-billy-classic-d-r-ii-high-top-afo-friendly-shoes",
@@ -28988,7 +29406,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/silver-multi-glitter-billy-classic-d-r-ii-high-top-afo-friendly-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-rainbow-sk8ter-billy-classic-d-r-ii-high-top-afo-friendly-shoes",
@@ -29070,7 +29489,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/rainbow-sk8ter-billy-classic-d-r-ii-high-top-afo-friendly-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-midnight-mermaid-billy-goat-afo-friendly-athletic-shoes",
@@ -29152,7 +29572,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/midnight-mermaid-billy-goat-afo-friendly-athletic-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-gold-billy-goat-hoop-afo-friendly-shoes",
@@ -29234,7 +29655,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-gold-billy-goat-hoop-afo-friendly-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-gum-billy-cs-high-top-zipper-shoes",
@@ -29309,7 +29731,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-gum-billy-cs-high-top-zipper-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-pink-glitz-billy-classic-lace-high-top-zipper-shoes",
@@ -29384,7 +29807,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/pink-glitz-billy-classic-lace-high-top-zipper-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-white-grey-black-billy-comfort-dz-high-top-zipper-shoes",
@@ -29458,7 +29882,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-white-grey-black-billy-comfort-dz-high-top-zipper-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-black-fuchsia-fire-billy-sport-inclusion-athletic-zipper-shoes",
@@ -29526,7 +29951,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-black-fuchsia-fire-billy-sport-inclusion-athletic-zipper-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-white-wine-black-billy-comfort-dz-high-top-zipper-shoes",
@@ -29597,7 +30023,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-white-wine-black-billy-comfort-dz-high-top-zipper-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-black-gum-billy-cs-high-top-zipper-shoes",
@@ -29668,7 +30095,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-black-gum-billy-cs-high-top-zipper-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-white-black-billy-cs-high-top-shoes",
@@ -29749,7 +30177,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-white-black-billy-cs-high-top-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-sasha-splatter-billy-classic-d-r-ii-high",
@@ -29831,7 +30260,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/sasha-splatter-billy-classic-d-r-ii-high",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-grey-jersey-billy-goat-classic-high-top-afo-friendly-zipper-shoes",
@@ -29913,7 +30343,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/grey-jersey-billy-goat-classic-high-top-afo-friendly-zipper-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-pink-watercolor-billy-goat-classic-high-top-afo-friendly-zipper-shoes",
@@ -29995,7 +30426,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/pink-watercolor-billy-goat-classic-high-top-afo-friendly-zipper-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-lilac-watercolor-billy-limitless-sensory-friendly-shoes",
@@ -30074,7 +30506,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/lilac-watercolor-billy-limitless-sensory-friendly-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-charcoal-billy-limitless-sensory-friendly-shoes",
@@ -30153,7 +30586,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/charcoal-billy-limitless-sensory-friendly-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-billy-limitless-sensory-friendly-shoes",
@@ -30232,7 +30666,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-billy-limitless-sensory-friendly-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-black-white-billy-goat-classic-high",
@@ -30317,7 +30752,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-black-white-billy-goat-classic-high",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-rugged-black-billy-goat-dz-high-top-afo-friendly-zipper-shoes",
@@ -30399,7 +30835,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/rugged-black-billy-goat-dz-high-top-afo-friendly-zipper-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-white-black-billy-cs-high-top-zipper-shoes",
@@ -30474,7 +30911,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/white-black-billy-cs-high-top-zipper-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-white-black-billy-cs-high-top-zipper-shoes",
@@ -30545,7 +30983,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-white-black-billy-cs-high-top-zipper-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-white-tan-black-billy-comfort-dz-high-top-zipper-shoes",
@@ -30616,7 +31055,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-white-tan-black-billy-comfort-dz-high-top-zipper-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-rose-gold-glitz-billy-cs-high-top-zipper-shoes",
@@ -30691,7 +31131,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/rose-gold-glitz-billy-cs-high-top-zipper-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-navy-green-billy-inclusion-trail-zipper-shoes",
@@ -30762,7 +31203,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-navy-green-billy-inclusion-trail-zipper-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-stone-floral-billy-sport-inclusion-athletic-zipper-shoes",
@@ -30830,7 +31272,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-stone-floral-billy-sport-inclusion-athletic-zipper-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-purple-mint-billy-inclusion-trail-zipper-shoes",
@@ -30898,7 +31341,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-purple-mint-billy-inclusion-trail-zipper-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-charcoal-billy-limitless",
@@ -30981,7 +31425,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-charcoal-billy-limitless",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-black-billy-limitless",
@@ -31064,7 +31509,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-black-billy-limitless",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-to-the-floor-billy-sport-inclusion-athletic-sneakers",
@@ -31134,7 +31580,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-to-the-floor-billy-sport-inclusion-athletic-sneakers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-white-billy-classic-lace-high-tops",
@@ -31209,7 +31656,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-white-billy-classic-lace-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-red-billy-classic-d-r-high-tops",
@@ -31293,7 +31741,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/red-billy-classic-d-r-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-navy-purple-billy-inclusion-trail-boots",
@@ -31361,7 +31810,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-navy-purple-billy-inclusion-trail-boots",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-charcoal-yellow-billy-inclusion-trail-sneakers",
@@ -31432,7 +31882,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-charcoal-yellow-billy-inclusion-trail-sneakers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-white-black-billy-goat-hoop-afo-friendly-shoes",
@@ -31516,7 +31967,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/white-black-billy-goat-hoop-afo-friendly-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-red-light-ups-billy-classic-d-r-high-tops",
@@ -31598,7 +32050,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-red-light-ups-billy-classic-d-r-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-pink-blue-light-ups-billy-classic-d-r-high-tops",
@@ -31680,7 +32133,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/pink-blue-light-ups-billy-classic-d-r-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-taupe-billy-inclusion-trail-boots",
@@ -31751,7 +32205,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-taupe-billy-inclusion-trail-boots",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-olive-pink-billy-inclusion-trail-sneakers",
@@ -31819,7 +32274,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-olive-pink-billy-inclusion-trail-sneakers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-white-billy-sport-inclusion-athletic-sneakers",
@@ -31887,7 +32343,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-white-billy-sport-inclusion-athletic-sneakers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-black-to-the-floor-billy-sport-inclusion-athletic-sneakers",
@@ -31958,7 +32415,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-black-to-the-floor-billy-sport-inclusion-athletic-sneakers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-black-white-billy-sport-inclusion-athletic-sneakers",
@@ -32026,7 +32484,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-black-white-billy-sport-inclusion-athletic-sneakers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-charcoal-billy-sport-inclusion-athletic-sneakers",
@@ -32097,7 +32556,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-charcoal-billy-sport-inclusion-athletic-sneakers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-charcoal-billy-sport-inclusion-athletic-sneakers",
@@ -32167,7 +32627,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/charcoal-billy-sport-inclusion-athletic-sneakers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-pink-exotic-billy-sport-inclusion-athletic-sneakers",
@@ -32235,7 +32696,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-pink-exotic-billy-sport-inclusion-athletic-sneakers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-navy-white-billy-cs-high-tops",
@@ -32310,7 +32772,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/navy-white-billy-cs-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-green-white-billy-cs-high-tops",
@@ -32385,7 +32848,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/green-white-billy-cs-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-charcoal-black-billy-cs-high-tops",
@@ -32460,7 +32924,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/charcoal-black-billy-cs-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-to-the-floor-billy-cs-high-tops",
@@ -32535,7 +33000,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-to-the-floor-billy-cs-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-black-to-the-floor-billy-cs-high-tops",
@@ -32606,7 +33072,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-black-to-the-floor-billy-cs-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-charcoal-black-billy-cs-high-tops",
@@ -32677,7 +33144,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-charcoal-black-billy-cs-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-navy-white-billy-cs-high-tops",
@@ -32748,7 +33216,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-navy-white-billy-cs-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-green-white-billy-cs-high-tops",
@@ -32819,7 +33288,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-green-white-billy-cs-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-navy-floral-billy-goat-classic-high-top-afo-friendly-shoes",
@@ -32903,7 +33373,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/navy-floral-billy-goat-classic-high-top-afo-friendly-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-charcoal-billy-goat-afo-friendly-shoes",
@@ -32982,7 +33453,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-charcoal-billy-goat-afo-friendly-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-black-to-the-floor-billy-goat-afo-friendly-shoes",
@@ -33061,7 +33533,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-black-to-the-floor-billy-goat-afo-friendly-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-billy-goat-classic-high-top-afo-friendly-shoes",
@@ -33145,7 +33618,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-billy-goat-classic-high-top-afo-friendly-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-to-the-floor-leather-billy-classic-d-r-ii-high-tops",
@@ -33227,7 +33701,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-to-the-floor-leather-billy-classic-d-r-ii-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-to-the-floor-leather-billy-classic-d-r-ii-low-tops",
@@ -33309,14 +33784,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-to-the-floor-leather-billy-classic-d-r-ii-low-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-charcoal-billy-joggers",
     "name": "FINAL SALE - Black/Charcoal BILLY Jogger",
     "brandId": "billy-footwear",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "16.99",
     "currency": "USD",
@@ -33383,7 +33859,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-charcoal-billy-joggers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "billy-footwear-navy-tie-dye-billy-street-high-tops",
@@ -33456,7 +33933,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/navy-tie-dye-billy-street-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-to-the-floor-billy-classic-lace-high-top-zipper-shoes",
@@ -33531,7 +34009,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-to-the-floor-billy-classic-lace-high-top-zipper-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-grey-jersey-billy-classic-lace-high-tops",
@@ -33606,7 +34085,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/grey-jersey-billy-classic-lace-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-chestnut-billy-cozy-slippers",
@@ -33681,7 +34161,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/chestnut-billy-cozy-slippers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-billy-cozy-boots",
@@ -33757,7 +34238,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-billy-cozy-boots",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-chestnut-billy-cozy-boots",
@@ -33833,7 +34315,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/chestnut-billy-cozy-boots",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-chestnut-billy-cozy-slippers",
@@ -33898,7 +34381,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-chestnut-billy-cozy-slippers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-chestnut-billy-cozy-boots",
@@ -33968,7 +34452,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-chestnut-billy-cozy-boots",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-acid-wash-billy-d-r-ii-short-wrap-high-tops",
@@ -34050,7 +34535,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-acid-wash-billy-d-r-ii-short-wrap-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-rainbow-tie-dye-billy-goat-afo-friendly-shoes",
@@ -34134,7 +34620,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/rainbow-tie-dye-billy-goat-afo-friendly-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-charcoal-white-billy-classic-lace-high-tops",
@@ -34209,7 +34696,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/charcoal-white-billy-classic-lace-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-camo-white-billy-classic-lace-high",
@@ -34284,7 +34772,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/camo-white-billy-classic-lace-high",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-sand-suede-billy-comfort-chukkas",
@@ -34355,7 +34844,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-sand-suede-billy-comfort-chukkas",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-cognac-billy-comfort-cuffs",
@@ -34423,7 +34913,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-cognac-billy-comfort-cuffs",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-olive-camo-billy-classic-d-r-high-tops",
@@ -34507,7 +34998,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/olive-camo-billy-classic-d-r-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-to-the-floor-billy-d-r-ii-short-wrap-high-tops",
@@ -34589,7 +35081,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-to-the-floor-billy-d-r-ii-short-wrap-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-to-the-floor-billy-classic-d-r-ii-high-tops",
@@ -34671,7 +35164,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-to-the-floor-billy-classic-d-r-ii-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-billy-goat-afo-friendly-shoes",
@@ -34755,7 +35249,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-billy-goat-afo-friendly-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-charcoal-billy-goat-afo-friendly-shoes",
@@ -34839,7 +35334,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/charcoal-billy-goat-afo-friendly-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-navy-billy-classic-d-r-ii-high-tops",
@@ -34921,7 +35417,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/navy-billy-classic-d-r-ii-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-dark-grey-billy-d-r-ii-short-wrap-low-tops",
@@ -35003,7 +35500,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/dark-grey-billy-d-r-ii-short-wrap-low-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-black-billy-cozy-boots",
@@ -35073,7 +35571,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-black-billy-cozy-boots",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-black-billy-lugs-2",
@@ -35146,7 +35645,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/black-billy-lugs-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-silver-streak-billy-classic-d-r-high-tops",
@@ -35230,7 +35730,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/silver-streak-billy-classic-d-r-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-brown-billy-classic-d-r-high-tops",
@@ -35314,7 +35815,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/brown-billy-classic-d-r-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-womens-black-billy-cozy-slippers",
@@ -35379,7 +35881,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/womens-black-billy-cozy-slippers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-mens-black-suede-billy-comfort-chukka",
@@ -35450,7 +35953,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/mens-black-suede-billy-comfort-chukka",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "billy-footwear-dark-grey-billy-classic-d-r-ii-high-tops",
@@ -35532,7 +36036,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://billyfootwear.com/products/dark-grey-billy-classic-d-r-ii-high-tops",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "no-limbits-womens-adaptive-unlimbited-pant",
@@ -35615,7 +36120,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/womens-adaptive-unlimbited-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "no-limbits-mens-adaptive-unlimbited-pant",
@@ -35704,7 +36210,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/mens-adaptive-unlimbited-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "no-limbits-mens-fidget-hoodie",
@@ -35769,7 +36276,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/mens-fidget-hoodie",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "no-limbits-womens-fidget-hoodie",
@@ -35833,7 +36341,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/womens-fidget-hoodie",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "no-limbits-mens-sensory-everyday-pant",
@@ -35892,7 +36401,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/mens-sensory-everyday-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "no-limbits-womens-sensory-everyday-pant",
@@ -35951,7 +36461,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/womens-sensory-everyday-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "no-limbits-womens-adaptive-sensory-blouse",
@@ -36009,7 +36520,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/womens-adaptive-sensory-blouse",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "no-limbits-womens-adaptive-limited-dexterity-legging",
@@ -36076,7 +36588,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/womens-adaptive-limited-dexterity-legging",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "no-limbits-mens-adaptive-sensory-compression-tank",
@@ -36137,7 +36650,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/mens-adaptive-sensory-compression-tank",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "no-limbits-womens-adaptive-sensory-compression-tank",
@@ -36199,7 +36713,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/womens-adaptive-sensory-compression-tank",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "no-limbits-girls-adaptive-sensory-tee",
@@ -36260,7 +36775,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/girls-adaptive-sensory-tee",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "no-limbits-boys-adaptive-sensory-tee",
@@ -36321,7 +36837,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/boys-adaptive-sensory-tee",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "no-limbits-womens-adaptive-sensory-tee",
@@ -36384,7 +36901,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/womens-adaptive-sensory-tee",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "no-limbits-mens-adaptive-sensory-tee",
@@ -36446,7 +36964,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/mens-adaptive-sensory-tee",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "no-limbits-womens-adaptive-wheelchair-pant",
@@ -36526,7 +37045,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/womens-adaptive-wheelchair-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "no-limbits-mens-adaptive-wheelchair-pant",
@@ -36609,7 +37129,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/mens-adaptive-wheelchair-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "no-limbits-mens-adaptive-amp-pant",
@@ -36680,7 +37201,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/mens-adaptive-amp-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "no-limbits-womens-adaptive-amp-pant",
@@ -36759,7 +37281,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/womens-adaptive-amp-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "no-limbits-girls-fidget-hoodie",
@@ -36823,7 +37346,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/girls-fidget-hoodie",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "no-limbits-boys-fidget-hoodie",
@@ -36887,7 +37411,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/boys-fidget-hoodie",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "no-limbits-girls-sensory-tee",
@@ -36950,7 +37475,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/girls-sensory-tee",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "no-limbits-boys-sensory-tee",
@@ -37013,7 +37539,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/boys-sensory-tee",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "no-limbits-mens-sensory-tee",
@@ -37077,7 +37604,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/mens-sensory-tee",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "no-limbits-womens-sensory-tee",
@@ -37140,7 +37668,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/womens-sensory-tee",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "no-limbits-unisex-fidget-friendly-hoodie",
@@ -37203,7 +37732,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/unisex-fidget-friendly-hoodie",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "no-limbits-kids-sensory-hoodie",
@@ -37262,7 +37792,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/kids-sensory-hoodie",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "no-limbits-womens-limited-dexterity-jacket",
@@ -37326,7 +37857,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/womens-limited-dexterity-jacket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "no-limbits-mens-limited-dexterity-jacket",
@@ -37390,7 +37922,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://no-limbits.com/products/mens-limited-dexterity-jacket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "slick-chicks-athletic-tank",
@@ -37455,7 +37988,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://slickchicksonline.com/products/athletic-tank",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "slick-chicks-pull-on-boyshort",
@@ -37523,7 +38057,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://slickchicksonline.com/products/pull-on-boyshort",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "slick-chicks-accessible-crew-neck-sweatshirt",
@@ -37589,7 +38124,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://slickchicksonline.com/products/accessible-crew-neck-sweatshirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "slick-chicks-accessible-v-neck-crop-top",
@@ -37652,7 +38188,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://slickchicksonline.com/products/accessible-v-neck-crop-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "slick-chicks-accessible-hoodie",
@@ -37723,7 +38260,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://slickchicksonline.com/products/accessible-hoodie",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "slick-chicks-accessible-relaxed-lounge-pant",
@@ -37794,7 +38332,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://slickchicksonline.com/products/accessible-relaxed-lounge-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "slick-chicks-accessible-fitted-lounge-pants",
@@ -37858,7 +38397,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://slickchicksonline.com/products/accessible-fitted-lounge-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "slick-chicks-accessible-long-sleeve-lounge-shirt",
@@ -37924,7 +38464,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://slickchicksonline.com/products/accessible-long-sleeve-lounge-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "slick-chicks-adaptive-lounge-short",
@@ -37987,14 +38528,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://slickchicksonline.com/products/adaptive-lounge-short",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "slick-chicks-front-zip-cami",
     "name": "Front Zip Cami",
     "brandId": "slick-chicks",
-    "clothingType": "Tops",
-    "category": "tops",
+    "clothingType": "Underwear",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "38.00",
     "currency": "USD",
@@ -38054,7 +38596,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://slickchicksonline.com/products/front-zip-cami",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "slick-chicks-ui-underwear",
@@ -38129,7 +38672,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://slickchicksonline.com/products/ui-underwear",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "slick-chicks-highwaist-velcro-underwear",
@@ -38204,7 +38748,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://slickchicksonline.com/products/highwaist-velcro-underwear",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "slick-chicks-velcro-front-closure-bra",
@@ -38273,7 +38818,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://slickchicksonline.com/products/velcro-front-closure-bra",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "slick-chicks-wireless-zip-front-bra",
@@ -38341,7 +38887,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://slickchicksonline.com/products/wireless-zip-front-bra",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "slick-chicks-tanga",
@@ -38412,7 +38959,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://slickchicksonline.com/products/tanga",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "slick-chicks-hipster",
@@ -38482,7 +39030,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://slickchicksonline.com/products/hipster",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "slick-chicks-high-waist-brief",
@@ -38553,7 +39102,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://slickchicksonline.com/products/high-waist-brief",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "slick-chicks-brief",
@@ -38624,14 +39174,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://slickchicksonline.com/products/brief",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-womens-easy-on-cozy-sleep-cape",
     "name": "Women's Easy On Cozy Sleep Cape",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Jackets",
+    "category": "jackets",
     "priceRange": "$25-$50",
     "price": "35.98",
     "currency": "USD",
@@ -38689,14 +39240,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-easy-on-cozy-sleep-cape",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-womens-adaptive-open-back-fleece-pants",
     "name": "Women's Open Back Fleece Pant",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "40.48",
     "currency": "USD",
@@ -38758,14 +39310,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-adaptive-open-back-fleece-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-petite-open-back-fleece-pant",
     "name": "Women's Petite Open Back Fleece Pant",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "35.98",
     "currency": "USD",
@@ -38829,14 +39382,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-petite-open-back-fleece-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-womens-zip-front-adaptive-swim-tankini",
     "name": "Women's Zip Front Adaptive Swim Tankini",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "40.48",
     "currency": "USD",
@@ -38896,14 +39450,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-zip-front-adaptive-swim-tankini",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-mens-simcanr-comfort-diabetic-sock",
     "name": "Womens & Mens Simcan® Comfort Diabetic Sock",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Socks",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "7.49",
     "currency": "USD",
@@ -38964,14 +39519,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-mens-simcanr-comfort-diabetic-sock",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-women-s-easy-touch-front-closure-bra-cups-a-d",
     "name": "Women's Easy Touch Front Closure Bra (Cups A-D)",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Underwear",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "22.48",
     "currency": "USD",
@@ -39027,14 +39583,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-easy-touch-front-closure-bra-cups-a-d",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-women-s-open-back-graphic-tee",
     "name": "Women's Open Back Graphic Tee",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "27.98",
     "currency": "USD",
@@ -39096,14 +39653,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-graphic-tee",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-open-back-asymmetrical-hem-top",
     "name": "Women's Open Back Asymmetrical Hem Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "27.98",
     "currency": "USD",
@@ -39165,7 +39723,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-asymmetrical-hem-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-lightweight-elastic-stretch-waist-casual-denim-pull-on-cargo-pants",
@@ -39227,7 +39786,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-lightweight-elastic-stretch-waist-casual-denim-pull-on-cargo-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-mens-heavyweight-short-sleeve-crew-neck-with-pocket-t-shirt",
@@ -39288,7 +39848,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-heavyweight-short-sleeve-crew-neck-with-pocket-t-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-classic-regular-absorbency-brief-sku-m100",
@@ -39353,14 +39914,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/classic-regular-absorbency-brief-sku-m100",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-cotton-comfort-panty-sku-l100",
     "name": "Cotton Comfort Panty (SKU:  L100)",
     "brandId": "silverts",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Underwear",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "16.99",
     "currency": "USD",
@@ -39421,7 +39983,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/cotton-comfort-panty-sku-l100",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-super-absorbency-briefs-sku-hdm100",
@@ -39484,14 +40047,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/super-absorbency-briefs-sku-hdm100",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-bubble-world-non-slip-bath-mat",
     "name": "Bubble World  Non-Slip Bath Mat",
     "brandId": "silverts",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Underwear",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -39543,7 +40107,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/bubble-world-non-slip-bath-mat",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-quarter-ankle-compression-socks",
@@ -39603,7 +40168,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/quarter-ankle-compression-socks",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-ankle-compression-socks",
@@ -39663,7 +40229,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/ankle-compression-socks",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-knee-high-compression-socks-stripes",
@@ -39725,7 +40292,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/knee-high-compression-socks-stripes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-knee-high-compression-socks-solid",
@@ -39788,7 +40356,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/knee-high-compression-socks-solid",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-womens-lace-trim-easy-close-bralette",
@@ -39855,14 +40424,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-lace-trim-easy-close-bralette",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-womens-corduroy-rib-magnetic-button-hoodie",
     "name": "Women's Soft Corduroy Rib Magnetic Button Hoodie",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "62.98",
     "currency": "USD",
@@ -39926,7 +40496,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-corduroy-rib-magnetic-button-hoodie",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-rinse-free-bath-sponges-quick-clean-mitts-for-bath-free-washing",
@@ -39984,14 +40555,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/rinse-free-bath-sponges-quick-clean-mitts-for-bath-free-washing",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-womens-adaptive-open-back-sleeveless-camisole-3-pack",
     "name": "Women's Adaptive Open Back Sleeveless Camisole - 3 Pack",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Underwear",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "40.48",
     "currency": "USD",
@@ -40053,14 +40625,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-adaptive-open-back-sleeveless-camisole-3-pack",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-womens-open-front-nightgown",
     "name": "Women's Buttery Soft Open Front Nightgown/Robe",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "40.48",
     "currency": "USD",
@@ -40117,7 +40690,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-front-nightgown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "silverts-womens-easy-on-pleated-fron-pull-on-pants",
@@ -40182,7 +40756,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-easy-on-pleated-fron-pull-on-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-mens-3-4-sip-zip-shirt",
@@ -40256,14 +40831,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-3-4-sip-zip-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-men-s-short-sleeve-adaptive-shirts",
     "name": "Men's Open Back Short Sleeve Shirt",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "26.99",
     "currency": "USD",
@@ -40323,14 +40899,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-short-sleeve-adaptive-shirts",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-mens-easy-touch-side-closure-fleece-pant-clearance",
     "name": "Men's Easy Touch Side Closure Fleece Pant - Clearance",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "34.99",
     "currency": "USD",
@@ -40395,7 +40972,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-easy-touch-side-closure-fleece-pant-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-soft-terry-cloth-slippers",
@@ -40459,14 +41037,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/soft-terry-cloth-slippers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-senior-womens-side-zip-adaptive-jean",
     "name": "Women's Adaptive Side Zip Jeans",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Jeans",
+    "category": "jeans",
     "priceRange": "$25-$50",
     "price": "44.98",
     "currency": "USD",
@@ -40532,7 +41111,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-side-zip-adaptive-jean",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-womens-open-back-jeans-clearance",
@@ -40603,14 +41183,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-jeans-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-men-s-antimicrobial-open-back-polo-shirt",
     "name": "Men's Open Back Polo Shirt",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "27.99",
     "currency": "USD",
@@ -40673,14 +41254,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-antimicrobial-open-back-polo-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-men-s-antimicrobial-open-back-hospital-gowns",
     "name": "Men's Open Back Hospital Gowns",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "13.99",
     "currency": "USD",
@@ -40743,7 +41325,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-antimicrobial-open-back-hospital-gowns",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-womens-adaptive-wrap-around-skirt-clearance",
@@ -40814,7 +41397,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-adaptive-wrap-around-skirt-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-unisex-extra-wide-adjustable-softstep-booties",
@@ -40892,7 +41476,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/unisex-extra-wide-adjustable-softstep-booties",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-womens-open-back-ribbed-pants",
@@ -40963,7 +41548,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-ribbed-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-womens-soft-ribbed-open-back-set-mix-match",
@@ -41027,7 +41613,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-soft-ribbed-open-back-set-mix-match",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-womens-open-back-shorts",
@@ -41096,14 +41683,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-shorts",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-mens-open-back-jeans-clearance",
     "name": "Men's Open Back Jeans - Clearance",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Jeans",
+    "category": "jeans",
     "priceRange": "$25-$50",
     "price": "49.98",
     "currency": "USD",
@@ -41169,14 +41757,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-open-back-jeans-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-womens-adaptive-wrap-around-skirt",
     "name": "Women's Easy Adaptive Wrap Around Skirt",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "35.98",
     "currency": "USD",
@@ -41240,7 +41829,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-adaptive-wrap-around-skirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-women-s-open-back-collared-dress-clearance",
@@ -41307,14 +41897,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-collared-dress-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-mens-stay-dressed-jumpsuit-with-short-sleeve-polo-shirt",
     "name": "Men's Stay Dressed Jumpsuit with Short Sleeve Polo Shirt",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$50-$100",
     "price": "71.98",
     "currency": "USD",
@@ -41373,7 +41964,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-stay-dressed-jumpsuit-with-short-sleeve-polo-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-mens-stay-dressed-jumpsuit-with-short-sleeve-polo-shirt-clearance",
@@ -41439,7 +42031,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-stay-dressed-jumpsuit-with-short-sleeve-polo-shirt-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-mens-elastic-waist-rugger-pant",
@@ -41512,7 +42105,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-elastic-waist-rugger-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-magnetic-closure-top-for-arthritis-clearance",
@@ -41582,14 +42176,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-magnetic-closure-top-for-arthritis-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-mens-easy-touch-side-zip-pant-with-catheter-access-heavyweight",
     "name": "Men's Easy Touch Side Zip Pant with Catheter Access - Fleece Edition",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$50-$100",
     "price": "59.48",
     "currency": "USD",
@@ -41655,14 +42250,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-easy-touch-side-zip-pant-with-catheter-access-heavyweight",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-womens-stay-dressed-jumpsuit-with-full-back-zip",
     "name": "Women's Stay Dressed Jumpsuit with Full Back Zip",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$50-$100",
     "price": "71.98",
     "currency": "USD",
@@ -41720,14 +42316,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-stay-dressed-jumpsuit-with-full-back-zip",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-womens-adaptive-open-back-cardigan",
     "name": "Women's Open Back Cardigan",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "32.99",
     "currency": "USD",
@@ -41793,14 +42390,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-adaptive-open-back-cardigan",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-no-peek-hospital-home-care-long-sleeve-gown-clearance",
     "name": "Women's No Peek Hospital & Home Care Long Sleeve Gown - Clearance",
     "brandId": "silverts",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "42.28",
     "currency": "USD",
@@ -41861,7 +42459,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-no-peek-hospital-home-care-long-sleeve-gown-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-womens-adaptive-snap-front-closure-bras-clearance",
@@ -41929,14 +42528,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-adaptive-snap-front-closure-bras-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-womens-adaptive-snap-front-closure-bras",
     "name": "Women's Adaptive Front Snap Closure Bra",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Underwear",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "26.98",
     "currency": "USD",
@@ -42000,14 +42600,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-adaptive-snap-front-closure-bras",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-front-closure-bras-for-seniors-clearance",
     "name": "Women's Adaptive Front Closure Bra - Clearance",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Underwear",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "20.99",
     "currency": "USD",
@@ -42071,14 +42672,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/front-closure-bras-for-seniors-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-womens-adaptive-front-closure-bra",
     "name": "Women's Adaptive Front Closure Bra",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Underwear",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "14.99",
     "currency": "USD",
@@ -42142,7 +42744,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-adaptive-front-closure-bra",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-womens-self-dressing-pull-on-jeans-clearance",
@@ -42210,7 +42813,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-self-dressing-pull-on-jeans-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-senior-womens-pull-on-jean",
@@ -42280,14 +42884,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-pull-on-jean",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-senior-womens-open-back-adaptive-jean",
     "name": "Women's Soft Knit Open Back Jeans",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Jeans",
+    "category": "jeans",
     "priceRange": "$50-$100",
     "price": "53.98",
     "currency": "USD",
@@ -42353,7 +42958,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-open-back-adaptive-jean",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-womens-textured-pull-on-pant-clearance",
@@ -42417,14 +43023,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-textured-pull-on-pant-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-mens-open-back-pant-essentials-3-pack",
     "name": "Men's Open Back Pant Essentials - 3 Styles",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$100-$150",
     "price": "127.45",
     "currency": "USD",
@@ -42481,7 +43088,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-open-back-pant-essentials-3-pack",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-3-pack-womens-cotton-briefs",
@@ -42548,7 +43156,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/3-pack-womens-cotton-briefs",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-adaptive-alzheimer-s-antistrip-suit-for-women",
@@ -42613,14 +43222,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/adaptive-alzheimer-s-antistrip-suit-for-women",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-100-cotton-flannel-hospital-gown-with-snaps-clearance",
     "name": "100% Cotton Flannel Hospital Gown with Snaps - Clearance",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "34.99",
     "currency": "USD",
@@ -42680,14 +43290,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/100-cotton-flannel-hospital-gown-with-snaps-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-mens-open-front-adaptive-underwear",
     "name": "Men's Open Front Adaptive Underwear",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Underwear",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "22.48",
     "currency": "USD",
@@ -42749,7 +43360,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-open-front-adaptive-underwear",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-womens-open-front-adaptive-underwear",
@@ -42815,14 +43427,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-front-adaptive-underwear",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-womens-open-back-sweater-knit-dress",
     "name": "Women's Open Back Sweater Knit Dress",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "39.98",
     "currency": "USD",
@@ -42882,14 +43495,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-sweater-knit-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-womens-open-back-knit-button-top",
     "name": "Women's Open Back Knit Button Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "40.48",
     "currency": "USD",
@@ -42952,14 +43566,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-knit-button-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-open-back-relaxed-ribbed-long-sleeve-top",
     "name": "Women's Open Back Relaxed Ribbed Long Sleeve Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "44.98",
     "currency": "USD",
@@ -43017,14 +43632,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-relaxed-ribbed-long-sleeve-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-open-back-t-shirt-dress",
     "name": "Women's Open Back T-Shirt Dress",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "40.48",
     "currency": "USD",
@@ -43082,14 +43698,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-t-shirt-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-womens-conventional-sleeveless-undershirt-3-pack-clearance",
     "name": "Women's Conventional Sleeveless Undershirt - 3 Pack - Clearance",
     "brandId": "silverts",
-    "clothingType": "Tops",
-    "category": "tops",
+    "clothingType": "Underwear",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "14.99",
     "currency": "USD",
@@ -43145,7 +43762,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-conventional-sleeveless-undershirt-3-pack-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-mens-pull-on-adaptive-swim-trunks",
@@ -43212,14 +43830,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-pull-on-adaptive-swim-trunks",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-mens-zip-front-adaptive-swim-shirt",
     "name": "Men's Zip Front Adaptive Swim Shirt",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "40.48",
     "currency": "USD",
@@ -43279,14 +43898,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-zip-front-adaptive-swim-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-pull-on-adaptive-swim-skirt",
     "name": "Women's Pull-On Adaptive Swim Skirt",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "44.98",
     "currency": "USD",
@@ -43346,14 +43966,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-pull-on-adaptive-swim-skirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-3-pack-mens-adaptive-sleeveless-undershirt",
     "name": "3 Pack - Men's Adaptive Sleeveless Undershirt",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Underwear",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "40.48",
     "currency": "USD",
@@ -43415,7 +44036,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/3-pack-mens-adaptive-sleeveless-undershirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-cotton-wheelchair-pants-for-men-clearance",
@@ -43484,7 +44106,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/cotton-wheelchair-pants-for-men-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-quality-mens-side-zip-pants-clearance",
@@ -43551,14 +44174,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/quality-mens-side-zip-pants-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-men-s-women-s-terry-shower-bath-cape",
     "name": "Men's & Women's Terry Shower Bath Cape",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Jackets",
+    "category": "jackets",
     "priceRange": "$25-$50",
     "price": "40.48",
     "currency": "USD",
@@ -43617,14 +44241,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-women-s-terry-shower-bath-cape",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-3-pack-mens-adaptive-sleeveless-undershirt-clearance",
     "name": "3 Pack - Men's Adaptive Sleeveless Undershirt - Clearance",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Underwear",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "31.49",
     "currency": "USD",
@@ -43682,14 +44307,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/3-pack-mens-adaptive-sleeveless-undershirt-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-3-pack-adaptive-cotton-sleeveless-undershirt-clearance",
     "name": "3 Pack - Women's Adaptive Cotton Sleeveless Undershirt - Clearance",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Underwear",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "31.49",
     "currency": "USD",
@@ -43747,14 +44373,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/3-pack-adaptive-cotton-sleeveless-undershirt-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-luxurious-fur-lined-winter-wheelchair-cape-for-women",
     "name": "Unisex Luxurious Fur-Lined Winter Wheelchair Cape",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Jackets",
+    "category": "jackets",
     "priceRange": "$150+",
     "price": "170.98",
     "currency": "USD",
@@ -43811,7 +44438,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/luxurious-fur-lined-winter-wheelchair-cape-for-women",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-womens-soft-classic-open-back-top-clearance",
@@ -43875,7 +44503,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-soft-classic-open-back-top-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-soft-embroidered-adaptive-top-clearance",
@@ -43938,14 +44567,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-soft-embroidered-adaptive-top-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-no-peek-hospital-home-care-gown-with-lace-neckline-clearance",
     "name": "Women's No Peek Hospital & Home Care Gown with Lace Neckline - Clearance",
     "brandId": "silverts",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "35.98",
     "currency": "USD",
@@ -44007,14 +44637,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-no-peek-hospital-home-care-gown-with-lace-neckline-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-womens-embroidered-open-back-three-quarter-length-sleeve-clearance",
     "name": "Women's Embroidered Adaptive 3/4 Sleeve Top - Clearance",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "24.49",
     "currency": "USD",
@@ -44073,14 +44704,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-embroidered-open-back-three-quarter-length-sleeve-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-soft-open-back-adaptive-top-clearance",
     "name": "Women's Open Back 3/4 Sleeve Soft Top - Clearance",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "27.99",
     "currency": "USD",
@@ -44142,14 +44774,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-soft-open-back-adaptive-top-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-stay-dressed-jumpsuit-for-dementia-full-back-zip-clearance",
     "name": "Women's Stay Dressed Jumpsuit with Full Back Zip - Clearance",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$50-$100",
     "price": "55.99",
     "currency": "USD",
@@ -44204,7 +44837,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-stay-dressed-jumpsuit-for-dementia-full-back-zip-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-womens-open-back-soft-knit-pant-clearance",
@@ -44270,14 +44904,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-soft-knit-pant-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-womens-magnetic-button-fleece-cardigan-clearance",
     "name": "Women's Magnetic Button Fleece Cardigan - Clearance",
     "brandId": "silverts",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "41.99",
     "currency": "USD",
@@ -44337,7 +44972,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-magnetic-button-fleece-cardigan-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-open-back-knit-nightgown-with-lace-trim-clearance",
@@ -44405,14 +45041,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/open-back-knit-nightgown-with-lace-trim-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "silverts-soft-womens-hospital-gowns-clearance-old",
     "name": "Women's Soft Hospital Gown - Clearance",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "35.98",
     "currency": "USD",
@@ -44469,14 +45106,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/soft-womens-hospital-gowns-clearance-old",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-womens-wheelchair-cotton-capris-pants",
     "name": "Women's Open Back Cotton Capris",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "27.99",
     "currency": "USD",
@@ -44537,7 +45175,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-wheelchair-cotton-capris-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-beautiful-slimming-open-back-top",
@@ -44599,14 +45238,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-beautiful-slimming-open-back-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-3-4-sleeve-open-back-top-crew-neck",
     "name": "Women's Open Back 3/4 Sleeve Decorative Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "35.79",
     "currency": "USD",
@@ -44659,7 +45299,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-3-4-sleeve-open-back-top-crew-neck",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-flowy-short-sleeve-adaptive-open-back-dress",
@@ -44725,7 +45366,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/flowy-short-sleeve-adaptive-open-back-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-womens-decorative-neck-adaptive-dress",
@@ -44793,7 +45435,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-decorative-neck-adaptive-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-women-s-beautiful-open-back-spring-color-dress",
@@ -44861,7 +45504,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-beautiful-open-back-spring-color-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-elegant-open-back-dress-for-women",
@@ -44930,7 +45574,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/elegant-open-back-dress-for-women",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-womens-fashionable-adaptive-wheelchair-dress",
@@ -44992,7 +45637,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-fashionable-adaptive-wheelchair-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-womens-stretchy-soft-compression-socks-xpandasox",
@@ -45049,7 +45695,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-stretchy-soft-compression-socks-xpandasox",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-senior-womens-adaptive-open-back-embroidered-shirt-clearance",
@@ -45118,7 +45765,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-open-back-embroidered-shirt-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-womens-adaptive-open-back-knit-twofer-clearance",
@@ -45180,7 +45828,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-open-back-knit-twofer-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-womens-adaptive-open-back-henley-convertible-sleeve-top",
@@ -45242,7 +45891,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-open-back-henley-convertible-sleeve-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-open-back-color-blocked-long-sleeve-sweater",
@@ -45310,7 +45960,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-color-blocked-long-sleeve-sweater",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-conventional-elastic-waist-skirt",
@@ -45384,7 +46035,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-conventional-elastic-waist-skirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-open-back-sherpa-hoodie",
@@ -45451,14 +46103,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/open-back-sherpa-hoodie",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-open-back-knit-nightgown-with-lace-trim",
     "name": "Open Back Knit Nightgown with Lace Trim",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "40.48",
     "currency": "USD",
@@ -45520,14 +46173,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/open-back-knit-nightgown-with-lace-trim",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "silverts-womens-adaptive-capri-pants",
     "name": "Women's Assisted Dressing Open Back Capris",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "15.99",
     "currency": "USD",
@@ -45589,14 +46243,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-adaptive-capri-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-mens-magnetic-zipper-hoodie-with-pockets-clearance",
     "name": "Men's Magnetic-Zipper Hoodie with Pockets - Clearance",
     "brandId": "silverts",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "38.49",
     "currency": "USD",
@@ -45660,14 +46315,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-magnetic-zipper-hoodie-with-pockets-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-casual-elegant-open-back-adaptive-top",
     "name": "Women's Open Back Graphic Patterned Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "13.99",
     "currency": "USD",
@@ -45724,7 +46380,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-casual-elegant-open-back-adaptive-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-wide-bell-sleeve-top-for-easy-self-dressing",
@@ -45787,14 +46444,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/wide-bell-sleeve-top-for-easy-self-dressing",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-stretch-knit-wheelchair-pants-for-women",
     "name": "Women's Open Back Stretch Knit Pant",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "17.99",
     "currency": "USD",
@@ -45856,14 +46514,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/stretch-knit-wheelchair-pants-for-women",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-ring-keyhole-neck-adaptive-top-for-women",
     "name": "Ring-Keyhole Neck Adaptive Top for Women",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "15.99",
     "currency": "USD",
@@ -45924,14 +46583,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/ring-keyhole-neck-adaptive-top-for-women",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-easy-access-cotton-pants",
     "name": "Women's Self Dressing Easy Access Cotton Pant",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "31.49",
     "currency": "USD",
@@ -45996,14 +46656,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-easy-access-cotton-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-adaptive-fleece-cardigan-for-women-clearance",
     "name": "Adaptive Fleece Cardigan for Women - Clearance",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "29.99",
     "currency": "USD",
@@ -46065,7 +46726,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/adaptive-fleece-cardigan-for-women-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-cap-sleeve-easy-wear-top",
@@ -46134,14 +46796,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-cap-sleeve-easy-wear-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-striped-adaptive-pull-over-sweater",
     "name": "Women's Open Back Striped Sweater",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "27.99",
     "currency": "USD",
@@ -46201,7 +46864,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-striped-adaptive-pull-over-sweater",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-step-into-or-easy-over-the-head-top-for-women",
@@ -46264,14 +46928,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/step-into-or-easy-over-the-head-top-for-women",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-men-s-easy-access-pants-with-elastic-waist-clearance",
     "name": "Men's Self Dressing Easy Access Pant - Clearance",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "38.49",
     "currency": "USD",
@@ -46337,7 +47002,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-easy-access-pants-with-elastic-waist-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-senior-mens-open-back-adaptive-cargo-pant",
@@ -46405,7 +47071,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-mens-open-back-adaptive-cargo-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-womens-zipper-easy-access-shoes",
@@ -46477,14 +47144,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-zipper-easy-access-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-senior-womens-adaptive-magnetic-closure-denim-jacket",
     "name": "Women's Self Dressing Magnetic Closure Jean Jacket",
     "brandId": "silverts",
-    "clothingType": "Jeans",
-    "category": "jeans",
+    "clothingType": "Jackets",
+    "category": "jackets",
     "priceRange": "$25-$50",
     "price": "45.49",
     "currency": "USD",
@@ -46539,7 +47207,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-magnetic-closure-denim-jacket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-womens-dementia-alzheimers-stay-dressed-jumpsuits",
@@ -46601,14 +47270,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-dementia-alzheimers-stay-dressed-jumpsuits",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-womens-adaptive-open-back-top-with-zippered-neck",
     "name": "Womens Adaptive Open Back Top with Zippered-Neck",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "13.99",
     "currency": "USD",
@@ -46671,7 +47341,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-adaptive-open-back-top-with-zippered-neck",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-womens-adaptive-open-back-two-fer-dress",
@@ -46734,7 +47405,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-open-back-two-fer-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-dementia-alzheimer-s-clothing-dignity-jumpsuit-clearance",
@@ -46801,14 +47473,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/dementia-alzheimer-s-clothing-dignity-jumpsuit-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-mens-slip-on-shock-absorbing-adjustable-sandals",
     "name": "Mens Slip-On Shock-Absorbing Adjustable Sandals",
     "brandId": "silverts",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Shoes",
+    "category": "shoes",
     "priceRange": "$25-$50",
     "price": "29.75",
     "currency": "USD",
@@ -46863,7 +47536,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-slip-on-shock-absorbing-adjustable-sandals",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-womens-long-sleeves-adaptive-open-back-sweater-knit-top",
@@ -46928,7 +47602,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-long-sleeves-adaptive-open-back-sweater-knit-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-open-back-collared-top",
@@ -46991,14 +47666,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-collared-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-antimicrobial-basic-open-back-top",
     "name": "Women's Basic Open Back Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "21.99",
     "currency": "USD",
@@ -47063,14 +47739,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-antimicrobial-basic-open-back-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-elegant-fashionable-womens-adaptive-top",
     "name": "Women's Open Back Patterned Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "15.99",
     "currency": "USD",
@@ -47131,7 +47808,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/elegant-fashionable-womens-adaptive-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-adaptive-fleece-housecoat",
@@ -47199,7 +47877,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-adaptive-fleece-housecoat",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-womens-classic-easy-grip-pull-on-pants-clearance",
@@ -47269,7 +47948,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-classic-easy-grip-pull-on-pants-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-zip-front-top-for-self-dressing",
@@ -47338,7 +48018,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-zip-front-top-for-self-dressing",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-mens-zipper-access-shoes",
@@ -47409,7 +48090,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-zipper-access-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-arm-sling",
@@ -47466,7 +48148,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/arm-sling",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-mens-adaptive-open-back-polo-shirt-clearance",
@@ -47534,14 +48217,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-adaptive-open-back-polo-shirt-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-mens-womens-non-skid-hospital-socks-6-pack-slipper-socks-clearance",
     "name": "Unisex Hospital Slipper-Grip Socks - 6 Pack - Clearance",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Socks",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "20.99",
     "currency": "USD",
@@ -47599,7 +48283,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-womens-non-skid-hospital-socks-6-pack-slipper-socks-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-women-s-open-back-no-peek-waffle-knit-nightgown",
@@ -47664,7 +48349,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-no-peek-waffle-knit-nightgown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "silverts-womens-extra-wide-comfort-shoes-with-easy-closures-for-adjustable-fit",
@@ -47746,14 +48432,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-extra-wide-comfort-shoes-with-easy-closures-for-adjustable-fit",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-womens-no-peek-flannel-nightgown",
     "name": "Women's No Peek Open Back Flannel Nightgown",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "39.98",
     "currency": "USD",
@@ -47815,7 +48502,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-no-peek-flannel-nightgown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "silverts-senior-womens-adaptive-open-back-scoop-neck-top-clearance",
@@ -47884,7 +48572,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-open-back-scoop-neck-top-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-mens-easy-grip-pull-on-cargo-pants",
@@ -47954,7 +48643,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-easy-grip-pull-on-cargo-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-senior-mens-adaptive-pull-on-pant-with-cargo-pockets-clearance",
@@ -48019,14 +48709,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-mens-adaptive-pull-on-pant-with-cargo-pockets-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-open-back-two-fer-dress",
     "name": "Women's Open Back Twofer Dress",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "35.99",
     "currency": "USD",
@@ -48087,14 +48778,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-two-fer-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-womens-magnetic-zipper-hoodie-with-pockets-clearance",
     "name": "Womens Magnetic-Zipper Hoodie with Pockets - Clearance",
     "brandId": "silverts",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "38.49",
     "currency": "USD",
@@ -48158,14 +48850,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-magnetic-zipper-hoodie-with-pockets-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-open-back-twofer-top",
     "name": "Women's Open Back 3/4 Sleeve Twofer Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "19.99",
     "currency": "USD",
@@ -48222,14 +48915,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-twofer-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-mens-adaptive-polo-shirt-top-adaptive-golf-shirt",
     "name": "Mens Adaptive Polo Shirt Top - Adaptive Golf Shirt",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "17.99",
     "currency": "USD",
@@ -48289,7 +48983,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-adaptive-polo-shirt-top-adaptive-golf-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-petite-open-back-gabardine-pant-clearance",
@@ -48358,14 +49053,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-petite-open-back-gabardine-pant-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-womens-open-back-top-and-pull-on-pant-waffle-knit-pajama-set",
     "name": "Women's Open Back Top & Pull-On Pant Waffle Knit Pajama Set",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "34.99",
     "currency": "USD",
@@ -48427,14 +49123,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-top-and-pull-on-pant-waffle-knit-pajama-set",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "silverts-men-s-comfort-stretch-pull-on-pant",
     "name": "Men's Comfort Stretch Pull-on Pant",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "44.98",
     "currency": "USD",
@@ -48495,7 +49192,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-comfort-stretch-pull-on-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-open-back-two-fer-dress-clearance",
@@ -48566,14 +49264,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-two-fer-dress-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-women-s-open-back-embellished-long-sleeve-top",
     "name": "Women's Open Back Embellished Long Sleeve Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "31.48",
     "currency": "USD",
@@ -48637,14 +49336,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-embellished-long-sleeve-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-soft-open-back-adaptive-top",
     "name": "Women's Open Back 3/4 Sleeve Soft Knit Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "35.98",
     "currency": "USD",
@@ -48708,7 +49408,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-soft-open-back-adaptive-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-womens-adaptive-lace-stay-dressed-jumpsuit-clearance",
@@ -48775,7 +49476,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-lace-stay-dressed-jumpsuit-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-easy-wear-extra-wide-comfortable-walking-shoes-for-men-classic-single-strap-adjustable-closure",
@@ -48856,14 +49558,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/easy-wear-extra-wide-comfortable-walking-shoes-for-men-classic-single-strap-adjustable-closure",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-mens-open-back-adaptive-sportshirt",
     "name": "Men's Open Back Adaptive Sport Shirt",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "49.48",
     "currency": "USD",
@@ -48921,7 +49624,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-open-back-adaptive-sportshirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-zip-shoulders-top-for-women",
@@ -48989,7 +49693,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/zip-shoulders-top-for-women",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-easy-access-pants",
@@ -49060,14 +49765,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-easy-access-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-antimicrobial-open-back-diamond-neck-top",
     "name": "Women's Open Back Diamond Neck Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "31.49",
     "currency": "USD",
@@ -49127,14 +49833,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-antimicrobial-open-back-diamond-neck-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-mens-stay-dressed-jumpsuit-for-dementia-needs-full-back-zip-outfit",
     "name": "Men's Stay Dressed Jumpsuit with Full Back Zip",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$50-$100",
     "price": "58.48",
     "currency": "USD",
@@ -49191,14 +49898,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-stay-dressed-jumpsuit-for-dementia-needs-full-back-zip-outfit",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-women-s-magnetic-closure-top-for-arthritis",
     "name": "Women's Magnetic Closure Top for Arthritis",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "62.98",
     "currency": "USD",
@@ -49261,14 +49969,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-magnetic-closure-top-for-arthritis",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-soft-classic-open-back-top",
     "name": "Women's Soft Classic Open Back Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "26.98",
     "currency": "USD",
@@ -49330,14 +50039,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-soft-classic-open-back-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-open-back-henley-nightgown",
     "name": "Women's Open Back Henley Nightgown",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "31.98",
     "currency": "USD",
@@ -49401,7 +50111,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-henley-nightgown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "silverts-women-s-easy-grip-pull-on-knit-pant-clearance",
@@ -49469,14 +50180,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-easy-grip-pull-on-knit-pant-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-womens-open-back-velvet-dress",
     "name": "Women's Open Back Velvet Dress",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "44.98",
     "currency": "USD",
@@ -49538,7 +50250,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-velvet-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-mens-cotton-easy-access-open-side-pants",
@@ -49610,14 +50323,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-cotton-easy-access-open-side-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-adaptive-fashion-top-short-sleeve",
     "name": "Women's Open Back Top with Pearl Neckline",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "27.99",
     "currency": "USD",
@@ -49674,7 +50388,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-adaptive-fashion-top-short-sleeve",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-easy-dressing-open-back-half-zip-track-suit-top-clearance",
@@ -49740,7 +50455,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-easy-dressing-open-back-half-zip-track-suit-top-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-open-back-faux-button-top-clearance",
@@ -49805,14 +50521,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-faux-button-top-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-open-back-embroidered-flower-top",
     "name": "Women's Open Back Embroidered Flower Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "31.98",
     "currency": "USD",
@@ -49874,14 +50591,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-embroidered-flower-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-unisex-tear-away-post-surgery-pant",
     "name": "Unisex Tear-Away Post Surgery Pant",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "26.99",
     "currency": "USD",
@@ -49941,7 +50659,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/unisex-tear-away-post-surgery-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-quality-womens-side-zipper-pants",
@@ -50014,14 +50733,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/quality-womens-side-zipper-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-senior-mens-adaptive-open-back-short-sleeve-shirt-clearance",
     "name": "Men's Adaptive Open Back Short Sleeve Dress Shirt - Clearance",
     "brandId": "silverts",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "31.49",
     "currency": "USD",
@@ -50079,7 +50799,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-mens-adaptive-open-back-short-sleeve-shirt-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-mens-extra-wide-comfort-shoes-with-easy-touch-closures-best-walking-shoes-for-seniors",
@@ -50161,7 +50882,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-extra-wide-comfort-shoes-with-easy-touch-closures-best-walking-shoes-for-seniors",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-mens-magnetic-closure-sherpa-shacket-with-detachable-hood",
@@ -50233,7 +50955,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-magnetic-closure-sherpa-shacket-with-detachable-hood",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-extra-wide-easy-closure-womens-jewel-slippers",
@@ -50313,14 +51036,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/extra-wide-easy-closure-womens-jewel-slippers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-womens-classic-easy-grip-pull-on-pants",
     "name": "Women's Classic Easy Grip Pull On Pants",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "49.48",
     "currency": "USD",
@@ -50384,7 +51108,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-classic-easy-grip-pull-on-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-easy-grip-pull-on-wide-leg-pant-clearance",
@@ -50448,7 +51173,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-easy-grip-pull-on-wide-leg-pant-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-men-s-sleeveless-reversible-magnetic-front-vest-clearance",
@@ -50513,14 +51239,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-sleeveless-reversible-magnetic-front-vest-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-womens-open-back-textured-turtleneck-top",
     "name": "Women's Open Back Textured Turtleneck Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "19.99",
     "currency": "USD",
@@ -50582,7 +51309,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-textured-turtleneck-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-womens-side-zip-adaptive-pant-clearance",
@@ -50650,14 +51378,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-side-zip-adaptive-pant-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-mens-open-back-gabardine-pants",
     "name": "Men's Open Back Gabardine Pant",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "44.98",
     "currency": "USD",
@@ -50721,14 +51450,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-open-back-gabardine-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-unisex-tear-away-post-surgery-top",
     "name": "Unisex Tear-Away Post Surgery Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "26.99",
     "currency": "USD",
@@ -50786,7 +51516,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/unisex-tear-away-post-surgery-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-open-back-plaid-crew-neck-sweater",
@@ -50851,14 +51582,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-plaid-crew-neck-sweater",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-adaptive-open-back-cardigan-clearance",
     "name": "Women's Open Back Cardigan - Clearance",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "32.99",
     "currency": "USD",
@@ -50918,7 +51650,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-adaptive-open-back-cardigan-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-mens-adaptive-open-back-henley-shirt-clearance",
@@ -50985,7 +51718,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-mens-adaptive-open-back-henley-shirt-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-easy-grip-pull-on-plush-pant",
@@ -51048,7 +51782,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-easy-grip-pull-on-plush-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-easy-grip-pull-on-knit-pant-with-adjustable-hem-petite",
@@ -51116,14 +51851,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-easy-grip-pull-on-knit-pant-with-adjustable-hem-petite",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-mens-easy-touch-side-closure-fleece-pant",
     "name": "Men's Easy Touch Side Closure Fleece Pant",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "44.98",
     "currency": "USD",
@@ -51188,7 +51924,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-easy-touch-side-closure-fleece-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-attractive-adaptive-wheelchair-dress",
@@ -51258,14 +51995,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/attractive-adaptive-wheelchair-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-senior-womens-adaptive-open-back-embellished-tshirt",
     "name": "Women's Open Back Embellished Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "32.99",
     "currency": "USD",
@@ -51323,7 +52061,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-open-back-embellished-tshirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-zip-front-sweater",
@@ -51388,7 +52127,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-zip-front-sweater",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-underwire-free-soft-lounge-sleep-bra-breast-nest-clearance",
@@ -51448,7 +52188,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/underwire-free-soft-lounge-sleep-bra-breast-nest-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-womens-adaptive-open-back-fleece-cardigan",
@@ -51510,7 +52251,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-adaptive-open-back-fleece-cardigan",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-womens-adaptive-open-back-high-low-top-clearance",
@@ -51574,14 +52316,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-open-back-high-low-top-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-open-back-soft-knit-pant",
     "name": "Women's Open Back Soft Knit Pant",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "44.98",
     "currency": "USD",
@@ -51643,7 +52386,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-soft-knit-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-soft-knit-easy-access-pants-for-women-clearance",
@@ -51715,7 +52459,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/soft-knit-easy-access-pants-for-women-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-senior-womens-adaptive-open-back-ponte-dress",
@@ -51776,7 +52521,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-open-back-ponte-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-women-s-tracksuit-magzip-top-pull-on-velour-set-clearance",
@@ -51845,7 +52591,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-tracksuit-magzip-top-pull-on-velour-set-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-easy-grip-pull-on-knit-pant",
@@ -51913,14 +52660,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-easy-grip-pull-on-knit-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-womens-long-sleeves-adaptive-open-back-sweater-knit-top-clearance",
     "name": "Women's Long Sleeve Open Back Sweater Knit Top - Clearance",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "22.49",
     "currency": "USD",
@@ -51977,7 +52725,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-long-sleeves-adaptive-open-back-sweater-knit-top-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-mens-easy-grip-pull-on-cargo-pants-clearance",
@@ -52045,14 +52794,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-easy-grip-pull-on-cargo-pants-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-2-pack-diabetic-soft-cotton-sock",
     "name": "2 Pack Diabetic Soft Cotton Socks Black",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Socks",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "11.68",
     "currency": "USD",
@@ -52114,7 +52864,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/2-pack-diabetic-soft-cotton-sock",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-regular-mens-cotton-elastic-waist-pant-clearance",
@@ -52187,14 +52938,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/regular-mens-cotton-elastic-waist-pant-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-seated-side-zip-pant",
     "name": "Women's Self Dressing Side Zip Pant",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "34.99",
     "currency": "USD",
@@ -52255,7 +53007,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-seated-side-zip-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-self-dressing-knit-tracksuit-set",
@@ -52325,7 +53078,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-self-dressing-knit-tracksuit-set",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-self-dressing-plush-shrug",
@@ -52388,14 +53142,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-self-dressing-plush-shrug",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-poly-cotton-hospital-gowns-for-men-clearance",
     "name": "Poly-Cotton Hospital Gowns for Men - Clearance",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "34.99",
     "currency": "USD",
@@ -52454,14 +53209,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/poly-cotton-hospital-gowns-for-men-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-men-s-sleeveless-reversible-magnetic-front-vest",
     "name": "Men's Reversible Magnetic Front Vest",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Jackets",
+    "category": "jackets",
     "priceRange": "$25-$50",
     "price": "37.49",
     "currency": "USD",
@@ -52523,7 +53279,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-sleeveless-reversible-magnetic-front-vest",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-women-s-open-back-long-sleeve-embroidered-sweatshirt",
@@ -52589,7 +53346,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-long-sleeve-embroidered-sweatshirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-womens-adaptive-mag-zip-track-suit-vest",
@@ -52656,7 +53414,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-mag-zip-track-suit-vest",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-women-s-adaptive-zippered-neck-top",
@@ -52717,14 +53476,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-adaptive-zippered-neck-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-adaptive-wheelchair-pants-for-women-clearance",
     "name": "Adaptive Wheelchair Pants for Women - Clearance",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "31.49",
     "currency": "USD",
@@ -52782,14 +53542,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/adaptive-wheelchair-pants-for-women-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-seated-side-zip-pant-with-pull-tabs",
     "name": "Women's Assisted Dressing Side Zip Pant with Pull Tabs",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "15.99",
     "currency": "USD",
@@ -52852,7 +53613,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-seated-side-zip-pant-with-pull-tabs",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-pull-on-fleece-capri-pant",
@@ -52919,7 +53681,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-pull-on-fleece-capri-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-open-back-mock-neck-turtleneck",
@@ -52984,14 +53747,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-mock-neck-turtleneck",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-sleeveless-sweater-vest-with-magnetic-snap",
     "name": "Women's Sweater Vest with Magnetic Snap",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Jackets",
+    "category": "jackets",
     "priceRange": "$25-$50",
     "price": "32.49",
     "currency": "USD",
@@ -53050,7 +53814,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-sleeveless-sweater-vest-with-magnetic-snap",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-women-s-pull-on-elastic-waist-pants-with-pockets",
@@ -53115,7 +53880,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-pull-on-elastic-waist-pants-with-pockets",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-open-back-adaptive-sportshirt-clearance",
@@ -53180,7 +53946,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/open-back-adaptive-sportshirt-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-open-back-long-sleeve-twofer",
@@ -53245,7 +54012,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-long-sleeve-twofer",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-womens-adaptive-open-back-lace-embellished-top",
@@ -53316,14 +54084,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-open-back-lace-embellished-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-open-back-active-capri-pant",
     "name": "Women's Open Back Active Capri Pant",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "44.98",
     "currency": "USD",
@@ -53387,14 +54156,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-active-capri-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-anti-strip-undergarment",
     "name": "Women's Stay Dressed Undergarment",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Underwear",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "26.98",
     "currency": "USD",
@@ -53453,14 +54223,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-anti-strip-undergarment",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-men-s-3-pack-open-front-underwear",
     "name": "Men's 3-Pack Open Front Underwear",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Underwear",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "49.48",
     "currency": "USD",
@@ -53519,14 +54290,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-3-pack-open-front-underwear",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-senior-mens-open-back-adaptive-jean",
     "name": "Men's Open Back Jeans",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Jeans",
+    "category": "jeans",
     "priceRange": "$25-$50",
     "price": "49.48",
     "currency": "USD",
@@ -53592,7 +54364,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-mens-open-back-adaptive-jean",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-mens-soft-modal-open-back-undervest",
@@ -53663,14 +54436,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-soft-modal-open-back-undervest",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-women-s-open-back-shirred-top",
     "name": "Women's Open Back Shirred Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "13.99",
     "currency": "USD",
@@ -53735,14 +54509,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-shirred-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-soft-knit-easy-access-pants-for-women",
     "name": "Women's Self Dressing Soft Knit Easy Access Pant",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "24.99",
     "currency": "USD",
@@ -53807,7 +54582,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/soft-knit-easy-access-pants-for-women",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-senior-womens-adaptive-open-back-dress",
@@ -53869,14 +54645,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-open-back-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-senior-womens-adaptive-open-back-high-low-top",
     "name": "Women's Open Back High-Low Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "40.48",
     "currency": "USD",
@@ -53938,14 +54715,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-open-back-high-low-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-mens-adaptive-open-back-printed-short-sleeve-shirt",
     "name": "Men's Open Back Printed Short Sleeve Dress Shirt",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "34.99",
     "currency": "USD",
@@ -54009,7 +54787,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-mens-adaptive-open-back-printed-short-sleeve-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-stylish-open-back-dress-for-women",
@@ -54077,14 +54856,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/stylish-open-back-dress-for-women",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-senior-mens-adaptive-magnetic-button-front-denim-jacket",
     "name": "Men's Self Dressing Magnetic Closure Jean Jacket",
     "brandId": "silverts",
-    "clothingType": "Jeans",
-    "category": "jeans",
+    "clothingType": "Jackets",
+    "category": "jackets",
     "priceRange": "$25-$50",
     "price": "34.99",
     "currency": "USD",
@@ -54138,7 +54918,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-mens-adaptive-magnetic-button-front-denim-jacket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-pretty-senior-womens-adaptive-open-back-cardigan",
@@ -54201,7 +54982,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/pretty-senior-womens-adaptive-open-back-cardigan",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-open-back-patchwork-top",
@@ -54264,7 +55046,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-patchwork-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-womens-adaptive-open-back-embroidered-top",
@@ -54327,7 +55110,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-open-back-embroidered-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-womens-adaptive-open-back-embroidered-linen-dress",
@@ -54391,14 +55175,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-open-back-embroidered-linen-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-top-blouse-twofer-short-sleeve-open-back",
     "name": "Women's Open Back Short Sleeve Twofer Top",
     "brandId": "silverts",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "19.99",
     "currency": "USD",
@@ -54454,7 +55239,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/top-blouse-twofer-short-sleeve-open-back",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-mens-adaptive-pull-on-jean-with-cargo-pockets",
@@ -54515,7 +55301,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-mens-adaptive-pull-on-jean-with-cargo-pockets",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-senior-womens-pull-on-skirt",
@@ -54577,14 +55364,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-pull-on-skirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-womens-reversible-quilted-jacket-with-detachable-sleeves",
     "name": "Women's Self Dressing Reversible Quilted Jacket with Detachable Sleeves",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Jackets",
+    "category": "jackets",
     "priceRange": "$25-$50",
     "price": "42.49",
     "currency": "USD",
@@ -54640,7 +55428,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-reversible-quilted-jacket-with-detachable-sleeves",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-senior-womens-adaptive-open-back-embroidered-shirt",
@@ -54699,14 +55488,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-open-back-embroidered-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-womens-adaptive-open-back-scoop-neck-top",
     "name": "Women's Open Back Top with Embroidery Detail",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "38.49",
     "currency": "USD",
@@ -54768,14 +55558,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-open-back-scoop-neck-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-womens-long-sleeve-knit-blazer",
     "name": "Women's Chic Collarless Blazer",
     "brandId": "silverts",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Jackets",
+    "category": "jackets",
     "priceRange": "$25-$50",
     "price": "23.99",
     "currency": "USD",
@@ -54833,14 +55624,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-long-sleeve-knit-blazer",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-senior-womens-magnetic-front-fly-adaptive-capri-jeans",
     "name": "Women's Magnetic Front Fly Denim Capris",
     "brandId": "silverts",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "34.99",
     "currency": "USD",
@@ -54894,14 +55686,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-magnetic-front-fly-adaptive-capri-jeans",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-womens-soft-antimicrobial-modal-open-back-undervest",
     "name": "Women's Soft Modal Open Back Camisole",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Underwear",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "12.49",
     "currency": "USD",
@@ -54965,14 +55758,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-soft-antimicrobial-modal-open-back-undervest",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-women-s-easy-dressing-open-back-half-zip-track-suit-top",
     "name": "Women's Easy Dressing Open Back Half Zip Track Suit Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "53.98",
     "currency": "USD",
@@ -55039,7 +55833,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-easy-dressing-open-back-half-zip-track-suit-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-pull-on-pants-petite-pull-on-elastic-waist-pants",
@@ -55110,7 +55905,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-pull-on-pants-petite-pull-on-elastic-waist-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-senior-womens-adaptive-mag-zip-active-jacket",
@@ -55180,14 +55976,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-mag-zip-active-jacket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-women-s-tracksuit-magzip-top-pull-on-velour-set",
     "name": "Women's Tracksuit (Magzip Jacket & Easy Grip Pull-On Pant)",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$50-$100",
     "price": "52.49",
     "currency": "USD",
@@ -55249,7 +56046,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-tracksuit-magzip-top-pull-on-velour-set",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-top-color-block-open-back-for-women",
@@ -55311,7 +56109,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/top-color-block-open-back-for-women",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-mens-adaptive-pull-on-pant-with-cargo-pockets",
@@ -55378,7 +56177,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-mens-adaptive-pull-on-pant-with-cargo-pockets",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-senior-womens-side-closure-adaptive-pant",
@@ -55438,14 +56238,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-side-closure-adaptive-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-open-back-track-suit-pant",
     "name": "Women's Open Back Track Suit Pant",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "49.48",
     "currency": "USD",
@@ -55512,7 +56313,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-track-suit-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-patella-tendon-knee-strap",
@@ -55570,14 +56372,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/patella-tendon-knee-strap",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-men-s-stay-dressed-jumpsuit-with-long-sleeve-polo-shirt",
     "name": "Men's Stay Dressed Jumpsuit with Long Sleeve Polo Shirt",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$50-$100",
     "price": "67.48",
     "currency": "USD",
@@ -55633,14 +56436,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-stay-dressed-jumpsuit-with-long-sleeve-polo-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-womens-magnetic-button-fleece-cardigan",
     "name": "Women's Magnetic Button Fleece Cardigan",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "53.98",
     "currency": "USD",
@@ -55703,7 +56507,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-magnetic-button-fleece-cardigan",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-womens-side-zip-adaptive-linen-pant",
@@ -55765,14 +56570,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-side-zip-adaptive-linen-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-stylish-color-block-open-back-dress",
     "name": "Women's Stylish Color Block Open Back Dress",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "32.99",
     "currency": "USD",
@@ -55834,14 +56640,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-stylish-color-block-open-back-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-men-s-soft-stretch-open-back-pants",
     "name": "Men's Soft Stretch Open Back Pants",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "44.98",
     "currency": "USD",
@@ -55903,14 +56710,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-soft-stretch-open-back-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-womens-open-back-soft-patchwork-top",
     "name": "Women's Open Back Patchwork Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "31.98",
     "currency": "USD",
@@ -55972,14 +56780,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-soft-patchwork-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-mens-open-back-long-sleeve-henley-shirt",
     "name": "Men's Open Back Long Sleeve Henley Shirt",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "40.48",
     "currency": "USD",
@@ -56041,7 +56850,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-open-back-long-sleeve-henley-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-mens-magnetic-front-closure-sherpa-lined-overshirt-clearance",
@@ -56109,7 +56919,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-magnetic-front-closure-sherpa-lined-overshirt-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-men-s-extra-wide-open-toe-slipper",
@@ -56180,7 +56991,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-extra-wide-open-toe-slipper",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-womens-open-back-cowl-neck-top-clearance",
@@ -56249,14 +57061,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-cowl-neck-top-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-open-back-neck-tie-top",
     "name": "Women's Open Back Neck Tie Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "31.98",
     "currency": "USD",
@@ -56318,7 +57131,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-neck-tie-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-men-s-open-back-colorblock-t-shirt",
@@ -56389,14 +57203,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-open-back-colorblock-t-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-soft-short-sleeve-tracksuit-top",
     "name": "Women's Soft Short Sleeve Tracksuit Top",
     "brandId": "silverts",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "15.99",
     "currency": "USD",
@@ -56460,7 +57275,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-soft-short-sleeve-tracksuit-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-open-back-v-neck-embellished-top",
@@ -56529,14 +57345,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-v-neck-embellished-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-open-back-ruffle-hospital-home-care-gown",
     "name": "Women's Open Back Ruffle Hospital & Home Care Gown",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "40.48",
     "currency": "USD",
@@ -56598,14 +57415,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-ruffle-hospital-home-care-gown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-men-s-open-back-magnetic-fly-pants",
     "name": "Men's Open Back Magnetic Fly Pants",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$50-$100",
     "price": "51.98",
     "currency": "USD",
@@ -56669,7 +57487,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-open-back-magnetic-fly-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-womens-petite-pull-on-bariatric-pants",
@@ -56730,7 +57549,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-petite-pull-on-bariatric-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-womens-pull-on-bariatric-pants",
@@ -56790,14 +57610,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-pull-on-bariatric-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-open-back-stretch-knit-pant",
     "name": "Women's Open Back Stretch Knit Pant",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "35.98",
     "currency": "USD",
@@ -56859,7 +57680,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-stretch-knit-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-open-back-track-suit-pant-clearance",
@@ -56928,14 +57750,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-track-suit-pant-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-open-back-3-button-front-embroidery-top",
     "name": "Women's Open Back 3-Button Front Embroidery Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "49.48",
     "currency": "USD",
@@ -56997,14 +57820,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-3-button-front-embroidery-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-open-back-pleated-panel-top",
     "name": "Women's Open Back Pleated Panel Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "39.98",
     "currency": "USD",
@@ -57066,7 +57890,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-pleated-panel-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-magnetic-button-front-shacket",
@@ -57136,14 +57961,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-magnetic-button-front-shacket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-men-s-open-back-flannel-shirt",
     "name": "Men's Open Back Flannel Shirt",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "44.98",
     "currency": "USD",
@@ -57205,14 +58031,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-open-back-flannel-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-men-s-magnetic-button-front-cardigan",
     "name": "Men's Magnetic Button Front Cardigan",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "44.98",
     "currency": "USD",
@@ -57277,14 +58104,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-magnetic-button-front-cardigan",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-men-s-magnetic-button-front-bomber-jacket",
     "name": "Men's Magnetic Button Front Bomber Jacket",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Jackets",
+    "category": "jackets",
     "priceRange": "$50-$100",
     "price": "58.48",
     "currency": "USD",
@@ -57349,14 +58177,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-magnetic-button-front-bomber-jacket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-women-s-open-back-long-sleeve-lace-trim-nightgown",
     "name": "Women's Open Back Long Sleeve Lace Trim Nightgown",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "39.98",
     "currency": "USD",
@@ -57418,14 +58247,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-long-sleeve-lace-trim-nightgown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "silverts-men-s-open-back-henley-nightgown",
     "name": "Men's Open Back Henley Nightgown",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "44.98",
     "currency": "USD",
@@ -57487,14 +58317,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-open-back-henley-nightgown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "silverts-women-s-open-back-keyhole-dress",
     "name": "Women's Open Back Keyhole Dress",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "44.98",
     "currency": "USD",
@@ -57556,14 +58387,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-keyhole-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-men-s-open-back-knit-cardigan",
     "name": "Men's Open Back Knit Cardigan",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "31.49",
     "currency": "USD",
@@ -57627,14 +58459,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-open-back-knit-cardigan",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-polar-fleece-pull-on-pant",
     "name": "Women's Polar Fleece Pull-on Pant",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "39.98",
     "currency": "USD",
@@ -57691,7 +58524,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-polar-fleece-pull-on-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-senior-mens-open-back-adaptive-cargo-pant-clearance",
@@ -57762,14 +58596,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-mens-open-back-adaptive-cargo-pant-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-men-s-open-back-classic-short-sleeve-shirt",
     "name": "Men's Open Back Classic Short Sleeve Shirt",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "39.98",
     "currency": "USD",
@@ -57833,14 +58668,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-open-back-classic-short-sleeve-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-open-back-polo-dress",
     "name": "Women's Open Back Polo Dress",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "47.98",
     "currency": "USD",
@@ -57902,14 +58738,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-polo-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-women-s-open-back-criss-cross-neck-dress",
     "name": "Women's Open Back Criss Cross Neck Dress",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "39.98",
     "currency": "USD",
@@ -57971,14 +58808,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-criss-cross-neck-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-women-s-petite-open-back-gabardine-pant",
     "name": "Women's Petite Open Back Gabardine Pant",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "35.98",
     "currency": "USD",
@@ -58040,14 +58878,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-petite-open-back-gabardine-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-men-s-open-back-v-neck-pocket-t-shirt",
     "name": "Men's Open Back V-Neck Pocket T-Shirt",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "17.49",
     "currency": "USD",
@@ -58109,14 +58948,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-open-back-v-neck-pocket-t-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-lace-yoke-muumuu-nightgown",
     "name": "Women's Buttery Soft Easy-On Lounge Dress - MuuMuu Nightgown",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "23.99",
     "currency": "USD",
@@ -58171,14 +59011,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-lace-yoke-muumuu-nightgown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "silverts-men-s-open-back-graphic-tee",
     "name": "Men's Open Back Graphic Tee",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "31.98",
     "currency": "USD",
@@ -58242,14 +59083,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-open-back-graphic-tee",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-embroidered-cardigan",
     "name": "Women's Embroidered Cardigan",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "32.49",
     "currency": "USD",
@@ -58306,14 +59148,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-embroidered-cardigan",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-open-back-crepe-v-neck-top",
     "name": "Women's Open Back Crepe V-Neck Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "31.98",
     "currency": "USD",
@@ -58377,14 +59220,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-crepe-v-neck-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-open-back-hi-low-pleated-top",
     "name": "Women's Open Back Hi-Low Pleated Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "31.98",
     "currency": "USD",
@@ -58446,14 +59290,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-hi-low-pleated-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-zip-off-leg-pull-on-pants",
     "name": "Women's Zip-off Leg Pull-on Pants",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "27.99",
     "currency": "USD",
@@ -58517,7 +59362,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-zip-off-leg-pull-on-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-textured-pull-on-pant",
@@ -58585,7 +59431,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-textured-pull-on-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-pull-on-capri-pant",
@@ -58653,7 +59500,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-pull-on-capri-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-senior-mens-side-zip-adaptive-pant-clearance",
@@ -58721,7 +59569,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-mens-side-zip-adaptive-pant-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-easy-grip-pull-on-knit-pant-with-adjustable-hem-petite-clearance",
@@ -58789,7 +59638,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-easy-grip-pull-on-knit-pant-with-adjustable-hem-petite-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-open-back-sweater-knit-dress-diamond-neckline-clearance",
@@ -58859,14 +59709,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-sweater-knit-dress-diamond-neckline-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-womens-open-back-long-sleeve-polo-and-open-back-pant-set",
     "name": "Women's Open Back Long Sleeve Polo & Open Back Pant Set",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Sets",
+    "category": "sets",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -58930,7 +59781,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-long-sleeve-polo-and-open-back-pant-set",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "adaptive_sets"
   },
   {
     "id": "silverts-women-s-extra-wide-easy-dual-zipper-winter-boot",
@@ -59001,14 +59853,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-extra-wide-easy-dual-zipper-winter-boot",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-mens-open-back-top-and-pull-on-pant-waffle-knit-pajama-set",
     "name": "Men's Open Back Top & Pull-on Pant Waffle Knit Pajama Set",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "34.99",
     "currency": "USD",
@@ -59072,14 +59925,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-open-back-top-and-pull-on-pant-waffle-knit-pajama-set",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "silverts-mens-open-back-long-sleeve-polo-open-back-pant-set-clearance",
     "name": "Men's Open Back Long Sleeve Polo & Open Back Pant Set - Clearance",
     "brandId": "silverts",
-    "clothingType": "Pants",
-    "category": "pants",
+    "clothingType": "Sets",
+    "category": "sets",
     "priceRange": "$25-$50",
     "price": "39.99",
     "currency": "USD",
@@ -59141,7 +59995,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-open-back-long-sleeve-polo-open-back-pant-set-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "adaptive_sets"
   },
   {
     "id": "silverts-mens-extra-wide-comfortable-slip-on-sneakers-without-laces",
@@ -59222,14 +60077,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-extra-wide-comfortable-slip-on-sneakers-without-laces",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-womens-hooded-cardigan-with-pockets",
     "name": "Women's Hooded Cardigan with Pockets",
     "brandId": "silverts",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "27.99",
     "currency": "USD",
@@ -59284,14 +60140,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-hooded-cardigan-with-pockets",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-ultra-plush-shawl",
     "name": "Women's Ultra Plush Shawl",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Jackets",
+    "category": "jackets",
     "priceRange": "$50-$100",
     "price": "53.98",
     "currency": "USD",
@@ -59345,14 +60202,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-ultra-plush-shawl",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-womens-open-back-cowl-neck-top",
     "name": "Women's Open Back Cowl Neck Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "40.48",
     "currency": "USD",
@@ -59414,7 +60272,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-cowl-neck-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-extra-wide-comfortable-slip-on-sneakers-without-laces",
@@ -59495,14 +60354,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-extra-wide-comfortable-slip-on-sneakers-without-laces",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-womens-open-back-stripe-sweater",
     "name": "Women's Open Back Stripe Sweater",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "32.99",
     "currency": "USD",
@@ -59566,14 +60426,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-stripe-sweater",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-open-back-gathered-scoop-neck-top",
     "name": "Women's Open Back Gathered Scoop Neck Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "27.99",
     "currency": "USD",
@@ -59635,7 +60496,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-gathered-scoop-neck-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-extra-wide-comfort-shoes-with-sherpa-lining",
@@ -59717,7 +60579,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-extra-wide-comfort-shoes-with-sherpa-lining",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-womens-extra-wide-mary-jane-walking-shoes-with-easy-touch",
@@ -59799,7 +60662,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-extra-wide-mary-jane-walking-shoes-with-easy-touch",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-womens-wide-width-supportive-slip-on-shoes",
@@ -59880,7 +60744,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-wide-width-supportive-slip-on-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-mens-basic-fleece-vest",
@@ -59945,14 +60810,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-basic-fleece-vest",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-womens-soft-antimicrobial-modal-open-back-undervest-clearance",
     "name": "Women's Soft Modal Open Back Camisole - Clearance",
     "brandId": "silverts",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Underwear",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "12.49",
     "currency": "USD",
@@ -60014,7 +60880,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-soft-antimicrobial-modal-open-back-undervest-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-womens-easy-touch-side-closure-pants-clearance",
@@ -60089,7 +60956,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-easy-touch-side-closure-pants-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-men-s-open-back-adaptive-fleece-sweatshirt-clearance",
@@ -60158,7 +61026,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-open-back-adaptive-fleece-sweatshirt-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-mens-adaptive-open-back-zip-polo-shirt-clearance",
@@ -60224,7 +61093,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-mens-adaptive-open-back-zip-polo-shirt-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-adaptive-open-back-fleece-pants-clearance",
@@ -60293,7 +61163,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-adaptive-open-back-fleece-pants-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-sleeveless-reversible-magnetic-front-vest-clearance",
@@ -60360,14 +61231,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-sleeveless-reversible-magnetic-front-vest-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-mens-arthritis-easy-grip-wide-leg-pull-on-pants-clearance",
     "name": "Mens Arthritis Easy Grip Wide Leg Pull On Pants - Clearance",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "34.99",
     "currency": "USD",
@@ -60435,14 +61307,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-arthritis-easy-grip-wide-leg-pull-on-pants-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-men-s-adaptive-adjustable-belt",
     "name": "Men's Adaptive Adjustable Belt",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Accessories",
+    "category": "accessories",
     "priceRange": "$25-$50",
     "price": "9.99",
     "currency": "USD",
@@ -60500,14 +61373,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-adaptive-adjustable-belt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "accessories"
   },
   {
     "id": "silverts-men-s-open-back-collared-nightgown",
     "name": "Men's Open Back Collared Nightgown",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "31.49",
     "currency": "USD",
@@ -60569,7 +61443,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-open-back-collared-nightgown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "silverts-women-s-open-back-collared-nightgown",
@@ -60634,14 +61509,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-collared-nightgown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "silverts-women-s-3-pack-open-front-underwear",
     "name": "Women's 3-Pack Open Front Underwear",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Underwear",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "49.48",
     "currency": "USD",
@@ -60700,14 +61576,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-3-pack-open-front-underwear",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-women-s-open-back-faux-button-top",
     "name": "Women's Open Back Faux Button Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "31.48",
     "currency": "USD",
@@ -60769,14 +61646,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-faux-button-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-open-back-collared-dress",
     "name": "Women's Open Back Collared Dress",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "21.99",
     "currency": "USD",
@@ -60839,14 +61717,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-collared-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-women-s-open-back-1-4-zip-active-top",
     "name": "Women's Open Back 1/4 Zip Active Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "35.98",
     "currency": "USD",
@@ -60910,7 +61789,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-1-4-zip-active-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-open-back-floral-fleece-top",
@@ -60978,7 +61858,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-floral-fleece-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-basic-fleece-vest",
@@ -61048,7 +61929,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-basic-fleece-vest",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-women-s-open-back-detailed-twofer-cardigan",
@@ -61115,7 +61997,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-detailed-twofer-cardigan",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-men-s-open-back-short-sleeve-button-down",
@@ -61184,7 +62067,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-open-back-short-sleeve-button-down",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-women-s-open-back-high-low-top",
@@ -61249,14 +62133,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-high-low-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-mens-magnetic-front-closure-sherpa-lined-overshirt",
     "name": "Men's Magnetic Closure Sherpa Lined Shirt Jacket",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Jackets",
+    "category": "jackets",
     "priceRange": "$50-$100",
     "price": "71.98",
     "currency": "USD",
@@ -61321,14 +62206,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-magnetic-front-closure-sherpa-lined-overshirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-men-s-open-back-top-pull-on-pant-flannel-pajama-set",
     "name": "Men's Open Back Top & Pull-On Pant Flannel Pajama Set",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "25.99",
     "currency": "USD",
@@ -61393,14 +62279,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-open-back-top-pull-on-pant-flannel-pajama-set",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "silverts-women-s-stay-dressed-jumpsuit-with-full-back-zip",
     "name": "Women's Stay Dressed Jumpsuit Full Back Zip",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "34.99",
     "currency": "USD",
@@ -61458,7 +62345,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-stay-dressed-jumpsuit-with-full-back-zip",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-mens-open-back-no-peek-flannel-nightgown",
@@ -61522,7 +62410,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-open-back-no-peek-flannel-nightgown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "silverts-women-s-open-back-three-quarter-sleeve-collared-top",
@@ -61586,7 +62475,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-three-quarter-sleeve-collared-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-open-back-embroidered-long-sleeve-blouse",
@@ -61651,7 +62541,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-embroidered-long-sleeve-blouse",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-elegant-easy-on-cape",
@@ -61711,14 +62602,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-elegant-easy-on-cape",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-fleece-adaptive-mens-wheelchair-pants-clearance",
     "name": "Men's Assisted Dressing Fleece Pant - Clearance",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "34.99",
     "currency": "USD",
@@ -61779,7 +62671,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/fleece-adaptive-mens-wheelchair-pants-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-women-s-pull-on-pants-elastic-waist-polyester-pants-for-women-clearance",
@@ -61848,7 +62741,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-pull-on-pants-elastic-waist-polyester-pants-for-women-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-wheelchair-gabardine-pants-for-men-clearance",
@@ -61917,14 +62811,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/wheelchair-gabardine-pants-for-men-clearance",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-womens-open-back-lace-trim-nightgown",
     "name": "Women's Open Back Lace Trim Nightgown with Pockets",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "40.48",
     "currency": "USD",
@@ -61986,14 +62881,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-lace-trim-nightgown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "silverts-senior-womens-adaptive-open-back-with-zip-front-nightgown",
     "name": "Women's Open Back Nightgown with Quarter-Zip",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "29.99",
     "currency": "USD",
@@ -62054,14 +62950,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-open-back-with-zip-front-nightgown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "silverts-womens-open-back-v-neck-lace-trim-nightgown",
     "name": "Women's Open Back V-Neck Lace Trim Nightgown",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "44.98",
     "currency": "USD",
@@ -62125,14 +63022,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-v-neck-lace-trim-nightgown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "silverts-senior-mens-adaptive-open-back-crew-neck-t-shirt",
     "name": "Men's Open Back Active T-Shirt",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "31.48",
     "currency": "USD",
@@ -62198,14 +63096,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-mens-adaptive-open-back-crew-neck-t-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-womens-adaptive-lace-stay-dressed-jumpsuit",
     "name": "Women's Stay Dressed Jumpsuit with Lace Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$50-$100",
     "price": "58.48",
     "currency": "USD",
@@ -62261,14 +63160,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-lace-stay-dressed-jumpsuit",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-senior-mens-adaptive-open-back-zip-polo-shirt",
     "name": "Men's Open Back Polo Shirt with Zip",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "27.99",
     "currency": "USD",
@@ -62326,14 +63226,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-mens-adaptive-open-back-zip-polo-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-mens-adaptive-open-back-henley-shirt",
     "name": "Men's Open Back Henley T-Shirt",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "35.98",
     "currency": "USD",
@@ -62394,14 +63295,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-adaptive-open-back-henley-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-mens-adaptive-open-back-short-sleeve-shirt",
     "name": "Men's Adaptive Open Back Short Sleeve Dress Shirt",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "35.98",
     "currency": "USD",
@@ -62467,7 +63369,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-mens-adaptive-open-back-short-sleeve-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-womens-adaptive-magnetic-closure-denim-inspired-jacket",
@@ -62528,7 +63431,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-magnetic-closure-denim-inspired-jacket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-senior-womens-adaptive-open-back-lace-blazer-twofer",
@@ -62590,7 +63494,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-open-back-lace-blazer-twofer",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-womens-adaptive-open-back-knit-twofer",
@@ -62651,7 +63556,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-open-back-knit-twofer",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-womens-adaptive-open-back-notched-neck-top",
@@ -62713,7 +63619,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-open-back-notched-neck-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-womens-adaptive-open-back-embroidered-t-shirt",
@@ -62774,14 +63681,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-open-back-embroidered-t-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-open-back-active-crew-neck-top",
     "name": "Women's Open Back Active Crew Neck Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "31.48",
     "currency": "USD",
@@ -62845,14 +63753,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-active-crew-neck-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-womens-adaptive-open-back-criss-cross-neckline-top",
     "name": "Women's Open Back Criss Cross Neckline Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "40.48",
     "currency": "USD",
@@ -62916,14 +63825,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-open-back-criss-cross-neckline-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-senior-womens-adaptive-magnetic-closure-denim-vest",
     "name": "Women's Self Dressing Magnetic Closure Denim Vest",
     "brandId": "silverts",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Jackets",
+    "category": "jackets",
     "priceRange": "$25-$50",
     "price": "41.99",
     "currency": "USD",
@@ -62978,7 +63888,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-adaptive-magnetic-closure-denim-vest",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-senior-mens-open-back-adaptive-cargo-short",
@@ -63049,14 +63960,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-mens-open-back-adaptive-cargo-short",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-senior-womens-side-zip-adaptive-pant",
     "name": "Women's Side Zip Adaptive Pant",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "40.48",
     "currency": "USD",
@@ -63121,7 +64033,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-side-zip-adaptive-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-senior-womens-pull-on-denim-midi-skirt",
@@ -63187,14 +64100,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/senior-womens-pull-on-denim-midi-skirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-womens-post-surgical-top-with-snaps",
     "name": "Women's Adaptive Post-Surgical Top With Snaps",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "53.98",
     "currency": "USD",
@@ -63252,14 +64166,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-post-surgical-top-with-snaps",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-beautiful-seasonal-print-open-back-top-for-women",
     "name": "Women's Open Back Seasonal Print Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "19.99",
     "currency": "USD",
@@ -63319,7 +64234,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/beautiful-seasonal-print-open-back-top-for-women",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-mens-soft-wide-adjustable-slipper",
@@ -63398,14 +64314,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-soft-wide-adjustable-slipper",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-womens-jacket-magnetic-zipper",
     "name": "Women's Magnetic Zip Front Jacket",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Jackets",
+    "category": "jackets",
     "priceRange": "$25-$50",
     "price": "31.99",
     "currency": "USD",
@@ -63468,7 +64385,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-jacket-magnetic-zipper",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-womens-extra-wide-open-toed-shoes-for-indoor-outdoor",
@@ -63540,14 +64458,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-extra-wide-open-toed-shoes-for-indoor-outdoor",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-warm-durable-glove-compression-arthritis",
     "name": "Warm Durable Glove Compression Arthritis",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Accessories",
+    "category": "accessories",
     "priceRange": "$25-$50",
     "price": "23.99",
     "currency": "USD",
@@ -63605,7 +64524,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/warm-durable-glove-compression-arthritis",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "accessories"
   },
   {
     "id": "silverts-durable-unisex-premium-knee-compression",
@@ -63666,14 +64586,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/durable-unisex-premium-knee-compression",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-men-s-open-back-adaptive-fleece-sweatshirt",
     "name": "Men's Open Back Adaptive Fleece Sweatshirt",
     "brandId": "silverts",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "24.99",
     "currency": "USD",
@@ -63728,14 +64649,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-open-back-adaptive-fleece-sweatshirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-sleeveless-reversible-magnetic-front-vest",
     "name": "Women's Reversible Magnetic Snap Front Puffer Vest",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Jackets",
+    "category": "jackets",
     "priceRange": "$25-$50",
     "price": "37.49",
     "currency": "USD",
@@ -63794,14 +64716,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-sleeveless-reversible-magnetic-front-vest",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-women-s-open-back-float-nightgown",
     "name": "Women's Open Back Float Nightgown",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "34.99",
     "currency": "USD",
@@ -63862,14 +64785,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-float-nightgown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "silverts-women-s-open-back-plush-nightgown-with-zip-front",
     "name": "Women's Open Back Plush Nightgown with Zip Front",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "40.48",
     "currency": "USD",
@@ -63931,14 +64855,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-plush-nightgown-with-zip-front",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "silverts-women-s-antimicrobial-open-back-nightgown",
     "name": "Women's Soft Bow Open Back Nightgown",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "29.99",
     "currency": "USD",
@@ -64003,14 +64928,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-antimicrobial-open-back-nightgown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "silverts-womens-magnetic-zip-front-jacket",
     "name": "Women's Easy Magnetic Zip Front Fashion Jacket",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Jackets",
+    "category": "jackets",
     "priceRange": "$50-$100",
     "price": "62.99",
     "currency": "USD",
@@ -64070,14 +64996,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-magnetic-zip-front-jacket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-women-s-open-back-sweater-knit-dress-diamond-neckline",
     "name": "Women's Open Back Sweater Knit Dress with Diamond Neckline",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "35.99",
     "currency": "USD",
@@ -64137,7 +65064,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-open-back-sweater-knit-dress-diamond-neckline",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-mens-extra-extra-wide-slip-resistant-slippers",
@@ -64216,7 +65144,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-extra-extra-wide-slip-resistant-slippers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-women-s-long-sleeve-open-back-ponte-dress",
@@ -64277,7 +65206,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-long-sleeve-open-back-ponte-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-womens-easy-closure-sandal-for-indoors-outdoors",
@@ -64350,7 +65280,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-easy-closure-sandal-for-indoors-outdoors",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-womens-extra-wide-easy-closure-slippers",
@@ -64428,7 +65359,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-extra-wide-easy-closure-slippers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-womens-conventional-fleece-track-pant",
@@ -64492,7 +65424,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-conventional-fleece-track-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-mens-self-dressing-pull-on-fleece-pant",
@@ -64555,7 +65488,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-self-dressing-pull-on-fleece-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-mens-memory-foam-house-slippers",
@@ -64626,7 +65560,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-memory-foam-house-slippers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-extra-wide-comfort-shoes-for-men",
@@ -64703,7 +65638,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/extra-wide-comfort-shoes-for-men",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-mens-extra-wide-shoes",
@@ -64780,14 +65716,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-extra-wide-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-mens-open-back-fleece-pant",
     "name": "Men's Open Back Fleece Pant",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "44.98",
     "currency": "USD",
@@ -64851,14 +65788,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-open-back-fleece-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-mens-adaptive-open-back-polo-shirt-with-long-sleeves",
     "name": "Men's Adaptive Open Back Polo Shirt with Long Sleeves",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "40.48",
     "currency": "USD",
@@ -64922,14 +65860,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-adaptive-open-back-polo-shirt-with-long-sleeves",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-mens-classic-open-back-short-sleeve-polo-shirt",
     "name": "Men's Classic Open Back Short Sleeve Polo Shirt",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "17.49",
     "currency": "USD",
@@ -64989,14 +65928,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-classic-open-back-short-sleeve-polo-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-mens-easy-access-open-side-pant",
     "name": "Men's Easy Access Open Side Pant",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "49.48",
     "currency": "USD",
@@ -65061,14 +66001,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-easy-access-open-side-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-cotton-wheelchair-pants-for-men",
     "name": "Men's Open Back Cotton Trouser Pant",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "44.98",
     "currency": "USD",
@@ -65132,14 +66073,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/cotton-wheelchair-pants-for-men",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-men-s-flannel-hospital-gowns",
     "name": "Men's Flannel Hospital & Home Care Gown",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "30.14",
     "currency": "USD",
@@ -65203,7 +66145,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-flannel-hospital-gowns",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-men-s-adaptive-soft-fleece-cardigans",
@@ -65266,14 +66209,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/men-s-adaptive-soft-fleece-cardigans",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-mens-poly-cotton-hospital-gown",
     "name": "Men's Classic Comfort Hospital Gown",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "44.98",
     "currency": "USD",
@@ -65335,7 +66279,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-poly-cotton-hospital-gown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-mens-arthritis-easy-grip-wide-leg-pull-on-pants",
@@ -65410,7 +66355,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-arthritis-easy-grip-wide-leg-pull-on-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-mens-wide-ultra-lightweight-walking-shoes",
@@ -65482,14 +66428,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-wide-ultra-lightweight-walking-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-mens-easy-touch-side-open-zip-pants-catheter-access",
     "name": "Men's Classic Easy Touch Side Zip Pant with Catheter Access",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$50-$100",
     "price": "62.98",
     "currency": "USD",
@@ -65553,7 +66500,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-easy-touch-side-open-zip-pants-catheter-access",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-easy-dressing-top-with-extra-deep-arm-holes",
@@ -65614,14 +66562,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/easy-dressing-top-with-extra-deep-arm-holes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-magnetic-buttons-mens-short-sleeve-shirt",
     "name": "Magnetic Buttons Men's Short Sleeve Shirt",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "62.98",
     "currency": "USD",
@@ -65686,14 +66635,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/magnetic-buttons-mens-short-sleeve-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-easy-grip-wide-leg-pull-on-pants",
     "name": "Women's Easy Grip Wide Leg Pull-On Pants",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "24.99",
     "currency": "USD",
@@ -65766,14 +66716,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-easy-grip-wide-leg-pull-on-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-mens-self-dressing-magnetic-buttons-dress-shirt",
     "name": "Men's Self Dressing Magnetic Buttons Dress Shirt",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "62.98",
     "currency": "USD",
@@ -65836,14 +66787,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-self-dressing-magnetic-buttons-dress-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-magnetic-zipper-hoodie-with-pockets",
     "name": "Womens Magnetic-Zipper Hoodie with Pockets",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "49.48",
     "currency": "USD",
@@ -65907,14 +66859,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-magnetic-zipper-hoodie-with-pockets",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-wheelchair-cape-with-hood-women-men",
     "name": "Wheelchair Cape with Hood - Women & Men",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Jackets",
+    "category": "jackets",
     "priceRange": "$50-$100",
     "price": "62.72",
     "currency": "USD",
@@ -65970,14 +66923,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/wheelchair-cape-with-hood-women-men",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "silverts-womens-no-peek-hospital-home-care-gown-with-lace-neckline",
     "name": "Women's No Peek Hospital & Home Care Gown with Lace Neckline",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "40.48",
     "currency": "USD",
@@ -66041,14 +66995,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-no-peek-hospital-home-care-gown-with-lace-neckline",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-womens-no-peek-hospital-and-home-care-gown",
     "name": "Women's No Peek Hospital & Home Care Gown",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "40.48",
     "currency": "USD",
@@ -66110,14 +67065,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-no-peek-hospital-and-home-care-gown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-women-s-no-peek-hospital-and-home-care-long-sleeve-gown",
     "name": "Women's No Peek Hospital & Home Care Long Sleeve Gown",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "37.11",
     "currency": "USD",
@@ -66179,14 +67135,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-no-peek-hospital-and-home-care-long-sleeve-gown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-women-s-soft-embroidered-adaptive-top",
     "name": "Women's Soft Embroidered Adaptive Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "26.98",
     "currency": "USD",
@@ -66248,14 +67205,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-soft-embroidered-adaptive-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-open-back-three-quarter-length-sleeve-top-with-embroidery",
     "name": "Women's Open Back 3/4 Length Sleeve Top with Embroidery",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "31.48",
     "currency": "USD",
@@ -66319,14 +67277,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-open-back-three-quarter-length-sleeve-top-with-embroidery",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-easy-touch-side-closure-pants",
     "name": "Women's Easy Touch Side Closure Pants",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "40.48",
     "currency": "USD",
@@ -66393,14 +67352,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-easy-touch-side-closure-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-adaptive-wheelchair-pants-for-women",
     "name": "Women's Open Back Gabardine Pant",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "40.48",
     "currency": "USD",
@@ -66462,14 +67422,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/adaptive-wheelchair-pants-for-women",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-womens-soft-sweater-knit-adaptive-top",
     "name": "Women's Open Back Soft Sweater Knit Top",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "19.99",
     "currency": "USD",
@@ -66535,14 +67496,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-soft-sweater-knit-adaptive-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-womens-self-dressing-duster-house-dress",
     "name": "Women's Self Dressing Duster House Dress",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "44.98",
     "currency": "USD",
@@ -66597,14 +67559,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-self-dressing-duster-house-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "silverts-best-gripper-hospital-socks-men-women-slipper-socks",
     "name": "Unisex Hospital Slipper-Grip Socks",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Socks",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "6.28",
     "currency": "USD",
@@ -66669,14 +67632,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/best-gripper-hospital-socks-men-women-slipper-socks",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-lightweight-stretch-socks-2-pack",
     "name": "Lightweight Stretch Socks 2 - Pack",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Socks",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "17.98",
     "currency": "USD",
@@ -66732,14 +67696,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/lightweight-stretch-socks-2-pack",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-mens-womens-non-skid-hospital-socks-6-pack-slipper-socks",
     "name": "Mens / Womens Non Skid Hospital Socks - 6 Pack Slipper Socks",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Socks",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "26.98",
     "currency": "USD",
@@ -66804,14 +67769,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/mens-womens-non-skid-hospital-socks-6-pack-slipper-socks",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-2-pack-extra-wide-edema-diabetic-socks-for-men-and-women",
     "name": "2 Pack - Extra Wide Edema Diabetic Socks for Men and Women",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Socks",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "22.48",
     "currency": "USD",
@@ -66870,14 +67836,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/2-pack-extra-wide-edema-diabetic-socks-for-men-and-women",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-womens-adaptive-wire-free-bra-camisole-by-breast-nest",
     "name": "Women's Adaptive Wire-Free Breast Nest Bra Camisole",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Underwear",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "35.98",
     "currency": "USD",
@@ -66934,14 +67901,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-adaptive-wire-free-bra-camisole-by-breast-nest",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-underwire-free-soft-lounge-sleep-bra-breast-nest",
     "name": "Women's Adaptive Wire-Free Breast Nest Bra",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Underwear",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "31.48",
     "currency": "USD",
@@ -67001,7 +67969,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/underwire-free-soft-lounge-sleep-bra-breast-nest",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "silverts-womens-cardigan-with-pockets",
@@ -67063,14 +68032,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-cardigan-with-pockets",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "silverts-women-s-pull-on-pants-elastic-waist-polyester-pants-for-women",
     "name": "Women's Self Dressing Pull-On Pant",
     "brandId": "silverts",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "35.98",
     "currency": "USD",
@@ -67130,7 +68100,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/women-s-pull-on-pants-elastic-waist-polyester-pants-for-women",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "silverts-womens-extra-wide-swollen-feet-slippers",
@@ -67199,7 +68170,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-extra-wide-swollen-feet-slippers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-extra-wide-comfort-steps-shoes-for-women",
@@ -67274,7 +68246,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/extra-wide-comfort-steps-shoes-for-women",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-womens-stretchable-comfort-hugster-shoe-slipper",
@@ -67349,7 +68322,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-stretchable-comfort-hugster-shoe-slipper",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-deep-and-wide-diabetic-bootie-slipper-women-men",
@@ -67419,7 +68393,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/deep-and-wide-diabetic-bootie-slipper-women-men",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-extra-wide-shoes-for-women",
@@ -67497,7 +68472,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/extra-wide-shoes-for-women",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "silverts-womens-wide-lightweight-walking-shoes",
@@ -67569,7 +68545,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.silverts.com/products/womens-wide-lightweight-walking-shoes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "joe-and-bella-everyday-magnetic-flannel-for-women",
@@ -67636,7 +68613,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://joeandbella.com/products/everyday-magnetic-flannel-for-women",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "joe-and-bella-hoodease-the-magnetic-zip-up-hoodie-for-women",
@@ -67704,7 +68682,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://joeandbella.com/products/hoodease™-the-magnetic-zip-up-hoodie-for-women",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "joe-and-bella-magnetic-zip-up-hoodie-men",
@@ -67772,7 +68751,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://joeandbella.com/products/magnetic-zip-up-hoodie-men",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "joe-and-bella-magnetic-zip-up-for-men",
@@ -67839,14 +68819,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://joeandbella.com/products/magnetic-zip-up-for-men",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "joe-and-bella-short-sleeve-everyday-magnetic-button-shirt-for-men",
     "name": "Short-Sleeve Everyday Magnetic-Button Shirt for Men",
     "brandId": "joe-and-bella",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "88.00",
     "currency": "USD",
@@ -67906,7 +68887,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://joeandbella.com/products/short-sleeve-everyday-magnetic-button-shirt-for-men",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "joe-and-bella-magnetic-flannel-for-men-relaxed-fit",
@@ -67973,7 +68955,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://joeandbella.com/products/magnetic-flannel-for-men-relaxed-fit",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "joe-and-bella-signature-magnetic-cardigan-for-women",
@@ -68040,7 +69023,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://joeandbella.com/products/signature-magnetic-cardigan-for-women",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "joe-and-bella-womens-everyday-magnetic-blouse",
@@ -68103,7 +69087,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://joeandbella.com/products/womens-everyday-magnetic-blouse",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "joe-and-bella-big-grip-no-slip-compression-socks-3-pack",
@@ -68168,7 +69153,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://joeandbella.com/products/big-grip-no-slip-compression-socks-3-pack",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "joe-and-bella-womens-everyday-side-zip-pant",
@@ -68235,7 +69221,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://joeandbella.com/products/womens-everyday-side-zip-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "joe-and-bella-mens-everyday-side-zip-pant",
@@ -68302,14 +69289,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://joeandbella.com/products/mens-everyday-side-zip-pant",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "joe-and-bella-womens-nightgown-5002",
     "name": "The Everynight Gown",
     "brandId": "joe-and-bella",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "39.00",
     "currency": "USD",
@@ -68360,7 +69348,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://joeandbella.com/products/womens-nightgown-5002",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "joe-and-bella-mens-everyday-magnetic-button-down-relaxed-fit",
@@ -68427,7 +69416,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://joeandbella.com/products/mens-everyday-magnetic-button-down-relaxed-fit",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "joe-and-bella-everyday-gripper-socks-3-pack",
@@ -68490,7 +69480,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://joeandbella.com/products/everyday-gripper-socks-3-pack",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "joe-and-bella-mens-everyday-polo",
@@ -68548,7 +69539,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://joeandbella.com/products/mens-everyday-polo",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "joe-and-bella-womens-everyday-long-sleeve-top",
@@ -68601,14 +69593,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://joeandbella.com/products/womens-everyday-long-sleeve-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "joe-and-bella-womens-freedom-chinos",
     "name": "Signature Side-Zip Dress Pants for Women",
     "brandId": "joe-and-bella",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "15.00",
     "currency": "USD",
@@ -68658,7 +69651,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://joeandbella.com/products/womens-freedom-chinos",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "joe-and-bella-freedom-chinos-for-men",
@@ -68725,7 +69719,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://joeandbella.com/products/freedom-chinos-for-men",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "joe-and-bella-everyday-magnetic-button-down-for-men",
@@ -68792,7 +69787,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://joeandbella.com/products/everyday-magnetic-button-down-for-men",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "joe-and-bella-carezips-classic-womens-adaptive-pants",
@@ -68860,7 +69856,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://joeandbella.com/products/carezips-classic-womens-adaptive-pants",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "joe-and-bella-carezips-adaptive-pants-for-men",
@@ -68927,7 +69924,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://joeandbella.com/products/carezips-adaptive-pants-for-men",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-kerry-super-stretch-velcro-fly-jean-denim",
@@ -68990,7 +69988,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/kerry-super-stretch-velcro-fly-jean-denim",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-james-brushed-cotton-check-velcro-brand-fastening-shirt-2",
@@ -69050,7 +70049,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/james-brushed-cotton-check-velcro-brand-fastening-shirt-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-james-brushed-cotton-check-velcro-brand-fastening-shirt-1",
@@ -69110,7 +70110,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/james-brushed-cotton-check-velcro-brand-fastening-shirt-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-dotty-cotton-jersey-velcro-brand-fastening-shirt",
@@ -69176,7 +70177,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/dotty-cotton-jersey-velcro-brand-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-camilla-cotton-seersucker-3-4-sleeve-velcro-brand-fastening-shirt",
@@ -69243,7 +70245,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/camilla-cotton-seersucker-3-4-sleeve-velcro-brand-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-bonnie-slim-leg-pull-on-ankle-grazer-trouser-3",
@@ -69310,7 +70313,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/bonnie-slim-leg-pull-on-ankle-grazer-trouser-3",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-bonnie-slim-leg-pull-on-ankle-grazer-trouser-2",
@@ -69377,7 +70381,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/bonnie-slim-leg-pull-on-ankle-grazer-trouser-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-bonnie-slim-leg-pull-on-ankle-grazer-trouser-1",
@@ -69444,7 +70449,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/bonnie-slim-leg-pull-on-ankle-grazer-trouser-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-sally-super-stretch-denim-pull-up-crop-1",
@@ -69508,7 +70514,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/sally-super-stretch-denim-pull-up-crop-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-alice-viscose-pull-on-culottes-1",
@@ -69579,7 +70586,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/alice-viscose-pull-on-culottes-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-daisy-linen-look-straight-leg-pull-on-trouser-1",
@@ -69645,7 +70653,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/daisy-linen-look-straight-leg-pull-on-trouser-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-daisy-linen-look-straight-leg-pull-on-trouser",
@@ -69711,7 +70720,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/daisy-linen-look-straight-leg-pull-on-trouser",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-alice-viscose-pull-on-culottes",
@@ -69782,7 +70792,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/alice-viscose-pull-on-culottes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-bonnie-slim-leg-pull-on-ankle-grazer-trouser",
@@ -69849,7 +70860,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/bonnie-slim-leg-pull-on-ankle-grazer-trouser",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-sally-super-stretch-denim-pull-up-crop",
@@ -69913,13 +70925,14 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/sally-super-stretch-denim-pull-up-crop",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-sketchers-hands-free-slip-ins-womens-ultra-flex-4-0-trainers",
     "name": "Skechers Hands Free Slip-ins Womens Ultra Flex 4.0 Trainers",
     "brandId": "the-able-label",
-    "clothingType": "Socks",
+    "clothingType": "Shoes",
     "category": "shoes",
     "priceRange": "$50-$100",
     "price": "66.67",
@@ -69980,7 +70993,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/sketchers-hands-free-slip-ins-womens-ultra-flex-4-0-trainers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "the-able-label-elsa-viscose-velcro-brand-fastening-below-knee-shirt-dress",
@@ -70044,13 +71058,14 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/elsa-viscose-velcro-brand-fastening-below-knee-shirt-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-skechers-hands-free-slip-ins-mens-summits-top-rate-trainers-1",
     "name": "Skechers Hands Free Slip-ins Mens Summits Top Rate Trainers",
     "brandId": "the-able-label",
-    "clothingType": "Socks",
+    "clothingType": "Shoes",
     "category": "shoes",
     "priceRange": "$50-$100",
     "price": "61.67",
@@ -70111,13 +71126,14 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/skechers-hands-free-slip-ins-mens-summits-top-rate-trainers-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "the-able-label-skechers-hands-free-slip-ins-mens-summits-top-rate-trainers",
     "name": "Skechers Hands Free Slip-ins Mens Summits Top Rate Trainers",
     "brandId": "the-able-label",
-    "clothingType": "Socks",
+    "clothingType": "Shoes",
     "category": "shoes",
     "priceRange": "$50-$100",
     "price": "61.67",
@@ -70178,13 +71194,14 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/skechers-hands-free-slip-ins-mens-summits-top-rate-trainers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "the-able-label-sketchers-hands-free-slip-ins-womens-summits-diamond-dream-trainers",
     "name": "Skechers Hands Free Slip-ins Womens Summits Diamond Dream Trainers",
     "brandId": "the-able-label",
-    "clothingType": "Socks",
+    "clothingType": "Shoes",
     "category": "shoes",
     "priceRange": "$50-$100",
     "price": "61.67",
@@ -70247,14 +71264,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/sketchers-hands-free-slip-ins-womens-summits-diamond-dream-trainers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "the-able-label-emma-cashmere-merino-crew-neck-velcro-brand-fastening-cardigan-6",
     "name": "Emma Cashmere Merino Crew Neck VELCRO® Brand Fastening Cardigan",
     "brandId": "the-able-label",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "60.00",
     "currency": "GBP",
@@ -70316,14 +71334,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/emma-cashmere-merino-crew-neck-velcro-brand-fastening-cardigan-6",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-emma-cashmere-merino-crew-neck-velcro-brand-fastening-cardigan-5",
     "name": "Emma Cashmere Merino Crew Neck VELCRO® Brand Fastening Cardigan",
     "brandId": "the-able-label",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "60.00",
     "currency": "GBP",
@@ -70385,14 +71404,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/emma-cashmere-merino-crew-neck-velcro-brand-fastening-cardigan-5",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-phili-cotton-jersey-velcro-brand-fastening-ss-pj-set-1",
     "name": "Phili Cotton Jersey VELCRO® Brand Fastening SS PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "43.33",
     "currency": "GBP",
@@ -70449,14 +71469,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/phili-cotton-jersey-velcro-brand-fastening-ss-pj-set-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-phili-cotton-jersey-velcro-brand-fastening-ss-pj-set",
     "name": "Phili Cotton Jersey VELCRO® Brand Fastening SS PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "43.33",
     "currency": "GBP",
@@ -70513,7 +71534,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/phili-cotton-jersey-velcro-brand-fastening-ss-pj-set",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-jack-lambswool-velcro-brand-fastening-cardigan-6",
@@ -70579,7 +71601,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jack-lambswool-velcro-brand-fastening-cardigan-6",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-jack-lambswool-velcro-brand-fastening-cardigan-5",
@@ -70645,7 +71668,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jack-lambswool-velcro-brand-fastening-cardigan-5",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-dory-jersey-velcro-brand-fastening-shirt-8",
@@ -70715,7 +71739,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/dory-jersey-velcro-brand-fastening-shirt-8",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-nadine-fully-opening-tie-fastening-wrap-dress",
@@ -70782,7 +71807,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/nadine-fully-opening-tie-fastening-wrap-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-jerry-lambswool-velcro-brand-fastening-waistcoat-4",
@@ -70848,7 +71874,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jerry-lambswool-velcro-brand-fastening-waistcoat-4",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-jerry-lambswool-velcro-brand-fastening-waistcoat-3",
@@ -70914,7 +71941,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jerry-lambswool-velcro-brand-fastening-waistcoat-3",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-dory-jersey-velcro-brand-fastening-shirt-9",
@@ -70984,14 +72012,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/dory-jersey-velcro-brand-fastening-shirt-9",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-jan-jersey-velcro-brand-fastening-nightdress-4",
     "name": "Jan Jersey VELCRO® Brand Fastening Nightdress",
     "brandId": "the-able-label",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "39.17",
     "currency": "GBP",
@@ -71046,14 +72075,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jan-jersey-velcro-brand-fastening-nightdress-4",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-jan-jersey-velcro-brand-fastening-nightdress-3",
     "name": "Jan Jersey VELCRO® Brand Fastening Nightdress",
     "brandId": "the-able-label",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "39.17",
     "currency": "GBP",
@@ -71108,7 +72138,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jan-jersey-velcro-brand-fastening-nightdress-3",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-hunter-oxford-cotton-velcro-brand-fastening-shirt-1",
@@ -71174,7 +72205,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/hunter-oxford-cotton-velcro-brand-fastening-shirt-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-henry-cotton-check-velcro-brand-fastening-shirt-1",
@@ -71240,7 +72272,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/henry-cotton-check-velcro-brand-fastening-shirt-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-miles-casual-check-velcro-shirt-navy-red",
@@ -71306,7 +72339,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/miles-casual-check-velcro-shirt-navy-red",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-jake-cotton-blend-velcro-brand-fastening-cardigan",
@@ -71372,7 +72406,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jake-cotton-blend-velcro-brand-fastening-cardigan",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-su-jersey-wrap-dress-shibori-navy",
@@ -71437,7 +72472,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/su-jersey-wrap-dress-shibori-navy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-bec-linen-velcro-front-opening-shirt-dress",
@@ -71499,7 +72535,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/bec-linen-velcro-front-opening-shirt-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-tapered-floral-jersey-pull-on-trousers-seaspray",
@@ -71562,7 +72599,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/tapered-floral-jersey-pull-on-trousers-seaspray",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-samantha-straight-leg-floral-jersey-pull-on-trousers-black-hibiscus",
@@ -71626,7 +72664,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/samantha-straight-leg-floral-jersey-pull-on-trousers-black-hibiscus",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-primrose-lightweight-puffa-velcro-brand-fastening-coat-1",
@@ -71691,7 +72730,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/primrose-lightweight-puffa-velcro-brand-fastening-coat-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-bamboo-mens-gentle-grip-socks-3-pair-pack-black-patterned",
@@ -71756,7 +72796,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/bamboo-mens-gentle-grip-socks-3-pair-pack-black-patterned",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-douglas-check-velcro-brand-fastening-shirt-3",
@@ -71821,7 +72862,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/douglas-check-velcro-brand-fastening-shirt-3",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-douglas-check-velcro-brand-fastening-shirt-2",
@@ -71886,7 +72928,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/douglas-check-velcro-brand-fastening-shirt-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-marty-casual-check-easy-care-easy-fastening-shirt-6",
@@ -71952,7 +72995,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/marty-casual-check-easy-care-easy-fastening-shirt-6",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-marty-casual-check-easy-care-easy-fastening-shirt-5",
@@ -72018,7 +73062,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/marty-casual-check-easy-care-easy-fastening-shirt-5",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-marty-casual-check-easy-care-easy-fastening-shirt-4",
@@ -72084,7 +73129,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/marty-casual-check-easy-care-easy-fastening-shirt-4",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-carrie-cord-tiered-velcro-brand-fastening-shirt-dress",
@@ -72146,7 +73192,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/carrie-cord-tiered-velcro-brand-fastening-shirt-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-gingko-luxury-wrap",
@@ -72207,7 +73254,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/gingko-luxury-wrap",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-blanche-cable-knit-poncho-5",
@@ -72271,7 +73319,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/blanche-cable-knit-poncho-5",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-blanche-cable-knit-poncho-4",
@@ -72335,7 +73384,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/blanche-cable-knit-poncho-4",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-blanche-cable-knit-poncho-3",
@@ -72399,7 +73449,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/blanche-cable-knit-poncho-3",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-lillian-luxury-shawl-with-pockets-navy-gingko",
@@ -72463,7 +73514,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/lillian-luxury-shawl-with-pockets-navy-gingko",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-lillian-luxury-shawl-with-pockets-4",
@@ -72525,7 +73577,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/lillian-luxury-shawl-with-pockets-4",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-paloma-luxury-wrap-3",
@@ -72589,7 +73642,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/paloma-luxury-wrap-3",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-lianne-luxury-wrap-1",
@@ -72653,7 +73707,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/lianne-luxury-wrap-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-paloma-luxury-wrap",
@@ -72717,14 +73772,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/paloma-luxury-wrap",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-jungle-satin-velcro-brand-fastening-pj-set-2",
     "name": "Jungle Satin VELCRO® Brand Fastening PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "40.83",
     "currency": "GBP",
@@ -72781,14 +73837,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jungle-satin-velcro-brand-fastening-pj-set-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-jungle-satin-velcro-brand-fastening-pj-set-1",
     "name": "Jungle Satin VELCRO® Brand Fastening PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "40.83",
     "currency": "GBP",
@@ -72845,14 +73902,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jungle-satin-velcro-brand-fastening-pj-set-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-philippa-cotton-jersey-velcro-brand-fastening-pj-set-1",
     "name": "Philippa Cotton Jersey VELCRO® Brand Fastening PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "43.33",
     "currency": "GBP",
@@ -72909,7 +73967,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/philippa-cotton-jersey-velcro-brand-fastening-pj-set-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-jack-lambswool-velcro-brand-fastening-cardigan-4",
@@ -72975,7 +74034,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jack-lambswool-velcro-brand-fastening-cardigan-4",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-jack-lambswool-velcro-brand-fastening-cardigan-3",
@@ -73041,14 +74101,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jack-lambswool-velcro-brand-fastening-cardigan-3",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-jungle-satin-velcro-brand-fastening-pj-set",
     "name": "Jungle Satin VELCRO® Brand Fastening PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "40.83",
     "currency": "GBP",
@@ -73105,14 +74166,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jungle-satin-velcro-brand-fastening-pj-set",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-janet-cotton-jersey-velcro-brand-fastening-nightdress-3",
     "name": "Janet Cotton Jersey VELCRO® Brand Fastening Nightdress",
     "brandId": "the-able-label",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "43.33",
     "currency": "GBP",
@@ -73175,14 +74237,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/janet-cotton-jersey-velcro-brand-fastening-nightdress-3",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-janet-cotton-jersey-velcro-brand-fastening-nightdress-2",
     "name": "Janet Cotton Jersey VELCRO® Brand Fastening Nightdress",
     "brandId": "the-able-label",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "43.33",
     "currency": "GBP",
@@ -73245,14 +74308,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/janet-cotton-jersey-velcro-brand-fastening-nightdress-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-philippa-cotton-jersey-velcro-brand-fastening-pj-set",
     "name": "Philippa Cotton Jersey VELCRO® Brand Fastening PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "43.33",
     "currency": "GBP",
@@ -73309,7 +74373,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/philippa-cotton-jersey-velcro-brand-fastening-pj-set",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-satin-half-slip-24-length",
@@ -73375,7 +74440,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/satin-half-slip-24-length",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-dory-jersey-velcro-brand-fastening-shirt-7",
@@ -73445,7 +74511,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/dory-jersey-velcro-brand-fastening-shirt-7",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-dory-jersey-velcro-brand-fastening-shirt-6",
@@ -73515,14 +74582,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/dory-jersey-velcro-brand-fastening-shirt-6",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-emma-cashmere-merino-crew-neck-velcro-brand-fastening-cardigan-4",
     "name": "Emma Cashmere Merino Crew Neck VELCRO® Brand Fastening Cardigan",
     "brandId": "the-able-label",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "60.00",
     "currency": "GBP",
@@ -73584,14 +74652,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/emma-cashmere-merino-crew-neck-velcro-brand-fastening-cardigan-4",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-fairisle-lambswool-crew-neck-velcro-brand-fastening-cardigan",
     "name": "Fairisle Lambswool Crew Neck VELCRO® Brand Fastening Cardigan",
     "brandId": "the-able-label",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "60.00",
     "currency": "GBP",
@@ -73653,14 +74722,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/fairisle-lambswool-crew-neck-velcro-brand-fastening-cardigan",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-laurie-long-lambswool-velcro-brand-fastening-cardigan",
     "name": "Laurie Long Lambswool VELCRO® Brand Fastening Cardigan",
     "brandId": "the-able-label",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "55.00",
     "currency": "GBP",
@@ -73722,7 +74792,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/laurie-long-lambswool-velcro-brand-fastening-cardigan",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-catherine-loose-leg-jersey-pull-on-trousers-1",
@@ -73790,7 +74861,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/catherine-loose-leg-jersey-pull-on-trousers-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-catherine-loose-leg-jersey-pull-on-trousers",
@@ -73858,7 +74930,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/catherine-loose-leg-jersey-pull-on-trousers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-betty-wide-leg-wool-touch-trousers",
@@ -73926,7 +74999,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/betty-wide-leg-wool-touch-trousers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-cody-cord-velcro-brand-fastening-shacket-2",
@@ -73991,7 +75065,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/cody-cord-velcro-brand-fastening-shacket-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-cody-cord-velcro-brand-fastening-shacket-1",
@@ -74056,7 +75131,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/cody-cord-velcro-brand-fastening-shacket-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-cody-cord-velcro-brand-fastening-shacket",
@@ -74121,14 +75197,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/cody-cord-velcro-brand-fastening-shacket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-alistair-non-slip-slipper-socks",
     "name": "Alistair Non-Slip Slipper Socks",
     "brandId": "the-able-label",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Socks",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "10.00",
     "currency": "GBP",
@@ -74183,7 +75260,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/alistair-non-slip-slipper-socks",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-cheryl-non-slip-pom-pom-bed-socks-2",
@@ -74245,7 +75323,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/cheryl-non-slip-pom-pom-bed-socks-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-cordelia-straight-relaxed-leg-corduroy-pull-on-trousers-2",
@@ -74310,7 +75389,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/cordelia-straight-relaxed-leg-corduroy-pull-on-trousers-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-mila-woven-velcro-brand-fastening-shirt-dress-1",
@@ -74371,7 +75451,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/mila-woven-velcro-brand-fastening-shirt-dress-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-millie-woven-velcro-brand-fastening-shirt-dress",
@@ -74434,7 +75515,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/millie-woven-velcro-brand-fastening-shirt-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-darcy-maxi-scuba-crepe-velcro-brand-fastening-wrap-skirt-1",
@@ -74501,7 +75583,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/darcy-maxi-scuba-crepe-velcro-brand-fastening-wrap-skirt-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-kenny-padded-detachable-sleeved-velcro-brand-fastening-coat",
@@ -74567,7 +75650,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/kenny-padded-detachable-sleeved-velcro-brand-fastening-coat",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-joe-brushed-cotton-flannel-velcro-brand-fastening-shirt-1",
@@ -74633,7 +75717,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/joe-brushed-cotton-flannel-velcro-brand-fastening-shirt-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-joe-brushed-cotton-flannel-velcro-brand-fastening-shirt",
@@ -74699,7 +75784,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/joe-brushed-cotton-flannel-velcro-brand-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-michael-brushed-cotton-velcro-brand-fastening-shirt-4",
@@ -74765,7 +75851,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/michael-brushed-cotton-velcro-brand-fastening-shirt-4",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-michael-brushed-cotton-velcro-brand-fastening-shirt-3",
@@ -74831,7 +75918,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/michael-brushed-cotton-velcro-brand-fastening-shirt-3",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-michael-brushed-cotton-velcro-brand-fastening-shirt-5",
@@ -74897,7 +75985,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/michael-brushed-cotton-velcro-brand-fastening-shirt-5",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-darcy-maxi-scuba-crepe-velcro-brand-fastening-wrap-skirt",
@@ -74964,7 +76053,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/darcy-maxi-scuba-crepe-velcro-brand-fastening-wrap-skirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-darcy-below-knee-scuba-crepe-velcro-brand-fastening-wrap-skirt",
@@ -75030,7 +76120,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/darcy-below-knee-scuba-crepe-velcro-brand-fastening-wrap-skirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-milo-cotton-velcro-brand-fastening-shirt-2",
@@ -75096,7 +76187,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/milo-cotton-velcro-brand-fastening-shirt-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-milo-cotton-velcro-brand-fastening-shirt-1",
@@ -75162,7 +76254,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/milo-cotton-velcro-brand-fastening-shirt-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-milo-cotton-velcro-brand-fastening-shirt",
@@ -75228,7 +76321,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/milo-cotton-velcro-brand-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-jeff-print-cotton-velcro-brand-fastening-shirt-1",
@@ -75294,7 +76388,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jeff-print-cotton-velcro-brand-fastening-shirt-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-jeff-print-cotton-velcro-brand-fastening-shirt",
@@ -75360,7 +76455,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jeff-print-cotton-velcro-brand-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-hayden-print-cotton-velcro-brand-fastening-shirt-1",
@@ -75426,7 +76522,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/hayden-print-cotton-velcro-brand-fastening-shirt-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-hayden-print-cotton-velcro-brand-fastening-shirt",
@@ -75492,7 +76589,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/hayden-print-cotton-velcro-brand-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-harlan-stripe-cotton-velcro-brand-fastening-shirt",
@@ -75558,7 +76656,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/harlan-stripe-cotton-velcro-brand-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-hal-stripe-cotton-velcro-brand-fastening-shirt",
@@ -75624,7 +76723,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/hal-stripe-cotton-velcro-brand-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-freya-straight-leg-corduroy-pull-on-trousers-4",
@@ -75691,14 +76791,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/freya-straight-leg-corduroy-pull-on-trousers-4",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-polly-brushed-cotton-velcro-brand-fastening-pj-set-2",
     "name": "Polly Brushed Cotton VELCRO® Brand Fastening PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "43.33",
     "currency": "GBP",
@@ -75761,14 +76862,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/polly-brushed-cotton-velcro-brand-fastening-pj-set-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-polly-brushed-cotton-velcro-brand-fastening-pj-set-1",
     "name": "Polly Brushed Cotton VELCRO® Brand Fastening PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "43.33",
     "currency": "GBP",
@@ -75831,7 +76933,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/polly-brushed-cotton-velcro-brand-fastening-pj-set-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-mia-luxury-fleece-indoor-velcro-brand-fastening-jacket",
@@ -75899,14 +77002,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/mia-luxury-fleece-indoor-velcro-brand-fastening-jacket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-emilia-luxury-fleece-velcro-brand-fastening-dressing-gown-3",
     "name": "Emilia Luxury Fleece VELCRO® Brand Fastening Dressing Gown",
     "brandId": "the-able-label",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "49.17",
     "currency": "GBP",
@@ -75969,14 +77073,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/emilia-luxury-fleece-velcro-brand-fastening-dressing-gown-3",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-emilia-luxury-fleece-velcro-brand-fastening-dressing-gown-2",
     "name": "Emilia Luxury Fleece VELCRO® Brand Fastening Dressing Gown",
     "brandId": "the-able-label",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "49.17",
     "currency": "GBP",
@@ -76039,14 +77144,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/emilia-luxury-fleece-velcro-brand-fastening-dressing-gown-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-amanda-non-slip-slipper-socks-2",
     "name": "Amanda Non-Slip Slipper Socks",
     "brandId": "the-able-label",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Socks",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "13.33",
     "currency": "GBP",
@@ -76101,14 +77207,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/amanda-non-slip-slipper-socks-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-2-pack-avery-super-stretch-cosy-non-slip-slipper-sock-2",
     "name": "2 Pack Avery Super Stretch Cosy Non-Slip Slipper Sock",
     "brandId": "the-able-label",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Socks",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "13.33",
     "currency": "GBP",
@@ -76165,7 +77272,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/2-pack-avery-super-stretch-cosy-non-slip-slipper-sock-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-diabetic-ladies-gentle-grip-trainer-socks-3-pair-pack-1",
@@ -76224,7 +77332,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/diabetic-ladies-gentle-grip-trainer-socks-3-pair-pack-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-diabetic-mens-gentle-grip-trainer-socks-3-pair-pack-1",
@@ -76283,7 +77392,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/diabetic-mens-gentle-grip-trainer-socks-3-pair-pack-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-michael-brushed-cotton-velcro-brand-fastening-shirt-2",
@@ -76350,7 +77460,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/michael-brushed-cotton-velcro-brand-fastening-shirt-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-origami-cotton-velcro-brand-fastening-shirt-3",
@@ -76415,7 +77526,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/origami-cotton-velcro-brand-fastening-shirt-3",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-origami-cotton-velcro-brand-fastening-shirt-2",
@@ -76480,7 +77592,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/origami-cotton-velcro-brand-fastening-shirt-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-origami-cotton-velcro-brand-fastening-shirt-1",
@@ -76545,7 +77658,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/origami-cotton-velcro-brand-fastening-shirt-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-michael-brushed-cotton-classic-fit-long-sleeve-velcro-shirt-tan",
@@ -76612,7 +77726,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/michael-brushed-cotton-classic-fit-long-sleeve-velcro-shirt-tan",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-tills-cotton-straight-zip-leg-pull-on-trousers-1",
@@ -76677,7 +77792,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/tills-cotton-straight-zip-leg-pull-on-trousers-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-tills-cotton-straight-zip-leg-pull-on-trousers",
@@ -76742,7 +77858,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/tills-cotton-straight-zip-leg-pull-on-trousers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-blake-straight-loose-fit-velcro-brand-fastening-smart-trousers-1",
@@ -76809,7 +77926,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/blake-straight-loose-fit-velcro-brand-fastening-smart-trousers-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-bobby-elastic-waist-velcro-brand-fastening-shorts",
@@ -76878,7 +77996,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/bobby-elastic-waist-velcro-brand-fastening-shorts",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-herbert-easy-care-velcro-brand-fastening-shirt",
@@ -76944,7 +78063,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/herbert-easy-care-velcro-brand-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-florrie-cropped-fold-over-jersey-pull-on-trousers",
@@ -77010,7 +78130,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/florrie-cropped-fold-over-jersey-pull-on-trousers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-jerry-lambswool-velcro-brand-fastening-waistcoat-2",
@@ -77076,7 +78197,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jerry-lambswool-velcro-brand-fastening-waistcoat-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-jerry-lambswool-velcro-brand-fastening-waistcoat-1",
@@ -77142,7 +78264,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jerry-lambswool-velcro-brand-fastening-waistcoat-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-jerry-lambswool-velcro-brand-fastening-waistcoat",
@@ -77208,7 +78331,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jerry-lambswool-velcro-brand-fastening-waistcoat",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-jack-lambswool-velcro-brand-fastening-cardigan-2",
@@ -77274,7 +78398,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jack-lambswool-velcro-brand-fastening-cardigan-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-jack-lambswool-velcro-brand-fastening-cardigan-1",
@@ -77340,7 +78465,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jack-lambswool-velcro-brand-fastening-cardigan-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-jack-lambswool-velcro-brand-fastening-cardigan",
@@ -77406,7 +78532,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jack-lambswool-velcro-brand-fastening-cardigan",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-dory-jersey-velcro-brand-fastening-shirt-5",
@@ -77476,7 +78603,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/dory-jersey-velcro-brand-fastening-shirt-5",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-dory-jersey-velcro-brand-fastening-shirt-4",
@@ -77546,7 +78674,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/dory-jersey-velcro-brand-fastening-shirt-4",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-dory-jersey-velcro-brand-fastening-shirt-3",
@@ -77616,7 +78745,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/dory-jersey-velcro-brand-fastening-shirt-3",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-dory-jersey-velcro-brand-fastening-shirt-2",
@@ -77686,7 +78816,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/dory-jersey-velcro-brand-fastening-shirt-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-dory-jersey-velcro-brand-fastening-shirt-1",
@@ -77756,14 +78887,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/dory-jersey-velcro-brand-fastening-shirt-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-emma-cashmere-merino-crew-neck-velcro-brand-fastening-cardigan-3",
     "name": "Emma Cashmere Merino Crew Neck VELCRO® Brand Fastening Cardigan",
     "brandId": "the-able-label",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "60.00",
     "currency": "GBP",
@@ -77825,14 +78957,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/emma-cashmere-merino-crew-neck-velcro-brand-fastening-cardigan-3",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-emma-cashmere-merino-crew-neck-velcro-brand-fastening-cardigan-2",
     "name": "Emma Cashmere Merino Crew Neck VELCRO® Brand Fastening Cardigan",
     "brandId": "the-able-label",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "60.00",
     "currency": "GBP",
@@ -77894,14 +79027,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/emma-cashmere-merino-crew-neck-velcro-brand-fastening-cardigan-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-emma-cashmere-merino-crew-neck-velcro-brand-fastening-cardigan-1",
     "name": "Emma Cashmere Merino Crew Neck VELCRO® Brand Fastening Cardigan",
     "brandId": "the-able-label",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "60.00",
     "currency": "GBP",
@@ -77963,14 +79097,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/emma-cashmere-merino-crew-neck-velcro-brand-fastening-cardigan-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-emmeline-cashmere-merino-v-neck-velcro-brand-fastening-cardigan-2",
     "name": "Emmeline Cashmere Merino V Neck VELCRO® Brand Fastening Cardigan",
     "brandId": "the-able-label",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "60.00",
     "currency": "GBP",
@@ -78032,14 +79167,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/emmeline-cashmere-merino-v-neck-velcro-brand-fastening-cardigan-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-emmeline-cashmere-merino-v-neck-velcro-brand-fastening-cardigan-1",
     "name": "Emmeline Cashmere Merino V Neck VELCRO® Brand Fastening Cardigan",
     "brandId": "the-able-label",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "60.00",
     "currency": "GBP",
@@ -78101,7 +79237,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/emmeline-cashmere-merino-v-neck-velcro-brand-fastening-cardigan-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-lyra-linen-velcro-brand-fastening-midi-dress-1",
@@ -78165,7 +79302,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/lyra-linen-velcro-brand-fastening-midi-dress-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-dory-jersey-velcro-brand-fastening-shirt",
@@ -78235,7 +79373,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/dory-jersey-velcro-brand-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-lyra-linen-velcro-brand-fastening-midi-dress",
@@ -78299,14 +79438,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/lyra-linen-velcro-brand-fastening-midi-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-emmeline-cashmere-merino-v-neck-velcro-brand-fastening-cardigan",
     "name": "Emmeline Cashmere Merino V Neck VELCRO® Brand Fastening Cardigan",
     "brandId": "the-able-label",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "60.00",
     "currency": "GBP",
@@ -78368,14 +79508,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/emmeline-cashmere-merino-v-neck-velcro-brand-fastening-cardigan",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-emma-cashmere-merino-crew-neck-velcro-brand-fastening-cardigan",
     "name": "Emma Cashmere Merino Crew Neck VELCRO® Brand Fastening Cardigan",
     "brandId": "the-able-label",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$50-$100",
     "price": "60.00",
     "currency": "GBP",
@@ -78437,7 +79578,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/emma-cashmere-merino-crew-neck-velcro-brand-fastening-cardigan",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-tiana-cotton-notch-neck-velcro-brand-fastening-shirt-1",
@@ -78501,7 +79643,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/tiana-cotton-notch-neck-velcro-brand-fastening-shirt-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-suzanne-cotton-elastic-waist-cropped-trousers-1",
@@ -78568,7 +79711,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/suzanne-cotton-elastic-waist-cropped-trousers-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-suzanne-cotton-elastic-waist-cropped-trousers",
@@ -78635,7 +79779,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/suzanne-cotton-elastic-waist-cropped-trousers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-palmer-viscose-crepe-pull-on-trouser",
@@ -78701,14 +79846,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/palmer-viscose-crepe-pull-on-trouser",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-boxy-viscose-crepe-short-sleeve-velcro-brand-fastening-shirt",
     "name": "Boxy Viscose Crepe Short Sleeve VELCRO® Brand Fastening Shirt",
     "brandId": "the-able-label",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "29.40",
     "currency": "GBP",
@@ -78766,7 +79912,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/boxy-viscose-crepe-short-sleeve-velcro-brand-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-amy-tiered-velcro-brand-fastening-shirt-dress",
@@ -78829,7 +79976,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/amy-tiered-velcro-brand-fastening-shirt-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-tiana-cotton-notch-neck-velcro-brand-fastening-shirt",
@@ -78893,7 +80041,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/tiana-cotton-notch-neck-velcro-brand-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-henry-cotton-check-velcro-brand-fastening-shirt",
@@ -78959,7 +80108,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/henry-cotton-check-velcro-brand-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-hatty-diamond-quilted-velcro-brand-fastening-gilet",
@@ -79026,14 +80176,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/hatty-diamond-quilted-velcro-brand-fastening-gilet",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-carmen-short-sleeve-cotton-seersucker-velcro-fastening-pj-set",
     "name": "Carmen Short Sleeve Cotton Seersucker VELCRO® Fastening PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "39.17",
     "currency": "GBP",
@@ -79096,14 +80247,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/carmen-short-sleeve-cotton-seersucker-velcro-fastening-pj-set",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-carmen-short-sleeve-cotton-seersucker-velcro-fastening-pj-set-1",
     "name": "Carmen Short Sleeve Cotton Seersucker VELCRO® Fastening PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "39.17",
     "currency": "GBP",
@@ -79166,14 +80318,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/carmen-short-sleeve-cotton-seersucker-velcro-fastening-pj-set-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-jan-jersey-velcro-brand-fastening-nightdress-1",
     "name": "Jan Jersey VELCRO® Brand Fastening Nightdress",
     "brandId": "the-able-label",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "39.17",
     "currency": "GBP",
@@ -79228,14 +80381,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jan-jersey-velcro-brand-fastening-nightdress-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-jan-jersey-velcro-brand-fastening-nightdress-2",
     "name": "Jan Jersey VELCRO® Brand Fastening Nightdress",
     "brandId": "the-able-label",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "39.17",
     "currency": "GBP",
@@ -79290,7 +80444,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jan-jersey-velcro-brand-fastening-nightdress-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-harley-casual-stripe-velcro-brand-fastening-shirt",
@@ -79356,14 +80511,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/harley-casual-stripe-velcro-brand-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-maximus-easy-care-touch-fasten-shirt-pull-on-bottoms-pj-set-1",
     "name": "Maximus Easy-Care Touch Fasten SS Shirt & Pull On Bottoms PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Pants",
-    "category": "pants",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "37.50",
     "currency": "GBP",
@@ -79426,14 +80582,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/maximus-easy-care-touch-fasten-shirt-pull-on-bottoms-pj-set-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-maximus-easy-care-touch-fasten-shirt-pull-on-bottoms-pj-set",
     "name": "Maximus Easy-Care Touch Fasten SS Shirt & Pull On Bottoms PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Pants",
-    "category": "pants",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "37.50",
     "currency": "GBP",
@@ -79496,14 +80653,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/maximus-easy-care-touch-fasten-shirt-pull-on-bottoms-pj-set",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-maxwell-easy-care-velcro-brand-fastening-shirt-pull-on-bottoms-pj-set",
     "name": "Maxwell Easy-Care VELCRO® Brand Fastening Shirt & Pull On Bottoms PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Pants",
-    "category": "pants",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "39.17",
     "currency": "GBP",
@@ -79566,7 +80724,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/maxwell-easy-care-velcro-brand-fastening-shirt-pull-on-bottoms-pj-set",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-hunter-oxford-cotton-velcro-brand-fastening-shirt",
@@ -79632,7 +80791,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/hunter-oxford-cotton-velcro-brand-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-inami-bamboo-cotton-velcro-brand-fastening-shirt",
@@ -79699,7 +80859,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/inami-bamboo-cotton-velcro-brand-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-delores-cotton-jersey-velcro-brand-fastening-shirt-1",
@@ -79766,7 +80927,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/delores-cotton-jersey-velcro-brand-fastening-shirt-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-delores-cotton-jersey-velcro-brand-fastening-shirt",
@@ -79833,7 +80995,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/delores-cotton-jersey-velcro-brand-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-collin-corduroy-velcro-brand-fastening-trousers-2",
@@ -79899,7 +81062,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/collin-corduroy-velcro-brand-fastening-trousers-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-collin-corduroy-velcro-brand-fastening-trousers-1",
@@ -79965,7 +81129,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/collin-corduroy-velcro-brand-fastening-trousers-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-collin-corduroy-velcro-brand-fastening-trousers",
@@ -80031,7 +81196,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/collin-corduroy-velcro-brand-fastening-trousers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-nadia-fully-opening-tie-fastening-wrap-dress",
@@ -80097,7 +81263,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/nadia-fully-opening-tie-fastening-wrap-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-michael-brushed-cotton-velcro-brand-fastening-shirt",
@@ -80163,7 +81330,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/michael-brushed-cotton-velcro-brand-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-jim-straight-fit-5-pocket-velcro-brand-fastening-bedford-cord-1",
@@ -80234,14 +81402,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jim-straight-fit-5-pocket-velcro-brand-fastening-bedford-cord-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-janet-cotton-jersey-velcro-brand-fastening-nightdress-1",
     "name": "Janet Cotton Jersey VELCRO® Brand Fastening Nightdress",
     "brandId": "the-able-label",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "40.83",
     "currency": "GBP",
@@ -80304,14 +81473,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/janet-cotton-jersey-velcro-brand-fastening-nightdress-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-janet-cotton-jersey-velcro-brand-fastening-nightdress",
     "name": "Janet Cotton Jersey VELCRO® Brand Fastening Nightdress",
     "brandId": "the-able-label",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "40.83",
     "currency": "GBP",
@@ -80374,7 +81544,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/janet-cotton-jersey-velcro-brand-fastening-nightdress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-paloma-luxury-wrap-2",
@@ -80438,7 +81609,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/paloma-luxury-wrap-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-lillian-luxury-shawl-with-pockets-3",
@@ -80500,7 +81672,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/lillian-luxury-shawl-with-pockets-3",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-nadia-fully-opening-tie-fastening-wrap-dress-1",
@@ -80566,7 +81739,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/nadia-fully-opening-tie-fastening-wrap-dress-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-mila-woven-velcro-brand-fastening-shirt-dress",
@@ -80627,7 +81801,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/mila-woven-velcro-brand-fastening-shirt-dress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-lillian-luxury-shawl-with-pockets",
@@ -80691,7 +81866,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/lillian-luxury-shawl-with-pockets",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-isotoner-ladies-velour-closed-back-touch-fasten-slipper",
@@ -80759,7 +81935,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/isotoner-ladies-velour-closed-back-touch-fasten-slipper",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "the-able-label-ronnie-reverse-knit-open-front-cardi-1",
@@ -80825,7 +82002,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/ronnie-reverse-knit-open-front-cardi-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-ronnie-reverse-knit-open-front-cardi",
@@ -80891,14 +82069,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/ronnie-reverse-knit-open-front-cardi",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-julia-brushed-cotton-velcro-brand-fastening-nightdress",
     "name": "Julia Brushed Cotton VELCRO® Brand Fastening Nightdress",
     "brandId": "the-able-label",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "40.83",
     "currency": "GBP",
@@ -80950,14 +82129,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/julia-brushed-cotton-velcro-brand-fastening-nightdress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-emilia-luxury-fleece-velcro-brand-fastening-dressing-gown-1",
     "name": "Emilia Luxury Fleece VELCRO® Brand Fastening Dressing Gown",
     "brandId": "the-able-label",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "49.17",
     "currency": "GBP",
@@ -81020,14 +82200,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/emilia-luxury-fleece-velcro-brand-fastening-dressing-gown-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-petal-fleece-velcro-brand-fastening-pj-set",
     "name": "Petal Fleece VELCRO® Brand Fastening PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "31.21",
     "currency": "GBP",
@@ -81089,14 +82270,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/petal-fleece-velcro-brand-fastening-pj-set",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-emilia-luxury-fleece-velcro-brand-fastening-dressing-gown",
     "name": "Emilia Luxury Fleece VELCRO® Brand Fastening Dressing Gown",
     "brandId": "the-able-label",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "49.17",
     "currency": "GBP",
@@ -81159,14 +82341,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/emilia-luxury-fleece-velcro-brand-fastening-dressing-gown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-jules-viscose-velcro-brand-fastening-nightdress",
     "name": "Jules Long Sleeve Viscose VELCRO® Brand Fastening Nightdress",
     "brandId": "the-able-label",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "32.67",
     "currency": "GBP",
@@ -81223,14 +82406,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jules-viscose-velcro-brand-fastening-nightdress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-piper-long-sleeve-cotton-jersey-velcro-brand-fastening-pj-set",
     "name": "Piper Long Sleeve Cotton Jersey VELCRO® Brand Fastening PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "43.33",
     "currency": "GBP",
@@ -81287,7 +82471,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/piper-long-sleeve-cotton-jersey-velcro-brand-fastening-pj-set",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-blake-straight-loose-fit-velcro-brand-fastening-smart-trousers",
@@ -81354,7 +82539,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/blake-straight-loose-fit-velcro-brand-fastening-smart-trousers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-kaida-raglan-sleeve-cord-cowl-neck-top-1",
@@ -81417,7 +82603,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/kaida-raglan-sleeve-cord-cowl-neck-top-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-blanche-cable-knit-poncho-2",
@@ -81481,14 +82668,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/blanche-cable-knit-poncho-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-jenny-easy-care-velcro-brand-fastening-nightdress",
     "name": "Jenny Easy-Care VELCRO® Brand Fastening Nightdress",
     "brandId": "the-able-label",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "37.50",
     "currency": "GBP",
@@ -81546,14 +82734,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jenny-easy-care-velcro-brand-fastening-nightdress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-jenny-easy-care-velcro-brand-fastening-nightdress-1",
     "name": "Jenny Easy-Care VELCRO® Brand Fastening Nightdress",
     "brandId": "the-able-label",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "37.50",
     "currency": "GBP",
@@ -81611,7 +82800,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jenny-easy-care-velcro-brand-fastening-nightdress-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-washable-mens-incontinence-y-front-brief",
@@ -81679,7 +82869,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/washable-mens-incontinence-y-front-brief",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-james-brushed-cotton-check-velcro-brand-fastening-shirt",
@@ -81739,7 +82930,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/james-brushed-cotton-check-velcro-brand-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-freya-straight-leg-corduroy-pull-on-trousers-2",
@@ -81806,7 +82998,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/freya-straight-leg-corduroy-pull-on-trousers-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-freya-straight-leg-corduroy-pull-on-trousers-3",
@@ -81873,7 +83066,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/freya-straight-leg-corduroy-pull-on-trousers-3",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-freya-straight-leg-corduroy-pull-on-trousers-1",
@@ -81940,7 +83134,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/freya-straight-leg-corduroy-pull-on-trousers-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-primrose-lightweight-puffa-velcro-brand-fastening-coat",
@@ -82005,7 +83200,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/primrose-lightweight-puffa-velcro-brand-fastening-coat",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-hetty-fine-knit-poncho",
@@ -82069,7 +83265,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/hetty-fine-knit-poncho",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-hugo-non-iron-velcro-brand-fastening-shirt",
@@ -82135,7 +83332,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/hugo-non-iron-velcro-brand-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-suki-wool-pull-on-poncho-7",
@@ -82200,7 +83398,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/suki-wool-pull-on-poncho-7",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-suki-wool-pull-on-poncho-6",
@@ -82265,7 +83464,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/suki-wool-pull-on-poncho-6",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-suki-wool-pull-on-poncho-5",
@@ -82330,7 +83530,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/suki-wool-pull-on-poncho-5",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-suki-wool-pull-on-poncho-4",
@@ -82395,7 +83596,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/suki-wool-pull-on-poncho-4",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-suki-wool-blend-pull-on-poncho2",
@@ -82460,7 +83662,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/suki-wool-blend-pull-on-poncho2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-suki-wool-pull-on-poncho-8",
@@ -82525,7 +83728,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/suki-wool-pull-on-poncho-8",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-fredderick-formal-velcro-brand-fastening-dress-shirt",
@@ -82593,7 +83797,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/fredderick-formal-velcro-brand-fastening-dress-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-diabetic-ladies-gentle-grip-socks-3-pair-pack",
@@ -82652,7 +83857,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/diabetic-ladies-gentle-grip-socks-3-pair-pack",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-diabetic-mens-gentle-grip-socks-3-pair-pack",
@@ -82711,14 +83917,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/diabetic-mens-gentle-grip-socks-3-pair-pack",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-2-pack-avery-super-stretch-cosy-non-slip-slipper-sock-1",
     "name": "2 Pack Avery Super Stretch Cosy Non-Slip Slipper Sock",
     "brandId": "the-able-label",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Socks",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "13.33",
     "currency": "GBP",
@@ -82775,14 +83982,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/2-pack-avery-super-stretch-cosy-non-slip-slipper-sock-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-2-pack-avery-super-stretch-cosy-non-slip-slipper-sock",
     "name": "2 Pack Avery Super Stretch Cosy Non-Slip Slipper Sock",
     "brandId": "the-able-label",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Socks",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "13.33",
     "currency": "GBP",
@@ -82839,7 +84047,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/2-pack-avery-super-stretch-cosy-non-slip-slipper-sock",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-michael-brushed-cotton-velcro-brand-fastening-shirt-1",
@@ -82905,14 +84114,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/michael-brushed-cotton-velcro-brand-fastening-shirt-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-andrew-cotton-velcro-brand-fastening-nightshirt",
     "name": "Andrew Cotton VELCRO® Brand Fastening Nightshirt",
     "brandId": "the-able-label",
-    "clothingType": "Shirts",
-    "category": "shirts",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "39.17",
     "currency": "GBP",
@@ -82969,14 +84179,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/andrew-cotton-velcro-brand-fastening-nightshirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-anand-cotton-velcro-brand-fastening-pj-set",
     "name": "Anand Cotton VELCRO® Brand Fastening PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "43.33",
     "currency": "GBP",
@@ -83035,14 +84246,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/anand-cotton-velcro-brand-fastening-pj-set",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-andy-cotton-velcro-brand-fastening-pj-set",
     "name": "Andy Cotton VELCRO® Brand Fastening SS PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "40.83",
     "currency": "GBP",
@@ -83101,14 +84313,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/andy-cotton-velcro-brand-fastening-pj-set",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-zero-feel-pull-on-bra-top",
     "name": "Zero Feel Pull On Bra Top",
     "brandId": "the-able-label",
-    "clothingType": "Underwear",
-    "category": "underwear",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "32.50",
     "currency": "GBP",
@@ -83171,7 +84384,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/zero-feel-pull-on-bra-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-isotoner-mens-velour-full-back-touch-fasten-slipper-1",
@@ -83238,7 +84452,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/isotoner-mens-velour-full-back-touch-fasten-slipper-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "the-able-label-isotoner-mens-velour-full-back-touch-fasten-slipper",
@@ -83306,7 +84521,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/isotoner-mens-velour-full-back-touch-fasten-slipper",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "the-able-label-isotoner-ladies-popcorn-terry-mule-slippers",
@@ -83375,7 +84591,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/isotoner-ladies-popcorn-terry-mule-slippers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "the-able-label-isotoner-ladies-iso-flex-waffle-full-back-slipper-1",
@@ -83442,7 +84659,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/isotoner-ladies-iso-flex-waffle-full-back-slipper-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "the-able-label-chambray-cotton-velcro-brand-fastening-shirt",
@@ -83505,14 +84723,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/chambray-cotton-velcro-brand-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-oliver-long-sleeve-cotton-back-opening-nightshirt-1",
     "name": "Oliver Long Sleeve Cotton Back Opening Nightshirt",
     "brandId": "the-able-label",
-    "clothingType": "Shirts",
-    "category": "shirts",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "32.50",
     "currency": "GBP",
@@ -83568,14 +84787,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/oliver-long-sleeve-cotton-back-opening-nightshirt-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-oliver-long-sleeve-cotton-back-opening-nightshirt",
     "name": "Oliver Long Sleeve Cotton Back Opening Nightshirt",
     "brandId": "the-able-label",
-    "clothingType": "Shirts",
-    "category": "shirts",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "32.50",
     "currency": "GBP",
@@ -83631,14 +84851,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/oliver-long-sleeve-cotton-back-opening-nightshirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-otis-short-sleeve-cotton-back-opening-nightshirt",
     "name": "Otis Short Sleeve Cotton Back Opening Nightshirt",
     "brandId": "the-able-label",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "31.67",
     "currency": "GBP",
@@ -83695,14 +84916,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/otis-short-sleeve-cotton-back-opening-nightshirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-otis-short-sleeve-cotton-back-opening-nightshirt-1",
     "name": "Otis Short Sleeve Cotton Back Opening Nightshirt",
     "brandId": "the-able-label",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "31.67",
     "currency": "GBP",
@@ -83759,14 +84981,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/otis-short-sleeve-cotton-back-opening-nightshirt-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-andrew-cotton-velcro-brand-fastening-nightshirt-1",
     "name": "Andrew Cotton VELCRO® Brand Fastening Nightshirt",
     "brandId": "the-able-label",
-    "clothingType": "Shirts",
-    "category": "shirts",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "39.17",
     "currency": "GBP",
@@ -83823,14 +85046,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/andrew-cotton-velcro-brand-fastening-nightshirt-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-archie-cotton-velcro-brand-fastening-nightshirt",
     "name": "Archie Cotton VELCRO® Brand Fastening Nightshirt",
     "brandId": "the-able-label",
-    "clothingType": "Shirts",
-    "category": "shirts",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "40.83",
     "currency": "GBP",
@@ -83887,14 +85111,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/archie-cotton-velcro-brand-fastening-nightshirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-archie-cotton-velcro-brand-fastening-nightshirt-1",
     "name": "Archie Cotton VELCRO® Brand Fastening Nightshirt",
     "brandId": "the-able-label",
-    "clothingType": "Shirts",
-    "category": "shirts",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "40.83",
     "currency": "GBP",
@@ -83951,7 +85176,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/archie-cotton-velcro-brand-fastening-nightshirt-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-origami-cotton-velcro-brand-fastening-shirt",
@@ -84016,14 +85242,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/origami-cotton-velcro-brand-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-2-pack-avon-super-stretch-cosy-bed-slipper-socks",
     "name": "2 Pack Avon Super Stretch Cosy Bed & Slipper Socks",
     "brandId": "the-able-label",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Socks",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "13.33",
     "currency": "GBP",
@@ -84080,7 +85307,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/2-pack-avon-super-stretch-cosy-bed-slipper-socks",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-mavis-fleece-indoor-velcro-brand-fastening-jacket",
@@ -84145,7 +85373,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/mavis-fleece-indoor-velcro-brand-fastening-jacket",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-diabetic-mens-gentle-grip-trainer-socks-3-pair-pack",
@@ -84204,7 +85433,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/diabetic-mens-gentle-grip-trainer-socks-3-pair-pack",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-diabetic-ladies-gentle-grip-trainer-socks-3-pair-pack",
@@ -84263,7 +85493,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/diabetic-ladies-gentle-grip-trainer-socks-3-pair-pack",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-cheryl-non-slip-pom-pom-bed-socks-1",
@@ -84325,7 +85556,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/cheryl-non-slip-pom-pom-bed-socks-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-cheryl-non-slip-pom-pom-bed-socks",
@@ -84387,7 +85619,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/cheryl-non-slip-pom-pom-bed-socks",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-talia-cotton-notch-neck-velcro-brand-fastening-shirt",
@@ -84450,7 +85683,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/talia-cotton-notch-neck-velcro-brand-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-miles-cotton-classic-fit-long-sleeve-velcro-shirt-1",
@@ -84516,7 +85750,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/miles-cotton-classic-fit-long-sleeve-velcro-shirt-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-kylie-relaxed-leg-woven-pull-on-cropped-trousers-1",
@@ -84579,7 +85814,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/kylie-relaxed-leg-woven-pull-on-cropped-trousers-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-palazzo-viscose-pull-on-trouser",
@@ -84648,7 +85884,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/palazzo-viscose-pull-on-trouser",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-maddy-notch-neck-velcro-brand-fastening-shirt",
@@ -84717,7 +85954,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/maddy-notch-neck-velcro-brand-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-aoife-notch-neck-velcro-brand-fastening-shirt",
@@ -84786,7 +86024,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/aoife-notch-neck-velcro-brand-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-kylie-relaxed-leg-woven-pull-on-cropped-trousers",
@@ -84849,7 +86088,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/kylie-relaxed-leg-woven-pull-on-cropped-trousers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-pamela-pinstripe-straight-leg-woven-pull-on-trousers",
@@ -84911,7 +86151,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/pamela-pinstripe-straight-leg-woven-pull-on-trousers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-henry-short-sleeve-casual-check-velcro-shirt-2",
@@ -84977,7 +86218,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/henry-short-sleeve-casual-check-velcro-shirt-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-flight-travel-compression-socks",
@@ -85043,7 +86285,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/flight-travel-compression-socks",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-oedema-extra-wide-mens-socks",
@@ -85105,7 +86348,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/oedema-extra-wide-mens-socks",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-oedema-extra-wide-ladies-socks",
@@ -85167,7 +86411,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/oedema-extra-wide-ladies-socks",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-marty-casual-check-easy-care-easy-fastening-shirt-3",
@@ -85233,7 +86478,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/marty-casual-check-easy-care-easy-fastening-shirt-3",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-marty-casual-check-easy-care-easy-fastening-shirt-2",
@@ -85299,7 +86545,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/marty-casual-check-easy-care-easy-fastening-shirt-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-marty-casual-check-easy-care-easy-fastening-shirt",
@@ -85365,7 +86612,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/marty-casual-check-easy-care-easy-fastening-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-marty-casual-check-easy-care-easy-fastening-shirt-1",
@@ -85431,7 +86679,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/marty-casual-check-easy-care-easy-fastening-shirt-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-douglas-short-sleeve-check-velcro-shirt-4",
@@ -85496,7 +86745,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/douglas-short-sleeve-check-velcro-shirt-4",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-douglas-short-sleeve-check-velcro-shirt-3",
@@ -85561,7 +86811,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/douglas-short-sleeve-check-velcro-shirt-3",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-douglas-short-sleeve-check-velcro-shirt-2",
@@ -85626,7 +86877,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/douglas-short-sleeve-check-velcro-shirt-2",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-douglas-short-sleeve-check-velcro-shirt-1",
@@ -85691,7 +86943,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/douglas-short-sleeve-check-velcro-shirt-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-maggie-straight-leg-pull-on-trousers",
@@ -85757,7 +87010,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/maggie-straight-leg-pull-on-trousers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-jim-straight-fit-5-pocket-velcro-brand-fastening-bedford-cord",
@@ -85828,7 +87082,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jim-straight-fit-5-pocket-velcro-brand-fastening-bedford-cord",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-max-pin-stripe-shirt-blue",
@@ -85893,14 +87148,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/max-pin-stripe-shirt-blue",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-faith-knitted-wrap-seaspray",
     "name": "Faith Luxury Wrap",
     "brandId": "the-able-label",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Jackets",
+    "category": "jackets",
     "priceRange": "$25-$50",
     "price": "49.17",
     "currency": "GBP",
@@ -85953,7 +87209,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/faith-knitted-wrap-seaspray",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-pene-diamond-quilted-velcro-brand-fastening-coat-1",
@@ -86015,7 +87272,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/pene-diamond-quilted-velcro-brand-fastening-coat-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-pene-diamond-quilted-velcro-brand-fastening-coat",
@@ -86077,7 +87335,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/pene-diamond-quilted-velcro-brand-fastening-coat",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-debs-loose-leg-jersey-pull-on-trousers-1",
@@ -86149,7 +87408,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/debs-loose-leg-jersey-pull-on-trousers-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-mona-dogtooth-straight-leg-pull-on-trouser",
@@ -86215,7 +87475,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/mona-dogtooth-straight-leg-pull-on-trouser",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-tanya-cotton-jersey-3-4-sleeve-side-hem-opening-top",
@@ -86280,7 +87541,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/tanya-cotton-jersey-3-4-sleeve-side-hem-opening-top",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-luna-knitted-wrap-midnight",
@@ -86344,7 +87606,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/luna-knitted-wrap-midnight",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-laura-knitted-wrap-charcoal",
@@ -86408,14 +87671,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/laura-knitted-wrap-charcoal",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-tammy-cotton-3-4-sleeve-velcro-top-pull-on-bottoms-pj-set",
     "name": "Tammy Cotton 3/4 Sleeve VELCRO® Brand Fastening PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "43.33",
     "currency": "GBP",
@@ -86477,14 +87741,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/tammy-cotton-3-4-sleeve-velcro-top-pull-on-bottoms-pj-set",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-tess-cotton-3-4-sleeve-front-opening-velcro-nightdress",
     "name": "Tess Cotton 3/4 Sleeve VELCRO® Brand Fastening Nightdress",
     "brandId": "the-able-label",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "40.83",
     "currency": "GBP",
@@ -86541,14 +87806,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/tess-cotton-3-4-sleeve-front-opening-velcro-nightdress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-janet-cotton-jersey-front-opening-velcro-nightdress-1",
     "name": "Janet Cotton Jersey VELCRO® Brand Fastening Nightdress",
     "brandId": "the-able-label",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "29.00",
     "currency": "GBP",
@@ -86611,7 +87877,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/janet-cotton-jersey-front-opening-velcro-nightdress-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-monica-straight-leg-velcro-fly-trouser",
@@ -86681,7 +87948,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/monica-straight-leg-velcro-fly-trouser",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-blanche-cable-knit-poncho",
@@ -86745,7 +88013,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/blanche-cable-knit-poncho",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-blanche-cable-knit-poncho-oatmeal",
@@ -86809,7 +88078,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/blanche-cable-knit-poncho-oatmeal",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-byron-thermal-lined-velcro-fly-twill-trousers",
@@ -86875,14 +88145,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/byron-thermal-lined-velcro-fly-twill-trousers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-melody-cotton-wool-blend-relaxed-fit-open-cardigan",
     "name": "Melody Cotton Wool Blend Relaxed Fit Open Cardigan",
     "brandId": "the-able-label",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "34.20",
     "currency": "GBP",
@@ -86940,7 +88211,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/melody-cotton-wool-blend-relaxed-fit-open-cardigan",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-aubrey-straight-fit-elastic-waist-pull-on-trousers",
@@ -87007,14 +88279,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/aubrey-straight-fit-elastic-waist-pull-on-trousers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-lewis-brushed-pure-cotton-stripe-velcro-shirt-pull-on-bottoms-pj-set",
     "name": "Lewis Brushed Cotton VELCRO® Brand Fastening Shirt & Pull On Bottoms PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Pants",
-    "category": "pants",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "45.83",
     "currency": "GBP",
@@ -87077,14 +88350,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/lewis-brushed-pure-cotton-stripe-velcro-shirt-pull-on-bottoms-pj-set",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-adam-non-slip-heat-holder-slipper-socks-1",
     "name": "Adam Non-Slip Heat Holder Slipper Socks",
     "brandId": "the-able-label",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Socks",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "10.00",
     "currency": "GBP",
@@ -87139,14 +88413,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/adam-non-slip-heat-holder-slipper-socks-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-amanda-non-slip-slipper-socks",
     "name": "Amanda Non-Slip Slipper Socks",
     "brandId": "the-able-label",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Socks",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "13.33",
     "currency": "GBP",
@@ -87203,14 +88478,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/amanda-non-slip-slipper-socks",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-malcolm-easy-care-velcro-shirt-pull-on-bottoms-pj-set",
     "name": "Malcolm Easy-Care VELCRO® Brand Fastening PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "40.83",
     "currency": "GBP",
@@ -87273,7 +88549,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/malcolm-easy-care-velcro-shirt-pull-on-bottoms-pj-set",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-front-velcro-fastening-1020-comfi-bra",
@@ -87351,14 +88628,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/front-velcro-fastening-1020-comfi-bra",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-marcus-cotton-long-sleeve-front-opening-velcro-nightshirt",
     "name": "Marcus Cotton VELCRO® Brand Fastening Nightshirt",
     "brandId": "the-able-label",
-    "clothingType": "Shirts",
-    "category": "shirts",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "40.83",
     "currency": "GBP",
@@ -87415,14 +88693,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/marcus-cotton-long-sleeve-front-opening-velcro-nightshirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-melvin-easy-care-short-sleeve-velcro-shirt-pull-on-short-pj-set",
     "name": "Melvin Easy Care VELCRO® Brand Fastening Shirt & Pull On Short PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "39.17",
     "currency": "GBP",
@@ -87484,7 +88763,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/melvin-easy-care-short-sleeve-velcro-shirt-pull-on-short-pj-set",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-front-popper-fastening-1010-comfi-bra",
@@ -87560,7 +88840,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/front-popper-fastening-1010-comfi-bra",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-bamboo-mens-gentle-grip-socks-3-pair-pack-plain-black",
@@ -87625,7 +88906,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/bamboo-mens-gentle-grip-socks-3-pair-pack-plain-black",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-miles-cotton-classic-fit-long-sleeve-velcro-shirt-ocean-blue",
@@ -87691,7 +88973,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/miles-cotton-classic-fit-long-sleeve-velcro-shirt-ocean-blue",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-mike-midweight-multi-function-velcro-coat",
@@ -87756,7 +89039,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/mike-midweight-multi-function-velcro-coat",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-daniel-dimond-quilted-velcro-coat",
@@ -87821,14 +89105,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/daniel-dimond-quilted-velcro-coat",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-jan-short-sleeve-front-opening-jersey-velcro-nightdress",
     "name": "Jan Jersey VELCRO® Brand Fastening Nightdress",
     "brandId": "the-able-label",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "39.17",
     "currency": "GBP",
@@ -87883,7 +89168,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jan-short-sleeve-front-opening-jersey-velcro-nightdress",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-lyla-linen-relaxed-elastic-waist-pull-on-trousers",
@@ -87944,7 +89230,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/lyla-linen-relaxed-elastic-waist-pull-on-trousers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-lyla-linen-relaxed-elastic-waist-pull-on-shorts-1",
@@ -88005,14 +89292,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/lyla-linen-relaxed-elastic-waist-pull-on-shorts-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-2-pack-adrian-super-stretch-cosy-non-slip-slipper-socks",
     "name": "2 Pack Adrian Super Stretch Cosy Non-Slip Slipper Socks",
     "brandId": "the-able-label",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Socks",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "13.33",
     "currency": "GBP",
@@ -88067,7 +89355,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/2-pack-adrian-super-stretch-cosy-non-slip-slipper-socks",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-sandy-pure-cotton-hook-fastening-shrug",
@@ -88132,7 +89421,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/sandy-pure-cotton-hook-fastening-shrug",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-janey-smart-woven-pull-on-culottes",
@@ -88201,14 +89491,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/janey-smart-woven-pull-on-culottes",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-myra-cotton-rich-relaxed-fit-open-cardigan",
     "name": "Myra Cotton Rich Relaxed Fit Open Cardigan",
     "brandId": "the-able-label",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "47.50",
     "currency": "GBP",
@@ -88266,14 +89557,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/myra-cotton-rich-relaxed-fit-open-cardigan",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-moira-pure-cotton-crew-neck-velcro-cardigan",
     "name": "Moira Cotton Crew Neck VELCRO® Brand Fastening Cardigan",
     "brandId": "the-able-label",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "34.20",
     "currency": "GBP",
@@ -88335,7 +89627,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/moira-pure-cotton-crew-neck-velcro-cardigan",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-blanche-cable-knit-poncho-burnt-orange",
@@ -88399,7 +89692,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/blanche-cable-knit-poncho-burnt-orange",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-hughey-easy-care-classic-fit-short-sleeve-velcro-shirt",
@@ -88465,7 +89759,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/hughey-easy-care-classic-fit-short-sleeve-velcro-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-robyn-roll-neck-fine-knit-poncho-rust",
@@ -88529,7 +89824,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/robyn-roll-neck-fine-knit-poncho-rust",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-lillian-luxury-shawl-with-pockets-pinotage-gingko",
@@ -88591,7 +89887,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/lillian-luxury-shawl-with-pockets-pinotage-gingko",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-mona-flannel-straight-leg-pull-on-trouser",
@@ -88657,7 +89954,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/mona-flannel-straight-leg-pull-on-trouser",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-mona-straight-leg-pull-on-trouser",
@@ -88723,7 +90021,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/mona-straight-leg-pull-on-trouser",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-stella-jersey-top-deep-teal",
@@ -88790,7 +90089,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/stella-jersey-top-deep-teal",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-ingrid-jersey-long-sleeve-printed-velcro-shirt",
@@ -88856,7 +90156,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/ingrid-jersey-long-sleeve-printed-velcro-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-james-brushed-cotton-check-velcro-shirt-plum",
@@ -88916,7 +90217,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/james-brushed-cotton-check-velcro-shirt-plum",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-penelope-diamond-quilted-velcro-coat-black",
@@ -88975,7 +90277,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/penelope-diamond-quilted-velcro-coat-black",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-blanche-cable-knit-poncho-berry-red",
@@ -89039,14 +90342,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/blanche-cable-knit-poncho-berry-red",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-adrian-cosy-non-slip-slipper-socks",
     "name": "2 Pack Adrian Super Stretch Cosy Non-Slip Slipper Socks",
     "brandId": "the-able-label",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Socks",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "13.33",
     "currency": "GBP",
@@ -89101,14 +90405,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/adrian-cosy-non-slip-slipper-socks",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-andy-cotton-short-sleeve-front-opening-velcro-pjs",
     "name": "Andy Cotton VELCRO® Brand Fastening SS PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "33.75",
     "currency": "GBP",
@@ -89167,14 +90472,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/andy-cotton-short-sleeve-front-opening-velcro-pjs",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-maxwell-easy-care-velcro-shirt-pull-on-bottoms-pj-set",
     "name": "Maxwell Easy-Care VELCRO® Brand Fastening Shirt & Pull On Bottoms PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Pants",
-    "category": "pants",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "39.17",
     "currency": "GBP",
@@ -89237,7 +90543,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/maxwell-easy-care-velcro-shirt-pull-on-bottoms-pj-set",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-diabetic-ladies-gentle-grip-socks-3-pair-pack-pinks",
@@ -89300,7 +90607,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/diabetic-ladies-gentle-grip-socks-3-pair-pack-pinks",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-hughey-non-iron-classic-fit-short-sleeve-velcro-shirt",
@@ -89366,7 +90674,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/hughey-non-iron-classic-fit-short-sleeve-velcro-shirt",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-blake-straight-loose-fit-velcro-fly-smart-trousers",
@@ -89433,7 +90742,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/blake-straight-loose-fit-velcro-fly-smart-trousers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-bobby-elastic-waist-velcro-fly-shorts-navy-new",
@@ -89501,7 +90811,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/bobby-elastic-waist-velcro-fly-shorts-navy-new",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-bobby-elastic-waist-velcro-fly-shorts-sand",
@@ -89569,7 +90880,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/bobby-elastic-waist-velcro-fly-shorts-sand",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-tilly-cotton-a-line-velcro-wrap-skirt-navy-spot",
@@ -89634,7 +90946,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/tilly-cotton-a-line-velcro-wrap-skirt-navy-spot",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-toni-viscose-a-line-midi-velcro-wrap-skirt-geo-navy",
@@ -89699,7 +91012,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/toni-viscose-a-line-midi-velcro-wrap-skirt-geo-navy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-jake-cotton-blend-velcro-cardigan-navy",
@@ -89765,7 +91079,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jake-cotton-blend-velcro-cardigan-navy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-camilla-seersucker-half-sleeve-velcro-shirt-white",
@@ -89832,7 +91147,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/camilla-seersucker-half-sleeve-velcro-shirt-white",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-camilla-seersucker-half-sleeve-velcro-shirt-med-blue",
@@ -89897,7 +91213,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/camilla-seersucker-half-sleeve-velcro-shirt-med-blue",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-mens-hugo-classic-fit-oxford-non-iron-velcro-shirt-blue",
@@ -89963,7 +91280,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/mens-hugo-classic-fit-oxford-non-iron-velcro-shirt-blue",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-mens-hugo-classic-fit-cotton-rich-non-iron-velcro-shirt-white",
@@ -90029,7 +91347,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/mens-hugo-classic-fit-cotton-rich-non-iron-velcro-shirt-white",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-mavis-fleece-indoor-velcro-jacket-lilac",
@@ -90094,14 +91413,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/mavis-fleece-indoor-velcro-jacket-lilac",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-lewis-brushed-pure-cotton-velcro-shirt-pull-on-bottoms-pj-set-red-stripe",
     "name": "Lewis Brushed Cotton VELCRO® Brand Fastening Shirt & Pull On Bottoms PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Pants",
-    "category": "pants",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "45.83",
     "currency": "GBP",
@@ -90164,7 +91484,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/lewis-brushed-pure-cotton-velcro-shirt-pull-on-bottoms-pj-set-red-stripe",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-blanche-cable-knit-poncho-charcoal",
@@ -90228,14 +91549,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/blanche-cable-knit-poncho-charcoal",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-pippa-floral-pure-cotton-long-sleeve-velcro-pj-set-med-blue",
     "name": "Pippa Long Sleeve Cotton Jersey VELCRO® Brand Fastening PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "43.33",
     "currency": "GBP",
@@ -90292,14 +91614,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/pippa-floral-pure-cotton-long-sleeve-velcro-pj-set-med-blue",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-muriel-cotton-blend-velcro-cardigan-royal-blue",
     "name": "Muriel Cotton Blend VELCRO® Brand Fastening Cardigan",
     "brandId": "the-able-label",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "28.21",
     "currency": "GBP",
@@ -90362,7 +91685,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/muriel-cotton-blend-velcro-cardigan-royal-blue",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-tara-half-placket-stripe-long-sleeve-velcro-tee-stripe",
@@ -90430,14 +91754,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/tara-half-placket-stripe-long-sleeve-velcro-tee-stripe",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-julia-brushed-pure-cotton-long-sleeve-velcro-nightdress-navy-floral",
     "name": "Julia Brushed Cotton VELCRO® Brand Fastening Nightdress",
     "brandId": "the-able-label",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "40.83",
     "currency": "GBP",
@@ -90489,14 +91814,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/julia-brushed-pure-cotton-long-sleeve-velcro-nightdress-navy-floral",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-paula-brushed-pure-cotton-long-sleeve-velcro-nightdress-silver-check",
     "name": "Julia Brushed Cotton VELCRO® Brand Fastening Nightdress",
     "brandId": "the-able-label",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "40.83",
     "currency": "GBP",
@@ -90548,14 +91874,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/paula-brushed-pure-cotton-long-sleeve-velcro-nightdress-silver-check",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-jennifer-floral-front-opening-long-sleeve-velcro-pj-set-lilac",
     "name": "Jennifer Long Sleeve Easy-Care VELCRO® Brand Fastening PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "40.83",
     "currency": "GBP",
@@ -90618,7 +91945,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jennifer-floral-front-opening-long-sleeve-velcro-pj-set-lilac",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-mavis-fleece-indoor-velcro-jacket-sky-blue",
@@ -90683,7 +92011,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/mavis-fleece-indoor-velcro-jacket-sky-blue",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-aubrey-straight-fit-elastic-waist-pull-on-trousers-sand",
@@ -90750,7 +92079,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/aubrey-straight-fit-elastic-waist-pull-on-trousers-sand",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-aubrey-straight-fit-elastic-waist-pull-on-trousers-grey",
@@ -90817,7 +92147,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/aubrey-straight-fit-elastic-waist-pull-on-trousers-grey",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-mid-absorbent-daywear-washable-full-brief-knickers-white",
@@ -90885,7 +92216,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/mid-absorbent-daywear-washable-full-brief-knickers-white",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-mid-absorbent-daywear-washable-full-brief-knickers-black",
@@ -90953,7 +92285,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/mid-absorbent-daywear-washable-full-brief-knickers-black",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-aubrey-straight-fit-elastic-waist-pull-on-trousers-navy",
@@ -91020,7 +92353,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/aubrey-straight-fit-elastic-waist-pull-on-trousers-navy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-blake-straight-loose-fit-velcro-fly-smart-trousers-mid-grey",
@@ -91087,7 +92421,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/blake-straight-loose-fit-velcro-fly-smart-trousers-mid-grey",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-seb-straight-fit-velcro-fly-pure-cotton-chino-stone-regular-length",
@@ -91166,7 +92501,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/seb-straight-fit-velcro-fly-pure-cotton-chino-stone-regular-length",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-seb-straight-fit-velcro-fly-pure-cotton-chino-navy-regular-length",
@@ -91245,14 +92581,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/seb-straight-fit-velcro-fly-pure-cotton-chino-navy-regular-length",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-maxwell-easy-care-velcro-shirt-pull-on-bottoms-pj-set-navy",
     "name": "Maxwell Easy-Care VELCRO® Brand Fastening Shirt & Pull On Bottoms PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Pants",
-    "category": "pants",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "39.17",
     "currency": "GBP",
@@ -91315,7 +92652,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/maxwell-easy-care-velcro-shirt-pull-on-bottoms-pj-set-navy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-sofia-straight-leg-pull-on-trousers-grey-melange",
@@ -91381,14 +92719,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/sofia-straight-leg-pull-on-trousers-grey-melange",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-emily-velcro-polar-fleece-dressing-gown-periwinkle-blue",
     "name": "Emily Polar Fleece VELCRO® Brand Fastening Dressing Gown",
     "brandId": "the-able-label",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "45.83",
     "currency": "GBP",
@@ -91451,14 +92790,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/emily-velcro-polar-fleece-dressing-gown-periwinkle-blue",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-jennifer-floral-front-opening-short-sleeve-velcro-pj-set-lilac",
     "name": "Jennifer Short Sleeve Easy-Care VELCRO® Brand Fastening PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "31.34",
     "currency": "GBP",
@@ -91521,7 +92861,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jennifer-floral-front-opening-short-sleeve-velcro-pj-set-lilac",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-bamboo-ladies-gentle-grip-socks-3-pair-pack-black-patterned",
@@ -91586,7 +92927,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/bamboo-ladies-gentle-grip-socks-3-pair-pack-black-patterned",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-mens-gentle-grip-socks-3-pair-pack-black-patterned",
@@ -91651,7 +92993,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/mens-gentle-grip-socks-3-pair-pack-black-patterned",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-lilly-luxury-velcro-cape-multi",
@@ -91715,7 +93058,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/lilly-luxury-velcro-cape-multi",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-diabetic-mens-gentle-grip-socks-3-pair-pack-blues",
@@ -91774,7 +93118,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/diabetic-mens-gentle-grip-socks-3-pair-pack-blues",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-bamboo-ladies-gentle-grip-socks-3-pair-pack-plain-black",
@@ -91839,7 +93184,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/bamboo-ladies-gentle-grip-socks-3-pair-pack-plain-black",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-diabetic-ladies-gentle-grip-socks-3-pair-pack-blues",
@@ -91898,14 +93244,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/diabetic-ladies-gentle-grip-socks-3-pair-pack-blues",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-lewis-brushed-pure-cotton-velcro-shirt-pull-on-bottoms-pj-set-blue-check",
     "name": "Lewis Brushed Cotton VELCRO® Brand Fastening Shirt & Pull On Bottoms PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Pants",
-    "category": "pants",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "45.83",
     "currency": "GBP",
@@ -91968,14 +93315,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/lewis-brushed-pure-cotton-velcro-shirt-pull-on-bottoms-pj-set-blue-check",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-anthony-brushed-cotton-long-sleeve-half-placket-velcro-nightshirt-blue-check",
     "name": "Anthony Brushed Cotton Half Placket VELCRO® Brand Fastening Nightshirt",
     "brandId": "the-able-label",
-    "clothingType": "Shirts",
-    "category": "shirts",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "32.50",
     "currency": "GBP",
@@ -92032,14 +93380,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/anthony-brushed-cotton-long-sleeve-half-placket-velcro-nightshirt-blue-check",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-julia-brushed-pure-cotton-long-sleeve-velcro-nightdress-raspberry",
     "name": "Julia Brushed Cotton VELCRO® Brand Fastening Nightdress",
     "brandId": "the-able-label",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "40.83",
     "currency": "GBP",
@@ -92096,7 +93445,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/julia-brushed-pure-cotton-long-sleeve-velcro-nightdress-raspberry",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-washable-incontinence-underwear-black",
@@ -92164,14 +93514,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/washable-incontinence-underwear-black",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-polly-brushed-cotton-long-sleeve-pj-set-blue-floral",
     "name": "Polly Brushed Cotton VELCRO® Brand Fastening PJ Set",
     "brandId": "the-able-label",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "34.67",
     "currency": "GBP",
@@ -92233,7 +93584,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/polly-brushed-cotton-long-sleeve-pj-set-blue-floral",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-freya-straight-leg-corduroy-pull-on-trousers",
@@ -92300,7 +93652,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/freya-straight-leg-corduroy-pull-on-trousers",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-tabby-pure-cotton-long-sleeve-velcro-tee-hibiscus",
@@ -92369,7 +93722,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/tabby-pure-cotton-long-sleeve-velcro-tee-hibiscus",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-tabby-pure-cotton-long-sleeve-velcro-tee-navy",
@@ -92438,7 +93792,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/tabby-pure-cotton-long-sleeve-velcro-tee-navy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-tabby-pure-cotton-long-sleeve-velcro-tee-white-1",
@@ -92507,7 +93862,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/tabby-pure-cotton-long-sleeve-velcro-tee-white-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-tabatha-pure-cotton-short-sleeve-velcro-tee-hibiscus",
@@ -92576,14 +93932,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/tabatha-pure-cotton-short-sleeve-velcro-tee-hibiscus",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-mandy-wrap-cardigan-white",
     "name": "Mandy Wrap Cardigan",
     "brandId": "the-able-label",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "16.66",
     "currency": "GBP",
@@ -92641,14 +93998,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/mandy-wrap-cardigan-white",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-mandy-wrap-cardigan-jade",
     "name": "Mandy Wrap Cardigan",
     "brandId": "the-able-label",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "15.00",
     "currency": "GBP",
@@ -92706,14 +94064,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/mandy-wrap-cardigan-jade",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-able-leather-velcro-belt-brown",
     "name": "Able Leather Easy Fasten Belt",
     "brandId": "the-able-label",
-    "clothingType": "Pants",
-    "category": "pants",
+    "clothingType": "Accessories",
+    "category": "accessories",
     "priceRange": "$25-$50",
     "price": "29.17",
     "currency": "GBP",
@@ -92777,7 +94136,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/able-leather-velcro-belt-brown",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "accessories"
   },
   {
     "id": "the-able-label-front-hook-fastening-597-bra-white",
@@ -92866,14 +94226,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/front-hook-fastening-597-bra-white",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-zero-feel-pull-on-bra-top-black",
     "name": "Zero Feel Pull On Bra Top",
     "brandId": "the-able-label",
-    "clothingType": "Underwear",
-    "category": "underwear",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "32.50",
     "currency": "GBP",
@@ -92936,7 +94297,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/zero-feel-pull-on-bra-top-black",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-zero-feel-pull-hipster-knickers-black",
@@ -93003,7 +94365,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/zero-feel-pull-hipster-knickers-black",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-zero-feel-pull-hipster-knickers-beige",
@@ -93070,7 +94433,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/zero-feel-pull-hipster-knickers-beige",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-super-absorbent-washable-full-brief-knickers-white",
@@ -93137,7 +94501,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/super-absorbent-washable-full-brief-knickers-white",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-super-absorbent-washable-full-brief-knickers-black",
@@ -93204,7 +94569,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/super-absorbent-washable-full-brief-knickers-black",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-marilyn-wool-mix-coat-neutral",
@@ -93268,7 +94634,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/marilyn-wool-mix-coat-neutral",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-blanche-cable-knit-poncho-mustard",
@@ -93332,7 +94699,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/blanche-cable-knit-poncho-mustard",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-blanche-cable-knit-poncho-navy",
@@ -93396,7 +94764,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/blanche-cable-knit-poncho-navy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-tabatha-pure-cotton-short-sleeve-velcro-tee-white",
@@ -93465,7 +94834,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/tabatha-pure-cotton-short-sleeve-velcro-tee-white",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-tabatha-pure-cotton-short-sleeve-velcro-tee-navy",
@@ -93534,14 +94904,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/tabatha-pure-cotton-short-sleeve-velcro-tee-navy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-sophie-pure-cotton-jersey-3-4-sleeve-velcro-short-cardigan-navy-stripe",
     "name": "Sophie Cotton Jersey 3/4 Sleeve Short VELCRO® Brand Fastening Cardigan",
     "brandId": "the-able-label",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "29.25",
     "currency": "GBP",
@@ -93603,14 +94974,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/sophie-pure-cotton-jersey-3-4-sleeve-velcro-short-cardigan-navy-stripe",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-sophie-pure-cotton-jersey-3-4-sleeve-velcro-long-cardi-navy-stripe",
     "name": "Sophie Cotton Jersey 3/4 Sleeve Long VELCRO® Brand Fastening Cardigan",
     "brandId": "the-able-label",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "29.50",
     "currency": "GBP",
@@ -93671,7 +95043,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/sophie-pure-cotton-jersey-3-4-sleeve-velcro-long-cardi-navy-stripe",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-monica-straight-leg-trouser-navy",
@@ -93741,7 +95114,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/monica-straight-leg-trouser-navy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-delia-a-line-linen-look-velcro-wrap-skirt-navy",
@@ -93813,7 +95187,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/delia-a-line-linen-look-velcro-wrap-skirt-navy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-delia-a-line-linen-look-velcro-wrap-skirt-cerise",
@@ -93882,7 +95257,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/delia-a-line-linen-look-velcro-wrap-skirt-cerise",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-delia-a-line-linen-look-velcro-wrap-skirt-almond",
@@ -93951,7 +95327,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/delia-a-line-linen-look-velcro-wrap-skirt-almond",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "the-able-label-maisy-short-lightweight-velcro-mac-stone",
@@ -94020,7 +95397,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/maisy-short-lightweight-velcro-mac-stone",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-silver-post-surgery-2008-front-velcro-fastening-bra-skin",
@@ -94098,7 +95476,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/silver-post-surgery-2008-front-velcro-fastening-bra-skin",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-silver-post-surgery-1008-front-popper-fastening-bra-skin",
@@ -94173,7 +95552,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/silver-post-surgery-1008-front-popper-fastening-bra-skin",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-olivia-oxford-shirt-pink",
@@ -94240,7 +95620,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/olivia-oxford-shirt-pink",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-camilla-seersucker-half-sleeve-shirt-soft-blue",
@@ -94307,7 +95688,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/camilla-seersucker-half-sleeve-shirt-soft-blue",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-camilla-seersucker-shirt-soft-pink",
@@ -94374,7 +95756,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/camilla-seersucker-shirt-soft-pink",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-front-velcro-fastening-1020-comfi-bra-black",
@@ -94452,7 +95835,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/front-velcro-fastening-1020-comfi-bra-black",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-front-popper-fastening-1010-comfi-bra-black",
@@ -94528,14 +95912,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/front-popper-fastening-1010-comfi-bra-black",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-jenny-woven-nightdress-med-blue-1",
     "name": "Jenny Easy-Care VELCRO® Brand Fastening Nightdress",
     "brandId": "the-able-label",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Nightwear",
+    "category": "nightwear",
     "priceRange": "$25-$50",
     "price": "27.00",
     "currency": "GBP",
@@ -94593,7 +95978,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/jenny-woven-nightdress-med-blue-1",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "the-able-label-front-fastening-1020-comfi-bra-white",
@@ -94671,7 +96057,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/front-fastening-1020-comfi-bra-white",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-lilly-knitted-cape-charcoal",
@@ -94738,7 +96125,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/lilly-knitted-cape-charcoal",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-imogen-jersey-shirt-golden-lime",
@@ -94805,7 +96193,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/imogen-jersey-shirt-golden-lime",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-frankie-straight-leg-trousers-regular-leg",
@@ -94876,7 +96265,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/frankie-straight-leg-trousers-regular-leg",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "the-able-label-royce-front-fastening-1010-comfi-bra-white",
@@ -94952,7 +96342,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/royce-front-fastening-1010-comfi-bra-white",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "the-able-label-linda-jersey-wrap-top-dragon-red",
@@ -95024,7 +96415,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/linda-jersey-wrap-top-dragon-red",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-linda-jersey-wrap-top-gingko-print-navy",
@@ -95096,14 +96488,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/linda-jersey-wrap-top-gingko-print-navy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-maria-jersey-vest-blossom-white",
     "name": "Maria Jersey VELCRO® Brand Fastening Vest",
     "brandId": "the-able-label",
-    "clothingType": "Underwear",
-    "category": "underwear",
+    "clothingType": "Jackets",
+    "category": "jackets",
     "priceRange": "$25-$50",
     "price": "24.17",
     "currency": "GBP",
@@ -95167,14 +96560,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/maria-jersey-vest-blossom-white",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-maria-jersey-vest-shibori-navy",
     "name": "Maria Jersey VELCRO® Brand Fastening Vest",
     "brandId": "the-able-label",
-    "clothingType": "Underwear",
-    "category": "underwear",
+    "clothingType": "Jackets",
+    "category": "jackets",
     "priceRange": "$25-$50",
     "price": "24.17",
     "currency": "GBP",
@@ -95238,7 +96632,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/maria-jersey-vest-shibori-navy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-lilly-knitted-cape-seaspray",
@@ -95302,7 +96697,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/lilly-knitted-cape-seaspray",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-lilly-knitted-cape-pink-peony",
@@ -95366,14 +96762,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/lilly-knitted-cape-pink-peony",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "the-able-label-molly-jersey-waterfall-cardi-shibori-navy",
     "name": "Molly Jersey Waterfall Hook Fastening Cardigan",
     "brandId": "the-able-label",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "18.75",
     "currency": "GBP",
@@ -95432,7 +96829,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/molly-jersey-waterfall-cardi-shibori-navy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-stella-jersey-top-seaspray",
@@ -95501,7 +96899,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/stella-jersey-top-seaspray",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "the-able-label-su-jersey-wrap-dress-gingko-print-navy",
@@ -95567,14 +96966,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.theablelabel.com/products/su-jersey-wrap-dress-gingko-print-navy",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-15bd",
     "name": "Women's Denim Pull-On Pants",
     "brandId": "buck-and-buck",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "39.00",
     "currency": "USD",
@@ -95632,7 +97032,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/15bd",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-33m",
@@ -95696,7 +97097,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/33m",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "buck-and-buck-56t",
@@ -95760,7 +97162,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/56t",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-56ta",
@@ -95827,7 +97230,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/56ta",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-37sb",
@@ -95891,7 +97295,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/37sb",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "buck-and-buck-28ka",
@@ -95956,7 +97361,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/28ka",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "buck-and-buck-65fwa",
@@ -96023,7 +97429,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/65fwa",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-65fa",
@@ -96090,7 +97497,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/65fa",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-80fma",
@@ -96159,7 +97567,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/80fma",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-80fa",
@@ -96228,7 +97637,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/80fa",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-55aa",
@@ -96295,7 +97705,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/55aa",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-55awa",
@@ -96362,14 +97773,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/55awa",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-30na",
     "name": "Men's VELCRO® Fly Pants",
     "brandId": "buck-and-buck",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "40.00",
     "currency": "USD",
@@ -96429,14 +97841,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/30na",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-30da",
     "name": "Men's Elastic Waist Pants",
     "brandId": "buck-and-buck",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "40.00",
     "currency": "USD",
@@ -96495,7 +97908,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/30da",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-29va",
@@ -96563,7 +97977,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/29va",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-29ta",
@@ -96631,14 +98046,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/29ta",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-16ga",
     "name": "Men's Knit Pants",
     "brandId": "buck-and-buck",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "27.20",
     "currency": "USD",
@@ -96694,14 +98110,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/16ga",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-15da",
     "name": "Women's Knit Pants",
     "brandId": "buck-and-buck",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "27.20",
     "currency": "USD",
@@ -96757,14 +98174,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/15da",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-13jc",
     "name": "Women's Everyday Printed Knit Top",
     "brandId": "buck-and-buck",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "43.60",
     "currency": "USD",
@@ -96816,14 +98234,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/13jc",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-14cb",
     "name": "Women’s Detail Easy Fit Top",
     "brandId": "buck-and-buck",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "45.20",
     "currency": "USD",
@@ -96875,7 +98294,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/14cb",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-10mva",
@@ -96936,7 +98356,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/10mva",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-28qh",
@@ -96995,7 +98416,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/28qh",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-44ba",
@@ -97052,7 +98474,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/44ba",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "buck-and-buck-30aa",
@@ -97122,7 +98545,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/30aa",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-14va",
@@ -97192,7 +98616,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/14va",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-55fa",
@@ -97257,7 +98682,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/55fa",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-15d",
@@ -97323,7 +98749,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/15d",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-32dw",
@@ -97390,7 +98817,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/32dw",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "buck-and-buck-32d",
@@ -97457,7 +98885,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/32d",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "buck-and-buck-55kl",
@@ -97519,7 +98948,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/55kl",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-55k",
@@ -97582,7 +99012,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/55k",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-39pm",
@@ -97641,14 +99072,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/39pm",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "buck-and-buck-29m",
     "name": "Men's Short Sleeve Printed T-Shirt",
     "brandId": "buck-and-buck",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "23.20",
     "currency": "USD",
@@ -97701,7 +99133,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/29m",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-21aa",
@@ -97767,7 +99200,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/21aa",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "buck-and-buck-15ym",
@@ -97825,7 +99259,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/15ym",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-65t",
@@ -97885,14 +99320,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/65t",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-65tw",
     "name": "Women's Light Weight Long Sleeve T-Shirt",
     "brandId": "buck-and-buck",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "15.20",
     "currency": "USD",
@@ -97946,7 +99382,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/65tw",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-21y",
@@ -98005,7 +99442,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/21y",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "buck-and-buck-21z",
@@ -98065,7 +99503,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/21z",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "buck-and-buck-55pw",
@@ -98128,7 +99567,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/55pw",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-39gm",
@@ -98186,14 +99626,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/39gm",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "buck-and-buck-62aw",
     "name": "Women's Short Sleeve Wrap Back T-Shirt",
     "brandId": "buck-and-buck",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "30.40",
     "currency": "USD",
@@ -98253,7 +99694,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/62aw",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-62cw",
@@ -98321,7 +99763,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/62cw",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-16am",
@@ -98386,7 +99829,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/16am",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-65b",
@@ -98448,14 +99892,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/65b",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-65a",
     "name": "Men's Short Sleeve Solid T-Shirt",
     "brandId": "buck-and-buck",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "11.20",
     "currency": "USD",
@@ -98510,7 +99955,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/65a",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-20mm",
@@ -98571,7 +100017,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/20mm",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-80fm",
@@ -98640,7 +100087,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/80fm",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-80am",
@@ -98709,7 +100157,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/80am",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-65fw",
@@ -98771,7 +100220,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/65fw",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-65gw",
@@ -98835,7 +100285,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/65gw",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-16b",
@@ -98896,14 +100347,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/16b",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-11gm",
     "name": "Men's Quarter Zip Sweat Top",
     "brandId": "buck-and-buck",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "27.20",
     "currency": "USD",
@@ -98957,7 +100409,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/11gm",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-16zm",
@@ -99020,14 +100473,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/16zm",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-40lm",
     "name": "Men's Side VELCRO® Fleece Pants",
     "brandId": "buck-and-buck",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "39.20",
     "currency": "USD",
@@ -99091,14 +100545,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/40lm",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-65sw",
     "name": "Women's Light Weight Short Sleeve T-Shirt",
     "brandId": "buck-and-buck",
-    "clothingType": "Nightwear",
-    "category": "nightwear",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "15.20",
     "currency": "USD",
@@ -99151,7 +100606,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/65sw",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-56cm",
@@ -99213,7 +100669,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/56cm",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-45yw",
@@ -99286,7 +100743,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/45yw",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "buck-and-buck-47nb",
@@ -99362,7 +100820,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/47nb",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "buck-and-buck-47y",
@@ -99438,7 +100897,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/47y",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "buck-and-buck-47n",
@@ -99514,7 +100974,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/47n",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "buck-and-buck-47ns",
@@ -99590,7 +101051,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/47ns",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "buck-and-buck-45nw",
@@ -99663,7 +101125,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/45nw",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "buck-and-buck-23mm",
@@ -99716,7 +101179,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/23mm",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "buck-and-buck-11c",
@@ -99780,7 +101244,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/11c",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "buck-and-buck-25c",
@@ -99843,14 +101308,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/25c",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-30nd",
     "name": "Men's Denim Putter Pants",
     "brandId": "buck-and-buck",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "38.40",
     "currency": "USD",
@@ -99910,7 +101376,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/30nd",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-18d",
@@ -99970,7 +101437,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/18d",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "buck-and-buck-28d",
@@ -100037,7 +101505,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/28d",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "buck-and-buck-18f",
@@ -100098,7 +101567,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/18f",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "buck-and-buck-65bw",
@@ -100160,14 +101630,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/65bw",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-80c",
     "name": "Women's Printed Wrap Back Sweat Top",
     "brandId": "buck-and-buck",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "33.60",
     "currency": "USD",
@@ -100227,14 +101698,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/80c",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-18c",
     "name": "Women's Jersey Knit PJ Pants",
     "brandId": "buck-and-buck",
-    "clothingType": "Nightwear",
-    "category": "nightwear",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "29.60",
     "currency": "USD",
@@ -100287,14 +101759,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/18c",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-12z",
     "name": "V-Neck Sweatshirt",
     "brandId": "buck-and-buck",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "30.40",
     "currency": "USD",
@@ -100351,7 +101824,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/12z",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-16z",
@@ -100414,7 +101888,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/16z",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-28c",
@@ -100481,7 +101956,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/28c",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "buck-and-buck-47h",
@@ -100547,7 +102023,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/47h",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "buck-and-buck-45s",
@@ -100612,7 +102089,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/45s",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "buck-and-buck-55p",
@@ -100675,7 +102153,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/55p",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-23g",
@@ -100742,7 +102221,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/23g",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "buck-and-buck-29lv",
@@ -100810,14 +102290,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/29lv",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-62a",
     "name": "Men's Short Sleeve Wrap Back T-Shirt",
     "brandId": "buck-and-buck",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "30.40",
     "currency": "USD",
@@ -100877,7 +102358,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/62a",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-62c",
@@ -100945,7 +102427,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/62c",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-45z",
@@ -101022,14 +102505,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/45z",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "buck-and-buck-65s",
     "name": "Men's Light Weight Short Sleeve T-Shirt",
     "brandId": "buck-and-buck",
-    "clothingType": "Nightwear",
-    "category": "nightwear",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "15.20",
     "currency": "USD",
@@ -101082,7 +102566,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/65s",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-47z",
@@ -101159,7 +102644,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/47z",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "buck-and-buck-30j",
@@ -101219,7 +102705,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/30j",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-20m",
@@ -101280,14 +102767,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/20m",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-18z",
     "name": "Women's Flannel PJ Pants",
     "brandId": "buck-and-buck",
-    "clothingType": "Nightwear",
-    "category": "nightwear",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "20.80",
     "currency": "USD",
@@ -101342,7 +102830,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/18z",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-56w",
@@ -101406,7 +102895,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/56w",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-36t",
@@ -101460,14 +102950,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/36t",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "buck-and-buck-40l",
     "name": "Women's Side VELCRO® Fleece Pants",
     "brandId": "buck-and-buck",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "39.20",
     "currency": "USD",
@@ -101531,14 +103022,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/40l",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-11g",
     "name": "Women's Quarter Zip Sweat Top",
     "brandId": "buck-and-buck",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "27.20",
     "currency": "USD",
@@ -101591,14 +103083,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/11g",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-11z",
     "name": "Printed Wrap Back T-Shirt",
     "brandId": "buck-and-buck",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "35.20",
     "currency": "USD",
@@ -101656,14 +103149,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/11z",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-23x",
     "name": "Extra Wide® Bariatric Socks",
     "brandId": "buck-and-buck",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Socks",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "13.60",
     "currency": "USD",
@@ -101709,14 +103203,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/23x",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "buck-and-buck-10r",
     "name": "Women's Hooded Zip-Front Sweatshirt",
     "brandId": "buck-and-buck",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "33.60",
     "currency": "USD",
@@ -101775,7 +103270,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/10r",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-13l",
@@ -101835,7 +103331,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/13l",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-56c",
@@ -101898,7 +103395,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/56c",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-12s",
@@ -101959,7 +103457,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/12s",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-11y",
@@ -102024,7 +103523,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/11y",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-10jv",
@@ -102091,14 +103591,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/10jv",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-37m",
     "name": "Men's Knit Pajama Bottoms",
     "brandId": "buck-and-buck",
-    "clothingType": "Nightwear",
-    "category": "nightwear",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "31.20",
     "currency": "USD",
@@ -102150,7 +103651,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/37m",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-10h",
@@ -102210,14 +103712,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/10h",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-44z",
     "name": "Non-Skid Ankle Socks",
     "brandId": "buck-and-buck",
-    "clothingType": "Shoes",
-    "category": "shoes",
+    "clothingType": "Socks",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "7.20",
     "currency": "USD",
@@ -102263,7 +103766,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/44z",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "buck-and-buck-80g",
@@ -102327,14 +103831,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/80g",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-30q",
     "name": "Twill Zip-Fly Putter Pants",
     "brandId": "buck-and-buck",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "36.80",
     "currency": "USD",
@@ -102392,7 +103897,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/30q",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-80j",
@@ -102456,7 +103962,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/80j",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-15a",
@@ -102516,7 +104023,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/15a",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-80h",
@@ -102580,7 +104088,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/80h",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-13j",
@@ -102640,14 +104149,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/13j",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-80a",
     "name": "Women's Basic Wrap Back Sweat Top",
     "brandId": "buck-and-buck",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "31.20",
     "currency": "USD",
@@ -102709,7 +104219,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/80a",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-80f",
@@ -102778,7 +104289,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/80f",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-65f",
@@ -102841,7 +104353,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/65f",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-65g",
@@ -102905,7 +104418,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/65g",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-55a",
@@ -102969,7 +104483,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/55a",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-55h",
@@ -103033,7 +104548,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/55h",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-55f",
@@ -103097,7 +104613,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/55f",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-46t",
@@ -103159,7 +104676,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/46t",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "buck-and-buck-45p",
@@ -103220,7 +104738,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/45p",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "buck-and-buck-44x",
@@ -103278,7 +104797,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/44x",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "footwear"
   },
   {
     "id": "buck-and-buck-39g",
@@ -103338,14 +104858,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/39g",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "buck-and-buck-40g",
     "name": "Women's Fleece Back-Flap Pants",
     "brandId": "buck-and-buck",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "43.20",
     "currency": "USD",
@@ -103405,7 +104926,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/40g",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-39p",
@@ -103464,14 +104986,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/39p",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "buck-and-buck-37k",
     "name": "Men's Flannel PJ Bottoms",
     "brandId": "buck-and-buck",
-    "clothingType": "Nightwear",
-    "category": "nightwear",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "25.60",
     "currency": "USD",
@@ -103524,7 +105047,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/37k",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-37cv",
@@ -103594,7 +105118,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/37cv",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "buck-and-buck-37n",
@@ -103658,7 +105183,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/37n",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "buck-and-buck-34e",
@@ -103718,7 +105244,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/34e",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "buck-and-buck-37bv",
@@ -103786,14 +105313,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/37bv",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "buck-and-buck-32g",
     "name": "5 Pocket Jeans With VELCRO® Fastener Fly",
     "brandId": "buck-and-buck",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Jeans",
+    "category": "jeans",
     "priceRange": "$25-$50",
     "price": "41.60",
     "currency": "USD",
@@ -103857,14 +105385,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/32g",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-33k",
     "name": "Men's Zip-Front Hoodie-Heavy Weight",
     "brandId": "buck-and-buck",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "44.80",
     "currency": "USD",
@@ -103918,14 +105447,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/33k",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-32mv",
     "name": "Men's Elastic Waist VELCRO® Fastener Fly Shorts",
     "brandId": "buck-and-buck",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Shorts",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "41.60",
     "currency": "USD",
@@ -103987,14 +105517,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/32mv",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-32m",
     "name": "Men's Elastic Waist Zip-Fly Shorts",
     "brandId": "buck-and-buck",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Shorts",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "31.20",
     "currency": "USD",
@@ -104048,7 +105579,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/32m",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-31w",
@@ -104120,7 +105652,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/31w",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-31t",
@@ -104190,7 +105723,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/31t",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-31n",
@@ -104258,14 +105792,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/31n",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-30d",
     "name": "Twill Putter Pants With VELCRO® Fastener Fly",
     "brandId": "buck-and-buck",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "41.60",
     "currency": "USD",
@@ -104329,14 +105864,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/30d",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-30n",
     "name": "Men's Twill Putter Pants",
     "brandId": "buck-and-buck",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "38.40",
     "currency": "USD",
@@ -104392,14 +105928,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/30n",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-30pv",
     "name": "Men's Denim Slacks With VELCRO® Fasteners Fly",
     "brandId": "buck-and-buck",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "47.20",
     "currency": "USD",
@@ -104463,14 +106000,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/30pv",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-30lv",
     "name": "Cotton Slacks With VELCRO® Fasteners Fly",
     "brandId": "buck-and-buck",
-    "clothingType": "Dresses",
-    "category": "dresses",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "49.60",
     "currency": "USD",
@@ -104531,14 +106069,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/30lv",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-31j",
     "name": "Men's Basic Cardigan With Pockets",
     "brandId": "buck-and-buck",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "28.00",
     "currency": "USD",
@@ -104590,14 +106129,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/31j",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-29v",
     "name": "Short Sleeve Sport Shirt With VELCRO® Fasteners",
     "brandId": "buck-and-buck",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "39.20",
     "currency": "USD",
@@ -104661,7 +106201,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/29v",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-30h",
@@ -104724,7 +106265,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/30h",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-29t",
@@ -104794,7 +106336,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/29t",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-25t",
@@ -104858,7 +106401,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/25t",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-26a",
@@ -104926,7 +106470,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/26a",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-29e",
@@ -104987,14 +106532,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/29e",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-28lp",
     "name": "Capri Length Printed Back-Zip Sleep Suit",
     "brandId": "buck-and-buck",
-    "clothingType": "Nightwear",
-    "category": "nightwear",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "36.80",
     "currency": "USD",
@@ -105048,7 +106594,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/28lp",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-28q",
@@ -105109,7 +106656,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/28q",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "buck-and-buck-28j",
@@ -105173,14 +106721,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/28j",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "buck-and-buck-29d",
     "name": "Men's Short Sleeve Polo Shirt",
     "brandId": "buck-and-buck",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "28.80",
     "currency": "USD",
@@ -105234,14 +106783,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/29d",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-28l",
     "name": "Capri Length Solid Back-Zip Sleep Suit",
     "brandId": "buck-and-buck",
-    "clothingType": "Nightwear",
-    "category": "nightwear",
+    "clothingType": "Pants",
+    "category": "pants",
     "priceRange": "$25-$50",
     "price": "36.80",
     "currency": "USD",
@@ -105295,7 +106845,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/28l",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-28k",
@@ -105357,14 +106908,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/28k",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "buck-and-buck-25y",
     "name": "So-Soft Snap Back Dress",
     "brandId": "buck-and-buck",
-    "clothingType": "Nightwear",
-    "category": "nightwear",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "45.60",
     "currency": "USD",
@@ -105417,7 +106969,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/25y",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-25d",
@@ -105479,7 +107032,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/25d",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-25f",
@@ -105543,7 +107097,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/25f",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-28e",
@@ -105611,7 +107166,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/28e",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "buck-and-buck-28kp",
@@ -105673,14 +107229,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/28kp",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "buck-and-buck-22g",
     "name": "Cuddl Duds Short Sleeve Top",
     "brandId": "buck-and-buck",
-    "clothingType": "Shorts",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "22.40",
     "currency": "USD",
@@ -105733,7 +107290,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/22g",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-16bw",
@@ -105795,7 +107353,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/16bw",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-23e",
@@ -105854,7 +107413,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/23e",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "buck-and-buck-23s",
@@ -105918,14 +107478,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/23s",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "buck-and-buck-22j",
     "name": "Cuddl Duds V-Neck Camisole",
     "brandId": "buck-and-buck",
-    "clothingType": "Tops",
-    "category": "tops",
+    "clothingType": "Underwear",
+    "category": "underwear",
     "priceRange": "$25-$50",
     "price": "23.20",
     "currency": "USD",
@@ -105981,7 +107542,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/22j",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "buck-and-buck-23r",
@@ -106039,7 +107601,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/23r",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "buck-and-buck-18v",
@@ -106097,7 +107660,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/18v",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "buck-and-buck-15v",
@@ -106158,7 +107722,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/15v",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-13z",
@@ -106218,7 +107783,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/13z",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-13c",
@@ -106278,7 +107844,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/13c",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-19j",
@@ -106347,14 +107914,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/19j",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-18m",
     "name": "Shadowline Petals Short Gown",
     "brandId": "buck-and-buck",
-    "clothingType": "Nightwear",
-    "category": "nightwear",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "31.20",
     "currency": "USD",
@@ -106407,7 +107975,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/18m",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-19a",
@@ -106474,7 +108043,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/19a",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "buck-and-buck-15h",
@@ -106535,7 +108105,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/15h",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-16g",
@@ -106599,14 +108170,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/16g",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-15w",
     "name": "Women's Traditional Shawl Collar Velour Set",
     "brandId": "buck-and-buck",
-    "clothingType": "Clothing",
-    "category": "tops",
+    "clothingType": "Jackets",
+    "category": "jackets",
     "priceRange": "$50-$100",
     "price": "52.80",
     "currency": "USD",
@@ -106660,7 +108232,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/15w",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "buck-and-buck-11cf",
@@ -106724,7 +108297,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/11cf",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "buck-and-buck-16p",
@@ -106789,7 +108363,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/16p",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-14c",
@@ -106849,7 +108424,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/14c",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-14q",
@@ -106911,7 +108487,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/14q",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-15y",
@@ -106972,14 +108549,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/15y",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-13b",
     "name": "Women's Long Sleeve Banded Bottom Top",
     "brandId": "buck-and-buck",
-    "clothingType": "Pants",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "28.80",
     "currency": "USD",
@@ -107031,14 +108609,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/13b",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-13a",
     "name": "Women's 3/4 Sleeve Banded Bottom Top",
     "brandId": "buck-and-buck",
-    "clothingType": "Pants",
-    "category": "pants",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "27.20",
     "currency": "USD",
@@ -107090,14 +108669,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/13a",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-16a",
     "name": "Women's Basic Sweat Top",
     "brandId": "buck-and-buck",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "19.20",
     "currency": "USD",
@@ -107155,7 +108735,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/16a",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-11b",
@@ -107216,14 +108797,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/11b",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "buck-and-buck-17h",
     "name": "V-Neck Fleece Cardigan",
     "brandId": "buck-and-buck",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "41.60",
     "currency": "USD",
@@ -107280,7 +108862,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/17h",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-18k",
@@ -107337,14 +108920,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/18k",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   },
   {
     "id": "buck-and-buck-17c",
     "name": "Polar Fleece Sweater",
     "brandId": "buck-and-buck",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "38.40",
     "currency": "USD",
@@ -107398,7 +108982,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/17c",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-19gs",
@@ -107470,14 +109055,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/19gs",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "buck-and-buck-16d",
     "name": "Women's Printed Sweat Top",
     "brandId": "buck-and-buck",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "24.00",
     "currency": "USD",
@@ -107531,7 +109117,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/16d",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-17n",
@@ -107594,14 +109181,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/17n",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "outerwear"
   },
   {
     "id": "buck-and-buck-18b",
     "name": "Short Flannel Gown",
     "brandId": "buck-and-buck",
-    "clothingType": "Nightwear",
-    "category": "nightwear",
+    "clothingType": "Dresses",
+    "category": "dresses",
     "priceRange": "$25-$50",
     "price": "34.40",
     "currency": "USD",
@@ -107655,14 +109243,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/18b",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-17j",
     "name": "So-Soft Cardigan",
     "brandId": "buck-and-buck",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "38.40",
     "currency": "USD",
@@ -107713,7 +109302,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/17j",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-14v",
@@ -107782,7 +109372,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/14v",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-13f",
@@ -107850,7 +109441,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/13f",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-14j",
@@ -107911,7 +109503,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/14j",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-16m",
@@ -107974,7 +109567,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/16m",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "bottoms"
   },
   {
     "id": "buck-and-buck-21a",
@@ -108038,7 +109632,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/21a",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "undergarments"
   },
   {
     "id": "buck-and-buck-14f",
@@ -108105,7 +109700,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/14f",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-13n",
@@ -108174,14 +109770,15 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/13n",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-17d",
     "name": "Cotton Cardigan Sweater With Pockets",
     "brandId": "buck-and-buck",
-    "clothingType": "Jackets",
-    "category": "jackets",
+    "clothingType": "Tops",
+    "category": "tops",
     "priceRange": "$25-$50",
     "price": "38.40",
     "currency": "USD",
@@ -108234,7 +109831,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/17d",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "tops"
   },
   {
     "id": "buck-and-buck-10e",
@@ -108295,7 +109893,8 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/10e",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "dresses_skirts"
   },
   {
     "id": "buck-and-buck-18g",
@@ -108356,6 +109955,7 @@ export const verifiedProducts: Product[] = [
     "featured": false,
     "productUrl": "https://www.buckandbuck.com/products/18g",
     "linkType": "exact-product",
-    "sourceVerifiedAt": "2026-06-18"
+    "sourceVerifiedAt": "2026-06-18",
+    "categoryNormalized": "sleepwear"
   }
 ];

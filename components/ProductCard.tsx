@@ -9,6 +9,8 @@ import OfficialProductLink from "@/components/OfficialProductLink";
 import { useCountry } from "@/components/CountryProvider";
 import { useSavedItems } from "@/components/SavedItemsProvider";
 import { GLOBAL } from "@/lib/countries";
+import { normalizeAvailability, availabilityLabelFor } from "@/lib/productMetadata";
+import { resolvePriceStatus } from "@/lib/pricingProvider";
 
 function plainBestFor(product: Product) {
   const text = product.bestFor[0] || product.disabilityNeeds[0] || "adaptive dressing";
@@ -31,6 +33,13 @@ export default function ProductCard({ product }: { product: Product }) {
       ? `Ships to ${country}`
       : `Ships to ${shipsTo[0]}`;
 
+  // Lightweight, honest trust hints so browse cards disclose data gaps rather
+  // than looking artificially complete.
+  const dataGaps: string[] = [];
+  if (product.linkType !== "exact-product") dataGaps.push("exact link");
+  if (resolvePriceStatus(product) === "unknown") dataGaps.push("price");
+  if (normalizeAvailability(product) === "unknown") dataGaps.push("shipping");
+
   return (
     <article className="group card card-hover flex h-full flex-col overflow-hidden rounded-[1.7rem_.7rem_1.7rem_1.7rem]">
       <div className="relative">
@@ -42,6 +51,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <ProductImage
             src={product.imageUrl}
             alt={product.imageAlt}
+            category={product.categoryNormalized}
             permissionStatus={product.permissionStatus}
             attribution={product.attributionText}
             source={brandName}
@@ -155,9 +165,15 @@ export default function ProductCard({ product }: { product: Product }) {
                 ? "Available online"
                 : "In-store availability"}
           </div>
-          <p className="mb-3 w-fit rounded-md bg-primary-50 px-3 py-1.5 text-sm font-bold text-primary-900">
+          <p className="mb-2 w-fit rounded-md bg-primary-50 px-3 py-1.5 text-sm font-bold text-primary-900">
             {shippingLabel}
           </p>
+          {dataGaps.length > 0 && (
+            <p className="mb-3 inline-flex items-center gap-1.5 rounded-md bg-amber-50 px-2.5 py-1 text-xs font-semibold text-amber-800">
+              <span aria-hidden="true">⚠</span>
+              Confirm {dataGaps.join(", ")} on the official page
+            </p>
+          )}
           <Link
             href={`/products/${product.id}`}
             className="btn-primary flex w-full px-4 py-3.5 text-center text-base"

@@ -103,6 +103,12 @@ function MatchDetail({
   confidence,
   confidenceNotes,
   checkBeforeBuying,
+  matchScore,
+  hardPassed,
+  hardTotal,
+  softMatched,
+  softTotal,
+  missingData,
   matchedTags,
   unmatchedTags,
 }: Recommendation) {
@@ -144,6 +150,35 @@ function MatchDetail({
         confidence={confidence}
         quality={matchQuality}
       />
+
+      {/* Quantitative header: honest match score + requirement tallies */}
+      {typeof matchScore === "number" && (
+        <div className="mt-3 rounded-xl border border-primary-100 bg-paper px-3.5 py-3">
+          <div className="flex items-center justify-between gap-3">
+            <span className="text-xs font-bold uppercase tracking-wide text-ink/55">Match score</span>
+            <span className="font-display text-xl font-semibold tabular-nums text-ink">{matchScore}%</span>
+          </div>
+          <div className="mt-1.5 h-2 w-full overflow-hidden rounded-full bg-ink/10" role="img" aria-label={`Match score ${matchScore} percent`}>
+            <div
+              className={`h-full rounded-full ${matchScore >= 85 ? "bg-primary-700" : matchScore >= 65 ? "bg-primary-500" : "bg-clay"}`}
+              style={{ width: `${Math.max(matchScore, 3)}%` }}
+            />
+          </div>
+          <div className="mt-2.5 flex flex-wrap gap-x-4 gap-y-1 text-xs text-ink/70">
+            {typeof hardPassed === "number" && typeof hardTotal === "number" && (
+              <span>
+                <span className="font-bold text-ink">Hard requirements</span> {hardPassed}/{hardTotal} passed
+              </span>
+            )}
+            {typeof softMatched === "number" && typeof softTotal === "number" && softTotal > 0 && (
+              <span>
+                <span className="font-bold text-ink">Soft preferences</span> {softMatched}/{softTotal} matched
+              </span>
+            )}
+          </div>
+        </div>
+      )}
+
       {matchQuality === "strong" && (
         <p className="mt-2 text-xs leading-5 text-ink/60">
           Meets every access need you selected — it just misses a minor style
@@ -260,6 +295,26 @@ function MatchDetail({
                   ☐
                 </span>
                 {check}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {missingData && missingData.length > 0 && (
+        <div className="mt-3 rounded-xl border border-amber-200 bg-amber-50/60 px-3.5 py-3">
+          <p className="text-[11px] font-bold uppercase tracking-wide text-amber-800/90">
+            Missing info
+          </p>
+          <p className="mt-1 text-xs leading-5 text-ink/65">
+            We couldn&apos;t confirm the following from the product listing — worth
+            checking on the official page before buying:
+          </p>
+          <ul className="mt-1.5 space-y-1">
+            {missingData.slice(0, 4).map((field) => (
+              <li key={field} className="flex gap-1.5 text-xs leading-5 text-ink/75">
+                <span aria-hidden="true" className="mt-0.5 flex-shrink-0 text-amber-700">–</span>
+                {field}
               </li>
             ))}
           </ul>

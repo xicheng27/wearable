@@ -462,9 +462,9 @@ const footwearActive = (a: Answers) =>
 export const steps: Step[] = [
   {
     id: "help",
-    title: "Tell us what clothing needs to do.",
+    title: "What would make getting dressed feel easier?",
     subtitle:
-      "Pick what matters, tap an example, or describe it in your own words — you never need to share a diagnosis.",
+      "Pick what matters, tap an example, or say it in your own words — no diagnosis needed, ever.",
     type: "multi",
     options: helpOptions.map((o) => o.value),
     freeText: true,
@@ -549,8 +549,8 @@ export const steps: Step[] = [
   },
   {
     id: "sensory",
-    title: "What should fabric avoid — and feel like?",
-    subtitle: "We'll steer away from irritants and lean toward fabrics that feel right.",
+    title: "What makes clothing feel good — or bad — on your skin?",
+    subtitle: "We'll steer away from what irritates and lean toward what feels right.",
     type: "grouped",
     groups: [
       {
@@ -610,7 +610,7 @@ export const steps: Step[] = [
   },
   {
     id: "style",
-    title: "What should the clothes feel like, stylistically?",
+    title: "What should your outfit say before you even speak?",
     subtitle: "Style refines your results — it never overrides your functional needs.",
     type: "multi",
     optional: true,
@@ -632,7 +632,7 @@ export const steps: Step[] = [
       },
       {
         key: "budget",
-        title: "What budget should we keep in mind?",
+        title: "What price range should we respect?",
         subtitle: "Prices change on official sites, so this is a guide for ranking.",
         options: budgetOptions,
         single: true,
