@@ -30,7 +30,17 @@ export type AnalyticsEvent =
   | "passport_saved"
   | "passport_edited"
   | "passport_reset"
-  | "passport_filter_toggled";
+  | "passport_filter_toggled"
+  // Named product-funnel stubs — safe no-ops until wired to a provider.
+  | "homepage_cta_quiz_click"
+  | "homepage_cta_browse_click"
+  | "strict_matching_toggled"
+  | "product_card_clicked"
+  | "compare_added"
+  | "compare_opened"
+  | "singapore_filter_used"
+  | "senior_mode_enabled"
+  | "no_results_seen";
 
 type AllowedValue = string | number | boolean | null;
 

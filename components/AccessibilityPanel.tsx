@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 type AccessibilitySettings = {
+  seniorMode: boolean;
   textSize: "default" | "large" | "larger";
   highContrast: boolean;
   reduceMotion: boolean;
@@ -12,6 +14,7 @@ type AccessibilitySettings = {
 const storageKey = "xis-accessibility-settings";
 
 const defaultSettings: AccessibilitySettings = {
+  seniorMode: false,
   textSize: "default",
   highContrast: false,
   reduceMotion: false,
@@ -20,6 +23,7 @@ const defaultSettings: AccessibilitySettings = {
 
 function applySettings(settings: AccessibilitySettings) {
   const root = document.documentElement;
+  root.dataset.senior = String(settings.seniorMode);
   root.dataset.textSize = settings.textSize;
   root.dataset.highContrast = String(settings.highContrast);
   root.dataset.reduceMotion = String(settings.reduceMotion);
@@ -102,6 +106,28 @@ export default function AccessibilityPanel() {
           </div>
 
           <div className="mt-4 space-y-4">
+            <label className="flex min-h-[3.25rem] cursor-pointer items-center justify-between gap-3 rounded-2xl border border-primary-200 bg-primary-50 px-4 py-3">
+              <span>
+                <span className="block text-sm font-bold text-primary-900">
+                  Caregiver / Senior mode
+                </span>
+                <span className="mt-0.5 block text-xs leading-5 text-primary-800/80">
+                  Bigger text, larger buttons and more spacing for easier
+                  reading and tapping.
+                </span>
+              </span>
+              <input
+                type="checkbox"
+                checked={settings.seniorMode}
+                onChange={(event) => {
+                  const on = event.target.checked;
+                  update("seniorMode", on);
+                  if (on) trackEvent("senior_mode_enabled");
+                }}
+                className="h-6 w-6 flex-shrink-0 rounded border-ink/25 text-primary-700 focus:ring-primary-500"
+              />
+            </label>
+
             <fieldset>
               <legend className="text-sm font-bold text-ink">
                 Text size
