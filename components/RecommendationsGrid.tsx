@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import ProductCard from "@/components/ProductCard";
 import MatchBadges from "@/components/MatchBadges";
+import ProductTrustBadges from "@/components/ProductTrustBadges";
 import CountryEmptyState from "@/components/CountryEmptyState";
 import { communityVerificationsFor } from "@/lib/communityVerification";
 import { productShipsToCountry } from "@/data/products";
@@ -125,6 +126,7 @@ function MatchDetail({
     matchedTags && matchedTags.length > 0 ? matchedTags : needsSatisfied ?? [];
   const styleTags = preferencesSatisfied ?? [];
   const verifications = communityVerificationsFor(product);
+  const { country } = useCountry();
 
   // Constraint coverage is REAL: the share of your active access needs this item
   // meets (satisfied vs satisfied + still-unmet). Exact matches cover them all;
@@ -150,6 +152,9 @@ function MatchDetail({
         confidence={confidence}
         quality={matchQuality}
       />
+
+      {/* Trust / availability badges: is this truly buyable and where? */}
+      <ProductTrustBadges product={product} country={country} className="mt-3" />
 
       {/* Quantitative header: honest match score + requirement tallies */}
       {typeof matchScore === "number" && (

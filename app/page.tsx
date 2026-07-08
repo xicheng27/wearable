@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Logo from "@/components/Logo";
 import BodyModel from "@/components/quiz/BodyModel";
-import QuizCtaLink from "@/components/QuizCtaLink";
+import HomeCtas from "@/components/HomeCtas";
 import { siteConfig } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
@@ -62,22 +62,14 @@ export default function HomePage() {
             Find adaptive clothing that works for your body.
           </h1>
           <p className="mt-5 max-w-lg text-lg leading-8 text-ink/65">
-            Answer a short visual quiz and get clothing recommendations based on
-            mobility, comfort, access needs, style, and location.
+            Tell us your dressing challenge — mobility, comfort, access needs,
+            style, or where you shop — and we&apos;ll find adaptive clothing
+            that actually works for you.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <QuizCtaLink className="btn-primary px-8 py-4 text-lg" location="home_hero">
-              Start quiz
-              <span aria-hidden="true">&rarr;</span>
-            </QuizCtaLink>
-            <Link href="/search" className="btn-secondary px-7 py-4 text-base">
-              Browse clothing
-            </Link>
+          <div className="mt-8">
+            <HomeCtas />
           </div>
-          <p className="mt-4 text-sm text-ink/55">
-            Free to use · no account needed · takes about 2 minutes
-          </p>
         </div>
 
         {/* Visual preview: interactive model + signal-map vibe */}
