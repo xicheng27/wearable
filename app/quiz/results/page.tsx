@@ -1,5 +1,5 @@
 import Link from "next/link";
-import RecommendationsGrid from "@/components/RecommendationsGrid";
+import StrictMatchingResults from "@/components/StrictMatchingResults";
 import ResultsViewedTracker from "@/components/ResultsViewedTracker";
 import SignalMap from "@/components/SignalMap";
 import MatchReport from "@/components/MatchReport";
@@ -259,44 +259,20 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
           >
             <p className="text-sm font-bold text-ink">{emptyStateMessage}</p>
             <p className="mt-1 text-sm leading-6 text-ink/70">
-              Below are the closest alternatives in your selected category and
-              region — each card says exactly which of your needs it does not
-              yet cover. Broadening one filter (clothing type, region, or one
-              need) usually unlocks exact matches.
+              Turn off <span className="font-semibold">Strict needs matching</span>{" "}
+              below to see the closest alternatives in your selected category and
+              region — each card says exactly which of your needs it does not yet
+              cover. Broadening one filter (clothing type, region, or one need)
+              usually unlocks exact matches.
             </p>
           </div>
         )}
 
-        {exactMatches.length > 0 && (
-          <section aria-labelledby="exact-matches-heading">
-            <h2 id="exact-matches-heading" className="sr-only">
-              Best matches
-            </h2>
-            <RecommendationsGrid
-              recommendations={exactMatches}
-              showActions={fallbackMatches.length === 0}
-            />
-          </section>
-        )}
-
-        {fallbackMatches.length > 0 && (
-          <section aria-labelledby="closest-alternatives-heading" className="mt-14">
-            <div className="mb-6 max-w-3xl">
-              <h2
-                id="closest-alternatives-heading"
-                className="font-display text-2xl font-semibold text-ink"
-              >
-                Partial matches &amp; closest alternatives
-              </h2>
-              <p className="mt-2 text-sm leading-6 text-ink/68">
-                We did not have enough pieces that meet every one of your needs,
-                so these are the nearest options — partial matches still cover
-                most of your needs; closest alternatives cover fewer. Each card
-                states exactly what it does and does not cover.
-              </p>
-            </div>
-            <RecommendationsGrid recommendations={fallbackMatches} />
-          </section>
+        {(exactMatches.length > 0 || fallbackMatches.length > 0) && (
+          <StrictMatchingResults
+            exactMatches={exactMatches}
+            fallbackMatches={fallbackMatches}
+          />
         )}
       </main>
     </div>
