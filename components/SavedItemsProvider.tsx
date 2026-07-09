@@ -8,6 +8,7 @@ import {
   useState,
 } from "react";
 import { trackEvent } from "@/lib/analytics";
+import { captureFeedback } from "@/lib/feedback";
 
 type SavedItemsContextValue = {
   savedIds: string[];
@@ -45,6 +46,10 @@ export default function SavedItemsProvider({
       window.localStorage.setItem(storageKey, JSON.stringify(next));
       // productId is a non-identifying catalogue slug, safe to record.
       trackEvent(willSave ? "product_saved" : "product_unsaved", { productId });
+      captureFeedback({
+        actionType: willSave ? "product_saved" : "product_unsaved",
+        productId,
+      });
       return next;
     });
   };

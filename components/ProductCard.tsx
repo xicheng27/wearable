@@ -11,6 +11,7 @@ import { useSavedItems } from "@/components/SavedItemsProvider";
 import { GLOBAL } from "@/lib/countries";
 import { normalizeAvailability, availabilityLabelFor } from "@/lib/productMetadata";
 import { resolvePriceStatus } from "@/lib/pricingProvider";
+import { captureFeedback } from "@/lib/feedback";
 
 function plainBestFor(product: Product) {
   const text = product.bestFor[0] || product.disabilityNeeds[0] || "adaptive dressing";
@@ -40,11 +41,20 @@ export default function ProductCard({ product }: { product: Product }) {
   if (resolvePriceStatus(product) === "unknown") dataGaps.push("price");
   if (normalizeAvailability(product) === "unknown") dataGaps.push("shipping");
 
+  // Capture the click as an anonymous signal for future recommendation tuning.
+  const onOpen = () =>
+    captureFeedback({
+      actionType: "product_card_clicked",
+      productId: product.id,
+      productTags: product.adaptiveFeatures,
+    });
+
   return (
     <article className="group card card-hover flex h-full flex-col overflow-hidden rounded-[1.7rem_.7rem_1.7rem_1.7rem]">
       <div className="relative">
         <Link
           href={`/products/${product.id}`}
+          onClick={onOpen}
           className="relative block"
           aria-label={`View ${product.name}`}
         >
@@ -176,6 +186,7 @@ export default function ProductCard({ product }: { product: Product }) {
           )}
           <Link
             href={`/products/${product.id}`}
+            onClick={onOpen}
             className="btn-primary flex w-full px-4 py-3.5 text-center text-base"
           >
             View details

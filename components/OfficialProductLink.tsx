@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import { trackEvent } from "@/lib/analytics";
+import { captureFeedback } from "@/lib/feedback";
 
 type OfficialProductLinkProps = {
   href?: string | null;
@@ -44,14 +45,15 @@ export default function OfficialProductLink({
       target="_blank"
       rel="noopener noreferrer"
       className={className}
-      onClick={() =>
+      onClick={() => {
         // Records the retailer host + product slug only — no personal data.
         trackEvent("official_link_clicked", {
           host: hostOf(href as string),
           linkType: exact ? "exact-product" : "brand-page",
           ...(productId ? { productId } : {}),
-        })
-      }
+        });
+        captureFeedback({ actionType: "retailer_link_clicked", productId });
+      }}
     >
       {children ?? (exact ? "View official product →" : "View official source →")}
     </a>

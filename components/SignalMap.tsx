@@ -1,5 +1,4 @@
 import type { SignalCategory, SignalMap as SignalMapData } from "@/lib/signalMap";
-import ProfileCard from "@/components/ProfileCard";
 
 function strengthColor(strength: SignalCategory["strength"]): string {
   switch (strength) {
@@ -184,13 +183,10 @@ export default function SignalMap({ data }: { data: SignalMapData }) {
           )}
           <p className="mt-2 text-xs leading-5 text-ink/55">
             We factor this into your recommendations where we can match it to
-            product details. On your shareable card it appears only as
-            &ldquo;custom clothing need&rdquo;.
+            product details.
           </p>
         </div>
       )}
-
-      <ProfileCard share={data.share} uniqueness={data.uniqueness} />
     </section>
   );
 }
