@@ -2,6 +2,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { trackEvent } from "@/lib/analytics";
+import { captureFeedback } from "@/lib/feedback";
 import { brands } from "@/data/brands";
 import {
   adaptiveFeatureOptions,
@@ -42,6 +43,7 @@ function FilterGroup({
     } else {
       params.set(paramKey, value);
       trackEvent("filter_applied", { filter: paramKey });
+      captureFeedback({ actionType: "filter_used" });
     }
     router.push(`/search?${params.toString()}`);
   }

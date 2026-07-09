@@ -28,7 +28,44 @@ import { trackEvent, type AnalyticsEvent } from "@/lib/analytics";
 
 const SESSION_KEY = "xis-session-id";
 const LOG_KEY = "xis-feedback-log";
+const CONTEXT_KEY = "xis-feedback-context";
 const MAX_EVENTS = 500;
+
+/**
+ * Session-level context (what the shopper is currently looking for) so every
+ * captured event carries the quiz needs / category / location / strict flag
+ * without threading them through every component. Only coarse, controlled
+ * values — never the free-text a shopper typed.
+ */
+export interface FeedbackContext {
+  selectedNeeds?: string[];
+  selectedCategory?: string | null;
+  selectedLocation?: string | null;
+  strictMatchingEnabled?: boolean;
+}
+
+function readContext(): FeedbackContext {
+  if (typeof window === "undefined") return {};
+  try {
+    const raw = window.localStorage.getItem(CONTEXT_KEY);
+    return raw ? (JSON.parse(raw) as FeedbackContext) : {};
+  } catch {
+    return {};
+  }
+}
+
+/** Merge/update the current feedback context (e.g. on results load). */
+export function setFeedbackContext(ctx: FeedbackContext): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(
+      CONTEXT_KEY,
+      JSON.stringify({ ...readContext(), ...ctx })
+    );
+  } catch {
+    /* storage disabled — ignore */
+  }
+}
 
 /** What the shopper did. Controlled set so aggregation stays consistent. */
 export type FeedbackActionType =
@@ -105,7 +142,10 @@ export function captureFeedback(
 ): void {
   if (typeof window === "undefined") return;
 
+  // Context supplies defaults (needs / category / location / strict); anything
+  // the caller passes on the event itself takes precedence.
   const full: RecommendationFeedbackEvent = {
+    ...readContext(),
     ...event,
     userSessionId: getSessionId(),
     timestamp: Date.now(),

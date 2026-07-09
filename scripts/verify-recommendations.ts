@@ -41,6 +41,11 @@ import {
 } from "@/lib/passport";
 import { buildAvatarAriaLabel } from "@/lib/avatar";
 import {
+  aggregateFeedback,
+  applyFeedbackAdjustment,
+} from "@/lib/recommendationTuning";
+import type { RecommendationFeedbackEvent as FeedbackEvent } from "@/lib/feedback";
+import {
   getMissingEvidenceFields,
   getUnmetHardRequirements,
   normalizeRequestedCategories,
@@ -733,6 +738,49 @@ console.log("\n24. Score breakdown & dashboard math");
     report.comparison.length === Math.min(results.length, 8));
   check("score bars only contain applicable dimensions",
     report.bars.every((b) => b.value !== null));
+}
+
+// ---------------------------------------------------------------------------
+// 25. Feedback tuning math (foundation for future recommendation improvement)
+// ---------------------------------------------------------------------------
+console.log("\n25. Feedback aggregation & bounded scoring adjustment");
+{
+  const now = Date.now();
+  const ev = (
+    actionType: FeedbackEvent["actionType"],
+    productId: string,
+    feedbackType?: FeedbackEvent["feedbackType"]
+  ): FeedbackEvent => ({
+    userSessionId: "test",
+    timestamp: now,
+    actionType,
+    productId,
+    feedbackType,
+  });
+
+  const agg = aggregateFeedback([
+    ev("product_saved", "liked-shoe"),
+    ev("product_card_clicked", "liked-shoe"),
+    ev("feedback_given", "liked-shoe", "good_match"),
+    ev("feedback_given", "bad-shoe", "wrong_category"),
+    ev("feedback_given", "bad-shoe", "not_relevant"),
+    ev("product_dismissed", "bad-shoe"),
+  ]);
+
+  check("aggregate counts saves and positive feedback",
+    agg.byProduct["liked-shoe"].saves === 1 &&
+    agg.byProduct["liked-shoe"].positive === 1);
+  check("aggregate counts wrong-category and negative feedback",
+    agg.byProduct["bad-shoe"].wrongCategory === 1 &&
+    agg.byProduct["bad-shoe"].negative === 1);
+
+  const up = applyFeedbackAdjustment(80, "liked-shoe", agg);
+  const down = applyFeedbackAdjustment(80, "bad-shoe", agg);
+  check("positive feedback nudges score up", up > 80);
+  check("negative feedback nudges score down", down < 80);
+  check("adjustment stays bounded (never > +20% or < -20%)",
+    up <= 96.0001 && down >= 64 - 0.0001);
+  check("unknown product is unchanged", applyFeedbackAdjustment(80, "none", agg) === 80);
 }
 
 console.log(

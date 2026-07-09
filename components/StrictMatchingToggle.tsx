@@ -1,6 +1,7 @@
 "use client";
 
 import { trackEvent } from "@/lib/analytics";
+import { captureFeedback, setFeedbackContext } from "@/lib/feedback";
 
 /**
  * "Strict needs matching" switch shown above recommendation / search results.
@@ -41,6 +42,11 @@ export default function StrictMatchingToggle({
           const next = !strict;
           onChange(next);
           trackEvent("strict_matching_toggled", { strict: next });
+          setFeedbackContext({ strictMatchingEnabled: next });
+          captureFeedback({
+            actionType: "strict_matching_toggled",
+            strictMatchingEnabled: next,
+          });
         }}
         className={`relative inline-flex h-8 w-14 flex-shrink-0 items-center rounded-full border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 focus-visible:ring-offset-2 ${
           strict ? "border-primary-800 bg-primary-700" : "border-ink/25 bg-ink/15"

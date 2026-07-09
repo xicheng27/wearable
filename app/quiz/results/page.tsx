@@ -119,6 +119,9 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
       <ResultsViewedTracker
         exactCount={exactMatches.length}
         fallbackCount={fallbackMatches.length}
+        selectedNeeds={needs}
+        selectedCategory={clothing.length > 0 ? clothing.join(", ") : null}
+        selectedLocation={location || null}
       />
       <header className="paper-texture border-b border-ink/10 bg-paper py-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
