@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import ProductCard from "@/components/ProductCard";
 import MatchBadges from "@/components/MatchBadges";
 import ProductTrustBadges from "@/components/ProductTrustBadges";
+import { captureFeedback, type ProductFeedbackType } from "@/lib/feedback";
 import CountryEmptyState from "@/components/CountryEmptyState";
 import { communityVerificationsFor } from "@/lib/communityVerification";
 import { productShipsToCountry } from "@/data/products";
@@ -19,45 +20,62 @@ type Recommendation = Partial<RecommendationResult> & {
   unmatchedTags?: string[];
 };
 
-type FeedbackValue = "saved" | "liked" | "disliked" | "not_relevant";
+const FEEDBACK_OPTIONS: { value: ProductFeedbackType; label: string }[] = [
+  { value: "good_match", label: "Good match" },
+  { value: "not_relevant", label: "Not relevant" },
+  { value: "wrong_category", label: "Wrong category" },
+  { value: "doesnt_fit_need", label: "Doesn't fit my need" },
+  { value: "doesnt_ship", label: "Doesn't ship to me" },
+];
 
-function RecommendationFeedback({ productId }: { productId: string }) {
-  const [selected, setSelected] = useState<FeedbackValue | null>(null);
+const FEEDBACK_VALUES = FEEDBACK_OPTIONS.map((o) => o.value);
+
+/**
+ * Per-card feedback. Stored on-device and captured through the feedback layer
+ * (lib/feedback.ts) so the signal can later tune scoring (lib/recommendationTuning.ts).
+ * Anonymous, no login, no sensitive data — only the product id, controlled tags
+ * and the shown match score.
+ */
+function RecommendationFeedback({
+  productId,
+  productTags,
+  matchScore,
+}: {
+  productId: string;
+  productTags?: string[];
+  matchScore?: number | null;
+}) {
+  const [selected, setSelected] = useState<ProductFeedbackType | null>(null);
 
   useEffect(() => {
     const stored = window.localStorage.getItem(`xis-feedback-${productId}`);
-    if (
-      stored === "saved" ||
-      stored === "liked" ||
-      stored === "disliked" ||
-      stored === "not_relevant"
-    ) {
-      setSelected(stored);
+    if (stored && (FEEDBACK_VALUES as string[]).includes(stored)) {
+      setSelected(stored as ProductFeedbackType);
     }
   }, [productId]);
 
-  function choose(value: FeedbackValue) {
+  function choose(value: ProductFeedbackType) {
     setSelected(value);
     window.localStorage.setItem(`xis-feedback-${productId}`, value);
+    captureFeedback({
+      actionType: "feedback_given",
+      feedbackType: value,
+      productId,
+      productTags,
+      matchScoreShown: matchScore ?? null,
+    });
   }
-
-  const actions: { value: FeedbackValue; label: string }[] = [
-    { value: "saved", label: "Save" },
-    { value: "liked", label: "Like" },
-    { value: "disliked", label: "Dislike" },
-    { value: "not_relevant", label: "Not relevant" },
-  ];
 
   return (
     <div className="mt-4 border-t border-primary-200 pt-3">
       <p className="text-xs font-bold uppercase tracking-wider text-primary-800">
-        Your feedback{" "}
+        Was this a good match?{" "}
         <span className="font-semibold normal-case tracking-normal text-primary-800/70">
           (private to this device)
         </span>
       </p>
       <div className="mt-2 flex flex-wrap gap-2">
-        {actions.map((action) => (
+        {FEEDBACK_OPTIONS.map((action) => (
           <button
             key={action.value}
             type="button"
@@ -75,7 +93,7 @@ function RecommendationFeedback({ productId }: { productId: string }) {
       </div>
       {selected && (
         <p className="mt-2 text-xs font-semibold text-primary-900" role="status">
-          Saved on this device only — it tunes your own recommendations and is
+          Thanks — saved on this device to help improve future matches. It is
           never shared as community proof.
         </p>
       )}
@@ -367,7 +385,11 @@ function MatchDetail({
         )}
       </div>
 
-      <RecommendationFeedback productId={product.id} />
+      <RecommendationFeedback
+        productId={product.id}
+        productTags={product.adaptiveFeatures}
+        matchScore={matchScore}
+      />
     </div>
   );
 }
