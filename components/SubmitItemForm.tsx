@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useId, useRef, useState } from "react";
 import { trackEvent } from "@/lib/analytics";
 import { SUBMISSION_LIMITS, validateSubmission } from "@/lib/security/submission";
-import ClearSubmissionsButton from "@/components/ClearSubmissionsButton";
 
 type FormState = {
   productName: string;
@@ -24,28 +23,12 @@ const emptyForm: FormState = {
   contact: "",
 };
 
-const storageKey = "xis-submitted-items";
-/** Cap how many suggestions we keep on-device so storage can't grow unbounded. */
-const MAX_STORED = 50;
-
-type StoredSubmission = FormState & { submittedAt: string };
-
-function readStored(): StoredSubmission[] {
-  try {
-    const raw = window.localStorage.getItem(storageKey);
-    const parsed = raw ? JSON.parse(raw) : [];
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    // Corrupt storage — treat as empty rather than crashing the form.
-    return [];
-  }
-}
-
 export default function SubmitItemForm() {
   const id = useId();
   const [form, setForm] = useState<FormState>(emptyForm);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [submitting, setSubmitting] = useState(false);
   const startedRef = useRef(false);
   // Honeypot: real users never fill a hidden field; bots usually do.
   const honeypotRef = useRef<HTMLInputElement>(null);
@@ -61,58 +44,64 @@ export default function SubmitItemForm() {
     }
   }
 
-  function submit(event: React.FormEvent<HTMLFormElement>) {
+  async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (submitting) return;
 
-    // Spam protection: drop submissions that trip the honeypot or are
-    // completed implausibly fast (basic bots).
+    // First-line client checks (the server re-checks all of these).
     if (honeypotRef.current?.value) return;
     if (Date.now() - mountedAtRef.current < 1500) {
       setError("Please take a moment to fill in the details, then submit again.");
       return;
     }
 
-    // Server-grade validation, run client-side (there is no server): explicit
-    // fields only, length caps, safe URL scheme, valid email, no HTML/control chars.
+    // Validate client-side for instant feedback; the server validates again
+    // and is the source of truth (never trust the client).
     const result = validateSubmission(form);
     if (!result.ok) {
       setError(result.error);
       return;
     }
-    const clean = result.value;
 
-    const submissions = readStored();
-
-    // Duplicate detection: same product + brand (+ url) already suggested here.
-    const isDuplicate = submissions.some(
-      (s) =>
-        s.productName.toLowerCase() === clean.productName.toLowerCase() &&
-        s.brandName.toLowerCase() === clean.brandName.toLowerCase() &&
-        (s.productUrl || "") === clean.productUrl
-    );
-    if (isDuplicate) {
-      setError("You've already saved this suggestion on this device.");
-      return;
-    }
-
-    submissions.push({ ...clean, submittedAt: new Date().toISOString() });
-    // Keep only the most recent MAX_STORED entries.
-    const trimmed = submissions.slice(-MAX_STORED);
+    setSubmitting(true);
     try {
-      window.localStorage.setItem(storageKey, JSON.stringify(trimmed));
-    } catch {
-      setError("Couldn't save on this device — your browser storage may be full.");
-      return;
-    }
+      const response = await fetch("/api/submit", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          ...form,
+          company: honeypotRef.current?.value ?? "",
+          elapsedMs: Date.now() - mountedAtRef.current,
+        }),
+      });
 
-    setForm(emptyForm);
-    startedRef.current = false;
-    mountedAtRef.current = Date.now();
-    // Analytics: record the conversion only — never the entered values/email.
-    trackEvent("submit_item_submitted", { hasContact: Boolean(clean.contact) });
-    setSuccess(
-      "Thanks — your suggestion was saved on this device. It stays in this browser; we don't receive a copy. You can delete it any time below."
-    );
+      let data: { ok?: boolean; error?: string; reference?: string } = {};
+      try {
+        data = await response.json();
+      } catch {
+        // Non-JSON response — fall through to the generic error below.
+      }
+
+      if (!response.ok || !data.ok) {
+        setError(data.error || "Something went wrong. Please try again.");
+        return;
+      }
+
+      setForm(emptyForm);
+      startedRef.current = false;
+      mountedAtRef.current = Date.now();
+      // Analytics: conversion only — never the entered values/email.
+      trackEvent("submit_item_submitted", { hasContact: Boolean(form.contact.trim()) });
+      setSuccess(
+        data.reference
+          ? `Thanks — your suggestion was securely submitted for review. Reference: ${data.reference}. Quote this reference if you'd like it deleted.`
+          : "Thanks — your suggestion was securely submitted for review."
+      );
+    } catch {
+      setError("We couldn't reach the server. Please check your connection and try again.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -199,8 +188,9 @@ export default function SubmitItemForm() {
               id={`${id}-contact-help`}
               className="mt-1 block text-sm leading-6 text-ink/60"
             >
-              Saved only in this browser alongside your suggestion — it is not
-              sent to us or anyone else. Leave it blank if you prefer.
+              Submitted with your suggestion and used only to follow up on it if
+              needed — never for marketing, and never shared. Leave it blank if
+              you prefer.
             </span>
           </label>
 
@@ -236,10 +226,11 @@ export default function SubmitItemForm() {
         </div>
 
         <p className="mt-6 text-sm leading-6 text-ink/65">
-          Your suggestion is saved only in this browser on this device — we
-          don&apos;t receive it, and no one can review it unless you send it to
-          us yourself. Clearing your browser storage (or the button below)
-          removes it. See our{" "}
+          Your suggestion is securely submitted to us for manual review before
+          anything is added to the catalogue. It is stored by our database
+          provider (Upstash) and kept for up to 180 days, then automatically
+          deleted. You&apos;ll get a reference you can quote to have it removed
+          sooner. See exactly what is collected in our{" "}
           <Link href="/privacy" className="link-underline">
             privacy notice
           </Link>
@@ -263,14 +254,15 @@ export default function SubmitItemForm() {
           </p>
         )}
 
-        <button type="submit" className="btn-primary mt-6 w-full sm:w-auto">
-          Submit item
+        <button
+          type="submit"
+          className="btn-primary mt-6 w-full sm:w-auto"
+          disabled={submitting}
+          aria-busy={submitting}
+        >
+          {submitting ? "Submitting…" : "Submit item"}
         </button>
       </form>
-
-      <div className="mt-4">
-        <ClearSubmissionsButton />
-      </div>
     </>
   );
 }

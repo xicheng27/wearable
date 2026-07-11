@@ -25,10 +25,12 @@ export default function PrivacyPage() {
             Privacy at Xi&apos;s
           </h1>
           <p className="mt-5 text-lg leading-8 text-ink/72">
-            Xi&apos;s is a free adaptive clothing discovery tool. It has no user
-            accounts and no database. Almost everything the app remembers is
-            stored <strong>only in your browser, on your own device</strong> —
-            it is not uploaded to us or linked to your identity.
+            Xi&apos;s is a free adaptive clothing discovery tool with no user
+            accounts. Almost everything the app remembers — your quiz answers,
+            Fit Passport and saved items — is stored{" "}
+            <strong>only in your browser, on your own device</strong> and is
+            never uploaded. The one exception is a product suggestion you choose
+            to submit, which is sent to us for review (explained below).
           </p>
         </header>
 
@@ -52,16 +54,6 @@ export default function PrivacyPage() {
                 <strong>region, currency and accessibility settings</strong>.
               </li>
               <li>
-                <strong>Product suggestions.</strong> If you use the{" "}
-                <Link href="/submit" className="link-underline">
-                  suggest an item
-                </Link>{" "}
-                form, the details you enter — and the optional email — are saved{" "}
-                <strong>only in your browser</strong>. We do not receive a copy,
-                and no one can review it unless you contact us and send it
-                yourself.
-              </li>
-              <li>
                 <strong>Anonymous interaction signals</strong> (which filters and
                 cards you use) with a random, per-device id — used to improve
                 recommendations. No names, emails or free text.
@@ -75,14 +67,30 @@ export default function PrivacyPage() {
             </h2>
             <ul className="mt-3 list-disc space-y-2 pl-5">
               <li>
-                <strong>Approximate country.</strong> On your first visit the app
-                asks an IP-geolocation service (<span className="font-mono text-sm">api.country.is</span>{" "}
-                or <span className="font-mono text-sm">ipapi.co</span>) for your{" "}
-                <em>country only</em>, so it can default the shopping region. Your
-                IP is visible to that provider as part of the request; we only
-                read the country back, we don&apos;t store your IP or precise
-                location, and the answer is cached on your device so it runs at
-                most once. You can override it with the region picker.
+                <strong>Product suggestions.</strong> When you use the{" "}
+                <Link href="/submit" className="link-underline">
+                  suggest an item
+                </Link>{" "}
+                form, the product details you enter — and your optional email —
+                are <strong>securely submitted to us for manual review</strong>{" "}
+                before anything is added to the catalogue. They are stored by our
+                database provider <strong>Upstash</strong> (serverless Redis) and
+                kept for <strong>up to 180 days</strong>, then automatically
+                deleted. We also record a server timestamp and a{" "}
+                <em>one-way hash</em> of your IP address used only to rate-limit
+                spam and spot duplicates — never the raw IP, and we do not store
+                your user agent. Only the site owner can read submissions; there
+                is no public way to view them. You&apos;ll receive a reference you
+                can quote to have your submission deleted sooner (see below).
+              </li>
+              <li>
+                <strong>Approximate country.</strong> To default your shopping
+                region, the app reads the <em>country only</em> that Vercel (our
+                host) derives from your connection at the edge — no third-party
+                IP-lookup service is used, and your IP is not sent anywhere new.
+                We don&apos;t store your IP or precise location, the answer is
+                cached on your device, and you can override it with the region
+                picker.
               </li>
               <li>
                 <strong>Currency rates</strong> are fetched from{" "}
@@ -115,12 +123,15 @@ export default function PrivacyPage() {
               <li>We do not have accounts, logins or passwords.</li>
               <li>We do not sell or share your data, or build advertising profiles.</li>
               <li>
-                We do not store your quiz answers, saved items or product
-                suggestions on a server — there isn&apos;t one for this data.
+                We do not store your quiz answers, Fit Passport, saved items or
+                free-text needs on any server — those stay on your device. The
+                only thing we receive is a product suggestion you deliberately
+                submit.
               </li>
               <li>
                 We do not send your accessibility selections or free-text needs to
-                analytics or any third party.
+                analytics, error monitoring, logs, URL parameters or any third
+                party.
               </li>
             </ul>
           </section>
@@ -130,22 +141,24 @@ export default function PrivacyPage() {
               Deleting your data
             </h2>
             <p className="mt-3">
-              Because everything lives on your device, you are always in control.
-              Clearing your browser storage removes it instantly, or use this
-              button to delete your quiz answers, Fit Passport, saved items and
-              any saved product suggestions from this browser:
+              <strong>On-device data</strong> (quiz answers, Fit Passport, saved
+              items) is under your control: clearing your browser storage removes
+              it instantly, or use this button to delete it now:
             </p>
             <div className="mt-4">
-              <ClearDataButton label="Delete my data on this device" />
+              <ClearDataButton label="Delete my on-device data" />
             </div>
             <p className="mt-4 text-sm text-ink/65">
-              This does not change your currency or accessibility preferences. If
-              you emailed us a suggestion or a question, you can ask us to delete
-              that message at{" "}
+              This does not change your currency or accessibility preferences.
+            </p>
+            <p className="mt-4">
+              <strong>Submitted product suggestions</strong> are held by us for up
+              to 180 days and then deleted automatically. To have one removed
+              sooner, email the reference shown when you submitted it to{" "}
               <a href={`mailto:${CONTACT_EMAIL}`} className="link-underline font-bold">
                 {CONTACT_EMAIL}
-              </a>
-              .
+              </a>{" "}
+              and we&apos;ll delete it.
             </p>
           </section>
 
@@ -185,7 +198,8 @@ export default function PrivacyPage() {
           </section>
 
           <p className="text-sm text-ink/55">
-            This page may be updated as the site changes. Last reviewed July 2026.
+            This page may be updated as the site changes. Last reviewed 11 July
+            2026.
           </p>
         </div>
       </div>

@@ -12,12 +12,14 @@
  * (currency, accessibility settings) unless the visitor asks for a full reset.
  */
 
-/** Sensitive, person-describing data: quiz answers, submissions, feedback. */
+/** Sensitive, person-describing data: quiz answers, saved items, feedback. */
 export const PERSONAL_DATA_KEYS = [
   "xis-fit-passport",
   "xis-passport-filter",
   "xis-user-profile",
   "xis-saved-items",
+  // Legacy: earlier builds stored item suggestions on-device. Suggestions are
+  // now uploaded, but we still clear this so any old local copy is removed.
   "xis-submitted-items",
   "xis-feedback-log",
   "xis-feedback-context",

@@ -63,3 +63,26 @@ hardening pass. See the commit history / final report for the fixes applied._
 - Referrer-Policy `strict-origin-when-cross-origin` already prevents the results URL leaking to retailers.
 - `robots.ts` disallows `/signin`, `/results`, `/quiz/results`; results pages are `noindex`.
 - No `console.log`, `eval`, or raw `innerHTML` in app code.
+
+## 6. Addendum — submission backend (second pass)
+
+The product-suggestion form was changed from local-only to a **real uploaded
+backend** so submissions can actually be reviewed (resolving the review
+contradiction properly rather than by removing the review claim):
+
+- **Endpoint:** `POST /api/submit` (Node runtime). POST-only — `GET` returns 405,
+  so submissions are never publicly readable.
+- **Protections:** JSON content-type required, 8 KB body cap (declared + actual),
+  safe JSON parse, honeypot + min-time, sliding-window rate limit (5 / 10 min per
+  hashed IP), duplicate detection, explicit-field validation (reused
+  `lib/security/submission`), generic client errors, redacted server logs.
+- **Storage:** Upstash Redis (via Vercel KV / Upstash integration). Records carry
+  the product fields, a server timestamp and a **salted hash of the IP** (never
+  the raw IP, no user agent). 180-day TTL → auto-deletion. In production the
+  route fail-safes to 503 if no store is configured (never silently drops).
+- **Country detection** was moved off third-party IP-lookup services onto our own
+  `/api/geo`, which reads Vercel's edge geolocation header — no third party sees
+  the request. CSP `connect-src` tightened accordingly (dropped the two IP hosts).
+- New server-only secrets: `KV_REST_API_URL` / `KV_REST_API_TOKEN` (or
+  `UPSTASH_REDIS_REST_*`) and `SUBMISSION_HASH_SALT`. All read only from
+  `lib/server/*` / `app/api/*` (guarded with `import "server-only"`).

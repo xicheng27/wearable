@@ -44,49 +44,31 @@ function regionName(code: string): string | null {
   }
 }
 
-async function fetchCountryCode(
-  url: string,
-  pick: (data: Record<string, unknown>) => unknown
-): Promise<string | null> {
+// Best-effort country detection for the shopping region only.
+//
+// PRIVACY: this uses our OWN /api/geo endpoint, which reads Vercel's edge
+// geolocation header (x-vercel-ip-country). No third-party IP-lookup service is
+// contacted and the visitor's IP is never sent anywhere new — Vercel already
+// terminates the request. We only ever read the COUNTRY (never precise
+// location), cache it in localStorage so it runs at most once per device, and
+// the visitor can override it any time with the region picker. Off Vercel
+// (local dev) /api/geo returns null and we fall back to the browser locale,
+// then the picker.
+async function detectCountry(): Promise<string | null> {
   try {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 1800);
-    const res = await fetch(url, { signal: controller.signal });
+    const res = await fetch("/api/geo", { signal: controller.signal });
     clearTimeout(timer);
-    if (!res.ok) return null;
-    const data = await res.json();
-    const code = pick(data);
-    return typeof code === "string" && code ? code : null;
-  } catch {
-    return null;
-  }
-}
-
-// Best-effort country detection for the shopping region only.
-//
-// PRIVACY: this sends the visitor's IP to a third-party IP-geolocation service
-// so we can default the shipping region. We only ever read the COUNTRY back
-// (never a precise location), the result is cached in localStorage so it runs
-// at most once per device, and the visitor can override it any time with the
-// region picker. Kept to two providers (both allow-listed in the CSP
-// connect-src) to minimise how many third parties see a request. The provider
-// list is documented on the privacy page.
-async function detectCountry(): Promise<string | null> {
-  const providers: Array<() => Promise<string | null>> = [
-    () => fetchCountryCode("https://api.country.is/", (d) => d.country),
-    () =>
-      fetchCountryCode(
-        "https://ipapi.co/json/",
-        (d) => d.country_code || d.country
-      ),
-  ];
-
-  for (const provider of providers) {
-    const code = await provider();
-    if (code) {
-      const name = regionName(code.toUpperCase());
-      if (name && countries.includes(name)) return name;
+    if (res.ok) {
+      const data = (await res.json()) as { country?: string | null };
+      if (typeof data.country === "string" && data.country) {
+        const name = regionName(data.country.toUpperCase());
+        if (name && countries.includes(name)) return name;
+      }
     }
+  } catch {
+    // Endpoint unavailable — fall through to the locale hint.
   }
 
   try {
