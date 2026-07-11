@@ -7,14 +7,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "npm run verify:reco && npm run audit:images",
+    "test": "npm run verify:reco && npm run verify:security && npm run audit:images",
     "verify:reco": "esbuild scripts/verify-recommendations.ts --bundle --platform=node --format=cjs --alias:@=. --outfile=.next/verify-recommendations.cjs --log-level=warning && node .next/verify-recommendations.cjs",
+    "verify:security": "esbuild scripts/verify-security.ts --bundle --platform=node --format=cjs --alias:@=. --outfile=.next/verify-security.cjs --log-level=warning && node .next/verify-security.cjs",
     "audit:images": "node scripts/audit-image-hosts.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
-    "next": "14.2.5",
+    "next": "^14.2.35",
     "react": "^18",
     "react-dom": "^18"
   },
@@ -25,7 +26,7 @@
     "autoprefixer": "^10.4.19",
     "esbuild": "^0.28.1",
     "eslint": "^8",
-    "eslint-config-next": "14.2.5",
+    "eslint-config-next": "^14.2.35",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"

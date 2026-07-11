@@ -1,17 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { LogoMark } from "@/components/Logo";
 
+/**
+ * Xi's has no user accounts — nothing is stored on a server and there is no
+ * authentication backend. This page previously rendered an email + password
+ * form that just navigated to /search, which would have collected real
+ * passwords into a form that does nothing. It is now a clear placeholder that
+ * collects no credentials.
+ */
 export default function SignInClient() {
-  const router = useRouter();
-
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    router.push("/search");
-  }
-
   return (
     <div className="flex min-h-screen flex-col bg-white">
       <header className="mx-auto flex w-full max-w-2xl items-center justify-between px-6 py-5">
@@ -30,52 +29,27 @@ export default function SignInClient() {
       </header>
 
       <main className="mx-auto flex w-full max-w-sm flex-1 flex-col justify-center px-6 pb-24">
-        <div className="animate-fade-up">
+        <div className="animate-fade-up text-center">
           <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-            Welcome back
+            No sign-in needed
           </h1>
-          <p className="mt-2 text-sm text-gray-500">
-            Sign in to pick up where you left off.
+          <p className="mt-3 text-sm leading-6 text-gray-500">
+            Xi&apos;s doesn&apos;t use accounts or passwords. Your quiz answers,
+            Fit Passport and saved items are kept privately on your own device —
+            just start using the app.
           </p>
 
-          <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-4">
-            <div>
-              <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-gray-700">
-                Email
-              </label>
-              <input
-                id="email"
-                type="email"
-                required
-                autoComplete="email"
-                placeholder="you@example.com"
-                className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 transition-shadow duration-200 focus:border-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-100"
-              />
-            </div>
-            <div>
-              <label htmlFor="password" className="mb-1.5 block text-sm font-medium text-gray-700">
-                Password
-              </label>
-              <input
-                id="password"
-                type="password"
-                required
-                autoComplete="current-password"
-                placeholder="••••••••"
-                className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 transition-shadow duration-200 focus:border-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-100"
-              />
-            </div>
-            <button type="submit" className="btn-primary mt-2 w-full py-3.5">
-              Sign in
-            </button>
-          </form>
-
-          <p className="mt-6 text-center text-sm text-gray-500">
-            New to Xi&apos;s?{" "}
-            <Link href="/quiz" className="font-medium text-primary-600 hover:text-primary-700">
-              Create an account
+          <div className="mt-8 flex flex-col gap-3">
+            <Link href="/quiz" className="btn-primary w-full py-3.5">
+              Take the fit quiz
             </Link>
-          </p>
+            <Link
+              href="/search"
+              className="font-medium text-primary-600 hover:text-primary-700"
+            >
+              Browse all clothing
+            </Link>
+          </div>
         </div>
       </main>
     </div>

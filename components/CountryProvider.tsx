@@ -62,23 +62,18 @@ async function fetchCountryCode(
   }
 }
 
-// Best-effort country detection. Tries several CORS-friendly IP geolocation
-// services in turn (each returns quickly or is skipped), then falls back to the
-// browser locale's region. Returns a country name that matches our list, or
-// null so the picker can be shown.
+// Best-effort country detection for the shopping region only.
+//
+// PRIVACY: this sends the visitor's IP to a third-party IP-geolocation service
+// so we can default the shipping region. We only ever read the COUNTRY back
+// (never a precise location), the result is cached in localStorage so it runs
+// at most once per device, and the visitor can override it any time with the
+// region picker. Kept to two providers (both allow-listed in the CSP
+// connect-src) to minimise how many third parties see a request. The provider
+// list is documented on the privacy page.
 async function detectCountry(): Promise<string | null> {
   const providers: Array<() => Promise<string | null>> = [
     () => fetchCountryCode("https://api.country.is/", (d) => d.country),
-    () =>
-      fetchCountryCode(
-        "https://ipwho.is/?fields=country_code",
-        (d) => d.country_code
-      ),
-    () =>
-      fetchCountryCode(
-        "https://get.geojs.io/v1/ip/country.json",
-        (d) => d.country
-      ),
     () =>
       fetchCountryCode(
         "https://ipapi.co/json/",

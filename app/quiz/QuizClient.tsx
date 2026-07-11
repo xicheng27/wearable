@@ -940,9 +940,15 @@ export default function QuizClient() {
                   id="custom-need"
                   value={customNeed}
                   onChange={(e) => setCustomNeed(e.target.value)}
+                  maxLength={500}
                   placeholder="For example: I need a waistband that doesn't press on a sensitive area, or sleeves that open fully."
                   className="mt-2 min-h-24 w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-base leading-7 text-ink outline-none transition focus:border-primary-600 focus:ring-4 focus:ring-primary-100"
+                  aria-describedby="custom-need-privacy"
                 />
+                <p id="custom-need-privacy" className="mt-2 text-xs leading-5 text-ink/55">
+                  Stays on your device only. Please don&apos;t include your name,
+                  contact details, medical records or diagnosis documents.
+                </p>
               </div>
             )}
 
@@ -955,9 +961,15 @@ export default function QuizClient() {
                   id="other-needs"
                   value={otherNeeds}
                   onChange={(e) => setOtherNeeds(e.target.value)}
+                  maxLength={500}
                   placeholder="For example: tops that are easy to change while lying down, or pants that don't press when seated."
                   className="mt-2 min-h-24 w-full rounded-2xl border border-ink/15 bg-paper px-4 py-3 text-base leading-7 text-ink outline-none transition focus:border-primary-600 focus:ring-4 focus:ring-primary-100"
+                  aria-describedby="other-needs-privacy"
                 />
+                <p id="other-needs-privacy" className="mt-2 text-xs leading-5 text-ink/55">
+                  Stays on your device only. Please don&apos;t include your name,
+                  contact details, medical records or diagnosis documents.
+                </p>
               </div>
             )}
 

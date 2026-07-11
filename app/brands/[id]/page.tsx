@@ -3,6 +3,7 @@ import Link from "next/link";
 import ProductGrid from "@/components/ProductGrid";
 import { brands, getBrandById } from "@/data/brands";
 import { getProductsByBrand } from "@/data/products";
+import { safeExternalUrl } from "@/lib/security/url";
 
 interface BrandPageProps {
   params: { id: string };
@@ -73,14 +74,16 @@ export default function BrandDetailPage({ params }: BrandPageProps) {
             <h2 className="text-sm font-bold uppercase tracking-wider text-gray-950">
               Where to buy
             </h2>
-            <a
-              href={brand.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary mt-4 block text-center text-sm"
-            >
-              Visit {brand.name}
-            </a>
+            {safeExternalUrl(brand.website) && (
+              <a
+                href={safeExternalUrl(brand.website) as string}
+                target="_blank"
+                rel="noopener noreferrer nofollow sponsored"
+                className="btn-primary mt-4 block text-center text-sm"
+              >
+                Visit {brand.name}
+              </a>
+            )}
             <dl className="mt-5 space-y-4 text-sm">
               <div>
                 <dt className="font-bold uppercase tracking-wider text-gray-400">
