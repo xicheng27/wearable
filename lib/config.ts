@@ -1,10 +1,10 @@
 /**
  * Public runtime configuration.
  *
- * This app has no server secrets — every value that reaches the browser is,
- * by definition, public, so the only environment variables it reads are
- * `NEXT_PUBLIC_*` ones. Keep it that way: never read a non-`NEXT_PUBLIC_`
- * secret from a module that a client component can import.
+ * Only reads `NEXT_PUBLIC_*` values, which are exposed to the browser by
+ * design. Server-only secrets (Upstash/KV tokens, the submission hash salt)
+ * live in server-only modules under `lib/server/*` and `app/api/*` and must
+ * never be read from here or any other client-importable module.
  *
  * `NEXT_PUBLIC_CONTACT_EMAIL` — the public support/privacy address shown in
  * the UI. Configure a neutral project inbox in Vercel before launch. If it is

@@ -7,17 +7,22 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "npm run verify:reco && npm run verify:security && npm run audit:images",
+    "test": "npm run verify:reco && npm run verify:security && npm run verify:submit && npm run audit:images",
+    "typecheck": "tsc --noEmit",
     "verify:reco": "esbuild scripts/verify-recommendations.ts --bundle --platform=node --format=cjs --alias:@=. --outfile=.next/verify-recommendations.cjs --log-level=warning && node .next/verify-recommendations.cjs",
     "verify:security": "esbuild scripts/verify-security.ts --bundle --platform=node --format=cjs --alias:@=. --outfile=.next/verify-security.cjs --log-level=warning && node .next/verify-security.cjs",
+    "verify:submit": "esbuild scripts/verify-submit-endpoint.ts --bundle --platform=node --format=cjs --conditions=react-server --alias:@=. --outfile=.next/verify-submit-endpoint.cjs --log-level=warning && node .next/verify-submit-endpoint.cjs",
     "audit:images": "node scripts/audit-image-hosts.mjs"
   },
   "dependencies": {
+    "@upstash/ratelimit": "^2.0.8",
+    "@upstash/redis": "^1.38.0",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "next": "^14.2.35",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "server-only": "^0.0.1"
   },
   "devDependencies": {
     "@types/node": "^20",

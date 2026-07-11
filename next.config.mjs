@@ -4,14 +4,10 @@
 // allowlist instead of a blanket `https:` so a compromised/injected script
 // can't exfiltrate to an arbitrary origin.
 // - Vercel Analytics / Speed Insights POST to same-origin /_vercel/* ('self').
-// - Country detection: two IP-geolocation providers (see CountryProvider).
+// - Country detection: our own /api/geo (Vercel edge geolocation) — 'self'.
+// - Submission upload: our own /api/submit — 'self'.
 // - Currency rates: Frankfurter (ECB data), no PII sent.
-const connectSrc = [
-  "'self'",
-  "https://api.country.is",
-  "https://ipapi.co",
-  "https://api.frankfurter.app",
-].join(" ");
+const connectSrc = ["'self'", "https://api.frankfurter.app"].join(" ");
 
 // Content-Security-Policy.
 //
