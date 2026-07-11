@@ -11,6 +11,28 @@ updates:
         update-types:
           - "minor"
           - "patch"
+    # Do NOT propose major upgrades of the framework toolchain. Next.js is
+    # intentionally pinned to the 14.2.x line (14.2.35 is patched: 0 critical
+    # advisories). A major bump (e.g. Next 16) is a breaking change that fails
+    # the Vercel build and must be a deliberate, tested migration — not an
+    # auto-PR. Security patches (minor/patch) still flow normally.
+    ignore:
+      - dependency-name: "next"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "eslint-config-next"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react-dom"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@types/react"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@types/react-dom"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "eslint"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "tailwindcss"
+        update-types: ["version-update:semver-major"]
     labels:
       - "dependencies"
 
