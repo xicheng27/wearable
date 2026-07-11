@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import { trackEvent } from "@/lib/analytics";
 import { captureFeedback } from "@/lib/feedback";
+import { hostOf, isSafeExternalUrl, safeExternalUrl } from "@/lib/security/url";
 
 type OfficialProductLinkProps = {
   href?: string | null;
@@ -12,22 +13,9 @@ type OfficialProductLinkProps = {
   productId?: string;
 };
 
+/** Exported for callers that only need to check whether a link is renderable. */
 export function isValidOfficialUrl(href?: string | null) {
-  if (!href) return false;
-  try {
-    const url = new URL(href);
-    return url.protocol === "https:" || url.protocol === "http:";
-  } catch {
-    return false;
-  }
-}
-
-function hostOf(href: string): string {
-  try {
-    return new URL(href).hostname.replace(/^www\./, "");
-  } catch {
-    return "unknown";
-  }
+  return isSafeExternalUrl(href);
 }
 
 export default function OfficialProductLink({
@@ -37,18 +25,23 @@ export default function OfficialProductLink({
   children,
   productId,
 }: OfficialProductLinkProps) {
-  if (!isValidOfficialUrl(href)) return null;
+  // Validate + normalise before rendering so a bad/unsafe scheme never becomes
+  // an active link.
+  const safeHref = safeExternalUrl(href);
+  if (!safeHref) return null;
 
   return (
     <a
-      href={href as string}
+      href={safeHref}
       target="_blank"
-      rel="noopener noreferrer"
+      // noopener/noreferrer close the tab-nabbing + referrer-leak vectors;
+      // sponsored/nofollow marks these as commercial outbound links.
+      rel="noopener noreferrer nofollow sponsored"
       className={className}
       onClick={() => {
         // Records the retailer host + product slug only — no personal data.
         trackEvent("official_link_clicked", {
-          host: hostOf(href as string),
+          host: hostOf(safeHref),
           linkType: exact ? "exact-product" : "brand-page",
           ...(productId ? { productId } : {}),
         });

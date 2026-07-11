@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { publicConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
 };
 
-const CONTACT_EMAIL = "wangxicheng2007@gmail.com";
+const CONTACT_EMAIL = publicConfig.contactEmail;
 
 const reasons = [
   {
@@ -21,7 +22,7 @@ const reasons = [
   },
   {
     title: "Privacy & data deletion",
-    text: "Ask what we hold or request deletion of a submission you sent. See the privacy page for what is collected and why.",
+    text: "Your quiz answers and saved items stay on your device — you can clear them yourself from the privacy page. Email us to delete a message you sent us.",
   },
 ];
 

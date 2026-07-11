@@ -14,6 +14,7 @@ import {
   recommendAdaptiveProducts,
 } from "@/lib/recommendationEngine";
 import { parseResultParams } from "@/lib/quiz/resultsInput";
+import QuizFreeTextNote from "@/components/QuizFreeTextNote";
 
 interface QuizResultsPageProps {
   searchParams: Record<string, string | string[] | undefined>;
@@ -30,7 +31,7 @@ export const metadata = {
 export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) {
   // Shared parsing with the Adaptive Fit Passport, so a passport-generated
   // results link and a fresh quiz submission are interpreted identically.
-  const { input, needs, clothing, styles, availability, otherNeeds, location } =
+  const { input, needs, clothing, styles, availability, location } =
     parseResultParams(searchParams);
 
   // Whether the shopper is buying for someone else / with caregiver support —
@@ -178,14 +179,7 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
             is not a medical assessment or diagnosis.
           </p>
           <PassportSummary />
-          {otherNeeds && (
-            <div className="paper-panel mt-6 max-w-3xl rounded-[1.2rem_.5rem_1.2rem_1.2rem] px-5 py-4">
-              <p className="font-hand text-xs font-semibold text-primary-700">
-                What you added
-              </p>
-              <p className="mt-1 text-sm leading-6 text-ink/70">{otherNeeds}</p>
-            </div>
-          )}
+          <QuizFreeTextNote />
           {nearbyStores && nearbyStores.places.length > 0 && (
             <div className="mt-4 max-w-3xl rounded-2xl border border-gray-200 bg-white px-5 py-4">
               <p className="text-sm font-semibold text-gray-700">

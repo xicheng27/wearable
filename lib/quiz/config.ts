@@ -1078,7 +1078,13 @@ export function buildResultParams(
   // budget
   if (a.budget?.[0] && a.budget[0] !== "No preference") p.set("budget", a.budget[0]);
 
-  if (otherNeeds.trim()) p.set("otherNeeds", otherNeeds.trim());
+  // PRIVACY: the free-text a shopper types (otherNeeds / customNeed) can
+  // contain medical/accessibility descriptions in their own words. It is
+  // deliberately NOT put in the results URL — a query string would leak into
+  // browser history, referrers, server access logs and analytics. The text is
+  // kept only in the on-device Fit Passport (localStorage) and rendered from
+  // there; `otherNeeds`/`customNeed` here are intentionally unused for the URL.
+  void otherNeeds;
 
   // raw answers for the signal map (kept compact, privacy-aware on share side)
   const raw = (k: string, list?: string[]) => {
@@ -1096,9 +1102,9 @@ export function buildResultParams(
   raw("feel", a.fabricFeel);
   raw("shopping", a.shopping);
 
-  // Custom / "not listed" need — kept private; only a soft flag + free text.
+  // Custom / "not listed" need — only a non-identifying presence flag goes in
+  // the URL; the free text itself stays on-device (see the note above).
   const custom = customNeed.trim();
-  if (custom) p.set("custom", custom);
   if (custom || hasNotListed(a)) p.set("customflag", "1");
 
   return p;

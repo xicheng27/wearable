@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ClearDataButton from "@/components/ClearDataButton";
+import { publicConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Privacy",
   description:
-    "How Xi's handles your data: what is collected, why, whether submissions are reviewed manually, optional emails, and how to request deletion.",
+    "How Xi's handles your data: everything is stored on your own device, what the app does and does not collect, the analytics and country lookup used, and how to delete your data.",
   alternates: { canonical: "/privacy" },
 };
 
-const CONTACT_EMAIL = "wangxicheng2007@gmail.com";
+const CONTACT_EMAIL = publicConfig.contactEmail;
 
 export default function PrivacyPage() {
   return (
@@ -23,67 +25,104 @@ export default function PrivacyPage() {
             Privacy at Xi&apos;s
           </h1>
           <p className="mt-5 text-lg leading-8 text-ink/72">
-            Xi&apos;s is a free adaptive clothing discovery tool. We try to
-            collect as little as possible, and we never sell your data.
+            Xi&apos;s is a free adaptive clothing discovery tool. It has no user
+            accounts and no database. Almost everything the app remembers is
+            stored <strong>only in your browser, on your own device</strong> —
+            it is not uploaded to us or linked to your identity.
           </p>
         </header>
 
         <div className="mt-10 space-y-8 text-base leading-7 text-ink/78">
           <section className="paper-panel rounded-[1.5rem_.6rem_1.5rem_1.5rem] p-6">
             <h2 className="font-display text-2xl font-semibold text-ink">
-              What we collect
+              What stays on your device
             </h2>
+            <p className="mt-3">
+              These are saved in your browser&apos;s local storage and never sent
+              to a server:
+            </p>
             <ul className="mt-3 list-disc space-y-2 pl-5">
               <li>
-                <strong>Quiz answers, saved items and preferences</strong> are
-                stored only in your browser (local storage) on your own device.
-                They are not sent to a server or linked to your identity.
+                <strong>Quiz answers and your Adaptive Fit Passport</strong> —
+                including any accessibility needs you select and anything you type
+                in the free-text boxes. This never leaves your device.
               </li>
               <li>
-                <strong>Approximate country</strong> may be detected from your IP
-                address (via a third-party lookup) so we can show clothing that
-                ships to you. You can always override it with the region picker,
-                and your choice is saved on your device.
+                <strong>Saved items</strong> (the products you heart) and your{" "}
+                <strong>region, currency and accessibility settings</strong>.
               </li>
               <li>
-                <strong>Item submissions.</strong> If you use the{" "}
+                <strong>Product suggestions.</strong> If you use the{" "}
                 <Link href="/submit" className="link-underline">
-                  submit an item
+                  suggest an item
                 </Link>{" "}
-                form, the product details you enter — and your email, only if you
-                choose to add it — are saved so we can review the suggestion.
+                form, the details you enter — and the optional email — are saved{" "}
+                <strong>only in your browser</strong>. We do not receive a copy,
+                and no one can review it unless you contact us and send it
+                yourself.
               </li>
               <li>
-                <strong>Anonymous usage analytics.</strong> We use privacy-friendly
-                Vercel Web Analytics and Speed Insights to count page views and
-                measure performance. These do not use cookies to identify you and
-                do not receive your name, email or anything you type.
+                <strong>Anonymous interaction signals</strong> (which filters and
+                cards you use) with a random, per-device id — used to improve
+                recommendations. No names, emails or free text.
               </li>
             </ul>
           </section>
 
           <section className="paper-panel rounded-[1.5rem_.6rem_1.5rem_1.5rem] p-6">
             <h2 className="font-display text-2xl font-semibold text-ink">
-              Why we collect it
+              What is sent off your device
             </h2>
-            <p className="mt-3">
-              Only to make the tool work: to remember your region and saved
-              items, to match you with suitable clothing, to review the products
-              people suggest, and to understand which pages are useful so we can
-              improve them. We do not build advertising profiles.
-            </p>
+            <ul className="mt-3 list-disc space-y-2 pl-5">
+              <li>
+                <strong>Approximate country.</strong> On your first visit the app
+                asks an IP-geolocation service (<span className="font-mono text-sm">api.country.is</span>{" "}
+                or <span className="font-mono text-sm">ipapi.co</span>) for your{" "}
+                <em>country only</em>, so it can default the shopping region. Your
+                IP is visible to that provider as part of the request; we only
+                read the country back, we don&apos;t store your IP or precise
+                location, and the answer is cached on your device so it runs at
+                most once. You can override it with the region picker.
+              </li>
+              <li>
+                <strong>Currency rates</strong> are fetched from{" "}
+                <span className="font-mono text-sm">api.frankfurter.app</span>{" "}
+                (European Central Bank data). This request contains no personal
+                data.
+              </li>
+              <li>
+                <strong>Product images</strong> load from the official retailer
+                and brand image hosts.
+              </li>
+              <li>
+                <strong>Anonymous usage analytics.</strong> We use Vercel Web
+                Analytics and Speed Insights to count page views and measure
+                performance. They do not use cookies to identify you and never
+                receive your name, email, quiz answers or anything you type — we
+                also strip query strings from analytics so quiz details can&apos;t
+                leak through a URL. Like any web host, Vercel processes basic
+                request metadata (such as IP address and user agent) to serve and
+                secure the site.
+              </li>
+            </ul>
           </section>
 
           <section className="paper-panel rounded-[1.5rem_.6rem_1.5rem_1.5rem] p-6">
             <h2 className="font-display text-2xl font-semibold text-ink">
-              Are submissions reviewed manually?
+              What we do not do
             </h2>
-            <p className="mt-3">
-              Yes. Every submitted item is read by a person before anything is
-              added to the catalogue. Adding your email is{" "}
-              <strong>optional</strong> — we only use it to follow up on your
-              suggestion if needed, never for marketing.
-            </p>
+            <ul className="mt-3 list-disc space-y-2 pl-5">
+              <li>We do not have accounts, logins or passwords.</li>
+              <li>We do not sell or share your data, or build advertising profiles.</li>
+              <li>
+                We do not store your quiz answers, saved items or product
+                suggestions on a server — there isn&apos;t one for this data.
+              </li>
+              <li>
+                We do not send your accessibility selections or free-text needs to
+                analytics or any third party.
+              </li>
+            </ul>
           </section>
 
           <section className="paper-panel rounded-[1.5rem_.6rem_1.5rem_1.5rem] p-6">
@@ -91,13 +130,53 @@ export default function PrivacyPage() {
               Deleting your data
             </h2>
             <p className="mt-3">
-              Quiz answers and saved items live on your device — clearing your
-              browser storage removes them instantly. To request deletion of a
-              submission you sent, email{" "}
+              Because everything lives on your device, you are always in control.
+              Clearing your browser storage removes it instantly, or use this
+              button to delete your quiz answers, Fit Passport, saved items and
+              any saved product suggestions from this browser:
+            </p>
+            <div className="mt-4">
+              <ClearDataButton label="Delete my data on this device" />
+            </div>
+            <p className="mt-4 text-sm text-ink/65">
+              This does not change your currency or accessibility preferences. If
+              you emailed us a suggestion or a question, you can ask us to delete
+              that message at{" "}
+              <a href={`mailto:${CONTACT_EMAIL}`} className="link-underline font-bold">
+                {CONTACT_EMAIL}
+              </a>
+              .
+            </p>
+          </section>
+
+          <section className="rounded-[1.5rem_.6rem_1.5rem_1.5rem] border border-clay/40 bg-clay/10 p-6">
+            <h2 className="font-display text-2xl font-semibold text-ink">
+              Not a medical service
+            </h2>
+            <p className="mt-3">
+              Xi&apos;s is a discovery tool, not a shop and not a medical service.
+              Please <strong>don&apos;t enter medical records, diagnosis
+              documents or other identifying health information</strong> in the
+              quiz or submission form. Always confirm price, stock, sizing,
+              returns and accessibility suitability on the official retailer&apos;s
+              page before purchasing. See our{" "}
+              <Link href="/disclaimer" className="link-underline">
+                disclaimer
+              </Link>
+              .
+            </p>
+          </section>
+
+          <section className="paper-panel rounded-[1.5rem_.6rem_1.5rem_1.5rem] p-6">
+            <h2 className="font-display text-2xl font-semibold text-ink">
+              Contact
+            </h2>
+            <p className="mt-3">
+              Questions about privacy? Email{" "}
               <a href={`mailto:${CONTACT_EMAIL}`} className="link-underline font-bold">
                 {CONTACT_EMAIL}
               </a>{" "}
-              and we&apos;ll remove it. You can also reach us through the{" "}
+              or use the{" "}
               <Link href="/contact" className="link-underline">
                 contact page
               </Link>
@@ -105,24 +184,8 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          <section className="rounded-[1.5rem_.6rem_1.5rem_1.5rem] border border-clay/40 bg-clay/10 p-6">
-            <h2 className="font-display text-2xl font-semibold text-ink">
-              Please verify before you buy
-            </h2>
-            <p className="mt-3">
-              Xi&apos;s is a discovery tool, not a shop and not a medical service.
-              Always confirm <strong>price, stock, sizing, returns and medical
-              or accessibility suitability</strong> on the official retailer&apos;s
-              page before purchasing. See our{" "}
-              <Link href="/disclaimer" className="link-underline">
-                disclaimer
-              </Link>{" "}
-              for more.
-            </p>
-          </section>
-
           <p className="text-sm text-ink/55">
-            This page may be updated as the site changes. Last reviewed June 2026.
+            This page may be updated as the site changes. Last reviewed July 2026.
           </p>
         </div>
       </div>

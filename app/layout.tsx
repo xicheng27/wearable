@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import SiteAnalytics from "@/components/SiteAnalytics";
 import SiteChrome from "@/components/SiteChrome";
 import CurrencyProvider from "@/components/CurrencyProvider";
 import CountryProvider from "@/components/CountryProvider";
@@ -11,6 +10,7 @@ import UserProfileProvider from "@/components/UserProfileProvider";
 import PassportProvider from "@/components/PassportProvider";
 import SavedItemsProvider from "@/components/SavedItemsProvider";
 import { siteConfig } from "@/lib/siteConfig";
+import { serializeJsonLd } from "@/lib/security/jsonLd";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -97,10 +97,9 @@ export default function RootLayout({
         </CurrencyProvider>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(websiteJsonLd) }}
         />
-        <Analytics />
-        <SpeedInsights />
+        <SiteAnalytics />
       </body>
     </html>
   );

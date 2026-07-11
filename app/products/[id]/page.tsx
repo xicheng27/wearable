@@ -4,6 +4,7 @@ import ProductCard from "@/components/ProductCard";
 import ProductImage from "@/components/ProductImage";
 import PriceDisplay from "@/components/PriceDisplay";
 import OfficialProductLink from "@/components/OfficialProductLink";
+import { serializeJsonLd } from "@/lib/security/jsonLd";
 import { getBrandById } from "@/data/brands";
 import {
   getProductById,
@@ -117,7 +118,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
     <div className="min-h-screen bg-ivory">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <nav className="mb-8 text-sm text-ink/55" aria-label="Breadcrumb">

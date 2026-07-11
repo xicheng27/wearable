@@ -1,0 +1,63 @@
+name: CI & Security
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Cancel superseded runs on the same ref to save minutes.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-check:
+    name: Build, lint, typecheck, test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Type check
+        run: npx tsc --noEmit
+
+      - name: Tests (recommendation + security)
+        run: npm test
+
+      - name: Build
+        run: npm run build
+
+      # Fail on critical only. The remaining "high" advisories are Next.js
+      # issues fixed only in a major (15/16) upgrade; they are mitigated by
+      # Vercel's managed platform and this app's architecture (App Router, no
+      # rewrites, no Pages Router i18n, pinned image hosts). Revisit with a
+      # planned Next 15 upgrade. `|| true` keeps the informational audit visible
+      # without blocking the pipeline on the known set.
+      - name: Dependency audit (fail on critical)
+        run: npm audit --audit-level=critical
+      - name: Dependency audit (report, non-blocking)
+        run: npm audit || true
+
+  codeql:
+    name: CodeQL
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+      actions: read
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: github/codeql-action/init@v3
+        with:
+          languages: javascript-typescript
+      - uses: github/codeql-action/analyze@v3
