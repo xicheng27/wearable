@@ -69,6 +69,13 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      // The app has no accounts or passwords. /signin used to render a fake
+      // login; redirect it permanently home so it isn't indexed or confusing.
+      { source: "/signin", destination: "/", permanent: true },
+    ];
+  },
   images: {
     // Explicit product-image CDNs only — no wildcard hosts, so a user-submitted
     // image domain can never be fetched/optimised by the server.

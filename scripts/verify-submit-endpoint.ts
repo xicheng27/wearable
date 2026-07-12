@@ -13,7 +13,13 @@
  */
 
 import { POST, GET } from "@/app/api/submit/route";
-import { __resetForTests } from "@/lib/server/submissions";
+import {
+  __createInMemoryBackend,
+  __resetForTests,
+  __setTestBackend,
+  isSubmissionSecretConfigured,
+  processSubmission,
+} from "@/lib/server/submissions";
 
 let failures = 0;
 function check(name: string, condition: boolean, detail = "") {
@@ -170,6 +176,62 @@ async function run() {
       "error body has no stack/path/provider details",
       !/at \/|node_modules|Error:|stack|Redis|Upstash|ECONN/i.test(text)
     );
+  }
+
+  console.log("\nHash-secret gate (SUBMISSION_HASH_SALT fail-closed)");
+  {
+    const savedNodeEnv = process.env.NODE_ENV;
+    const savedSalt = process.env.SUBMISSION_HASH_SALT;
+    const setEnv = (key: string, value: string | undefined) => {
+      if (value === undefined) delete (process.env as Record<string, string | undefined>)[key];
+      else (process.env as Record<string, string | undefined>)[key] = value;
+    };
+
+    try {
+      // A) Development / test mode may use the labelled local fallback salt.
+      setEnv("NODE_ENV", "test");
+      setEnv("SUBMISSION_HASH_SALT", undefined);
+      __resetForTests();
+      const devStore = __createInMemoryBackend();
+      __setTestBackend(devStore.backend);
+      check("dev/test allows the local fallback salt", isSubmissionSecretConfigured() === true);
+      const devRes = await processSubmission({ body: valid, ip: "192.0.2.1", requirePersistence: false });
+      check("dev/test processes normally (201)", devRes.status === 201, `status ${devRes.status}`);
+      check("dev/test stores the submission", devStore.count() === 1);
+
+      // B) Production with NO secret → refused, generic 503, nothing stored.
+      setEnv("NODE_ENV", "production");
+      setEnv("SUBMISSION_HASH_SALT", undefined);
+      __resetForTests();
+      const prodNoSecret = __createInMemoryBackend();
+      __setTestBackend(prodNoSecret.backend);
+      check("production without secret is not configured", isSubmissionSecretConfigured() === false);
+      const refused = await processSubmission({ body: valid, ip: "192.0.2.2", requirePersistence: true });
+      check("production without secret is refused (503)", refused.status === 503, `status ${refused.status}`);
+      check("no submission is stored without the secret", prodNoSecret.count() === 0);
+      const errText = JSON.stringify(refused.body);
+      check(
+        "503 client message is generic (no var name / config)",
+        !/SUBMISSION_HASH_SALT|salt|env|NODE_ENV|fallback/i.test(errText) &&
+          /temporarily unavailable/i.test(errText)
+      );
+
+      // C) Production WITH a configured secret → normal processing.
+      setEnv("NODE_ENV", "production");
+      setEnv("SUBMISSION_HASH_SALT", "a-real-production-secret");
+      __resetForTests();
+      const prodStore = __createInMemoryBackend();
+      __setTestBackend(prodStore.backend);
+      check("production with secret is configured", isSubmissionSecretConfigured() === true);
+      const okRes = await processSubmission({ body: valid, ip: "192.0.2.3", requirePersistence: true });
+      check("production with secret processes normally (201)", okRes.status === 201, `status ${okRes.status}`);
+      check("production with secret stores the submission", prodStore.count() === 1);
+    } finally {
+      __setTestBackend(null);
+      __resetForTests();
+      setEnv("NODE_ENV", savedNodeEnv);
+      setEnv("SUBMISSION_HASH_SALT", savedSalt);
+    }
   }
 
   console.log(

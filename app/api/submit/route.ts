@@ -1,10 +1,6 @@
 import "server-only";
 
-import {
-  hashValue,
-  logError,
-  processSubmission,
-} from "@/lib/server/submissions";
+import { logError, processSubmission } from "@/lib/server/submissions";
 
 /**
  * POST /api/submit — receive one product suggestion.
@@ -58,10 +54,12 @@ export async function POST(req: Request): Promise<Response> {
       return json(400, { error: "Invalid request." });
     }
 
-    const ipHash = hashValue(clientIp(req));
+    // Pass the raw IP; it is hashed inside processSubmission only after the
+    // salt gate, so a production request with no secret is refused (503)
+    // before any IP is ever hashed with the dev fallback.
     const result = await processSubmission({
       body: parsed,
-      ipHash,
+      ip: clientIp(req),
       requirePersistence: process.env.NODE_ENV === "production",
     });
     return json(result.status, result.body);
