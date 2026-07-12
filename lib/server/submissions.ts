@@ -31,12 +31,42 @@ const RATE_WINDOW_SECONDS = 600; // 10 minutes
 const DEDUPE_TTL_SECONDS = 30 * 24 * 60 * 60; // ignore identical re-posts for 30 days
 const INDEX_CAP = 5000;
 
-const HASH_SALT =
-  process.env.SUBMISSION_HASH_SALT || "xis-submission-salt-fallback";
+/**
+ * Clearly-labelled, development-only fallback salt. It is INSECURE and is only
+ * ever used outside production so local dev / tests work without configuration.
+ * Production must supply a real `SUBMISSION_HASH_SALT` (we fail closed if not).
+ */
+const DEV_ONLY_INSECURE_SALT = "xis-dev-only-insecure-salt";
 
-/** Salted SHA-256, hex. Used so we never persist a raw IP. */
+/**
+ * Resolve the IP-hash salt at call time (never at module load, so `next build`
+ * never throws just because the production secret is absent at build time):
+ *   • configured `SUBMISSION_HASH_SALT` → use it;
+ *   • outside production → a labelled dev-only fallback;
+ *   • production with no secret → `null` (fail closed — callers must refuse).
+ */
+export function resolveHashSalt(): string | null {
+  const configured = process.env.SUBMISSION_HASH_SALT?.trim();
+  if (configured) return configured;
+  if (process.env.NODE_ENV !== "production") return DEV_ONLY_INSECURE_SALT;
+  return null;
+}
+
+/** True when a usable salt exists (configured, or the dev fallback is allowed). */
+export function isSubmissionSecretConfigured(): boolean {
+  return resolveHashSalt() !== null;
+}
+
+/**
+ * Salted SHA-256, hex — used so we never persist a raw IP. Throws if no salt is
+ * available; callers gate on {@link isSubmissionSecretConfigured} first, so in
+ * production a missing secret becomes a 503 before this is ever reached (we
+ * never hash/store an IP with a public fallback in production).
+ */
 export function hashValue(input: string): string {
-  return createHash("sha256").update(`${HASH_SALT}:${input}`).digest("hex");
+  const salt = resolveHashSalt();
+  if (salt === null) throw new Error("submission secret unavailable");
+  return createHash("sha256").update(`${salt}:${input}`).digest("hex");
 }
 
 export interface CleanSubmissionRecord {
@@ -76,9 +106,9 @@ function getRedis(): Redis | null {
   return redisClient;
 }
 
-/** True when a real, persistent store is configured. */
+/** True when a real, persistent store is configured (or injected in tests). */
 export function isPersistenceConfigured(): boolean {
-  return getRedis() !== null;
+  return testBackend !== null || getRedis() !== null;
 }
 
 class UpstashBackend implements Backend {
@@ -155,8 +185,10 @@ class InMemoryBackend implements Backend {
 
 let backend: Backend | null | undefined;
 let inMemory: InMemoryBackend | null = null;
+let testBackend: Backend | null = null;
 
 function getBackend(): Backend {
+  if (testBackend) return testBackend;
   if (backend) return backend;
   const redis = getRedis();
   if (redis) {
@@ -173,6 +205,18 @@ export function __resetForTests() {
   redisClient = undefined;
   backend = undefined;
   inMemory = null;
+  testBackend = null;
+}
+
+/** Inject an in-memory store for tests (also satisfies persistence checks). */
+export function __setTestBackend(b: Backend | null) {
+  testBackend = b;
+}
+
+/** Build a fresh in-memory store plus a count accessor, for tests. */
+export function __createInMemoryBackend(): { backend: Backend; count: () => number } {
+  const b = new InMemoryBackend();
+  return { backend: b, count: () => b.__count() };
 }
 
 /* -------------------------------------------------------------------------- */
@@ -209,8 +253,9 @@ const GENERIC_ERROR = "Something went wrong. Please try again.";
 
 export interface ProcessInput {
   body: unknown;
-  ipHash: string;
-  /** true in production so the in-memory fallback is refused. */
+  /** Raw client IP — hashed internally (never stored raw), only after the salt gate. */
+  ip: string;
+  /** true in production so a missing secret / store is refused (fail closed). */
   requirePersistence: boolean;
 }
 
@@ -219,7 +264,7 @@ export interface ProcessInput {
  * code and a body safe to send to the client (no internals ever leak).
  */
 export async function processSubmission(input: ProcessInput): Promise<ProcessResult> {
-  const { body, ipHash, requirePersistence } = input;
+  const { body, ip, requirePersistence } = input;
 
   if (typeof body !== "object" || body === null || Array.isArray(body)) {
     return { status: 400, body: { error: "Invalid request." } };
@@ -227,7 +272,7 @@ export async function processSubmission(input: ProcessInput): Promise<ProcessRes
   const record = body as Record<string, unknown>;
 
   // Honeypot: a hidden field only bots fill. Pretend success so we don't teach
-  // the bot what tripped it, but store nothing.
+  // the bot what tripped it, but store nothing. (No hashing/storage happens.)
   if (typeof record.company === "string" && record.company.trim() !== "") {
     logEvent("honeypot_rejected");
     return { status: 200, body: { ok: true } };
@@ -239,6 +284,20 @@ export async function processSubmission(input: ProcessInput): Promise<ProcessRes
     return { status: 400, body: { error: "Please take a moment, then submit again." } };
   }
 
+  // FAIL CLOSED: in production we must never hash or store an IP with the
+  // public dev fallback salt. If the secret is absent, refuse before any
+  // hashing happens. The client sees only a generic 503; the log is redacted
+  // and never names the missing variable.
+  if (requirePersistence && !isSubmissionSecretConfigured()) {
+    logError("hash_secret_unconfigured", new Error("secret unavailable"));
+    return {
+      status: 503,
+      body: { error: "Submissions are temporarily unavailable. Please try again later." },
+    };
+  }
+
+  // Safe to hash now (salt is guaranteed present).
+  const ipHash = hashValue(ip);
   const store = getBackend();
 
   // Rate limit BEFORE doing any real work.
