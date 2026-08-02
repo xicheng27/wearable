@@ -680,12 +680,14 @@ export const products = mixProductsByBrand(
     // engine and browse always trust a correct value even if a legacy field
     // (or a future feed sync) is wrong. See lib/productMetadata.ts.
     categoryNormalized: normalizeCategory(product),
+    // Missing shipping data stays UNKNOWN (empty), never "Global" — an
+    // unverified item must not appear to ship worldwide.
     shipsTo:
       product.shipsTo?.length
         ? product.shipsTo
         : product.availability.countries?.length
           ? product.availability.countries
-          : ["Global"],
+          : [],
   }))
 );
 
@@ -904,8 +906,11 @@ export function getBrandName(brandId: string): string {
 
 // Countries a product ships to, derived from its availability data (with legacy
 // region labels like "EU" expanded into real countries) plus the home country of
-// Singapore-based brands, who can fulfil locally. Products with no shipping data
-// default to Global so nothing is hidden by missing data.
+// Singapore-based brands, who can fulfil locally.
+//
+// IMPORTANT: missing shipping data is treated as UNKNOWN (an empty list), never
+// as evidence that a product ships worldwide. Do not add a `[GLOBAL]` fallback
+// here — that would let unverified items masquerade as globally available.
 export function getProductShipsTo(product: Product): string[] {
   const declared = product.availability?.countries ?? [];
   const expanded = expandShippingRegions(declared);
@@ -913,13 +918,48 @@ export function getProductShipsTo(product: Product): string[] {
   if (brandCountry === "Singapore" && !expanded.includes("Singapore")) {
     expanded.push("Singapore");
   }
-  return expanded.length > 0 ? expanded : [GLOBAL];
+  return expanded;
 }
 
-export function productShipsToCountry(product: Product, country: string): boolean {
-  if (!country || country === GLOBAL) return true;
+/** ships → declared for the country/global; unknown → no shipping data at all. */
+export type ShippingConfidence = "ships" | "unknown" | "no";
+
+export function getShippingConfidence(product: Product, country: string): ShippingConfidence {
+  if (!country || country === GLOBAL) return "ships";
   const shipsTo = getProductShipsTo(product);
-  return shipsTo.includes(GLOBAL) || shipsTo.includes(country);
+  if (shipsTo.length === 0) return "unknown";
+  if (shipsTo.includes(GLOBAL) || shipsTo.includes(country)) return "ships";
+  return "no";
+}
+
+/**
+ * Loose shipping check for general browsing: unknown shipping data is allowed
+ * through (so a US shopper still sees items whose country list we haven't
+ * captured), but it is NOT treated as a positive "ships worldwide" claim — use
+ * {@link productDefinitelyShipsTo} where a genuine guarantee is required.
+ */
+export function productShipsToCountry(product: Product, country: string): boolean {
+  const confidence = getShippingConfidence(product, country);
+  return confidence === "ships" || confidence === "unknown";
+}
+
+/** Strict check: only true when the product's data genuinely lists the country. */
+export function productDefinitelyShipsTo(product: Product, country: string): boolean {
+  return getShippingConfidence(product, country) === "ships";
+}
+
+/**
+ * Explicitly out of stock. Only the structured `stockStatus` counts — we never
+ * infer "out of stock" from anything else, so unknown stays purchasable-looking
+ * only where we have no evidence either way.
+ */
+export function isOutOfStock(product: Product): boolean {
+  return product.stockStatus === "out_of_stock";
+}
+
+/** True unless we have positive evidence the item is out of stock. */
+export function isPurchasable(product: Product): boolean {
+  return product.stockStatus !== "out_of_stock";
 }
 
 export function filterProductsByCountry(

@@ -27,7 +27,12 @@ function allowedHosts() {
   return hosts;
 }
 
-/** Every imageUrl string across the data catalog (quoted or unquoted key). */
+/**
+ * Every product image string across the data catalog: the primary `imageUrl`
+ * AND each entry of a `galleryImages: [...]` array (front/back/side/detail
+ * views), since those are also served through next/image and must be on an
+ * allow-listed host.
+ */
 function collectImageUrls() {
   const urls = [];
   for (const file of readdirSync(DATA_DIR)) {
@@ -35,7 +40,13 @@ function collectImageUrls() {
     const text = readFileSync(join(DATA_DIR, file), "utf8");
     // `\s*` spans newlines so multi-line `imageUrl:\n  "..."` is captured too.
     for (const m of text.matchAll(/"?imageUrl"?\s*:\s*"([^"]*)"/g)) {
-      urls.push({ file, value: m[1] });
+      urls.push({ file, value: m[1], field: "imageUrl" });
+    }
+    // Gallery arrays: pull each quoted URL out of the `[...]` body.
+    for (const arr of text.matchAll(/"?galleryImages"?\s*:\s*\[([\s\S]*?)\]/g)) {
+      for (const u of arr[1].matchAll(/"([^"]+)"/g)) {
+        urls.push({ file, value: u[1], field: "galleryImages" });
+      }
     }
   }
   return urls;

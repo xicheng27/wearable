@@ -1,14 +1,23 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
-import ProductImage from "@/components/ProductImage";
+import ProductGallery from "@/components/ProductGallery";
+import { MechanismDiagrams } from "@/components/MechanismDiagram";
 import PriceDisplay from "@/components/PriceDisplay";
 import OfficialProductLink from "@/components/OfficialProductLink";
 import { serializeJsonLd } from "@/lib/security/jsonLd";
+import {
+  consolidateFeatures,
+  diagramsForProduct,
+  explainFeature,
+} from "@/lib/adaptiveFeatures";
+import { assessClimate } from "@/lib/climate";
 import { getBrandById } from "@/data/brands";
 import {
   getProductById,
+  getShippingConfidence,
   getSimilarProducts,
+  isOutOfStock,
   products,
 } from "@/data/products";
 import { absoluteUrl, siteConfig } from "@/lib/siteConfig";
@@ -45,7 +54,7 @@ function buildProductJsonLd(product: Product, brand: Brand) {
   };
 
   if (hasRealOffer) {
-    productLd.offers = {
+    const offer: Record<string, unknown> = {
       "@type": "Offer",
       url: product.productUrl,
       priceCurrency: product.currency,
@@ -53,6 +62,14 @@ function buildProductJsonLd(product: Product, brand: Brand) {
       itemCondition: "https://schema.org/NewCondition",
       seller: { "@type": "Organization", name: brand.name },
     };
+    // Honest availability only: never assert InStock without evidence.
+    if (product.stockStatus === "in_stock") {
+      offer.availability = "https://schema.org/InStock";
+    } else if (product.stockStatus === "out_of_stock") {
+      offer.availability = "https://schema.org/OutOfStock";
+    }
+    // Unknown stock → omit `availability` entirely rather than guess.
+    productLd.offers = offer;
   }
 
   const breadcrumbLd = {
@@ -71,19 +88,6 @@ function buildProductJsonLd(product: Product, brand: Brand) {
   };
 
   return [productLd, breadcrumbLd];
-}
-
-function explainFeature(feature: string) {
-  const value = feature.toLowerCase();
-  if (value.includes("magnetic")) return "Magnets can reduce the need to line up and push small buttons.";
-  if (value.includes("seated")) return "The cut is designed to sit more comfortably while using a wheelchair or sitting for long periods.";
-  if (value.includes("open-back")) return "The back opening can make assisted dressing easier, especially while seated or lying down.";
-  if (value.includes("side")) return "Side openings can reduce bending, pulling, or stepping into clothing.";
-  if (value.includes("zip")) return "Zip access can make openings larger and easier to manage.";
-  if (value.includes("velcro") || value.includes("touch")) return "Touch-and-close fasteners can be easier than buttons for limited dexterity.";
-  if (value.includes("sensory") || value.includes("seam") || value.includes("tag")) return "Softer finishes may reduce scratching, rubbing, or sensory discomfort.";
-  if (value.includes("wide") || value.includes("afo") || value.includes("orthotic")) return "Extra room can help with braces, orthotics, swelling, or easier shoe entry.";
-  return "This feature is intended to make dressing, comfort, or access easier.";
 }
 
 interface ProductPageProps {
@@ -114,6 +118,18 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
   const similarItems = getSimilarProducts(product);
   const jsonLd = buildProductJsonLd(product, brand);
 
+  // §6 derived, evidence-backed detail: concise features (no generic repeats),
+  // illustrative mechanism diagrams, climate verdict, stock and SG shipping.
+  const helpfulFeatures = consolidateFeatures(product.adaptiveFeatures);
+  const extraFeatures = product.adaptiveFeatures.filter(
+    (f) => !helpfulFeatures.includes(f)
+  );
+  const diagrams = diagramsForProduct(product);
+  const climate = assessClimate(product);
+  const outOfStock = isOutOfStock(product);
+  const sgShipping = getShippingConfidence(product, "Singapore");
+  const magnetWarning = product.adaptiveFeatures.some((f) => /magnet/i.test(f));
+
   return (
     <div className="min-h-screen bg-ivory">
       <script
@@ -131,16 +147,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
 
         <section className="paper-panel overflow-hidden rounded-[2rem_.9rem_2rem_2rem]">
           <div className="grid grid-cols-1 lg:grid-cols-2">
-            <ProductImage
-              src={product.imageUrl}
-              alt={product.imageAlt}
-              category={product.categoryNormalized}
-              permissionStatus={product.permissionStatus}
-              attribution={product.attributionText}
-              source={brand.name}
-              className="aspect-[4/3] min-h-[360px] lg:aspect-auto lg:min-h-[620px]"
-              priority
-            />
+            <ProductGallery product={product} />
 
             <div className="flex flex-col p-6 sm:p-10">
               <Link
@@ -254,13 +261,26 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
         <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-3">
           <section className="paper-panel rounded-[1.5rem_.7rem_1.5rem_1.5rem] p-6 lg:col-span-2">
             <h2 className="font-display text-3xl font-semibold text-ink">
-              Adaptive features explained
+              How it helps
             </h2>
             <p className="mt-4 leading-relaxed text-ink/70">
               {product.accessibilityExplanation}
             </p>
+
+            {magnetWarning && (
+              <p
+                className="mt-5 rounded-xl border border-clay/50 bg-clay/10 px-4 py-3 text-sm font-semibold leading-6 text-ink"
+                role="note"
+              >
+                ⚠ Contains magnets. Magnetic closures can interfere with
+                pacemakers and other implanted medical devices — check with the
+                wearer&apos;s clinician if this applies.
+              </p>
+            )}
+
+            {/* Only specific, meaningful features — generic duplicates removed. */}
             <div className="mt-6 grid grid-cols-1 gap-3">
-              {product.adaptiveFeatures.map((feature) => (
+              {helpfulFeatures.map((feature) => (
                 <div
                   key={feature}
                   className="rounded-xl bg-primary-50 p-4 text-sm text-primary-950"
@@ -270,6 +290,30 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                 </div>
               ))}
             </div>
+
+            {diagrams.length > 0 && (
+              <div className="mt-6">
+                <MechanismDiagrams ids={diagrams} />
+              </div>
+            )}
+
+            {extraFeatures.length > 0 && (
+              <details className="mt-6 rounded-xl border border-ink/10 bg-paper px-4 py-3">
+                <summary className="cursor-pointer text-sm font-bold text-ink">
+                  More technical details
+                </summary>
+                <ul className="mt-2 flex flex-wrap gap-1.5">
+                  {extraFeatures.map((f) => (
+                    <li
+                      key={f}
+                      className="rounded-md border border-ink/15 bg-ivory px-2 py-0.5 text-xs font-semibold text-ink/75"
+                    >
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            )}
           </section>
 
           <aside className="paper-panel rounded-[1.5rem_.7rem_1.5rem_1.5rem] p-6">
@@ -284,23 +328,117 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                 </dd>
               </div>
               <div>
-                <dt className="font-bold text-ink/45">Sizing information</dt>
+                <dt className="font-bold text-ink/45">Stock</dt>
                 <dd className="mt-2 leading-6 text-ink/72">
-                  {product.sizes.length > 0
-                    ? product.sizes.join(", ")
-                    : "Sizing was not listed in our current data. Check the official product page."}
+                  {outOfStock
+                    ? "Reported out of stock — check the official page for restocks."
+                    : product.stockStatus === "in_stock"
+                      ? "In stock at last check."
+                      : "Stock not confirmed in our data — check the official page."}
+                  {product.stockCheckedAt && (
+                    <span className="mt-1 block text-xs text-ink/50">
+                      Stock last checked {product.stockCheckedAt}.
+                    </span>
+                  )}
+                </dd>
+              </div>
+              <div>
+                <dt className="font-bold text-ink/45">Ships to Singapore</dt>
+                <dd className="mt-2 leading-6 text-ink/72">
+                  {sgShipping === "ships"
+                    ? "Yes — Singapore is listed in the official availability."
+                    : sgShipping === "unknown"
+                      ? "Not confirmed — the listing didn't state Singapore delivery. Check the official page."
+                      : "Not listed for Singapore. Confirm international delivery on the official page."}
+                </dd>
+              </div>
+              {(product.materialComposition || (product.materials?.length ?? 0) > 0) && (
+                <div>
+                  <dt className="font-bold text-ink/45">Material</dt>
+                  <dd className="mt-2 leading-6 text-ink/72">
+                    {product.materialComposition ?? product.materials?.join(", ")}
+                  </dd>
+                </div>
+              )}
+              <div>
+                <dt className="font-bold text-ink/45">Hot &amp; humid weather</dt>
+                <dd className="mt-2 leading-6 text-ink/72">
+                  {climate.suitability === "high"
+                    ? "Suited to a hot, humid climate."
+                    : climate.suitability === "medium"
+                      ? "Reasonable for warm weather."
+                      : climate.suitability === "low"
+                        ? "Warm/heavy — better suited to cooler weather or air-conditioned settings."
+                        : "Not enough official material evidence to say."}
+                  {climate.evidence.length > 0 && (
+                    <span className="mt-1 block text-xs text-ink/50">
+                      Why: {climate.evidence.join(" ")}
+                    </span>
+                  )}
+                </dd>
+              </div>
+              <div>
+                <dt className="font-bold text-ink/45">Sizing</dt>
+                <dd className="mt-2 leading-6 text-ink/72">
+                  {product.measurements && product.measurements.length > 0 ? (
+                    <>
+                      <div className="overflow-x-auto">
+                        <table className="mt-1 w-full border-collapse text-xs">
+                          <caption className="sr-only">
+                            {product.measurementType === "body" ? "Body" : "Garment"}{" "}
+                            measurements
+                          </caption>
+                          <thead>
+                            <tr>
+                              <th className="border-b border-ink/15 py-1 pr-2 text-left font-bold">
+                                Measurement
+                              </th>
+                              {Object.keys(product.measurements[0].values).map((size) => (
+                                <th key={size} className="border-b border-ink/15 px-2 py-1 text-left font-bold">
+                                  {size}
+                                </th>
+                              ))}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {product.measurements.map((row) => (
+                              <tr key={row.label}>
+                                <td className="border-b border-ink/10 py-1 pr-2 font-semibold">{row.label}</td>
+                                {Object.values(row.values).map((v, i) => (
+                                  <td key={i} className="border-b border-ink/10 px-2 py-1">{v}</td>
+                                ))}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                      <span className="mt-2 block text-xs text-ink/50">
+                        {product.measurementType === "body"
+                          ? "Body measurements (measure yourself and compare)."
+                          : "Garment measurements (measured flat)."}
+                      </span>
+                    </>
+                  ) : product.sizes.length > 0 ? (
+                    <>
+                      Available sizes: {product.sizes.join(", ")}. Exact
+                      measurements weren&apos;t listed in our data.
+                    </>
+                  ) : (
+                    "Sizing was not listed in our current data. Check the official product page."
+                  )}
+                  {product.sizeGuideUrl && (
+                    <span className="mt-1 block">
+                      <OfficialProductLink href={product.sizeGuideUrl} className="link-underline text-primary-700">
+                        Official size guide →
+                      </OfficialProductLink>
+                    </span>
+                  )}
                 </dd>
               </div>
               <div>
                 <dt className="font-bold text-ink/45">Location availability</dt>
                 <dd className="mt-2 leading-6 text-ink/72">
                   {product.availability.note}
-                </dd>
-              </div>
-              <div>
-                <dt className="font-bold text-ink/45">Ships to</dt>
-                <dd className="mt-2 leading-6 text-ink/72">
-                  {product.availability.countries.join(", ")}
                 </dd>
               </div>
               <div>
