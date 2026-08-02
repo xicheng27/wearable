@@ -155,6 +155,41 @@ export interface Product {
   returnsNote?: string;
   /** URLs or names of the sources the adaptive claims were verified against. */
   evidenceSources?: string[];
+
+  // --- Optional climate / stock / gallery metadata -------------------------
+  // All optional and evidence-backed; absent fields stay "unknown" and are
+  // never inferred into a positive claim. Populated by the catalogue sync.
+  /** Free-text official material composition, e.g. "100% linen". */
+  materialComposition?: string;
+  /** Structured materials, e.g. ["linen"], ["cotton", "elastane"]. */
+  materials?: string[];
+  /** e.g. "short-sleeve" | "sleeveless" | "long-sleeve". */
+  sleeveLength?: string;
+  /** Recognised climate tags, e.g. ["linen", "short-sleeve"]. */
+  climateTags?: string[];
+  /** Explicit verdict when verified at sync time; otherwise derived. */
+  climateSuitability?: "high" | "medium" | "low" | "unknown";
+  /** Human-readable evidence behind the climate verdict/badge. */
+  climateEvidence?: string[];
+  /** Current stock, kept separate from source verification. */
+  stockStatus?: "in_stock" | "out_of_stock" | "unknown";
+  /** ISO date the stock was last checked (short freshness window). */
+  stockCheckedAt?: string;
+  /** De-duplicated official gallery image URLs (front/back/side/detail…). */
+  galleryImages?: string[];
+  /** Official size-guide URL. */
+  sizeGuideUrl?: string;
+  /** Structured measurements when officially provided (never fabricated). */
+  measurements?: ProductMeasurement[];
+  /** Whether `measurements` are body or garment measurements. */
+  measurementType?: "body" | "garment";
+}
+
+export interface ProductMeasurement {
+  /** e.g. "Chest", "Waist", "Length". */
+  label: string;
+  /** Per-size values keyed by size label, e.g. { S: "96cm", M: "101cm" }. */
+  values: Record<string, string>;
 }
 
 // --- User profile / target group segmentation ---
@@ -340,6 +375,8 @@ export interface RecommendationInput {
   orthoticAccessNeeds?: string[];
   dressingMethod?: DressingMethod;
   limit?: number;
+  /** Opt out of the Singapore hot-humid default (show warm/winter items too). */
+  showAllClimates?: boolean;
 }
 
 /**

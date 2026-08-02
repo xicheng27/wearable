@@ -1,5 +1,12 @@
-import { budgetMatches, getProductShipsTo, matches, products } from "@/data/products";
+import {
+  budgetMatches,
+  getProductShipsTo,
+  isOutOfStock,
+  matches,
+  products,
+} from "@/data/products";
 import { expandShippingRegions, GLOBAL } from "@/lib/countries";
+import { assessClimate, hiddenInHotHumidDefault } from "@/lib/climate";
 import { resolvePriceStatus } from "@/lib/pricingProvider";
 import type {
   AdaptiveClothingProfile,
@@ -144,7 +151,14 @@ export function classifyItem(product: Product): string[] {
     tags.add(isUpperBody ? "Sensory-friendly shirt" : "Sensory-friendly clothing");
   }
   if (clothingType === "jackets") {
-    tags.add("Lightweight adaptive outerwear");
+    // Only claim "lightweight" when the evidence supports it — a heavy puffer,
+    // wool coat or fleece must not be labelled lightweight.
+    const climate = assessClimate(product);
+    const lightweight =
+      climate.suitability === "high" ||
+      (climate.suitability === "medium" &&
+        climate.tags.some((t) => ["lightweight", "breathable", "linen", "cooling"].includes(t)));
+    tags.add(lightweight ? "Lightweight adaptive outerwear" : "Adaptive outerwear");
   }
   if (features.includes("zip") || features.includes("zipper")) {
     tags.add("Easy-grip zipper clothing");
@@ -1268,10 +1282,22 @@ export function recommendAdaptiveProducts(input: RecommendationInput): Recommend
   const selectedCats = (input.clothingTypes ?? []).filter(
     (c) => c && !/not sure/i.test(c)
   );
+  // Singapore's hot, humid climate is a first-class default signal: hide
+  // low-suitability (warm/winter) items UNLESS the shopper explicitly asked
+  // for outerwear or opted into "show all climates". Accessibility filters
+  // below still outrank this — this only removes clearly-unsuitable items.
+  const wantsOuterwear = selectedCats.some((c) => categoryFamilyFor(c) === "outerwear");
+  const hotHumidDefault =
+    input.location === "Singapore" && !wantsOuterwear && !input.showAllClimates;
+
   const candidates = products.filter(
     (p) =>
       (selectedCats.length === 0 || productInSelectedCategories(p, selectedCats)) &&
-      productMatchesGenderRange(p, input.genderRange, input.childrenTeen)
+      productMatchesGenderRange(p, input.genderRange, input.childrenTeen) &&
+      // Out-of-stock items never appear in default recommendations.
+      !isOutOfStock(p) &&
+      // In hot-humid default mode, drop fleece/wool/flannel/puffer/winter items.
+      !(hotHumidDefault && hiddenInHotHumidDefault(p))
   );
 
   // Nothing in the catalogue satisfies the strict category/range selection.

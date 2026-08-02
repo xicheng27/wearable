@@ -9,6 +9,7 @@ import { captureFeedback, type ProductFeedbackType } from "@/lib/feedback";
 import CountryEmptyState from "@/components/CountryEmptyState";
 import { communityVerificationsFor } from "@/lib/communityVerification";
 import { productShipsToCountry } from "@/data/products";
+import { assessClimate } from "@/lib/climate";
 import { useCountry } from "@/components/CountryProvider";
 import { GLOBAL } from "@/lib/countries";
 import type { Product, RecommendationResult } from "@/types";
@@ -20,21 +21,27 @@ type Recommendation = Partial<RecommendationResult> & {
   unmatchedTags?: string[];
 };
 
-const FEEDBACK_OPTIONS: { value: ProductFeedbackType; label: string }[] = [
-  { value: "good_match", label: "Good match" },
+/** Reasons revealed only after "Not for me" (progressive disclosure). */
+const NOT_FOR_ME_REASONS: { value: ProductFeedbackType; label: string }[] = [
   { value: "not_relevant", label: "Not relevant" },
   { value: "wrong_category", label: "Wrong category" },
   { value: "doesnt_fit_need", label: "Doesn't fit my need" },
   { value: "doesnt_ship", label: "Doesn't ship to me" },
 ];
 
-const FEEDBACK_VALUES = FEEDBACK_OPTIONS.map((o) => o.value);
+const ALL_FEEDBACK_VALUES: string[] = ["good_match", ...NOT_FOR_ME_REASONS.map((o) => o.value)];
+
+/** Words that make a "check before buying" item a real safety caution. */
+const SAFETY_PATTERN = /magnet|pacemaker|defibrillat|implant|icd\b/i;
+function isSafetyCheck(text: string): boolean {
+  return SAFETY_PATTERN.test(text);
+}
 
 /**
- * Per-card feedback. Stored on-device and captured through the feedback layer
- * (lib/feedback.ts) so the signal can later tune scoring (lib/recommendationTuning.ts).
- * Anonymous, no login, no sensitive data — only the product id, controlled tags
- * and the shown match score.
+ * Lightweight per-card feedback: "Useful" / "Not for me". Choosing "Not for me"
+ * progressively reveals optional reason chips. Stored on-device and captured
+ * through the feedback layer (anonymous, no login, no sensitive data — only the
+ * product id, controlled tags and the shown match score).
  */
 function RecommendationFeedback({
   productId,
@@ -46,16 +53,18 @@ function RecommendationFeedback({
   matchScore?: number | null;
 }) {
   const [selected, setSelected] = useState<ProductFeedbackType | null>(null);
+  const [showReasons, setShowReasons] = useState(false);
 
   useEffect(() => {
     const stored = window.localStorage.getItem(`xis-feedback-${productId}`);
-    if (stored && (FEEDBACK_VALUES as string[]).includes(stored)) {
+    if (stored && ALL_FEEDBACK_VALUES.includes(stored)) {
       setSelected(stored as ProductFeedbackType);
     }
   }, [productId]);
 
   function choose(value: ProductFeedbackType) {
     setSelected(value);
+    setShowReasons(false);
     window.localStorage.setItem(`xis-feedback-${productId}`, value);
     captureFeedback({
       actionType: "feedback_given",
@@ -66,35 +75,62 @@ function RecommendationFeedback({
     });
   }
 
+  const useful = selected === "good_match";
+
   return (
     <div className="mt-4 border-t border-primary-200 pt-3">
-      <p className="text-xs font-bold uppercase tracking-wider text-primary-800">
-        Was this a good match?{" "}
-        <span className="font-semibold normal-case tracking-normal text-primary-800/70">
-          (private to this device)
-        </span>
-      </p>
-      <div className="mt-2 flex flex-wrap gap-2">
-        {FEEDBACK_OPTIONS.map((action) => (
-          <button
-            key={action.value}
-            type="button"
-            onClick={() => choose(action.value)}
-            aria-pressed={selected === action.value}
-            className={`min-h-9 rounded-lg border px-3 py-1.5 text-xs font-bold ${
-              selected === action.value
-                ? "border-primary-800 bg-primary-800 text-white"
-                : "border-primary-200 bg-paper text-primary-900 hover:border-primary-500"
-            }`}
-          >
-            {action.label}
-          </button>
-        ))}
+      <div className="flex flex-wrap items-center gap-2">
+        <button
+          type="button"
+          onClick={() => choose("good_match")}
+          aria-pressed={useful}
+          className={`min-h-9 rounded-lg border px-3 py-1.5 text-xs font-bold ${
+            useful
+              ? "border-primary-800 bg-primary-800 text-white"
+              : "border-primary-200 bg-paper text-primary-900 hover:border-primary-500"
+          }`}
+        >
+          Useful
+        </button>
+        <button
+          type="button"
+          onClick={() => setShowReasons((v) => !v)}
+          aria-pressed={selected !== null && !useful}
+          aria-expanded={showReasons}
+          className={`min-h-9 rounded-lg border px-3 py-1.5 text-xs font-bold ${
+            selected !== null && !useful
+              ? "border-ink/60 bg-ink/80 text-white"
+              : "border-primary-200 bg-paper text-primary-900 hover:border-primary-500"
+          }`}
+        >
+          Not for me
+        </button>
       </div>
+
+      {showReasons && (
+        <div className="mt-2 flex flex-wrap gap-1.5" role="group" aria-label="Why isn't this for you?">
+          {NOT_FOR_ME_REASONS.map((reason) => (
+            <button
+              key={reason.value}
+              type="button"
+              onClick={() => choose(reason.value)}
+              aria-pressed={selected === reason.value}
+              className={`min-h-8 rounded-lg border px-2.5 py-1 text-xs font-semibold ${
+                selected === reason.value
+                  ? "border-ink/60 bg-ink/80 text-white"
+                  : "border-ink/20 bg-paper text-ink/80 hover:border-ink/50"
+              }`}
+            >
+              {reason.label}
+            </button>
+          ))}
+        </div>
+      )}
+
       {selected && (
         <p className="mt-2 text-xs font-semibold text-primary-900" role="status">
-          Thanks — saved on this device to help improve future matches. It is
-          never shared as community proof.
+          Thanks — saved on this device to help improve future matches. Never
+          shared.
         </p>
       )}
     </div>
@@ -158,6 +194,15 @@ function MatchDetail({
       ? Math.round((satisfied.length / totalConstraints) * 100)
       : null;
 
+  // Progressive disclosure: the card stays compact; heavy scoring/analysis
+  // moves into a collapsed "Match details". Safety cautions (magnet/pacemaker)
+  // and the honest availability/trust badges always stay visible.
+  const whyOneSentence = (why.split(/(?<=[.!?])\s/)[0] || why).trim();
+  const climate = assessClimate(product);
+  const climateHigh = climate.suitability === "high";
+  const safetyChecks = (checkBeforeBuying ?? []).filter(isSafetyCheck);
+  const otherChecks = (checkBeforeBuying ?? []).filter((c) => !isSafetyCheck(c));
+
   return (
     <div
       className={`-mt-3 rounded-b-2xl border border-t-0 px-5 pb-5 pt-6 ${
@@ -173,6 +218,70 @@ function MatchDetail({
 
       {/* Trust / availability badges: is this truly buyable and where? */}
       <ProductTrustBadges product={product} country={country} className="mt-3" />
+
+      {/* Climate badge — only when the evidence supports a hot-humid verdict. */}
+      {climateHigh && (
+        <p
+          className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-primary-300 bg-primary-100 px-2.5 py-1 text-xs font-bold text-primary-900"
+          title={climate.evidence.join(" ")}
+        >
+          <span aria-hidden="true">☀︎</span> Hot-humid suitable
+        </p>
+      )}
+
+      {/* Compact "why" — at most three adaptive chips and one sentence. */}
+      <p className="mt-3 text-[11px] font-bold uppercase tracking-wider text-primary-800/80">
+        Why it matches
+      </p>
+      {itemClassification && itemClassification.length > 0 && (
+        <div className="mt-2 flex flex-wrap gap-1.5">
+          {itemClassification.slice(0, 3).map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full bg-primary-100 px-2.5 py-0.5 text-[11px] font-semibold text-primary-800"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+      <p className="mt-2 text-sm leading-6 text-primary-950">{whyOneSentence}</p>
+
+      {/* Safety cautions stay visible — never hidden inside the disclosure. */}
+      {safetyChecks.length > 0 && (
+        <div className="mt-3 rounded-xl border border-clay/50 bg-clay/10 px-3.5 py-3" role="note">
+          <p className="text-[11px] font-bold uppercase tracking-wide text-clay">
+            Safety
+          </p>
+          <ul className="mt-1 space-y-1">
+            {safetyChecks.map((check) => (
+              <li key={check} className="flex gap-1.5 text-xs font-semibold leading-5 text-ink">
+                <span aria-hidden="true" className="mt-0.5 flex-shrink-0">⚠</span>
+                {check}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {isFallback && unmetNeeds && unmetNeeds.length > 0 && (
+        <p className="mt-3 text-xs font-medium text-amber-700">
+          Doesn&apos;t yet cover: {unmetNeeds.slice(0, 2).join(", ").toLowerCase()}.
+        </p>
+      )}
+
+      <RecommendationFeedback
+        productId={product.id}
+        productTags={product.adaptiveFeatures}
+        matchScore={matchScore}
+      />
+
+      {/* Everything below is collapsed by default. */}
+      <details className="mt-4 border-t border-primary-200 pt-3">
+        <summary className="cursor-pointer list-none text-xs font-bold uppercase tracking-wide text-primary-800 [&::-webkit-details-marker]:hidden">
+          Match details
+        </summary>
+        <div className="mt-3">
 
       {/* Quantitative header: honest match score + requirement tallies */}
       {typeof matchScore === "number" && (
@@ -211,25 +320,6 @@ function MatchDetail({
       {confidence && confidenceNotes && confidenceNotes.length > 0 && (
         <p className="mt-2 text-xs leading-5 text-ink/60">{confidenceNotes[0]}</p>
       )}
-
-      <p className="mt-3 text-[11px] font-bold uppercase tracking-wider text-primary-800/80">
-        Why this matches you
-      </p>
-
-      {itemClassification && itemClassification.length > 0 && (
-        <div className="mt-2 flex flex-wrap gap-1.5">
-          {itemClassification.map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full bg-primary-100 px-2.5 py-0.5 text-[11px] font-semibold text-primary-800"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-      )}
-
-      <p className="mt-2 text-sm leading-6 text-primary-950">{why}</p>
 
       {functionTags.length > 0 && (
         <div className="mt-3">
@@ -300,19 +390,13 @@ function MatchDetail({
         </div>
       )}
 
-      {isFallback && unmetNeeds && unmetNeeds.length > 0 && (
-        <p className="mt-3 text-xs font-medium text-amber-700">
-          Doesn&apos;t yet cover: {unmetNeeds.slice(0, 2).join(", ").toLowerCase()}.
-        </p>
-      )}
-
-      {checkBeforeBuying && checkBeforeBuying.length > 0 && (
+      {otherChecks.length > 0 && (
         <div className="mt-4 rounded-xl border border-ink/10 bg-paper px-3.5 py-3">
           <p className="text-[11px] font-bold uppercase tracking-wide text-ink/60">
             Check before buying
           </p>
           <ul className="mt-1.5 space-y-1">
-            {checkBeforeBuying.map((check) => (
+            {otherChecks.map((check) => (
               <li key={check} className="flex gap-1.5 text-xs leading-5 text-ink/75">
                 <span aria-hidden="true" className="mt-0.5 flex-shrink-0">
                   ☐
@@ -385,11 +469,8 @@ function MatchDetail({
         )}
       </div>
 
-      <RecommendationFeedback
-        productId={product.id}
-        productTags={product.adaptiveFeatures}
-        matchScore={matchScore}
-      />
+        </div>
+      </details>
     </div>
   );
 }

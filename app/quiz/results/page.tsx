@@ -124,100 +124,48 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
         selectedCategory={clothing.length > 0 ? clothing.join(", ") : null}
         selectedLocation={location || null}
       />
-      <header className="paper-texture border-b border-ink/10 bg-paper py-10">
+      {/* Slim header: lead with the matches, not the analysis. */}
+      <header className="border-b border-ink/10 bg-paper py-6">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="eyebrow">Quiz complete</p>
-          <h1 className="mt-2 font-display text-4xl font-semibold tracking-[-0.03em] text-ink sm:text-5xl">
-            Your adaptive clothing results
-          </h1>
-          <p className="mt-3 max-w-2xl text-lg leading-8 text-ink/68">
-            {summary}
-          </p>
-          {profiles.length > 0 && (
-            <div className="mt-5 flex flex-wrap gap-2">
-              {profiles.slice(0, 6).map((profile) => (
-                <span
-                  key={profile.id}
-                  title={profile.description}
-                  className="badge bg-primary-50 text-primary-800"
-                >
-                  {profile.label}
-                </span>
-              ))}
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <h1 className="font-display text-3xl font-semibold tracking-[-0.03em] text-ink sm:text-4xl">
+                Your matches
+              </h1>
+              <p className="mt-1.5 max-w-2xl text-base leading-7 text-ink/68">{summary}</p>
+              <p className="mt-1 text-sm font-semibold text-ink/70">
+                {visibleResults.length}{" "}
+                {visibleResults.length === 1 ? "piece" : "pieces"} matched
+              </p>
             </div>
-          )}
+            <div className="flex flex-wrap items-center gap-2">
+              <Link href="/quiz" className="btn-outline text-sm">
+                Edit preferences
+              </Link>
+              <Link href="/search" className="btn-outline text-sm">
+                Filters
+              </Link>
+            </div>
+          </div>
           {activeConstraints.length > 0 && (
-            <div className="mt-5 max-w-4xl rounded-2xl border border-ink/10 bg-ivory/70 px-4 py-3">
-              <p className="text-xs font-bold uppercase tracking-wider text-ink/55">
-                Showing matches for
-              </p>
-              <ul className="mt-1.5 flex flex-wrap items-center gap-x-1.5 gap-y-1.5">
-                {activeConstraints.map((constraint, index) => (
-                  <li key={constraint} className="flex items-center gap-1.5">
-                    {index > 0 && (
-                      <span aria-hidden="true" className="text-ink/30">
-                        ·
-                      </span>
-                    )}
-                    <span className="rounded-full border border-primary-200 bg-paper px-2.5 py-1 text-sm font-semibold text-primary-900">
-                      {constraint}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-          {(caregiverAssisted || shoppingForSomeoneElse) && (
-            <p className="mt-4 max-w-3xl rounded-2xl border border-primary-100 bg-primary-50/50 px-4 py-3 text-sm leading-6 text-ink/75">
-              {caregiverAssisted
-                ? "These picks prioritise assisted dressing — open backs, side openings and simpler fastenings — and the notes below are written for the wearer and whoever helps them dress."
-                : "You're shopping for someone else, so the fit and comfort notes below are about the wearer, not the person reading this."}
-            </p>
-          )}
-          <p className="mt-3 text-xs text-ink/50">
-            We group your self-selected answers into shopping categories only. This
-            is not a medical assessment or diagnosis.
-          </p>
-          <PassportSummary />
-          <QuizFreeTextNote />
-          {nearbyStores && nearbyStores.places.length > 0 && (
-            <div className="mt-4 max-w-3xl rounded-2xl border border-gray-200 bg-white px-5 py-4">
-              <p className="text-sm font-semibold text-gray-700">
-                {nearbyStores.places.length} demo stockist
-                {nearbyStores.places.length === 1 ? "" : "s"} mapped near {location}
-              </p>
-              <p className="mt-1 text-xs text-gray-500">
-                Sample locations from our directory, not a live store locator yet.{" "}
-                <Link href="/map" className="font-semibold text-primary-700 underline">
-                  See the map
-                </Link>
-              </p>
-            </div>
+            <ul
+              className="mt-3 flex flex-wrap gap-1.5"
+              aria-label="Your selected preferences"
+            >
+              {activeConstraints.map((constraint) => (
+                <li
+                  key={constraint}
+                  className="rounded-full border border-primary-200 bg-paper px-2.5 py-1 text-xs font-semibold text-primary-900"
+                >
+                  {constraint}
+                </li>
+              ))}
+            </ul>
           )}
         </div>
       </header>
 
-      <main className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        {visibleResults.length > 0 && (
-          <div className="mb-8">
-            <MatchReport report={matchReport} />
-          </div>
-        )}
-
-        <SignalMap data={signalMap} />
-
-        <div className="mt-12 mb-6 max-w-3xl">
-          <p className="eyebrow">Matched for you</p>
-          <h2 className="mt-2 font-display text-3xl font-semibold tracking-[-0.02em] text-ink">
-            Your recommended clothing pieces
-          </h2>
-          <p className="mt-2 text-base leading-7 text-ink/65">
-            Ranked by your hard functional needs first, then body-zone fit,
-            access, country availability, budget and style. Every card explains
-            why it matched.
-          </p>
-        </div>
-
+      <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         {visibleResults.length === 0 && (
           <section
             aria-labelledby="no-matches-heading"
@@ -270,6 +218,65 @@ export default function QuizResultsPage({ searchParams }: QuizResultsPageProps) 
             exactMatches={exactMatches}
             fallbackMatches={fallbackMatches}
           />
+        )}
+
+        {/* Secondary analysis — collapsed by default so the grid stays the focus. */}
+        {visibleResults.length > 0 && (
+          <details className="mt-12 rounded-2xl border border-ink/10 bg-paper/60">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-2 px-5 py-4 font-display text-lg font-semibold text-ink [&::-webkit-details-marker]:hidden">
+              <span>See how we matched you</span>
+              <span aria-hidden="true" className="text-ink/40">▾</span>
+            </summary>
+            <div className="space-y-8 border-t border-ink/10 px-5 py-6">
+              <p className="max-w-3xl text-sm leading-7 text-ink/65">
+                Ranked by your hard functional needs first, then body-zone fit,
+                access, country availability, budget and style. Every card also
+                explains why it matched.
+              </p>
+              {(caregiverAssisted || shoppingForSomeoneElse) && (
+                <p className="max-w-3xl rounded-2xl border border-primary-100 bg-primary-50/50 px-4 py-3 text-sm leading-6 text-ink/75">
+                  {caregiverAssisted
+                    ? "These picks prioritise assisted dressing — open backs, side openings and simpler fastenings — written for the wearer and whoever helps them dress."
+                    : "You're shopping for someone else, so the fit and comfort notes are about the wearer, not the reader."}
+                </p>
+              )}
+              <PassportSummary />
+              <QuizFreeTextNote />
+              {profiles.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {profiles.slice(0, 6).map((profile) => (
+                    <span
+                      key={profile.id}
+                      title={profile.description}
+                      className="badge bg-primary-50 text-primary-800"
+                    >
+                      {profile.label}
+                    </span>
+                  ))}
+                </div>
+              )}
+              <MatchReport report={matchReport} />
+              <SignalMap data={signalMap} />
+              {nearbyStores && nearbyStores.places.length > 0 && (
+                <div className="max-w-3xl rounded-2xl border border-gray-200 bg-white px-5 py-4">
+                  <p className="text-sm font-semibold text-gray-700">
+                    {nearbyStores.places.length} demo stockist
+                    {nearbyStores.places.length === 1 ? "" : "s"} mapped near {location}
+                  </p>
+                  <p className="mt-1 text-xs text-gray-500">
+                    Sample locations from our directory, not a live store locator yet.{" "}
+                    <Link href="/map" className="font-semibold text-primary-700 underline">
+                      See the map
+                    </Link>
+                  </p>
+                </div>
+              )}
+              <p className="text-xs text-ink/50">
+                We group your self-selected answers into shopping categories only.
+                This is not a medical assessment or diagnosis.
+              </p>
+            </div>
+          </details>
         )}
       </main>
     </div>

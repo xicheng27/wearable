@@ -166,6 +166,22 @@ const excludedTypes = [
 
 const MIN_IMAGE_EDGE = 800;
 
+/** ISO date this sync ran — stamped on both source and stock checks. */
+const SYNC_DATE = new Date().toISOString().slice(0, 10);
+/**
+ * Stock is volatile: a stock check is only trustworthy for a short window.
+ * This is deliberately far shorter than general source verification (which can
+ * be ~a year), so a purchasable badge is never shown from stale inventory data.
+ */
+const STOCK_FRESHNESS_DAYS = 14;
+
+/** True when a stock check is recent enough to still be trusted as purchasable. */
+function isStockFresh(stockCheckedAt) {
+  if (!stockCheckedAt) return false;
+  const ageMs = Date.now() - new Date(stockCheckedAt).getTime();
+  return ageMs <= STOCK_FRESHNESS_DAYS * 24 * 60 * 60 * 1000;
+}
+
 function isWearableFashionProduct(product) {
   const title = String(product.title ?? "").toLowerCase();
   const type = String(product.product_type ?? "").toLowerCase();
@@ -179,17 +195,75 @@ function isWearableFashionProduct(product) {
   );
 }
 
-function selectProductImage(product) {
-  const images = (product.images ?? []).filter(
+function usableImages(product) {
+  return (product.images ?? []).filter(
     (image) =>
       image?.src &&
       Number(image.width) >= MIN_IMAGE_EDGE &&
       Number(image.height) >= MIN_IMAGE_EDGE
   );
+}
 
+function selectProductImage(product) {
   // Preserve the official featured image when it is large enough. Otherwise,
   // use the first full-resolution image from the same product listing.
-  return images[0] ?? null;
+  return usableImages(product)[0] ?? null;
+}
+
+/**
+ * All useful official gallery images (front/back/side/detail), de-duplicated
+ * by URL (ignoring Shopify's `?v=` cache-buster) and capped. Never invents or
+ * repeats a view.
+ */
+function selectGalleryImages(product, max = 6) {
+  const seen = new Set();
+  const out = [];
+  for (const image of usableImages(product)) {
+    const key = image.src.split("?")[0];
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(image.src);
+    if (out.length >= max) break;
+  }
+  return out;
+}
+
+/** Current variant availability → in_stock / out_of_stock / unknown. */
+function stockStatusFor(product) {
+  const variants = product.variants ?? [];
+  if (variants.length === 0) return "unknown";
+  return variants.some((v) => v.available === true) ? "in_stock" : "out_of_stock";
+}
+
+const FABRIC_WORDS =
+  /\b(linen|cotton|polyester|nylon|elastane|spandex|viscose|rayon|modal|bamboo|wool|merino|cashmere|silk|lyocell|tencel|jersey|denim|fleece|flannel|chambray|seersucker|corduroy|velvet)\b/gi;
+
+/** Extract official material composition + fabrics from the product body. */
+function extractMaterials(body) {
+  if (!body) return { materialComposition: undefined, materials: [] };
+  const text = body.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ");
+  // Prefer an explicit "X% fabric" composition when present.
+  const composition = text.match(/(?:\d{1,3}\s?%[^.]*?)(?:cotton|linen|polyester|nylon|elastane|spandex|viscose|rayon|modal|bamboo|wool|silk|lyocell|tencel)[^.]*/i);
+  const fabrics = Array.from(new Set((text.match(FABRIC_WORDS) ?? []).map((f) => f.toLowerCase())));
+  return {
+    materialComposition: composition ? composition[0].trim().slice(0, 120) : undefined,
+    materials: fabrics.slice(0, 6),
+  };
+}
+
+/** Sleeve length from official title/body — only when explicitly stated. */
+function deriveSleeveLength(fullText) {
+  if (/\bsleeveless\b/i.test(fullText)) return "sleeveless";
+  if (/\bshort[- ]?sleeve/i.test(fullText)) return "short-sleeve";
+  if (/\blong[- ]?sleeve/i.test(fullText)) return "long-sleeve";
+  return undefined;
+}
+
+/** Drop generic adaptive tags when a specific feature already explains the item. */
+const GENERIC_FEATURES = new Set(["Adaptive dressing", "Assisted dressing design"]);
+function dedupeGenericFeatures(features) {
+  const hasSpecific = features.some((f) => !GENERIC_FEATURES.has(f));
+  return hasSpecific ? features.filter((f) => !GENERIC_FEATURES.has(f)) : features;
 }
 
 const featureRules = [
@@ -411,6 +485,17 @@ function productRecord(product, feed) {
   const productImage = selectProductImage(product);
   if (!productImage) return null;
 
+  // Reject anything that isn't a real, exact product page. A missing handle
+  // would produce a collection/brand-page link, which must never be stored as
+  // an "exact-product".
+  if (!product.handle || /^(collections|pages|blogs)\//i.test(product.handle)) return null;
+
+  // Shipping: use the feed's declared countries; never fall back to "Global".
+  const countries = Array.isArray(feed.countries) ? feed.countries : [];
+  const { materialComposition, materials } = extractMaterials(body);
+  const galleryImages = selectGalleryImages(product);
+  const cleanedFeatures = dedupeGenericFeatures(features).slice(0, 5);
+
   return {
     id: `${feed.brandId}-${slug(product.handle)}`,
     name: exactName,
@@ -422,35 +507,44 @@ function productRecord(product, feed) {
     currency: feed.currency,
     imageUrl: productImage.src,
     imageAlt: `${exactName} by ${feed.brandName}`,
+    galleryImages,
     description,
-    accessibilityExplanation: `The official listing identifies ${features
+    accessibilityExplanation: `The official listing identifies ${cleanedFeatures
       .slice(0, 3)
       .join(", ")
       .toLowerCase()} as part of this item's adaptive design. Check the product page for complete fit and care details.`,
-    adaptiveFeatures: features.slice(0, 5),
+    adaptiveFeatures: cleanedFeatures,
     disabilityNeeds: needs,
     bestFor: needs.slice(0, 3),
     styleTags: styleTags(fullText, clothingType),
+    materialComposition,
+    materials,
+    sleeveLength: deriveSleeveLength(fullText),
     availability: {
       online: true,
       inStore: false,
-      countries: feed.countries,
+      countries,
       note: feed.availability,
     },
-    shipsTo: feed.countries,
+    shipsTo: countries,
     sizes: sizesFor(product),
     genderFit: genderFit(fullText),
     sensoryFriendly:
-      features.includes("Sensory-friendly") ||
-      features.includes("Seamless construction"),
-    seatedFit: features.includes("Seated fit"),
-    oneHandedDressing: features.some((feature) =>
+      cleanedFeatures.includes("Sensory-friendly") ||
+      cleanedFeatures.includes("Seamless construction"),
+    seatedFit: cleanedFeatures.includes("Seated fit"),
+    oneHandedDressing: cleanedFeatures.some((feature) =>
       ["Magnetic closures", "Snap closures", "Zip access", "Touch-and-close fastening"].includes(feature)
     ),
     featured: false,
     productUrl: `${feed.baseUrl}/products/${product.handle}`,
     linkType: "exact-product",
-    sourceVerifiedAt: "2026-06-18",
+    // Source verification (are the details still accurate) is tracked
+    // separately from the stock check, which needs a much shorter freshness
+    // window (see STOCK_FRESHNESS_DAYS).
+    sourceVerifiedAt: SYNC_DATE,
+    stockStatus: stockStatusFor(product),
+    stockCheckedAt: SYNC_DATE,
   };
 }
 
