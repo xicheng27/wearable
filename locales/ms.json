@@ -1,0 +1,49 @@
+{
+  "language": {
+    "label": "Bahasa",
+    "change": "Tukar bahasa",
+    "en": "English",
+    "zh": "简体中文",
+    "ms": "Bahasa Melayu",
+    "ta": "தமிழ்"
+  },
+  "nav": {
+    "browse": "Lihat pakaian",
+    "passport": "Pasport saya",
+    "singapore": "Panduan Singapura",
+    "map": "Peta global",
+    "saved": "Disimpan",
+    "howItWorks": "Cara ia berfungsi",
+    "startQuiz": "Mula kuiz",
+    "openMenu": "Buka menu",
+    "closeMenu": "Tutup menu",
+    "mainNavigation": "Navigasi utama"
+  },
+  "product": {
+    "viewDetails": "Lihat butiran",
+    "save": "Simpan",
+    "remove": "Buang daripada simpanan",
+    "bestFor": "Sesuai untuk",
+    "sizeGuide": "Panduan saiz",
+    "singaporeFriendly": "Sesuai untuk Singapura",
+    "breathable": "Kain bernafas",
+    "adaptiveFeature": "Ciri mudah suai",
+    "enlargeImage": "Besarkan imej"
+  },
+  "sizeGuide": {
+    "title": "Panduan saiz",
+    "units": "Unit",
+    "cm": "cm",
+    "inches": "inci",
+    "measurement": "Ukuran",
+    "noData": "Sila rujuk panduan saiz rasmi jenama.",
+    "availableSizes": "Saiz tersedia",
+    "viewOfficial": "Lihat panduan saiz rasmi →",
+    "close": "Tutup panduan saiz"
+  },
+  "common": {
+    "close": "Tutup",
+    "previous": "Sebelumnya",
+    "next": "Seterusnya"
+  }
+}

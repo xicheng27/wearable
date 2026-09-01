@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import SiteAnalytics from "@/components/SiteAnalytics";
 import SiteChrome from "@/components/SiteChrome";
+import I18nProvider from "@/components/I18nProvider";
 import CurrencyProvider from "@/components/CurrencyProvider";
 import CountryProvider from "@/components/CountryProvider";
 import CountryPicker from "@/components/CountryPicker";
@@ -82,19 +83,21 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <CurrencyProvider>
-          <CountryProvider>
-            <UserProfileProvider>
-              <PassportProvider>
-                <SavedItemsProvider>
-                  <SiteChrome>{children}</SiteChrome>
-                  <CountryPicker />
-                  <DisclaimerFooter />
-                </SavedItemsProvider>
-              </PassportProvider>
-            </UserProfileProvider>
-          </CountryProvider>
-        </CurrencyProvider>
+        <I18nProvider>
+          <CurrencyProvider>
+            <CountryProvider>
+              <UserProfileProvider>
+                <PassportProvider>
+                  <SavedItemsProvider>
+                    <SiteChrome>{children}</SiteChrome>
+                    <CountryPicker />
+                    <DisclaimerFooter />
+                  </SavedItemsProvider>
+                </PassportProvider>
+              </UserProfileProvider>
+            </CountryProvider>
+          </CurrencyProvider>
+        </I18nProvider>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: serializeJsonLd(websiteJsonLd) }}

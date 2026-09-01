@@ -1,0 +1,53 @@
+{
+  "language": {
+    "label": "Language",
+    "change": "Change language",
+    "en": "English",
+    "zh": "简体中文",
+    "ms": "Bahasa Melayu",
+    "ta": "தமிழ்"
+  },
+  "nav": {
+    "browse": "Browse clothing",
+    "passport": "My passport",
+    "singapore": "Singapore guide",
+    "map": "Global map",
+    "saved": "Saved",
+    "howItWorks": "How it works",
+    "startQuiz": "Start quiz",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "mainNavigation": "Main navigation"
+  },
+  "product": {
+    "viewDetails": "View details",
+    "viewOfficialProduct": "View official product →",
+    "viewOfficialSource": "View official source →",
+    "save": "Save",
+    "remove": "Remove from saved",
+    "bestFor": "Best for",
+    "sizeGuide": "Size guide",
+    "singaporeFriendly": "Singapore-friendly",
+    "breathable": "Breathable",
+    "adaptiveFeature": "Adaptive feature",
+    "enlargeImage": "Enlarge image"
+  },
+  "sizeGuide": {
+    "title": "Size guide",
+    "units": "Units",
+    "cm": "cm",
+    "inches": "inches",
+    "measurement": "Measurement",
+    "noData": "Please refer to the brand's official sizing guide.",
+    "availableSizes": "Available sizes",
+    "viewOfficial": "View official size guide →",
+    "bodyNote": "Body measurements — measure yourself and compare.",
+    "garmentNote": "Garment measurements — measured flat.",
+    "close": "Close size guide"
+  },
+  "common": {
+    "close": "Close",
+    "previous": "Previous",
+    "next": "Next"
+  }
+}

@@ -6,21 +6,24 @@ import SearchBar from "@/components/SearchBar";
 import Logo from "@/components/Logo";
 import CurrencySelector from "@/components/CurrencySelector";
 import CountrySelector from "@/components/CountrySelector";
+import LanguageSelector from "@/components/LanguageSelector";
 import { useSavedItems } from "@/components/SavedItemsProvider";
+import { useTranslation } from "@/components/I18nProvider";
 import { trackEvent } from "@/lib/analytics";
 
 const navItems = [
-  { href: "/search", label: "Browse clothing" },
-  { href: "/passport", label: "My passport" },
-  { href: "/singapore", label: "Singapore guide" },
-  { href: "/map", label: "Global map" },
-  { href: "/saved", label: "Saved" },
-  { href: "/how-it-works", label: "How it works" },
+  { href: "/search", key: "nav.browse", label: "Browse clothing" },
+  { href: "/passport", key: "nav.passport", label: "My passport" },
+  { href: "/singapore", key: "nav.singapore", label: "Singapore guide" },
+  { href: "/map", key: "nav.map", label: "Global map" },
+  { href: "/saved", key: "nav.saved", label: "Saved" },
+  { href: "/how-it-works", key: "nav.howItWorks", label: "How it works" },
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { savedIds } = useSavedItems();
+  const { t } = useTranslation();
 
   return (
     <header className="sticky top-0 z-50 border-b border-ink/10 bg-ivory/95 shadow-[0_5px_20px_rgba(41,36,31,.05)] backdrop-blur-lg">
@@ -32,14 +35,14 @@ export default function Navbar() {
             <SearchBar compact />
           </div>
 
-          <nav className="hidden items-center gap-4 lg:flex xl:gap-5" aria-label="Main navigation">
+          <nav className="hidden items-center gap-4 lg:flex xl:gap-5" aria-label={t("nav.mainNavigation")}>
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 className="link-underline flex items-center gap-1.5 whitespace-nowrap text-sm text-ink/70"
               >
-                {item.label}
+                {t(item.key, item.label)}
                 {item.href === "/saved" && savedIds.length > 0 && (
                   <span className="rounded-full bg-primary-700 px-1.5 py-0.5 text-[11px] font-bold text-paper">
                     {savedIds.length}
@@ -53,9 +56,10 @@ export default function Navbar() {
             className="btn-primary hidden whitespace-nowrap px-4 py-2 text-xs lg:inline-flex"
             onClick={() => trackEvent("cta_quiz_start", { location: "navbar" })}
           >
-            Start quiz
+            {t("nav.startQuiz")}
           </Link>
           <div className="hidden items-center gap-2 lg:flex">
+            <LanguageSelector />
             <CountrySelector />
             <CurrencySelector compact />
           </div>
@@ -64,7 +68,7 @@ export default function Navbar() {
             className="min-h-11 min-w-11 rounded-lg border border-ink/10 bg-paper p-2 text-ink hover:bg-sand/50 lg:hidden"
             onClick={() => setMenuOpen((open) => !open)}
             aria-expanded={menuOpen}
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-label={menuOpen ? t("nav.closeMenu") : t("nav.openMenu")}
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               {menuOpen ? (
@@ -79,7 +83,8 @@ export default function Navbar() {
         {menuOpen && (
           <div className="space-y-3 border-t border-ink/10 py-4 lg:hidden">
             <SearchBar compact />
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2">
+              <LanguageSelector className="flex-1" />
               <CountrySelector className="flex-1 justify-between" />
               <CurrencySelector className="rounded-xl border border-ink/10 bg-paper px-3 py-2" />
             </div>
@@ -91,7 +96,7 @@ export default function Navbar() {
                 setMenuOpen(false);
               }}
             >
-              Start quiz
+              {t("nav.startQuiz")}
             </Link>
             <nav className="flex flex-col">
               {navItems.map((item) => (
@@ -101,7 +106,7 @@ export default function Navbar() {
                   className="flex min-h-11 items-center gap-2 py-2 text-base font-semibold text-ink/75 hover:text-primary-700"
                   onClick={() => setMenuOpen(false)}
                 >
-                  {item.label}
+                  {t(item.key, item.label)}
                   {item.href === "/saved" && savedIds.length > 0 && (
                     <span className="rounded-full bg-primary-700 px-2 py-0.5 text-xs font-bold text-paper">
                       {savedIds.length}
