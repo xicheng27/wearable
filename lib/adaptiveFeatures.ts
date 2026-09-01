@@ -63,6 +63,59 @@ export type MechanismId =
   | "touch-close"
   | "afo-wide";
 
+/** Compact icon families used by the AdaptiveFeatureBadge component. */
+export type FeatureIconId =
+  | "magnetic"
+  | "touch-close"
+  | "zipper"
+  | "side-opening"
+  | "seated-rise"
+  | "open-back"
+  | "afo-wide"
+  | "pull-on"
+  | "sensory"
+  | "wide-neck"
+  | "generic";
+
+export interface FeatureVisual {
+  icon: FeatureIconId;
+  /** VERY short label a shopper reads in ~a second. */
+  short: string;
+  /** Longer plain-language detail for the tooltip/modal. */
+  detail: string;
+}
+
+/**
+ * Map a raw adaptive-feature tag to a compact visual: an icon family, a very
+ * short label, and a longer tooltip explanation. Purely a presentation helper —
+ * it never asserts a feature a product doesn't list.
+ */
+export function featureVisual(feature: string): FeatureVisual {
+  const v = feature.toLowerCase();
+  const detail = explainFeature(feature);
+  if (v.includes("magnet"))
+    return { icon: "magnetic", short: "Fastens without small buttons", detail };
+  if (v.includes("open-back") || v.includes("open back"))
+    return { icon: "open-back", short: "Opens fully at the back", detail };
+  if (v.includes("seated") || v.includes("wheelchair"))
+    return { icon: "seated-rise", short: "Cut for seated comfort", detail };
+  if (v.includes("wide neck") || v.includes("wide-neck") || v.includes("boat neck"))
+    return { icon: "wide-neck", short: "Wide, easy neck opening", detail };
+  if (v.includes("side"))
+    return { icon: "side-opening", short: "Opens along the side", detail };
+  if (v.includes("velcro") || v.includes("touch") || v.includes("hook") || v.includes("snap"))
+    return { icon: "touch-close", short: "Presses closed, no buttons", detail };
+  if (v.includes("zip"))
+    return { icon: "zipper", short: "Easy-grip zip access", detail };
+  if (v.includes("afo") || v.includes("orthotic") || v.includes("wide opening") || v.includes("wide fit"))
+    return { icon: "afo-wide", short: "Wide opening for braces", detail };
+  if (v.includes("pull-on") || v.includes("pull on") || v.includes("elastic") || v.includes("waistband"))
+    return { icon: "pull-on", short: "Pull-on, no fiddly closures", detail };
+  if (v.includes("sensory") || v.includes("seam") || v.includes("tag"))
+    return { icon: "sensory", short: "Soft, tag-free finish", detail };
+  return { icon: "generic", short: "Adaptive design", detail };
+}
+
 const MECHANISM_RULES: Array<[MechanismId, RegExp]> = [
   ["open-back", /open[- ]?back|back overlap|back opening/i],
   ["magnetic", /magnet/i],

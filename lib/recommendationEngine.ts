@@ -987,9 +987,29 @@ function scoreProduct(product: Product, input: RecommendationInput): ScoredProdu
     }
   }
 
+  // Climate is a meaningful ranking signal (never an inclusion filter) for hot,
+  // humid locations: among similarly-adaptive items, climate-appropriate ones
+  // rank considerably higher, and warm/heavy pieces sink. Low-suitability items
+  // are already hidden from the Singapore default (see recommendAdaptiveProducts)
+  // unless the shopper opted into "show all climates" — where this keeps them
+  // below breathable options. Weighted below any hard requirement so it can
+  // never outrank an extra access need.
+  let climateScore = 0;
+  if (input.location === "Singapore") {
+    const climate = assessClimate(product);
+    if (climate.suitability === "high") {
+      climateScore = 5;
+      soft.reasons.push("is lightweight and better suited to hot, humid weather");
+    } else if (climate.suitability === "medium") {
+      climateScore = 2;
+    } else if (climate.suitability === "low") {
+      climateScore = -3;
+    }
+  }
+
   // Hard requirements dominate the score so exact matches always outrank
   // partial ones; soft points only break ties within a tier.
-  const score = hardSatisfiedCount * 10 + soft.score + openEndedScore;
+  const score = hardSatisfiedCount * 10 + soft.score + openEndedScore + climateScore;
 
   // Honest match tier. Every hard requirement passing makes it exact, unless
   // a selected minor preference (style/budget) is missed — then it's strong.

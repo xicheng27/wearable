@@ -177,6 +177,15 @@ export interface Product {
   stockCheckedAt?: string;
   /** De-duplicated official gallery image URLs (front/back/side/detail…). */
   galleryImages?: string[];
+  /**
+   * Typed official gallery images, e.g.
+   *   [{ type: "front", url: "…" }, { type: "adaptive-feature", url: "…" }]
+   * Preferred over `galleryImages` when present because each view is labelled
+   * (so the UI can point out which image demonstrates the adaptive feature).
+   * Backwards compatible: absent for products that only carry `imageUrl` /
+   * `galleryImages`, and never fabricated — populated only from official feeds.
+   */
+  imageViews?: ProductImageView[];
   /** Official size-guide URL. */
   sizeGuideUrl?: string;
   /** Structured measurements when officially provided (never fabricated). */
@@ -190,6 +199,24 @@ export interface ProductMeasurement {
   label: string;
   /** Per-size values keyed by size label, e.g. { S: "96cm", M: "101cm" }. */
   values: Record<string, string>;
+}
+
+/** A single labelled product photo captured from an official source. */
+export type ProductImageViewType =
+  | "front"
+  | "back"
+  | "side"
+  | "detail"
+  | "adaptive-feature"
+  | "worn";
+
+export interface ProductImageView {
+  /** What the photo shows — drives the human-readable view label. */
+  type: ProductImageViewType;
+  /** Official image URL (must be on an allow-listed host). */
+  url: string;
+  /** Optional per-view alt text; falls back to the product alt + view label. */
+  alt?: string;
 }
 
 // --- User profile / target group segmentation ---

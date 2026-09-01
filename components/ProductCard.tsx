@@ -8,6 +8,8 @@ import PriceDisplay from "@/components/PriceDisplay";
 import OfficialProductLink from "@/components/OfficialProductLink";
 import { useCountry } from "@/components/CountryProvider";
 import { useSavedItems } from "@/components/SavedItemsProvider";
+import { useTranslation } from "@/components/I18nProvider";
+import { hasHotHumidBadge } from "@/lib/climate";
 import { GLOBAL } from "@/lib/countries";
 import { normalizeAvailability, availabilityLabelFor } from "@/lib/productMetadata";
 import { resolvePriceStatus } from "@/lib/pricingProvider";
@@ -24,7 +26,11 @@ function plainBestFor(product: Product) {
 export default function ProductCard({ product }: { product: Product }) {
   const brandName = getBrandName(product.brandId);
   const { country } = useCountry();
+  const { t } = useTranslation();
   const { isSaved, toggleSaved } = useSavedItems();
+  // Concise climate indicator for Singapore shoppers — only when the evidence
+  // supports a hot-&-humid verdict (never guessed from a name).
+  const singaporeFriendly = country === "Singapore" && hasHotHumidBadge(product);
   const saved = isSaved(product.id);
   const shipsTo = getProductShipsTo(product);
   const shipsGlobally = shipsTo.includes(GLOBAL);
@@ -151,7 +157,13 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
 
         <div className="mt-4 flex flex-wrap gap-1.5">
-          {product.adaptiveFeatures.slice(0, 3).map((feature) => (
+          {singaporeFriendly && (
+            <span className="sticker bg-primary-100 text-primary-900">
+              <span aria-hidden="true">☀︎ </span>
+              {t("product.singaporeFriendly")}
+            </span>
+          )}
+          {product.adaptiveFeatures.slice(0, singaporeFriendly ? 2 : 3).map((feature) => (
             <span
               key={feature}
               className="sticker odd:rotate-[1deg] even:rotate-[-1deg]"

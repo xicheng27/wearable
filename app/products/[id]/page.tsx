@@ -3,13 +3,14 @@ import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
 import ProductGallery from "@/components/ProductGallery";
 import { MechanismDiagrams } from "@/components/MechanismDiagram";
+import { AdaptiveFeatureBadges } from "@/components/AdaptiveFeatureBadge";
+import SizeGuide from "@/components/SizeGuide";
 import PriceDisplay from "@/components/PriceDisplay";
 import OfficialProductLink from "@/components/OfficialProductLink";
 import { serializeJsonLd } from "@/lib/security/jsonLd";
 import {
   consolidateFeatures,
   diagramsForProduct,
-  explainFeature,
 } from "@/lib/adaptiveFeatures";
 import { assessClimate } from "@/lib/climate";
 import { getBrandById } from "@/data/brands";
@@ -278,17 +279,11 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
               </p>
             )}
 
-            {/* Only specific, meaningful features — generic duplicates removed. */}
-            <div className="mt-6 grid grid-cols-1 gap-3">
-              {helpfulFeatures.map((feature) => (
-                <div
-                  key={feature}
-                  className="rounded-xl bg-primary-50 p-4 text-sm text-primary-950"
-                >
-                  <p className="font-bold">{feature}</p>
-                  <p className="mt-1 leading-6">{explainFeature(feature)}</p>
-                </div>
-              ))}
+            {/* Compact visual feature badges — icon + name + a very short
+                explanation, with a tap/keyboard tooltip for more detail. Only
+                specific, meaningful features (generic duplicates removed). */}
+            <div className="mt-6">
+              <AdaptiveFeatureBadges features={helpfulFeatures} />
             </div>
 
             {diagrams.length > 0 && (
@@ -380,59 +375,14 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
               <div>
                 <dt className="font-bold text-ink/45">Sizing</dt>
                 <dd className="mt-2 leading-6 text-ink/72">
-                  {product.measurements && product.measurements.length > 0 ? (
-                    <>
-                      <div className="overflow-x-auto">
-                        <table className="mt-1 w-full border-collapse text-xs">
-                          <caption className="sr-only">
-                            {product.measurementType === "body" ? "Body" : "Garment"}{" "}
-                            measurements
-                          </caption>
-                          <thead>
-                            <tr>
-                              <th className="border-b border-ink/15 py-1 pr-2 text-left font-bold">
-                                Measurement
-                              </th>
-                              {Object.keys(product.measurements[0].values).map((size) => (
-                                <th key={size} className="border-b border-ink/15 px-2 py-1 text-left font-bold">
-                                  {size}
-                                </th>
-                              ))}
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {product.measurements.map((row) => (
-                              <tr key={row.label}>
-                                <td className="border-b border-ink/10 py-1 pr-2 font-semibold">{row.label}</td>
-                                {Object.values(row.values).map((v, i) => (
-                                  <td key={i} className="border-b border-ink/10 px-2 py-1">{v}</td>
-                                ))}
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
-                      </div>
-                      <span className="mt-2 block text-xs text-ink/50">
-                        {product.measurementType === "body"
-                          ? "Body measurements (measure yourself and compare)."
-                          : "Garment measurements (measured flat)."}
-                      </span>
-                    </>
-                  ) : product.sizes.length > 0 ? (
-                    <>
-                      Available sizes: {product.sizes.join(", ")}. Exact
-                      measurements weren&apos;t listed in our data.
-                    </>
+                  {product.sizes.length > 0 ? (
+                    <>Available sizes: {product.sizes.join(", ")}.</>
                   ) : (
-                    "Sizing was not listed in our current data. Check the official product page."
+                    "Sizing was not listed in our current data."
                   )}
-                  {product.sizeGuideUrl && (
-                    <span className="mt-1 block">
-                      <OfficialProductLink href={product.sizeGuideUrl} className="link-underline text-primary-700">
-                        Official size guide →
-                      </OfficialProductLink>
-                    </span>
-                  )}
+                  <span className="mt-3 block">
+                    <SizeGuide product={product} />
+                  </span>
                 </dd>
               </div>
               <div>
